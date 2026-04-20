@@ -1,0 +1,160 @@
+version: "1.0.0"
+last_updated: "2026-04-20T00:00:00Z"
+
+clause_families:
+  liability:
+    mandatory: true
+    approved_patterns:
+      - pattern: "liability.*cap.*\$"
+        description: "Liability must be capped at a specific dollar amount"
+      - pattern: "limitation.*liability"
+        description: "Must include explicit limitation of liability clause"
+    fallback_language:
+      - id: "liability_cap_1x"
+        name: "Standard 1x ARR Cap"
+        language: "Each party's total aggregate liability shall not exceed the annual recurring revenue (ARR) paid or payable in the 12 months preceding the claim."
+        rationale: "Standard market cap protecting against unlimited exposure"
+        legal_risk_level: "low"
+      - id: "liability_cap_2x"
+        name: "2x ARR Cap for Mission-Critical"
+        language: "For breaches of data protection obligations, each party's liability may extend to 2x ARR paid in the preceding 12 months."
+        rationale: "Higher cap for DPA breaches reflects elevated data risk"
+        legal_risk_level: "medium"
+    must_escalate_keywords:
+      - "unlimited liability"
+      - "no liability cap"
+      - "uncapped indemnity"
+
+  dpa:
+    mandatory: true
+    approved_patterns:
+      - pattern: "data processing addendum"
+        description: "Must include DPA"
+      - pattern: "GDPR|CCPA"
+        description: "Must reference applicable privacy laws"
+    fallback_language:
+      - id: "dpa_standard"
+        name: "Standard DPA Addendum"
+        language: "The parties shall execute a Data Processing Addendum (DPA) compliant with GDPR Article 28 and CCPA Sec. 1798.140(ab), within 15 days of contract signature."
+        rationale: "Industry standard DPA requirement"
+        legal_risk_level: "low"
+    must_escalate_keywords:
+      - "no dpa"
+      - "data processing not required"
+
+  termination:
+    mandatory: true
+    approved_patterns:
+      - pattern: "termination.*notice"
+        description: "Must specify termination notice period"
+    fallback_language:
+      - id: "term_notice_30d"
+        name: "30-Day Termination Notice"
+        language: "Either party may terminate this Agreement with 30 days' written notice, except that termination without cause requires 30 days' notice."
+        rationale: "Standard termination notice period"
+        legal_risk_level: "low"
+      - id: "term_notice_60d"
+        name: "60-Day Termination Notice"
+        language: "Either party may terminate this Agreement with 60 days' written notice."
+        rationale: "Extended notice for longer-term vendor relationships"
+        legal_risk_level: "low"
+    must_escalate_keywords:
+      - "perpetual"
+      - "no termination right"
+
+  ip_ownership:
+    mandatory: true
+    approved_patterns:
+      - pattern: "background IP.*retained"
+        description: "Background IP must be retained by contributor"
+      - pattern: "pre-existing IP"
+        description: "Pre-existing IP ownership must be clear"
+    fallback_language:
+      - id: "ip_own_standard"
+        name: "Standard IP Ownership"
+        language: "Each party retains all right, title, and interest in its pre-existing intellectual property. Work product created under this Agreement is owned by the commissioning party."
+        rationale: "Standard work-for-hire provision"
+        legal_risk_level: "low"
+    must_escalate_keywords:
+      - "joint ownership"
+      - "ip transfers to vendor"
+      - "third party ip rights granted"
+
+  sla:
+    mandatory: false
+    approved_patterns:
+      - pattern: "uptime|availability"
+        description: "Service level targets"
+      - pattern: "response time|rto"
+        description: "Response time commitments"
+    fallback_language:
+      - id: "sla_99_5"
+        name: "99.5% Uptime SLA"
+        language: "Vendor commits to 99.5% monthly uptime, measured from midnight to midnight US Eastern Time, excluding scheduled maintenance (max 4 hours/month)."
+        rationale: "Industry-standard uptime for non-mission-critical services"
+        legal_risk_level: "low"
+      - id: "sla_99_9"
+        name: "99.9% Uptime SLA"
+        language: "Vendor commits to 99.9% monthly uptime with automatic service credits for outages exceeding 15 minutes."
+        rationale: "Higher standard for critical vendor services"
+        legal_risk_level: "medium"
+    must_escalate_keywords:
+      - "no sla"
+      - "sla not applicable"
+
+  governing_law:
+    mandatory: true
+    approved_patterns:
+      - pattern: "governed by|applicable law"
+        description: "Governing law must be specified"
+    fallback_language:
+      - id: "law_delaware"
+        name: "Delaware Law"
+        language: "This Agreement shall be governed by and construed in accordance with the laws of the State of Delaware, without regard to conflicts of law principles."
+        rationale: "Company standard jurisdiction"
+        legal_risk_level: "low"
+      - id: "law_california"
+        name: "California Law"
+        language: "This Agreement shall be governed by the laws of the State of California, without regard to conflicts of law principles."
+        rationale: "Acceptable alternative for West Coast vendors"
+        legal_risk_level: "low"
+    must_escalate_keywords:
+      - "geneva"
+      - "hong kong law"
+      - "chinese law"
+
+  indemnity:
+    mandatory: true
+    approved_patterns:
+      - pattern: "indemnify.*defend"
+        description: "Must include mutual indemnification"
+      - pattern: "hold harmless"
+        description: "Standard hold-harmless language"
+    fallback_language:
+      - id: "indemnity_mutual"
+        name: "Mutual Indemnity"
+        language: "Each party shall indemnify, defend, and hold harmless the other from any third-party claims arising from its breach of this Agreement or violation of applicable law."
+        rationale: "Balanced mutual indemnification"
+        legal_risk_level: "low"
+    must_escalate_keywords:
+      - "sole indemnity"
+      - "unlimited indemnity"
+      - "broad indemnity"
+
+global_escalation_triggers:
+  - rule: "extraction_confidence_below_threshold"
+    description: "Any clause extraction below confidence threshold triggers review"
+  - rule: "missing_mandatory_clause_family"
+    description: "If a mandatory clause family cannot be located, escalate entire contract"
+  - rule: "conflicting_clause_signals"
+    description: "If multiple clauses send conflicting signals (e.g., liability capped AND uncapped), escalate"
+  - rule: "novel_clause_type"
+    description: "Clause types not in playbook get escalated"
+
+extraction_confidence_threshold: 0.75
+
+approved_governing_laws:
+  - "Delaware"
+  - "California"
+  - "New York"
+  - "Texas"

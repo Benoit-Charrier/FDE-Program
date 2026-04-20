@@ -1,0 +1,89 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Vendor Contract Review Playbook",
+  "description": "Configuration for acceptable clause language, fallback positions, and escalation rules",
+  "type": "object",
+  "properties": {
+    "version": {
+      "type": "string",
+      "description": "Playbook version for audit trail"
+    },
+    "last_updated": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "clause_families": {
+      "type": "object",
+      "description": "Approved language patterns and fallbacks for each clause family",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "mandatory": {
+            "type": "boolean",
+            "description": "Is this clause mandatory in all contracts?"
+          },
+          "approved_patterns": {
+            "type": "array",
+            "description": "List of acceptable keyword/phrase patterns",
+            "items": {
+              "type": "object",
+              "properties": {
+                "pattern": { "type": "string" },
+                "description": { "type": "string" }
+              },
+              "required": ["pattern", "description"]
+            }
+          },
+          "fallback_language": {
+            "type": "array",
+            "description": "Pre-approved fallback positions for redlines",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": { "type": "string" },
+                "name": { "type": "string" },
+                "language": { "type": "string" },
+                "rationale": { "type": "string" },
+                "legal_risk_level": {
+                  "type": "string",
+                  "enum": ["low", "medium", "high"]
+                }
+              },
+              "required": ["id", "name", "language", "rationale", "legal_risk_level"]
+            }
+          },
+          "must_escalate_keywords": {
+            "type": "array",
+            "description": "Keywords that trigger automatic escalation",
+            "items": { "type": "string" }
+          }
+        },
+        "required": ["mandatory", "approved_patterns", "fallback_language"]
+      }
+    },
+    "global_escalation_triggers": {
+      "type": "array",
+      "description": "Organization-wide escalation rules",
+      "items": {
+        "type": "object",
+        "properties": {
+          "rule": { "type": "string" },
+          "description": { "type": "string" }
+        },
+        "required": ["rule", "description"]
+      }
+    },
+    "extraction_confidence_threshold": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "Minimum confidence score to accept extraction without escalation"
+    },
+    "approved_governing_laws": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Approved jurisdictions for governing law"
+    }
+  },
+  "required": ["version", "clause_families", "extraction_confidence_threshold"]
+}
