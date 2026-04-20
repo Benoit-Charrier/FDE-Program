@@ -4,6 +4,8 @@ FastAPI application: orchestrates the contract review workflow.
 
 import os
 import uuid
+import tempfile
+from datetime import datetime
 from pathlib import Path
 from fastapi import FastAPI, UploadFile, File, HTTPException
 from fastapi.responses import JSONResponse
@@ -24,7 +26,8 @@ app = FastAPI(
 audit_logger = AuditLogger(db_path="./audit.db")
 
 # Load playbook
-PLAYBOOK_PATH = os.getenv("PLAYBOOK_PATH", "./config/playbook.sample.yaml")
+DEFAULT_PLAYBOOK_PATH = Path(__file__).resolve().parents[1] / "config" / "playbook.sample.yaml"
+PLAYBOOK_PATH = os.getenv("PLAYBOOK_PATH", str(DEFAULT_PLAYBOOK_PATH))
 playbook = load_playbook(PLAYBOOK_PATH)
 
 # API key
@@ -45,7 +48,7 @@ async def analyze_contract_endpoint(
         raise HTTPException(status_code=500, detail="ANTHROPIC_API_KEY not configured")
     
     contract_id = str(uuid.uuid4())
-    temp_path = f"/tmp/{contract_id}_{file.filename}"
+    temp_path = Path(tempfile.gettempdir()) / f"{contract_id}_{file.filename}"
     
     try:
         # Save uploaded file
@@ -171,7 +174,7 @@ async def approve_redline(
         proposed_redline_id=f"{contract_id}_{clause_family}",
         approved_by_lawyer_name=lawyer_name,
         approved_by_lawyer_email=lawyer_email,
-        approval_timestamp=None,
+        approval_timestamp=datetime.utcnow(),
         approval_status=ApprovalStatus(approval_status),
         notes=None
     )

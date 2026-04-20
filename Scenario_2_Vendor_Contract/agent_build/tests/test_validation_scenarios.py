@@ -2,9 +2,7 @@
 Test suite with three validation scenarios from the capability specification.
 """
 
-import os
-import json
-from pathlib import Path
+from datetime import datetime
 
 from src.data_contracts import (
     ExtractedClause, ClauseStatus, RouteDecision, ContractReviewResult, 
@@ -108,14 +106,14 @@ def test_scenario_1_standard_contract():
         filename="standard_vendor_contract.pdf",
         file_size_bytes=150000,
         page_count=25,
-        ingestion_timestamp=None,
+        ingestion_timestamp=datetime.utcnow(),
         route_decision=RouteDecision.STANDARD,
         routing_confidence=0.95,
         extracted_clauses=extracted_clauses,
         variance_summary="All clauses match playbook.",
         redline_proposals=[],
         escalation_reasons=[],
-        analysis_timestamp=None
+        analysis_timestamp=datetime.utcnow()
     )
     
     # Route contract
@@ -235,14 +233,14 @@ def test_scenario_2_playbook_negotiable():
         filename="negotiable_vendor_contract.pdf",
         file_size_bytes=180000,
         page_count=32,
-        ingestion_timestamp=None,
+        ingestion_timestamp=datetime.utcnow(),
         route_decision=RouteDecision.PLAYBOOK_NEGOTIABLE,
         routing_confidence=0.85,
         extracted_clauses=extracted_clauses,
         variance_summary="Liability and termination clauses differ from playbook; both have approved fallbacks.",
         redline_proposals=[],
         escalation_reasons=[],
-        analysis_timestamp=None
+        analysis_timestamp=datetime.utcnow()
     )
     
     # Route contract
@@ -370,7 +368,7 @@ def test_scenario_3_delegation_boundary():
         filename="scanned_ocr_problematic.pdf",
         file_size_bytes=85000,
         page_count=18,
-        ingestion_timestamp=None,
+        ingestion_timestamp=datetime.utcnow(),
         route_decision=RouteDecision.SENIOR_LAWYER_ESCALATION,
         routing_confidence=0.45,
         extracted_clauses=extracted_clauses,
@@ -381,7 +379,7 @@ def test_scenario_3_delegation_boundary():
             "Multiple clause extractions below confidence threshold",
             "OCR quality compromises reliability"
         ],
-        analysis_timestamp=None
+        analysis_timestamp=datetime.utcnow()
     )
     
     # Route contract

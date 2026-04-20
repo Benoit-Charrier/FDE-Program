@@ -5,7 +5,7 @@ clause_families:
   liability:
     mandatory: true
     approved_patterns:
-      - pattern: "liability.*cap.*\$"
+      - pattern: 'liability.*cap.*\$'
         description: "Liability must be capped at a specific dollar amount"
       - pattern: "limitation.*liability"
         description: "Must include explicit limitation of liability clause"

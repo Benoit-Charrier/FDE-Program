@@ -14,8 +14,13 @@
 cd agent_build
 
 # Create and activate virtual environment
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+python -m venv .venv
+
+# PowerShell (Windows)
+.\.venv\Scripts\Activate.ps1
+
+# If script execution is restricted, use venv python directly:
+# .\.venv\Scripts\python.exe -m pip install -r requirements.txt
 
 # Install dependencies
 pip install -r requirements.txt
@@ -26,12 +31,13 @@ pip install -r requirements.txt
 1. **Set your Anthropic API key**:
 ```bash
 export ANTHROPIC_API_KEY="sk-ant-..."
-# On Windows: set ANTHROPIC_API_KEY=sk-ant-...
+# PowerShell: $env:ANTHROPIC_API_KEY="sk-ant-..."
 ```
 
 2. **Configure playbook location** (optional):
 ```bash
 export PLAYBOOK_PATH="./config/playbook.sample.yaml"
+# PowerShell: $env:PLAYBOOK_PATH="./config/playbook.sample.yaml"
 ```
 
 The default playbook (`config/playbook.sample.yaml`) defines:
@@ -46,8 +52,7 @@ The default playbook (`config/playbook.sample.yaml`) defines:
 **Quick validation of all three scenarios:**
 
 ```bash
-cd tests
-python test_validation_scenarios.py
+python -m pytest tests/test_validation_scenarios.py -q
 ```
 
 **Expected output:**
@@ -83,8 +88,7 @@ TEST RESULTS SUMMARY
 ### Start the API Server
 
 ```bash
-cd src
-uvicorn app:app --reload --port 8000
+python -m uvicorn src.app:app --reload --port 8000
 ```
 
 Server runs at `http://localhost:8000`
