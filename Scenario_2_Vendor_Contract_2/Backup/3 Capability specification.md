@@ -15,14 +15,12 @@ Automate the first-pass review of inbound vendor contracts against the company's
 ## Scope
 
 **In scope:**
-- Implement a console application with these end-to-end behaviors:
-- Inbound vendor contracts in PDF or DOCX format, 15–40 pages, stored in an "Input Contract" folder 
-- First-pass analysis using Haiku for the seven playbook clause families: liability caps, DPA, termination, IP ownership, SLA, governing law, indemnity
+- Inbound vendor contracts in PDF or DOCX format, 15–40 pages
+- First-pass analysis for the seven playbook clause families: liability caps, DPA, termination, IP ownership, SLA, governing law, indemnity
 - Contract-level routing to standard, playbook-negotiable, or senior-lawyer escalation queues
 - Draft redline generation using only pre-approved playbook fallback language
 - Approval packet preparation and outbound release gating
 - Operational metrics and audit logging
-- Generate a report in html format to summarize the analysis of the documents
 
 **Out of scope:**
 - Final legal decision-making or negotiation strategy
@@ -37,7 +35,7 @@ Automate the first-pass review of inbound vendor contracts against the company's
 
 | Input | Format | Source |
 |-------|--------|--------|
-| Vendor contract document | PDF or DOCX, up to 40 pages | Input contract folder|
+| Vendor contract document | PDF or DOCX, up to 40 pages | Email intake, CLM, or procurement portal |
 | Negotiation playbook | Structured JSON/YAML config | Legal ops — maintained by lawyers |
 | Contract metadata | Structured fields: vendor name, contract type, requester, intake date | Intake form or CLM |
 | Lawyer/paralegal directory | Name, role, queue assignment | HR or identity system |
@@ -57,7 +55,7 @@ Automate the first-pass review of inbound vendor contracts against the company's
 | Outbound release status | `blocked` until all required sign-offs recorded; `cleared` after sign-off |
 | Audit log | Timestamped record of all agent actions and human overrides |
 | Operational metrics | Turnaround time, route distribution, override rate, escalation rate |
-| Report | HTML format to summarize the analysis of the documents |
+
 ---
 
 ## Decision Logic
@@ -77,7 +75,7 @@ The agent executes the following logic in order for each contract. Rules are det
 8. **Generate redlines**: For `playbook_negotiable` contracts only, generate draft clause substitutions using approved fallback language. If no approved fallback exists for a deviation, mark the clause `escalate` — do not invent language.
 9. **Assemble approval packet**: For any contract where redlines are proposed, prepare the approval packet and set release status to `blocked`.
 10. **Release gate**: Allow outbound release only when every negotiated clause in the packet has a recorded named-lawyer approval with timestamp and approver identity. System enforces this; it is not a checklist.
-11. **Report**: Generate a report in html format to summarize the analysis of the documents
+
 ---
 
 ## Escalation Triggers
@@ -108,7 +106,7 @@ These conditions force a clause to `escalate` status regardless of other signals
 | Matter management or ticketing system | Create and update queue items, assign to paralegal or lawyer | Outbound |
 | Approval logging system | Record named-lawyer sign-offs with timestamp and clause reference | Write |
 | Reporting dashboard | Publish operational metrics | Outbound |
-| Report | Publish a report that summarizes the analysis of the documents |
+
 ---
 
 ## Functional Requirements

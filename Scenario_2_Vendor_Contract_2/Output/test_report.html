@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Vendor Contract Review — Queue Report</title>
+<style>
+  body {font-family:system-ui,sans-serif;margin:0;padding:1.5rem;background:#fafafa;color:#222}
+  h1 {margin-bottom:.25rem}
+  .subtitle {color:#666;margin-bottom:1.5rem;font-size:.9em}
+  .cards {display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:1.5rem}
+  .card {background:#fff;border:1px solid #ddd;border-radius:6px;padding:1rem 1.5rem;min-width:120px}
+  .card-num {font-size:2rem;font-weight:bold}
+  .card-label {font-size:.8rem;color:#666;text-transform:uppercase}
+  table {width:100%;border-collapse:collapse;background:#fff;border:1px solid #ddd;border-radius:6px;overflow:hidden}
+  th {text-align:left;padding:10px 12px;background:#f0f0f0;border-bottom:2px solid #ddd;font-size:.85em;text-transform:uppercase}
+  td {padding:10px 12px;border-bottom:1px solid #eee;vertical-align:top;font-size:.9em}
+  tr:last-child td {border-bottom:none}
+  .detail-panel {display:none;background:#f9f9f9;padding:1rem;border-top:1px solid #ddd}
+  .detail-panel.open {display:block}
+  .tabs {display:flex;gap:.5rem;margin-bottom:1rem;border-bottom:2px solid #ddd}
+  .tab-btn {padding:6px 14px;border:none;background:none;cursor:pointer;font-size:.9em;border-bottom:2px solid transparent;margin-bottom:-2px}
+  .tab-btn.active {border-bottom-color:#2255aa;color:#2255aa;font-weight:bold}
+  .tab-pane {display:none}
+  .tab-pane.active {display:block}
+  .redline-block {background:#fff;border:1px solid #ddd;border-radius:4px;padding:.75rem;margin-bottom:.75rem}
+  .redline-label {font-size:.8em;text-transform:uppercase;color:#888;margin-bottom:.25rem}
+  .original-text {background:#fdecea;padding:.5rem;border-radius:3px;font-family:monospace;font-size:.82em;white-space:pre-wrap;margin-bottom:.5rem}
+  .proposed-text {background:#e8f5e9;padding:.5rem;border-radius:3px;font-family:monospace;font-size:.82em;white-space:pre-wrap}
+  .citation {font-size:.75em;color:#888;margin-top:.25rem}
+  .clause-text {font-family:monospace;font-size:.8em;color:#444;max-width:360px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .expand-btn {background:#2255aa;color:#fff;border:none;padding:4px 12px;border-radius:4px;cursor:pointer;font-size:.85em}
+  .audit-entry {font-size:.8em;font-family:monospace;border-bottom:1px solid #eee;padding:4px 0}
+  .release-banner {padding:.5rem 1rem;border-radius:4px;font-weight:bold;margin-bottom:1rem;font-size:.9em}
+  .release-blocked {background:#fdecea;color:#8b0000;border:1px solid #8b0000}
+  .release-cleared {background:#e8f5e9;color:#2d6a2d;border:1px solid #2d6a2d}
+  .approval-tag {font-size:.8em;color:#2d6a2d;font-weight:bold}
+  .awaiting-tag {font-size:.8em;color:#8b0000;font-weight:bold}
+</style>
+</head>
+<body>
+<h1>Vendor Contract Review — Queue Report</h1>
+<p class="subtitle">Generated: 2026-04-21T18:51:39.251867+00:00</p>
+<div class="cards">
+  <div class="card"><div class="card-num">1</div><div class="card-label">Total Contracts</div></div>
+  <div class="card" style="border-color:#2d6a2d"><div class="card-num" style="color:#2d6a2d">1</div><div class="card-label">Standard</div></div>
+  <div class="card" style="border-color:#7a5c00"><div class="card-num" style="color:#7a5c00">0</div><div class="card-label">Playbook Negotiable</div></div>
+  <div class="card" style="border-color:#8b0000"><div class="card-num" style="color:#8b0000">0</div><div class="card-label">Escalation</div></div>
+  <div class="card" style="border-color:#555"><div class="card-num" style="color:#555">0</div><div class="card-label">Errors</div></div>
+</div>
+<details style="margin-bottom:1.5rem">
+  <summary style="cursor:pointer;font-weight:bold;font-size:1rem;margin-bottom:.5rem">Operational Metrics</summary>
+  <table style="margin-top:.5rem;max-width:500px">
+    <thead><tr><th>Metric</th><th>Value</th></tr></thead>
+    <tbody>
+      <tr><td style='padding:6px 12px'>Route: standard</td><td style='padding:6px 12px'>1 (100.0%)</td></tr>
+      <tr><td style='padding:6px 12px'>Escalation rate</td><td style='padding:6px 12px'>0.0%</td></tr>
+      
+      <tr><td style='padding:6px 12px'>Override rate</td><td style='padding:6px 12px'>0%</td></tr>
+      <tr><td style='padding:6px 12px'>Approval latency</td><td style='padding:6px 12px'>—</td></tr>
+    </tbody>
+  </table>
+</details>
+<h2>Contracts</h2>
+<table>
+  <thead><tr>
+    <th>File</th>
+    <th>Queue</th>
+    <th>Clauses</th>
+    <th>Release</th>
+    <th>Routing reason</th>
+    <th></th>
+  </tr></thead>
+  <tbody><tr>
+  <td><strong>test_contract.docx</strong></td>
+  <td><span style="background:#e8f5e9;color:#2d6a2d;border:1px solid #2d6a2d;padding:2px 8px;border-radius:4px;font-weight:bold;font-size:0.85em">STANDARD</span></td>
+  <td>1/1</td>
+  <td></td>
+  <td style="color:#555;font-size:.85em">All clauses match playbook.</td>
+  <td><button class="expand-btn" onclick="toggleDetail(0)">Details</button></td>
+</tr>
+<tr>
+  <td colspan="6" style="padding:0">
+    <div id="panel-0" class="detail-panel">
+      <div class="tabs">
+  <button class="tab-btn active" data-contract="0" data-tab="clauses" onclick="switchTab('0','clauses')">Clause Analysis</button>
+  <button class="tab-btn" data-contract="0" data-tab="redlines" onclick="switchTab('0','redlines')">Redlines</button>
+  <button class="tab-btn" data-contract="0" data-tab="audit" onclick="switchTab('0','audit')">Audit Trail</button>
+</div><div id="tab-0-clauses" class="tab-pane active" data-contract="0">
+  <table style="width:100%;border-collapse:collapse">
+    <thead><tr>
+      <th>Clause Family</th><th>Status</th><th>Confidence</th><th>Reason Code</th><th>Extracted Text</th>
+    </tr></thead>
+    <tbody><tr>
+      <td>liability_cap</td>
+      <td><span style="background:#e8f5e9;color:#2d6a2d;border:1px solid #2d6a2d;padding:2px 8px;border-radius:4px;font-weight:bold;font-size:0.85em">MATCH</span></td>
+      <td>0.92</td>
+      <td><code>playbook_match</code></td>
+      <td class="clause-text" title="Limited to fees paid">Limited to fees paid</td>
+    </tr></tbody>
+  </table>
+</div><div id="tab-0-redlines" class="tab-pane" data-contract="0">
+  <p style='color:#666;font-size:.9em'>No redlines for this contract.</p>
+</div><div id="tab-0-audit" class="tab-pane" data-contract="0">
+  <div style="max-height:300px;overflow-y:auto"><p style='color:#666;font-size:.9em'>No audit events recorded.</p></div>
+</div>
+    </div>
+  </td>
+</tr></tbody>
+</table>
+
+<script>
+function toggleDetail(id) {
+  var panel = document.getElementById('panel-' + id);
+  panel.classList.toggle('open');
+}
+function switchTab(contractId, tabName) {
+  var panes = document.querySelectorAll('.tab-pane[data-contract="' + contractId + '"]');
+  var btns = document.querySelectorAll('.tab-btn[data-contract="' + contractId + '"]');
+  panes.forEach(function(p) { p.classList.remove('active'); });
+  btns.forEach(function(b) { b.classList.remove('active'); });
+  document.getElementById('tab-' + contractId + '-' + tabName).classList.add('active');
+  document.querySelector('.tab-btn[data-contract="' + contractId + '"][data-tab="' + tabName + '"]').classList.add('active');
+}
+</script>
+</body>
+</html>

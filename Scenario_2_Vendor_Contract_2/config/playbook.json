@@ -1,0 +1,118 @@
+{
+  "min_confidence_threshold": 0.70,
+  "clause_families": {
+    "liability_cap": {
+      "required": true,
+      "escalation_triggers": [
+        "uncapped liability",
+        "no limitation of liability",
+        "unlimited liability",
+        "liability shall be unlimited",
+        "no cap on liability"
+      ],
+      "accepted_positions": [
+        "limited to fees paid in the preceding 12 months",
+        "capped at annual contract value",
+        "limited to direct damages not exceeding",
+        "limited to the total fees paid"
+      ],
+      "negotiable_deviations": [
+        "capped at 3x annual fees",
+        "limited to direct damages not exceeding 2x",
+        "capped at total fees paid"
+      ]
+    },
+    "dpa": {
+      "required": true,
+      "escalation_triggers": [
+        "no data processing agreement",
+        "transfers data outside",
+        "no standard contractual clauses",
+        "data may be transferred to any country"
+      ],
+      "accepted_positions": [
+        "data processing agreement attached",
+        "GDPR compliant",
+        "standard contractual clauses",
+        "data processing addendum incorporated"
+      ],
+      "negotiable_deviations": []
+    },
+    "termination": {
+      "required": true,
+      "escalation_triggers": [
+        "no termination for convenience",
+        "irrevocable",
+        "may not be terminated"
+      ],
+      "accepted_positions": [
+        "30 days written notice",
+        "either party may terminate on 30 days",
+        "terminate for convenience on 30 days notice"
+      ],
+      "negotiable_deviations": [
+        "60 days written notice",
+        "45 days written notice",
+        "90 days written notice"
+      ]
+    },
+    "ip_ownership": {
+      "required": true,
+      "escalation_triggers": [
+        "assigns all intellectual property",
+        "transfers ownership of",
+        "work made for hire assigned to vendor",
+        "all IP vests in vendor"
+      ],
+      "accepted_positions": [
+        "each party retains ownership of pre-existing IP",
+        "company retains ownership of deliverables",
+        "work for hire owned by company",
+        "client retains all IP rights"
+      ],
+      "negotiable_deviations": []
+    },
+    "sla": {
+      "required": false,
+      "escalation_triggers": [],
+      "accepted_positions": [
+        "99.9% uptime",
+        "99.5% uptime",
+        "99% uptime"
+      ],
+      "negotiable_deviations": [
+        "98.5% uptime",
+        "commercially reasonable efforts"
+      ]
+    },
+    "governing_law": {
+      "required": true,
+      "escalation_triggers": [],
+      "accepted_jurisdictions": [
+        "England and Wales",
+        "New York",
+        "Delaware",
+        "California"
+      ],
+      "negotiable_deviations": []
+    },
+    "indemnity": {
+      "required": true,
+      "escalation_triggers": [
+        "indemnify and hold harmless for any and all claims",
+        "broad indemnification",
+        "unlimited indemnity",
+        "indemnify for all losses"
+      ],
+      "accepted_positions": [
+        "indemnify for third-party IP infringement claims only",
+        "limited to gross negligence or wilful misconduct",
+        "mutual indemnification for IP claims"
+      ],
+      "negotiable_deviations": [
+        "indemnify for gross negligence",
+        "mutual indemnification"
+      ]
+    }
+  }
+}

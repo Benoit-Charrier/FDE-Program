@@ -1,0 +1,27 @@
+{
+  "sample_negotiable.docx": {
+    "release_status": "blocked",
+    "clauses": {
+      "termination": {
+        "approved": false,
+        "lawyer_name": null,
+        "timestamp": null
+      },
+      "sla": {
+        "approved": false,
+        "lawyer_name": null,
+        "timestamp": null
+      },
+      "liability_cap": {
+        "approved": false,
+        "lawyer_name": null,
+        "timestamp": null
+      },
+      "indemnity": {
+        "approved": false,
+        "lawyer_name": null,
+        "timestamp": null
+      }
+    }
+  }
+}

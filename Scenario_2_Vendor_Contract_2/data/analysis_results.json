@@ -1,0 +1,630 @@
+[
+  {
+    "error": false,
+    "contract_id": "dpa-document.pdf",
+    "queue": "senior_lawyer_escalation",
+    "routing_reason": "Escalation required: dpa, termination, ip_ownership, sla, governing_law, indemnity triggered must-escalate conditions.",
+    "classifications": [
+      {
+        "family": "liability_cap",
+        "extracted_text": "Except for the exclusions in Section 10.3, each Party's aggregate liability arising out of or in connection with this DPA is limited to the total subscription fees paid (or payable) by the Controller to Dentio during the twelve (12) months immediately preceding the event giving rise to the claim.",
+        "source_page": 18,
+        "confidence": 0.95,
+        "found": true,
+        "status": "match",
+        "reason_code": "playbook_match",
+        "rationale": "liability_cap matches an accepted playbook position."
+      },
+      {
+        "family": "dpa",
+        "extracted_text": "This Data Processing Agreement (\"DPA\") is entered into by and between the dental clinic or organization below (the \"Controller\" or \"Customer\") and Dentio AB (org.nr 559498-5136), Norrtullsgatan 2, 113 29 Stockholm, Sweden (\"Dentio\", \"Processor\", \"we\" or \"us\").",
+        "source_page": 2,
+        "confidence": 1.0,
+        "found": true,
+        "status": "escalate",
+        "reason_code": "no_playbook_entry",
+        "rationale": "dpa does not match any accepted or negotiable playbook position."
+      },
+      {
+        "family": "termination",
+        "extracted_text": "a) Ordinary termination. This DPA terminates automatically when the Service Agreement expires or is lawfully terminated by either Party.",
+        "source_page": 21,
+        "confidence": 0.85,
+        "found": true,
+        "status": "escalate",
+        "reason_code": "no_playbook_entry",
+        "rationale": "termination does not match any accepted or negotiable playbook position."
+      },
+      {
+        "family": "ip_ownership",
+        "extracted_text": "",
+        "source_page": null,
+        "confidence": 0.0,
+        "found": false,
+        "status": "escalate",
+        "reason_code": "low_confidence",
+        "rationale": "Confidence 0.00 is below threshold 0.7."
+      },
+      {
+        "family": "sla",
+        "extracted_text": "",
+        "source_page": null,
+        "confidence": 0.0,
+        "found": false,
+        "status": "escalate",
+        "reason_code": "low_confidence",
+        "rationale": "Confidence 0.00 is below threshold 0.7."
+      },
+      {
+        "family": "governing_law",
+        "extracted_text": "This DPA\u2014together with any non-contractual obligations arising out of or in connection with it\u2014shall be governed by and construed in accordance with the laws of Sweden, without regard to its conflict-of-laws rules.",
+        "source_page": 22,
+        "confidence": 0.95,
+        "found": true,
+        "status": "escalate",
+        "reason_code": "unapproved_jurisdiction",
+        "rationale": "Governing law names a jurisdiction not in the approved list."
+      },
+      {
+        "family": "indemnity",
+        "extracted_text": "The Controller shall defend, indemnify, and hold harmless Dentio from any third-party claim, regulatory investigation, fine, or reasonable legal cost arising from: a) the Controller's Instructions or configurations that cause a breach; b) the Controller's failure to secure a lawful basis or required consents; c) the Controller's provision of Prohibited Data Categories to Dentio; or d) any breach of this DPA or Applicable Law by the Controller.",
+        "source_page": 19,
+        "confidence": 0.95,
+        "found": true,
+        "status": "escalate",
+        "reason_code": "no_playbook_entry",
+        "rationale": "indemnity does not match any accepted or negotiable playbook position."
+      }
+    ],
+    "redlines": [],
+    "clause_rationale": [
+      {
+        "family": "liability_cap",
+        "status": "match",
+        "reason_code": "playbook_match",
+        "rationale": "liability_cap matches an accepted playbook position."
+      },
+      {
+        "family": "dpa",
+        "status": "escalate",
+        "reason_code": "no_playbook_entry",
+        "rationale": "dpa does not match any accepted or negotiable playbook position."
+      },
+      {
+        "family": "termination",
+        "status": "escalate",
+        "reason_code": "no_playbook_entry",
+        "rationale": "termination does not match any accepted or negotiable playbook position."
+      },
+      {
+        "family": "ip_ownership",
+        "status": "escalate",
+        "reason_code": "low_confidence",
+        "rationale": "Confidence 0.00 is below threshold 0.7."
+      },
+      {
+        "family": "sla",
+        "status": "escalate",
+        "reason_code": "low_confidence",
+        "rationale": "Confidence 0.00 is below threshold 0.7."
+      },
+      {
+        "family": "governing_law",
+        "status": "escalate",
+        "reason_code": "unapproved_jurisdiction",
+        "rationale": "Governing law names a jurisdiction not in the approved list."
+      },
+      {
+        "family": "indemnity",
+        "status": "escalate",
+        "reason_code": "no_playbook_entry",
+        "rationale": "indemnity does not match any accepted or negotiable playbook position."
+      }
+    ]
+  },
+  {
+    "error": false,
+    "contract_id": "GLS_Share_Subscription_Agr_Sample.pdf",
+    "queue": "senior_lawyer_escalation",
+    "routing_reason": "Escalation required: liability_cap, dpa, termination, ip_ownership, sla, governing_law, indemnity triggered must-escalate conditions.",
+    "classifications": [
+      {
+        "family": "liability_cap",
+        "extracted_text": "",
+        "source_page": null,
+        "confidence": 0.0,
+        "found": false,
+        "status": "escalate",
+        "reason_code": "low_confidence",
+        "rationale": "Confidence 0.00 is below threshold 0.7."
+      },
+      {
+        "family": "dpa",
+        "extracted_text": "",
+        "source_page": null,
+        "confidence": 0.0,
+        "found": false,
+        "status": "escalate",
+        "reason_code": "low_confidence",
+        "rationale": "Confidence 0.00 is below threshold 0.7."
+      },
+      {
+        "family": "termination",
+        "extracted_text": "",
+        "source_page": null,
+        "confidence": 0.0,
+        "found": false,
+        "status": "escalate",
+        "reason_code": "low_confidence",
+        "rationale": "Confidence 0.00 is below threshold 0.7."
+      },
+      {
+        "family": "ip_ownership",
+        "extracted_text": "",
+        "source_page": null,
+        "confidence": 0.0,
+        "found": false,
+        "status": "escalate",
+        "reason_code": "low_confidence",
+        "rationale": "Confidence 0.00 is below threshold 0.7."
+      },
+      {
+        "family": "sla",
+        "extracted_text": "",
+        "source_page": null,
+        "confidence": 0.0,
+        "found": false,
+        "status": "escalate",
+        "reason_code": "low_confidence",
+        "rationale": "Confidence 0.00 is below threshold 0.7."
+      },
+      {
+        "family": "governing_law",
+        "extracted_text": "",
+        "source_page": null,
+        "confidence": 0.0,
+        "found": false,
+        "status": "escalate",
+        "reason_code": "low_confidence",
+        "rationale": "Confidence 0.00 is below threshold 0.7."
+      },
+      {
+        "family": "indemnity",
+        "extracted_text": "",
+        "source_page": null,
+        "confidence": 0.0,
+        "found": false,
+        "status": "escalate",
+        "reason_code": "low_confidence",
+        "rationale": "Confidence 0.00 is below threshold 0.7."
+      }
+    ],
+    "redlines": [],
+    "clause_rationale": [
+      {
+        "family": "liability_cap",
+        "status": "escalate",
+        "reason_code": "low_confidence",
+        "rationale": "Confidence 0.00 is below threshold 0.7."
+      },
+      {
+        "family": "dpa",
+        "status": "escalate",
+        "reason_code": "low_confidence",
+        "rationale": "Confidence 0.00 is below threshold 0.7."
+      },
+      {
+        "family": "termination",
+        "status": "escalate",
+        "reason_code": "low_confidence",
+        "rationale": "Confidence 0.00 is below threshold 0.7."
+      },
+      {
+        "family": "ip_ownership",
+        "status": "escalate",
+        "reason_code": "low_confidence",
+        "rationale": "Confidence 0.00 is below threshold 0.7."
+      },
+      {
+        "family": "sla",
+        "status": "escalate",
+        "reason_code": "low_confidence",
+        "rationale": "Confidence 0.00 is below threshold 0.7."
+      },
+      {
+        "family": "governing_law",
+        "status": "escalate",
+        "reason_code": "low_confidence",
+        "rationale": "Confidence 0.00 is below threshold 0.7."
+      },
+      {
+        "family": "indemnity",
+        "status": "escalate",
+        "reason_code": "low_confidence",
+        "rationale": "Confidence 0.00 is below threshold 0.7."
+      }
+    ]
+  },
+  {
+    "error": false,
+    "contract_id": "sample_escalation.docx",
+    "queue": "senior_lawyer_escalation",
+    "routing_reason": "Escalation required: liability_cap, dpa triggered must-escalate conditions.",
+    "classifications": [
+      {
+        "family": "liability_cap",
+        "extracted_text": "Notwithstanding anything to the contrary, Vendor's liability under this agreement shall be unlimited. The parties agree that no cap shall apply to any claim of whatever nature arising under or in connection with this agreement.",
+        "source_page": 1,
+        "confidence": 0.95,
+        "found": true,
+        "status": "escalate",
+        "reason_code": "escalation_trigger_matched",
+        "rationale": "Clause text matches an escalation trigger for liability_cap."
+      },
+      {
+        "family": "dpa",
+        "extracted_text": "",
+        "source_page": null,
+        "confidence": 0.0,
+        "found": false,
+        "status": "escalate",
+        "reason_code": "low_confidence",
+        "rationale": "Confidence 0.00 is below threshold 0.7."
+      },
+      {
+        "family": "termination",
+        "extracted_text": "Either party may terminate this agreement on 30 days written notice. Early termination by Company shall trigger a penalty equal to remaining contract value.",
+        "source_page": 1,
+        "confidence": 0.9,
+        "found": true,
+        "status": "match",
+        "reason_code": "playbook_match",
+        "rationale": "termination matches an accepted playbook position."
+      },
+      {
+        "family": "ip_ownership",
+        "extracted_text": "Each party retains ownership of pre-existing IP brought to this engagement. Deliverables shall be work for hire and owned by the Company upon delivery.",
+        "source_page": 1,
+        "confidence": 0.95,
+        "found": true,
+        "status": "match",
+        "reason_code": "playbook_match",
+        "rationale": "ip_ownership matches an accepted playbook position."
+      },
+      {
+        "family": "sla",
+        "extracted_text": "Vendor commits to 99.9% monthly uptime for the core platform services as defined in Schedule A.",
+        "source_page": 1,
+        "confidence": 0.9,
+        "found": true,
+        "status": "match",
+        "reason_code": "playbook_match",
+        "rationale": "sla matches an accepted playbook position."
+      },
+      {
+        "family": "governing_law",
+        "extracted_text": "This agreement shall be governed by the laws of England and Wales.",
+        "source_page": 1,
+        "confidence": 0.95,
+        "found": true,
+        "status": "match",
+        "reason_code": "playbook_match",
+        "rationale": "Governing law is within an approved jurisdiction."
+      },
+      {
+        "family": "indemnity",
+        "extracted_text": "Company shall indemnify for third-party IP infringement claims only arising directly from use of the Vendor platform.",
+        "source_page": 1,
+        "confidence": 0.85,
+        "found": true,
+        "status": "match",
+        "reason_code": "playbook_match",
+        "rationale": "indemnity matches an accepted playbook position."
+      }
+    ],
+    "redlines": [],
+    "clause_rationale": [
+      {
+        "family": "liability_cap",
+        "status": "escalate",
+        "reason_code": "escalation_trigger_matched",
+        "rationale": "Clause text matches an escalation trigger for liability_cap."
+      },
+      {
+        "family": "dpa",
+        "status": "escalate",
+        "reason_code": "low_confidence",
+        "rationale": "Confidence 0.00 is below threshold 0.7."
+      },
+      {
+        "family": "termination",
+        "status": "match",
+        "reason_code": "playbook_match",
+        "rationale": "termination matches an accepted playbook position."
+      },
+      {
+        "family": "ip_ownership",
+        "status": "match",
+        "reason_code": "playbook_match",
+        "rationale": "ip_ownership matches an accepted playbook position."
+      },
+      {
+        "family": "sla",
+        "status": "match",
+        "reason_code": "playbook_match",
+        "rationale": "sla matches an accepted playbook position."
+      },
+      {
+        "family": "governing_law",
+        "status": "match",
+        "reason_code": "playbook_match",
+        "rationale": "Governing law is within an approved jurisdiction."
+      },
+      {
+        "family": "indemnity",
+        "status": "match",
+        "reason_code": "playbook_match",
+        "rationale": "indemnity matches an accepted playbook position."
+      }
+    ]
+  },
+  {
+    "error": false,
+    "contract_id": "sample_negotiable.docx",
+    "queue": "playbook_negotiable",
+    "routing_reason": "Playbook-negotiable deviations in: liability_cap, termination. All map to approved fallback language.",
+    "classifications": [
+      {
+        "family": "liability_cap",
+        "extracted_text": "Vendor's liability under this agreement shall be capped at 3x annual fees paid by Company in the contract year in which the claim arises. Neither party shall be liable for indirect or punitive damages.",
+        "source_page": 1,
+        "confidence": 0.95,
+        "found": true,
+        "status": "negotiable_deviation",
+        "reason_code": "approved_fallback_available",
+        "rationale": "liability_cap deviates from preferred but maps to an approved fallback."
+      },
+      {
+        "family": "dpa",
+        "extracted_text": "A Data Processing Agreement is attached hereto as Schedule B, which is GDPR compliant and incorporates the standard contractual clauses issued by the European Commission.",
+        "source_page": 1,
+        "confidence": 0.85,
+        "found": true,
+        "status": "match",
+        "reason_code": "playbook_match",
+        "rationale": "dpa matches an accepted playbook position."
+      },
+      {
+        "family": "termination",
+        "extracted_text": "Either party may terminate this agreement for convenience on 60 days written notice to the other party. All fees accrued prior to the termination date remain payable.",
+        "source_page": 1,
+        "confidence": 0.95,
+        "found": true,
+        "status": "negotiable_deviation",
+        "reason_code": "approved_fallback_available",
+        "rationale": "termination deviates from preferred but maps to an approved fallback."
+      },
+      {
+        "family": "ip_ownership",
+        "extracted_text": "Each party retains ownership of pre-existing IP. Deliverables created under this agreement shall be work for hire owned by Company upon full payment.",
+        "source_page": 1,
+        "confidence": 0.95,
+        "found": true,
+        "status": "match",
+        "reason_code": "playbook_match",
+        "rationale": "ip_ownership matches an accepted playbook position."
+      },
+      {
+        "family": "sla",
+        "extracted_text": "Vendor commits to 99.5% uptime for the platform, measured monthly. Scheduled maintenance windows are excluded from uptime calculations.",
+        "source_page": 1,
+        "confidence": 0.9,
+        "found": true,
+        "status": "match",
+        "reason_code": "playbook_match",
+        "rationale": "sla matches an accepted playbook position."
+      },
+      {
+        "family": "governing_law",
+        "extracted_text": "This agreement shall be governed by and construed in accordance with the laws of the State of New York, without regard to its conflict of law principles.",
+        "source_page": 1,
+        "confidence": 0.95,
+        "found": true,
+        "status": "match",
+        "reason_code": "playbook_match",
+        "rationale": "Governing law is within an approved jurisdiction."
+      },
+      {
+        "family": "indemnity",
+        "extracted_text": "Vendor shall indemnify Company against third-party intellectual property infringement claims only, limited to gross negligence or wilful misconduct of Vendor.",
+        "source_page": 1,
+        "confidence": 0.9,
+        "found": true,
+        "status": "match",
+        "reason_code": "playbook_match",
+        "rationale": "indemnity matches an accepted playbook position."
+      }
+    ],
+    "redlines": [
+      {
+        "family": "liability_cap",
+        "original_text": "Vendor's liability under this agreement shall be capped at 3x annual fees paid by Company in the contract year in which the claim arises. Neither party shall be liable for indirect or punitive damages.",
+        "proposed_text": "capped at 3x annual fees",
+        "playbook_citation": "clause_families.liability_cap.negotiable_deviations"
+      },
+      {
+        "family": "termination",
+        "original_text": "Either party may terminate this agreement for convenience on 60 days written notice to the other party. All fees accrued prior to the termination date remain payable.",
+        "proposed_text": "60 days written notice",
+        "playbook_citation": "clause_families.termination.negotiable_deviations"
+      }
+    ],
+    "clause_rationale": [
+      {
+        "family": "liability_cap",
+        "status": "negotiable_deviation",
+        "reason_code": "approved_fallback_available",
+        "rationale": "liability_cap deviates from preferred but maps to an approved fallback."
+      },
+      {
+        "family": "dpa",
+        "status": "match",
+        "reason_code": "playbook_match",
+        "rationale": "dpa matches an accepted playbook position."
+      },
+      {
+        "family": "termination",
+        "status": "negotiable_deviation",
+        "reason_code": "approved_fallback_available",
+        "rationale": "termination deviates from preferred but maps to an approved fallback."
+      },
+      {
+        "family": "ip_ownership",
+        "status": "match",
+        "reason_code": "playbook_match",
+        "rationale": "ip_ownership matches an accepted playbook position."
+      },
+      {
+        "family": "sla",
+        "status": "match",
+        "reason_code": "playbook_match",
+        "rationale": "sla matches an accepted playbook position."
+      },
+      {
+        "family": "governing_law",
+        "status": "match",
+        "reason_code": "playbook_match",
+        "rationale": "Governing law is within an approved jurisdiction."
+      },
+      {
+        "family": "indemnity",
+        "status": "match",
+        "reason_code": "playbook_match",
+        "rationale": "indemnity matches an accepted playbook position."
+      }
+    ]
+  },
+  {
+    "error": false,
+    "contract_id": "sample_standard.docx",
+    "queue": "standard",
+    "routing_reason": "All clause families match accepted playbook positions.",
+    "classifications": [
+      {
+        "family": "liability_cap",
+        "extracted_text": "Vendor's liability under this agreement shall be limited to the total fees paid by Company to Vendor in the twelve (12) months preceding the claim. In no event shall either party be liable for indirect or consequential damages.",
+        "source_page": 1,
+        "confidence": 0.95,
+        "found": true,
+        "status": "match",
+        "reason_code": "playbook_match",
+        "rationale": "liability_cap matches an accepted playbook position."
+      },
+      {
+        "family": "dpa",
+        "extracted_text": "The parties shall execute a Data Processing Agreement attached hereto as Exhibit A, which is GDPR compliant and incorporates the standard contractual clauses as approved by the European Commission.",
+        "source_page": 1,
+        "confidence": 0.9,
+        "found": true,
+        "status": "match",
+        "reason_code": "playbook_match",
+        "rationale": "dpa matches an accepted playbook position."
+      },
+      {
+        "family": "termination",
+        "extracted_text": "Either party may terminate this agreement for convenience on 30 days written notice to the other party. Termination does not affect accrued rights or obligations.",
+        "source_page": 1,
+        "confidence": 0.95,
+        "found": true,
+        "status": "match",
+        "reason_code": "playbook_match",
+        "rationale": "termination matches an accepted playbook position."
+      },
+      {
+        "family": "ip_ownership",
+        "extracted_text": "Each party retains ownership of pre-existing IP brought to this engagement. All deliverables created by Vendor for Company shall be work for hire owned by Company.",
+        "source_page": 1,
+        "confidence": 0.95,
+        "found": true,
+        "status": "match",
+        "reason_code": "playbook_match",
+        "rationale": "ip_ownership matches an accepted playbook position."
+      },
+      {
+        "family": "sla",
+        "extracted_text": "Vendor commits to 99.5% uptime for the platform, measured monthly. Scheduled maintenance windows are excluded from uptime calculations.",
+        "source_page": 1,
+        "confidence": 0.9,
+        "found": true,
+        "status": "match",
+        "reason_code": "playbook_match",
+        "rationale": "sla matches an accepted playbook position."
+      },
+      {
+        "family": "governing_law",
+        "extracted_text": "This agreement is governed by the laws of England and Wales. The parties submit to the exclusive jurisdiction of the courts of England and Wales.",
+        "source_page": 1,
+        "confidence": 0.95,
+        "found": true,
+        "status": "match",
+        "reason_code": "playbook_match",
+        "rationale": "Governing law is within an approved jurisdiction."
+      },
+      {
+        "family": "indemnity",
+        "extracted_text": "Vendor shall indemnify Company against third-party IP infringement claims only, arising directly from Vendor's deliverables. This indemnity excludes claims arising from Company's modifications or combination with third-party materials.",
+        "source_page": 1,
+        "confidence": 0.95,
+        "found": true,
+        "status": "match",
+        "reason_code": "playbook_match",
+        "rationale": "indemnity matches an accepted playbook position."
+      }
+    ],
+    "redlines": [],
+    "clause_rationale": [
+      {
+        "family": "liability_cap",
+        "status": "match",
+        "reason_code": "playbook_match",
+        "rationale": "liability_cap matches an accepted playbook position."
+      },
+      {
+        "family": "dpa",
+        "status": "match",
+        "reason_code": "playbook_match",
+        "rationale": "dpa matches an accepted playbook position."
+      },
+      {
+        "family": "termination",
+        "status": "match",
+        "reason_code": "playbook_match",
+        "rationale": "termination matches an accepted playbook position."
+      },
+      {
+        "family": "ip_ownership",
+        "status": "match",
+        "reason_code": "playbook_match",
+        "rationale": "ip_ownership matches an accepted playbook position."
+      },
+      {
+        "family": "sla",
+        "status": "match",
+        "reason_code": "playbook_match",
+        "rationale": "sla matches an accepted playbook position."
+      },
+      {
+        "family": "governing_law",
+        "status": "match",
+        "reason_code": "playbook_match",
+        "rationale": "Governing law is within an approved jurisdiction."
+      },
+      {
+        "family": "indemnity",
+        "status": "match",
+        "reason_code": "playbook_match",
+        "rationale": "indemnity matches an accepted playbook position."
+      }
+    ]
+  }
+]
