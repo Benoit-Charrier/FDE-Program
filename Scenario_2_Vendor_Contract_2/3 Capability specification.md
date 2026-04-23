@@ -68,8 +68,8 @@ The agent executes the following logic in order for each contract. Rules are det
 2. **Extract**: Identify and extract text for each of the seven clause families. Record confidence score for each.
 3. **Confidence gate**: If confidence for any mandatory clause falls below the configured threshold, mark that clause `escalate` with reason `low_confidence`. Do not attempt playbook comparison for that clause.
 4. **Missing clause gate**: If a mandatory clause family is entirely absent from the document, mark as `escalate` with reason `missing_mandatory_clause`.
-5. **Playbook comparison**: For each clause with sufficient confidence, compare to the playbook's accepted positions.
-6. **Classify clause**: Assign `match`, `negotiable_deviation`, or `escalate` per clause based on playbook rules and escalation trigger list.
+5. **Playbook comparison**: For each clause with sufficient confidence, evaluate in this order: (a) accepted positions first, (b) escalation triggers only if no accepted position matched, (c) negotiable deviations if no trigger fired. A clause that affirmatively matches an accepted position is classified `match` and is not subsequently evaluated against escalation triggers.
+6. **Classify clause**: Assign `match`, `negotiable_deviation`, or `escalate` per clause. The evaluation order in step 5 is intentional: escalation triggers exist to catch clauses that fall outside the playbook entirely — they are not intended to override clauses that already satisfy an accepted position. See `classification.py` module spec for the exact step sequence.
 7. **Route contract**:
    - If all clauses are `match` → `standard`
    - If any clause is `negotiable_deviation` and none are `escalate` → `playbook_negotiable`
@@ -82,7 +82,9 @@ The agent executes the following logic in order for each contract. Rules are det
 
 ## Escalation Triggers
 
-These conditions force a clause to `escalate` status regardless of other signals. Each must be configurable in the playbook without code changes.
+These conditions force a clause to `escalate` status when no accepted playbook position has been matched. Each must be configurable in the playbook without code changes.
+
+> **Evaluation order note:** Triggers are evaluated *after* accepted positions. "No accepted position matched" is the prerequisite for trigger evaluation. A clause whose text contains trigger-adjacent vocabulary but that affirmatively matches an accepted position is classified `match` — the trigger does not fire. This prevents false escalations from surface vocabulary overlap (e.g. a "work for hire owned by company" clause sharing the phrase "work for hire" with a trigger aimed at vendor-assigned IP).
 
 | Trigger ID | Condition |
 |------------|-----------|

@@ -137,9 +137,9 @@ Classification logic applied in this order per clause:
 1. **Confidence gate** (FR-11): if `confidence < playbook.min_confidence_threshold` → `escalate`, `reason_code = "low_confidence"`. Stop. Do not proceed to playbook comparison.
 2. **Missing clause gate**: if `found == false` and playbook marks this family `required: true` → `escalate`, `reason_code = "missing_mandatory_clause"`. Stop.
 3. **Missing optional clause**: if `found == false` and `required: false` → `match`, `reason_code = "optional_clause_absent"`. (No escalation for absent optional clauses.)
-4. **Escalation trigger check**: use semantic similarity via Haiku API (`temperature=0`) to evaluate whether the extracted text matches any string in `escalation_triggers`. If match → `escalate`, `reason_code = "escalation_trigger_matched"`.
-5. **Jurisdiction check** (governing_law only): if the jurisdiction named in the text is not in `accepted_jurisdictions` → `escalate`, `reason_code = "unapproved_jurisdiction"`.
-6. **Accepted position check**: semantic similarity against `accepted_positions`. If match → `match`, `reason_code = "playbook_match"`.
+4. **Jurisdiction check** (governing_law only): if the jurisdiction named in the text is not in `accepted_jurisdictions` → `escalate`, `reason_code = "unapproved_jurisdiction"`. If jurisdiction is accepted → `match`, `reason_code = "playbook_match"`. Stop.
+5. **Accepted position check**: semantic similarity against `accepted_positions`. If match → `match`, `reason_code = "playbook_match"`. **This step runs before escalation triggers.** A clause that matches an accepted position is not evaluated against triggers — doing so causes false escalations when clause text shares surface vocabulary with a trigger phrase but is legally compliant (e.g. "work for hire owned by company" matching a trigger aimed at vendor-assigned IP).
+6. **Escalation trigger check**: semantic similarity via Haiku API (`temperature=0`) against `escalation_triggers`. Only reached if step 5 found no accepted position. If match → `escalate`, `reason_code = "escalation_trigger_matched"`.
 7. **Negotiable deviation check**: semantic similarity against `negotiable_deviations`. If match → `negotiable_deviation`, `reason_code = "approved_fallback_available"`.
 8. **No playbook entry**: none of the above matched → `escalate`, `reason_code = "no_playbook_entry"`.
 

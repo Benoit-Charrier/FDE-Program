@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vendor Contract Review Agent — Workflow</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
+
+    /* ── tokens.css ── */
+    :root {
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+      --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+      --text-xs-1: 0.625rem; --text-xs: 0.75rem; --text-sm-1: 0.813rem; --text-sm: 0.875rem;
+      --text-base: 1rem; --text-h1: 2rem; --text-h2: 1.5rem; --text-h3: 1rem;
+      --text-h4: 0.875rem; --text-h5: 0.75rem;
+      --lh-h1: 2rem; --lh-h2: 1.5rem; --lh-h3: 1.3125rem; --lh-h4: 1.125rem; --lh-h5: 1rem;
+      --radius-sm: 4px; --radius-md: 6px; --radius-lg: 8px; --radius-xl: 12px;
+      --radius-2xl: 16px; --radius-full: 9999px;
+      --space-0-5: 0.125rem; --space-1: 0.25rem; --space-1-5: 0.375rem; --space-2: 0.5rem;
+      --space-2-5: 0.625rem; --space-3: 0.75rem; --space-4: 1rem; --space-5: 1.25rem;
+      --space-6: 1.5rem; --space-8: 2rem;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,.4);
+      --shadow-md: 0 4px 6px -1px rgba(0,0,0,.5), 0 2px 4px -2px rgba(0,0,0,.3);
+      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,.6), 0 4px 6px -4px rgba(0,0,0,.4);
+      --transition-fast: 120ms ease; --transition-base: 200ms ease;
+    }
+    :root, :root.dark {
+      --color-bg-page: #1A1A1A; --color-bg-sidebar: #151515; --color-bg-card: #151515;
+      --color-bg-nav: #000000; --color-bg-elevated: #2E2E2E; --color-bg-secondary: #212224;
+      --color-bg-tertiary: #2E3033; --color-bg-quaternary: #333436;
+      --color-bg-hover: #212224; --color-bg-hover-strong: #333436;
+      --color-bg-input: #1A1A1A; --color-bg-input-prefix: #333436;
+      --color-text-primary: #FFFFFF; --color-text-secondary: #F2F0EF;
+      --color-text-tertiary: #CCCCCC; --color-text-muted: #BBBBBB;
+      --color-text-heading: #BBBBBB;
+      --color-border-primary: #333436; --color-border-secondary: #47484A;
+      --color-border-structural: #333436; --color-border-subtle: #4C4C4C;
+      --color-border-accent: #FFFFFF; --color-border-focus: #FFFFFF;
+      --color-border-error: #F9303C; --color-border-panel: #333436;
+      --color-icon-primary: #FFFFFF; --color-icon-secondary: #CCCCCC; --color-icon-tertiary: #999999;
+      --color-success: #259F4C; --color-success-bg: #1B271F; --color-success-border: #259F4C; --color-success-text: #259F4C;
+      --color-error: #F9303C; --color-error-bg: #262121; --color-error-border: #FE3B4C; --color-error-text: #FE3B4C;
+      --color-warning: #F5A534; --color-warning-bg: #492B00; --color-warning-border: #663B00; --color-warning-text: #F5A534;
+      --color-info: #2297F6; --color-info-bg: #002442; --color-info-border: #003A69; --color-info-text: #2297F6;
+      --color-purple: #C084FC; --color-purple-bg: #2D1B3D; --color-purple-border: #2D1B3D; --color-purple-text: #F3E8FF;
+      --color-cyan: #06B6D4; --color-cyan-bg: #003942; --color-cyan-border: #005866;
+      --status-not-started-text: #A0A0A0; --status-not-started-bg: #333333; --status-not-started-border: #4C4C4C;
+      --status-in-progress-text: #2297F6; --status-in-progress-bg: #002442; --status-in-progress-border: #003A69;
+      --status-success-text: #259F4C; --status-success-bg: #1B271F; --status-success-border: #259F4C;
+      --status-warning-text: #F5A534; --status-warning-bg: #492B00; --status-warning-border: #663B00;
+      --status-advanced-text: #C084FC; --status-advanced-bg: #2D1B3D; --status-advanced-border: #2D1B3D;
+      --gradient-primary-btn: linear-gradient(90deg,#672D92,#547CCC);
+      --gradient-magical: linear-gradient(90deg,#672D92,#5677C8);
+    }
+
+    /* ── base.css ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body { font-family: var(--font-sans); font-size: var(--text-sm); line-height: 1.5;
+      color: var(--color-text-primary); background-color: var(--color-bg-page);
+      -webkit-font-smoothing: antialiased; }
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: var(--color-border-subtle); border-radius: var(--radius-full); }
+    .container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 var(--space-4); }
+
+    /* ── typography.css ── */
+    h1 { font-size: var(--text-h1); line-height: var(--lh-h1); font-weight: 700; color: var(--color-text-primary); letter-spacing: -.02em; }
+    h2 { font-size: var(--text-h2); font-weight: 600; color: var(--color-text-primary); }
+    h3 { font-size: var(--text-h3); font-weight: 600; color: var(--color-text-primary); }
+    h4 { font-size: var(--text-h4); font-weight: 600; color: var(--color-text-primary); }
+    p  { color: var(--color-text-secondary); font-size: var(--text-sm); line-height: 1.6; }
+    .text-muted  { color: var(--color-text-muted); }
+    .text-xs     { font-size: var(--text-xs); }
+    .text-sm     { font-size: var(--text-sm); }
+    .font-semibold { font-weight: 600; }
+    .uppercase   { text-transform: uppercase; }
+
+    /* ── components.css (badge, tag, alert, card) ── */
+    .badge { display:inline-flex; align-items:center; gap:var(--space-1-5); padding:0 var(--space-2);
+      height:17px; border-radius:var(--radius-full); border:1px solid; font-size:var(--text-xs-1);
+      font-weight:700; text-transform:uppercase; letter-spacing:.04em; white-space:nowrap; user-select:none; }
+    .badge-dot { width:7px; height:7px; border-radius:var(--radius-full); display:inline-block; }
+    .badge-not-started { background:var(--status-not-started-bg); color:var(--status-not-started-text); border-color:var(--status-not-started-border); }
+    .badge-not-started .badge-dot { background:var(--status-not-started-text); }
+    .badge-success { background:var(--status-success-bg); color:var(--status-success-text); border-color:var(--status-success-border); }
+    .badge-success .badge-dot { background:var(--status-success-text); }
+    .badge-warning { background:var(--status-warning-bg); color:var(--status-warning-text); border-color:var(--status-warning-border); }
+    .badge-warning .badge-dot { background:var(--status-warning-text); }
+    .badge-error   { background:var(--color-error-bg); color:var(--color-error-text); border-color:var(--color-error-border); }
+    .badge-error .badge-dot { background:var(--color-error-text); }
+    .badge-advanced { background:var(--status-advanced-bg); color:var(--status-advanced-text); border-color:var(--status-advanced-border); }
+    .badge-advanced .badge-dot { background:var(--status-advanced-text); }
+    .tag { display:inline-flex; align-items:center; gap:var(--space-1); padding:var(--space-1) var(--space-2);
+      border-radius:var(--radius-lg); border:1px solid var(--color-border-secondary);
+      background:var(--color-bg-secondary); font-size:var(--text-xs); font-weight:600;
+      color:var(--color-text-tertiary); white-space:nowrap; }
+    .tag-blue   { background:var(--color-info-bg);    border-color:var(--color-info-border);    color:var(--color-info-text); }
+    .tag-green  { background:var(--color-success-bg); border-color:var(--color-success-border); color:var(--color-success-text); }
+    .tag-purple { background:var(--color-purple-bg);  border-color:var(--color-purple-border);  color:var(--color-purple-text); }
+    .tag-yellow { background:var(--color-warning-bg); border-color:var(--color-warning-border); color:var(--color-warning-text); }
+    .alert { display:flex; align-items:flex-start; gap:var(--space-2); padding:var(--space-2) var(--space-3);
+      border-radius:var(--radius-md); border:1px solid; font-size:var(--text-xs); line-height:1.5; }
+    .alert-info { background:var(--color-info-bg); border-color:var(--color-info-border); color:var(--color-info-text); }
+    .card { display:flex; flex-direction:column; background:var(--color-bg-card);
+      border:1px solid var(--color-border-structural); border-radius:var(--radius-xl); overflow:hidden; }
+    .card-header { display:flex; align-items:center; justify-content:space-between;
+      padding:var(--space-4); border-bottom:1px solid var(--color-border-structural); }
+    .card-body { flex:1; padding:var(--space-4); }
+    .card-title { font-size:var(--text-base); font-weight:600; color:var(--color-text-primary); }
+
+    /* ── utilities.css ── */
+    .flex  { display:flex; } .flex-col { flex-direction:column; } .flex-row { flex-direction:row; }
+    .items-center { align-items:center; } .items-start { align-items:flex-start; }
+    .justify-between { justify-content:space-between; } .justify-center { justify-content:center; }
+    .gap-1 { gap:var(--space-1); } .gap-2 { gap:var(--space-2); } .gap-3 { gap:var(--space-3); }
+    .gap-4 { gap:var(--space-4); } .gap-6 { gap:var(--space-6); }
+    .p-4   { padding:var(--space-4); } .p-6 { padding:var(--space-6); }
+    .px-4  { padding-left:var(--space-4); padding-right:var(--space-4); }
+    .py-2  { padding-top:var(--space-2); padding-bottom:var(--space-2); }
+    .mt-2  { margin-top:var(--space-2); } .mt-4 { margin-top:var(--space-4); }
+    .mt-6  { margin-top:var(--space-6); } .mt-8 { margin-top:var(--space-8); }
+    .mb-2  { margin-bottom:var(--space-2); } .mb-4 { margin-bottom:var(--space-4); }
+    .mb-6  { margin-bottom:var(--space-6); }
+    .w-full { width:100%; } .mx-auto { margin-left:auto; margin-right:auto; }
+    .rounded-xl { border-radius:var(--radius-xl); }
+    .border { border:1px solid var(--color-border-structural); }
+    .grid  { display:grid; }
+
+    /* ── Page-specific workflow styles ── */
+
+    body { padding: var(--space-8) var(--space-4); }
+
+    .page-title { font-size: var(--text-h1); font-weight: 700; letter-spacing: -.02em; }
+    .page-subtitle { color: var(--color-text-muted); margin-top: var(--space-2); font-size: var(--text-sm); }
+
+    /* Legend */
+    .legend {
+      display: flex;
+      align-items: center;
+      gap: var(--space-6);
+      flex-wrap: wrap;
+      padding: var(--space-3) var(--space-4);
+      background: var(--color-bg-secondary);
+      border: 1px solid var(--color-border-structural);
+      border-radius: var(--radius-xl);
+    }
+    .legend-item { display: flex; align-items: center; gap: var(--space-2); font-size: var(--text-xs); color: var(--color-text-muted); }
+    .legend-swatch { width: 10px; height: 10px; border-radius: var(--radius-sm); flex-shrink: 0; }
+    .swatch-input  { background: var(--color-info); }
+    .swatch-agent  { background: var(--color-purple); }
+    .swatch-output { background: var(--color-success); }
+    .swatch-human  { background: var(--color-warning); }
+    .swatch-none   { background: var(--status-not-started-text); }
+
+    /* Workflow container */
+    .workflow { display: flex; flex-direction: column; align-items: center; gap: 0; }
+
+    /* Stage card */
+    .stage-card {
+      width: 100%;
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border-structural);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      transition: border-color var(--transition-base);
+    }
+    .stage-card:hover { border-color: var(--color-border-secondary); }
+
+    /* Governance control variant */
+    .stage-card.governance {
+      border-color: var(--color-warning-border);
+      box-shadow: 0 0 0 1px var(--color-warning-border), var(--shadow-md);
+    }
+    .stage-card.governance .stage-header {
+      background: linear-gradient(90deg, rgba(73,43,0,.6) 0%, var(--color-bg-secondary) 100%);
+    }
+    .stage-card.governance .stage-number {
+      background: var(--color-warning-bg);
+      color: var(--color-warning-text);
+      border-color: var(--color-warning-border);
+    }
+
+    /* Gate variant (diamond decision node) */
+    .stage-card.gate {
+      border-color: var(--color-info-border);
+    }
+    .stage-card.gate .stage-header {
+      background: linear-gradient(90deg, rgba(0,36,66,.6) 0%, var(--color-bg-secondary) 100%);
+    }
+    .stage-card.gate .stage-number {
+      background: var(--color-info-bg);
+      color: var(--color-info-text);
+      border-color: var(--color-info-border);
+    }
+
+    /* Stage header */
+    .stage-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: var(--space-3) var(--space-4);
+      background: var(--color-bg-secondary);
+      border-bottom: 1px solid var(--color-border-structural);
+    }
+    .stage-header-left { display: flex; align-items: center; gap: var(--space-3); }
+    .stage-number {
+      display: flex; align-items: center; justify-content: center;
+      width: 28px; height: 28px; border-radius: var(--radius-full);
+      background: var(--color-bg-tertiary); border: 1px solid var(--color-border-subtle);
+      font-size: var(--text-xs); font-weight: 700; color: var(--color-text-primary);
+      flex-shrink: 0;
+    }
+    .stage-name { font-size: var(--text-base); font-weight: 600; color: var(--color-text-primary); }
+    .stage-path-note { font-size: var(--text-xs); color: var(--color-text-muted); font-style: italic; }
+
+    /* Stage body: 4-column swimlane grid */
+    .swimlane-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr 1fr 1fr;
+      gap: 0;
+    }
+    .swimlane-cell {
+      padding: var(--space-4);
+      border-right: 1px solid var(--color-border-structural);
+      min-height: 110px;
+    }
+    .swimlane-cell:last-child { border-right: none; }
+    .swimlane-label {
+      display: flex; align-items: center; gap: var(--space-1-5);
+      font-size: var(--text-xs-1); font-weight: 700; text-transform: uppercase;
+      letter-spacing: .06em; margin-bottom: var(--space-2-5);
+    }
+    .swimlane-label-dot {
+      width: 6px; height: 6px; border-radius: var(--radius-full); flex-shrink: 0;
+    }
+    .cell-input  .swimlane-label { color: var(--color-info-text); }
+    .cell-input  .swimlane-label-dot { background: var(--color-info); }
+    .cell-agent  .swimlane-label { color: var(--color-purple-text); }
+    .cell-agent  .swimlane-label-dot { background: var(--color-purple); }
+    .cell-output .swimlane-label { color: var(--color-success-text); }
+    .cell-output .swimlane-label-dot { background: var(--color-success); }
+    .cell-human  .swimlane-label { color: var(--color-warning-text); }
+    .cell-human  .swimlane-label-dot { background: var(--color-warning); }
+    .cell-human.none .swimlane-label { color: var(--status-not-started-text); }
+    .cell-human.none .swimlane-label-dot { background: var(--status-not-started-text); }
+
+    .swimlane-cell p, .swimlane-content {
+      font-size: var(--text-xs); color: var(--color-text-tertiary); line-height: 1.6;
+    }
+    .swimlane-cell ul { list-style: none; display: flex; flex-direction: column; gap: var(--space-1); }
+    .swimlane-cell ul li {
+      font-size: var(--text-xs); color: var(--color-text-tertiary); line-height: 1.5;
+      padding-left: var(--space-3); position: relative;
+    }
+    .swimlane-cell ul li::before {
+      content: '·'; position: absolute; left: 0; color: var(--color-text-muted);
+    }
+    .none-text { color: var(--status-not-started-text); font-size: var(--text-xs); font-style: italic; }
+
+    /* Column header row */
+    .swimlane-headers {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr 1fr 1fr;
+      gap: 0;
+      border: 1px solid var(--color-border-structural);
+      border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+      overflow: hidden;
+      background: var(--color-bg-quaternary);
+    }
+    .swimlane-header-cell {
+      display: flex; align-items: center; gap: var(--space-2);
+      padding: var(--space-2-5) var(--space-4);
+      font-size: var(--text-xs-1); font-weight: 700; text-transform: uppercase;
+      letter-spacing: .08em;
+      border-right: 1px solid var(--color-border-structural);
+    }
+    .swimlane-header-cell:last-child { border-right: none; }
+    .sh-input  { color: var(--color-info-text); }
+    .sh-agent  { color: var(--color-purple-text); }
+    .sh-output { color: var(--color-success-text); }
+    .sh-human  { color: var(--color-warning-text); }
+    .header-dot {
+      width: 8px; height: 8px; border-radius: var(--radius-full); flex-shrink: 0;
+    }
+    .hd-input  { background: var(--color-info); }
+    .hd-agent  { background: var(--color-purple); }
+    .hd-output { background: var(--color-success); }
+    .hd-human  { background: var(--color-warning); }
+
+    /* Connector arrow between stages */
+    .stage-connector {
+      display: flex; flex-direction: column; align-items: center; gap: 0;
+      height: 36px; flex-shrink: 0;
+    }
+    .connector-line {
+      width: 2px; flex: 1;
+      background: linear-gradient(180deg, var(--color-border-subtle) 0%, var(--color-border-subtle) 100%);
+    }
+    .connector-arrow {
+      width: 0; height: 0;
+      border-left: 7px solid transparent;
+      border-right: 7px solid transparent;
+      border-top: 8px solid var(--color-border-subtle);
+    }
+    /* Route connectors */
+    .connector-label {
+      font-size: var(--text-xs-1); color: var(--color-text-muted); letter-spacing: .04em;
+      font-weight: 600; text-transform: uppercase; text-align: center;
+      background: var(--color-bg-page);
+      padding: 0 var(--space-2);
+      margin: 2px 0;
+    }
+
+    /* Branching note after ROUTE */
+    .branch-note {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: var(--space-3);
+      margin: var(--space-2) 0;
+    }
+    .branch-box {
+      padding: var(--space-2-5) var(--space-3);
+      border-radius: var(--radius-lg);
+      border: 1px dashed;
+      font-size: var(--text-xs);
+      text-align: center;
+      line-height: 1.4;
+    }
+    .branch-standard  { border-color: var(--color-success-border); color: var(--color-success-text); background: var(--color-success-bg); }
+    .branch-negotiate { border-color: var(--color-info-border);    color: var(--color-info-text);    background: var(--color-info-bg);    }
+    .branch-escalate  { border-color: var(--color-error-border);   color: var(--color-error-text);   background: var(--color-error-bg);   }
+    .branch-box strong { display: block; font-weight: 700; margin-bottom: 2px; }
+
+    /* Governance callout strip */
+    .governance-strip {
+      width: 100%;
+      padding: var(--space-2) var(--space-4);
+      background: var(--color-warning-bg);
+      border: 1px solid var(--color-warning-border);
+      border-radius: var(--radius-lg);
+      font-size: var(--text-xs);
+      color: var(--color-warning-text);
+      display: flex; align-items: center; gap: var(--space-2);
+    }
+    .governance-icon { font-size: 14px; flex-shrink: 0; }
+
+    /* Column highlight on hover */
+    .swimlane-cell.cell-input  { background: rgba(0,36,66,.1); }
+    .swimlane-cell.cell-agent  { background: rgba(45,27,61,.12); }
+    .swimlane-cell.cell-output { background: rgba(27,39,31,.1); }
+    .swimlane-cell.cell-human  { background: rgba(73,43,0,.1); }
+    .swimlane-cell.cell-human.none { background: rgba(51,51,51,.12); }
+
+    /* Tags inside cells */
+    .cell-tags { display: flex; flex-wrap: wrap; gap: var(--space-1); margin-top: var(--space-2); }
+    .pill {
+      display: inline-flex; align-items: center;
+      padding: 2px var(--space-2); border-radius: var(--radius-full);
+      font-size: var(--text-xs-1); font-weight: 600; letter-spacing: .03em;
+      border: 1px solid; white-space: nowrap;
+    }
+    .pill-match    { background: var(--color-success-bg); border-color: var(--color-success-border); color: var(--color-success-text); }
+    .pill-dev      { background: var(--color-info-bg);    border-color: var(--color-info-border);    color: var(--color-info-text); }
+    .pill-escalate { background: var(--color-error-bg);   border-color: var(--color-error-border);   color: var(--color-error-text); }
+    .pill-blocked  { background: var(--color-warning-bg); border-color: var(--color-warning-border); color: var(--color-warning-text); }
+    .pill-cleared  { background: var(--color-success-bg); border-color: var(--color-success-border); color: var(--color-success-text); }
+
+    /* Automation badge */
+    .auto-badge {
+      display: inline-flex; align-items: center; gap: var(--space-1);
+      padding: 2px var(--space-2); border-radius: var(--radius-full);
+      font-size: var(--text-xs-1); font-weight: 700; letter-spacing: .04em; border: 1px solid;
+    }
+    .auto-full   { background: var(--status-not-started-bg); color: var(--status-not-started-text); border-color: var(--status-not-started-border); }
+    .auto-human  { background: var(--color-warning-bg); color: var(--color-warning-text); border-color: var(--color-warning-border); }
+    .auto-gate   { background: var(--color-error-bg); color: var(--color-error-text); border-color: var(--color-error-border); }
+    .auto-dot    { width: 5px; height: 5px; border-radius: var(--radius-full); }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .swimlane-grid, .swimlane-headers { grid-template-columns: 1fr; }
+      .swimlane-cell { border-right: none; border-bottom: 1px solid var(--color-border-structural); }
+      .swimlane-header-cell { border-right: none; }
+      .branch-note { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- Page header -->
+  <div class="flex items-start justify-between mb-6">
+    <div>
+      <h1 class="page-title">Vendor Contract Review Agent</h1>
+      <p class="page-subtitle mt-2">End-to-end workflow · Input → Agent Task → Output → Human Review</p>
+    </div>
+    <div class="flex flex-col gap-2 items-end" style="flex-shrink:0; margin-left:2rem;">
+      <span class="auto-badge auto-full"><span class="auto-dot" style="background:var(--status-not-started-text)"></span>Fully automated</span>
+      <span class="auto-badge auto-human"><span class="auto-dot" style="background:var(--color-warning)"></span>Human action</span>
+      <span class="auto-badge auto-gate"><span class="auto-dot" style="background:var(--color-error)"></span>Governance control</span>
+    </div>
+  </div>
+
+  <!-- Legend -->
+  <div class="legend mb-6">
+    <div class="legend-item"><div class="legend-swatch swatch-input"></div>Input — what enters this stage</div>
+    <div class="legend-item"><div class="legend-swatch swatch-agent"></div>Agent task — what the AI does</div>
+    <div class="legend-item"><div class="legend-swatch swatch-output"></div>Output — what is produced</div>
+    <div class="legend-item"><div class="legend-swatch swatch-human"></div>Human review — required action</div>
+    <div class="legend-item"><div class="legend-swatch swatch-none"></div>None — fully automated</div>
+  </div>
+
+  <!-- Column headers (sticky-ish) -->
+  <div class="swimlane-headers mb-0" style="border-bottom:none; border-radius:var(--radius-xl) var(--radius-xl) 0 0;">
+    <div class="swimlane-header-cell sh-input"><div class="header-dot hd-input"></div>Input</div>
+    <div class="swimlane-header-cell sh-agent"><div class="header-dot hd-agent"></div>Agent Task</div>
+    <div class="swimlane-header-cell sh-output"><div class="header-dot hd-output"></div>Output</div>
+    <div class="swimlane-header-cell sh-human"><div class="header-dot hd-human"></div>Human Review</div>
+  </div>
+
+  <!-- Workflow -->
+  <div class="workflow">
+
+    <!-- ── STAGE 1: INGEST ── -->
+    <div class="stage-card w-full" style="border-radius:0 0 var(--radius-xl) var(--radius-xl);">
+      <div class="stage-header">
+        <div class="stage-header-left">
+          <div class="stage-number">1</div>
+          <div>
+            <div class="stage-name">Ingest</div>
+          </div>
+        </div>
+        <span class="auto-badge auto-full"><span class="auto-dot" style="background:var(--status-not-started-text)"></span>Fully automated</span>
+      </div>
+      <div class="swimlane-grid">
+        <div class="swimlane-cell cell-input">
+          <div class="swimlane-label"><div class="swimlane-label-dot"></div>Input</div>
+          <ul>
+            <li>PDF or DOCX vendor contract</li>
+            <li>Up to 40 pages</li>
+            <li>From "Input Contracts" folder</li>
+          </ul>
+        </div>
+        <div class="swimlane-cell cell-agent">
+          <div class="swimlane-label"><div class="swimlane-label-dot"></div>Agent Task</div>
+          <ul>
+            <li>Convert document to structured text</li>
+            <li>Preserve page-level references</li>
+            <li>Detect and report format errors or page-limit breaches</li>
+          </ul>
+        </div>
+        <div class="swimlane-cell cell-output">
+          <div class="swimlane-label"><div class="swimlane-label-dot"></div>Output</div>
+          <ul>
+            <li>Page-segmented text array</li>
+            <li>Each page: number + extracted text</li>
+            <li>IngestionError on failure (graceful)</li>
+          </ul>
+        </div>
+        <div class="swimlane-cell cell-human none">
+          <div class="swimlane-label"><div class="swimlane-label-dot"></div>Human Review</div>
+          <p class="none-text">None — fully automated. Errors are logged to audit trail.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="stage-connector"><div class="connector-line"></div><div class="connector-arrow"></div></div>
+
+    <!-- ── STAGE 2: EXTRACT ── -->
+    <div class="stage-card w-full">
+      <div class="stage-header">
+        <div class="stage-header-left">
+          <div class="stage-number">2</div>
+          <div><div class="stage-name">Extract</div></div>
+        </div>
+        <span class="auto-badge auto-full"><span class="auto-dot" style="background:var(--status-not-started-text)"></span>Fully automated</span>
+      </div>
+      <div class="swimlane-grid">
+        <div class="swimlane-cell cell-input">
+          <div class="swimlane-label"><div class="swimlane-label-dot"></div>Input</div>
+          <ul>
+            <li>Page-segmented text from Ingest</li>
+          </ul>
+        </div>
+        <div class="swimlane-cell cell-agent">
+          <div class="swimlane-label"><div class="swimlane-label-dot"></div>Agent Task</div>
+          <ul>
+            <li>LLM extracts verbatim text for 7 clause families</li>
+            <li>Assigns confidence score 0–1 per clause</li>
+            <li>Records source page number</li>
+          </ul>
+          <div class="cell-tags mt-2">
+            <span class="pill pill-dev">liability_cap</span>
+            <span class="pill pill-dev">dpa</span>
+            <span class="pill pill-dev">termination</span>
+            <span class="pill pill-dev">ip_ownership</span>
+            <span class="pill pill-dev">sla</span>
+            <span class="pill pill-dev">governing_law</span>
+            <span class="pill pill-dev">indemnity</span>
+          </div>
+        </div>
+        <div class="swimlane-cell cell-output">
+          <div class="swimlane-label"><div class="swimlane-label-dot"></div>Output</div>
+          <ul>
+            <li>Clause extraction record per family</li>
+            <li>Verbatim text + source page</li>
+            <li>Confidence score (0.0–1.0)</li>
+            <li>found: true / false flag</li>
+          </ul>
+        </div>
+        <div class="swimlane-cell cell-human none">
+          <div class="swimlane-label"><div class="swimlane-label-dot"></div>Human Review</div>
+          <p class="none-text">None — confidence scores feed automatically into the next gate.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="stage-connector"><div class="connector-line"></div><div class="connector-arrow"></div></div>
+
+    <!-- ── STAGE 3: CONFIDENCE GATE ── -->
+    <div class="stage-card w-full gate">
+      <div class="stage-header">
+        <div class="stage-header-left">
+          <div class="stage-number">3</div>
+          <div>
+            <div class="stage-name">Confidence Gate</div>
+            <div class="stage-path-note">Rule-based — no LLM</div>
+          </div>
+        </div>
+        <span class="auto-badge auto-full"><span class="auto-dot" style="background:var(--status-not-started-text)"></span>Fully automated</span>
+      </div>
+      <div class="swimlane-grid">
+        <div class="swimlane-cell cell-input">
+          <div class="swimlane-label"><div class="swimlane-label-dot"></div>Input</div>
+          <ul>
+            <li>Clause extraction records</li>
+            <li>Configured threshold (default 0.70)</li>
+          </ul>
+        </div>
+        <div class="swimlane-cell cell-agent">
+          <div class="swimlane-label"><div class="swimlane-label-dot"></div>Agent Task</div>
+          <ul>
+            <li>Compare each clause confidence to threshold</li>
+            <li>Flag mandatory clauses below threshold as <strong>escalate / low_confidence</strong></li>
+            <li>Flag absent mandatory clauses as <strong>escalate / missing_mandatory_clause</strong></li>
+            <li>Passed clauses continue to Classify</li>
+          </ul>
+        </div>
+        <div class="swimlane-cell cell-output">
+          <div class="swimlane-label"><div class="swimlane-label-dot"></div>Output</div>
+          <ul>
+            <li>Pass / fail per clause</li>
+            <li>Failed clauses bypass playbook → go directly to escalation queue</li>
+          </ul>
+          <div class="cell-tags mt-2">
+            <span class="pill pill-escalate">low_confidence (ESC-06)</span>
+            <span class="pill pill-escalate">missing_mandatory (ESC-07)</span>
+          </div>
+        </div>
+        <div class="swimlane-cell cell-human none">
+          <div class="swimlane-label"><div class="swimlane-label-dot"></div>Human Review</div>
+          <p class="none-text">None — deterministic rule, not an LLM decision.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="stage-connector"><div class="connector-line"></div><div class="connector-arrow"></div></div>
+
+    <!-- ── STAGE 4: CLASSIFY ── -->
+    <div class="stage-card w-full">
+      <div class="stage-header">
+        <div class="stage-header-left">
+          <div class="stage-number">4</div>
+          <div><div class="stage-name">Classify</div></div>
+        </div>
+        <span class="auto-badge auto-full"><span class="auto-dot" style="background:var(--status-not-started-text)"></span>Fully automated</span>
+      </div>
+      <div class="swimlane-grid">
+        <div class="swimlane-cell cell-input">
+          <div class="swimlane-label"><div class="swimlane-label-dot"></div>Input</div>
+          <ul>
+            <li>Clauses that passed the confidence gate</li>
+            <li>Negotiation playbook (JSON config)</li>
+          </ul>
+        </div>
+        <div class="swimlane-cell cell-agent">
+          <div class="swimlane-label"><div class="swimlane-label-dot"></div>Agent Task</div>
+          <ul>
+            <li>Compare clause text to <strong>accepted positions</strong> first</li>
+            <li>If no match, check <strong>escalation triggers</strong></li>
+            <li>If no trigger, check <strong>negotiable deviations</strong></li>
+            <li>Otherwise escalate with reason <em>no_playbook_entry</em></li>
+            <li>Assign status + reason code per clause</li>
+          </ul>
+        </div>
+        <div class="swimlane-cell cell-output">
+          <div class="swimlane-label"><div class="swimlane-label-dot"></div>Output</div>
+          <ul>
+            <li>Classification record per clause</li>
+          </ul>
+          <div class="cell-tags mt-2">
+            <span class="pill pill-match">match</span>
+            <span class="pill pill-dev">negotiable_deviation</span>
+            <span class="pill pill-escalate">escalate</span>
+          </div>
+        </div>
+        <div class="swimlane-cell cell-human none">
+          <div class="swimlane-label"><div class="swimlane-label-dot"></div>Human Review</div>
+          <p class="none-text">None — fully automated. Classifications feed directly into routing.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="stage-connector"><div class="connector-line"></div><div class="connector-arrow"></div></div>
+
+    <!-- ── STAGE 5: ROUTE ── -->
+    <div class="stage-card w-full">
+      <div class="stage-header">
+        <div class="stage-header-left">
+          <div class="stage-number">5</div>
+          <div><div class="stage-name">Route</div></div>
+        </div>
+        <span class="auto-badge auto-full"><span class="auto-dot" style="background:var(--status-not-started-text)"></span>Fully automated</span>
+      </div>
+      <div class="swimlane-grid">
+        <div class="swimlane-cell cell-input">
+          <div class="swimlane-label"><div class="swimlane-label-dot"></div>Input</div>
+          <ul>
+            <li>Full set of clause classifications for the contract</li>
+          </ul>
+        </div>
+        <div class="swimlane-cell cell-agent">
+          <div class="swimlane-label"><div class="swimlane-label-dot"></div>Agent Task</div>
+          <ul>
+            <li>All clauses <strong>match</strong> → standard queue</li>
+            <li>Any <strong>negotiable_deviation</strong>, no escalate → playbook_negotiable</li>
+            <li>Any <strong>escalate</strong> → senior_lawyer_escalation</li>
+            <li>Record per-clause rationale for routing decision</li>
+          </ul>
+        </div>
+        <div class="swimlane-cell cell-output">
+          <div class="swimlane-label"><div class="swimlane-label-dot"></div>Output</div>
+          <ul>
+            <li>Routing decision (one of three queues)</li>
+            <li>Per-clause rationale</li>
+          </ul>
+        </div>
+        <div class="swimlane-cell cell-human">
+          <div class="swimlane-label"><div class="swimlane-label-dot"></div>Human Review</div>
+          <ul>
+            <li><strong>Standard queue</strong>: paralegal acknowledges; no action required</li>
+            <li><strong>Playbook-negotiable</strong>: continues to Redlines stage</li>
+            <li><strong>Escalation queue</strong>: senior lawyer receives case</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Branch diagram -->
+    <div class="stage-connector"><div class="connector-line"></div></div>
+    <div class="branch-note">
+      <div class="branch-box branch-standard"><strong>standard</strong>All clauses match — paralegal acknowledges</div>
+      <div class="branch-box branch-negotiate"><strong>playbook_negotiable</strong>Deviations map to approved fallback → Redlines ↓</div>
+      <div class="branch-box branch-escalate"><strong>senior_lawyer_escalation</strong>Escalation triggered — lawyer receives full case</div>
+    </div>
+    <div class="stage-connector"><div class="connector-label">playbook_negotiable path only</div><div class="connector-line"></div><div class="connector-arrow"></div></div>
+
+    <!-- ── STAGE 6: REDLINES ── -->
+    <div class="stage-card w-full">
+      <div class="stage-header">
+        <div class="stage-header-left">
+          <div class="stage-number">6</div>
+          <div>
+            <div class="stage-name">Redlines</div>
+            <div class="stage-path-note">playbook_negotiable contracts only</div>
+          </div>
+        </div>
+        <span class="auto-badge auto-full"><span class="auto-dot" style="background:var(--status-not-started-text)"></span>Fully automated</span>
+      </div>
+      <div class="swimlane-grid">
+        <div class="swimlane-cell cell-input">
+          <div class="swimlane-label"><div class="swimlane-label-dot"></div>Input</div>
+          <ul>
+            <li>Clauses classified as negotiable_deviation</li>
+            <li>Playbook approved fallback language</li>
+          </ul>
+        </div>
+        <div class="swimlane-cell cell-agent">
+          <div class="swimlane-label"><div class="swimlane-label-dot"></div>Agent Task</div>
+          <ul>
+            <li>Substitute approved fallback language <strong>verbatim</strong> from playbook</li>
+            <li>Cite playbook entry used for each redline</li>
+            <li>If no approved fallback exists: reclassify clause as <strong>escalate</strong> (never invent language)</li>
+          </ul>
+        </div>
+        <div class="swimlane-cell cell-output">
+          <div class="swimlane-label"><div class="swimlane-label-dot"></div>Output</div>
+          <ul>
+            <li>Draft redline per deviated clause</li>
+            <li>Playbook citation per change</li>
+            <li>Original text preserved alongside proposed text</li>
+          </ul>
+        </div>
+        <div class="swimlane-cell cell-human">
+          <div class="swimlane-label"><div class="swimlane-label-dot"></div>Human Review</div>
+          <ul>
+            <li>Paralegal reviews draft redlines before submission to lawyer</li>
+            <li>Cannot release without lawyer sign-off (enforced downstream)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="stage-connector"><div class="connector-line"></div><div class="connector-arrow"></div></div>
+
+    <!-- ── STAGE 7: APPROVAL PACKET (governance) ── -->
+    <div class="governance-strip mb-2" style="border-radius:var(--radius-lg);">
+      <span class="governance-icon">⚠</span>
+      <span><strong>Governance control zone</strong> — stages 7 and 8 enforce the hard delegation boundary. No outbound package may leave legal without named-lawyer sign-off recorded in the system.</span>
+    </div>
+
+    <div class="stage-card w-full governance">
+      <div class="stage-header">
+        <div class="stage-header-left">
+          <div class="stage-number">7</div>
+          <div>
+            <div class="stage-name">Approval Packet</div>
+          </div>
+        </div>
+        <span class="auto-badge auto-gate"><span class="auto-dot" style="background:var(--color-error)"></span>Governance control</span>
+      </div>
+      <div class="swimlane-grid">
+        <div class="swimlane-cell cell-input">
+          <div class="swimlane-label"><div class="swimlane-label-dot"></div>Input</div>
+          <ul>
+            <li>Draft redlines</li>
+            <li>Source clause text</li>
+            <li>Playbook references</li>
+          </ul>
+        </div>
+        <div class="swimlane-cell cell-agent">
+          <div class="swimlane-label"><div class="swimlane-label-dot"></div>Agent Task</div>
+          <ul>
+            <li>Assemble structured approval packet</li>
+            <li>Set release status to <strong>BLOCKED</strong> immediately</li>
+            <li>Record which clauses require sign-off</li>
+          </ul>
+        </div>
+        <div class="swimlane-cell cell-output">
+          <div class="swimlane-label"><div class="swimlane-label-dot"></div>Output</div>
+          <ul>
+            <li>Approval packet: source clause / proposed redline / playbook citation / approval field</li>
+          </ul>
+          <div class="cell-tags mt-2">
+            <span class="pill pill-blocked">release status: BLOCKED</span>
+          </div>
+        </div>
+        <div class="swimlane-cell cell-human" style="background:rgba(73,43,0,.2); border-left:3px solid var(--color-warning-border);">
+          <div class="swimlane-label"><div class="swimlane-label-dot"></div>Human Review</div>
+          <ul>
+            <li><strong>Named lawyer</strong> reviews each redlined clause</li>
+            <li>Records sign-off with timestamp and identity</li>
+            <li>This is <strong>mandatory and non-delegatable</strong></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="stage-connector"><div class="connector-line"></div><div class="connector-arrow"></div></div>
+
+    <!-- ── STAGE 8: RELEASE GATE (governance) ── -->
+    <div class="stage-card w-full governance">
+      <div class="stage-header">
+        <div class="stage-header-left">
+          <div class="stage-number">8</div>
+          <div>
+            <div class="stage-name">Release Gate</div>
+            <div class="stage-path-note">Hard system control — no human override possible</div>
+          </div>
+        </div>
+        <span class="auto-badge auto-gate"><span class="auto-dot" style="background:var(--color-error)"></span>Governance control</span>
+      </div>
+      <div class="swimlane-grid">
+        <div class="swimlane-cell cell-input">
+          <div class="swimlane-label"><div class="swimlane-label-dot"></div>Input</div>
+          <ul>
+            <li>Approval packet</li>
+            <li>Recorded lawyer sign-offs (or absence thereof)</li>
+          </ul>
+        </div>
+        <div class="swimlane-cell cell-agent">
+          <div class="swimlane-label"><div class="swimlane-label-dot"></div>Agent Task</div>
+          <ul>
+            <li>Verify every redlined clause has a named-lawyer approval with timestamp</li>
+            <li>Reject release if any sign-off is missing</li>
+            <li>Log any attempted bypass with timestamp + user identity</li>
+            <li>Clear release only when all sign-offs are present</li>
+          </ul>
+        </div>
+        <div class="swimlane-cell cell-output">
+          <div class="swimlane-label"><div class="swimlane-label-dot"></div>Output</div>
+          <div class="cell-tags" style="margin-top:0; margin-bottom: var(--space-2);">
+            <span class="pill pill-cleared">CLEARED — all approved</span>
+            <span class="pill pill-blocked">BLOCKED — missing sign-off</span>
+          </div>
+          <ul>
+            <li>Audit log entry with outcome</li>
+            <li>Blocked bypass attempts logged with evidence</li>
+          </ul>
+        </div>
+        <div class="swimlane-cell cell-human none" style="background:rgba(38,33,33,.2); border-left:3px solid var(--color-error-border);">
+          <div class="swimlane-label" style="color:var(--color-error-text);">
+            <div class="swimlane-label-dot" style="background:var(--color-error);"></div>Human Review</div>
+          <p style="color:var(--color-error-text); font-size:var(--text-xs); font-weight:600;">System enforces — no human override possible.</p>
+          <p class="none-text mt-2">The block is architectural, not advisory. A user cannot override it by claiming approval without the named-lawyer record existing in the system.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="stage-connector"><div class="connector-line"></div><div class="connector-arrow"></div></div>
+
+    <!-- ── STAGE 9: REPORT & AUDIT ── -->
+    <div class="stage-card w-full">
+      <div class="stage-header">
+        <div class="stage-header-left">
+          <div class="stage-number">9</div>
+          <div><div class="stage-name">Report &amp; Audit</div></div>
+        </div>
+        <span class="auto-badge auto-human"><span class="auto-dot" style="background:var(--color-warning)"></span>Periodic human review</span>
+      </div>
+      <div class="swimlane-grid">
+        <div class="swimlane-cell cell-input">
+          <div class="swimlane-label"><div class="swimlane-label-dot"></div>Input</div>
+          <ul>
+            <li>All results from all stages</li>
+            <li>Clause extractions, classifications, routing decisions, redlines, approvals</li>
+          </ul>
+        </div>
+        <div class="swimlane-cell cell-agent">
+          <div class="swimlane-label"><div class="swimlane-label-dot"></div>Agent Task</div>
+          <ul>
+            <li>Generate HTML report summarising all contracts processed</li>
+            <li>Compute operational metrics (turnaround, route distribution, override rate)</li>
+            <li>Append timestamped audit log entry — append-only, queryable by contract ID</li>
+          </ul>
+        </div>
+        <div class="swimlane-cell cell-output">
+          <div class="swimlane-label"><div class="swimlane-label-dot"></div>Output</div>
+          <ul>
+            <li>HTML report (Output/report.html)</li>
+            <li>audit.jsonl — structured, append-only</li>
+            <li>Metrics: turnaround, route distribution, escalation rate</li>
+          </ul>
+        </div>
+        <div class="swimlane-cell cell-human">
+          <div class="swimlane-label"><div class="swimlane-label-dot"></div>Human Review</div>
+          <ul>
+            <li>Legal ops reviews metrics dashboard periodically</li>
+            <li>Audit trail available for compliance spot-checks</li>
+            <li>No action required per contract — periodic oversight only</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /workflow -->
+
+  <!-- Footer -->
+  <div class="flex justify-between items-center mt-6 pt-4" style="border-top:1px solid var(--color-border-structural);">
+    <p class="text-xs text-muted">Vendor Contract Review Agent · Scenario 2 · Build loop diagnosis documented in build-loop-diagnosis.md</p>
+    <p class="text-xs text-muted">Generated 2026-04-23</p>
+  </div>
+
+</div>
+</body>
+</html>
