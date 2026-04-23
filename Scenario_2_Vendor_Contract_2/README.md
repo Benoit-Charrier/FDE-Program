@@ -1,3 +1,24 @@
+# Introduction
+I built the 5 deliverables in 5 .md files
+"1 Problem statement and success metrics.md"
+"2 Delegation analysis.md"
+"3 Capability specification.md"
+"4 Validation design.md"
+"5 Assumptions & unknowns.md"
+
+I concatenated these these files in critique-pool-KTB-3-410.md for the submission so you can review this
+
+I  built "\Output\workflow-diagram.html" to show the workflow in a user friendly html format so you can take a look at this too
+
+I built a Claude.md file to ask Claude Code to build the app
+How to run the app and the output is further below
+
+I ran a couple of tests, did some fixes and built "built-loop-diagnostic" to show the kind of errors and fixes
+
+I also ran a validation against the primer and made some fixes
+
+Of course all of this with Claude code, I didn't write one single line in these files (well except a couple because it was quicker than asking Claude code)
+
 # Inbound Vendor Contract Review Agent
 
 Console application that automates first-pass review of vendor contracts against a legal negotiation playbook, enforces named-lawyer sign-off on negotiated outbound packages, and generates an HTML queue report.
