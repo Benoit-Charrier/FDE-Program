@@ -12,6 +12,8 @@ The following unknowns are genuine blockers or risk factors that must be validat
 
 **What to do**: Conduct a structured playbook-extraction session with the legal team. Ask them to walk through 10 recent contracts and narrate every decision. If they can do so with consistent rules, the playbook is codifiable. If each decision requires case-by-case reasoning, the scope needs to be narrowed or the approach rethought.
 
+**Confidence: medium** — The scenario brief implies a playbook exists and is used consistently. That the playbook is *codifiable* without losing nuance is unverified. For the purpose of this build, operationalised as `config/playbook.json` against synthetic contracts; partially validated by successful build execution.
+
 ---
 
 ## 2. The majority of inbound contracts arrive as machine-readable files, not scanned images
@@ -21,6 +23,8 @@ The following unknowns are genuine blockers or risk factors that must be validat
 **Why this is unknown**: The scenario mentions the legal team receives inbound vendor contracts but does not describe the intake channel. Some vendor ecosystems — particularly in manufacturing, financial services, or older procurement systems — routinely send scanned PDFs. If 30–40% of the intake is image-based, the extraction pipeline needs a different approach (OCR + higher confidence thresholds + more aggressive escalation), and the cost and accuracy profile changes substantially.
 
 **What to do**: Pull a sample of 30 recent inbound contracts and measure what percentage are native digital vs. scanned. Also check whether any contracts arrive as HTML, Google Docs links, or other formats not covered by the PDF/DOCX ingestion path.
+
+**Confidence: medium** — Common in B2B SaaS vendor contexts; riskier in manufacturing or financial services procurement. Unverified for this specific organisation. Build assumes native digital; OCR path is out of scope.
 
 ---
 
@@ -32,6 +36,8 @@ The following unknowns are genuine blockers or risk factors that must be validat
 
 **What to do**: Interview both the paralegal and at least two lawyers about the last 20 playbook-negotiable contracts. How many of those did the paralegal send without any lawyer consultation? Document the actual authority boundary, not the assumed one.
 
+**Confidence: low** — Informal authority is the norm in legal teams. The scenario presents the boundary as clean; real-world equivalent is rarely so. If wrong, the routing model needs significant redesign.
+
 ---
 
 ## 4. Named-lawyer sign-off can be captured and verified electronically at the clause level
@@ -41,6 +47,8 @@ The following unknowns are genuine blockers or risk factors that must be validat
 **Why this is unknown**: Many legal teams currently manage approvals via email threads, Slack messages, or verbal confirmation — none of which are clause-level, timestamped, or tied to a specific contract version. Building the approval gate requires either integrating with an existing approval system (CLM, DocuSign, or similar) or building one. If the organisation has no approval infrastructure and is resistant to adopting one, the governance control the general counsel requires cannot be implemented in a reliable way.
 
 **What to do**: Determine what approval and signature infrastructure currently exists. If it's email-based, assess whether the organisation will accept a lightweight purpose-built approval UI, or whether a CLM integration is required before the agent can go live.
+
+**Confidence: low** — Most mid-size legal teams do not have clause-level approval tooling. The build implements a minimal `data/approvals.json` mechanism and a CLI approval command; this is a prototype stand-in, not production infrastructure.
 
 ---
 
@@ -52,6 +60,8 @@ The following unknowns are genuine blockers or risk factors that must be validat
 
 **What to do**: Ask the general counsel whether a sample of past contracts can be used for system validation. If not, determine whether synthetic contracts can be derived from anonymised clause patterns, or whether a pilot with a small live cohort is the only viable calibration path.
 
+**Confidence: low** — Privilege and confidentiality concerns are common. Build uses synthetic DOCX fixtures (`sample_standard.docx`, `sample_negotiable.docx`, `sample_escalation.docx`); real-intake variance is unvalidated.
+
 ---
 
 ## 6. The 90-minute average review time is consistent across the three routing categories
@@ -62,6 +72,8 @@ The following unknowns are genuine blockers or risk factors that must be validat
 
 **What to do**: Ask the legal team to time-track a two-week sample of reviews by contract type. Even rough data (under 1 hour / 1–2 hours / over 2 hours) will materially improve the ROI model and prioritisation.
 
+**Confidence: low** — Average figures from scenario brief; no variance data. If standard contracts are already fast (30–45 min) and escalations are the true bottleneck (3+ hours), the ROI model in D1 is materially overstated for the standard-contract automation case.
+
 ---
 
 ## 7. Procurement's definition of "unworkable" turnaround is a shared understanding across the organisation
@@ -71,3 +83,5 @@ The following unknowns are genuine blockers or risk factors that must be validat
 **Why this is unknown**: "Unworkable" is the procurement team's characterisation. It may reflect a few specific high-profile delays rather than a systemic problem across all 300 quarterly contracts. If the bottleneck is actually the 30 escalation contracts — where the legal team is slow to make strategic decisions, not slow to do first-pass review — then automating first-pass review will not fix the procurement team's pain. The solution might need to focus on escalation triage speed rather than standard-contract throughput.
 
 **What to do**: Have a direct conversation with 2–3 procurement leads about the last 5 times a contract delay blocked a purchasing decision. Was the delay in first-pass review, in the escalation decision, or in the back-and-forth after the counteroffer? The answer shapes where to invest.
+
+**Confidence: low** — "Unworkable" is a procurement characterisation with no shared SLA definition confirmed. If the real bottleneck is escalation decision speed rather than first-pass throughput, the agent's primary value proposition changes.

@@ -372,7 +372,7 @@
     "error": false,
     "contract_id": "sample_negotiable.docx",
     "queue": "playbook_negotiable",
-    "routing_reason": "Playbook-negotiable deviations in: liability_cap, termination. All map to approved fallback language.",
+    "routing_reason": "Playbook-negotiable deviations in: liability_cap, termination, sla, indemnity. All map to approved fallback language.",
     "classifications": [
       {
         "family": "liability_cap",
@@ -408,7 +408,7 @@
         "family": "ip_ownership",
         "extracted_text": "Each party retains ownership of pre-existing IP. Deliverables created under this agreement shall be work for hire owned by Company upon full payment.",
         "source_page": 1,
-        "confidence": 0.95,
+        "confidence": 0.9,
         "found": true,
         "status": "match",
         "reason_code": "playbook_match",
@@ -416,13 +416,13 @@
       },
       {
         "family": "sla",
-        "extracted_text": "Vendor commits to 99.5% uptime for the platform, measured monthly. Scheduled maintenance windows are excluded from uptime calculations.",
+        "extracted_text": "Vendor shall use commercially reasonable efforts to maintain platform availability and shall provide monthly availability reports to Company.",
         "source_page": 1,
-        "confidence": 0.9,
+        "confidence": 0.75,
         "found": true,
-        "status": "match",
-        "reason_code": "playbook_match",
-        "rationale": "sla matches an accepted playbook position."
+        "status": "negotiable_deviation",
+        "reason_code": "approved_fallback_available",
+        "rationale": "sla deviates from preferred but maps to an approved fallback."
       },
       {
         "family": "governing_law",
@@ -436,13 +436,13 @@
       },
       {
         "family": "indemnity",
-        "extracted_text": "Vendor shall indemnify Company against third-party intellectual property infringement claims only, limited to gross negligence or wilful misconduct of Vendor.",
+        "extracted_text": "Each party shall indemnify the other for mutual indemnification arising from gross negligence or wilful misconduct of the indemnifying party's personnel.",
         "source_page": 1,
-        "confidence": 0.9,
+        "confidence": 0.85,
         "found": true,
-        "status": "match",
-        "reason_code": "playbook_match",
-        "rationale": "indemnity matches an accepted playbook position."
+        "status": "negotiable_deviation",
+        "reason_code": "approved_fallback_available",
+        "rationale": "indemnity deviates from preferred but maps to an approved fallback."
       }
     ],
     "redlines": [
@@ -457,6 +457,18 @@
         "original_text": "Either party may terminate this agreement for convenience on 60 days written notice to the other party. All fees accrued prior to the termination date remain payable.",
         "proposed_text": "60 days written notice",
         "playbook_citation": "clause_families.termination.negotiable_deviations"
+      },
+      {
+        "family": "sla",
+        "original_text": "Vendor shall use commercially reasonable efforts to maintain platform availability and shall provide monthly availability reports to Company.",
+        "proposed_text": "commercially reasonable efforts",
+        "playbook_citation": "clause_families.sla.negotiable_deviations"
+      },
+      {
+        "family": "indemnity",
+        "original_text": "Each party shall indemnify the other for mutual indemnification arising from gross negligence or wilful misconduct of the indemnifying party's personnel.",
+        "proposed_text": "mutual indemnification",
+        "playbook_citation": "clause_families.indemnity.negotiable_deviations"
       }
     ],
     "clause_rationale": [
@@ -477,6 +489,129 @@
         "status": "negotiable_deviation",
         "reason_code": "approved_fallback_available",
         "rationale": "termination deviates from preferred but maps to an approved fallback."
+      },
+      {
+        "family": "ip_ownership",
+        "status": "match",
+        "reason_code": "playbook_match",
+        "rationale": "ip_ownership matches an accepted playbook position."
+      },
+      {
+        "family": "sla",
+        "status": "negotiable_deviation",
+        "reason_code": "approved_fallback_available",
+        "rationale": "sla deviates from preferred but maps to an approved fallback."
+      },
+      {
+        "family": "governing_law",
+        "status": "match",
+        "reason_code": "playbook_match",
+        "rationale": "Governing law is within an approved jurisdiction."
+      },
+      {
+        "family": "indemnity",
+        "status": "negotiable_deviation",
+        "reason_code": "approved_fallback_available",
+        "rationale": "indemnity deviates from preferred but maps to an approved fallback."
+      }
+    ]
+  },
+  {
+    "error": false,
+    "contract_id": "sample_novel_clause.docx",
+    "queue": "senior_lawyer_escalation",
+    "routing_reason": "Escalation required: liability_cap triggered must-escalate conditions.",
+    "classifications": [
+      {
+        "family": "liability_cap",
+        "extracted_text": "Each party's liability under this agreement is limited to the amount recoverable under its insurance policy in force at the time of the claim. Neither party represents that any particular level of insurance coverage will be maintained.",
+        "source_page": 1,
+        "confidence": 0.95,
+        "found": true,
+        "status": "escalate",
+        "reason_code": "no_playbook_entry",
+        "rationale": "liability_cap does not match any accepted or negotiable playbook position."
+      },
+      {
+        "family": "dpa",
+        "extracted_text": "The parties shall execute a Data Processing Agreement attached hereto as Exhibit A, which is GDPR compliant and incorporates the standard contractual clauses as approved by the European Commission.",
+        "source_page": 1,
+        "confidence": 0.9,
+        "found": true,
+        "status": "match",
+        "reason_code": "playbook_match",
+        "rationale": "dpa matches an accepted playbook position."
+      },
+      {
+        "family": "termination",
+        "extracted_text": "Either party may terminate this agreement for convenience on 30 days written notice to the other party. Termination does not affect accrued rights or obligations.",
+        "source_page": 1,
+        "confidence": 0.95,
+        "found": true,
+        "status": "match",
+        "reason_code": "playbook_match",
+        "rationale": "termination matches an accepted playbook position."
+      },
+      {
+        "family": "ip_ownership",
+        "extracted_text": "Each party retains ownership of pre-existing IP brought to this engagement. All deliverables created by Vendor for Company shall be work for hire owned by Company.",
+        "source_page": 1,
+        "confidence": 0.95,
+        "found": true,
+        "status": "match",
+        "reason_code": "playbook_match",
+        "rationale": "ip_ownership matches an accepted playbook position."
+      },
+      {
+        "family": "sla",
+        "extracted_text": "Vendor commits to 99.5% uptime for the platform, measured monthly. Scheduled maintenance windows are excluded from uptime calculations.",
+        "source_page": 1,
+        "confidence": 0.9,
+        "found": true,
+        "status": "match",
+        "reason_code": "playbook_match",
+        "rationale": "sla matches an accepted playbook position."
+      },
+      {
+        "family": "governing_law",
+        "extracted_text": "This agreement is governed by the laws of England and Wales. The parties submit to the exclusive jurisdiction of the courts of England and Wales.",
+        "source_page": 1,
+        "confidence": 0.95,
+        "found": true,
+        "status": "match",
+        "reason_code": "playbook_match",
+        "rationale": "Governing law is within an approved jurisdiction."
+      },
+      {
+        "family": "indemnity",
+        "extracted_text": "Vendor shall indemnify Company against third-party IP infringement claims only, arising directly from Vendor's deliverables. This indemnity excludes claims arising from Company's modifications or combination with third-party materials.",
+        "source_page": 1,
+        "confidence": 0.95,
+        "found": true,
+        "status": "match",
+        "reason_code": "playbook_match",
+        "rationale": "indemnity matches an accepted playbook position."
+      }
+    ],
+    "redlines": [],
+    "clause_rationale": [
+      {
+        "family": "liability_cap",
+        "status": "escalate",
+        "reason_code": "no_playbook_entry",
+        "rationale": "liability_cap does not match any accepted or negotiable playbook position."
+      },
+      {
+        "family": "dpa",
+        "status": "match",
+        "reason_code": "playbook_match",
+        "rationale": "dpa matches an accepted playbook position."
+      },
+      {
+        "family": "termination",
+        "status": "match",
+        "reason_code": "playbook_match",
+        "rationale": "termination matches an accepted playbook position."
       },
       {
         "family": "ip_ownership",

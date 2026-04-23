@@ -103,6 +103,42 @@ Both clauses routed to escalation with correct reason codes; no redlines generat
 
 ---
 
+## Scenario 4 — Novel Clause: No Playbook Entry (ESC-08)
+
+This scenario tests the fallback path when a clause family is present and extractable but has no matching position in the playbook — neither an accepted position, an escalation trigger, nor a negotiable deviation. The agent must escalate rather than silently pass or invent language.
+
+### Setup
+
+- **Input contract**: 28-page vendor software licence agreement
+- **Clause coverage**: All seven clause families present, all with confidence ≥ 0.80
+- **Novel clause**: The `liability_cap` clause reads "each party's liability is limited to the amount recoverable under its insurance policy in force at the time of the claim." This phrasing does not appear in the playbook's accepted positions, escalation triggers, or negotiable deviations. It is neither clearly uncapped nor clearly within an approved structure.
+- All other six clause families match accepted playbook positions.
+
+### Expected Agent Behaviour
+
+1. Agent extracts the liability clause and assigns a confidence score ≥ 0.80 — extraction itself is clean.
+2. Classification proceeds past the confidence gate and the missing-clause gate.
+3. Accepted position check: no semantic match found.
+4. Escalation trigger check: no trigger phrase matched (the insurance-cap structure is novel, not a known trigger pattern).
+5. Negotiable deviation check: no deviation entry matched.
+6. Clause is classified `escalate` with `reason_code = "no_playbook_entry"` — the fallback of last resort.
+7. Contract is routed to `senior_lawyer_escalation`.
+8. No redline is generated — there is no approved fallback language to apply.
+9. Review packet and audit log record the novel-clause escalation with the extracted text preserved for the lawyer.
+
+### What This Validates
+
+- The "no playbook entry" path (step 8 of classification logic) is reachable and fires correctly on genuinely novel language.
+- The agent does not silently treat an unrecognised clause as `match` — the safe-failure default (escalate when uncertain) is enforced.
+- Novel clause escalation does not require the clause to contain a known trigger phrase — absence of any playbook match is sufficient.
+- No language is generated or inferred; the agent presents the source text to the lawyer without modification.
+
+### Pass Condition
+
+`liability_cap` classified `escalate` with `reason_code = "no_playbook_entry"`; routing decision is `senior_lawyer_escalation`; zero redlines generated; audit log contains classification event with extracted text and reason code.
+
+---
+
 ## Coverage Summary
 
 | Scenario | Type | Population Covered | Delegation Boundary Tested |
@@ -110,3 +146,4 @@ Both clauses routed to escalation with correct reason codes; no redlines generat
 | 1 — Standard contract | Happy path | ~210 contracts/quarter (70%) | No (confirms correct non-escalation) |
 | 2 — Playbook-negotiable deviations | Edge case | ~60 contracts/quarter (20%) | Partial (release gate activated) |
 | 3 — Low-confidence + bypass attempt | Failure mode | ~30 contracts/quarter (10%) + adversarial action | Yes — direct test of hard governance control |
+| 4 — Novel clause (no playbook entry) | Failure mode | Any contract with unfamiliar drafting | Partial (safe-failure default; ESC-08 path) |

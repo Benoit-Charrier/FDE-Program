@@ -157,8 +157,72 @@ def make_escalation():
     print("[OK] Created Input Contracts/sample_escalation.docx")
 
 
+def make_novel_clause():
+    """Scenario 4 — ESC-08: novel liability cap with no playbook entry.
+
+    The liability clause uses insurance-policy language that is neither an accepted
+    position, an escalation trigger, nor a negotiable deviation. Every other clause
+    matches an accepted playbook position. Expected result: liability_cap classified
+    escalate / no_playbook_entry; contract routed to senior_lawyer_escalation.
+    """
+    doc = Document()
+    doc.add_heading("Vendor Services Agreement — Novel Clause", 0)
+    doc.add_paragraph(
+        "This agreement is entered into between Acme Corp ('Company') and InsureCo Ltd ('Vendor')."
+    )
+
+    doc.add_heading("1. Limitation of Liability", level=1)
+    doc.add_paragraph(
+        "Each party's liability under this agreement is limited to the amount recoverable "
+        "under its insurance policy in force at the time of the claim. Neither party "
+        "represents that any particular level of insurance coverage will be maintained."
+    )
+
+    doc.add_heading("2. Data Processing", level=1)
+    doc.add_paragraph(
+        "The parties shall execute a Data Processing Agreement attached hereto as Exhibit A, "
+        "which is GDPR compliant and incorporates the standard contractual clauses as approved "
+        "by the European Commission."
+    )
+
+    doc.add_heading("3. Termination", level=1)
+    doc.add_paragraph(
+        "Either party may terminate this agreement for convenience on 30 days written notice "
+        "to the other party. Termination does not affect accrued rights or obligations."
+    )
+
+    doc.add_heading("4. Intellectual Property", level=1)
+    doc.add_paragraph(
+        "Each party retains ownership of pre-existing IP brought to this engagement. "
+        "All deliverables created by Vendor for Company shall be work for hire owned by Company."
+    )
+
+    doc.add_heading("5. Service Level Agreement", level=1)
+    doc.add_paragraph(
+        "Vendor commits to 99.5% uptime for the platform, measured monthly. "
+        "Scheduled maintenance windows are excluded from uptime calculations."
+    )
+
+    doc.add_heading("6. Governing Law", level=1)
+    doc.add_paragraph(
+        "This agreement is governed by the laws of England and Wales. "
+        "The parties submit to the exclusive jurisdiction of the courts of England and Wales."
+    )
+
+    doc.add_heading("7. Indemnification", level=1)
+    doc.add_paragraph(
+        "Vendor shall indemnify Company against third-party IP infringement claims only, "
+        "arising directly from Vendor's deliverables. This indemnity excludes claims arising "
+        "from Company's modifications or combination with third-party materials."
+    )
+
+    doc.save("Input Contracts/sample_novel_clause.docx")
+    print("[OK] Created Input Contracts/sample_novel_clause.docx")
+
+
 if __name__ == "__main__":
     make_standard()
     make_negotiable()
     make_escalation()
+    make_novel_clause()
     print("\nAll fixtures created in 'Input Contracts/'.")

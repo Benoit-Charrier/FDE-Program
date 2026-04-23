@@ -605,7 +605,9 @@
             <span class="pill pill-match">match</span>
             <span class="pill pill-dev">negotiable_deviation</span>
             <span class="pill pill-escalate">escalate</span>
+            <span class="pill pill-escalate">no_playbook_entry (ESC-08)</span>
           </div>
+          <p class="swimlane-content mt-2" style="font-style:italic;">ESC-08 fires when a clause is present and extractable but matches no accepted position, trigger, or deviation — the safe-failure fallback of last resort.</p>
         </div>
         <div class="swimlane-cell cell-human none">
           <div class="swimlane-label"><div class="swimlane-label-dot"></div>Human Review</div>
@@ -648,13 +650,10 @@
             <li>Per-clause rationale</li>
           </ul>
         </div>
-        <div class="swimlane-cell cell-human">
+        <div class="swimlane-cell cell-human none">
           <div class="swimlane-label"><div class="swimlane-label-dot"></div>Human Review</div>
-          <ul>
-            <li><strong>Standard queue</strong>: paralegal acknowledges; no action required</li>
-            <li><strong>Playbook-negotiable</strong>: continues to Redlines stage</li>
-            <li><strong>Escalation queue</strong>: senior lawyer receives case</li>
-          </ul>
+          <p class="none-text">None per contract — routing is a deterministic rule application, not a recommendation requiring human acceptance.</p>
+          <p class="swimlane-content mt-2" style="font-style:italic; color:var(--color-text-muted);">During calibration: legal ops spot-checks routing on a sample basis. This is a monitoring activity, not a per-contract approval step.</p>
         </div>
       </div>
     </div>
@@ -870,8 +869,8 @@
 
   <!-- Footer -->
   <div class="flex justify-between items-center mt-6 pt-4" style="border-top:1px solid var(--color-border-structural);">
-    <p class="text-xs text-muted">Vendor Contract Review Agent · Scenario 2 · Build loop diagnosis documented in build-loop-diagnosis.md</p>
-    <p class="text-xs text-muted">Generated 2026-04-23</p>
+    <p class="text-xs text-muted">Vendor Contract Review Agent · Scenario 2 · Updated to reflect D2 routing reclassification and D4 Scenario 4 (ESC-08)</p>
+    <p class="text-xs text-muted">Updated 2026-04-23</p>
   </div>
 
 </div>

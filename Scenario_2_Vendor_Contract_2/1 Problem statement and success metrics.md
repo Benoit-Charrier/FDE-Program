@@ -10,6 +10,8 @@ At 90 minutes per contract, the team spends roughly **450 person-hours per quart
 - **~60 contracts/quarter (20%)** contain deviations the paralegal is authorised to redline using pre-approved fallback language. These consume ~90 hours per quarter.
 - **~30 contracts/quarter (10%)** contain clause conditions that must reach a senior lawyer before any counteroffer is sent. These are the contracts that actually require lawyer expertise.
 
+> **Assumption (D5-6, D5-7):** The volume figure (300/quarter), the average review time (90 min), and the 70/20/10 route-mix split are drawn from the scenario brief and have not been verified against actual time-tracking or intake data. The ROI model rests on these figures. If standard contracts already take less than 90 minutes, or if the 10% escalation population is the actual bottleneck, the prioritisation logic changes. Confidence: **low on duration breakdown, medium on volume**.
+
 The consequence is a 4–6 business day turnaround that procurement considers unworkable, and senior lawyers whose time is absorbed by first-pass spotting on contracts that are overwhelmingly standard.
 
 The general counsel has established one non-negotiable control: **no counteroffer may leave the legal queue without a named lawyer's explicit sign-off on the specific clauses being negotiated.** Any automation that loosens this control is not acceptable.
@@ -20,7 +22,7 @@ The core problem is therefore twofold: eliminate the ~315 hours per quarter of r
 
 ## Success Metrics
 
-Each metric is tied directly to numbers stated in the scenario.
+Each metric is tied directly to numbers stated in the scenario. Metrics 1–5 depend on the 90-minute average being representative (see assumption above). Metrics 6–10 are system-enforced properties independent of that assumption.
 
 | # | Metric | Baseline | Target |
 |---|--------|----------|--------|

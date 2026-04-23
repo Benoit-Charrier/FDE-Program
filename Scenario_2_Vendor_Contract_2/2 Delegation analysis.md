@@ -12,13 +12,15 @@ These tasks are delegated entirely to the agent with no human checkpoint on indi
 PDF and DOCX contracts are converted into structured, machine-readable text with page references preserved. Why fully agentic: this is deterministic file-processing work. There is no judgment involved, the output is immediately verifiable, and errors surface in the next stage rather than going undetected.
 
 **2. Clause extraction and location tagging**
-The agent identifies and extracts text corresponding to each of the seven playbook clause families, records the source page, and assigns a confidence score. Why fully agentic: the task is pattern recognition against a fixed ontology. The confidence score is the safety valve — low-confidence extractions do not proceed silently; they trigger escalation. The agent handles the 90% of extraction work that is unambiguous.
+The agent identifies and extracts text corresponding to each of the seven playbook clause families, records the source page, and assigns a confidence score. Why fully agentic: the task is pattern recognition against a fixed ontology. The confidence score is the safety valve — low-confidence extractions do not proceed silently; they trigger escalation. The agent handles the majority of extraction work that is unambiguous; the precise share is unknown until calibrated against real intake data (see D5-5).
 
 **3. Clause-to-playbook comparison**
 Each extracted clause is compared against approved playbook positions and assigned one of three statuses: match, negotiable deviation, or must-escalate. Why fully agentic: comparison against a structured rule set is deterministic if the playbook is well-defined. The rules are not being invented; they are being applied. A human auditing the result after the fact can verify every classification against the same rules.
 
-**4. Queue assignment and SLA tracking**
-Contracts are routed to the correct work queue (standard auto-clear, paralegal redline, senior-lawyer escalation) and SLA timers are started. Why fully agentic: routing follows directly from the classification result. No additional judgment is needed. Tracking queue state and timers is operational bookkeeping, not legal reasoning.
+**4. Queue assignment, routing, and SLA tracking**
+Contracts are routed to the correct work queue (standard auto-clear, paralegal redline, senior-lawyer escalation) and SLA timers are started. Why fully agentic: routing is a deterministic rule application — all `match` → `standard`; any `negotiable_deviation` and no `escalate` → `playbook_negotiable`; any `escalate` → `senior_lawyer_escalation`. The code, not the LLM, makes the routing decision. It produces no recommendation requiring human acceptance; it produces a decision that humans may audit. Tracking queue state and timers is operational bookkeeping, not legal reasoning.
+
+> **Note on early deployment:** During the calibration period, legal ops should spot-check routing decisions on a sample basis to confirm the classification logic is behaving as expected. This is a monitoring activity, not a per-contract acceptance step — the routing decision itself is not held pending human approval.
 
 **5. Audit log generation**
 Every extraction result, classification decision, routing action, and human override is written to a structured, tamper-evident audit log. Why fully agentic: logging is a side effect of other actions, not a judgment call. It must be automatic and exhaustive to be useful for governance.
@@ -29,16 +31,13 @@ Every extraction result, classification decision, routing action, and human over
 
 These tasks are performed by the agent, but a human reviews and accepts the output before it has downstream effect.
 
-**1. Contract-level routing recommendation**
-The agent produces a recommended route (standard / playbook-negotiable / senior-lawyer escalation) with a clause-by-clause rationale. A human — paralegal for standard and negotiable, named lawyer for escalations — reviews and accepts or overrides the recommendation. Why not fully agentic: misrouting a must-escalate contract as standard has direct legal risk. In early deployment especially, the human acceptance step is a calibration mechanism. The agent is almost certainly right on the 70% standard population, but the stakes of the 10% justify the checkpoint.
-
-**2. Draft redline generation**
+**1. Draft redline generation**
 Where a deviation maps to an approved fallback position in the playbook, the agent generates a draft redline using only that pre-approved language. The paralegal or lawyer reviews the draft before it enters any outbound package. Why not fully agentic: the agent can apply approved language quickly and consistently, but a human must confirm that the context of the specific clause makes the proposed substitution appropriate. Pre-approved language does not mean context-independent language.
 
-**3. Escalation reason summary**
+**2. Escalation reason summary**
 For must-escalate contracts, the agent produces a structured summary explaining which clause triggered escalation, what the clause says, and why it falls outside playbook tolerance. The assigned lawyer reviews this summary before beginning their own analysis. Why not fully agentic: the summary is efficient, but a lawyer relying on it to frame their analysis must be able to verify it is not concealing nuance. The agent writes the brief; the lawyer still reads the source.
 
-**4. Approval packet assembly**
+**3. Approval packet assembly**
 For any contract where negotiated language is proposed, the agent assembles the approval packet: clause source text, proposed redline, playbook reference, and a signature field for named lawyer sign-off. The packet is prepared by the agent, but the sign-off act is human. Why this boundary: the agent handles the clerical assembly work; the lawyer handles the legal accountability act. Conflating them would make the sign-off a rubber stamp rather than a genuine review.
 
 ---
@@ -68,9 +67,8 @@ When a business stakeholder requests acceptance of terms outside normal playbook
 | Document ingestion and normalisation | Fully agentic | Deterministic, no judgment, errors are detectable |
 | Clause extraction with confidence scoring | Fully agentic | Pattern recognition against fixed ontology; confidence gates uncertainty |
 | Clause-to-playbook comparison | Fully agentic | Rules application, not rules creation |
-| Queue routing and SLA tracking | Fully agentic | Follows mechanically from classification |
+| Queue routing and SLA tracking | Fully agentic | Deterministic rule application; no LLM or human judgment in the decision |
 | Audit log generation | Fully agentic | Must be automatic and exhaustive |
-| Contract-level routing recommendation | Agent-led + oversight | High-stakes error case warrants human acceptance, especially early |
 | Draft redline generation | Agent-led + oversight | Context must be verified; approved language ≠ correct in all contexts |
 | Escalation reason summary | Agent-led + oversight | Lawyer must verify the brief before relying on it |
 | Approval packet assembly | Agent-led + oversight | Agent does clerical work; human does the legal act |

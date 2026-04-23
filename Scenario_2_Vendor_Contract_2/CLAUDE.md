@@ -162,6 +162,8 @@ Routing rules (deterministic, in order):
 `clause_rationale` = list of `{family, status, reason_code, rationale}` for all 7 clauses.
 `routing_reason` = one sentence explaining the queue choice, citing the specific trigger clause(s).
 
+The routing decision is written to the audit log and the analysis results immediately — there is no human acceptance step. Routing is a deterministic code decision, not a recommendation. Legal ops may spot-check routing decisions on a sample basis during calibration; that is a monitoring activity external to the system.
+
 Log routing decision to audit with event type `routing`.
 
 ---
@@ -496,7 +498,8 @@ Scenario_2_Vendor_Contract_2/
 ├── Input contract/                ← drop contracts here
 │   ├── sample_standard.docx
 │   ├── sample_negotiable.docx
-│   └── sample_escalation.docx
+│   ├── sample_escalation.docx
+│   └── sample_novel_clause.docx
 ├── requirements.txt
 ├── .env.example
 └── README.md
@@ -526,6 +529,12 @@ Create three valid DOCX fixture files in `Input contract/`:
 - Liability: "vendor's liability shall be unlimited" (triggers ESC-01)
 - DPA: intentionally absent (triggers ESC-07 missing_mandatory_clause)
 - All other 5 clauses match accepted positions
+
+**`sample_novel_clause.docx`** — One novel clause with no playbook entry (ESC-08), all others match:
+- Liability: "each party's liability is limited to the amount recoverable under its insurance policy in force at the time of the claim" (no accepted position, trigger, or deviation matches → `no_playbook_entry`)
+- All other 6 clauses match accepted positions
+
+This fixture covers Validation Design Scenario 4: a clause that is present and extractable with high confidence but falls outside the entire playbook. It validates the safe-failure fallback of last resort at step 8 of the classification logic.
 
 ---
 
@@ -587,6 +596,9 @@ The build is complete when all of the following pass:
 
 **FR-12 (review packet)**
 16. Every contract — regardless of queue — has an expandable detail panel in the HTML report showing all 7 clause families with their extracted text, status, and rationale.
+
+**ESC-08 (no playbook entry — novel clause)**
+17. `sample_novel_clause.docx` → `liability_cap` classified `escalate` with `reason_code = "no_playbook_entry"`; routing decision is `senior_lawyer_escalation`; zero redlines generated; audit log contains the classification event with the extracted liability clause text and reason code. This confirms the safe-failure fallback (classification step 8) fires correctly on novel language that passes extraction but matches nothing in the playbook.
 
 ---
 
