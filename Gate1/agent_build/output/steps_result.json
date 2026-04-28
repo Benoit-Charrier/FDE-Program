@@ -1,0 +1,72 @@
+[
+  {
+    "step_number": 1,
+    "action": "Load and ingest claim",
+    "outcome": "ClaimRecord created | source=EMAIL",
+    "delegation_tier": "AGENT_ONLY (REQ-1)",
+    "escalation_triggered": false,
+    "escalation_reason": null,
+    "review_window_minutes": null,
+    "duration_ms": 1
+  },
+  {
+    "step_number": 2,
+    "action": "Parse & extract attributes (REQ-1)",
+    "outcome": "parse_confidence=1.0 | email=john.smith@email.com | est_loss=\u00a38500.0",
+    "delegation_tier": "AGENT_ONLY (1.1)",
+    "escalation_triggered": false,
+    "escalation_reason": null,
+    "review_window_minutes": null,
+    "duration_ms": 1
+  },
+  {
+    "step_number": 3,
+    "action": "Classify claim type (REQ-2)",
+    "outcome": "claim_type=MOTOR | classification_confidence=0.7",
+    "delegation_tier": "AGENT_REVIEW (1.2)",
+    "escalation_triggered": true,
+    "escalation_reason": "LOW_CLASSIFICATION_CONFIDENCE",
+    "review_window_minutes": 30,
+    "duration_ms": 1
+  },
+  {
+    "step_number": 4,
+    "action": "Assess severity (REQ-3)",
+    "outcome": "severity=MEDIUM | severity_score=50",
+    "delegation_tier": "AGENT_LOG (1.3)",
+    "escalation_triggered": false,
+    "escalation_reason": null,
+    "review_window_minutes": null,
+    "duration_ms": 1
+  },
+  {
+    "step_number": 5,
+    "action": "Detect special handling flags (REQ-4)",
+    "outcome": "flags=['FATALITY']",
+    "delegation_tier": "AGENT_REVIEW (1.5)",
+    "escalation_triggered": true,
+    "escalation_reason": "SPECIAL_FLAG_DETECTED",
+    "review_window_minutes": 15,
+    "duration_ms": 1
+  },
+  {
+    "step_number": 6,
+    "action": "Validate policy coverage (REQ-5)",
+    "outcome": "policy_status=IN_FORCE | coverage_match_confidence=0.92 | coverage_status=COVERED",
+    "delegation_tier": "AGENT_LOG (2.3)",
+    "escalation_triggered": false,
+    "escalation_reason": null,
+    "review_window_minutes": null,
+    "duration_ms": 4
+  },
+  {
+    "step_number": 7,
+    "action": "Route to adjuster (REQ-6)",
+    "outcome": "assigned=ADJ-002 | specialty=MOTOR | queue_depth=1",
+    "delegation_tier": "AGENT_ONLY (3.1/3.2)",
+    "escalation_triggered": false,
+    "escalation_reason": null,
+    "review_window_minutes": null,
+    "duration_ms": 1
+  }
+]

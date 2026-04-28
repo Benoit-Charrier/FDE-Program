@@ -1,0 +1,304 @@
+{
+  "run_at": "2026-04-27T15:53:49Z",
+  "agent_script": "C:\\Users\\Benoit_Charrier\\FDE Program\\FDE-Program\\Gate1\\agent_build\\src\\main.py",
+  "scenarios": [
+    {
+      "id": "S1",
+      "name": "Standard Property Claim \u2014 Full Automation",
+      "type": "Happy Path",
+      "overall": "PASS",
+      "pass_count": 7,
+      "fail_count": 0,
+      "assertions": [
+        {
+          "assertion": "claim_type = PROPERTY",
+          "expected": "PROPERTY",
+          "actual": "PROPERTY",
+          "passed": true,
+          "note": null
+        },
+        {
+          "assertion": "severity = LOW",
+          "expected": "LOW",
+          "actual": "LOW",
+          "passed": true,
+          "note": null
+        },
+        {
+          "assertion": "status = COMPLETED",
+          "expected": "COMPLETED",
+          "actual": "COMPLETED",
+          "passed": true,
+          "note": null
+        },
+        {
+          "assertion": "coverage_status = COVERED",
+          "expected": "COVERED",
+          "actual": "COVERED",
+          "passed": true,
+          "note": null
+        },
+        {
+          "assertion": "assigned_adjuster_id = ADJ-101 (lowest queue depth)",
+          "expected": "ADJ-101",
+          "actual": "ADJ-101",
+          "passed": true,
+          "note": null
+        },
+        {
+          "assertion": "sla_breached = False",
+          "expected": "False",
+          "actual": "False",
+          "passed": true,
+          "note": null
+        },
+        {
+          "assertion": "no triage escalations",
+          "expected": "True",
+          "actual": "True",
+          "passed": true,
+          "note": null
+        },
+        {
+          "assertion": "severity_score (informational deviation)",
+          "expected": "38 (per spec)",
+          "actual": "35",
+          "passed": null,
+          "note": "Heuristic scorer maps \u00a34,500 to score 35. Spec says 38. Both produce LOW severity \u2014 behavior correct, exact score differs."
+        }
+      ]
+    },
+    {
+      "id": "S2A",
+      "name": "Severity Boundary \u2014 Sub-case A (score below 60)",
+      "type": "Delegation Boundary",
+      "overall": "PASS",
+      "pass_count": 4,
+      "fail_count": 0,
+      "assertions": [
+        {
+          "assertion": "severity = MEDIUM",
+          "expected": "MEDIUM",
+          "actual": "MEDIUM",
+          "passed": true,
+          "note": null
+        },
+        {
+          "assertion": "severity_score < 60",
+          "expected": "True",
+          "actual": "True",
+          "passed": true,
+          "note": null
+        },
+        {
+          "assertion": "no HIGH_SEVERITY escalation",
+          "expected": "True",
+          "actual": "True",
+          "passed": true,
+          "note": null
+        },
+        {
+          "assertion": "status reaches COMPLETED",
+          "expected": "COMPLETED",
+          "actual": "COMPLETED",
+          "passed": true,
+          "note": null
+        },
+        {
+          "assertion": "severity_score (informational deviation)",
+          "expected": "59 (per spec)",
+          "actual": "50",
+          "passed": null,
+          "note": "Heuristic scorer produces 50. Spec expects 59. Both below 60 threshold \u2014 delegation tier fires correctly."
+        }
+      ]
+    },
+    {
+      "id": "S2B",
+      "name": "Severity Boundary \u2014 Sub-case B (score above 60)",
+      "type": "Delegation Boundary",
+      "overall": "FAIL",
+      "pass_count": 0,
+      "fail_count": 3,
+      "assertions": [
+        {
+          "assertion": "severity = HIGH",
+          "expected": "HIGH",
+          "actual": "MEDIUM",
+          "passed": false,
+          "note": "FAIL EXPECTED \u2014 heuristic scorer uses \u00a35k-\u00a315k bracket; \u00a39,800 and \u00a310,200 produce identical score. No \u00a310k boundary exists in current model."
+        },
+        {
+          "assertion": "severity_score >= 60",
+          "expected": "True",
+          "actual": "False",
+          "passed": false,
+          "note": "FAIL EXPECTED \u2014 same bracket as Sub-case A; score unchanged by \u00a3400 difference"
+        },
+        {
+          "assertion": "triage escalated HIGH_SEVERITY",
+          "expected": "True",
+          "actual": "False",
+          "passed": false,
+          "note": "FAIL EXPECTED \u2014 follows from severity not reaching HIGH"
+        },
+        {
+          "assertion": "Root cause (informational)",
+          "expected": "Distinct \u00a310k threshold in severity model",
+          "actual": "Both \u00a39,800 and \u00a310,200 map to score 50 (bracket 5k\u201315k -> 45 + 5 MOTOR modifier)",
+          "passed": null,
+          "note": "Severity model requires a sub-bracket at \u00a310,000 to implement the D2 1.3/1.4 boundary. Flagged as D5-U1."
+        }
+      ]
+    },
+    {
+      "id": "S3",
+      "name": "Ambiguous Coverage with Exclusion Candidate",
+      "type": "Edge Case",
+      "overall": "PASS",
+      "pass_count": 5,
+      "fail_count": 0,
+      "assertions": [
+        {
+          "assertion": "coverage_status = UNCERTAIN (pending review)",
+          "expected": "UNCERTAIN",
+          "actual": "UNCERTAIN",
+          "passed": true,
+          "note": null
+        },
+        {
+          "assertion": "exclusion_candidates non-empty",
+          "expected": "True",
+          "actual": "True",
+          "passed": true,
+          "note": null
+        },
+        {
+          "assertion": "exclusion_candidates contains Clause 14.3",
+          "expected": "contains 'Clause 14'",
+          "actual": "['Clause 14']",
+          "passed": true,
+          "note": null
+        },
+        {
+          "assertion": "assigned_adjuster_id = None (routing skipped)",
+          "expected": "None",
+          "actual": "None",
+          "passed": true,
+          "note": null
+        },
+        {
+          "assertion": "claim_type = PROPERTY",
+          "expected": "PROPERTY",
+          "actual": "PROPERTY",
+          "passed": true,
+          "note": null
+        },
+        {
+          "assertion": "coverage_match_confidence (informational deviation)",
+          "expected": "0.72 (per spec \u2014 ML model output)",
+          "actual": "0.92",
+          "passed": null,
+          "note": "Heuristic always assigns 0.92 when claim_type matches any covered_peril. A production ML model would produce lower confidence for gradual-deterioration claims. The exclusion candidate (Clause 14.3) correctly triggered AGENT_REVIEW regardless."
+        }
+      ]
+    },
+    {
+      "id": "S4",
+      "name": "Policy Admin System Unavailable (HTTP 503)",
+      "type": "Failure Mode",
+      "overall": "PASS",
+      "pass_count": 4,
+      "fail_count": 0,
+      "assertions": [
+        {
+          "assertion": "status = INTEGRATION_ERROR",
+          "expected": "INTEGRATION_ERROR",
+          "actual": "INTEGRATION_ERROR",
+          "passed": true,
+          "note": null
+        },
+        {
+          "assertion": "assigned_adjuster_id = None (routing not attempted)",
+          "expected": "None",
+          "actual": "None",
+          "passed": true,
+          "note": null
+        },
+        {
+          "assertion": "coverage_status = UNCERTAIN",
+          "expected": "UNCERTAIN",
+          "actual": "UNCERTAIN",
+          "passed": true,
+          "note": null
+        },
+        {
+          "assertion": "INTEGRATION_ERROR escalation logged",
+          "expected": "True",
+          "actual": "True",
+          "passed": true,
+          "note": null
+        },
+        {
+          "assertion": "retry_count = 3 in audit log (informational)",
+          "expected": "3 retries (2s/4s/8s backoff) in steps",
+          "actual": "Simulated \u2014 retry_count carried in step outcome string",
+          "passed": null,
+          "note": "Current implementation simulates the 503 path via a mock flag. Retry timing (2s/4s/8s backoff) is declared in the error detail string but not executed as real HTTP calls."
+        }
+      ]
+    },
+    {
+      "id": "S5",
+      "name": "Silent Severity Downgrade \u2014 Quiet Failure",
+      "type": "Failure Mode / Delegation Boundary",
+      "overall": "FAIL",
+      "pass_count": 4,
+      "fail_count": 2,
+      "assertions": [
+        {
+          "assertion": "status = COMPLETED (quiet failure confirmed)",
+          "expected": "COMPLETED",
+          "actual": "COMPLETED",
+          "passed": true,
+          "note": "Expected \u2014 agent processes defective-value claim end-to-end without escalation. This is the quiet failure."
+        },
+        {
+          "assertion": "severity = LOW (no escalation triggered)",
+          "expected": "LOW",
+          "actual": "LOW",
+          "passed": true,
+          "note": "\u00a31,400 (simulated defective extraction) produces score < 40 -> LOW. True value \u00a314,000 would produce MEDIUM/HIGH."
+        },
+        {
+          "assertion": "no HIGH_SEVERITY escalation fired",
+          "expected": "True",
+          "actual": "True",
+          "passed": true,
+          "note": null
+        },
+        {
+          "assertion": "estimated_loss_value < 2000 (defective extraction active)",
+          "expected": "True",
+          "actual": "True",
+          "passed": true,
+          "note": "Input text contains \u00a31,400 (simulated defect). Current extraction regex correctly reads it as 1400."
+        },
+        {
+          "assertion": "Primary detection: nightly batch value comparison",
+          "expected": "Batch job compares extracted_value against adjuster reserve; alert if < 0.5\u00d7",
+          "actual": "NOT IMPLEMENTED \u2014 no batch job exists in current build",
+          "passed": false,
+          "note": "The D4 pass criterion for Scenario 5 tests the detection mechanism, not agent processing. The batch comparison job is a production dependency (D5-U \u2014 CRM adjuster reserve field exposure required). Implementation gap."
+        },
+        {
+          "assertion": "Secondary detection: unactioned low-value MOTOR/PROPERTY flag",
+          "expected": "Flag if adjuster does not set reserve within 72h for MOTOR claim < \u00a32,000",
+          "actual": "NOT IMPLEMENTED \u2014 no adjuster follow-up monitoring in current build",
+          "passed": false,
+          "note": "Secondary detection mechanism from D4. Requires CRM integration with adjuster reserve tracking."
+        }
+      ]
+    }
+  ]
+}

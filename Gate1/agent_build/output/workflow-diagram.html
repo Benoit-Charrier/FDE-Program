@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FNOL Processing Agent — Workflow</title>
+  <style>
+    /* === CodeMie Design System — inlined for portability === */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
+
+    /* ── tokens.css ── */
+    :root {
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+      --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+      --text-xs-1: 0.625rem; --text-xs: 0.75rem; --text-sm-1: 0.813rem; --text-sm: 0.875rem;
+      --text-base: 1rem; --text-h1: 2rem; --text-h2: 1.5rem; --text-h3: 1rem;
+      --text-h4: 0.875rem; --text-h5: 0.75rem;
+      --lh-h1: 2rem; --lh-h2: 1.5rem; --lh-h3: 1.3125rem; --lh-h4: 1.125rem; --lh-h5: 1rem;
+      --radius-sm: 4px; --radius-md: 6px; --radius-lg: 8px; --radius-xl: 12px;
+      --radius-2xl: 16px; --radius-full: 9999px;
+      --space-0-5: 0.125rem; --space-1: 0.25rem; --space-1-5: 0.375rem; --space-2: 0.5rem;
+      --space-2-5: 0.625rem; --space-3: 0.75rem; --space-4: 1rem; --space-5: 1.25rem;
+      --space-6: 1.5rem; --space-8: 2rem;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,.4);
+      --shadow-md: 0 4px 6px -1px rgba(0,0,0,.5), 0 2px 4px -2px rgba(0,0,0,.3);
+      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,.6), 0 4px 6px -4px rgba(0,0,0,.4);
+      --transition-fast: 120ms ease; --transition-base: 200ms ease;
+    }
+    :root, :root.dark {
+      --color-bg-page: #1A1A1A; --color-bg-sidebar: #151515; --color-bg-card: #151515;
+      --color-bg-nav: #000000; --color-bg-elevated: #2E2E2E; --color-bg-secondary: #212224;
+      --color-bg-tertiary: #2E3033; --color-bg-quaternary: #333436;
+      --color-bg-hover: #212224; --color-bg-hover-strong: #333436;
+      --color-bg-input: #1A1A1A; --color-bg-input-prefix: #333436;
+      --color-text-primary: #FFFFFF; --color-text-secondary: #F2F0EF;
+      --color-text-tertiary: #CCCCCC; --color-text-muted: #BBBBBB;
+      --color-text-heading: #BBBBBB;
+      --color-border-primary: #333436; --color-border-secondary: #47484A;
+      --color-border-structural: #333436; --color-border-subtle: #4C4C4C;
+      --color-border-accent: #FFFFFF; --color-border-focus: #FFFFFF;
+      --color-border-error: #F9303C; --color-border-panel: #333436;
+      --color-icon-primary: #FFFFFF; --color-icon-secondary: #CCCCCC; --color-icon-tertiary: #999999;
+      --color-success: #259F4C; --color-success-bg: #1B271F; --color-success-border: #259F4C; --color-success-text: #259F4C;
+      --color-error: #F9303C; --color-error-bg: #262121; --color-error-border: #FE3B4C; --color-error-text: #FE3B4C;
+      --color-warning: #F5A534; --color-warning-bg: #492B00; --color-warning-border: #663B00; --color-warning-text: #F5A534;
+      --color-info: #2297F6; --color-info-bg: #002442; --color-info-border: #003A69; --color-info-text: #2297F6;
+      --color-purple: #C084FC; --color-purple-bg: #2D1B3D; --color-purple-border: #2D1B3D; --color-purple-text: #F3E8FF;
+      --color-cyan: #06B6D4; --color-cyan-bg: #003942; --color-cyan-border: #005866;
+      --status-not-started-text: #A0A0A0; --status-not-started-bg: #333333; --status-not-started-border: #4C4C4C;
+      --status-in-progress-text: #2297F6; --status-in-progress-bg: #002442; --status-in-progress-border: #003A69;
+      --status-success-text: #259F4C; --status-success-bg: #1B271F; --status-success-border: #259F4C;
+      --status-warning-text: #F5A534; --status-warning-bg: #492B00; --status-warning-border: #663B00;
+      --status-advanced-text: #C084FC; --status-advanced-bg: #2D1B3D; --status-advanced-border: #2D1B3D;
+      --gradient-primary-btn: linear-gradient(90deg,#672D92,#547CCC);
+      --gradient-magical: linear-gradient(90deg,#672D92,#5677C8);
+    }
+
+    /* ── base.css ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body { font-family: var(--font-sans); font-size: var(--text-sm); line-height: 1.5;
+      color: var(--color-text-primary); background-color: var(--color-bg-page);
+      -webkit-font-smoothing: antialiased; }
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: var(--color-border-subtle); border-radius: var(--radius-full); }
+    .container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 var(--space-4); }
+
+    /* ── typography.css ── */
+    h1 { font-size: var(--text-h1); line-height: var(--lh-h1); font-weight: 700; color: var(--color-text-primary); letter-spacing: -.02em; }
+    h2 { font-size: var(--text-h2); font-weight: 600; color: var(--color-text-primary); }
+    h3 { font-size: var(--text-h3); font-weight: 600; color: var(--color-text-primary); }
+    h4 { font-size: var(--text-h4); font-weight: 600; color: var(--color-text-primary); }
+    p  { color: var(--color-text-secondary); font-size: var(--text-sm); line-height: 1.6; }
+    .text-muted  { color: var(--color-text-muted); }
+    .text-xs     { font-size: var(--text-xs); }
+    .text-sm     { font-size: var(--text-sm); }
+    .font-semibold { font-weight: 600; }
+    .uppercase   { text-transform: uppercase; }
+
+    /* ── components.css (badge, tag, alert, card) ── */
+    .badge { display:inline-flex; align-items:center; gap:var(--space-1-5); padding:0 var(--space-2);
+      height:17px; border-radius:var(--radius-full); border:1px solid; font-size:var(--text-xs-1);
+      font-weight:700; text-transform:uppercase; letter-spacing:.04em; white-space:nowrap; user-select:none; }
+    .badge-dot { width:7px; height:7px; border-radius:var(--radius-full); display:inline-block; }
+    .badge-not-started { background:var(--status-not-started-bg); color:var(--status-not-started-text); border-color:var(--status-not-started-border); }
+    .badge-not-started .badge-dot { background:var(--status-not-started-text); }
+    .badge-success { background:var(--status-success-bg); color:var(--status-success-text); border-color:var(--status-success-border); }
+    .badge-success .badge-dot { background:var(--status-success-text); }
+    .badge-warning { background:var(--status-warning-bg); color:var(--status-warning-text); border-color:var(--status-warning-border); }
+    .badge-warning .badge-dot { background:var(--status-warning-text); }
+    .badge-error   { background:var(--color-error-bg); color:var(--color-error-text); border-color:var(--color-error-border); }
+    .badge-error .badge-dot { background:var(--color-error-text); }
+    .badge-advanced { background:var(--status-advanced-bg); color:var(--status-advanced-text); border-color:var(--status-advanced-border); }
+    .badge-advanced .badge-dot { background:var(--status-advanced-text); }
+    .tag { display:inline-flex; align-items:center; gap:var(--space-1); padding:var(--space-1) var(--space-2);
+      border-radius:var(--radius-lg); border:1px solid var(--color-border-secondary);
+      background:var(--color-bg-secondary); font-size:var(--text-xs); font-weight:600;
+      color:var(--color-text-tertiary); white-space:nowrap; }
+    .tag-blue   { background:var(--color-info-bg);    border-color:var(--color-info-border);    color:var(--color-info-text); }
+    .tag-green  { background:var(--color-success-bg); border-color:var(--color-success-border); color:var(--color-success-text); }
+    .tag-purple { background:var(--color-purple-bg);  border-color:var(--color-purple-border);  color:var(--color-purple-text); }
+    .tag-yellow { background:var(--color-warning-bg); border-color:var(--color-warning-border); color:var(--color-warning-text); }
+    .tag-red    { background:var(--color-error-bg);   border-color:var(--color-error-border);   color:var(--color-error-text); }
+    .alert { display:flex; align-items:flex-start; gap:var(--space-2); padding:var(--space-2) var(--space-3);
+      border-radius:var(--radius-md); border:1px solid; font-size:var(--text-xs); line-height:1.5; }
+    .alert-info { background:var(--color-info-bg); border-color:var(--color-info-border); color:var(--color-info-text); }
+    .card { display:flex; flex-direction:column; background:var(--color-bg-card);
+      border:1px solid var(--color-border-structural); border-radius:var(--radius-xl); overflow:hidden; }
+    .card-header { display:flex; align-items:center; justify-content:space-between;
+      padding:var(--space-4); border-bottom:1px solid var(--color-border-structural); }
+    .card-body { flex:1; padding:var(--space-4); }
+    .card-title { font-size:var(--text-base); font-weight:600; color:var(--color-text-primary); }
+
+    /* ── utilities.css ── */
+    .flex  { display:flex; } .flex-col { flex-direction:column; } .flex-row { flex-direction:row; }
+    .items-center { align-items:center; } .items-start { align-items:flex-start; }
+    .justify-between { justify-content:space-between; } .justify-center { justify-content:center; }
+    .gap-1 { gap:var(--space-1); } .gap-2 { gap:var(--space-2); } .gap-3 { gap:var(--space-3); }
+    .gap-4 { gap:var(--space-4); } .gap-6 { gap:var(--space-6); }
+    .p-4   { padding:var(--space-4); } .p-6 { padding:var(--space-6); }
+    .px-4  { padding-left:var(--space-4); padding-right:var(--space-4); }
+    .py-2  { padding-top:var(--space-2); padding-bottom:var(--space-2); }
+    .mt-2  { margin-top:var(--space-2); } .mt-4 { margin-top:var(--space-4); }
+    .mt-6  { margin-top:var(--space-6); } .mt-8 { margin-top:var(--space-8); }
+    .mb-2  { margin-bottom:var(--space-2); } .mb-4 { margin-bottom:var(--space-4); }
+    .mb-6  { margin-bottom:var(--space-6); }
+    .w-full { width:100%; } .mx-auto { margin-left:auto; margin-right:auto; }
+    .rounded-xl { border-radius:var(--radius-xl); }
+    .border { border:1px solid var(--color-border-structural); }
+    .grid  { display:grid; }
+
+    /* ── Page-specific workflow styles ── */
+    body { padding: var(--space-8) var(--space-4); }
+
+    .page-title { font-size: var(--text-h1); font-weight: 700; letter-spacing: -.02em; }
+    .page-subtitle { color: var(--color-text-muted); margin-top: var(--space-2); font-size: var(--text-sm); }
+
+    /* Legend */
+    .legend {
+      display: flex; align-items: center; gap: var(--space-6); flex-wrap: wrap;
+      padding: var(--space-3) var(--space-4);
+      background: var(--color-bg-secondary);
+      border: 1px solid var(--color-border-structural);
+      border-radius: var(--radius-xl);
+    }
+    .legend-item { display: flex; align-items: center; gap: var(--space-2); font-size: var(--text-xs); color: var(--color-text-muted); }
+    .legend-swatch { width: 10px; height: 10px; border-radius: var(--radius-sm); flex-shrink: 0; }
+    .swatch-input  { background: var(--color-info); }
+    .swatch-agent  { background: var(--color-purple); }
+    .swatch-output { background: var(--color-success); }
+    .swatch-human  { background: var(--color-warning); }
+    .swatch-none   { background: var(--status-not-started-text); }
+
+    /* Workflow container */
+    .workflow { display: flex; flex-direction: column; align-items: center; gap: 0; }
+
+    /* Stage card */
+    .stage-card {
+      width: 100%;
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border-structural);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      transition: border-color var(--transition-base);
+    }
+    .stage-card:hover { border-color: var(--color-border-secondary); }
+
+    /* Governance variant */
+    .stage-card.governance {
+      border-color: var(--color-warning-border);
+      box-shadow: 0 0 0 1px var(--color-warning-border), var(--shadow-md);
+    }
+    .stage-card.governance .stage-header {
+      background: linear-gradient(90deg, rgba(73,43,0,.6) 0%, var(--color-bg-secondary) 100%);
+    }
+    .stage-card.governance .stage-number {
+      background: var(--color-warning-bg); color: var(--color-warning-text); border-color: var(--color-warning-border);
+    }
+
+    /* Gate variant */
+    .stage-card.gate { border-color: var(--color-info-border); }
+    .stage-card.gate .stage-header {
+      background: linear-gradient(90deg, rgba(0,36,66,.6) 0%, var(--color-bg-secondary) 100%);
+    }
+    .stage-card.gate .stage-number {
+      background: var(--color-info-bg); color: var(--color-info-text); border-color: var(--color-info-border);
+    }
+
+    /* Stage header */
+    .stage-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: var(--space-3) var(--space-4);
+      background: var(--color-bg-secondary);
+      border-bottom: 1px solid var(--color-border-structural);
+    }
+    .stage-header-left { display: flex; align-items: center; gap: var(--space-3); }
+    .stage-number {
+      display: flex; align-items: center; justify-content: center;
+      width: 28px; height: 28px; border-radius: var(--radius-full);
+      background: var(--color-bg-tertiary); border: 1px solid var(--color-border-subtle);
+      font-size: var(--text-xs); font-weight: 700; color: var(--color-text-primary);
+      flex-shrink: 0;
+    }
+    .stage-name { font-size: var(--text-base); font-weight: 600; color: var(--color-text-primary); }
+    .stage-path-note { font-size: var(--text-xs); color: var(--color-text-muted); font-style: italic; }
+
+    /* 4-column swimlane grid */
+    .swimlane-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr 1fr 1fr;
+      gap: 0;
+    }
+    .swimlane-cell {
+      padding: var(--space-4);
+      border-right: 1px solid var(--color-border-structural);
+      min-height: 120px;
+    }
+    .swimlane-cell:last-child { border-right: none; }
+    .swimlane-label {
+      display: flex; align-items: center; gap: var(--space-1-5);
+      font-size: var(--text-xs-1); font-weight: 700; text-transform: uppercase;
+      letter-spacing: .06em; margin-bottom: var(--space-2-5);
+    }
+    .swimlane-label-dot { width: 6px; height: 6px; border-radius: var(--radius-full); flex-shrink: 0; }
+    .cell-input  .swimlane-label { color: var(--color-info-text); }
+    .cell-input  .swimlane-label-dot { background: var(--color-info); }
+    .cell-agent  .swimlane-label { color: var(--color-purple-text); }
+    .cell-agent  .swimlane-label-dot { background: var(--color-purple); }
+    .cell-output .swimlane-label { color: var(--color-success-text); }
+    .cell-output .swimlane-label-dot { background: var(--color-success); }
+    .cell-human  .swimlane-label { color: var(--color-warning-text); }
+    .cell-human  .swimlane-label-dot { background: var(--color-warning); }
+    .cell-human.none .swimlane-label { color: var(--status-not-started-text); }
+    .cell-human.none .swimlane-label-dot { background: var(--status-not-started-text); }
+
+    .swimlane-cell p, .swimlane-content { font-size: var(--text-xs); color: var(--color-text-tertiary); line-height: 1.6; }
+    .swimlane-cell ul { list-style: none; display: flex; flex-direction: column; gap: var(--space-1); }
+    .swimlane-cell ul li {
+      font-size: var(--text-xs); color: var(--color-text-tertiary); line-height: 1.5;
+      padding-left: var(--space-3); position: relative;
+    }
+    .swimlane-cell ul li::before { content: '·'; position: absolute; left: 0; color: var(--color-text-muted); }
+    .none-text { color: var(--status-not-started-text); font-size: var(--text-xs); font-style: italic; }
+
+    /* Column header row */
+    .swimlane-headers {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr 1fr 1fr;
+      gap: 0;
+      border: 1px solid var(--color-border-structural);
+      border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+      overflow: hidden;
+      background: var(--color-bg-quaternary);
+    }
+    .swimlane-header-cell {
+      display: flex; align-items: center; gap: var(--space-2);
+      padding: var(--space-2-5) var(--space-4);
+      font-size: var(--text-xs-1); font-weight: 700; text-transform: uppercase;
+      letter-spacing: .08em;
+      border-right: 1px solid var(--color-border-structural);
+    }
+    .swimlane-header-cell:last-child { border-right: none; }
+    .sh-input  { color: var(--color-info-text); }
+    .sh-agent  { color: var(--color-purple-text); }
+    .sh-output { color: var(--color-success-text); }
+    .sh-human  { color: var(--color-warning-text); }
+    .header-dot { width: 8px; height: 8px; border-radius: var(--radius-full); flex-shrink: 0; }
+    .hd-input  { background: var(--color-info); }
+    .hd-agent  { background: var(--color-purple); }
+    .hd-output { background: var(--color-success); }
+    .hd-human  { background: var(--color-warning); }
+
+    /* Connector arrow */
+    .stage-connector {
+      display: flex; flex-direction: column; align-items: center; gap: 0;
+      height: 36px; flex-shrink: 0;
+    }
+    .connector-line {
+      width: 2px; flex: 1;
+      background: linear-gradient(180deg, var(--color-border-subtle) 0%, var(--color-border-subtle) 100%);
+    }
+    .connector-arrow {
+      width: 0; height: 0;
+      border-left: 7px solid transparent;
+      border-right: 7px solid transparent;
+      border-top: 8px solid var(--color-border-subtle);
+    }
+    .connector-label {
+      font-size: var(--text-xs-1); color: var(--color-text-muted); letter-spacing: .04em;
+      font-weight: 600; text-transform: uppercase; text-align: center;
+      background: var(--color-bg-page); padding: 0 var(--space-2); margin: 2px 0;
+    }
+
+    /* Governance callout strip */
+    .governance-strip {
+      width: 100%;
+      padding: var(--space-2) var(--space-4);
+      background: var(--color-warning-bg);
+      border: 1px solid var(--color-warning-border);
+      border-radius: var(--radius-lg);
+      font-size: var(--text-xs);
+      color: var(--color-warning-text);
+      display: flex; align-items: flex-start; gap: var(--space-2);
+      line-height: 1.5;
+    }
+    .governance-icon { font-size: 14px; flex-shrink: 0; margin-top: 1px; }
+
+    /* Column backgrounds */
+    .swimlane-cell.cell-input  { background: rgba(0,36,66,.1); }
+    .swimlane-cell.cell-agent  { background: rgba(45,27,61,.12); }
+    .swimlane-cell.cell-output { background: rgba(27,39,31,.1); }
+    .swimlane-cell.cell-human  { background: rgba(73,43,0,.1); }
+    .swimlane-cell.cell-human.none { background: rgba(51,51,51,.12); }
+
+    /* Tags inside cells */
+    .cell-tags { display: flex; flex-wrap: wrap; gap: var(--space-1); margin-top: var(--space-2); }
+    .pill {
+      display: inline-flex; align-items: center;
+      padding: 2px var(--space-2); border-radius: var(--radius-full);
+      font-size: var(--text-xs-1); font-weight: 600; letter-spacing: .03em;
+      border: 1px solid; white-space: nowrap;
+    }
+    .pill-agent-only  { background: var(--status-not-started-bg); border-color: var(--status-not-started-border); color: var(--status-not-started-text); }
+    .pill-agent-log   { background: var(--color-info-bg);    border-color: var(--color-info-border);    color: var(--color-info-text); }
+    .pill-agent-rev   { background: var(--color-warning-bg); border-color: var(--color-warning-border); color: var(--color-warning-text); }
+    .pill-human-only  { background: var(--color-error-bg);   border-color: var(--color-error-border);   color: var(--color-error-text); }
+    .pill-output      { background: var(--color-success-bg); border-color: var(--color-success-border); color: var(--color-success-text); }
+    .pill-escalate    { background: var(--color-error-bg);   border-color: var(--color-error-border);   color: var(--color-error-text); }
+    .pill-purple      { background: var(--color-purple-bg);  border-color: var(--color-purple-border);  color: var(--color-purple-text); }
+
+    /* Automation badge */
+    .auto-badge {
+      display: inline-flex; align-items: center; gap: var(--space-1);
+      padding: 2px var(--space-2); border-radius: var(--radius-full);
+      font-size: var(--text-xs-1); font-weight: 700; letter-spacing: .04em; border: 1px solid;
+    }
+    .auto-full   { background: var(--status-not-started-bg); color: var(--status-not-started-text); border-color: var(--status-not-started-border); }
+    .auto-human  { background: var(--color-warning-bg); color: var(--color-warning-text); border-color: var(--color-warning-border); }
+    .auto-gate   { background: var(--color-error-bg); color: var(--color-error-text); border-color: var(--color-error-border); }
+    .auto-dot    { width: 5px; height: 5px; border-radius: var(--radius-full); }
+
+    /* Sub-task row inside agent cell */
+    .subtask { margin-bottom: var(--space-3); padding-bottom: var(--space-3); border-bottom: 1px solid var(--color-border-structural); }
+    .subtask:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+    .subtask-id { font-size: var(--text-xs-1); font-weight: 700; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: .05em; margin-bottom: var(--space-1); }
+    .subtask-name { font-size: var(--text-xs); font-weight: 600; color: var(--color-text-secondary); margin-bottom: var(--space-1); }
+    .subtask-detail { font-size: var(--text-xs); color: var(--color-text-tertiary); line-height: 1.5; }
+
+    @media (max-width: 768px) {
+      .swimlane-grid, .swimlane-headers { grid-template-columns: 1fr; }
+      .swimlane-cell { border-right: none; border-bottom: 1px solid var(--color-border-structural); }
+      .swimlane-header-cell { border-right: none; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- Page header -->
+  <div class="flex items-start justify-between mb-6">
+    <div>
+      <h1 class="page-title">FNOL Processing Agent</h1>
+      <p class="page-subtitle mt-2">Delegation workflow · Input → Agent Task → Output → Human Review · D2 Delegation Analysis</p>
+    </div>
+    <div class="flex flex-col gap-2 items-end" style="flex-shrink:0; margin-left:2rem;">
+      <span class="auto-badge auto-full"><span class="auto-dot" style="background:var(--status-not-started-text)"></span>Fully automated</span>
+      <span class="auto-badge auto-human"><span class="auto-dot" style="background:var(--color-warning)"></span>Human action required</span>
+      <span class="auto-badge auto-gate"><span class="auto-dot" style="background:var(--color-error)"></span>Governance control</span>
+    </div>
+  </div>
+
+  <!-- Legend -->
+  <div class="legend mb-6">
+    <div class="legend-item"><div class="legend-swatch swatch-input"></div>Input — what enters this stage</div>
+    <div class="legend-item"><div class="legend-swatch swatch-agent"></div>Agent task — what the AI does</div>
+    <div class="legend-item"><div class="legend-swatch swatch-output"></div>Output — what is produced</div>
+    <div class="legend-item"><div class="legend-swatch swatch-human"></div>Human review — required action</div>
+    <div class="legend-item"><div class="legend-swatch swatch-none"></div>None — fully automated</div>
+  </div>
+
+  <!-- Delegation tier key -->
+  <div class="flex gap-2 flex-wrap mb-6">
+    <span class="pill pill-agent-only">AGENT_ONLY</span>
+    <span class="pill pill-agent-log">AGENT_LOG</span>
+    <span class="pill pill-agent-rev">AGENT_REVIEW</span>
+    <span class="pill pill-human-only">HUMAN_ONLY</span>
+    <span style="font-size:var(--text-xs); color:var(--color-text-muted); align-self:center; margin-left:var(--space-2);">Delegation tiers from D2 — each sub-task is tagged with its tier in the Agent Task column</span>
+  </div>
+
+  <!-- Column headers -->
+  <div class="swimlane-headers mb-0" style="border-bottom:none; border-radius:var(--radius-xl) var(--radius-xl) 0 0;">
+    <div class="swimlane-header-cell sh-input"><div class="header-dot hd-input"></div>Input</div>
+    <div class="swimlane-header-cell sh-agent"><div class="header-dot hd-agent"></div>Agent Task</div>
+    <div class="swimlane-header-cell sh-output"><div class="header-dot hd-output"></div>Output</div>
+    <div class="swimlane-header-cell sh-human"><div class="header-dot hd-human"></div>Human Review</div>
+  </div>
+
+  <!-- Workflow -->
+  <div class="workflow">
+
+    <!-- ── STAGE 1: TRIAGE BY SEVERITY ── -->
+    <div class="stage-card w-full" style="border-radius:0 0 var(--radius-xl) var(--radius-xl);">
+      <div class="stage-header">
+        <div class="stage-header-left">
+          <div class="stage-number">1</div>
+          <div>
+            <div class="stage-name">Triage by Severity</div>
+            <div class="stage-path-note">Sub-tasks 1.1 – 1.5</div>
+          </div>
+        </div>
+        <span class="auto-badge auto-human"><span class="auto-dot" style="background:var(--color-warning)"></span>Human review on escalation</span>
+      </div>
+      <div class="swimlane-grid">
+
+        <!-- Input -->
+        <div class="swimlane-cell cell-input">
+          <div class="swimlane-label"><div class="swimlane-label-dot"></div>Input</div>
+          <ul>
+            <li>Unstructured claim text (up to 50,000 chars)</li>
+            <li>Source channel: EMAIL / PHONE_TRANSCRIPT / WEB_FORM</li>
+            <li>policy_id (from form or extracted from text)</li>
+            <li>loss_date (from form or extracted)</li>
+          </ul>
+        </div>
+
+        <!-- Agent Task -->
+        <div class="swimlane-cell cell-agent">
+          <div class="swimlane-label"><div class="swimlane-label-dot"></div>Agent Task</div>
+
+          <div class="subtask">
+            <div class="subtask-id">1.1</div>
+            <div class="subtask-name">Parse &amp; extract structured attributes</div>
+            <div class="subtask-detail">Extracts: policy_id, loss_date, loss_description, claimant email, estimated loss value, claim narrative. Assigns parse_confidence 0–1.</div>
+            <div class="cell-tags" style="margin-top:var(--space-1);">
+              <span class="pill pill-agent-only">AGENT_ONLY</span>
+            </div>
+          </div>
+
+          <div class="subtask">
+            <div class="subtask-id">1.2</div>
+            <div class="subtask-name">Classify claim type</div>
+            <div class="subtask-detail">MOTOR / PROPERTY / LIABILITY / HEALTH / OTHER. classification_confidence 0–1. Threshold: ≥ 0.85 → AGENT_LOG; &lt; 0.85 → AGENT_REVIEW, 30-min window.</div>
+            <div class="cell-tags" style="margin-top:var(--space-1);">
+              <span class="pill pill-agent-log">AGENT_LOG ≥ 0.85</span>
+              <span class="pill pill-agent-rev">AGENT_REVIEW &lt; 0.85</span>
+            </div>
+          </div>
+
+          <div class="subtask">
+            <div class="subtask-id">1.3</div>
+            <div class="subtask-name">Assess severity — LOW / MEDIUM</div>
+            <div class="subtask-detail">severity_score 0–59. Uses claim type, estimated loss value, narrative signals. No escalation — proceeds directly to TRIAGED.</div>
+            <div class="cell-tags" style="margin-top:var(--space-1);">
+              <span class="pill pill-agent-log">AGENT_LOG</span>
+            </div>
+          </div>
+
+          <div class="subtask">
+            <div class="subtask-id">1.4</div>
+            <div class="subtask-name">Assess severity — HIGH / CRITICAL</div>
+            <div class="subtask-detail">severity_score ≥ 60. Creates EscalationBriefing. 30-min specialist review window. Consequence of downward misclassification affects regulatory SLA.</div>
+            <div class="cell-tags" style="margin-top:var(--space-1);">
+              <span class="pill pill-agent-rev">AGENT_REVIEW</span>
+              <span class="pill pill-escalate">EscalationBriefing</span>
+            </div>
+          </div>
+
+          <div class="subtask">
+            <div class="subtask-id">1.5</div>
+            <div class="subtask-name">Detect special handling flags</div>
+            <div class="subtask-detail">Scans for: FATALITY, LEGAL_REPRESENTATION, VULNERABLE_CLAIMANT, FRAUD_INDICATOR. Any flag → 15-min review window. False negative cost is asymmetric (regulatory breach).</div>
+            <div class="cell-tags" style="margin-top:var(--space-1);">
+              <span class="pill pill-agent-rev">AGENT_REVIEW</span>
+              <span class="pill pill-escalate">15-min window</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Output -->
+        <div class="swimlane-cell cell-output">
+          <div class="swimlane-label"><div class="swimlane-label-dot"></div>Output</div>
+          <ul>
+            <li>ClaimRecord created (PARSED or PARSE_UNCERTAIN)</li>
+            <li>claim_type + classification_confidence</li>
+            <li>severity + severity_score</li>
+            <li>special_handling_flags[]</li>
+            <li>parse_confidence score</li>
+            <li>EscalationBriefing (if 1.4 or 1.5 triggered)</li>
+          </ul>
+          <div class="cell-tags">
+            <span class="pill pill-output">PARSED</span>
+            <span class="pill pill-escalate">PARSE_UNCERTAIN</span>
+            <span class="pill pill-output">TRIAGED</span>
+            <span class="pill pill-escalate">TRIAGE_PENDING_REVIEW</span>
+          </div>
+        </div>
+
+        <!-- Human Review -->
+        <div class="swimlane-cell cell-human">
+          <div class="swimlane-label"><div class="swimlane-label-dot"></div>Human Review</div>
+          <ul>
+            <li><strong>parse_confidence &lt; 0.70</strong> → PARSE_UNCERTAIN; specialist corrects extracted fields; processing halted until re-parsed</li>
+            <li><strong>classification_confidence &lt; 0.85</strong> → specialist confirms or corrects claim_type within 30 min</li>
+            <li><strong>severity HIGH / CRITICAL</strong> → specialist confirms or reclassifies within 30 min</li>
+            <li><strong>Any special flag</strong> → specialist confirms or dismisses within 15 min; false positive cost is low; false negative cost is high</li>
+            <li>Window expiry without action → Claim.status = ESCALATED; SLA warning fires</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="stage-connector"><div class="connector-line"></div><div class="connector-arrow"></div></div>
+
+    <!-- ── STAGE 2: VALIDATE POLICY COVERAGE ── -->
+    <div class="stage-card w-full">
+      <div class="stage-header">
+        <div class="stage-header-left">
+          <div class="stage-number">2</div>
+          <div>
+            <div class="stage-name">Validate Against Policy Coverage</div>
+            <div class="stage-path-note">Sub-tasks 2.1 – 2.6 · Contains HUMAN_ONLY boundary at 2.6</div>
+          </div>
+        </div>
+        <span class="auto-badge auto-gate"><span class="auto-dot" style="background:var(--color-error)"></span>Governance control at 2.6</span>
+      </div>
+      <div class="swimlane-grid">
+
+        <!-- Input -->
+        <div class="swimlane-cell cell-input">
+          <div class="swimlane-label"><div class="swimlane-label-dot"></div>Input</div>
+          <ul>
+            <li>ClaimRecord (status = TRIAGED)</li>
+            <li>policy_id extracted from claim</li>
+            <li>loss_date</li>
+            <li>claim_type (confirmed at step 1)</li>
+          </ul>
+        </div>
+
+        <!-- Agent Task -->
+        <div class="swimlane-cell cell-agent">
+          <div class="swimlane-label"><div class="swimlane-label-dot"></div>Agent Task</div>
+
+          <div class="subtask">
+            <div class="subtask-id">2.1</div>
+            <div class="subtask-name">Retrieve policy record (SOAP)</div>
+            <div class="subtask-detail">Read-only call to legacy policy administration system. No decision made. Retry 3× on failure → INTEGRATION_ERROR.</div>
+            <div class="cell-tags" style="margin-top:var(--space-1);">
+              <span class="pill pill-agent-only">AGENT_ONLY</span>
+            </div>
+          </div>
+
+          <div class="subtask">
+            <div class="subtask-id">2.2</div>
+            <div class="subtask-name">Validate policy in-force at loss_date</div>
+            <div class="subtask-detail">Checks policy_status = IN_FORCE AND policy_start_date ≤ loss_date ≤ policy_end_date. Binary determination; auditable and traceable.</div>
+            <div class="cell-tags" style="margin-top:var(--space-1);">
+              <span class="pill pill-agent-log">AGENT_LOG</span>
+            </div>
+          </div>
+
+          <div class="subtask">
+            <div class="subtask-id">2.3</div>
+            <div class="subtask-name">Match coverage — high confidence</div>
+            <div class="subtask-detail">coverage_match_confidence ≥ 0.85 AND exclusion_candidates = []. Unambiguous match. Logged; no human review. Adjuster will catch mismatches.</div>
+            <div class="cell-tags" style="margin-top:var(--space-1);">
+              <span class="pill pill-agent-log">AGENT_LOG → COVERAGE_CONFIRMED</span>
+            </div>
+          </div>
+
+          <div class="subtask">
+            <div class="subtask-id">2.4</div>
+            <div class="subtask-name">Match coverage — ambiguous (0.70–0.84)</div>
+            <div class="subtask-detail">Plausible match but cannot rule out alternative interpretations. Wrongly accepting or rejecting creates financial or regulatory exposure. 30-min review window.</div>
+            <div class="cell-tags" style="margin-top:var(--space-1);">
+              <span class="pill pill-agent-rev">AGENT_REVIEW</span>
+              <span class="pill pill-escalate">30-min window</span>
+            </div>
+          </div>
+
+          <div class="subtask">
+            <div class="subtask-id">2.5</div>
+            <div class="subtask-name">Apply coverage exclusions check</div>
+            <div class="subtask-detail">Identifies candidate exclusion clauses. Exclusion language requires professional judgment; incorrect application triggers formal dispute. Agent identifies; specialist confirms.</div>
+            <div class="cell-tags" style="margin-top:var(--space-1);">
+              <span class="pill pill-agent-rev">AGENT_REVIEW</span>
+              <span class="pill pill-escalate">30-min window</span>
+            </div>
+          </div>
+
+          <div class="subtask">
+            <div class="subtask-id">2.6</div>
+            <div class="subtask-name">Coverage dispute resolution</div>
+            <div class="subtask-detail">coverage_match_confidence &lt; 0.70 OR status = DISPUTED. Agent provides structured briefing note only. No agent action until human decision logged.</div>
+            <div class="cell-tags" style="margin-top:var(--space-1);">
+              <span class="pill pill-human-only">HUMAN_ONLY</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Output -->
+        <div class="swimlane-cell cell-output">
+          <div class="swimlane-label"><div class="swimlane-label-dot"></div>Output</div>
+          <ul>
+            <li>policy_status (IN_FORCE / LAPSED / UNCERTAIN)</li>
+            <li>coverage_match_confidence score</li>
+            <li>exclusion_candidates[]</li>
+            <li>coverage_status: COVERED / NOT_COVERED / UNCERTAIN / DISPUTED</li>
+          </ul>
+          <div class="cell-tags">
+            <span class="pill pill-output">COVERAGE_CONFIRMED</span>
+            <span class="pill pill-escalate">COVERAGE_PENDING_REVIEW</span>
+            <span class="pill pill-escalate">COVERAGE_DISPUTED</span>
+            <span class="pill pill-escalate">COVERAGE_LAPSED</span>
+          </div>
+        </div>
+
+        <!-- Human Review -->
+        <div class="swimlane-cell cell-human" style="background:rgba(73,43,0,.2); border-left:3px solid var(--color-warning-border);">
+          <div class="swimlane-label"><div class="swimlane-label-dot"></div>Human Review</div>
+          <ul>
+            <li><strong>2.4 ambiguous</strong> → specialist reviews coverage determination + policy clause within 30 min; logs decision with reviewer_id</li>
+            <li><strong>2.5 exclusion</strong> → specialist confirms or rejects each candidate exclusion within 30 min; logs with clause reference</li>
+            <li><strong>2.6 HUMAN_ONLY</strong> → senior specialist assigned; no agent action until decision logged; coverage decision is professionally accountable act</li>
+            <li><strong>COVERAGE_LAPSED</strong> → senior specialist via CRM review queue</li>
+            <li>Window expiry → ESCALATED; sla_breached flagged if no resolution</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Governance strip for 2.6 -->
+    <div class="stage-connector"><div class="connector-line" style="height:12px;"></div></div>
+    <div class="governance-strip mb-2">
+      <span class="governance-icon">⚠</span>
+      <span><strong>Governance boundary — 2.6 Coverage Dispute Resolution is HUMAN_ONLY.</strong> Two independent reasons: (1) <em>Reversibility</em> — once communicated to the claimant, retracting a coverage decision triggers a regulated formal dispute process. (2) <em>Professional accountability</em> — coverage interpretation is a regulated professional act; the signing specialist is personally accountable. The boundary can only move if the client provides evidence that confidence ≥ 0.85 means "effectively certain" against their actual policy data.</span>
+    </div>
+
+    <div class="stage-connector"><div class="connector-line"></div><div class="connector-arrow"></div></div>
+
+    <!-- ── STAGE 3: ROUTE TO ADJUSTER ── -->
+    <div class="stage-card w-full">
+      <div class="stage-header">
+        <div class="stage-header-left">
+          <div class="stage-number">3</div>
+          <div>
+            <div class="stage-name">Route to Adjuster</div>
+            <div class="stage-path-note">Sub-tasks 3.1 – 3.4 · Requires COVERAGE_CONFIRMED</div>
+          </div>
+        </div>
+        <span class="auto-badge auto-full"><span class="auto-dot" style="background:var(--status-not-started-text)"></span>Fully automated (QUEUE_OVERFLOW excepted)</span>
+      </div>
+      <div class="swimlane-grid">
+
+        <!-- Input -->
+        <div class="swimlane-cell cell-input">
+          <div class="swimlane-label"><div class="swimlane-label-dot"></div>Input</div>
+          <ul>
+            <li>ClaimRecord (status = COVERAGE_CONFIRMED)</li>
+            <li>claim_type (confirmed)</li>
+            <li>AdjusterQueueEntry[] from CRM — specialty, queue_depth, is_available</li>
+          </ul>
+        </div>
+
+        <!-- Agent Task -->
+        <div class="swimlane-cell cell-agent">
+          <div class="swimlane-label"><div class="swimlane-label-dot"></div>Agent Task</div>
+
+          <div class="subtask">
+            <div class="subtask-id">3.1</div>
+            <div class="subtask-name">Derive required adjuster specialty</div>
+            <div class="subtask-detail">Deterministic lookup: MOTOR→MOTOR · PROPERTY→PROPERTY · LIABILITY→LIABILITY · HEALTH→HEALTH · OTHER→GENERAL. No judgment required.</div>
+            <div class="cell-tags" style="margin-top:var(--space-1);">
+              <span class="pill pill-agent-log">AGENT_LOG</span>
+            </div>
+          </div>
+
+          <div class="subtask">
+            <div class="subtask-id">3.2</div>
+            <div class="subtask-name">Select adjuster from queue</div>
+            <div class="subtask-detail">Filters candidates by specialty + is_available = true. Selects lowest current_queue_depth. Workload optimisation — no judgment, no claimant-facing consequence.</div>
+            <div class="cell-tags" style="margin-top:var(--space-1);">
+              <span class="pill pill-agent-only">AGENT_ONLY</span>
+            </div>
+          </div>
+
+          <div class="subtask">
+            <div class="subtask-id">3.3</div>
+            <div class="subtask-name">Write ClaimAssignment to CRM</div>
+            <div class="subtask-detail">HTTP POST to CRM. HTTP 201 required before Claim transitions to ROUTED. Timestamp logged — used to measure adjuster SLA. Retry 3× on failure.</div>
+            <div class="cell-tags" style="margin-top:var(--space-1);">
+              <span class="pill pill-agent-log">AGENT_LOG</span>
+            </div>
+          </div>
+
+          <div class="subtask">
+            <div class="subtask-id">3.4</div>
+            <div class="subtask-name">Send adjuster notification via CRM</div>
+            <div class="subtask-detail">Standardised notification: claim reference, severity, receipt timestamp, claim summary. Fires within 60 s of ClaimAssignment creation. Fully reversible if routing corrected.</div>
+            <div class="cell-tags" style="margin-top:var(--space-1);">
+              <span class="pill pill-agent-only">AGENT_ONLY</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Output -->
+        <div class="swimlane-cell cell-output">
+          <div class="swimlane-label"><div class="swimlane-label-dot"></div>Output</div>
+          <ul>
+            <li>ClaimAssignment record (adjuster_id, specialty, queue_depth_at_assignment)</li>
+            <li>Adjuster CRM notification</li>
+          </ul>
+          <div class="cell-tags">
+            <span class="pill pill-output">ROUTED</span>
+            <span class="pill pill-escalate">QUEUE_OVERFLOW</span>
+          </div>
+          <p class="swimlane-content mt-2" style="font-style:italic; color:var(--color-text-muted);">QUEUE_OVERFLOW: no adjuster with required specialty available. Agent retries every 5 min for 60 min before SLA breach warning fires.</p>
+        </div>
+
+        <!-- Human Review -->
+        <div class="swimlane-cell cell-human">
+          <div class="swimlane-label"><div class="swimlane-label-dot"></div>Human Review</div>
+          <ul>
+            <li><strong>QUEUE_OVERFLOW</strong> → specialist manually assigns adjuster within 60-min window</li>
+            <li>Agent retries automatically every 5 min; specialist can pre-empt with manual assignment</li>
+            <li>After 60 min with no assignment, SLA breach warning fires to operations team</li>
+            <li>Specialist can override adjuster selection at any point; creates new ClaimAssignment; old record superseded for audit</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="stage-connector"><div class="connector-line"></div><div class="connector-arrow"></div></div>
+
+    <!-- ── STAGE 4: ACKNOWLEDGE TO CLAIMANT ── -->
+    <div class="stage-card w-full governance">
+      <div class="stage-header">
+        <div class="stage-header-left">
+          <div class="stage-number">4</div>
+          <div>
+            <div class="stage-name">Acknowledge to Claimant</div>
+            <div class="stage-path-note">Sub-tasks 4.1 – 4.3 · 4.1 fires unconditionally within 5 min of receipt · 4.3 is HUMAN_ONLY</div>
+          </div>
+        </div>
+        <span class="auto-badge auto-gate"><span class="auto-dot" style="background:var(--color-error)"></span>Governance control at 4.3</span>
+      </div>
+      <div class="swimlane-grid">
+
+        <!-- Input -->
+        <div class="swimlane-cell cell-input">
+          <div class="swimlane-label"><div class="swimlane-label-dot"></div>Input</div>
+          <ul>
+            <li>ClaimRecord.created_at (for 5-min ACK timer)</li>
+            <li>ClaimRecord.external_reference</li>
+            <li>ClaimRecord.status (ROUTED for 4.2)</li>
+            <li>special_handling_flags[] (gates 4.2)</li>
+            <li>Adjuster name + contact channel (CRM, for 4.2)</li>
+            <li>EscalationBriefing (for specialist 4.3)</li>
+          </ul>
+        </div>
+
+        <!-- Agent Task -->
+        <div class="swimlane-cell cell-agent">
+          <div class="swimlane-label"><div class="swimlane-label-dot"></div>Agent Task</div>
+
+          <div class="subtask">
+            <div class="subtask-id">4.1</div>
+            <div class="subtask-name">Send receipt acknowledgement</div>
+            <div class="subtask-detail">Fires within 5 min of ClaimRecord creation, unconditionally — before triage, before coverage, before routing. Contains: external_reference, receipt confirmation, 2-hour SLA commitment. Must NOT include coverage status or adjuster identity.</div>
+            <div class="cell-tags" style="margin-top:var(--space-1);">
+              <span class="pill pill-agent-only">AGENT_ONLY</span>
+              <span class="pill pill-purple">≤ 5 min · unconditional</span>
+            </div>
+          </div>
+
+          <div class="subtask">
+            <div class="subtask-id">4.2</div>
+            <div class="subtask-name">Send routing confirmation (standard claims)</div>
+            <div class="subtask-detail">Fires on ROUTED AND special_handling_flags = []. Contains: adjuster name, contact channel, expected contact timeframe. Suppressed if any flag is set — specialist handles instead.</div>
+            <div class="cell-tags" style="margin-top:var(--space-1);">
+              <span class="pill pill-agent-log">AGENT_LOG</span>
+              <span class="pill pill-escalate">Suppressed if flags ≠ []</span>
+            </div>
+          </div>
+
+          <div class="subtask">
+            <div class="subtask-id">4.3</div>
+            <div class="subtask-name">Escalation / special-handling communication</div>
+            <div class="subtask-detail">Fires when ESCALATED or special_handling_flags ≠ []. Agent role: generates structured EscalationBriefing note only. Specialist drafts and sends all claimant-facing content.</div>
+            <div class="cell-tags" style="margin-top:var(--space-1);">
+              <span class="pill pill-human-only">HUMAN_ONLY</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Output -->
+        <div class="swimlane-cell cell-output">
+          <div class="swimlane-label"><div class="swimlane-label-dot"></div>Output</div>
+          <ul>
+            <li>AcknowledgementRecord (RECEIPT) — always</li>
+            <li>AcknowledgementRecord (ROUTING_CONFIRMATION) — standard claims only</li>
+            <li>EscalationBriefing note — for specialist use in 4.3</li>
+          </ul>
+          <div class="cell-tags">
+            <span class="pill pill-output">ACKNOWLEDGED</span>
+            <span class="pill pill-output">COMPLETED</span>
+          </div>
+          <p class="swimlane-content mt-2" style="font-style:italic; color:var(--color-text-muted);">4.1 delivery failure: one retry immediately; if failed → manual-send queue + specialist notified within 5 min.</p>
+        </div>
+
+        <!-- Human Review -->
+        <div class="swimlane-cell cell-human" style="background:rgba(73,43,0,.2); border-left:3px solid var(--color-warning-border);">
+          <div class="swimlane-label"><div class="swimlane-label-dot"></div>Human Review</div>
+          <ul>
+            <li><strong>4.1 delivery failure</strong> → specialist sends manual ACK within 15 min</li>
+            <li><strong>4.3 HUMAN_ONLY</strong> — specialist drafts and sends all escalation / delay / special-handling communications</li>
+            <li>LEGAL_REPRESENTATION flag: communication must go via claimant's solicitor, not directly to claimant</li>
+            <li>Vulnerable claimant: tone + content governed by client vulnerable customer policy (not templatisable)</li>
+            <li>Agent provides structured briefing note; specialist has full discretion over message content and channel</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Governance strip for 4.3 -->
+    <div class="stage-connector"><div class="connector-line" style="height:12px;"></div></div>
+    <div class="governance-strip">
+      <span class="governance-icon">⚠</span>
+      <span><strong>Governance boundary — 4.3 Escalation Communications are HUMAN_ONLY.</strong> Messages about delays or special handling carry (1) jurisdictional obligations on what can be said, (2) vulnerable customer policy requirements on tone and channel, and (3) for LEGAL_REPRESENTATION cases, mandatory indirect communication rules (solicitor only). These obligations vary by case and cannot be reliably encoded in a template. The specialist who owns the escalation owns the communication that follows it.</span>
+    </div>
+
+  </div><!-- /workflow -->
+
+  <!-- Footer -->
+  <div class="flex justify-between items-center mt-6 pt-4" style="border-top:1px solid var(--color-border-structural);">
+    <p class="text-xs text-muted">FNOL Processing Agent · Gate 1 · D2 Delegation Analysis · 4-step workflow</p>
+    <p class="text-xs text-muted">2026-04-27</p>
+  </div>
+
+</div>
+</body>
+</html>

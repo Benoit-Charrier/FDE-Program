@@ -1,0 +1,32 @@
+{
+  "id": "316fbc0d-7907-472b-bf25-25a0e107e63d",
+  "external_reference": "VT-56795886",
+  "source_channel": "PHONE_TRANSCRIPT",
+  "raw_input": "Transcript ref 20250220-4421. Claimant: David Okafor. Policy PR-99887766. Reporting damp and water staining on the living room ceiling. Has been there a while, noticed it getting worse over the past few months. Thinks it might be a slow leak from the bathroom above. Estimated repair cost approximately \u00a33,800.",
+  "policy_id": "PR-99887766",
+  "loss_date": "2025-02-20",
+  "status": "COMPLETED",
+  "sla_deadline": "2026-04-27T17:53:48Z",
+  "sla_breached": false,
+  "agent_id": "fnol-agent-v1.0.0",
+  "created_at": "2026-04-27T15:53:48Z",
+  "updated_at": "2026-04-27T15:53:48Z",
+  "loss_description": "Transcript ref 20250220-4421. Claimant: David Okafor. Policy PR-99887766. Reporting damp and water staining on the living room ceiling. Has been there a while, noticed it getting worse over the past few months. Thinks it might be a slow leak from the bathroom above. Estimated repair cost approximate",
+  "claim_narrative": "Transcript ref 20250220-4421. Claimant: David Okafor. Policy PR-99887766. Reporting damp and water staining on the living room ceiling. Has been there a while, noticed it getting worse over the past few months. Thinks it might be a slow leak from the bathroom above. Estimated repair cost approximately \u00a33,800.",
+  "claimant_contact_email": "unknown@placeholder.invalid",
+  "estimated_loss_value": 3800.0,
+  "parse_confidence": 0.833,
+  "claim_type": "PROPERTY",
+  "classification_confidence": 1.0,
+  "severity": "LOW",
+  "severity_score": 30,
+  "special_handling_flags": [],
+  "policy_status": "IN_FORCE",
+  "coverage_match_confidence": 0.92,
+  "exclusion_candidates": [
+    "Clause 14.3: Damage arising from gradual deterioration or wear and tear"
+  ],
+  "coverage_status": "UNCERTAIN",
+  "assigned_adjuster_id": null,
+  "queue_depth_at_assignment": null
+}

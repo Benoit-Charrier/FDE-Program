@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FNOL Processing Agent — Run Report</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+         margin: 0; padding: 0; background: #f8f9fa; color: #212529; }
+  .header { background: #1a2332; color: #fff; padding: 28px 40px; }
+  .header h1 { margin: 0 0 4px 0; font-size: 22px; font-weight: 600; }
+  .header .meta { font-size: 13px; opacity: 0.75; }
+  .badge { display:inline-block; padding:3px 10px; border-radius:12px;
+            font-size:12px; font-weight:600; }
+  .badge-green { background:#d4edda; color:#155724; }
+  .badge-red   { background:#f8d7da; color:#721c24; }
+  .badge-yellow { background:#fff3cd; color:#856404; }
+  .badge-blue  { background:#d1ecf1; color:#0c5460; }
+  .container { max-width: 1100px; margin: 32px auto; padding: 0 24px; }
+  .card { background:#fff; border-radius:8px; box-shadow:0 1px 4px rgba(0,0,0,.1);
+           margin-bottom:24px; overflow:hidden; }
+  .card-header { background:#f1f3f5; padding:14px 20px; font-weight:600;
+                  font-size:14px; border-bottom:1px solid #dee2e6; }
+  .card-body { padding:20px; }
+  table { width:100%; border-collapse:collapse; font-size:13px; }
+  th { background:#f8f9fa; padding:10px 12px; text-align:left;
+        border-bottom:2px solid #dee2e6; font-size:12px; text-transform:uppercase;
+        letter-spacing:.04em; color:#6c757d; }
+  .kv-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  .kv { padding:12px 16px; background:#f8f9fa; border-radius:6px; }
+  .kv .label { font-size:11px; color:#6c757d; text-transform:uppercase;
+                letter-spacing:.04em; margin-bottom:4px; }
+  .kv .value { font-size:15px; font-weight:600; }
+  code { background:#f1f3f5; padding:2px 6px; border-radius:4px; font-size:12px; }
+  ul { margin:0; padding-left:20px; }
+  footer { text-align:center; font-size:12px; color:#6c757d; padding:24px; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>FNOL Processing Agent — Run Report</h1>
+  <div class="meta">
+    Agent ID: fnol-agent-v1.0.0 &nbsp;|&nbsp;
+    Claim Reference: <strong>OB-02259972</strong> &nbsp;|&nbsp;
+    Channel: EMAIL &nbsp;|&nbsp;
+    Processed: 2026-04-27T15:53:48Z &nbsp;|&nbsp;
+    Total time: <strong>8 ms</strong>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- Claim Outcome -->
+  <div class="card">
+    <div class="card-header">Claim Outcome</div>
+    <div class="card-body">
+      <div class="kv-grid">
+        <div class="kv">
+          <div class="label">External Reference</div>
+          <div class="value"><code>OB-02259972</code></div>
+        </div>
+        <div class="kv">
+          <div class="label">Final Status</div>
+          <div class="value">
+            <span class="badge badge-green">INTEGRATION_ERROR</span>
+          </div>
+        </div>
+        <div class="kv">
+          <div class="label">Claim Type</div>
+          <div class="value">PROPERTY</div>
+        </div>
+        <div class="kv">
+          <div class="label">Severity</div>
+          <div class="value">MEDIUM (score: 50)</div>
+        </div>
+        <div class="kv">
+          <div class="label">Coverage Status</div>
+          <div class="value">UNCERTAIN</div>
+        </div>
+        <div class="kv">
+          <div class="label">Assigned Adjuster</div>
+          <div class="value"><code>N/A</code></div>
+        </div>
+        <div class="kv">
+          <div class="label">SLA Deadline</div>
+          <div class="value">2026-04-27T17:53:48Z</div>
+        </div>
+        <div class="kv">
+          <div class="label">SLA Status</div>
+          <div class="value">
+            <span style="color:#28a745;font-weight:700;">MET</span>
+          </div>
+        </div>
+        <div class="kv">
+          <div class="label">Special Handling Flags</div>
+          <div class="value">None</div>
+        </div>
+        <div class="kv">
+          <div class="label">Policy Status</div>
+          <div class="value">UNAVAILABLE</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Processing Summary -->
+  <div class="card">
+    <div class="card-header">Processing Summary — 6 steps &nbsp;|&nbsp; 8 ms total</div>
+    <div class="card-body" style="padding:0;">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Action</th>
+            <th>Duration</th>
+            <th>Outcome</th>
+            <th>Delegation Tier</th>
+            <th>Escalation</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td style="padding:8px 12px;border-bottom:1px solid #dee2e6;">1</td>
+          <td style="padding:8px 12px;border-bottom:1px solid #dee2e6;">Load and ingest claim</td>
+          <td style="padding:8px 12px;border-bottom:1px solid #dee2e6;">1 ms</td>
+          <td style="padding:8px 12px;border-bottom:1px solid #dee2e6;">ClaimRecord created | source=EMAIL</td>
+          <td style="padding:8px 12px;border-bottom:1px solid #dee2e6;">AGENT_ONLY (REQ-1)</td>
+          <td style="padding:8px 12px;border-bottom:1px solid #dee2e6;">N</td>
+        </tr>
+        <tr>
+          <td style="padding:8px 12px;border-bottom:1px solid #dee2e6;">2</td>
+          <td style="padding:8px 12px;border-bottom:1px solid #dee2e6;">Parse &amp; extract attributes (REQ-1)</td>
+          <td style="padding:8px 12px;border-bottom:1px solid #dee2e6;">3 ms</td>
+          <td style="padding:8px 12px;border-bottom:1px solid #dee2e6;">parse_confidence=0.833 | email=unknown@placeholder.invalid | est_loss=£6200.0</td>
+          <td style="padding:8px 12px;border-bottom:1px solid #dee2e6;">AGENT_ONLY (1.1)</td>
+          <td style="padding:8px 12px;border-bottom:1px solid #dee2e6;">N</td>
+        </tr>
+        <tr>
+          <td style="padding:8px 12px;border-bottom:1px solid #dee2e6;">3</td>
+          <td style="padding:8px 12px;border-bottom:1px solid #dee2e6;">Classify claim type (REQ-2)</td>
+          <td style="padding:8px 12px;border-bottom:1px solid #dee2e6;">1 ms</td>
+          <td style="padding:8px 12px;border-bottom:1px solid #dee2e6;">claim_type=PROPERTY | classification_confidence=0.5</td>
+          <td style="padding:8px 12px;border-bottom:1px solid #dee2e6;">AGENT_REVIEW (1.2)</td>
+          <td style="padding:8px 12px;border-bottom:1px solid #dee2e6;background:#fff3cd;font-weight:bold;">Y</td>
+        </tr>
+        <tr>
+          <td style="padding:8px 12px;border-bottom:1px solid #dee2e6;">4</td>
+          <td style="padding:8px 12px;border-bottom:1px solid #dee2e6;">Assess severity (REQ-3)</td>
+          <td style="padding:8px 12px;border-bottom:1px solid #dee2e6;">1 ms</td>
+          <td style="padding:8px 12px;border-bottom:1px solid #dee2e6;">severity=MEDIUM | severity_score=50</td>
+          <td style="padding:8px 12px;border-bottom:1px solid #dee2e6;">AGENT_LOG (1.3)</td>
+          <td style="padding:8px 12px;border-bottom:1px solid #dee2e6;">N</td>
+        </tr>
+        <tr>
+          <td style="padding:8px 12px;border-bottom:1px solid #dee2e6;">5</td>
+          <td style="padding:8px 12px;border-bottom:1px solid #dee2e6;">Detect special handling flags (REQ-4)</td>
+          <td style="padding:8px 12px;border-bottom:1px solid #dee2e6;">1 ms</td>
+          <td style="padding:8px 12px;border-bottom:1px solid #dee2e6;">flags=None</td>
+          <td style="padding:8px 12px;border-bottom:1px solid #dee2e6;">AGENT_LOG (1.3)</td>
+          <td style="padding:8px 12px;border-bottom:1px solid #dee2e6;">N</td>
+        </tr>
+        <tr>
+          <td style="padding:8px 12px;border-bottom:1px solid #dee2e6;">6</td>
+          <td style="padding:8px 12px;border-bottom:1px solid #dee2e6;">Validate policy coverage (REQ-5)</td>
+          <td style="padding:8px 12px;border-bottom:1px solid #dee2e6;">1 ms</td>
+          <td style="padding:8px 12px;border-bottom:1px solid #dee2e6;">INTEGRATION_ERROR: Policy admin system returned HTTP 503; 3 retries exhausted (2s/4s/8s backoff)</td>
+          <td style="padding:8px 12px;border-bottom:1px solid #dee2e6;">AGENT_REVIEW (escalate to specialist)</td>
+          <td style="padding:8px 12px;border-bottom:1px solid #dee2e6;background:#fff3cd;font-weight:bold;">Y</td>
+        </tr></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Escalations -->
+  <div class="card">
+    <div class="card-header">Escalation Log</div>
+    <div class="card-body">
+      
+            <div style="background:#fff3cd;border-left:4px solid #ffc107;padding:10px 16px;margin-bottom:8px;border-radius:4px;">
+              <strong>Step 3 — Classify claim type (REQ-2)</strong><br/>
+              Reason: <code>LOW_CLASSIFICATION_CONFIDENCE</code> &nbsp;|&nbsp; Review window: 30 min<br/>
+              <em style="color:#6c757d;">Simulated: specialist confirmed agent recommendation (happy path)</em>
+            </div>
+            <div style="background:#fff3cd;border-left:4px solid #ffc107;padding:10px 16px;margin-bottom:8px;border-radius:4px;">
+              <strong>Step 6 — Validate policy coverage (REQ-5)</strong><br/>
+              Reason: <code>INTEGRATION_ERROR</code> &nbsp;|&nbsp; Review window: 5 min<br/>
+              <em style="color:#6c757d;">Simulated: specialist confirmed agent recommendation (happy path)</em>
+            </div>
+    </div>
+  </div>
+
+  <!-- Assumptions -->
+  <div class="card">
+    <div class="card-header">Assumptions Flagged During Run</div>
+    <div class="card-body">
+      <ul><li style="margin-bottom:6px;">[ASSUMED] claimant_contact_email not found in raw_input; agent cannot send receipt ACK</li>
+<li style="margin-bottom:6px;">[ASSUMED] severity_score thresholds are illustrative (D5-U1); requires validation with client against historical data</li>
+<li style="margin-bottom:6px;">[ASSUMED] VULNERABLE_CLAIMANT detection via sentiment_score not available (D5-U2); keyword-only heuristic used</li>
+<li style="margin-bottom:6px;">[ASSUMED] FRAUD_INDICATOR detection via fraud_score model not available (D5-U2); keyword-only heuristic used</li>
+<li style="margin-bottom:6px;">[ASSUMED] Full keyword sets for FATALITY and LEGAL_REPRESENTATION to be confirmed with legal/compliance team (D5-U9)</li>
+</ul>
+    </div>
+  </div>
+
+  <!-- Raw Claim Record -->
+  <div class="card">
+    <div class="card-header">Final Claim Record (JSON)</div>
+    <div class="card-body">
+      <pre style="background:#f8f9fa;padding:16px;border-radius:6px;font-size:12px;
+                  overflow-x:auto;margin:0;">{
+  "id": "a5785f19-e1ac-4c18-8027-ffda512442b3",
+  "external_reference": "OB-02259972",
+  "source_channel": "EMAIL",
+  "raw_input": "Claim notification. Policy LI-55443322. Date of incident 15 March 2025. Liability claim \u2014 I was involved in a dispute with a neighbour causing property damage. Estimated damage \u00a36,200.",
+  "policy_id": "LI-55443322",
+  "loss_date": "2025-03-15",
+  "status": "INTEGRATION_ERROR",
+  "sla_deadline": "2026-04-27T17:53:48Z",
+  "sla_breached": false,
+  "agent_id": "fnol-agent-v1.0.0",
+  "created_at": "2026-04-27T15:53:48Z",
+  "updated_at": "2026-04-27T15:53:48Z",
+  "loss_description": "Claim notification. Policy LI-55443322. Date of incident 15 March 2025. Liability claim \u2014 I was involved in a dispute with a neighbour causing property damage. Estimated damage \u00a36,200.",
+  "claim_narrative": "Claim notification. Policy LI-55443322. Date of incident 15 March 2025. Liability claim \u2014 I was involved in a dispute with a neighbour causing property damage. Estimated damage \u00a36,200.",
+  "claimant_contact_email": "unknown@placeholder.invalid",
+  "estimated_loss_value": 6200.0,
+  "parse_confidence": 0.833,
+  "claim_type": "PROPERTY",
+  "classification_confidence": 0.5,
+  "severity": "MEDIUM",
+  "severity_score": 50,
+  "special_handling_flags": [],
+  "policy_status": "UNAVAILABLE",
+  "coverage_match_confidence": 0.0,
+  "exclusion_candidates": [],
+  "coverage_status": "UNCERTAIN"
+}</pre>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  FNOL Processing Agent &mdash; Closed Build Loop Demonstration &mdash; fnol-agent-v1.0.0
+</footer>
+
+</body>
+</html>

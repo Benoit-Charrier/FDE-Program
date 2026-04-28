@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python agent_build/src/main.py --input agent_build/data/sample_claim.json --mock-policy agent_build/data/mock_policy.json --mock-adjusters agent_build/data/mock_adjusters.json --output-dir agent_build/output)",
+      "Bash(python agent_build/src/test_runner.py)",
+      "PowerShell(Get-ChildItem *)"
+    ]
+  }
+}

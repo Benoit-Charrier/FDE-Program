@@ -1,0 +1,32 @@
+{
+  "id": "88081c04-bd3f-43d0-8080-44868e81ce8f",
+  "external_reference": "GA-66084121",
+  "source_channel": "EMAIL",
+  "raw_input": "Dear Claims Team,\n\nI am writing to report a motor vehicle accident that occurred on 15th April 2025. My name is John Smith and I hold policy number AB-12345678.\n\nOn the morning of 15 April 2025 at approximately 08:30, I was involved in a collision at the junction of High Street and Park Road, London. A vehicle travelling in the opposite direction crossed into my lane and struck my car on the driver's side. The damage to my vehicle is significant - the door panel, front quarter panel and airbags have deployed. I estimate the repair cost to be around \u00a38,500 based on a preliminary assessment I received from a local garage.\n\nThankfully there were no fatalities, but I have sustained a whiplash injury and have been advised by my GP to rest for two weeks. The other driver admitted fault at the scene and their details are: Name: David Brown, Reg: LK21 XYZ, Insurer: SafeDrive Insurance.\n\nI have photographs of the damage and a copy of the police report reference P/2025/0412. I would be grateful if you could arrange for an adjuster to contact me at john.smith@email.com or 07700 900123.\n\nThank you,\nJohn Smith",
+  "policy_id": "AB-12345678",
+  "loss_date": "2025-04-15",
+  "status": "COMPLETED",
+  "sla_deadline": "2026-04-27T16:41:15Z",
+  "sla_breached": false,
+  "agent_id": "fnol-agent-v1.0.0",
+  "created_at": "2026-04-27T14:41:15Z",
+  "updated_at": "2026-04-27T14:41:15Z",
+  "loss_description": "Dear Claims Team,\n\nI am writing to report a motor vehicle accident that occurred on 15th April 2025. My name is John Smith and I hold policy number AB-12345678.\n\nOn the morning of 15 April 2025 at approximately 08:30, I was involved in a collision at the junction of High Street and Park Road, London",
+  "claim_narrative": "Dear Claims Team,\n\nI am writing to report a motor vehicle accident that occurred on 15th April 2025. My name is John Smith and I hold policy number AB-12345678.\n\nOn the morning of 15 April 2025 at approximately 08:30, I was involved in a collision at the junction of High Street and Park Road, London. A vehicle travelling in the opposite direction crossed into my lane and struck my car on the driver's side. The damage to my vehicle is significant - the door panel, front quarter panel and airbags have deployed. I estimate the repair cost to be around \u00a38,500 based on a preliminary assessment I received from a local garage.\n\nThankfully there were no fatalities, but I have sustained a whiplash injury and have been advised by my GP to rest for two weeks. The other driver admitted fault at the scene and their details are: Name: David Brown, Reg: LK21 XYZ, Insurer: SafeDrive Insurance.\n\nI have photographs of the damage and a copy of the police report reference P/2025/0412. I would be grateful if you could arrange for an adjuster to contact me at john.smith@email.com or 07700 900123.\n\nThank you,\nJohn Smith",
+  "claimant_contact_email": "john.smith@email.com",
+  "estimated_loss_value": 8500.0,
+  "parse_confidence": 1.0,
+  "claim_type": "MOTOR",
+  "classification_confidence": 0.7,
+  "severity": "MEDIUM",
+  "severity_score": 50,
+  "special_handling_flags": [
+    "FATALITY"
+  ],
+  "policy_status": "IN_FORCE",
+  "coverage_match_confidence": 0.92,
+  "exclusion_candidates": [],
+  "coverage_status": "COVERED",
+  "assigned_adjuster_id": "ADJ-002",
+  "queue_depth_at_assignment": 1
+}

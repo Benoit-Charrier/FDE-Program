@@ -47,13 +47,13 @@
       },
       {
         "family": "sla",
-        "extracted_text": "",
-        "source_page": null,
-        "confidence": 0.0,
+        "extracted_text": "Daily encrypted snapshots stored in a separate EU region, retained 30 days",
+        "source_page": 12,
+        "confidence": 0.4,
         "found": false,
         "status": "escalate",
         "reason_code": "low_confidence",
-        "rationale": "Confidence 0.00 is below threshold 0.7."
+        "rationale": "Confidence 0.40 is below threshold 0.7."
       },
       {
         "family": "governing_law",
@@ -106,7 +106,7 @@
         "family": "sla",
         "status": "escalate",
         "reason_code": "low_confidence",
-        "rationale": "Confidence 0.00 is below threshold 0.7."
+        "rationale": "Confidence 0.40 is below threshold 0.7."
       },
       {
         "family": "governing_law",
@@ -275,7 +275,7 @@
         "family": "termination",
         "extracted_text": "Either party may terminate this agreement on 30 days written notice. Early termination by Company shall trigger a penalty equal to remaining contract value.",
         "source_page": 1,
-        "confidence": 0.9,
+        "confidence": 0.95,
         "found": true,
         "status": "match",
         "reason_code": "playbook_match",
@@ -295,7 +295,7 @@
         "family": "sla",
         "extracted_text": "Vendor commits to 99.9% monthly uptime for the core platform services as defined in Schedule A.",
         "source_page": 1,
-        "confidence": 0.9,
+        "confidence": 0.95,
         "found": true,
         "status": "match",
         "reason_code": "playbook_match",
@@ -408,7 +408,7 @@
         "family": "ip_ownership",
         "extracted_text": "Each party retains ownership of pre-existing IP. Deliverables created under this agreement shall be work for hire owned by Company upon full payment.",
         "source_page": 1,
-        "confidence": 0.9,
+        "confidence": 0.95,
         "found": true,
         "status": "match",
         "reason_code": "playbook_match",
