@@ -1,19 +1,9 @@
 # Prompt: Deliverable 7 — CLAUDE.md for the Project
 
 ## Scenario (read this first)
-See `scenario\enriched_scenario.md`. Do not invent numbers, systems, or constraints not present there. Every number you use must trace back to the scenario or be explicitly labelled as an assumption.
+See `scenario\scenario_context.md` for the full scenario, work streams, tooling, and named-systems guidance. Do not invent numbers, systems, or constraints not present in the scenario. Every number you use must trace back to the scenario or be explicitly labelled as an assumption.
 
-**Scenario summary (for reference):**
-- **Helix Workforce Software** — UK-based B2B SaaS (~480 employees, ARR £42M, 25% YoY growth); sells workforce-planning software to UK/EU enterprises
-- Legal team (5-person): **Amelia Forsythe** (General Counsel, 12 years at Helix), 3 Commercial Lawyers (3–6 yrs experience), **Tom** (Paralegal)
-- ~300 inbound vendor contracts per quarter; each 15–40 pages
-- Playbook checklist: liability caps, DPAs, termination clauses, IP ownership, SLA commitments, governing law, indemnity scope (7 clause types); playbook is 9 months stale — DPDI Act Q1 updates not yet incorporated
-- 70% standard / 20% negotiable deviations (paralegal can redline) / 10% senior-lawyer escalation
-- Turnaround: 4–6 business days; CRO is pressuring Legal to halve turnaround to support enterprise sales targets
-- GC hard rule: no counteroffer leaves legal's queue without a named lawyer's sign-off on the specific clauses being negotiated
-- Tooling: **Ironclad** (CLM, REST APIs), **Microsoft Word + Track Changes** + **SharePoint** (redlining & storage), **Salesforce** (sales pipeline), **Outlook** (vendor procurement), internal SharePoint playbook page
-
-**Agent context:** Write the CLAUDE.md for the agent designed in D4 — the clause extraction and comparison agent (or whichever work stream was selected as the primary agentic target). The CLAUDE.md must be consistent with D4's activity catalog, autonomy matrix, and escalation triggers. Reference the named tooling above when specifying system integrations.
+**Agent context:** Write the CLAUDE.md for the agent designed in D4 — the clause extraction and comparison agent (or whichever work stream was selected as the primary agentic target). The CLAUDE.md must be consistent with D4's activity catalog, autonomy matrix, and escalation triggers. Reference the named tooling from `scenario\scenario_context.md` when specifying system integrations.
 
 ---
 

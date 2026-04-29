@@ -1,22 +1,11 @@
 # Prompt: Deliverable 6 — Discovery Questions for the Main Stakeholder
 
 ## Scenario (read this first)
-See `scenario\enriched_scenario.md`. Do not invent numbers, systems, or constraints not present there. Every number you use must trace back to the scenario or be explicitly labelled as an assumption.
-
-**Scenario summary (for reference):**
-- **Helix Workforce Software** — UK-based B2B SaaS (~480 employees, ARR £42M, 25% YoY growth); sells workforce-planning software to UK/EU enterprises
-- Legal team (5-person): **Amelia Forsythe** (General Counsel, 12 years at Helix), 3 Commercial Lawyers (3–6 yrs experience), **Tom** (Paralegal)
-- ~300 inbound vendor contracts per quarter; each 15–40 pages
-- Playbook checklist: liability caps, DPAs, termination clauses, IP ownership, SLA commitments, governing law, indemnity scope (7 clause types); playbook is 9 months stale — DPDI Act Q1 updates not yet incorporated
-- 70% standard / 20% negotiable deviations (paralegal can redline) / 10% senior-lawyer escalation
-- Turnaround: 4–6 business days; CRO is pressuring Legal to halve turnaround to support enterprise sales targets
-- GC hard rule: no counteroffer without named lawyer's sign-off on specific clauses
-- Tooling: **Ironclad** (CLM, REST APIs), **Microsoft Word + Track Changes** + **SharePoint** (redlining & storage), **Salesforce** (sales pipeline), **Outlook** (vendor procurement), internal SharePoint playbook page
-
+See `scenario\scenario_context.md` for the full scenario, work streams, tooling, and named-systems guidance. Do not invent numbers, systems, or constraints not present in the scenario. Every number you use must trace back to the scenario or be explicitly labelled as an assumption.
 ---
 
 ## Your task
-Produce a set of discovery questions for the General Counsel (main stakeholder). Output file: `deliverables\D6_discovery_questions.md`.
+Produce a set of discovery questions for the General Counsel (main stakeholder). Be concise. Summarize the main 3 points at the end. Output file: `deliverables\D6_discovery_questions.md`.
 
 These must be questions whose answers would **actually change your agent design** — not generic discovery questions, not questions whose answers you can already infer from the scenario, and not questions that demonstrate you haven't thought through the design yet.
 

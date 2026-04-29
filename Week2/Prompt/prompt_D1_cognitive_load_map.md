@@ -1,30 +1,19 @@
 # Prompt: Deliverable 1 — Cognitive Load Map
 
 ## Scenario (read this first)
-See `scenario\enriched_scenario.md`. Do not invent numbers, systems, or constraints not present there. Every number you use must trace back to the scenario or be explicitly labelled as an assumption.
-
-**Scenario summary (for reference):**
-- **Helix Workforce Software** — UK-based B2B SaaS (~480 employees, ARR £42M, 25% YoY growth); sells workforce-planning software to UK/EU enterprises
-- Legal team (5-person): **Amelia Forsythe** (General Counsel, 12 years at Helix), 3 Commercial Lawyers (3–6 yrs experience), **Tom** (Paralegal)
-- ~300 inbound vendor contracts per quarter; each 15–40 pages
-- Playbook checklist: liability caps, DPAs, termination clauses, IP ownership, SLA commitments, governing law, indemnity scope (7 clause types); playbook is 9 months stale — DPDI Act Q1 updates not yet incorporated
-- 70% standard / 20% negotiable deviations (paralegal can redline) / 10% senior-lawyer escalation
-- Turnaround: 4–6 business days; CRO is pressuring Legal to halve turnaround to support enterprise sales targets
-- GC hard rule: no counteroffer leaves legal's queue without a named lawyer's sign-off on the specific clauses being negotiated
-- Tooling: **Ironclad** (CLM, REST APIs), **Microsoft Word + Track Changes** + **SharePoint** (redlining & storage), **Salesforce** (sales pipeline), **Outlook** (vendor procurement), internal SharePoint playbook page
-
-**The four work streams:**
-1. First-pass clause classification (~300/quarter; ~25 min/case): triaging inbound contracts, classifying each major clause against the playbook
-2. Standard-deviation redlining (~60/quarter; ~45 min/case): paralegal redlines negotiable deviations against playbook without escalation
-3. Escalated clause review (~30/quarter; ~90 min/case): senior lawyer reviews unusual clauses, frames counteroffer position, drafts redline
-4. Counteroffer drafting & sign-off (~90/quarter; ~30 min/case): drafting the response to procurement, named-lawyer sign-off, sending out
+See `scenario\scenario_context.md` for the full scenario, work streams, tooling, and named-systems guidance. Do not invent numbers, systems, or constraints not present in the scenario. Every number you use must trace back to the scenario or be explicitly labelled as an assumption.
 
 ---
 
 ## Your task
-Produce a Cognitive Load Map. Output file: `deliverables\D1_cognitive_load_map.md`.
+Produce a Cognitive Load Map. Be concise. Summarize the main 3 points at the end. Output file: `deliverables\D1_cognitive_load_map.md`.
 
-This is Phase 2 of the ATX Assessment. Decompose **at least 2 of the 4 work streams** into Jobs to be Done, micro-tasks, and cognitive dimensions. Map cognitive zones and breakpoints.
+This is Phase 2 of the ATX Assessment. Following the Phase 2 step-by-step from `input\1-ATX-Assessment.md`:
+
+- **Step 1:** Map the lived process — walk through a real case, capture triggers, inputs, intermediate decisions, outputs, escalations, and where the worker pauses, consults, or makes a judgment call. Produce a lived process narrative per work stream.
+- **Step 2:** Decompose into Jobs to be Done.
+- **Step 3:** Map Cognitive Zones and Breakpoints.
+- **Step 4:** Build the micro-task inventory.
 
 Reference: `input\1-ATX-Assessment.md` Phase 2 and `references\atx-concepts.md`.
 
@@ -39,47 +28,56 @@ Name the 2 work streams you will decompose. In 3–5 sentences, explain why thes
 
 ### 2. Cognitive Load Map — Work Stream A
 
-#### 2a. Jobs to be Done decomposition
-List 2–4 JtDs for this work stream. For each:
+#### 2a. Lived process narrative (Step 1)
+One page maximum. Walk through a realistic single case in this work stream from trigger to output — describe **what actually happens**, not the idealised SOP.
 
-> **JtD [WS-A-N]:** [the cognitive contract — what outcome must be produced?]
-> **Trigger:** [what starts this job?]
-> **Actor:** [who currently does this?]
-> **Key decisions:** [what must be decided to complete it?]
-> **Key systems/data:** [what information is required?]
-> **Primary cognitive type:** decision-making / execution / synthesis / communication / exception-handling
-> **Expected output:** [what is produced?]
+Cover:
+- What triggers this work stream and how the work arrives
+- Where the worker pauses and consults something (system, colleague, document)
+- Where they make a judgment call and what information they use
+- Where back-and-forth happens (internally or externally) and with whom
+- Where queues form or informal workarounds occur
+- What informal knowledge is being applied that is not in any system
 
-#### 2b. Micro-task inventory with dimension scores
+Flag explicitly where you are reconstructing from the scenario versus making a labelled assumption. This narrative is the foundation for the JtD decomposition — do not skip it or replace it with a bullet list of steps.
+
+#### 2b. Jobs to be Done decomposition
+List 2–4 JtDs for this work stream in the table below. JtDs are cognitive contracts — outcome-focused, not task descriptions.
+
+| JtD ID | Cognitive contract - what outcome must be produced?] | Trigger - what starts this job? | Actor - who currently does this?| Key decisions - what must be decided to complete it?| Key systems/data - what information is required?| Primary cognitive type | Expected output - what is produced?|
+|--------|----------------------------------------|---------|-------|---------------|-----------------|----------------------|-----------------|
+| WS-A-1 | | | | | | decision-making / execution / synthesis / communication / exception-handling | |
+| WS-A-2 | | | | | | | |
+
+#### 2c. Micro-task inventory with dimension scores
 For each micro-task within this work stream, complete the following table:
 
-| Micro-task | Cognitive Load (H/M/L) | Input Structure (H/M/L) | Decision Determinism (H/M/L) | Exception Frequency (H/M/L) | Turn-Taking Degree (H/M/L) | Latency Constraint (H/M/L) | Compliance/Risk Sensitivity (H/M/L) | Tool/API Availability (H/M/L) |
+| Micro-task | Cognitive Load (H/M/L) How much reasoning, tacit knowledge, or disambiguation required | Input Structure (H/M/L) Are inputs structured, semi-structured, or unstructured? | Decision Determinism (H/M/L) Are outcomes predictable given inputs, or judgment-dependent? | Exception Frequency (H/M/L) How often do edge cases occur that break the standard path?| Turn-Taking Degree (H/M/L) How much back-and-forth with humans, systems, or both?| Latency Constraint (H/M/L) Is real-time response required, or is batch acceptable?| Compliance/Risk Sensitivity (H/M/L) What is the cost of an error? Regulated? Audited? | Tool/API Availability (H/M/L) Can the agent access the required data and systems? |
 |------------|------------------------|-------------------------|------------------------------|------------------------------|---------------------------|---------------------------|--------------------------------------|-------------------------------|
 
 Include at least 5 micro-tasks per work stream. Scores must be justified in footnotes — not asserted.
 
-#### 2c. Cognitive zones and breakpoints
-Map this work stream as a sequence of cognitive zones. For each zone:
+#### 2d. Cognitive zones and breakpoints
+**Zones** — map this work stream as a sequence of cognitive zones:
 
-> **Zone [Z-N]:** [zone name, e.g. "Intent classification", "Data retrieval", "Deviation judgment"]
-> **Micro-tasks in zone:** [list]
-> **Dominant cognitive type:** [probabilistic reasoning / deterministic execution / human sense-making]
-> **Data dependencies:** [what must be available?]
-> **Error tolerance:** [what is the cost of a mistake in this zone?]
+| Zone ID | Zone name | Micro-tasks in zone | Dominant cognitive type | Data dependencies | Error tolerance - what is the cost of a mistake in this zone?|
+|---------|-----------|---------------------|------------------------|-------------------|-----------------|
+| Z-1 | | | probabilistic reasoning / deterministic execution / human sense-making | | |
+| Z-2 | | | | | |
 
-Then identify breakpoints — moments where control must or should shift:
+**Breakpoints** — moments where control must or should shift (minimum 3 per work stream):
 
-> **Breakpoint [BP-N]:** [description of the handoff]
-> **From:** [who/what currently controls]
-> **To:** [who/what should control after the breakpoint]
-> **Why this is a breakpoint:** [rule-to-judgment shift? human-to-system? compliance gate?]
-> **Agent opportunity or risk:** [does an agent create value or risk here?]
+| BP ID | Description of handoff | From - who/what currently controls | To - who/what should control after the breakpoint | Why this is a breakpoint - rule-to-judgment shift? human-to-system? compliance gate?| Agent opportunity or risk - does an agent create value or risk here? |
+|-------|------------------------|------|----|--------------------------|--------------------------|
+| BP-1 | | | | rule-to-judgment shift / human-to-system / compliance gate | |
+| BP-2 | | | | | |
+| BP-3 | | | | | |
 
-#### 2d. Process topology diagram (text)
-Draw a linear or branching flow showing zones → breakpoints → zones. Use ASCII or structured text. Label each zone and breakpoint with its ID.
+#### 2e. Process topology diagram
+Draw a linear or branching flow showing zones → breakpoints → zones using a **Mermaid flowchart** (`flowchart LR`). Zones are rounded rectangles `([...])`, breakpoints are diamonds `{...}`. Use style classes to distinguish agent-owned zones (green fill) from human-in-the-loop zones (amber fill). Label each node with its ID and a short name.
 
 ### 3. Cognitive Load Map — Work Stream B
-Repeat sections 2a through 2d for the second work stream.
+Repeat sections 2a through 2e for the second work stream.
 
 ### 4. Cross-work-stream observations
 After completing both maps, write 3–5 observations that apply across both. Focus on:
@@ -92,6 +90,7 @@ After completing both maps, write 3–5 observations that apply across both. Foc
 ## Acceptance criteria (all must pass)
 
 - [ ] Work stream selection is justified, not assumed
+- [ ] Lived process narrative present for each selected work stream — describes actual work (pauses, consultations, informal knowledge, workarounds), not SOP steps
 - [ ] At least 2 work streams fully decomposed
 - [ ] JtDs are cognitive contracts (outcome-focused), not task descriptions
 - [ ] Micro-task tables have at least 5 rows per work stream with justified scores
@@ -107,3 +106,5 @@ After completing both maps, write 3–5 observations that apply across both. Foc
 - Breakpoints described as "the human reviews the agent output" without specifying the condition that triggers the review
 - JtDs that are tasks ("extract clause text") rather than cognitive contracts ("determine whether this liability cap is compliant with the playbook and what the business exposure is if it is not")
 - Zone definitions that group all work together as "review" — zones should separate qualitatively different cognitive activity
+- Lived process narrative replaced by a bullet list of steps — it must describe the cognitive experience of the worker (pauses, judgment calls, informal consultations), not a process flow
+- Lived process narrative that is SOP-level ("the paralegal reviews the clause against the playbook") — name what the worker actually sees, decides, and does when the standard path doesn't apply

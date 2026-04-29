@@ -1,23 +1,11 @@
 # Prompt: Deliverable 5 — System/Data Inventory
 
 ## Scenario (read this first)
-See `scenario\enriched_scenario.md`. Do not invent numbers, systems, or constraints not present there. Every number you use must trace back to the scenario or be explicitly labelled as an assumption.
-
-**Scenario summary (for reference):**
-- **Helix Workforce Software** — UK-based B2B SaaS (~480 employees, ARR £42M, 25% YoY growth); sells workforce-planning software to UK/EU enterprises
-- Legal team (5-person): **Amelia Forsythe** (General Counsel, 12 years at Helix), 3 Commercial Lawyers (3–6 yrs experience), **Tom** (Paralegal)
-- ~300 inbound vendor contracts per quarter; each 15–40 pages
-- Playbook covers 7 clause types: liability caps, DPAs, termination clauses, IP ownership, SLA commitments, governing law, indemnity scope; playbook is 9 months stale — DPDI Act Q1 updates not incorporated
-- 70% standard / 20% negotiable deviations / 10% senior-lawyer escalation
-- Turnaround: 4–6 business days; CRO pressure to halve it
-- GC hard rule: no counteroffer without named lawyer's sign-off on specific clauses
-
-**Important:** The enriched scenario **does name specific systems**: Ironclad (CLM, REST APIs), Microsoft Word + Track Changes (redlining), SharePoint (storage and playbook page), Salesforce (sales pipeline), Outlook (vendor procurement emails). Use these as named systems in your analysis — they are facts from the scenario, not assumptions. Any additional systems you introduce beyond these must be labelled as assumptions. For named systems, their specific API capabilities, rate limits, and integration maturity beyond what the scenario states are still assumptions and must be labelled as such.
-
+See `scenario\scenario_context.md` for the full scenario, work streams, tooling, and named-systems guidance. Do not invent numbers, systems, or constraints not present in the scenario. Every number you use must trace back to the scenario or be explicitly labelled as an assumption.
 ---
 
 ## Your task
-Produce a System/Data Inventory. Output file: `deliverables\D5_system_data_inventory.md`.
+Produce a System/Data Inventory. Be concise. Summarize the main 3 points at the end.Output file: `deliverables\D5_system_data_inventory.md`.
 
 This inventory defines what the agent (from D4) needs to access, what is available, what is missing, and what is risky. It is the integration specification that a development team will use to assess buildability and plan their integration work.
 

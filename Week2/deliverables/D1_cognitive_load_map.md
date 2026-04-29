@@ -15,27 +15,34 @@ WS2 is selected over WS3 and WS4 because it sits at the intersection of high del
 
 ## 2. Cognitive Load Map — Work Stream A: First-Pass Clause Classification
 
-### 2a. Jobs to be Done Decomposition
+### 2a. Lived Process Narrative
 
-> **JtD [WS1-1]:** Determine, for every major clause in an inbound vendor contract, whether the language is compliant with Helix's playbook, and if not, whether the deviation is within the paralegal's authority to redline or requires senior-lawyer escalation.
-> **Trigger:** An inbound vendor contract arrives via Outlook (or is flagged in Salesforce for a new enterprise deal).
-> **Actor:** Tom (Paralegal).
-> **Key decisions:** (1) Which document sections contain each of the 7 clause types? (2) Does the extracted clause language fall within playbook tolerance? (3) Is a deviation within the range Tom is authorised to redline, or does it cross the threshold requiring escalation? (4) Does the clause touch a regulatory area where the playbook is known to be stale?
-> **Key systems/data:** Vendor contract (Word document via Outlook/SharePoint), SharePoint playbook page, Ironclad (case logging).
-> **Primary cognitive type:** Decision-making (triage) + Synthesis (semantic comparison of unstructured legal text against semi-structured policy).
-> **Expected output:** A per-clause classification (compliant / negotiable deviation / escalation-required / regulatory gap) and a contract-level routing decision (standard → close; negotiable → WS2; escalation → WS3).
+*[Reconstructed from Artefacts 2.1, 2.2, 2.3 and scenario. Labelled assumptions noted.]*
 
-> **JtD [WS1-2]:** Identify where the playbook does not provide a reliable policy position for a clause in the inbound contract, flag the gap, and determine who needs to resolve it before the contract can be classified.
-> **Trigger:** During clause comparison, Tom recognises that the playbook position for a clause type is absent, outdated, or ambiguous relative to current law (e.g., DPDI Act changes not yet reflected in the DPA section).
-> **Actor:** Tom (Paralegal), with informal escalation to a named lawyer ("Sarah").
-> **Key decisions:** (1) Is the playbook position for this clause type currently reliable? (2) Is this gap significant enough to affect the classification outcome? (3) Which lawyer should be consulted to resolve it?
-> **Key systems/data:** SharePoint playbook (version history/last-revised date), informal lawyer knowledge, Amelia's sticky-note awareness of DPDI updates.
-> **Primary cognitive type:** Exception-handling — recognising the boundaries of the current policy reference and acting accordingly.
-> **Expected output:** Either a provisional classification with a documented uncertainty flag routed to a lawyer, or a pause pending playbook clarification.
+A VendorCo MSA lands in Tom's Outlook at 9:15am — 32 pages, attached as a Word document. He downloads it, renames it to the Helix file convention, uploads it to the matter folder on SharePoint, and logs a new case in Ironclad. He opens the document in Word on his left monitor and the SharePoint playbook page in a browser tab on his right.
+
+He starts at the top. Section 7.3 is "Limitation of Liability." He reads the cap: "the lesser of (a) fees paid in the six (6) months preceding the event or (b) £50,000." He checks the playbook — enterprise standard is 12 months / £250,000. The vendor's clause is unambiguously below both floors. He annotates his working copy: *"Cap is below playbook minimum (12 months / £250k for enterprise). FLAG — but the term is borderline negotiable, not escalation. Will redline to playbook position."* He types a note into the Ironclad case record and moves on.
+
+Section 11.2 is the DPA. He reads the vendor's language: standard UK GDPR / DPA 2018 reference, data may be processed outside the UK. He opens the playbook DPA section (Artefact 2.3). The playbook requires sub-processor list disclosure, UK/EEA data residency, 72-hour breach notification, and an SCC fallback clause. He checks: sub-processor disclosure — not mentioned in the vendor clause. Breach notification — not mentioned. He also knows, without the playbook telling him, that the DPDI Act's new legitimate interests test and data subject access changes aren't in this playbook version (Artefact 2.3 sticky note). He pauses. *Is this a redlineable deviation or an escalation?* He isn't sure whether the DPDI gap changes the legal analysis enough to require escalation. He sends an informal message to Sarah [assumption: via Teams or email — not stated in scenario]: *"Hey, can you look at the VendorCo DPA — not sure if DPDI updates push this to escalation."* He continues reviewing other clauses rather than blocking on her reply.
+
+Section 14.1 is termination for convenience — 90 days' notice, either party. He checks the playbook: Helix's standard paper calls for 30 days. The vendor's paper uses 90 days, which is their paper, so it's routine — different from Helix's standard but within normal commercial range. He annotates: *"Routine — accept."*
+
+By the time he has worked through all seven clause types, Sarah hasn't replied. He writes up a draft classification in Ironclad: liability cap → negotiable deviation; DPA → pending lawyer clarification; termination → standard/accept. The case sits in a partial-classification state while he waits. This is the queue point: the contract cannot be routed until the DPA question resolves. Tom has other inbound contracts to work through in the meantime.
+
+**What this reveals beyond the SOP:** The 70/20/10 routing split assumes each contract produces a single routing decision. In practice, a single contract can have clauses in multiple buckets simultaneously — standard, negotiable, and pending-escalation — which creates a partial-classification state that is not tracked as a distinct workflow status in any system. Tom's informal consultation with Sarah ("will ask Sarah") is a third routing path that exists entirely outside the documented process, generates no audit trail, and introduces untracked latency into the 4–6 day turnaround.
 
 ---
 
-### 2b. Micro-Task Inventory with Dimension Scores
+### 2b. Jobs to be Done Decomposition
+
+| JtD ID | Cognitive contract | Trigger | Actor | Key decisions | Key systems/data | Primary cognitive type | Expected output |
+|--------|-------------------|---------|-------|--------------|-----------------|----------------------|-----------------|
+| WS1-1 | Determine, for every major clause in an inbound vendor contract, whether the language is compliant with Helix's playbook, and if not, whether the deviation is within the paralegal's authority to redline or requires senior-lawyer escalation | Inbound vendor contract arrives via Outlook or is flagged in Salesforce | Tom (Paralegal) | (1) Which sections contain each of the 7 clause types? (2) Does extracted clause language fall within playbook tolerance? (3) Is a deviation within Tom's redline authority or does it require escalation? (4) Does the clause touch a regulatory area where the playbook is stale? | Vendor contract (Word via Outlook/SharePoint), SharePoint playbook, Ironclad (case logging) | Decision-making (triage) + Synthesis (semantic comparison of unstructured legal text against semi-structured policy) | Per-clause classification (compliant / negotiable deviation / escalation-required / regulatory gap) and contract-level routing decision |
+| WS1-2 | Identify where the playbook does not provide a reliable policy position for a clause in the inbound contract, flag the gap, and determine who needs to resolve it before the contract can be classified | During clause comparison, Tom recognises the playbook position for a clause type is absent, outdated, or ambiguous relative to current law | Tom (Paralegal), with informal escalation to a named lawyer ("Sarah") | (1) Is the playbook position for this clause type currently reliable? (2) Is this gap significant enough to affect the classification outcome? (3) Which lawyer should be consulted? | SharePoint playbook (version history/last-revised date), informal lawyer knowledge, Amelia's awareness of DPDI updates | Exception-handling — recognising the boundaries of the current policy reference and acting accordingly | Provisional classification with documented uncertainty flag routed to a lawyer, or a pause pending playbook clarification |
+
+---
+
+### 2c. Micro-Task Inventory with Dimension Scores
 
 | Micro-task | Cognitive Load | Input Structure | Decision Determinism | Exception Frequency | Turn-Taking Degree | Latency Constraint | Compliance/Risk Sensitivity | Tool/API Availability |
 |---|---|---|---|---|---|---|---|---|
@@ -81,176 +88,106 @@ WS2 is selected over WS3 and WS4 because it sits at the intersection of high del
 
 ---
 
-### 2c. Cognitive Zones and Breakpoints
+### 2d. Cognitive Zones and Breakpoints
 
-> **Zone [Z-1]:** Document Ingestion and Structure Mapping
-> **Micro-tasks in zone:** MT1, MT2
-> **Dominant cognitive type:** Deterministic execution (MT1) transitioning to probabilistic reasoning (MT2 — locating clause types in unstructured text)
-> **Data dependencies:** Vendor contract file (via Outlook/SharePoint); knowledge of the 7 playbook clause types
-> **Error tolerance:** Moderate at MT1 (intake errors are correctable); low at MT2 (missed or misidentified clause locations propagate forward as unreviewed clauses — a missed DPA clause represents a compliance failure)
+**Zones:**
 
-> **Zone [Z-2]:** Clause Extraction
-> **Micro-tasks in zone:** MT3
-> **Dominant cognitive type:** Probabilistic reasoning — identifying where a clause begins and ends in dense legal prose, handling ambiguous boundaries and multi-section clauses
-> **Data dependencies:** Full document text; understanding of the 7 clause type semantics
-> **Error tolerance:** Low — incorrect extraction means MT4 comparison is performed on wrong text, producing an invalid classification
-
-> **Zone [Z-3]:** Playbook Comparison
-> **Micro-tasks in zone:** MT4
-> **Dominant cognitive type:** Deterministic execution for numeric threshold checks; probabilistic reasoning for qualitative comparisons
-> **Data dependencies:** Extracted clause text (from Z-2); playbook position statements (SharePoint); for DPA clauses, the current regulatory position (which is not in the stale playbook)
-> **Error tolerance:** Low — comparison errors are the direct cause of misclassification
-
-> **Zone [Z-4]:** Deviation Triage and Gap Detection
-> **Micro-tasks in zone:** MT5, MT6
-> **Dominant cognitive type:** Human sense-making — applying institutional knowledge to determine the negotiable/escalation boundary; detecting regulatory coverage gaps the playbook does not flag
-> **Data dependencies:** Comparison outputs from Z-3; institutional knowledge of Helix's negotiation posture; awareness of current regulatory landscape
-> **Error tolerance:** Very low — this is the highest-risk zone. A misclassification (treating escalation-required as negotiable) means a non-standard clause exits to WS2 without senior review. A missed regulatory gap means a non-compliant clause is accepted or incorrectly redlined.
-
-> **Zone [Z-5]:** Classification Recording and Routing
-> **Micro-tasks in zone:** MT7, MT8
-> **Dominant cognitive type:** Deterministic execution — recording and routing from structured outputs
-> **Data dependencies:** Per-clause classification outputs from Z-4; Ironclad (for case record and routing)
-> **Error tolerance:** Moderate — administrative recording errors are correctable; routing errors have downstream consequences but are detectable at the next work stream
-
----
+| Zone ID | Zone name | Micro-tasks in zone | Dominant cognitive type | Data dependencies | Error tolerance |
+|---------|-----------|---------------------|------------------------|-------------------|-----------------|
+| Z-1 | Document Ingestion & Structure Mapping | MT1, MT2 | Deterministic execution (MT1) → Probabilistic reasoning (MT2) | Vendor contract file (Outlook/SharePoint); knowledge of the 7 playbook clause types | Moderate at MT1 (intake errors correctable); Low at MT2 (missed clause locations produce unreviewed clauses — a missed DPA clause is a compliance failure) |
+| Z-2 | Clause Extraction | MT3 | Probabilistic reasoning | Full document text; clause type semantics | Low — incorrect extraction means MT4 comparison runs on wrong text, producing invalid classification |
+| Z-3 | Playbook Comparison | MT4 | Deterministic execution (numeric thresholds) + Probabilistic reasoning (qualitative comparisons) | Extracted clause text (Z-2); playbook position statements (SharePoint); current regulatory position for DPA clauses (not in stale playbook) | Low — comparison errors directly cause misclassification |
+| Z-4 | Deviation Triage & Gap Detection | MT5, MT6 | Human sense-making | Comparison outputs (Z-3); institutional knowledge of Helix's negotiation posture; awareness of current regulatory landscape | Very low — misclassifying an escalation-required clause as negotiable routes it to WS2 without senior review; missed regulatory gap means a non-compliant clause is accepted |
+| Z-5 | Classification Recording & Routing | MT7, MT8 | Deterministic execution | Per-clause classification outputs (Z-4); Ironclad (case record and routing) | Moderate — recording errors correctable; routing errors have downstream consequences but are detectable at the next work stream |
 
 **Breakpoints:**
 
-> **Breakpoint [BP-1]:** Low-confidence clause location — agent cannot reliably identify a clause type's location in the document
-> **From:** Agent (document structure parsing, Z-1/Z-2)
-> **To:** Tom (human disambiguation)
-> **Why this is a breakpoint:** Probabilistic-to-human-sense-making shift. When the agent's confidence in clause location falls below a threshold (e.g., clause type not found, or found in an ambiguous multi-topic section), proceeding creates a risk of missed clause review. The condition triggering review is confidence score below threshold, not general "complexity."
-> **Agent opportunity or risk:** Opportunity — agent handles the ~75% of cases where clause location is unambiguous [assumption]; risk — agent over-confidence on ambiguous clause locations is worse than flagging them, because an undetected miss is less visible than a flagged uncertainty.
-
-> **Breakpoint [BP-2]:** Borderline triage judgment — deviation falls at the negotiable/escalation boundary
-> **From:** Agent (threshold comparison output, Z-3)
-> **To:** Tom (triage judgment, Z-4) — and potentially to a lawyer for informal consultation
-> **Why this is a breakpoint:** Rule-to-judgment shift. The agent can produce a comparison result (deviation = X% below playbook minimum); the decision of whether X% constitutes a negotiable deviation or an escalation trigger requires a playbook rule that does not currently exist. Until the playbook codifies the boundary, this judgment cannot be safely delegated to the agent.
-> **Agent opportunity or risk:** Opportunity once the playbook is updated with explicit deviation thresholds per clause type. Risk if the agent makes this call unilaterally against tacit thresholds — incorrect triage of the 10% escalation-required contracts is the highest-consequence classification error.
-
-> **Breakpoint [BP-3]:** Regulatory gap detection — clause touches an area where the playbook is stale
-> **From:** Tom (Z-4 gap detection)
-> **To:** Lawyer (informal consultation — "will ask Sarah")
-> **Why this is a breakpoint:** Knowledge boundary — Tom's meta-awareness of playbook staleness is not computable from the playbook itself. The DPDI Act gap is the current instance; similar gaps will occur whenever regulations change faster than the playbook update process.
-> **Agent opportunity or risk:** Risk — an agent trained against the current playbook will classify DPDI-affected DPA clauses as "compliant" because the playbook says so. This is the highest compliance risk in the agent design and requires a dedicated regulatory currency check before deployment. Opportunity — a regulatory monitoring feed (flagging when new law affects clause types the agent is responsible for) could automate the gap detection that Tom currently performs from institutional knowledge.
-
-> **Breakpoint [BP-4]:** Contract-level routing — per-clause results aggregated to a contract-level routing decision
-> **From:** Agent (MT8 routing logic)
-> **To:** Ironclad (automated routing) with human override capability
-> **Why this is a breakpoint:** Deterministic execution for clear cases; judgment for edge cases (e.g., one escalation-required clause among five standard ones — does the entire contract escalate?). The routing logic rule is not codified in the scenario.
-> **Agent opportunity or risk:** Opportunity — once routing rules are codified, this step is fully automatable. Risk — ambiguous routing rules create silent errors that may not surface until the next work stream.
+| BP ID | Description of handoff | From | To | Why this is a breakpoint | Agent opportunity or risk |
+|-------|------------------------|------|----|--------------------------|--------------------------|
+| BP-1 | Low-confidence clause location — agent cannot reliably identify a clause type's location in the document | Agent (document structure parsing, Z-1/Z-2) | Tom (human disambiguation) | Probabilistic-to-human-sense-making shift — when confidence in clause location falls below threshold (e.g., clause type not found, or found in ambiguous multi-topic section), proceeding risks missed clause review | Opportunity — agent handles ~75% of cases where clause location is unambiguous [assumption]; Risk — agent over-confidence on ambiguous locations is worse than flagging them |
+| BP-2 | Borderline triage judgment — deviation falls at the negotiable/escalation boundary | Agent (threshold comparison output, Z-3) | Tom (triage judgment, Z-4) and potentially a lawyer for informal consultation | Rule-to-judgment shift — agent can produce a comparison result (deviation = X% below playbook minimum) but the decision of whether X% constitutes negotiable or escalation requires a playbook rule that does not currently exist | Opportunity once playbook codifies explicit deviation thresholds per clause type; Risk if agent makes this call unilaterally against tacit thresholds |
+| BP-3 | Regulatory gap detection — clause touches an area where the playbook is stale | Tom (Z-4 gap detection) | Lawyer (informal consultation — "will ask Sarah") | Knowledge boundary — Tom's meta-awareness of playbook staleness is not computable from the playbook itself; DPDI Act gap is the current instance | Risk — agent trained against the current playbook will classify DPDI-affected DPA clauses as "compliant"; Opportunity — regulatory monitoring feed could automate the gap detection Tom currently performs from institutional knowledge |
+| BP-4 | Contract-level routing — per-clause results aggregated to a contract-level routing decision | Agent (MT8 routing logic) | Ironclad (automated routing) with human override capability | Deterministic execution for clear cases; judgment for edge cases (e.g., one escalation-required clause among five standard ones — routing rule not codified) | Opportunity — once routing rules are codified, fully automatable; Risk — ambiguous routing rules create silent errors not visible until the next work stream |
 
 ---
 
-### 2d. Process Topology Diagram — Work Stream A
+### 2e. Process Topology Diagram — Work Stream A
 
+```mermaid
+flowchart LR
+    START([Contract arrives\nOutlook / Salesforce]) --> Z1
+
+    Z1([Z-1 Document Ingestion\n& Structure Mapping\nMT1–MT2])
+    Z1 --> BP1{BP-1\nClause location\nconfidence?}
+    BP1 -->|Confident| Z2
+    BP1 -->|Ambiguous / not found| HUM1([Human: Tom\ndisambiguates])
+    HUM1 --> Z2
+
+    Z2([Z-2 Clause\nExtraction\nMT3])
+    Z2 --> Z3
+
+    Z3([Z-3 Playbook\nComparison\nMT4])
+    Z3 --> BP2{BP-2\nDeviation at\nboundary?}
+    BP2 -->|Clear threshold| Z4
+    BP2 -->|Borderline| HUM2([Human: Tom\njudges])
+    HUM2 --> Z4
+
+    Z4([Z-4 Deviation Triage\n& Gap Detection\nMT5–MT6])
+    Z4 --> BP3{BP-3\nRegulatory /\nplaybook gap?}
+    BP3 -->|No gap| Z5
+    BP3 -->|Gap detected| HUM3([Lawyer consult\n'will ask Sarah'])
+    HUM3 --> Z5
+
+    Z5([Z-5 Classification\nRecording & Routing\nMT7–MT8])
+    Z5 --> BP4{BP-4\nContract-level\nrouting}
+    BP4 -->|Standard| OUT1([Close WS1])
+    BP4 -->|Negotiable deviation| OUT2([Route to WS2])
+    BP4 -->|Escalation required| OUT3([Route to WS3])
+
+    style Z1 fill:#d4edda
+    style Z2 fill:#d4edda
+    style Z3 fill:#d4edda
+    style Z5 fill:#d4edda
+    style Z4 fill:#fff3cd
+    style HUM1 fill:#fff3cd
+    style HUM2 fill:#fff3cd
+    style HUM3 fill:#fff3cd
 ```
-[CONTRACT ARRIVES via Outlook / Salesforce trigger]
-                     |
-                     v
-    ┌────────────────────────────────┐
-    │ Z-1: Document Ingestion &      │
-    │ Structure Mapping              │
-    │ MT1: Receive + log             │
-    │ MT2: Locate 7 clause types     │
-    │ Type: Det. execution →         │
-    │       Probabilistic reasoning  │
-    └────────────────────────────────┘
-                     |
-                     v
-       ◆ BP-1: Clause location confidence?
-          /                        \
-   [Confident]              [Ambiguous / not found]
-          |                        |
-          |                [Human: Tom disambiguates]
-          |                        |
-          └────────────────────────┘
-                     |
-                     v
-    ┌────────────────────────────────┐
-    │ Z-2: Clause Extraction         │
-    │ MT3: Extract text per clause   │
-    │ Type: Probabilistic reasoning  │
-    └────────────────────────────────┘
-                     |
-                     v
-    ┌────────────────────────────────┐
-    │ Z-3: Playbook Comparison       │
-    │ MT4: Compare vs. policy        │
-    │ Type: Deterministic (numeric)  │
-    │       + Probabilistic (qualit.)│
-    └────────────────────────────────┘
-                     |
-                     v
-       ◆ BP-2: Deviation at negotiable / escalation boundary?
-          /                              \
-   [Clear threshold — compliant,   [Borderline: triage
-    clearly negotiable, or          judgment required]
-    clearly escalation-required]         |
-          |                        [Human: Tom judges]
-          |                              |
-          └──────────────────────────────┘
-                     |
-                     v
-    ┌────────────────────────────────┐
-    │ Z-4: Deviation Triage &        │
-    │ Gap Detection                  │
-    │ MT5: Negotiable vs. escalation │
-    │ MT6: Regulatory gap detection  │
-    │ Type: Human sense-making       │
-    └────────────────────────────────┘
-                     |
-                     v
-       ◆ BP-3: Regulatory / playbook gap detected?
-          /                           \
-   [No gap]                   [Gap: informal lawyer
-          |                    consult ("will ask Sarah")]
-          |                           |
-          └───────────────────────────┘
-                     |
-                     v
-    ┌────────────────────────────────┐
-    │ Z-5: Classification Recording  │
-    │ & Routing                      │
-    │ MT7: Record in Ironclad        │
-    │ MT8: Contract-level route      │
-    │ Type: Deterministic execution  │
-    └────────────────────────────────┘
-                     |
-              ◆ BP-4: Routing
-         /           |            \
-        v            v             v
-  [Standard]   [Negotiable     [Escalation
-  [Close WS1]  deviation →     required →
-               WS2]            WS3]
-```
+
+*Green = agent-owned zones. Amber = human-in-the-loop zones and consultations.*
 
 ---
 
 ## 3. Cognitive Load Map — Work Stream B: Standard-Deviation Redlining
 
-### 3a. Jobs to be Done Decomposition
+### 3a. Lived Process Narrative
 
-> **JtD [WS2-1]:** Produce legally precise redlined clause language that achieves Helix's playbook position for each flagged deviation, within the structure and grammar of the vendor's contract.
-> **Trigger:** WS1 output routes a contract to WS2 with one or more flagged negotiable deviations.
-> **Actor:** Tom (Paralegal).
-> **Key decisions:** (1) What exactly is the playbook position for this clause type? (2) How should that position be expressed as redlined clause text that fits the surrounding contract structure? (3) Does the redline create any internal consistency conflicts with other clauses?
-> **Key systems/data:** Word document (Track Changes), SharePoint playbook (position statements), prior redline examples [assumption: not mentioned in scenario; may or may not exist].
-> **Primary cognitive type:** Synthesis — translating a policy position (semi-structured bullet points) into legally precise clause language (unstructured legal prose).
-> **Expected output:** Redlined Word document with tracked changes replacing non-compliant clause text with playbook-compliant language, ready for sign-off routing.
+*[Reconstructed from Artefacts 2.1, 2.2, 2.3 and scenario. Labelled assumptions noted.]*
 
-> **JtD [WS2-2]:** Deliver the signed-off redlined document to the vendor procurement contact via the channel they can actually receive it.
-> **Trigger:** Sign-off is obtained from a named lawyer (WS4 gate cleared).
-> **Actor:** Tom (Paralegal).
-> **Key decisions:** (1) Does this vendor accept SharePoint links, or do they require an email attachment? (2) Who is the correct procurement contact to send to?
-> **Key systems/data:** Ironclad (vendor contact info), Outlook (delivery), SharePoint (document storage), vendor delivery preference — currently tracked informally, not in any system [inference from Artefact 2.2].
-> **Primary cognitive type:** Communication + Execution.
-> **Expected output:** Redlined document delivered to vendor procurement contact; delivery logged.
+Tom picks up the VendorCo contract from his WS2 queue in Ironclad — it was routed from WS1 with two flagged negotiable deviations: the liability cap (below playbook minimum) and the DPA (standard but missing sub-processor disclosure and breach notification SLA). He opens the Word document from SharePoint and the playbook DPA and liability sections side by side.
+
+He starts with the liability cap. The playbook says: enterprise standard is 12 months' fees or £250,000, whichever is greater. VendorCo's clause reads "the lesser of (a) fees paid in the six (6) months preceding the event or (b) £50,000." He needs to redline this. The playbook gives him the floor, not the clause language. He has to compose the replacement language himself — adapting it to fit VendorCo's grammatical structure. He types a tracked-changes deletion of "[the lesser of (a) fees paid in the six (6) months preceding the event or (b) £50,000]" and a tracked-changes insertion of "[the greater of (a) all fees paid by Customer in the twelve (12) months preceding the event giving rise to liability or (b) £250,000]." He reads it back in context. It fits.
+
+He then notices that Section 13 of the contract — indemnity — says "subject to the liability caps set out in Section 7." His liability cap redline changes Section 7. He re-reads Section 13 to check whether the new cap creates an internal inconsistency. He decides it doesn't — the indemnity clause references the cap section generically and will pick up the new figure automatically. He makes a mental note [assumption: no formal cross-clause checklist exists for this step].
+
+He moves to the DPA. The playbook requires sub-processor list disclosure, UK/EEA data residency preference, 72-hour breach notification, and an SCC fallback clause. He knows from WS1 that the DPDI Act gap is flagged. He checks — the DPA deviation was classified as "negotiable" (Sarah confirmed it didn't need escalation). He drafts four redlined additions to Section 11.2, inserting each missing requirement. This takes longer than the liability cap — qualitative legal language has more degrees of freedom than a numeric threshold.
+
+He saves the redlined Word document back to SharePoint with a new version number. He routes it through Ironclad to a named lawyer's sign-off queue [assumption: Ironclad routing mechanism — not described in scenario]. While doing so, he checks his inbox and sees an earlier email from VendorCo: their procurement tool can't accept SharePoint links, they need the redlined Word document as an email attachment. He makes a note in the Ironclad case record: "VendorCo delivery — email attachment only." The signed-off document will need to go out via Outlook, not the standard SharePoint link.
+
+**What this reveals beyond the SOP:** MT-C (drafting redlined clause language) requires legal generation skill, not just policy lookup — the playbook provides position statements, not ready-to-paste clause templates. The cross-clause consistency check (MT-D) is entirely informal — there is no checklist, no tool, and no documented step. VendorCo's delivery preference exception (Artefact 2.2) is tracked only in Tom's memory and a note in the case record; there is no vendor delivery preference registry that an agent or another paralegal could consult.
 
 ---
 
-### 3b. Micro-Task Inventory with Dimension Scores
+### 3b. Jobs to be Done Decomposition
+
+| JtD ID | Cognitive contract | Trigger | Actor | Key decisions | Key systems/data | Primary cognitive type | Expected output |
+|--------|-------------------|---------|-------|--------------|-----------------|----------------------|-----------------|
+| WS2-1 | Produce legally precise redlined clause language that achieves Helix's playbook position for each flagged deviation, within the structure and grammar of the vendor's contract | WS1 output routes a contract to WS2 with one or more flagged negotiable deviations | Tom (Paralegal) | (1) What exactly is the playbook position for this clause type? (2) How should that position be expressed as redlined clause text that fits the surrounding contract structure? (3) Does the redline create any internal consistency conflicts with other clauses? | Word document (Track Changes), SharePoint playbook (position statements), prior redline examples [assumption: not mentioned in scenario] | Synthesis — translating a policy position (semi-structured bullet points) into legally precise clause language (unstructured legal prose) | Redlined Word document with tracked changes replacing non-compliant clause text with playbook-compliant language, ready for sign-off routing |
+| WS2-2 | Deliver the signed-off redlined document to the vendor procurement contact via the channel they can actually receive it | Sign-off obtained from a named lawyer (WS4 gate cleared) | Tom (Paralegal) | (1) Does this vendor accept SharePoint links or require an email attachment? (2) Who is the correct procurement contact? | Ironclad (vendor contact info), Outlook (delivery), SharePoint (document storage), vendor delivery preference — tracked informally, not in any system [inference from Artefact 2.2] | Communication + Execution | Redlined document delivered to vendor procurement contact; delivery logged |
+
+---
+
+### 3c. Micro-Task Inventory with Dimension Scores
 
 | Micro-task | Cognitive Load | Input Structure | Decision Determinism | Exception Frequency | Turn-Taking Degree | Latency Constraint | Compliance/Risk Sensitivity | Tool/API Availability |
 |---|---|---|---|---|---|---|---|---|
@@ -285,154 +222,70 @@ WS2 is selected over WS3 and WS4 because it sits at the intersection of high del
 
 ---
 
-### 3c. Cognitive Zones and Breakpoints
+### 3d. Cognitive Zones and Breakpoints
 
-> **Zone [Z-A]:** Policy Retrieval and Interpretation
-> **Micro-tasks in zone:** MT-A, MT-B
-> **Dominant cognitive type:** Deterministic execution (retrieval) transitioning to probabilistic reasoning (interpretation of policy intent)
-> **Data dependencies:** WS1 output (which clause types are flagged); SharePoint playbook (policy positions per clause type); awareness of playbook currency
-> **Error tolerance:** Low — errors here corrupt the redline target. A wrong interpretation of the playbook position means the redline cannot achieve Helix's required legal position, and the error propagates through MT-C to the outbound counteroffer.
+**Zones:**
 
-> **Zone [Z-B]:** Clause Drafting
-> **Micro-tasks in zone:** MT-C
-> **Dominant cognitive type:** Human sense-making — synthesising a policy target into legally coherent clause language. This is the only zone in either work stream that requires legal *generation* rather than legal *comparison*.
-> **Data dependencies:** Playbook position interpretation (Z-A output); original vendor clause text; legal drafting convention
-> **Error tolerance:** Very low — the redline is the substantive legal work product. Drafting errors (wrong position achieved, ambiguous language, grammatical inconsistency with surrounding contract) are the direct cause of legal risk in outbound counteroffers.
-
-> **Zone [Z-C]:** Cross-Clause Consistency Review
-> **Micro-tasks in zone:** MT-D
-> **Dominant cognitive type:** Human sense-making — reading across an unstructured document for semantic interactions between clauses
-> **Data dependencies:** Full redlined contract document
-> **Error tolerance:** Low — undetected cross-clause inconsistencies create legal ambiguity that can be exploited by the counterparty in a dispute.
-
-> **Zone [Z-D]:** Document Management and Sign-off Routing
-> **Micro-tasks in zone:** MT-E, MT-F
-> **Dominant cognitive type:** Deterministic execution
-> **Data dependencies:** Signed-off document in SharePoint; Ironclad (routing); lawyer availability [currently untracked in any system — assumption]
-> **Error tolerance:** Moderate — administrative errors are correctable; routing delays directly affect turnaround time.
-
-> **Zone [Z-E]:** Vendor Delivery
-> **Micro-tasks in zone:** MT-G
-> **Dominant cognitive type:** Deterministic execution with exception-handling branch for non-standard delivery preferences
-> **Data dependencies:** Signed-off document; vendor contact info (Ironclad); vendor delivery preference (currently not in any system — inferred from Artefact 2.2)
-> **Error tolerance:** Moderate — delivery via wrong channel is fixable; sending to wrong recipient is more serious but detectable.
-
----
+| Zone ID | Zone name | Micro-tasks in zone | Dominant cognitive type | Data dependencies | Error tolerance |
+|---------|-----------|---------------------|------------------------|-------------------|-----------------|
+| Z-A | Policy Retrieval & Interpretation | MT-A, MT-B | Deterministic execution (retrieval) → Probabilistic reasoning (interpretation of policy intent) | WS1 output (which clause types are flagged); SharePoint playbook (policy positions); awareness of playbook currency | Low — errors here corrupt the redline target; a wrong interpretation of the playbook position means the redline cannot achieve Helix's required legal position |
+| Z-B | Clause Drafting | MT-C | Human sense-making — synthesising a policy target into legally coherent clause language | Playbook position interpretation (Z-A output); original vendor clause text; legal drafting convention | Very low — the redline is the substantive legal work product; drafting errors are the direct cause of legal risk in outbound counteroffers |
+| Z-C | Cross-Clause Consistency Review | MT-D | Human sense-making — reading across an unstructured document for semantic interactions between clauses | Full redlined contract document | Low — undetected cross-clause inconsistencies create legal ambiguity exploitable by the counterparty in a dispute |
+| Z-D | Document Management & Sign-off Routing | MT-E, MT-F | Deterministic execution | Signed-off document in SharePoint; Ironclad (routing); lawyer availability [currently untracked — assumption] | Moderate — administrative errors correctable; routing delays directly affect turnaround time |
+| Z-E | Vendor Delivery | MT-G | Deterministic execution with exception-handling branch for non-standard delivery preferences | Signed-off document; vendor contact info (Ironclad); vendor delivery preference (not in any system — inferred from Artefact 2.2) | Moderate — delivery via wrong channel is fixable; sending to wrong recipient is more serious but detectable |
 
 **Breakpoints:**
 
-> **Breakpoint [BP-A]:** Playbook position is ambiguous or known to be stale for the flagged clause type
-> **From:** Tom (Z-A policy interpretation)
-> **To:** Lawyer (clarification of intended policy position before drafting begins)
-> **Why this is a breakpoint:** Rule-to-judgment shift — plus a system knowledge gap. The playbook DPA section is 9 months stale (Artefact 2.3); the DPDI Act's new legitimate interests test and data subject access changes are not reflected. Tom cannot draft a correct DPA redline because the correct position is not in the playbook. The trigger is recognising that the clause type falls in a known stale area, not a general uncertainty about any clause.
-> **Agent opportunity or risk:** Risk — an agent drafting from the current stale playbook will produce DPDI-non-compliant redlines without flagging the issue. Mitigation: agent must have an explicit "playbook staleness flag" that surfaces known-stale clause types and blocks drafting until the playbook is updated or a lawyer provides the current position.
-
-> **Breakpoint [BP-B]:** Clause drafting requires novel legal synthesis beyond template application
-> **From:** Agent (standard template application for numeric-threshold clauses)
-> **To:** Tom / lawyer (for qualitative or complex clause synthesis)
-> **Why this is a breakpoint:** The agent-delegatable portion of MT-C is constrained to clause types where the playbook position maps to a known redline pattern (e.g., "replace [vendor's cap amount] with '12 months' fees or £250,000, whichever is greater'"). Clause types requiring qualitative judgment in the drafting — DPA terms, IP ownership, indemnity scope — require human synthesis. Triggered when the clause type has a qualitative playbook position rather than a numeric threshold.
-> **Agent opportunity or risk:** Opportunity for numeric-threshold clause types (liability cap redlines, SLA commitments with quantified parameters). Risk for qualitative clause types — agent-generated legal language that looks plausible but achieves the wrong legal effect is harder to catch than a blank draft.
-
-> **Breakpoint [BP-C]:** Sign-off gate — draft counteroffer must be approved by a named lawyer before dispatch (GC's hard rule)
-> **From:** Tom (redline draft complete, Z-D routing)
-> **To:** Named lawyer (sign-off via WS4)
-> **Why this is a breakpoint:** Non-negotiable compliance gate. The GC's hard rule is categorical: no counteroffer leaves legal's queue without named-lawyer sign-off on the specific clauses being negotiated. This is an accountability breakpoint, not a quality-review step — a lawyer must be identifiable as having authorised the negotiating position. No agent action can substitute for this.
-> **Agent opportunity or risk:** Opportunity — the agent can prepare the sign-off package: extract the specific redlined clauses, annotate each with the playbook position applied and the deviation magnitude, and route to the appropriate available lawyer with SLA context. Reducing the lawyer's sign-off preparation time from 30 min to 10–15 min [assumption] is where agent value accrues in this work stream.
-
-> **Breakpoint [BP-D]:** Vendor delivery preference exception — vendor requires email attachment rather than SharePoint link
-> **From:** Standard delivery workflow (Z-E, SharePoint link)
-> **To:** Exception workflow (Outlook email attachment)
-> **Why this is a breakpoint:** Recurring operational exception with no current systematic record. At least 3 vendors this quarter required this workaround (Artefact 2.2). Each time, Tom must recall or rediscover the preference.
-> **Agent opportunity or risk:** Opportunity — agent maintains a vendor delivery preference registry built from email thread history (Artefact 2.2 shows the preference is stated explicitly in email). Agent routes deliveries appropriately without Tom's manual intervention. Eliminates a recurring error mode (sending a SharePoint link to a vendor who can't open it).
+| BP ID | Description of handoff | From | To | Why this is a breakpoint | Agent opportunity or risk |
+|-------|------------------------|------|----|--------------------------|--------------------------|
+| BP-A | Playbook position is ambiguous or known to be stale for the flagged clause type | Tom (Z-A policy interpretation) | Lawyer (clarification before drafting begins) | Rule-to-judgment shift plus a system knowledge gap — the DPA section is 9 months stale (Artefact 2.3); the DPDI Act's new legitimate interests test and data subject access changes are not reflected; trigger is recognising the clause type falls in a known stale area, not general uncertainty | Risk — an agent drafting from the current stale playbook will produce DPDI-non-compliant redlines without flagging the issue; Mitigation: explicit playbook staleness flag that blocks drafting until the playbook is updated |
+| BP-B | Clause drafting requires novel legal synthesis beyond template application | Agent (standard template application for numeric-threshold clauses) | Tom or lawyer (for qualitative or complex clause synthesis) | The agent-delegatable portion of MT-C is constrained to clause types where the playbook position maps to a known redline pattern (e.g., replace cap amount with "12 months' fees or £250,000"); clause types requiring qualitative judgment — DPA terms, IP ownership, indemnity scope — require human synthesis; triggered when the clause type has a qualitative playbook position rather than a numeric threshold | Opportunity for numeric-threshold clause types (liability cap, SLA commitments with quantified parameters); Risk for qualitative clause types — agent-generated legal language that looks plausible but achieves the wrong legal effect is harder to catch than a blank draft |
+| BP-C | Sign-off gate — draft counteroffer must be approved by a named lawyer before dispatch (GC hard rule) | Tom (redline draft complete, Z-D routing) | Named lawyer (sign-off via WS4) | Non-negotiable compliance gate — the GC's hard rule is categorical: no counteroffer leaves legal's queue without named-lawyer sign-off on the specific clauses being negotiated; this is an accountability breakpoint, not a quality-review step | Opportunity — agent prepares the sign-off package: extracts specific redlined clauses, annotates each with the playbook position applied and deviation magnitude, routes to available lawyer with SLA context; reduces lawyer's sign-off preparation time [assumption: from 30 min to 10–15 min] |
+| BP-D | Vendor delivery preference exception — vendor requires email attachment rather than SharePoint link | Standard delivery workflow (Z-E, SharePoint link) | Exception workflow (Outlook email attachment) | Recurring operational exception with no current systematic record — at least 3 vendors this quarter required this workaround (Artefact 2.2); each time, Tom must recall or rediscover the preference | Opportunity — agent maintains a vendor delivery preference registry built from email thread history; routes deliveries appropriately without Tom's manual intervention; eliminates recurring error mode of sending a SharePoint link to a vendor who can't open it |
 
 ---
 
-### 3d. Process Topology Diagram — Work Stream B
+### 3e. Process Topology Diagram — Work Stream B
 
+```mermaid
+flowchart LR
+    START([WS1 output: contract with\nflagged negotiable deviations]) --> ZA
+
+    ZA([Z-A Policy Retrieval\n& Interpretation\nMT-A–MT-B])
+    ZA --> BPA{BP-A\nPlaybook position\nambiguous or stale?}
+    BPA -->|Clear position| ZB
+    BPA -->|Ambiguous / stale| HUMA([Lawyer consult\nbefore drafting])
+    HUMA --> ZB
+
+    ZB([Z-B Clause\nDrafting\nMT-C])
+    ZB --> BPB{BP-B\nNovel synthesis\nrequired?}
+    BPB -->|Standard template| ZC
+    BPB -->|Qualitative / complex| HUMB([Human: Tom or\nlawyer drafts])
+    HUMB --> ZC
+
+    ZC([Z-C Cross-Clause\nConsistency Review\nMT-D])
+    ZC --> ZD
+
+    ZD([Z-D Document Mgmt\n& Sign-off Routing\nMT-E–MT-F])
+    ZD --> BPC{BP-C\nSIGN-OFF GATE\nGC hard rule}
+    BPC -->|Approved| ZE
+    BPC -->|Revision requested| ZB
+
+    ZE([Z-E Vendor\nDelivery\nMT-G])
+    ZE --> BPD{BP-D\nVendor delivery\npreference?}
+    BPD -->|SharePoint link| OUT1([Delivered\nvia SharePoint])
+    BPD -->|Email attachment| OUT2([Delivered\nvia Outlook])
+
+    style ZA fill:#d4edda
+    style ZD fill:#d4edda
+    style ZE fill:#d4edda
+    style ZB fill:#fff3cd
+    style ZC fill:#fff3cd
+    style HUMA fill:#fff3cd
+    style HUMB fill:#fff3cd
 ```
-[WS1 OUTPUT: Contract with flagged negotiable deviations → WS2]
-                     |
-                     v
-    ┌────────────────────────────────┐
-    │ Z-A: Policy Retrieval &        │
-    │ Interpretation                 │
-    │ MT-A: Retrieve playbook pos.   │
-    │ MT-B: Interpret as redline     │
-    │       target                   │
-    │ Type: Det. execution →         │
-    │       Probabilistic reasoning  │
-    └────────────────────────────────┘
-                     |
-                     v
-       ◆ BP-A: Playbook position ambiguous or stale?
-          /                              \
-   [Clear position]              [Ambiguous / stale →
-          |                       Consult lawyer before
-          |                       drafting]
-          |                              |
-          └──────────────────────────────┘
-                     |
-                     v
-    ┌────────────────────────────────┐
-    │ Z-B: Clause Drafting           │
-    │ MT-C: Draft redlined clause    │
-    │       language (Track Changes) │
-    │ Type: Human sense-making       │
-    │ (legal synthesis)              │
-    └────────────────────────────────┘
-                     |
-                     v
-       ◆ BP-B: Novel legal synthesis required beyond template?
-          /                              \
-   [Standard template                [Complex / qualitative →
-    applicable]                       Human drafts]
-          |                              |
-          └──────────────────────────────┘
-                     |
-                     v
-    ┌────────────────────────────────┐
-    │ Z-C: Cross-Clause Consistency  │
-    │ Review                         │
-    │ MT-D: Check for clause         │
-    │       conflicts in full doc    │
-    │ Type: Human sense-making       │
-    └────────────────────────────────┘
-                     |
-                     v
-    ┌────────────────────────────────┐
-    │ Z-D: Document Management &     │
-    │ Sign-off Routing               │
-    │ MT-E: Save + version           │
-    │ MT-F: Route to named lawyer    │
-    │ Type: Deterministic execution  │
-    └────────────────────────────────┘
-                     |
-                     v
-    ◆ BP-C: SIGN-OFF GATE (GC hard rule — mandatory lawyer approval)
-                     |
-    [Named lawyer reviews specific redlined clauses]
-          /                         \
-   [Approved]                [Revision requested →
-          |                   back to Z-B]
-          v
-    ┌────────────────────────────────┐
-    │ Z-E: Vendor Delivery           │
-    │ MT-G: Deliver via correct      │
-    │       channel                  │
-    │ Type: Det. execution +         │
-    │       exception handling       │
-    └────────────────────────────────┘
-                     |
-                     v
-       ◆ BP-D: Vendor delivery preference?
-          /                         \
-   [SharePoint link                [Email attachment
-    (standard)]                    (VendorCo-type exception)]
-          |                              |
-          v                             v
-  [REDLINE DELIVERED          [REDLINE DELIVERED
-   via SharePoint]             via Outlook attachment]
-```
+
+*Green = agent-owned zones. Amber = human-in-the-loop zones.*
 
 ---
 
@@ -455,14 +308,25 @@ In both work streams, the most cognitively demanding zones (Z-4 in WS1 — devia
 
 ---
 
+## Summary — main 3 points
+
+1. **The playbook is the shared dependency and the shared failure mode.** Both work streams' classification accuracy (WS1) and redline quality (WS2) are entirely contingent on the playbook being current. The DPDI Act staleness is not a background risk — it is an active compliance gap affecting the DPA clause type in both work streams right now. No agent should be deployed against the current playbook without Amelia incorporating the Q1 updates first.
+
+2. **The highest-value agent opportunity is in Z-1 through Z-3 and Z-A (the deterministic and probabilistic zones), not in the human-sense-making zones.** Clause location (MT2), extraction (MT3), numeric comparison (MT4), and policy retrieval (MT-A) are all LLM-tractable tasks where an agent can operate with high throughput. The triage judgment (Z-4) and clause drafting (Z-B/Z-C) are where human oversight remains essential — a confidence-gated architecture that routes only the ambiguous cases to Tom is the correct design, not a human reviewing all agent output.
+
+3. **The "will ask Sarah" informal path and the vendor delivery workaround are the two hidden latency sources the metrics do not show.** Both appear as normal throughput in Ironclad's case records while adding hours or days to the actual turnaround. The agent design must make these visible — as tracked escalation events with SLA clocks, not informal sidebar conversations — before any claim can be made about halving the 4–6 day turnaround.
+
+---
+
 ## Self-check against acceptance criteria
 
 - [x] Work stream selection justified by reference to delegation potential and cognitive complexity — not assumed
+- [x] Lived process narrative present for both work streams (§2a, §3a) — describes actual work including pauses, informal consultations, workarounds, and informal knowledge
 - [x] Both work streams fully decomposed (JtDs, micro-task tables, zones, breakpoints, topology diagrams)
 - [x] JtDs are cognitive contracts — outcome-focused, not task descriptions
 - [x] Micro-task tables have 8 rows (WS1) and 7 rows (WS2), all with dimension scores — exceeds minimum of 5
 - [x] Cognitive zones distinguished by dominant cognitive type: deterministic execution / probabilistic reasoning / human sense-making — no zone is labelled generically as "review"
 - [x] 4 breakpoints per work stream — exceeds minimum of 3
-- [x] Process topology diagram present for both work streams
+- [x] Process topology diagrams present for both work streams as Mermaid flowcharts
 - [x] GC hard rule reflected in BP-C (WS2) — explicitly named as a non-negotiable compliance gate requiring named-lawyer approval before any counteroffer is dispatched
-- [x] No scores asserted without justification in footnotes — all 15 footnote entries reference specific scenario facts or labelled inferences
+- [x] No scores asserted without justification in footnotes — all footnote entries reference specific scenario facts or labelled inferences

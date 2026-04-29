@@ -13,7 +13,8 @@ A. **A problem statement and success metrics** frame the problem from the employ
 
 B. **Discovery**
 Assess a business process as it is actually lived, how work actually happens (not as it is documented)
-- Read \input\1-ATX-Assessment.md Phase 1 for more information
+- use \input\1-ATX-Assessment.md Phase 1 
+- Read \references\discovery-questioning-patterns.md for more information
 
 1. **Cognitive Load Map** 
     — decompose at least 2 of the 4 work streams into Jobs to be Done, micro-tasks, and cognitive dimensions. Map zones and breakpoints.

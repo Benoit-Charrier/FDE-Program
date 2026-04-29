@@ -1,28 +1,12 @@
 # Prompt: Deliverable 3 — Volume × Value Analysis
 
 ## Scenario (read this first)
-See `scenario\enriched_scenario.md`. Do not invent numbers, systems, or constraints not present there. Every number you use must trace back to the scenario or be explicitly labelled as an assumption.
-
-**Scenario summary (for reference):**
-- **Helix Workforce Software** — UK-based B2B SaaS (~480 employees, ARR £42M, 25% YoY growth); sells workforce-planning software to UK/EU enterprises
-- Legal team (5-person): **Amelia Forsythe** (General Counsel, 12 years at Helix), 3 Commercial Lawyers (3–6 yrs experience), **Tom** (Paralegal)
-- ~300 inbound vendor contracts per quarter; each 15–40 pages
-- Playbook checklist: 7 clause types; playbook is 9 months stale — DPDI Act Q1 updates not yet incorporated
-- 70% standard / 20% negotiable deviations / 10% senior-lawyer escalation
-- Turnaround: 4–6 business days; CRO is pressuring Legal to halve turnaround to support enterprise sales targets
-- GC hard rule: no counteroffer without named lawyer's sign-off on the specific clauses being negotiated
-- Tooling: **Ironclad** (CLM, REST APIs), **Microsoft Word + Track Changes** + **SharePoint** (redlining & storage), **Salesforce** (sales pipeline), **Outlook** (vendor procurement), internal SharePoint playbook page
-
-**The four work streams:**
-1. First-pass clause classification (~300/quarter; ~25 min/case): triaging inbound contracts, classifying each major clause against the playbook
-2. Standard-deviation redlining (~60/quarter; ~45 min/case): paralegal redlines negotiable deviations against playbook without escalation
-3. Escalated clause review (~30/quarter; ~90 min/case): senior lawyer reviews unusual clauses, frames counteroffer position, drafts redline
-4. Counteroffer drafting & sign-off (~90/quarter; ~30 min/case): drafting the response to procurement, named-lawyer sign-off, sending out
+See `scenario\scenario_context.md` for the full scenario, work streams, tooling, and named-systems guidance. Do not invent numbers, systems, or constraints not present in the scenario. Every number you use must trace back to the scenario or be explicitly labelled as an assumption.
 
 ---
 
 ## Your task
-Produce a Volume × Value Analysis. Output file: `deliverables\D3_volume_value_analysis.md`.
+Produce a Volume × Value Analysis. Be concise. Summarize the main 3 points at the end. Output file: `deliverables\D3_volume_value_analysis.md`.
 
 This is Phase 4 of the ATX Assessment. Plot all 4 work streams, identify where an agent creates value versus where it creates risk, identify the primary agentic target, and justify why it wins.
 
