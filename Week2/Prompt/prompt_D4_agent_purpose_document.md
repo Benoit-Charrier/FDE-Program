@@ -31,7 +31,7 @@ Complete this table. Every metric must have a baseline from the scenario (or lab
 
 | KPI | Baseline | Target | Measurement method | Review cadence |
 |-----|----------|--------|--------------------|---------------|
-| Accuracy (correct clause classification %) | | | | |
+| Accuracy (correct primary-task output %) | | | | |
 | Coverage (% of cases handled without human escalation for this work stream) | | | | |
 | Throughput (contracts processed per hour) | | | | |
 | HITL rate (% requiring human review within scope) | | | | |
@@ -66,7 +66,7 @@ Define the operational contract between the agent and the organisation. Use the 
 **HUMAN TAKES OVER (agent supports only):**
 - [list of specific triggers — be concrete; "complexity" is not a trigger]
 
-The GC's hard rule (named-lawyer sign-off on specific clauses being negotiated) must appear explicitly in the "AGENT PROPOSES, HUMAN APPROVES BEFORE ACTION" tier with exact language about what the agent prepares and what the lawyer approves.
+The scenario's primary governance/compliance hard constraint (from scenario_context.md) must appear explicitly in the "AGENT PROPOSES, HUMAN APPROVES BEFORE ACTION" tier — with exact language about what the agent prepares and what the designated approver approves.
 
 ### 6. Escalation triggers
 For each escalation condition, specify the trigger precisely and name the human role who receives it:
@@ -100,7 +100,7 @@ List things this agent must NEVER do, even if instructed:
 - [ ] All KPI baselines trace to the scenario or are labelled assumptions
 - [ ] All KPI targets are specific numbers, not directions
 - [ ] Activity catalog has at least 8 tasks with all columns populated
-- [ ] Autonomy matrix explicitly places the GC sign-off rule in the "AGENT PROPOSES, HUMAN APPROVES" tier
+- [ ] Autonomy matrix explicitly places the scenario's primary governance/compliance constraint in the "AGENT PROPOSES, HUMAN APPROVES BEFORE ACTION" tier
 - [ ] Every High-risk task in the activity catalog has a corresponding escalation trigger
 - [ ] At least 4 failure modes with detection and recovery paths
 - [ ] Out-of-scope section present with at least 4 hard stops
@@ -113,4 +113,4 @@ List things this agent must NEVER do, even if instructed:
 - Failure modes with no detection mechanism ("someone notices the error")
 - Autonomy matrix with no explicit placement of the GC sign-off rule
 - Activity catalog tasks with risk level High but no corresponding escalation trigger
-- An agent that can send a counteroffer to a vendor without lawyer approval (violates GC rule — this is the hardest hard stop)
+- An agent that can trigger the governance-gated action without the required human approval (violates the scenario's primary hard constraint)

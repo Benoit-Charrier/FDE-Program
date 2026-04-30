@@ -17,7 +17,7 @@ Reference: `input\1-ATX-Assessment.md` Phase 1.
 ## Required structure
 
 ### 1. Lived process narrative
-One to two pages. Walk through a realistic contract review cycle from the moment a vendor contract lands to the moment a counteroffer (or approval) leaves legal's queue. Describe **what actually happens**, not the idealised SOP.
+One to two pages. Walk through a realistic process cycle from the trigger event (how work arrives) to the final output (what leaves the team's queue), as described in scenario_context.md. Describe **what actually happens**, not the idealised SOP.
 
 - Where does the reviewer pause and consult something?
 - Where do they make a judgment call?
@@ -33,7 +33,7 @@ A structured table listing candidate processes with the following columns:
 | Work Stream | Pain Description | Estimated Volume | Pain Level (H/M/L) | Key Data/Systems Involved | Candidate for Automation? |
 |-------------|-----------------|------------------|--------------------|--------------------------|--------------------------|
 
-Include at least one row for each of the four work streams listed above. Pain level must be justified in a note below the table, not asserted.
+Include at least one row for each work stream in scenario_context.md. Pain level must be justified in a note below the table, not asserted.
 
 ### 3. Cognitive workload hotspots
 For each of the four work streams, identify the top 1–2 moments where skilled human attention is most consumed. Format:
@@ -53,6 +53,16 @@ List at least 5 genuine unknowns — things you would need to discover in a real
 > **Why it matters for agent design:** [what decision it would change]
 > **How to discover it:** [who to ask, what to look for]
 
+### 6. Assumption log
+Use this format for every non-trivial claim:
+
+> **Assumption [A1]:** [what you're taking as given]
+> **Why it matters:** [what spec decision or metric it drives]
+> **If wrong:** [what breaks]
+> **Confidence:** low / medium / high
+
+Minimum 2 assumptions in this section. More is better.
+
 ---
 
 ## Acceptance criteria (all must pass)
@@ -63,7 +73,7 @@ List at least 5 genuine unknowns — things you would need to discover in a real
 - [ ] Every number traces to the scenario or is labelled as an assumption
 - [ ] At least 5 genuine unknowns in the format specified
 - [ ] Hotspots include a delegation signal — not just "this is hard," but "here is what would make it delegatable"
-- [ ] GC's hard rule (named-lawyer sign-off on specific clauses) is reflected in the analysis
+- [ ] The primary governance or compliance constraint from scenario_context.md is reflected in the analysis
 
 ## Fail signals — do not produce output that contains these
 
@@ -71,4 +81,4 @@ List at least 5 genuine unknowns — things you would need to discover in a real
 - Generic pain points not grounded in this specific scenario
 - Fewer than 5 unknowns, or unknowns that are filler ("we don't know the exact number of clauses")
 - Invented systems, tools, or org structures not in the scenario without labelling them as assumptions
-- Confident claims about what the paralegal "always" does without flagging that this is an inference
+- Confident claims about what team members "always" do without flagging that this is an inference

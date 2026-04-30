@@ -5,7 +5,7 @@ See `scenario\scenario_context.md` for the full scenario, work streams, tooling,
 ---
 
 ## Your task
-Produce a set of discovery questions for the General Counsel (main stakeholder). Be concise. Summarize the main 3 points at the end. Output file: `deliverables\D6_discovery_questions.md`.
+Produce a set of discovery questions for the main stakeholder identified in scenario_context.md. Be concise. Summarize the main 3 points at the end. Output file: `deliverables\D6_discovery_questions.md`.
 
 These must be questions whose answers would **actually change your agent design** — not generic discovery questions, not questions whose answers you can already infer from the scenario, and not questions that demonstrate you haven't thought through the design yet.
 
@@ -18,11 +18,9 @@ Reference: `references\discovery-questioning-patterns.md`.
 ## Required structure
 
 ### 1. Stakeholder context
-One paragraph. The GC is **Amelia Forsythe**, 12 years at Helix, overseeing a 5-person legal team under CRO pressure to halve the 4–6 business day turnaround. What does Amelia care about most? What is her primary concern about AI involvement in this process (grounded in her hard rule and in specific failure modes she would fear)? What would make her trust or distrust an agent? Draw on her known position: DPDI Act updates are on her radar but not yet in the playbook, and the named-lawyer sign-off rule is non-negotiable.
+One paragraph. The main stakeholder is identified in scenario_context.md — read their role, tenure, and the team they oversee from there. What does this stakeholder care about most in the context of this process? What is their primary concern about AI involvement (grounded in the hard constraints and compliance gaps stated in the scenario, not in generic AI risk)? What would make them trust or distrust an agent? Draw on what the scenario states: any unresolved compliance issues, any non-negotiable governance rules, any stated business pressure.
 
 This paragraph informs the framing and sequencing of your questions — do not skip it.
-
-This is not padding — it informs the framing and sequencing of your questions.
 
 ### 2. Questions whose answers would change the design
 
@@ -39,23 +37,23 @@ Use this format for every question:
 
 **Required categories (at least 2 questions per category):**
 
-#### Category A: Playbook structure and machine-readability
-The scenario says there is a "negotiation playbook" but does not describe its format, versioning, or authority. Questions here would change how you design the agent's knowledge base and retrieval system.
+#### Category A: Policy/knowledge base structure and machine-readability
+The scenario references a policy or knowledge document (see scenario_context.md) but may not describe its format, versioning, or authority. Questions here would change how you design the agent's knowledge base and retrieval system.
 
-#### Category B: The 70/20/10 classification — how it actually works today
-The scenario gives you the split but not how reviewers reach those classifications. Questions here would change the agent's decision logic and confidence threshold design.
+#### Category B: The routing/classification logic — how it actually works today
+The scenario gives you the routing split (from scenario_context.md) but may not describe how reviewers actually reach those classifications in practice. Questions here would change the agent's decision logic and confidence threshold design.
 
-#### Category C: The sign-off rule — exactly how it works operationally
-The GC's hard rule is stated but operationally vague. Questions here would change the autonomy matrix and the approval workflow design.
+#### Category C: The governance/approval rule — exactly how it works operationally
+The scenario's primary governance or approval constraint (from scenario_context.md) is stated but may be operationally vague. Questions here would change the autonomy matrix and the approval workflow design.
 
 #### Category D: Exception patterns and edge cases
 The scenario implies ~10% escalation but doesn't describe what makes a clause escalation-worthy versus merely negotiable. Questions here would change the agent's escalation trigger design.
 
 #### Category E: Data and system reality
-The scenario mentions no specific systems. Questions here would change your gap analysis and integration architecture.
+The scenario names specific systems (see scenario_context.md) but not the operational reality — API maturity, integration constraints, data quality, access model. Questions here would change your gap analysis and integration architecture.
 
 #### Category F: Organisational and trust context
-The scenario says the GC is "comfortable with AI-assisted review" but also has a non-negotiable sign-off rule and unresolved DPDI Act concerns. Questions here would change the HITL rate, rollout approach, oversight design, and how you sequence automation against compliance risk.
+The scenario may state the stakeholder's comfort level with automation alongside non-negotiable governance constraints and unresolved compliance gaps (see scenario_context.md). Questions here would change the HITL rate, rollout approach, oversight design, and how you sequence automation against compliance risk.
 
 ### 3. Questions you are NOT asking — and why
 List 5 questions that a less disciplined analyst might ask, and explain why you are not asking them:
@@ -87,12 +85,12 @@ Using the 60-minute call structure from `references\discovery-questioning-patter
 - [ ] At least 2 questions per required category
 - [ ] "Questions not asked" section present with at least 5 entries and reasoning
 - [ ] Call sequencing plan present
-- [ ] At least one question directly probes how the GC's sign-off rule works operationally (not just confirms that it exists)
+- [ ] At least one question directly probes how the primary governance/approval rule works operationally (not just confirms that it exists)
 - [ ] At least one question targets how the playbook is currently maintained and versioned (this affects RAG design fundamentally)
 
 ## Fail signals — do not produce output that contains these
 
-- Questions that confirm scenario facts already given ("Do you review about 300 contracts per quarter?") — you already know this
+- Questions that confirm scenario facts already given (e.g., confirming process volumes or team sizes already stated in scenario_context.md) — you already know this
 - Questions with no design fork ("Can you tell us more about your process?")
 - Generic questions from a discovery template that don't reference this scenario's specifics
 - Questions that are really statements of concern dressed as questions ("Have you considered the risk of AI making mistakes?")

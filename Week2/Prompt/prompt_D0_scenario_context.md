@@ -91,6 +91,17 @@ If no artefacts are present, omit this section entirely.
 
 ---
 
+### 8. Assumption log
+Use this format for every non-trivial claim:
+
+> **Assumption [A1]:** [what you're taking as given]
+> **Why it matters:** [what spec decision or metric it drives]
+> **If wrong:** [what breaks]
+> **Confidence:** low / medium / high
+
+Minimum 2 assumptions in this section. More is better.
+
+----
 ## Quality requirements
 
 - Every number in the file must be directly quoted from or traceable to the source scenario files
@@ -100,6 +111,7 @@ If no artefacts are present, omit this section entirely.
 - The file must be self-contained: a reader who has not read the original scenario should be able to answer any factual question about the company, team, process, work streams, and tooling from this file alone
 
 ---
+
 
 ## Acceptance criteria
 

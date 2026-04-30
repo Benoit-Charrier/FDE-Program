@@ -10,11 +10,11 @@ Produce a problem statement and success metrics document. Be concise. Summarize 
 
 ## Required structure
 
-### 1. Problem statement — legal team's perspective
-One paragraph. What is the legal team's experience today — specifically the paralegal and lawyers doing first-pass and redline work? What goes wrong for them and why does it matter? Tie to the 4–6 business day turnaround and the specific per-work-stream times in the scenario.
+### 1. Problem statement — team's perspective
+One paragraph. What is the team's experience today — specifically the people doing the primary work described in scenario_context.md? What goes wrong for them and why does it matter? Tie to the turnaround targets and per-work-stream times from scenario_context.md.
 
 ### 2. Problem statement — business perspective
-One paragraph. What is the cost to the business today — operational, financial, reputational? Tie to the specific numbers: 300 contracts/quarter, 5-person legal team, first-pass at ~25 min/case, turnaround at 4–6 business days, CRO pressure, and Helix's 25% YoY growth trajectory.
+One paragraph. What is the cost to the business today — operational, financial, reputational? Tie to the specific numbers from scenario_context.md: process volume per quarter, team size, per-work-stream times, turnaround targets, any stated growth trajectory, and any stated business pressure driving urgency.
 
 ### 3. Why an AI agent — not traditional software, not RPA, not a process change
 Explicit paragraph. Name each alternative and say why it is not the right answer for this problem. This is required — not optional context.
@@ -26,11 +26,11 @@ Table format. At minimum:
 |--------|--------------------------|--------|--------------|-----------|
 
 Required metrics to include:
-- Contract turnaround time (baseline: 4–6 business days)
-- First-pass classification time per contract (baseline: ~25 min/case)
-- Clause classification accuracy (baseline: not stated in scenario — label as assumption)
-- Contracts processed per quarter without headcount increase (baseline: 300 with 5-person team)
-- At least one procurement-facing metric (e.g., time from contract receipt to first response to vendor)
+- Primary process turnaround time (baseline: from scenario_context.md)
+- Time per case for the primary work stream (baseline: from scenario_context.md)
+- Primary-task output accuracy (baseline: stated in scenario or label as assumption)
+- Cases processed per period without headcount increase (baseline: from scenario_context.md)
+- At least one downstream-stakeholder-facing metric relevant to this scenario's process
 
 All targets must be specific numbers, not ranges or directional statements ("improve" is not a target).
 
@@ -48,7 +48,7 @@ Minimum 2 assumptions in this section. More is better.
 
 ## Acceptance criteria (all must pass)
 
-- [ ] Both perspectives (legal team AND business/procurement) are present and distinct
+- [ ] Both perspectives (team AND business) are present and distinct
 - [ ] Every metric has a numeric baseline sourced from the scenario or explicitly labelled as an assumption
 - [ ] Every target is a specific number, not a direction
 - [ ] "How measured" is concrete — names a system or mechanism, not "track in dashboard"
@@ -60,7 +60,6 @@ Minimum 2 assumptions in this section. More is better.
 
 - Metrics with no baseline or vague targets ("reduce turnaround significantly")
 - Only one perspective (legal team or business, not both)
-- Why-an-agent justification missing or asserted without reasoning specific to contract clause review
-- Confident claims about Helix's systems or organisation that are not in the scenario and not flagged as assumptions
+- Why-an-agent justification missing or asserted without reasoning specific to this scenario's process
+- Confident claims about the organisation's systems or structure that are not in scenario_context.md and not flagged as assumptions
 - Assumptions buried in prose rather than surfaced in the assumption log
-- Numbers from a different scenario (e.g., claims processing figures — this is a contract review scenario)

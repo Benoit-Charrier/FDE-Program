@@ -16,48 +16,92 @@ Reference: `input\1-ATX-Assessment.md` Phase 4 and `references\atx-scoring.md`.
 
 ## Required structure
 
-### 1. Volume derivation
+### 1. Suitability pre-screening (ATX Step 1)
+
+Before scoring volume or value, apply the four suitability criteria from `references\atx-scoring.md` Step 1 to all four work streams. Produce a table:
+
+| Work stream | Solvable by rules/RPA only? | Tacit judgment with no structure? | Critical integrations unavailable? | Compliance risk with no viable HITL? | Pre-screen result |
+|-------------|---|---|---|---|---|
+
+For each work stream, state the pre-screen result (Pass / Conditional pass / Conditional — not yet delegatable / Fail — Human Only) and a one-sentence rationale. Note which work streams proceed to the volume × value analysis. Work streams that fail the gate may still appear on the grid for diagnostic completeness, but must be labelled as excluded from the agentic candidate set.
+
+### 2. Volume derivation
 Before scoring, derive the per-work-stream volume from the scenario numbers. Show your arithmetic.
 
-- 300 contracts/quarter → approximately how many per week?
-- The enriched scenario gives per-work-stream volumes directly: first-pass ~300/quarter, redlining ~60/quarter, escalated review ~30/quarter, counteroffer drafting ~90/quarter. Cross-check these against the 70/20/10 split.
+- Use the total process volume from scenario_context.md → approximately how many per week?
+- Use the per-work-stream volumes from scenario_context.md directly. Cross-check them against any routing split or distribution stated in the scenario.
 - For each work stream, how many "cases" per week does it handle?
 - Flag any volume figures that require assumptions beyond what the scenario states, with explicit labelling.
 
-### 2. Non-determinism scoring
-For each work stream, score non-deterministic decision effort (1–5 scale from `references\atx-scoring.md`):
+### 3. Non-determinism scoring
+For each work stream, score both dimensions using the exact scales from `references\atx-scoring.md` Step 2. Agentic Value Score = Volume × Non-Determinism (1–25 scale).
 
 | Work Stream | Volume Score (1–5) | Non-Determinism Score (1–5) | Agentic Value Score (product) | Quadrant |
 |-------------|-------------------|-----------------------------|-------------------------------|---------|
 
-Score definitions (from `references\atx-scoring.md`):
-- **Volume:** 5 = hundreds/day; 4 = 50–200/day; 3 = 10–50/day; 2 = several/day; 1 = weekly/monthly
-- **Non-determinism:** 5 = synthesis + policy interpretation + contextual judgment; 4 = patterns + contextual adaptation + exception handling; 3 = rule-based core + exceptions needing reasoning; 2 = mostly deterministic; 1 = fully deterministic
+**Execution Frequency (Volume) scale:**
 
-Justify each score in a note below the table. Do not assert — cite the specific nature of the work.
+| Score | Threshold |
+|-------|-----------|
+| 5 | Very frequent: hundreds+ per day or continuous stream |
+| 4 | Frequent: 50–200 per day |
+| 3 | Regular: 10–50 per day, or high volume per week |
+| 2 | Moderate: several per day or high volume per month |
+| 1 | Infrequent: weekly or monthly |
 
-### 3. Volume × Value grid (text representation)
+**Non-Deterministic Decision Effort scale:**
 
-Draw the 2×2 grid using ASCII text. Label each quadrant:
-- Top-right: **Primary agentic targets** (high volume, high non-determinism)
-- Top-left: **Rules / RPA, not agents** (high volume, low non-determinism)
-- Bottom-right: **Select agentic use cases** (low volume, high non-determinism)
-- Bottom-left: **Not worth automating**
+| Score | Threshold |
+|-------|-----------|
+| 5 | High reasoning: requires synthesis of multiple data sources, policy interpretation, contextual judgment |
+| 4 | Significant reasoning: follows patterns but requires contextual adaptation and exception handling |
+| 3 | Mixed: core path is rule-based but exceptions and edge cases require reasoning |
+| 2 | Mostly deterministic: small reasoning component around structured rules |
+| 1 | Fully deterministic: pure rules/logic, no reasoning required |
 
-Place each work stream in the appropriate quadrant. If two work streams fall in the same quadrant, note that explicitly.
+**Agentic Value Score calculation — do this for every work stream:**
+1. Assign a Volume Score (1–5) using the Execution Frequency scale above. Cite the weekly case volume derived in §2.
+2. Assign a Non-Determinism Score (1–5) using the Non-Deterministic Decision Effort scale above. Cite the specific decision types present in that work stream.
+3. Multiply: Agentic Value Score = Volume Score × Non-Determinism Score.
+4. Enter the product in the table column "Agentic Value Score (product)".
+5. Interpret the score against the thresholds below and record the candidate status.
+
+**Agentic candidate thresholds:**
+- Score ≥ 15: Strong agentic candidate
+- Score 8–14: Consider agentic, validate with TCO
+- Score < 8: Use rule-based automation or do not automate
+
+Justify each score in a note below the table. Do not assert — cite the specific nature of the work. Scores must differentiate across all 4 work streams (minimum 2-point range on Non-Determinism).
+
+### 4. Volume × Value grid (Mermaid quadrantChart)
+
+Render the grid as a Mermaid `quadrantChart`. Map each work stream's scores to normalised coordinates using:
 
 ```
-High Non-Determinism |                    |                    |
-(score 4-5)          |   [BOTTOM-RIGHT]   |   [TOP-RIGHT]      |
-                     |                    |                    |
----------------------|--------------------|--------------------|
-Low Non-Determinism  |                    |                    |
-(score 1-2)          |   [BOTTOM-LEFT]    |   [TOP-LEFT]       |
-                     |                    |                    |
-                     |  Low Volume (1-2)  |  High Volume (3-5) |
+x = (Non-Determinism Score - 1) / 4
+y = (Volume Score - 1) / 4
 ```
 
-### 4. Where an agent creates value — and where it creates risk
+Output the following block, replacing the placeholder coordinates with the values calculated above:
+
+```mermaid
+quadrantChart
+    title Volume × Value Analysis
+    x-axis Low Non-Determinism --> High Non-Determinism
+    y-axis Low Volume --> High Volume
+    quadrant-1 Primary agentic targets
+    quadrant-2 Rules / RPA only
+    quadrant-3 Not worth automating
+    quadrant-4 Select agentic use cases
+    Work Stream A: [x, y]
+    Work Stream B: [x, y]
+    Work Stream C: [x, y]
+    Work Stream D: [x, y]
+```
+
+If two work streams share the same scores, offset one coordinate by 0.05 to keep points visually distinct, and note the collision below the chart.
+
+### 5. Where an agent creates value — and where it creates risk
 For each work stream, one paragraph:
 
 > **Work Stream [N]: [name]**
@@ -67,7 +111,7 @@ For each work stream, one paragraph:
 
 The GC's hard rule must appear in the risk assessment of at least one work stream.
 
-### 5. Suitability gate check
+### 6. Suitability gate check
 Run the suitability gate from `references\atx-scoring.md` on the top 2 agentic candidates (by Agentic Value Score):
 
 | Factor | Work Stream A | Work Stream B |
@@ -79,7 +123,7 @@ Run the suitability gate from `references\atx-scoring.md` on the top 2 agentic c
 | Compliance Risk | H/M/L | H/M/L |
 | Gate Result | Pass / Conditional / Fail | Pass / Conditional / Fail |
 
-### 6. Primary agentic target — selection and justification
+### 7. Primary agentic target — selection and justification
 Name the single work stream that is the primary agentic target. Justify in 4–6 sentences:
 - Why this work stream wins on the Volume × Value grid
 - Why it passes the suitability gate
@@ -87,7 +131,7 @@ Name the single work stream that is the primary agentic target. Justify in 4–6
 - What the feasibility case is (data availability, integration path, compliance manageability)
 - What the single biggest risk to agentic success is in this work stream
 
-### 7. Preliminary TCO sense-check
+### 8. Preliminary TCO sense-check
 Using the scenario's numbers, run a high-level TCO estimate for the primary agentic target only. Show your arithmetic:
 
 ```
@@ -118,6 +162,7 @@ All figures not in the scenario must be labelled as assumptions. The goal is dir
 
 ## Acceptance criteria (all must pass)
 
+- [ ] Suitability pre-screening present as §1 with a table covering all 4 work streams against the four ATX Step 1 criteria; pre-screen result stated for each
 - [ ] All 4 work streams appear on the grid
 - [ ] Volume derivation shows arithmetic traced to scenario numbers
 - [ ] Scores justified — not asserted

@@ -113,48 +113,60 @@ By the time he has worked through all seven clause types, Sarah hasn't replied. 
 
 ### 2e. Process Topology Diagram — Work Stream A
 
-```mermaid
-flowchart LR
-    START([Contract arrives\nOutlook / Salesforce]) --> Z1
+**Phase 1 — Ingestion & Comparison**
 
-    Z1([Z-1 Document Ingestion\n& Structure Mapping\nMT1–MT2])
-    Z1 --> BP1{BP-1\nClause location\nconfidence?}
+```mermaid
+flowchart TD
+    START([Contract arrives via Outlook / Salesforce]) --> Z1
+
+    Z1([Z-1 Document Ingestion & Structure Mapping MT1-MT2])
+    Z1 --> BP1{BP-1 Clause location confidence?}
     BP1 -->|Confident| Z2
-    BP1 -->|Ambiguous / not found| HUM1([Human: Tom\ndisambiguates])
+    BP1 -->|Ambiguous / not found| HUM1([Human: Tom disambiguates])
     HUM1 --> Z2
 
-    Z2([Z-2 Clause\nExtraction\nMT3])
+    Z2([Z-2 Clause Extraction MT3])
     Z2 --> Z3
 
-    Z3([Z-3 Playbook\nComparison\nMT4])
-    Z3 --> BP2{BP-2\nDeviation at\nboundary?}
+    Z3([Z-3 Playbook Comparison MT4])
+
+    style Z1 fill:#d4edda,color:#155724,stroke:#155724
+    style Z2 fill:#d4edda,color:#155724,stroke:#155724
+    style Z3 fill:#d4edda,color:#155724,stroke:#155724
+    style HUM1 fill:#fff3cd,color:#856404,stroke:#856404
+```
+
+**Phase 2 — Triage & Routing**
+
+```mermaid
+flowchart TD
+    Z3([Z-3 Playbook Comparison MT4]) --> BP2
+
+    BP2{BP-2 Deviation at boundary?}
     BP2 -->|Clear threshold| Z4
-    BP2 -->|Borderline| HUM2([Human: Tom\njudges])
+    BP2 -->|Borderline| HUM2([Human: Tom judges])
     HUM2 --> Z4
 
-    Z4([Z-4 Deviation Triage\n& Gap Detection\nMT5–MT6])
-    Z4 --> BP3{BP-3\nRegulatory /\nplaybook gap?}
+    Z4([Z-4 Deviation Triage & Gap Detection MT5-MT6])
+    Z4 --> BP3{BP-3 Regulatory / playbook gap?}
     BP3 -->|No gap| Z5
-    BP3 -->|Gap detected| HUM3([Lawyer consult\n'will ask Sarah'])
+    BP3 -->|Gap detected| HUM3([Lawyer consult - will ask Sarah])
     HUM3 --> Z5
 
-    Z5([Z-5 Classification\nRecording & Routing\nMT7–MT8])
-    Z5 --> BP4{BP-4\nContract-level\nrouting}
+    Z5([Z-5 Classification Recording & Routing MT7-MT8])
+    Z5 --> BP4{BP-4 Contract-level routing}
     BP4 -->|Standard| OUT1([Close WS1])
     BP4 -->|Negotiable deviation| OUT2([Route to WS2])
     BP4 -->|Escalation required| OUT3([Route to WS3])
 
-    style Z1 fill:#d4edda
-    style Z2 fill:#d4edda
-    style Z3 fill:#d4edda
-    style Z5 fill:#d4edda
-    style Z4 fill:#fff3cd
-    style HUM1 fill:#fff3cd
-    style HUM2 fill:#fff3cd
-    style HUM3 fill:#fff3cd
+    style Z3 fill:#d4edda,color:#155724,stroke:#155724
+    style Z5 fill:#d4edda,color:#155724,stroke:#155724
+    style Z4 fill:#fff3cd,color:#856404,stroke:#856404
+    style HUM2 fill:#fff3cd,color:#856404,stroke:#856404
+    style HUM3 fill:#fff3cd,color:#856404,stroke:#856404
 ```
 
-*Green = agent-owned zones. Amber = human-in-the-loop zones and consultations.*
+*Green = agent-owned zones. Amber = human-in-the-loop zones and consultations. Z-3 repeated as entry point of Phase 2.*
 
 ---
 
@@ -247,45 +259,56 @@ He saves the redlined Word document back to SharePoint with a new version number
 
 ### 3e. Process Topology Diagram — Work Stream B
 
-```mermaid
-flowchart LR
-    START([WS1 output: contract with\nflagged negotiable deviations]) --> ZA
+**Phase 1 — Policy Retrieval & Clause Drafting**
 
-    ZA([Z-A Policy Retrieval\n& Interpretation\nMT-A–MT-B])
-    ZA --> BPA{BP-A\nPlaybook position\nambiguous or stale?}
+```mermaid
+flowchart TD
+    START([WS1 output: flagged negotiable deviations]) --> ZA
+
+    ZA([Z-A Policy Retrieval & Interpretation MT-A-MT-B])
+    ZA --> BPA{BP-A Playbook position ambiguous or stale?}
     BPA -->|Clear position| ZB
-    BPA -->|Ambiguous / stale| HUMA([Lawyer consult\nbefore drafting])
+    BPA -->|Ambiguous / stale| HUMA([Lawyer consult before drafting])
     HUMA --> ZB
 
-    ZB([Z-B Clause\nDrafting\nMT-C])
-    ZB --> BPB{BP-B\nNovel synthesis\nrequired?}
+    ZB([Z-B Clause Drafting MT-C])
+    ZB --> BPB{BP-B Novel synthesis required?}
     BPB -->|Standard template| ZC
-    BPB -->|Qualitative / complex| HUMB([Human: Tom or\nlawyer drafts])
+    BPB -->|Qualitative / complex| HUMB([Human: Tom or lawyer drafts])
     HUMB --> ZC
 
-    ZC([Z-C Cross-Clause\nConsistency Review\nMT-D])
-    ZC --> ZD
+    ZC([Z-C Cross-Clause Consistency Review MT-D])
 
-    ZD([Z-D Document Mgmt\n& Sign-off Routing\nMT-E–MT-F])
-    ZD --> BPC{BP-C\nSIGN-OFF GATE\nGC hard rule}
-    BPC -->|Approved| ZE
-    BPC -->|Revision requested| ZB
-
-    ZE([Z-E Vendor\nDelivery\nMT-G])
-    ZE --> BPD{BP-D\nVendor delivery\npreference?}
-    BPD -->|SharePoint link| OUT1([Delivered\nvia SharePoint])
-    BPD -->|Email attachment| OUT2([Delivered\nvia Outlook])
-
-    style ZA fill:#d4edda
-    style ZD fill:#d4edda
-    style ZE fill:#d4edda
-    style ZB fill:#fff3cd
-    style ZC fill:#fff3cd
-    style HUMA fill:#fff3cd
-    style HUMB fill:#fff3cd
+    style ZA fill:#d4edda,color:#155724,stroke:#155724
+    style ZB fill:#fff3cd,color:#856404,stroke:#856404
+    style ZC fill:#fff3cd,color:#856404,stroke:#856404
+    style HUMA fill:#fff3cd,color:#856404,stroke:#856404
+    style HUMB fill:#fff3cd,color:#856404,stroke:#856404
 ```
 
-*Green = agent-owned zones. Amber = human-in-the-loop zones.*
+**Phase 2 — Sign-off & Delivery**
+
+```mermaid
+flowchart TD
+    ZC([Z-C Cross-Clause Consistency Review MT-D]) --> ZD
+
+    ZD([Z-D Document Mgmt & Sign-off Routing MT-E-MT-F])
+    ZD --> BPC{BP-C Sign-off Gate - GC hard rule}
+    BPC -->|Approved| ZE
+    BPC -->|Revision requested| BACK([Back to Z-B Clause Drafting])
+
+    ZE([Z-E Vendor Delivery MT-G])
+    ZE --> BPD{BP-D Vendor delivery preference?}
+    BPD -->|SharePoint link| OUT1([Delivered via SharePoint])
+    BPD -->|Email attachment| OUT2([Delivered via Outlook])
+
+    style ZC fill:#fff3cd,color:#856404,stroke:#856404
+    style ZD fill:#d4edda,color:#155724,stroke:#155724
+    style ZE fill:#d4edda,color:#155724,stroke:#155724
+    style BACK fill:#fff3cd,color:#856404,stroke:#856404
+```
+
+*Green = agent-owned zones. Amber = human-in-the-loop zones. Z-C repeated as entry point of Phase 2.*
 
 ---
 

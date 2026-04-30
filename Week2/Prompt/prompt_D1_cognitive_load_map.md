@@ -74,7 +74,9 @@ Include at least 5 micro-tasks per work stream. Scores must be justified in foot
 | BP-3 | | | | | |
 
 #### 2e. Process topology diagram
-Draw a linear or branching flow showing zones → breakpoints → zones using a **Mermaid flowchart** (`flowchart LR`). Zones are rounded rectangles `([...])`, breakpoints are diamonds `{...}`. Use style classes to distinguish agent-owned zones (green fill) from human-in-the-loop zones (amber fill). Label each node with its ID and a short name.
+Use **two Mermaid flowcharts** (`flowchart TD`), each covering roughly half the work stream. Split at a natural phase boundary — for example, between the intake/comparison phases and the triage/routing phases. Label each diagram with its phase name (e.g., "Phase 1 — Ingestion & Classification", "Phase 2 — Triage & Routing"). Each diagram should contain no more than 6–8 nodes so it fits a screen without horizontal scrolling.
+
+Zones are rounded rectangles `([...])`, breakpoints are diamonds `{...}`. Use style declarations to distinguish agent-owned zones (green: `fill:#d4edda,color:#155724,stroke:#155724`) from human-in-the-loop zones (amber: `fill:#fff3cd,color:#856404,stroke:#856404`). Always include an explicit `color:` value in every style declaration — without it, text renders grey and is unreadable against tinted backgrounds. Label each node with its ID and a short name — keep labels to one line, no `\n` or `<br/>` inside labels. Where Phase 1 ends at a node that Phase 2 continues from, repeat that node as the entry point of Phase 2 so the split is self-explanatory.
 
 ### 3. Cognitive Load Map — Work Stream B
 Repeat sections 2a through 2e for the second work stream.
@@ -85,6 +87,18 @@ After completing both maps, write 3–5 observations that apply across both. Foc
 - Shared data sources that suggest shared context/retrieval design
 - Patterns in where exception handling consumes disproportionate time
 
+
+### 5. Assumption log
+Use this format for every non-trivial claim:
+
+> **Assumption [A1]:** [what you're taking as given]
+> **Why it matters:** [what spec decision or metric it drives]
+> **If wrong:** [what breaks]
+> **Confidence:** low / medium / high
+
+Minimum 2 assumptions in this section. More is better.
+
+----
 ---
 
 ## Acceptance criteria (all must pass)
@@ -97,7 +111,7 @@ After completing both maps, write 3–5 observations that apply across both. Foc
 - [ ] Cognitive zones are distinguished by dominant cognitive type (probabilistic / deterministic / human sense-making)
 - [ ] At least 3 breakpoints identified per work stream, with agent opportunity/risk noted
 - [ ] Process topology diagram present for each work stream
-- [ ] GC hard rule reflected in at least one breakpoint (sign-off gate)
+- [ ] The primary governance/compliance constraint from the scenario reflected in at least one breakpoint
 - [ ] No scores without justification in footnotes
 
 ## Fail signals — do not produce output that contains these

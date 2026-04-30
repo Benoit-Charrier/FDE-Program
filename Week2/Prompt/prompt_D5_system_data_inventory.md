@@ -2,10 +2,11 @@
 
 ## Scenario (read this first)
 See `scenario\scenario_context.md` for the full scenario, work streams, tooling, and named-systems guidance. Do not invent numbers, systems, or constraints not present in the scenario. Every number you use must trace back to the scenario or be explicitly labelled as an assumption.
+
 ---
 
 ## Your task
-Produce a System/Data Inventory. Be concise. Summarize the main 3 points at the end.Output file: `deliverables\D5_system_data_inventory.md`.
+Produce a System/Data Inventory. Be concise. Summarize the main 3 points at the end. Output file: `deliverables\D5_system_data_inventory.md`.
 
 This inventory defines what the agent (from D4) needs to access, what is available, what is missing, and what is risky. It is the integration specification that a development team will use to assess buildability and plan their integration work.
 
@@ -46,7 +47,7 @@ Include a row for each of the following (at minimum):
 7. Historical contract precedents (prior accepted and rejected clause language — if available)
 8. Vendor/counterparty registry (background on the vendor submitting the contract)
 
-For systems named in the enriched scenario (Ironclad, SharePoint, Salesforce, Outlook, Word), note: "Named in the enriched scenario — API specifics and integration maturity are assumptions beyond what is stated." For any additional systems you introduce, note: "Not named in scenario — existence and API availability are assumptions."
+For systems named in scenario_context.md, note: "Named in scenario_context.md — API specifics and integration maturity are assumptions beyond what is stated." For any additional systems you introduce, note: "Not named in scenario — existence and API availability are assumptions."
 
 ### 3. Gap analysis
 For each gap (system with unknown or unavailable access):
@@ -70,7 +71,7 @@ Risk types to consider:
 - **Audit trail risk** (can the agent's actions be logged in a way that satisfies legal's audit requirements?)
 - **Sign-off integrity risk** (can the lawyer approval mechanism be bypassed — accidental or intentional?)
 
-The sign-off integrity risk (protecting the GC's hard rule in the system) must appear in this register.
+The governance/approval integrity risk (protecting the scenario's primary hard constraint in the system design) must appear in this register.
 
 ### 5. Context engineering design
 Design the agent's information architecture:
@@ -112,8 +113,8 @@ Which integrations built for this agent could be reused by future agents in this
 
 ## Fail signals — do not produce output that contains these
 
-- Systems not in the scenario (DocuSign, Slack, etc.) stated as facts without labelling them as assumptions — Ironclad, SharePoint, Salesforce, Outlook, and Word are confirmed in the enriched scenario; anything else is an assumption
+- Systems not confirmed in scenario_context.md stated as facts without labelling them as assumptions
 - A gap analysis that says "this data may not be available" without a mitigation option
 - Context engineering design that only describes what is retrieved, not how quality is evaluated
-- Sign-off integrity risk absent from the risk register (this is the highest-consequence risk in this scenario)
+- Governance/approval integrity risk absent from the risk register
 - Risk register with all risks rated Low — that is not analysis

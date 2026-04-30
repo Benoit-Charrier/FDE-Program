@@ -37,7 +37,7 @@ For each task cluster, state its archetype and defend it. Use this format:
 > **Cluster [C-N] — [name]**
 > **Archetype:** [Human Only / Human-led + Automation Support / Human-led + Agent Support / Agent-led + Human Oversight / Fully Agentic]
 > **Rationale:** [cite the specific dimensions that drove this assignment — at least 2 dimensions with their scores]
-> **GC rule impact (if applicable):** [does the GC's sign-off requirement change the archetype? If so, how?]
+> **Governance rule impact (if applicable):** [does the scenario's primary hard constraint change the archetype? If so, how?]
 > **Anti-pattern check:** [could this be solved with static rules, RPA, or a simple script? If yes, do not assign an agentic archetype]
 
 ### 4. Delegation architecture summary
@@ -47,7 +47,7 @@ After completing all cluster assignments, step back and describe the overall del
 - Which clusters form the **autonomous backbone** (fully agentic or agent-led with oversight)?
 - Which clusters are the **human-anchored gates** that the agent cannot cross without approval?
 - Which clusters are **not worth automating** and why?
-- Where is the GC's hard rule enforced in the architecture? Name the exact cluster(s) and archetype(s) that implement it.
+- Where is the scenario's primary hard constraint enforced in the architecture? Name the exact cluster(s) and archetype(s) that implement it.
 
 Write this as a coherent 3–5 paragraph narrative, not as a list.
 
@@ -60,14 +60,24 @@ Pick the 2 most debatable archetype assignments (where a reasonable person might
 > **Why the assigned archetype is correct for this scenario:** [specific reasoning tied to scenario facts]
 > **What would change the assignment:** [conditions under which you would revise it]
 
+### 6. Assumption log
+Use this format for every non-trivial claim:
+
+> **Assumption [A1]:** [what you're taking as given]
+> **Why it matters:** [what spec decision or metric it drives]
+> **If wrong:** [what breaks]
+> **Confidence:** low / medium / high
+
+Minimum 2 assumptions in this section. More is better.
+
 ---
 
 ## Acceptance criteria (all must pass)
 
-- [ ] All four work streams represented in the matrix
+- [ ] All work streams from scenario_context.md represented in the matrix
 - [ ] At least 6 task clusters scored
 - [ ] Every archetype assignment has a written rationale citing at least 2 dimensions
-- [ ] GC hard rule (sign-off on specific clauses) is explicitly reflected in the architecture
+- [ ] The scenario's primary hard constraint is explicitly reflected in the architecture
 - [ ] Anti-pattern check performed for every cluster (no agent assigned to purely deterministic work)
 - [ ] Delegation architecture summary describes the system as a whole, not just each cluster independently
 - [ ] Two contested assignments defended in the format specified
@@ -75,7 +85,7 @@ Pick the 2 most debatable archetype assignments (where a reasonable person might
 
 ## Fail signals — do not produce output that contains these
 
-- Assigning "agent-led" archetype to work requiring senior-lawyer judgment without explaining how the GC rule is satisfied
+- Assigning "agent-led" archetype to work that requires the judgment expertise the scenario marks as Human Only, without explaining how the governance constraint is satisfied
 - All clusters assigned the same archetype (that means you haven't differentiated)
 - Anti-pattern check missing — if you can't confirm "this is not solvable by a script," you haven't done the analysis
 - Rationale that says "this is complex, therefore human-only" without naming which specific suitability dimensions are Low

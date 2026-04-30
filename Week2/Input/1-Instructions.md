@@ -52,6 +52,16 @@ Assess a business process as it is actually lived, how work actually happens (no
     - create a claude.md file, precise enough to begin development
     — demonstrates workflow discipline
 
+8. **Validation design**
+ - Create a validation design with at least 3 scenarios spanning happy path, edge case, and failure mode — including at least one failure scenario that tests the delegation boundary itself, where Claude Code can't tell from your document whether a step should be fully agentic, agent-led, or human-led, and defaults to whichever is cheapest to implement. how do you know the agent is working? How do detect the agent is wrong — not just confirm it is right, What do you test? What does failure look like — not just obvious failure, but quiet failure (the agent is wrong and no one notices)? 
+ - File name "D8_Validation_Design.md"
+ -  use information in references\spec-ambiguity-vs-builder-mistakes.md
+
+ 9. **Assumptions & unknowns**
+- An honest assumptions & unknowns section — at least 5 genuine, scenerio-relevant unknowns, not filler. . What are you assuming about the client's data, systems, organisation or the problem itself? What must be validated with the client before building? 
+- Use assumptions and unknowns listed in the D0 to D5 deliverables. 
+- File name " D9_Assumptions_&_unknows.md"
+
 ---
 
 ## What coaches are looking for
