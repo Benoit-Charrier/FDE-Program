@@ -6,7 +6,7 @@ See `scenario\scenario_context.md` for the full scenario, work streams, tooling,
 ---
 
 ## Your task
-Produce a Cognitive Load Map. Be concise. Summarize the main 3 points at the end. Output file: `deliverables\D1_cognitive_load_map.md`.
+Produce a Cognitive Load Map. Be concise. Output file: `deliverables\D1_cognitive_load_map.md`.
 
 This is Phase 2 of the ATX Assessment. Following the Phase 2 step-by-step from `input\1-ATX-Assessment.md`:
 
@@ -22,6 +22,17 @@ Choose the 2 work streams with the highest delegation potential AND the highest 
 ---
 
 ## Required structure
+
+### 0. Executive summary
+Three bullet points, written first. Each bullet is one sentence. Cover in order:
+1. Which two work streams were selected for decomposition and the shared reason they surfaced as the highest-priority (tie to delegation potential and cognitive complexity)
+2. The most significant breakpoint found across the two maps — the moment where agent value and human judgment tension is highest
+3. The cross-work-stream pattern most consequential for agent design (shared data dependency, reusable component, or compliance gate that applies to both)
+
+This section must be self-contained — a reader who reads only this section should understand which work was decomposed, where the critical handoff lives, and what the design implication is.
+
+### 0b. Table of contents
+List all sections by number and title, in order. Generate this after the full document is written — section titles must match exactly.
 
 ### 1. Work stream selection and rationale
 Name the 2 work streams you will decompose. In 3–5 sentences, explain why these two — not the others — offer the most insight for agent design. Your reasoning must reference delegation potential and cognitive complexity, not just "they seem important."
@@ -118,7 +129,7 @@ Minimum 2 assumptions in this section. More is better.
 
 - Micro-task tables with all scores "H" or all "M" — that is not analysis
 - Breakpoints described as "the human reviews the agent output" without specifying the condition that triggers the review
-- JtDs that are tasks ("extract clause text") rather than cognitive contracts ("determine whether this liability cap is compliant with the playbook and what the business exposure is if it is not")
+- JtDs that are tasks ("extract the document section") rather than cognitive contracts ("determine whether this input is compliant with policy and what the business exposure is if it is not")
 - Zone definitions that group all work together as "review" — zones should separate qualitatively different cognitive activity
 - Lived process narrative replaced by a bullet list of steps — it must describe the cognitive experience of the worker (pauses, judgment calls, informal consultations), not a process flow
-- Lived process narrative that is SOP-level ("the paralegal reviews the clause against the playbook") — name what the worker actually sees, decides, and does when the standard path doesn't apply
+- Lived process narrative that is SOP-level ("the reviewer checks the input against the policy") — name what the worker actually sees, decides, and does when the standard path doesn't apply

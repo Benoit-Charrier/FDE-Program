@@ -16,6 +16,9 @@ Reference: `input\1-ATX-Assessment.md` Phase 1.
 
 ## Required structure
 
+### 0. Table of contents
+List all sections by number and title, in order. Generate this after the full document is written — section titles must match exactly.
+
 ### 1. Lived process narrative
 One to two pages. Walk through a realistic process cycle from the trigger event (how work arrives) to the final output (what leaves the team's queue), as described in scenario_context.md. Describe **what actually happens**, not the idealised SOP.
 
@@ -28,12 +31,12 @@ One to two pages. Walk through a realistic process cycle from the trigger event 
 Flag explicitly where you are reconstructing from the scenario versus where you are making a labelled assumption.
 
 ### 2. Points of Pain inventory
-A structured table listing candidate processes with the following columns:
 
-| Work Stream | Pain Description | Estimated Volume | Pain Level (H/M/L) | Key Data/Systems Involved | Candidate for Automation? |
-|-------------|-----------------|------------------|--------------------|--------------------------|--------------------------|
+| Work Stream | Pain Description | Estimated Volume (per week/month) | Pain Level (H/M/L) | Lived-vs-Documented Gap | Key Data/Systems Involved | Delegation Signal | Candidate for Automation? |
+|-------------|-----------------|-----------------------------------|--------------------|------------------------|--------------------------|-------------------|--------------------------|
+| [WS name]   | [specific friction observed in lived process] | [number from scenario or labelled assumption] | H/M/L | [what SOP says vs. what actually happens] | [systems touched] | [codifiable? exception rate? reversible?] | Yes / No / Partial |
 
-Include at least one row for each work stream in scenario_context.md. Pain level must be justified in a note below the table, not asserted.
+Include one row per work stream in scenario_context.md. Add rows for cross-cutting pain that spans work streams. Pain level must be justified in a note below the table, not asserted.
 
 ### 3. Cognitive workload hotspots
 For each of the four work streams, identify the top 1–2 moments where skilled human attention is most consumed. Format:

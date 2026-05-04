@@ -8,13 +8,24 @@ See `scenario\scenario_context.md` for the full scenario, work streams, tooling,
 ---
 
 ## Your task
-Produce a Validation Design. Be concise. Output file: `deliverables\D8_Validation_Design.md`.
+Produce a Validation Design. Be concise. Output file: `deliverables\D7_Validation_Design.md`.
 
 Reference: `references\spec-ambiguity-vs-builder-mistakes.md` — use the failure taxonomy (spec ambiguity / builder misread / design gap / acceptable variation) to categorise every failure mode you identify.
 
 ---
 
 ## Required structure
+
+### 0. Executive summary
+Three bullet points, written first. Each bullet is one sentence. Cover in order:
+1. The validation approach in one sentence — how correctness is confirmed on the autonomous path and how silent failure is detected (name the specific field or signal, not "monitoring")
+2. The delegation boundary being stress-tested in S-3 — what the cheaper implementation would build and why that is wrong
+3. The highest-risk quiet failure — the specific mechanism by which the agent produces wrong output with no exception raised, and what detects it
+
+This section must be self-contained — a reader who reads only this section should understand how the agent proves it is right, where the hardest boundary test is, and what the most dangerous undetected failure looks like.
+
+### 0b. Table of contents
+List all sections by number and title, in order. Generate this after the full document is written — section titles must match exactly.
 
 ### 1. Validation philosophy
 One paragraph maximum. Answer two questions — both must be answered explicitly:
@@ -35,7 +46,7 @@ Produce exactly three scenarios. Each must use the following structure:
 | **Name** | A specific descriptive name — not "happy path" or "failure mode" |
 | **Type** | Happy path / Edge case / Failure mode |
 | **Delegation boundary tested** | Name the specific archetype assignment from D2 being stressed — the claim that this task is fully agentic, or this trigger pushes to HITL, or this action is human-only |
-| **Input** | Describe the specific document, record, or state the agent receives. Include numeric values (clause cap amounts, confidence scores, vendor history, document page count). Do not say "a contract with a minor deviation" — say what the deviation is and what the playbook floor is |
+| **Input** | Describe the specific document, record, or state the agent receives. Include numeric values (confidence scores, threshold values, field states, document metadata). Do not describe inputs generically — name the field values, thresholds, and condition that makes this case non-standard |
 | **Expected agent behaviour** | Step-by-step: what does the agent do at each decision point? What does it write, enqueue, flag, or halt? |
 | **Pass criteria** | Observable outputs that confirm correct behaviour — name the field, the value, the queue entry, the log line |
 | **Failure signal** | What does wrong look like — not the exception, but the quiet wrong: what would be written, enqueued, or omitted that no one would notice without a specific check? |
@@ -44,7 +55,7 @@ The three scenarios must span:
 
 1. **Happy path (S-1)** — the agent operates fully autonomously end-to-end. All conditions met, no HITL triggered, output committed to the system of record without human intervention. This test must also verify that the autonomous path is not broken by defensive coding added to handle edge cases.
 
-2. **Edge case (S-2)** — a valid but non-standard input that sits exactly at a decision boundary: a confidence score at the threshold, a document at the anomaly size limit, a clause that partially matches two playbook categories, or a vendor name at the fuzzy-match distance limit. The test must verify that the boundary is implemented as specified in CLAUDE.md — not as the cheapest available interpretation.
+2. **Edge case (S-2)** — a valid but non-standard input that sits exactly at a decision boundary: a confidence score at the threshold, a document at the anomaly size limit, a value that partially matches two categories, or an entity name at the fuzzy-match distance limit. The test must verify that the boundary is implemented as specified in CLAUDE.md — not as the cheapest available interpretation.
 
 3. **Delegation boundary failure (S-3)** — this scenario must be designed so that a coding agent reading only the spec could reasonably implement the step as fully agentic (the cheapest option), when the correct implementation is agent-led with oversight or human-only. Describe explicitly: (a) what the coding agent would build if it defaulted to the cheaper archetype, (b) why that implementation is wrong, and (c) why the test fails if the cheaper implementation was built.
 
@@ -61,7 +72,7 @@ List at least 4 failure modes where the agent produces output, no exception is r
 | QF-3 | | | | | |
 | QF-4 | | | | | |
 
-**Mechanism** means the specific condition that produced the wrong output — not "classification error," but the precise scenario (e.g., "vendor name Levenshtein distance = 3, above fuzzy threshold, so ET-6 did not fire, but the vendor was the same entity trading under a subsidiary name").
+**Mechanism** means the specific condition that produced the wrong output — not "classification error," but the precise scenario (e.g., "entity name similarity score above fuzzy threshold, so the escalation trigger did not fire, but the entity was the same counterparty trading under a different registered name").
 
 **Detection check** must name a concrete action: a field audit on a named field, a review of override rates against a threshold, a downstream system rejection, or a periodic spot-check by a named person on a named schedule.
 

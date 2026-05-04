@@ -10,15 +10,26 @@ See `scenario\scenario_context.md` for the full scenario, work streams, tooling,
 ## Your task
 Produce an Assumptions & Unknowns register. Be concise. Output file: `deliverables\D9_Assumptions_&_Unknowns.md`.
 
-Read back through D0 (problem statement), D0B (discovery), D1 (cognitive load map), D2 (delegation suitability matrix), D3 (volume/value analysis), D4 (agent purpose document), and D5 (system/data inventory). Every assumption or unknown flagged in those deliverables must appear here. Then add any that are still missing.
+Read back through D0B (problem statement), D0C (discovery), D1 (cognitive load map), D2 (delegation suitability matrix), D3 (volume/value analysis), D4 (agent purpose document), and D5 (system/data inventory). Every assumption or unknown flagged in those deliverables must appear here. Then add any that are still missing.
 
 ---
 
 ## Required structure
 
+### 0. Executive summary
+Three bullet points, written first. Each bullet is one sentence. Cover in order:
+1. The assumption the entire build rests on most — the one that, if wrong, would require redesigning the core architecture (name the specific assumption and what it drives)
+2. The unknown with the highest pre-build urgency — what must be confirmed before a single line of spec is finalised, and who can answer it
+3. The honest risk statement — what the build is most likely to get wrong, and whether the two resolution paths share enough structure to design for reversibility
+
+This section must be self-contained — a reader who reads only this section should understand the load-bearing assumption, the most urgent open question, and the primary build risk.
+
+### 0b. Table of contents
+List all sections by number and title, in order. Generate this after the full document is written — section titles must match exactly.
+
 ### 1. Consolidated assumption register
 
-Pull every assumption already logged in D0–D5. Consolidate duplicates. Use this format for each entry:
+Pull every assumption already logged in D0B–D5. Consolidate duplicates. Use this format for each entry:
 
 | ID | Assumption | Source deliverable | Category | Why it matters | If wrong | Confidence |
 |----|-----------|-------------------|----------|----------------|----------|------------|
@@ -47,7 +58,7 @@ Use this format for each entry:
 > **How to validate:** [the specific question to ask, the specific document to request, or the specific test to run — name the person or system]
 > **When to validate:** before build starts / before first production contract / can defer to v2
 
-Do not write generic unknowns. "We don't know if the API works" is not an unknown — it is an untested assumption. "We don't know whether the Ironclad `routing_classification` field is a free-text string or a constrained enum, which determines whether the agent's output can be validated at write time or only post-hoc" is an unknown.
+Do not write generic unknowns. "We don't know if the API works" is not an unknown — it is an untested assumption. "We don't know whether the system of record's primary classification field is a free-text string or a constrained enum, which determines whether the agent's output can be validated at write time or only post-hoc" is an unknown.
 
 ---
 
@@ -88,7 +99,7 @@ This section is the honest answer to: "what are you most likely to get wrong, an
 
 ## Fail signals — do not produce output that contains these
 
-- Assumptions that are self-evidently true and carry no risk if wrong (e.g., "we assume the vendor will send contracts as files")
+- Assumptions that are self-evidently true and carry no risk if wrong (e.g., "we assume the process will generate some work items")
 - Unknowns that are resolvable by reading the scenario — if the scenario tells you the answer, it is not an unknown
 - "How to validate" entries that say "ask the stakeholder" without specifying what question to ask or what document to request
 - All unknowns in the "can defer to v2" tier — if everything is low-stakes, the unknowns are not genuine

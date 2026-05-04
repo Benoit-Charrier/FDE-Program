@@ -16,6 +16,17 @@ Reference: `references\atx-agent-mapping.md`.
 
 ## Required structure
 
+### 0. Executive summary
+Three bullet points, written first. Each bullet is one sentence. Cover in order:
+1. The agent's Job to be Done — what outcome it produces, for whom, and what it replaces in the current process (tie to a scenario number)
+2. The autonomy boundary — what the agent decides alone versus what it cannot proceed without human approval (name the governance constraint explicitly)
+3. The primary failure risk — the most consequential failure mode and how it is detected before it causes harm downstream
+
+This section must be self-contained — a reader who reads only this section should understand what the agent does, where it stops, and what could go wrong.
+
+### 0b. Table of contents
+List all sections by number and title, in order. Generate this after the full document is written — section titles must match exactly.
+
 ### 1. Agent identity
 Provide:
 - **Agent name:** [descriptive, not generic — should reflect the job it does]
@@ -33,9 +44,9 @@ Complete this table. Every metric must have a baseline from the scenario (or lab
 |-----|----------|--------|--------------------|---------------|
 | Accuracy (correct primary-task output %) | | | | |
 | Coverage (% of cases handled without human escalation for this work stream) | | | | |
-| Throughput (contracts processed per hour) | | | | |
+| Throughput (cases processed per hour) | | | | |
 | HITL rate (% requiring human review within scope) | | | | |
-| Turnaround time contribution (minutes per contract for this work stream) | | | | |
+| Turnaround time contribution (minutes per case for this work stream) | | | | |
 
 All targets must be specific numbers. "How measured" must be concrete — name what system records the metric, not "track in a dashboard."
 
@@ -61,7 +72,7 @@ Define the operational contract between the agent and the organisation. Use the 
 - [list of specific decisions or actions]
 
 **AGENT PROPOSES, HUMAN APPROVES BEFORE ACTION:**
-- [list of specific decisions or actions — the counteroffer sign-off gate belongs here]
+- [list of specific decisions or actions — the scenario's primary approval gate belongs here]
 
 **HUMAN TAKES OVER (agent supports only):**
 - [list of specific triggers — be concrete; "complexity" is not a trigger]
@@ -74,22 +85,22 @@ For each escalation condition, specify the trigger precisely and name the human 
 | Trigger ID | Condition | Escalate to | What the agent provides at escalation | Response SLA |
 |-----------|-----------|-------------|---------------------------------------|-------------|
 
-Minimum 5 escalation triggers. Conditions must be specific — not "agent is uncertain" but "confidence score below 0.85 on clause classification" or "clause type is not among the 7 playbook categories."
+Minimum 5 escalation triggers. Conditions must be specific — not "agent is uncertain" but "confidence score below the defined threshold" or "input type is not among the scenario's defined categories."
 
 ### 7. Failure modes
 For each failure mode, complete the following:
 
 > **Failure Mode [FM-N]:** [what a bad output looks like]
-> **Consequence:** [what breaks downstream — for the legal team, for procurement, for the business]
+> **Consequence:** [what breaks downstream — for the team receiving the output, for the dependent process, for the business]
 > **Detection:** [how would this failure be caught? By whom? At what latency?]
 > **Recovery path:** [what happens to put things right?]
 
-Minimum 4 failure modes. At least one must address the consequences of a false classification (e.g., classifying a 10% escalation-required contract as standard).
+Minimum 4 failure modes. At least one must address the consequences of a false classification (e.g., routing an escalation-required case as a standard case).
 
 ### 8. Out-of-scope (hard stops)
 List things this agent must NEVER do, even if instructed:
 
-- [specific forbidden action 1 — e.g., "never send a redline or counteroffer to a vendor without a named lawyer's approval token in the case record"]
+- [specific forbidden action 1 — e.g., "never send a governance-gated output to an external party without the designated approver's token recorded in the case"]
 - [minimum 4 entries]
 
 ---
@@ -111,6 +122,6 @@ List things this agent must NEVER do, even if instructed:
 - KPIs with directional targets ("reduce review time") — all targets must be numbers
 - Escalation triggers like "when the contract is complex" — name the specific detectable condition
 - Failure modes with no detection mechanism ("someone notices the error")
-- Autonomy matrix with no explicit placement of the GC sign-off rule
+- Autonomy matrix with no explicit placement of the scenario's primary governance constraint
 - Activity catalog tasks with risk level High but no corresponding escalation trigger
 - An agent that can trigger the governance-gated action without the required human approval (violates the scenario's primary hard constraint)

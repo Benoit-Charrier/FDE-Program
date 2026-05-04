@@ -6,7 +6,7 @@ See `scenario\scenario_context.md` for the full scenario, work streams, tooling,
 ---
 
 ## Your task
-Produce a Delegation Suitability Matrix. Be concise. Summarize the main 3 points at the end. Output file: `deliverables\D2_delegation_suitability_matrix.md`.
+Produce a Delegation Suitability Matrix. Be concise. Output file: `deliverables\D2_delegation_suitability_matrix.md`.
 
 This is Phase 3 of the ATX Assessment. Score each major task cluster on delegation suitability dimensions, assign delegation archetypes with rationale, and determine the overall delegation architecture.
 
@@ -15,6 +15,17 @@ Reference: `input\1-ATX-Assessment.md` Phase 3.
 ---
 
 ## Required structure
+
+### 0. Executive summary
+Three bullet points, written first. Each bullet is one sentence. Cover in order:
+1. The delegation architecture in one sentence — how many clusters are fully/agent-led vs. human-anchored, and what governs the split
+2. The most contested archetype assignment — which cluster sits closest to the boundary between two archetypes and what tips it one way
+3. Where the scenario's primary governance constraint lands in the architecture — which specific cluster(s) it locks to human control and why that is non-negotiable
+
+This section must be self-contained — a reader who reads only this section should understand the overall delegation shape, the hardest call made, and where the hard rule is enforced.
+
+### 0b. Table of contents
+List all sections by number and title, in order. Generate this after the full document is written — section titles must match exactly.
 
 ### 1. Task cluster definition
 Before scoring, define the task clusters you will score. These may be the JtDs from D1 or aggregated micro-task groups. List each cluster with a one-sentence description and which work stream it belongs to. Aim for 6–10 clusters total across all four work streams.

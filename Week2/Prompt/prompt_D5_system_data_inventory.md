@@ -6,7 +6,7 @@ See `scenario\scenario_context.md` for the full scenario, work streams, tooling,
 ---
 
 ## Your task
-Produce a System/Data Inventory. Be concise. Summarize the main 3 points at the end. Output file: `deliverables\D5_system_data_inventory.md`.
+Produce a System/Data Inventory. Be concise. Output file: `deliverables\D5_system_data_inventory.md`.
 
 This inventory defines what the agent (from D4) needs to access, what is available, what is missing, and what is risky. It is the integration specification that a development team will use to assess buildability and plan their integration work.
 
@@ -16,14 +16,25 @@ Reference: `references\atx-agent-mapping.md` — System and Data Inventory secti
 
 ## Required structure
 
+### 0. Executive summary
+Three bullet points, written first. Each bullet is one sentence. Cover in order:
+1. The integration that is most critical to the agent functioning at all — name the system, the data it provides, and what blocks if it is unavailable
+2. The most significant gap or risk in the inventory — the system or data source whose availability is unknown or whose integration has the highest consequence if it fails
+3. The compounding opportunity — the integration that, once built, reduces the cost of the next agent in this domain most
+
+This section must be self-contained — a reader who reads only this section should understand what must be confirmed before build starts, what the biggest integration risk is, and what the long-term platform value is.
+
+### 0b. Table of contents
+List all sections by number and title, in order. Generate this after the full document is written — section titles must match exactly.
+
 ### 1. Data and system requirements (from agent design)
 Before listing available systems, derive the requirements from the agent's activity catalog (D4). What data and systems does the agent need to complete each task type?
 
 Group requirements into categories:
 - **Input data** (what the agent reads to do its work)
-- **Reference data** (policy documents, playbooks, precedent clauses the agent consults)
+- **Reference data** (policy documents, playbooks, reference materials the agent consults)
 - **Output targets** (systems the agent writes to, or queues it pushes results into)
-- **Approval/governance channels** (how lawyer sign-off is captured and audited)
+- **Approval/governance channels** (how the designated approver's sign-off is captured and audited)
 
 For each requirement, state: what data is needed, at what granularity, and at what latency (real-time lookup vs. batch-loaded vs. on-demand retrieval).
 
@@ -38,14 +49,14 @@ For each system or data source required:
 **Priority:** Required (agent cannot function without it) / Important (degrades performance if absent) / Optional (nice to have)
 
 Include a row for each of the following (at minimum):
-1. Inbound contract document storage (where contracts arrive and are stored)
-2. Negotiation playbook (the 7-clause checklist — its format and location)
-3. Contract classification/case management (where triage results are recorded)
-4. Lawyer approval/sign-off channel (how named-lawyer approval is captured with audit trail)
-5. Redline/markup tooling (where the paralegal's or agent's redlines are produced)
-6. Escalation routing system (how the 10% escalation cases are queued and assigned)
-7. Historical contract precedents (prior accepted and rejected clause language — if available)
-8. Vendor/counterparty registry (background on the vendor submitting the contract)
+1. Inbound document/case storage (where work items arrive and are stored)
+2. Reference policy or playbook (the primary decision framework — its format and location)
+3. Case classification/case management (where triage or routing results are recorded)
+4. Approval/sign-off channel (how the designated approver's approval is captured with audit trail)
+5. Output tooling (where the agent's primary output artefact is produced or stored)
+6. Escalation routing system (how exception cases are queued and assigned)
+7. Historical precedents or examples (prior accepted and rejected outputs — if available)
+8. Counterparty or entity registry (background on the external party involved — if applicable)
 
 For systems named in scenario_context.md, note: "Named in scenario_context.md — API specifics and integration maturity are assumptions beyond what is stated." For any additional systems you introduce, note: "Not named in scenario — existence and API availability are assumptions."
 
@@ -69,7 +80,7 @@ Risk types to consider:
 - **API availability risk** (does an API exist? Is it documented? Is there a rate limit?)
 - **Legal/compliance risk** (does the agent's access to contract data create new GDPR or privilege exposure?)
 - **Audit trail risk** (can the agent's actions be logged in a way that satisfies legal's audit requirements?)
-- **Sign-off integrity risk** (can the lawyer approval mechanism be bypassed — accidental or intentional?)
+- **Sign-off integrity risk** (can the approval mechanism be bypassed — accidental or intentional?)
 
 The governance/approval integrity risk (protecting the scenario's primary hard constraint in the system design) must appear in this register.
 
@@ -86,14 +97,14 @@ Design the agent's information architecture:
 #### Retrieval strategy
 - What triggers a retrieval call? (give specific examples from the activity catalog)
 - What is the retrieval target? (top-K clause chunks? exact playbook section? structured record?)
-- How is retrieval quality evaluated? (false positive clause matches have legal consequences — address this)
+- How is retrieval quality evaluated? (false positive matches can have downstream compliance or business consequences — address this)
 - How are retrieval costs managed? (chunking strategy, caching, index structure)
 
 #### Key context engineering risks
-List 2–3 risks specific to this agent's context design (e.g., "playbook language may be ambiguous — multiple valid interpretations of the same clause type").
+List 2–3 risks specific to this agent's context design (e.g., "reference policy language may be ambiguous — multiple valid interpretations of the same category").
 
 ### 6. Compounding opportunities
-Which integrations built for this agent could be reused by future agents in this legal team or this company?
+Which integrations built for this agent could be reused by future agents in this team or this organisation?
 
 | Integration built | Future agent that could reuse it | Reuse mechanism |
 |------------------|----------------------------------|-----------------|

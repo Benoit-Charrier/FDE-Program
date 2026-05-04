@@ -18,6 +18,9 @@ Reference: `references\claude-md-examples-guide.md` — aim for Tier 3 (Strong).
 
 ## Required structure
 
+### Section 0: Table of contents
+List all sections by number and title, in order. Generate this after the full document is written — section titles must match exactly.
+
 ### Section 1: Project Purpose
 Two to three sentences. What is this agent? What outcome does it produce? Who uses it and in what context? This should match D4's Job to be Done exactly.
 

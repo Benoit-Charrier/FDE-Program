@@ -1,16 +1,27 @@
-# Prompt: Deliverable 1 — Problem Statement and Success Metrics
+# Prompt: Deliverable D0B — Problem Statement and Success Metrics
 
 ## Scenario (read this first)
 See `scenario\scenario_context.md` for the full scenario, work streams, tooling, and named-systems guidance. Do not invent numbers, systems, or constraints not present in the scenario. Every number you use must trace back to the scenario or be explicitly labelled as an assumption.
 
 ## Your task
-Produce a problem statement and success metrics document. Be concise. Summarize the main 3 points at the end. Output file: `deliverables\D0A_problem_statement.md`.
+Produce a problem statement and success metrics document. Output file: `Deliverables\D0B_problem_statement.md`.
 
 ---
 
 ## Required structure
 
-### 1. Problem statement — team's perspective
+### 0. Executive summary
+Three bullet points, written first. Each bullet is one sentence. Cover in order:
+1. The core business problem and its operational consequence (tie to a number from the scenario)
+2. Why the existing approach cannot scale (name the structural constraint)
+3. The agent intervention and the specific outcome it must achieve (name at least one target metric)
+
+This section must be self-contained — a reader who reads only this section should understand the situation and the recommendation.
+
+### 1. Table of contents
+List all sections by number and title, in order. Generate this after the full document is written — section titles must match exactly.
+
+### 2. Problem statement — team's perspective
 One paragraph. What is the team's experience today — specifically the people doing the primary work described in scenario_context.md? What goes wrong for them and why does it matter? Tie to the turnaround targets and per-work-stream times from scenario_context.md.
 
 ### 2. Problem statement — business perspective
@@ -59,7 +70,7 @@ Minimum 2 assumptions in this section. More is better.
 ## Fail signals — do not produce output that contains these
 
 - Metrics with no baseline or vague targets ("reduce turnaround significantly")
-- Only one perspective (legal team or business, not both)
+- Only one perspective (operational team or business, not both)
 - Why-an-agent justification missing or asserted without reasoning specific to this scenario's process
 - Confident claims about the organisation's systems or structure that are not in scenario_context.md and not flagged as assumptions
 - Assumptions buried in prose rather than surfaced in the assumption log

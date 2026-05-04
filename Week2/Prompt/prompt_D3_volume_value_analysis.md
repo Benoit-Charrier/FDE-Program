@@ -6,7 +6,7 @@ See `scenario\scenario_context.md` for the full scenario, work streams, tooling,
 ---
 
 ## Your task
-Produce a Volume × Value Analysis. Be concise. Summarize the main 3 points at the end. Output file: `deliverables\D3_volume_value_analysis.md`.
+Produce a Volume × Value Analysis. Be concise. Output file: `deliverables\D3_volume_value_analysis.md`.
 
 This is Phase 4 of the ATX Assessment. Plot all 4 work streams, identify where an agent creates value versus where it creates risk, identify the primary agentic target, and justify why it wins.
 
@@ -15,6 +15,17 @@ Reference: `input\1-ATX-Assessment.md` Phase 4 and `references\atx-scoring.md`.
 ---
 
 ## Required structure
+
+### 0. Executive summary
+Three bullet points, written first. Each bullet is one sentence. Cover in order:
+1. The primary agentic target — name it, give its Agentic Value Score, and state the one-line business case (tie to a scenario number)
+2. The work stream that looks automatable but isn't — name it and the specific dimension or constraint that disqualifies it from the top spot
+3. Whether the economics close — state the directional TCO finding (payback period or annual saving estimate) and the single biggest assumption it rests on
+
+This section must be self-contained — a reader who reads only this section should know what to build first, what not to build, and whether the business case holds.
+
+### 0b. Table of contents
+List all sections by number and title, in order. Generate this after the full document is written — section titles must match exactly.
 
 ### 1. Suitability pre-screening (ATX Step 1)
 
@@ -109,7 +120,7 @@ For each work stream, one paragraph:
 > **Risk created by agent:** [what could go wrong specifically in this work stream, and why?]
 > **Net assessment:** [value > risk / risk > value / conditional on X]
 
-The GC's hard rule must appear in the risk assessment of at least one work stream.
+The scenario's primary governance constraint must appear in the risk assessment of at least one work stream.
 
 ### 6. Suitability gate check
 Run the suitability gate from `references\atx-scoring.md` on the top 2 agentic candidates (by Agentic Value Score):
@@ -146,7 +157,7 @@ Agent cost estimate:
   Estimated tokens per case: [estimate with rationale]
   Model: [name your assumption]
   Estimated token cost per case: [calculated]
-  Estimated HITL rate: [% — tie to scenario's 20% or 10% escalation rates]
+  Estimated HITL rate: [% — tie to scenario's stated escalation or routing rates]
   HITL cost per case: [calculated]
   Estimated agent cost per case: [sum]
   Annual agent cost: [calculated]
@@ -169,7 +180,7 @@ All figures not in the scenario must be labelled as assumptions. The goal is dir
 - [ ] Suitability gate run on the top 2 candidates
 - [ ] Primary target named and justified with scenario-grounded reasoning
 - [ ] Risk analysis present for every work stream (not just the primary target)
-- [ ] GC hard rule reflected in risk analysis
+- [ ] The scenario's primary governance constraint reflected in risk analysis
 - [ ] TCO sense-check present with all assumptions labelled
 - [ ] Non-determinism scores differentiate the work streams (at least a 2-point range across all 4)
 
@@ -179,4 +190,4 @@ All figures not in the scenario must be labelled as assumptions. The goal is dir
 - Primary target selected based on intuition without Volume × Value evidence
 - TCO estimate with no arithmetic shown
 - Risk analysis that says "agents can make mistakes" without naming the specific mistake type and consequence in this scenario
-- Volume numbers with no trace to the scenario's 300 contracts/quarter figure
+- Volume numbers with no trace to the scenario's stated volume figures
