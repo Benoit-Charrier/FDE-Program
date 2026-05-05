@@ -38,10 +38,10 @@ Each deliverable has a corresponding prompt in `Prompt/`. Work through them in s
 
 | # | Deliverable | Prompt | Output file |
 |---|-------------|--------|-------------|
-| D0 | Scenario Context (source of truth) | `prompt_D0_scenario_context.md` | `scenario/scenario_context.md` |
 | D0A | Domain Research *(run before reading scenario detail; ~25 min)* | `prompt_D0A_domain_research.md` | `Deliverables/D0A_domain_research.md` |
-| D0B | Problem Statement | `prompt_D0B_problem_statement.md` | `Deliverables/D0B_problem_statement.md` |
-| D0C | Discovery Synthesis | `prompt_D0C_discovery.md` | `Deliverables/D0C_discovery.md` |
+| D0B | Scenario Context (source of truth) | `prompt_D0B_scenario_context.md` | `scenario/scenario_context.md` |
+| D0C | Problem Statement | `prompt_D0C_problem_statement.md` | `Deliverables/D0C_problem_statement.md` |
+| D0D | Discovery Synthesis | `prompt_D0D_discovery.md` | `Deliverables/D0D_discovery.md` |
 | D1 | Cognitive Load Map | `prompt_D1_cognitive_load_map.md` | `Deliverables/D1_cognitive_load_map.md` |
 | D2 | Delegation Suitability Matrix | `prompt_D2_delegation_suitability_matrix.md` | `Deliverables/D2_delegation_suitability_matrix.md` |
 | D3 | Volume × Value Analysis | `prompt_D3_volume_value_analysis.md` | `Deliverables/D3_volume_value_analysis.md` |
@@ -50,6 +50,7 @@ Each deliverable has a corresponding prompt in `Prompt/`. Work through them in s
 | D5 | System/Data Inventory | `prompt_D5_system_data_inventory.md` | `Deliverables/D5_system_data_inventory.md` |
 | D6 | Discovery Questions | `prompt_D6_discovery_questions.md` | `Deliverables/D6_discovery_questions.md` |
 | D6A | Stakeholder Role-Play | `prompt_D6A_stakeholder_role_play.md` | `Deliverables/D6A_stakeholder_roleplay_answers.md` |
+| D6B | Stakeholder Presentation Deck *(synthesises D1–D6; run before the stakeholder meeting)* | `prompt_stakeholder_deck.md` | `Deliverables/Stakeholder_Presentation.md` |
 | D7 | Validation Design | `prompt_D7_validation_design.md` | `Deliverables/D8_Validation_Design.md` |
 | D8 | Assumptions & Unknowns | `prompt_D8_assumptions_unknowns.md` | `Deliverables/D9_Assumptions_&_Unknowns.md` |
 
