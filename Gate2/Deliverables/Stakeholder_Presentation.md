@@ -37,7 +37,29 @@ We'll move through five sections. The first two are about what we observed. The 
 
 ---
 
-## Slide 3: Why We Are Here — The Business Problem
+## Slide 3: The Four Work Streams — Why We Focused on Billing Disputes
+**Type:** Content
+
+We assessed all four work streams in Customer Operations before recommending where to focus.
+
+| Work stream | Daily volume | Time per case | Assessment outcome |
+|---|---|---|---|
+| ETA inquiries | ~400/day | 4 min | Automation candidate — primarily a lookup task; lower complexity |
+| Delivery exceptions | ~180/day | 12 min | Future candidate — Driver App integration capability unconfirmed |
+| Dispatch adjustments | ~90/day | 18 min | Not yet buildable — dispatch console has no confirmed programmatic interface |
+| **Billing disputes** | **~60/day** | **28 min** | **Primary target — highest handle time, active compliance gap, confirmed data access** |
+
+**Why not the others:**
+- Dispatch adjustments run through a Citrix-hosted system with no confirmed API — building there risks replicating the exact integration fragility that broke the 2024 RPA *(D3 suitability pre-screen)*
+- ETA inquiries are high volume but close to a scripted lookup — a lighter automation, not an agent *(D3 — Agentic Value Score 10)*
+- Delivery exceptions are a strong future target once the Driver App's integration capability is confirmed *(D3 — Agentic Value Score 16, conditional)*
+
+**Speaker notes:**
+Before I show you what we found in billing disputes specifically, I want to be transparent about how we chose to focus there. We looked at all four work streams and applied a consistent assessment lens — volume, complexity, system readiness, and compliance risk. Dispatch adjustments score highly on complexity but the dispatch console is a Citrix-hosted Java application with no confirmed API surface, and building a brittle integration there would recreate exactly the failure mode of the 2024 RPA. ETA inquiries are your highest-volume work stream but they're mostly a lookup — that's an automation, not an agent. Billing disputes is where complexity, compliance risk, and confirmed data access converge. That's why it's the recommendation.
+
+---
+
+## Slide 4: Why We Are Here — The Business Problem
 **Type:** Content
 
 - **60 billing disputes handled every day at 28 minutes each** — the highest handle time of any work stream in Customer Operations, absorbing more than 1,600 minutes of skilled agent time daily with no structured support *(scenario_context.md)*
@@ -51,7 +73,7 @@ The 2024 chatbot and the billing RPA are in the room. I want to address them dir
 
 ---
 
-## Slide 4: How the Work Actually Flows Today
+## Slide 5: How the Work Actually Flows Today
 **Type:** Content
 
 ```
@@ -82,7 +104,7 @@ The flow I've drawn is based on actual case records, not the SOP. The SOP refere
 
 ---
 
-## Slide 5: Where Time Goes — The Cognitive Hotspots
+## Slide 6: Where Time Goes — The Cognitive Hotspots
 **Type:** Content
 
 **1. Assembling the evidence (estimated 10–12 min per case)**
@@ -99,7 +121,7 @@ The first hotspot is the one an agent fixes most directly and most safely — da
 
 ---
 
-## Slide 6: What Can Be Delegated to an Agent — and What Cannot
+## Slide 7: What Can Be Delegated to an Agent — and What Cannot
 **Type:** Content
 
 | Task | Suitable for agent? | Why |
@@ -117,7 +139,7 @@ The right column is not a shortlist of things we couldn't figure out how to auto
 
 ---
 
-## Slide 7: The Opportunity — Where Volume Meets Complexity
+## Slide 8: The Opportunity — Where Volume Meets Complexity
 **Type:** Content
 
 ```
@@ -149,7 +171,7 @@ The chart shows why billing disputes is the right first target. It has the highe
 
 ---
 
-## Slide 8: The Proposed Agent — What It Does
+## Slide 9: The Proposed Agent — What It Does
 **Type:** Content
 
 - **Receives every inbound billing dispute** from the CRM queue and immediately assembles the evidence package: invoice data, surcharge records, delivery outcome, customer account history — what Sandra currently spends 10–12 minutes retrieving manually *(D4 §1, T-001 through T-004)*
@@ -165,7 +187,7 @@ What this agent replaces is the data assembly and the audit trail enforcement �
 
 ---
 
-## Slide 9: Where the Agent Stops — The Autonomy Boundary
+## Slide 10: Where the Agent Stops — The Autonomy Boundary
 **Type:** Content
 
 | Tier | What happens | Examples |
@@ -181,7 +203,7 @@ I want to spend a moment on the middle row, because it's the most important one.
 
 ---
 
-## Slide 10: Integration Readiness
+## Slide 11: Integration Readiness
 **Type:** Content
 
 | Integration | Status | What it means |
@@ -198,7 +220,7 @@ The amber and two reds are not reasons not to build. They're the specific things
 
 ---
 
-## Slide 11: What We Need From You — Top Questions
+## Slide 12: What We Need From You — Top Questions
 **Type:** Content
 
 **These five questions will change what we build. We do not currently have answers from the scenario artefacts alone.**
@@ -223,7 +245,7 @@ I want to be clear about why these are the five questions and not others. We're 
 
 ---
 
-## Slide 12: Discussion
+## Slide 13: Discussion
 **Type:** Discussion
 
 **Three topics we'd like your reaction to:**
@@ -239,7 +261,7 @@ These three prompts are the places where the assessment surfaces tensions that c
 
 ---
 
-## Slide 13: Next Steps
+## Slide 14: Next Steps
 **Type:** Content
 
 | Action | Owner | Dependency | Target date |
@@ -254,7 +276,7 @@ The first two actions are discovery — they can happen in parallel and in under
 
 ---
 
-## Slide 14: Closing
+## Slide 15: Closing
 **Type:** Closing
 
 **The recommendation in one sentence:**
@@ -276,4 +298,4 @@ Apex's billing dispute process is the strongest candidate for an AI agent in Cus
 - *Slide 11: all five questions unanswerable from scenario alone*
 - *Slide 13: all four actions traceable to D5 gaps (G-1, G-2, G-3, G-4) and D6 questions (Q8, Q1, Q9)*
 - *No ATX jargon in slide content (speaker notes use methodology terms where needed for presenter context)*
-- *Total slides: 14*
+- *Total slides: 15*
