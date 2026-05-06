@@ -41,8 +41,8 @@ Example format:
 - [2. Cognitive Load Map — Work Stream A](#2-cognitive-load-map--work-stream-a)
   - [2a. Lived process narrative (Step 1)](#2a-lived-process-narrative-step-1)
   - [2b. Jobs to be Done decomposition](#2b-jobs-to-be-done-decomposition)
-  - [2c. Micro-task inventory with dimension scores](#2c-micro-task-inventory-with-dimension-scores)
-  - [2d. Cognitive zones and breakpoints](#2d-cognitive-zones-and-breakpoints)
+  - [2c. Cognitive zones and breakpoints](#2c-cognitive-zones-and-breakpoints)
+  - [2d. Micro-task inventory with dimension scores](#2d-micro-task-inventory-with-dimension-scores)
   - [2e. Process topology diagram](#2e-process-topology-diagram)
 - [3. Cognitive Load Map — Work Stream B](#3-cognitive-load-map--work-stream-b)
 - [4. Cross-work-stream observations](#4-cross-work-stream-observations)
@@ -66,7 +66,7 @@ Cover:
 
 Flag explicitly where you are reconstructing from the scenario versus making a labelled assumption. This narrative is the foundation for the JtD decomposition — do not skip it or replace it with a bullet list of steps.
 
-#### 2b. Jobs to be Done decomposition
+#### 2b. Jobs to be Done decomposition (step 2)
 List 2–4 JtDs for this work stream in the table below. JtDs are cognitive contracts — outcome-focused, not task descriptions.
 
 | JtD ID | Cognitive contract - what outcome must be produced?] | Trigger - what starts this job? | Actor - who currently does this?| Key decisions - what must be decided to complete it?| Key systems/data - what information is required?| Primary cognitive type | Expected output - what is produced?|
@@ -74,15 +74,8 @@ List 2–4 JtDs for this work stream in the table below. JtDs are cognitive cont
 | WS-A-1 | | | | | | decision-making / execution / synthesis / communication / exception-handling | |
 | WS-A-2 | | | | | | | |
 
-#### 2c. Micro-task inventory with dimension scores
-For each micro-task within this work stream, complete the following table:
 
-| Micro-task | Cognitive Load (H/M/L) How much reasoning, tacit knowledge, or disambiguation required | Input Structure (H/M/L) Are inputs structured, semi-structured, or unstructured? | Decision Determinism (H/M/L) Are outcomes predictable given inputs, or judgment-dependent? | Exception Frequency (H/M/L) How often do edge cases occur that break the standard path?| Turn-Taking Degree (H/M/L) How much back-and-forth with humans, systems, or both?| Latency Constraint (H/M/L) Is real-time response required, or is batch acceptable?| Compliance/Risk Sensitivity (H/M/L) What is the cost of an error? Regulated? Audited? | Tool/API Availability (H/M/L) Can the agent access the required data and systems? |
-|------------|------------------------|-------------------------|------------------------------|------------------------------|---------------------------|---------------------------|--------------------------------------|-------------------------------|
-
-Include at least 5 micro-tasks per work stream. Scores must be justified in footnotes — not asserted.
-
-#### 2d. Cognitive zones and breakpoints
+#### 2c. Cognitive zones and breakpoints (step 3)
 **Zones** — map this work stream as a sequence of cognitive zones:
 
 | Zone ID | Zone name | Micro-tasks in zone | Dominant cognitive type | Data dependencies | Error tolerance - what is the cost of a mistake in this zone?|
@@ -97,6 +90,14 @@ Include at least 5 micro-tasks per work stream. Scores must be justified in foot
 | BP-1 | | | | rule-to-judgment shift / human-to-system / compliance gate | |
 | BP-2 | | | | | |
 | BP-3 | | | | | |
+
+#### 2d. Micro-task inventory with dimension scores (step 4)
+For each micro-task within this work stream, complete the following table:
+
+| Micro-task | Cognitive Load (H/M/L) How much reasoning, tacit knowledge, or disambiguation required | Input Structure (H/M/L) Are inputs structured, semi-structured, or unstructured? | Decision Determinism (H/M/L) Are outcomes predictable given inputs, or judgment-dependent? | Exception Frequency (H/M/L) How often do edge cases occur that break the standard path?| Turn-Taking Degree (H/M/L) How much back-and-forth with humans, systems, or both?| Latency Constraint (H/M/L) Is real-time response required, or is batch acceptable?| Compliance/Risk Sensitivity (H/M/L) What is the cost of an error? Regulated? Audited? | Tool/API Availability (H/M/L) Can the agent access the required data and systems? |
+|------------|------------------------|-------------------------|------------------------------|------------------------------|---------------------------|---------------------------|--------------------------------------|-------------------------------|
+
+Include at least 5 micro-tasks per work stream. Scores must be justified in footnotes — not asserted.
 
 #### 2e. Process topology diagram
 Use **two Mermaid flowcharts** (`flowchart TD`), each covering roughly half the work stream. Split at a natural phase boundary — for example, between the intake/comparison phases and the triage/routing phases. Label each diagram with its phase name (e.g., "Phase 1 — Ingestion & Classification", "Phase 2 — Triage & Routing"). Each diagram should contain no more than 6–8 nodes so it fits a screen without horizontal scrolling.

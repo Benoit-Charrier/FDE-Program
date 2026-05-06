@@ -35,6 +35,7 @@ Example format:
 - [3. Gap analysis](#3-gap-analysis)
 - [4. Risk register](#4-risk-register)
 - [5. Context engineering design](#5-context-engineering-design)
+  - [5b. Pre-deployment prerequisite checklist](#5b-pre-deployment-prerequisite-checklist)
 - [6. Compounding opportunities](#6-compounding-opportunities)
 
 ### 1. Data and system requirements (from agent design)
@@ -91,8 +92,9 @@ Risk types to consider:
 - **Legal/compliance risk** (does the agent's access to contract data create new GDPR or privilege exposure?)
 - **Audit trail risk** (can the agent's actions be logged in a way that satisfies legal's audit requirements?)
 - **Sign-off integrity risk** (can the approval mechanism be bypassed — accidental or intentional?)
+- **Governance enforcement mechanism risk** (is the approval technically enforced by the system — workflow lock, write-block, required state transition — or is it a procedural agreement that relies on the designated approver's discipline? If policy-only, what prevents a bypass under time pressure?)
 
-The governance/approval integrity risk (protecting the scenario's primary hard constraint in the system design) must appear in this register.
+The governance/approval integrity risk (protecting the scenario's primary hard constraint in the system design) must appear in this register. The entry must distinguish between system-enforced and procedure-dependent enforcement — these carry different risk profiles.
 
 ### 5. Context engineering design
 Design the agent's information architecture:
@@ -113,6 +115,21 @@ Design the agent's information architecture:
 #### Key context engineering risks
 List 2–3 risks specific to this agent's context design (e.g., "reference policy language may be ambiguous — multiple valid interpretations of the same category").
 
+### 5b. Pre-deployment prerequisite checklist
+
+Before build begins, the following must be confirmed. List each item as:
+- [ ] **[System or data item]:** [what specifically must be confirmed] — **Confirmed by:** [who confirms] — **If unconfirmed:** [what is blocked]
+
+Required entries (at minimum):
+1. Reference material format — machine-readable (structured/text-extractable) vs. image or scan-based; if any section is image-based, OCR preprocessing is a prerequisite
+2. Reference material version control — is there a machine-readable "last updated" timestamp or revision history queryable by the agent?
+3. Primary write-target system — API write access confirmed for custom fields and workflow state transitions required by the agent design
+4. Inbound trigger mechanism — intake path (email, API, manual upload) confirmed and approved by any relevant IT security stakeholder
+5. Approval/audit trail — designated approver sign-off is logged with identity and timestamp in a queryable system; not just visible but retrievable
+6. Known-stale reference sections — any sections identified as out of date before deployment must either be updated or explicitly excluded from agent scope with a defined fallback behaviour
+
+---
+
 ### 6. Compounding opportunities
 Which integrations built for this agent could be reused by future agents in this team or this organisation?
 
@@ -128,6 +145,8 @@ Which integrations built for this agent could be reused by future agents in this
 - [ ] Every system that is not named in the scenario is labelled as an assumption
 - [ ] Gap analysis present for every system with "unknown" or "manual-only" availability
 - [ ] Risk register includes sign-off integrity risk
+- [ ] Risk register distinguishes system-enforced approval mechanisms from policy-only ones; if policy-only, the bypass risk is explicitly rated
+- [ ] Pre-deployment checklist present with at least 6 entries; each names what is confirmed, who confirms it, and what is blocked if unconfirmed
 - [ ] Context engineering design addresses retrieval quality evaluation (not just retrieval mechanism)
 - [ ] Compounding opportunities section present
 - [ ] All gaps rated for severity (Blocking / Degrading / Low) with mitigation options
@@ -138,4 +157,6 @@ Which integrations built for this agent could be reused by future agents in this
 - A gap analysis that says "this data may not be available" without a mitigation option
 - Context engineering design that only describes what is retrieved, not how quality is evaluated
 - Governance/approval integrity risk absent from the risk register
+- Risk register that lists sign-off integrity risk without assessing whether it is system-enforced or procedure-only
 - Risk register with all risks rated Low — that is not analysis
+- Pre-deployment checklist absent — gaps named without specifying what must be confirmed before build begins

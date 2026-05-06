@@ -98,6 +98,8 @@ The scenario may state the stakeholder's comfort level with automation. Question
 
 *Ask about:* what a failed or wrong agent output would mean for this stakeholder personally, whether there is a recent incident that has made the team cautious, what the minimum visible human oversight step would be to make the deployment politically acceptable, whether the team would want to see agent outputs before or after a decision is made.
 
+*Also ask about* **labor and role impact:** if this agent reduces the primary worker's time on the target work stream significantly, what does the stakeholder envision that worker doing with the freed capacity? Is that redeployment already identified and valued, or is the time saving not yet connected to a role redesign plan? A stakeholder who has not thought through role transition may resist the agent or fail to sustain it, even if they support the automation goal.
+
 ---
 
 ### 3. Questions you are NOT asking — and why
@@ -136,6 +138,7 @@ Using the 60-minute call structure from `references\discovery-questioning-patter
 - [ ] Call sequencing plan present; "Goal for this segment" column is specific to the design decision being resolved, not just a category label
 - [ ] At least one question directly probes how the primary governance/approval constraint works operationally — not just confirms that it exists
 - [ ] At least one question targets how the reference material (playbook/policy/ruleset) is maintained and versioned — this affects retrieval design fundamentally
+- [ ] At least one question in Category F probes what happens to the primary worker's role if the agent achieves its time-saving target — and whether the stakeholder has a plan for the freed capacity
 
 ## Fail signals — do not produce output that contains these
 
@@ -145,3 +148,4 @@ Using the 60-minute call structure from `references\discovery-questioning-patter
 - Questions that are really statements of concern dressed as questions ("Have you considered the risk of AI making mistakes?")
 - Fewer than 15 questions, or questions padded with obvious or low-value content to reach the count
 - Questions where X and Y answers lead to the same design — these waste the stakeholder's time
+- No question about labor or role impact — if the agent saves significant time for a named worker, not asking what happens to that person is an organizational design blind spot

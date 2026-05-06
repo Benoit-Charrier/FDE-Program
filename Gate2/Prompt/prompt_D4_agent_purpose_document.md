@@ -62,6 +62,8 @@ Complete this table. Every metric must have a baseline from the scenario (or lab
 
 All targets must be specific numbers. "How measured" must be concrete — name what system records the metric, not "track in a dashboard."
 
+If any KPI or escalation trigger uses an agent confidence score as a threshold, also specify: (a) how that threshold will be validated before deployment — not assumed from the model's self-reported scores alone — and (b) what the feedback loop is if post-deployment audit data reveals the threshold is miscalibrated in production.
+
 ### 4. Activity catalog
 Enumerate every micro-task the agent performs. One row per task:
 
@@ -91,6 +93,8 @@ Define the operational contract between the agent and the organisation. Use the 
 
 The scenario's primary governance/compliance hard constraint (from scenario_context.md) must appear explicitly in the "AGENT PROPOSES, HUMAN APPROVES BEFORE ACTION" tier — with exact language about what the agent prepares and what the designated approver approves.
 
+For the primary approval gate, also specify the enforcement mechanism: is the agent technically blocked from proceeding without a recorded approval token (system-enforced workflow state transition), or does the constraint rely on the designated approver following procedure? If the latter, name it as a governance risk in §7.
+
 ### 6. Escalation triggers
 For each escalation condition, specify the trigger precisely and name the human role who receives it:
 
@@ -107,13 +111,16 @@ For each failure mode, complete the following:
 > **Detection:** [how would this failure be caught? By whom? At what latency?]
 > **Recovery path:** [what happens to put things right?]
 
-Minimum 4 failure modes. At least one must address the consequences of a false classification (e.g., routing an escalation-required case as a standard case).
+Minimum 5 failure modes. Required types:
+- At least one must address **false classification consequences** (e.g., routing an escalation-required case as a standard case)
+- At least one must address **systematic miscalibration** — confidence scores are consistently wrong in one direction, causing high-confidence incorrect outputs to pass the routing threshold; the recovery path must include a threshold retuning mechanism, not just "re-run the audit"
+- At least one must address **audit evidence incompleteness** — the agent produces an output the designated approver cannot defend if challenged (no reasoning chain, no matched reference section, no confidence score recorded); specify what the output must contain to be audit-defensible and what the approver should do if they receive an incomplete record
 
 ### 8. Out-of-scope (hard stops)
 List things this agent must NEVER do, even if instructed:
 
 - [specific forbidden action 1 — e.g., "never send a governance-gated output to an external party without the designated approver's token recorded in the case"]
-- [minimum 4 entries]
+- [minimum 4 entries; one must address known-stale or unvalidated reference material: the agent must never classify a case against a reference section that is known to be out of date or excluded from the pre-deployment checklist — it must escalate with an "unverified reference" flag instead of applying a stale standard]
 
 ---
 
@@ -125,8 +132,12 @@ List things this agent must NEVER do, even if instructed:
 - [ ] Activity catalog has at least 8 tasks with all columns populated
 - [ ] Autonomy matrix explicitly places the scenario's primary governance/compliance constraint in the "AGENT PROPOSES, HUMAN APPROVES BEFORE ACTION" tier
 - [ ] Every High-risk task in the activity catalog has a corresponding escalation trigger
-- [ ] At least 4 failure modes with detection and recovery paths
-- [ ] Out-of-scope section present with at least 4 hard stops
+- [ ] At least 5 failure modes with detection and recovery paths
+- [ ] At least one failure mode addresses systematic confidence miscalibration with a threshold retuning path
+- [ ] At least one failure mode addresses audit evidence incompleteness — what the output must contain to be defensible
+- [ ] Any confidence-gated KPI or escalation trigger includes a pre-deployment validation method for the threshold
+- [ ] Autonomy matrix specifies whether the primary approval gate is system-enforced or procedure-dependent
+- [ ] Out-of-scope section present with at least 4 hard stops, including one for known-stale or unvalidated reference material
 - [ ] Document is precise enough that an AI coding agent would not need to ask a clarifying question about scope, KPIs, or escalation logic
 
 ## Fail signals — do not produce output that contains these
@@ -137,3 +148,6 @@ List things this agent must NEVER do, even if instructed:
 - Autonomy matrix with no explicit placement of the scenario's primary governance constraint
 - Activity catalog tasks with risk level High but no corresponding escalation trigger
 - An agent that can trigger the governance-gated action without the required human approval (violates the scenario's primary hard constraint)
+- Confidence thresholds stated without a pre-deployment validation method — "LLM self-reports 0.90" is not a calibrated threshold
+- Failure modes that omit audit evidence requirements — the designated approver must be able to defend every decision the agent prepared
+- Autonomy matrix that names the approval gate but does not specify whether it is system-enforced or procedure-dependent
