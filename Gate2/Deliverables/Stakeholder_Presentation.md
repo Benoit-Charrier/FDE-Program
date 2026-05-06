@@ -16,7 +16,7 @@
 Assessment Findings & Proposed Solution
 
 *Date: [DATE]*
-*Presenter: [NAME], Field Deployment Engineer*
+*Presenter: [Benoit Charrier], Field Deployment Engineer*
 
 **Speaker notes:**
 Thank you for making time for this. Today I'll walk you through what we found across your billing dispute process, what we think is worth building, and — critically — where we need your input before any build begins. This is not a pitch for AI. It's a structured look at where a well-scoped agent would actually save time and close a compliance gap that already exists in your process today, followed by an honest conversation about the decisions you need to make first.
