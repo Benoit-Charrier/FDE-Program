@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -m pytest agent_build/tests/ -v)",
+      "Bash(pip install *)"
+    ]
+  }
+}

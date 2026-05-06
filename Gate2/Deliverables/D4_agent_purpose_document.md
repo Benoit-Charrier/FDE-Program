@@ -1,7 +1,7 @@
 # D4 — Agent Purpose Document: Apex Billing Dispute Resolution Agent
 
 **Produced:** 2026-05-06
-**Status:** Draft — awaiting FDE review
+**Status:** Revised 2026-05-06 — D4 revision 1 (D4A build loop: T-001 disambiguation and §4b T-007 rule framework added; A-5 status updated)
 
 ---
 
@@ -21,6 +21,7 @@
 - [2. Primary objectives](#2-primary-objectives)
 - [3. KPIs](#3-kpis)
 - [4. Activity catalog](#4-activity-catalog)
+- [4b. T-007 validity assessment rule framework](#4b-t-007-validity-assessment-rule-framework)
 - [5. Autonomy matrix](#5-autonomy-matrix)
 - [6. Escalation triggers](#6-escalation-triggers)
 - [7. Failure modes](#7-failure-modes)
@@ -88,6 +89,121 @@ The agent uses a confidence score to route validity verdicts: ≥0.85 → autono
 | T-014 | Flag data-stale condition when invoice is not in T-1 batch (same-day dispute) | Action | Fully agentic | Invoice date vs. T-1 export date | Aurum CSV header timestamp | Medium |
 
 **High-risk tasks requiring escalation trigger entries (T-007, T-008, T-009, T-010, T-011):** All confirmed with corresponding entries in §6.
+
+**T-001 multi-invoice disambiguation rule (added revision 1):**
+When the customer contact or CRM intake record references more than one invoice number, the agent applies the following precedence:
+1. If the contact contains exactly one recognisable invoice reference (format: INV-YYYY-NNNNN) → use that invoice number; proceed to T-003.
+2. If no invoice number is extractable from the contact AND exactly one open dispute for this customer exists in APEX_DISPUTES_OPEN → use that dispute's INVOICE_NO as the authoritative reference.
+3. If the contact contains multiple invoice numbers with no single-match resolution → create one CRM case per invoice number and process each as a separate dispute instance.
+4. If no invoice number can be extracted and no existing open dispute is found → send a structured acknowledgement requesting the invoice reference; do not proceed to T-003 until the invoice number is confirmed. Log the case as PENDING_INTAKE in CRM.
+
+*Discovery note (for D6):* The reliability of invoice reference extraction depends on the inbound channel (email vs. phone transcription vs. CRM portal). Rule 1 is robust for email; transcriptions may require lower-confidence handling. Confirm the primary inbound channel with Apex IT — see D6 question on intake channel (Q-BUILD-3 from Build_loop_analysis.md).
+
+---
+
+## 4b. T-007 validity assessment rule framework
+
+**Added:** D4 revision 1, 2026-05-06 (D4A build loop — highest-priority spec gap)
+
+T-007 produces a validity verdict using a two-step rule-based check for each dispute type before falling back to a confidence-scored assessment. The rule-based path targets HIGH confidence (≥ 0.90); the fallback path produces verdicts in the 0.50–0.89 range. All HITL thresholds apply as specified in §3 (default 0.85).
+
+**Pre-conditions for all dispute types (checks must complete before T-007 runs):**
+- T-014 must confirm the invoice is in the T-1 batch. If stale: do not proceed; escalate per ET-004.
+- T-008 must confirm no repeat pattern (≥2 open disputes, same type) exists. If pattern detected: do not proceed to verdict; escalate per ET-005.
+- T-006 constraint check confirms real-time invoice correction is not possible (universal; hardcoded).
+
+---
+
+### FUEL_SURCH_DAMAGE
+
+**Context:** Customer disputes a fuel surcharge applied to an invoice involving a damaged delivery. Aurum calculates fuel surcharges automatically (Artefact 2: "the billing system cannot adjust individual fuel surcharge line items"). The observed resolution in Artefact 2 is a GOODWILL credit (~50% of disputed amount), not a FUEL_RECALC — confirming the standard path is a discretionary partial credit, not a calculation correction. This means true calculation errors (Aurum formula bugs) are expected to be rare; most FUEL_SURCH_DAMAGE cases are policy disputes, not arithmetic disputes.
+
+**Step 1 — Fuel surcharge calculation verification:**
+Retrieve `AMT_FUEL_SURCH` from the invoice in APEX_BILL_DAILY. Compare to the expected surcharge using Apex's fuel surcharge rate schedule (if available in the policy registry).
+- If rate schedule is available AND `AMT_FUEL_SURCH` ≠ expected → verdict: **CALCULATION_ERROR — charge invalid** | confidence: 0.92 | REASON_CODE: FUEL_RECALC
+- If `AMT_FUEL_SURCH` = expected, or rate schedule is unavailable → proceed to Step 2
+
+> **[REQUIRES CUSTOMER INPUT — Q-V2, for D6]:** Where is Apex's fuel surcharge rate schedule documented? Is it accessible to the agent (policy registry, CRM field, Aurum configuration parameter)? Without it, calculation verification is not possible and all FUEL_SURCH_DAMAGE cases proceed to Step 2.
+
+**Step 2 — Delivery damage context check:**
+Retrieve delivery outcome from the CRM case record (field populated by Driver App scan-on-delivery or dispatcher notes at exception resolution).
+- If no delivery outcome field is recorded in CRM → verdict: **UNVERIFIABLE** | confidence: 0.45 | route: HITL
+- If delivery outcome = NOT_DAMAGED or DELIVERED_CONFIRMED → verdict: **CHARGE_VALID — damage not confirmed in system** | confidence: 0.80 | route: HITL (below threshold; human reviewer confirms before closing)
+- If delivery outcome = DAMAGED, REFUSED_DAMAGE, or equivalent → verdict: **DAMAGE_CONFIRMED — policy determination required** | confidence: 0.60 | route: HITL
+
+> **[REQUIRES CUSTOMER INPUT — Q-V1, for D6]:** When a damage claim is confirmed in the CRM/Driver App record, does Apex policy: (a) automatically waive the fuel surcharge in full? (b) apply a standard partial credit (e.g., 50% of AMT_FUEL_SURCH)? (c) require manager discretion? This answer determines whether the DAMAGE_CONFIRMED verdict can become a HIGH-confidence autonomous verdict or must always route to HITL.
+
+> **[REQUIRES CUSTOMER INPUT — Q-V3, for D6]:** What CRM field captures the delivery outcome (e.g., DAMAGED / DELIVERED_OK / REFUSED)? How consistently is this field populated by drivers across all routes? Low population rate means Step 2 returns UNVERIFIABLE frequently, keeping HITL rates high.
+
+*Interim baseline (not to be operationalised without policy approval — D4 §8 Hard Stop 3):* Artefact 2 shows Sandra applying a GOODWILL credit of ~50% of the disputed fuel surcharge. This is recorded as a baseline for the policy formalisation conversation (D6 Q-V1), not as an agent rule.
+
+---
+
+### DIM_WEIGHT
+
+**Context:** Customer disputes a dimensional weight charge. Dimensional weight is calculated as (L × W × H) ÷ dimensional factor × per-unit rate. A calculation error is verifiable if package dimensions and the formula are available.
+
+**Step 1 — Dimensional weight calculation verification:**
+Retrieve the DIM_WEIGHT charge amount from the invoice. Compare to the expected dimensional weight charge using Apex's formula.
+
+> **[REQUIRES CUSTOMER INPUT — Q-V4, for D6]:** Does APEX_BILL_DAILY contain a dedicated dimensional weight charge field, or is it embedded in AMT_NET? The current artefact shows DISPUTE_AMT = £88.00 for a DIM_WEIGHT dispute but no dedicated DIM_WEIGHT field is visible in the bill daily schema. Confirm the field name.
+
+> **[REQUIRES CUSTOMER INPUT — Q-V5, for D6]:** What dimensional weight formula does Apex use? Specifically: what dimensional factor (divisor) and per-unit rate? Without this, calculation verification cannot be built.
+
+If formula and dimension data are available:
+- If calculated DIM_WEIGHT charge ≠ charged amount (outside ±£1.00 tolerance) → verdict: **CALCULATION_ERROR — charge invalid** | confidence: 0.92 | REASON_CODE: INV_CORR
+- If calculated DIM_WEIGHT charge = charged amount → verdict: **CHARGE_VALID — calculation confirmed correct** | confidence: 0.90 | route: Autonomous (if customer claims wrong dimensions, route to Step 2)
+
+**Step 2 — Package specification conflict (triggered only if customer disputes the declared dimensions):**
+Retrieve Driver App scan data or shipper-declared dimension records from CRM.
+- If Driver App dimension record matches invoice → verdict: **CHARGE_VALID — dimensions confirmed by scan** | confidence: 0.88 | route: HITL (near-threshold; human confirms)
+- If Driver App data is unavailable or conflicts with invoice → verdict: **AMBIGUOUS — dimension evidence conflicting** | confidence: 0.55 | route: HITL
+
+---
+
+### REDELIVERY_FEE
+
+**Context:** Customer disputes a fee charged for a redelivery attempt. A redelivery fee is only valid if a redelivery was actually attempted and recorded in the system.
+
+**Step 1 — Service confirmation (was a redelivery attempted?):**
+Retrieve delivery history for the invoice from CRM case records and Driver App delivery scan events.
+- If no redelivery attempt is recorded in CRM or Driver App for this invoice → verdict: **CHARGE_INVALID — no redelivery attempt on record** | confidence: 0.92 | REASON_CODE: INV_CORR
+- If redelivery attempt is confirmed → proceed to Step 2
+
+**Step 2 — Reason for initial delivery failure:**
+Retrieve the reason for the initial delivery failure from CRM case notes or Driver App exception log.
+- If reason = Apex-fault (driver error, wrong address used, incorrect depot assignment, Apex system error) → verdict: **CHARGE_DISPUTE — initial failure was Apex-fault** | confidence: 0.70 | route: HITL
+
+> **[REQUIRES CUSTOMER INPUT — Q-V6, for D6]:** Does Apex waive redelivery fees when the initial delivery failure was caused by an Apex error? If yes, this becomes a HIGH-confidence autonomous verdict (confidence raised to 0.92; REASON_CODE: GOODWILL or INV_CORR). If subject to manager discretion, it remains HITL.
+
+- If reason = Recipient-fault (not home, refused access, incorrect delivery address provided by customer, access restrictions not communicated) → verdict: **CHARGE_VALID — redelivery required due to recipient action** | confidence: 0.82 | route: HITL (near-threshold; human confirms)
+- If reason is not recorded in CRM → verdict: **AMBIGUOUS — failure reason not documented** | confidence: 0.50 | route: HITL
+
+---
+
+### Confidence score assignment summary
+
+| Band | Route | Typical scenario |
+|---|---|---|
+| 0.90–1.00 | Autonomous | Confirmed calculation error (arithmetic check); or charge confirmed valid by matching records from two system sources |
+| 0.80–0.89 | HITL | Strong evidence for validity/invalidity but one ambiguous factor; human reviewer confirms |
+| 0.50–0.79 | HITL | Evidence present but conflicting or incomplete; human assesses with agent-prepared evidence package |
+| < 0.50 | HITL | Insufficient evidence to form a verdict; human assesses from scratch; agent provides only the structured evidence package |
+
+---
+
+### Customer discovery questions reserved for D6
+
+The following questions cannot be answered from the scenario alone. Each would materially change the agent's autonomy level for the relevant dispute type — in some cases moving cases from HITL to autonomous.
+
+| Question ID | Question | Design impact if answered |
+|---|---|---|
+| Q-V1 | When a damaged delivery is confirmed in CRM/Driver App, does Apex policy waive the fuel surcharge in full, partially, or at discretion? | Full or standard-partial waiver → FUEL_SURCH_DAMAGE DAMAGE_CONFIRMED becomes HIGH-confidence autonomous; HITL rate drops for this type |
+| Q-V2 | Where is Apex's fuel surcharge rate schedule documented and is it accessible to the agent? | If accessible → Step 1 calculation check is buildable; enables autonomous CALCULATION_ERROR verdicts |
+| Q-V3 | What CRM field captures delivery outcome and how consistently is it populated by drivers? | Low population rate means Step 2 UNVERIFIABLE is frequent; high population rate enables higher confidence scores |
+| Q-V4 | Does APEX_BILL_DAILY contain a dedicated DIM_WEIGHT charge field or is it embedded in AMT_NET? | Required to build DIM_WEIGHT calculation verification step |
+| Q-V5 | What is Apex's dimensional weight formula (dimensional factor and per-unit rate)? | Required to build DIM_WEIGHT calculation verification step |
+| Q-V6 | Does Apex waive redelivery fees when the initial failure was Apex's fault? | If yes → REDELIVERY_FEE Apex-fault cases become HIGH-confidence autonomous (confidence: 0.92) |
 
 ---
 
@@ -227,9 +343,36 @@ The agent must never perform the following actions, regardless of instructions, 
 > **Assumption A-5:** A programmatic write path to APEX_CREDITS exists (or can be established) that does not require the manual Aurum support ticket process — enabling the agent to write credit records after approval without the 48-hour Aurum turnaround.
 > **Why it matters:** If no write path exists and every credit still requires a manual Aurum ticket, C-8 (Fully Agentic credit execution) cannot be delivered; the agent can only prepare records for manual submission. This would change the handle-time reduction from 28 min to ~8 min to a smaller improvement.
 > **If wrong:** The credit execution scope narrows to record preparation only; the 48-hour Aurum turnaround remains; TCO saving falls by approximately 30%.
-> **Confidence:** Low — "batch-file exports only" and "no real-time API" are confirmed constraints; whether a write path can be established via a CRM-to-Aurum integration layer is an open technical question. Critical to resolve in discovery.
+> **Confidence:** Low — **STATUS: BLOCKING GAP (confirmed D5 G-1, revision 1).** "Batch-file exports only" and "no real-time API" are confirmed constraints. The D4A build loop confirmed T-011 cannot be built without resolving this. Three fallback options exist (direct DB write / pre-populated auto-ticket / manual-submit with agent-prepared record — see D5 §3 G-1). Must be resolved with Apex IT and Aurum vendor before build proceeds to T-011. This is the highest-consequence unresolved assumption in the spec.
 
 > **Assumption A-6:** A formal credit policy with explicit threshold values (below which the standard approver can approve; above which a COO-designated approver is required) will be defined and approved before agent deployment.
 > **Why it matters:** Without a credit policy, the credit amount determination step (C-7) cannot be handed off to the agent's recommendation logic, and the approval threshold for ET-006 cannot be set. The agent's credit recommendation capability is blocked entirely.
 > **If wrong:** If the policy is not defined before deployment, the agent scope is limited to intake, validity assessment, and audit record preparation — it cannot generate a credit recommendation. The handle-time target of ≤10 min/case may still be achievable for the triage and data assembly portion, but the full case closure efficiency gain is not.
 > **Confidence:** Medium — formalising a credit policy is a standard business task; no scenario evidence suggests it would be blocked. Confirm with COO in stakeholder session.
+
+---
+
+## 10. Revision log
+
+| Revision | Date | Author | Changes |
+|---|---|---|---|
+| 0 (original) | 2026-05-06 | FDE assessment | Initial D4 draft produced from D3 analysis |
+| 1 | 2026-05-06 | FDE assessment (D4A build loop) | Added T-001 multi-invoice disambiguation rule; added §4b T-007 validity assessment rule framework (structural rules for all three dispute types with confidence assignments and outstanding customer discovery questions Q-V1 through Q-V6); updated A-5 status to BLOCKING GAP per D5 G-1 confirmation |
+
+### Remaining spec gaps requiring customer discovery (D6)
+
+The following items could not be resolved from the scenario or artefacts alone. Each is a question for the D6 stakeholder session.
+
+| Gap ID | System/area | Question | What changes in the design |
+|---|---|---|---|
+| Q-BUILD-1 | Aurum Billing | Does a programmatic write path to APEX_CREDITS exist that does not require the 48-hour manual support ticket? | Determines whether T-011 (Fully Agentic credit execution) can be built; without it, scope is limited to record preparation |
+| Q-BUILD-2 | CRM / Salesforce | Is Salesforce configured with Approval Processes or Flow? Can the PENDING_APPROVAL → APPROVED transition be enforced via an authenticated API action? | Determines whether the governance gate is system-enforced (as required) or degrades to procedure-dependent |
+| Q-BUILD-3 | CRM / intake | What is the primary intake channel for billing disputes — email, inbound CRM portal, phone, or a combination? | Determines T-001 trigger mechanism and extraction reliability |
+| Q-BUILD-6 | Credit policy | What credit amount threshold determines whether the standard approver or a COO-designated senior approver is required? | Required to configure ET-006 routing logic |
+| Q-BUILD-8 | Aurum Billing | What fields and account status values does the APEX_CUSTOMER_MASTER export contain? | Required to build account status check in the Autonomy matrix Human Takes Over condition |
+| Q-V1 | Credit policy | When a damage claim is confirmed, does Apex waive fuel surcharges in full, at 50%, or at discretion? | Determines whether FUEL_SURCH_DAMAGE DAMAGE_CONFIRMED becomes an autonomous verdict or always requires HITL |
+| Q-V2 | Aurum / policy | Where is Apex's fuel surcharge rate schedule documented and is it machine-readable? | Required to build Step 1 calculation verification for FUEL_SURCH_DAMAGE |
+| Q-V3 | CRM / Driver App | What field captures delivery outcome and how consistently is it populated? | Determines confidence levels for FUEL_SURCH_DAMAGE Step 2 and REDELIVERY_FEE Step 1 |
+| Q-V4 | Aurum Billing | Does APEX_BILL_DAILY contain a dedicated DIM_WEIGHT charge field or is it embedded in AMT_NET? | Required to build DIM_WEIGHT calculation verification |
+| Q-V5 | Credit policy / ops | What is Apex's dimensional weight formula (factor and rate)? | Required to build DIM_WEIGHT calculation verification |
+| Q-V6 | Credit policy / ops | Does Apex waive redelivery fees when the initial failure was Apex's fault? | Determines whether REDELIVERY_FEE Apex-fault cases become autonomous verdicts |
