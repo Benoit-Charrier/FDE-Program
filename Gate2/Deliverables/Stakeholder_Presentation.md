@@ -171,6 +171,38 @@ The chart shows why billing disputes is the right first target. It has the highe
 
 ---
 
+## Slide 8 (Alt): The Opportunity — Non-Determinism × Volume Grid
+**Type:** Content
+**Note to FDE:** Alternative to Slide 8 above. Uses the D3 mermaid quadrant chart (non-determinism × volume axes) — choose one, delete the other before presenting.
+
+```mermaid
+quadrantChart
+    title Volume x Value Analysis - Apex Customer Operations
+    x-axis Low Non-Determinism --> High Non-Determinism
+    y-axis Low Volume --> High Volume
+    quadrant-1 Primary agentic targets
+    quadrant-2 Rules / RPA only
+    quadrant-3 Not worth automating
+    quadrant-4 Select agentic use cases
+    WS2 ETA Inquiries: [0.25, 0.92]
+    WS1 Delivery Exceptions: [0.75, 0.75]
+    WS3 Dispatch Adjustments: [0.67, 0.65]
+    WS4 Billing Disputes: [0.92, 0.75]
+```
+
+*WS3 plots in Q1 by score but is excluded — dispatch console has no confirmed programmatic interface *(D3 §1)*
+
+**Primary target: WS4 — Billing Disputes**
+- Agentic value score: 20/25 — highest reasoning complexity (Non-Determinism 5) combined with confirmed daily volume *(D3 §3)*
+- Annual baseline cost: ~£245k/year at current handle time
+- Projected annual agent cost: ~£70k/year (includes human review time)
+- **Directional saving: ~£175k/year | Build cost: ~£100k | Payback: ~7 months** *(D3 §8)*
+
+**Speaker notes:**
+The axes here are non-determinism — how much reasoning, judgment, and synthesis the work actually requires — and volume. An agent earns its keep in the top-right quadrant: high enough volume that the time saving compounds, and high enough reasoning complexity that a simpler automation can't do the job. ETA inquiries score high on volume but low on non-determinism — that's a lookup, not an agent. Dispatch adjustments would sit in the primary target zone if the dispatch console had a confirmed API surface; it doesn't yet, so it stays conditional. Billing disputes is the target: highest non-determinism in the portfolio, confirmed data access, and an active compliance gap the agent closes at the same time as it cuts handle time.
+
+---
+
 ## Slide 9: The Proposed Agent — What It Does
 **Type:** Content
 
