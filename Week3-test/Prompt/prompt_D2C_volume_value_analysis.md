@@ -6,11 +6,11 @@ See `scenario\scenario_context.md` for the full scenario, work streams, tooling,
 ---
 
 ## Your task
-Produce a Volume × Value Analysis. Be concise. Output file: `deliverables\D3_volume_value_analysis.md`.
+Produce a Volume × Value Analysis. Be concise. Output file: `deliverables\D2C_volume_value_analysis.md`.
 
 This is Phase 4 of the ATX Assessment. Plot all 4 work streams, identify where an agent creates value versus where it creates risk, identify the primary agentic target, and justify why it wins.
 
-Reference: `input\1-ATX-Assessment.md` Phase 4 and `references\atx-scoring.md`.
+Reference: `references\1-ATX-Assessment.md` Phase 4 and `references\atx-scoring.md`.
 
 ---
 

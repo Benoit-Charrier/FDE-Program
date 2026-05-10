@@ -6,16 +6,16 @@ See `scenario\scenario_context.md` for the full scenario, work streams, tooling,
 ---
 
 ## Your task
-Produce a Cognitive Load Map. Be concise. Output file: `deliverables\D1_cognitive_load_map.md`.
+Produce a Cognitive Load Map. Be concise. Output file: `deliverables\D2A_cognitive_load_map.md`.
 
-This is Phase 2 of the ATX Assessment. Following the Phase 2 step-by-step from `input\1-ATX-Assessment.md`:
+This is Phase 2 of the ATX Assessment. Following the Phase 2 step-by-step from `references\1-ATX-Assessment.md`:
 
 - **Step 1:** Map the lived process — walk through a real case, capture triggers, inputs, intermediate decisions, outputs, escalations, and where the worker pauses, consults, or makes a judgment call. Produce a lived process narrative per work stream.
 - **Step 2:** Decompose into Jobs to be Done.
 - **Step 3:** Map Cognitive Zones and Breakpoints.
 - **Step 4:** Build the micro-task inventory.
 
-Reference: `input\1-ATX-Assessment.md` Phase 2 and `references\atx-concepts.md`.
+Reference: `references\1-ATX-Assessment.md` Phase 2 and `references\atx-concepts.md`.
 
 Choose the 2 work streams with the highest delegation potential AND the highest cognitive complexity. Justify your selection before proceeding.
 

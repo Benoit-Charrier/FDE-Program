@@ -6,7 +6,7 @@ See `scenario\scenario_context.md` for the full scenario, work streams, tooling,
 ---
 
 ## Your task
-Produce a Discovery document. Be concise. Output file: `deliverables\D0D_discovery.md`.
+Produce a Discovery document. Be concise. Output file: `deliverables\D0C_discovery.md`.
 
 This is Phase 1 of the ATX Assessment. The goal is to assess the process as it is **actually lived**, not as it is documented. Surface the cognitive workloads that consume the most skilled human time and carry the most operational friction.
 

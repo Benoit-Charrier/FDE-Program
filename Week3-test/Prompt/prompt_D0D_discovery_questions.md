@@ -1,12 +1,12 @@
-# Prompt: Discovery Questions for the Main Stakeholder (Generic Template)
+# Prompt: Deliverable D0E — Discovery Questions for the Main Stakeholder
 
-## Scenario (read this first)
-See `scenario\scenario_context.md` for the full scenario, work streams, tooling, and named-systems guidance. Do not invent numbers, systems, or constraints not present in the scenario. Every number you use must trace back to the scenario or be explicitly labelled as an assumption.
-
----
+## Inputs (read all before writing)
+- `scenario/scenario_context.md` — scenario facts, systems, stakeholders, named constraints. Do not invent numbers, systems, or constraints not present here.
+- `Deliverables/D0A_domain_research.md` — domain prior: cognitive hotspots, assumption log (A-1 through A-5), and hypothesis questions (HQ-1 through HQ-11). Use these as your starting point. Do not re-ask questions whose answers D0A already treats as domain-typical unless the scenario gives specific reason to probe further. Do surface questions that would confirm or disconfirm D0A's low-confidence assumptions.
+- `Deliverables/D0D_discovery.md` — discovery synthesis: what has already been learned or inferred from scenario preparation. Do not duplicate findings already established here. Focus questions on what remains open or contested after D0D.
 
 ## Your task
-Produce a set of discovery questions for the main stakeholder identified in scenario_context.md. Be concise. Output file: `deliverables\D6_discovery_questions.md`.
+Produce a set of discovery questions for the main stakeholder identified in scenario_context.md. Be concise. Output file: `Deliverables\D0E_discovery_questions.md`.
 
 These must be questions whose answers would **actually change your agent design** — not generic discovery questions, not questions whose answers you can already infer from the scenario, and not questions that demonstrate you haven't thought through the design yet.
 
@@ -59,7 +59,8 @@ Produce at least 15 questions grouped into the six categories below. For each qu
 
 > **Q[N]: [the question — concrete, specific, not leading]**
 > **Category:** [category letter and name]
-> **What I already infer from the scenario:** [what you can already deduce so you are not asking about it]
+> **What D0A/D0D already established:** [what the domain prior or discovery synthesis already tells you — so you are not duplicating it]
+> **What remains open:** [the specific gap this question fills that D0A/D0D did not resolve]
 > **If the answer is [X]:** [what changes in the design]
 > **If the answer is [Y]:** [what changes in the design]
 > **Why this matters more than a generic question:** [1 sentence tying it to a specific design decision]
@@ -130,6 +131,8 @@ Using the 60-minute call structure from `references\discovery-questioning-patter
 
 ## Acceptance criteria (all must pass)
 
+- [ ] Every low-confidence assumption in D0A's assumption log is addressed by at least one question — these are the highest-priority gaps to close
+- [ ] No question duplicates a finding already established in D0A or D0D — the "What D0A/D0D already established" field must be non-empty for every question
 - [ ] At least 15 questions total
 - [ ] Every question has a design fork — if X, then [specific design change]; if Y, then [specific design change]
 - [ ] No question whose answer is already determinable from the scenario (these are wasted questions — you already know the answer)
@@ -142,6 +145,8 @@ Using the 60-minute call structure from `references\discovery-questioning-patter
 
 ## Fail signals — do not produce output that contains these
 
+- Questions that duplicate hypothesis questions from D0A without adding any specificity from the scenario — D0A's HQ-1 through HQ-11 are a starting point, not a copy-paste source
+- D0A's low-confidence assumptions (A-2, A-5 in particular) left without a corresponding discovery question — these are the highest design-risk gaps
 - Questions that confirm scenario facts already given (volumes, team sizes, system names already stated in scenario_context.md) — you already know this
 - Questions with no design fork ("Can you tell us more about your process?")
 - Generic questions from a discovery template that do not reference the specific constraints, gaps, or governance rules in this scenario

@@ -6,11 +6,11 @@ See `scenario\scenario_context.md` for the full scenario, work streams, tooling,
 ---
 
 ## Your task
-Produce a Delegation Suitability Matrix. Be concise. Output file: `deliverables\D2_delegation_suitability_matrix.md`.
+Produce a Delegation Suitability Matrix. Be concise. Output file: `deliverables\D2B_delegation_suitability_matrix.md`.
 
 This is Phase 3 of the ATX Assessment. Score each major task cluster on delegation suitability dimensions, assign delegation archetypes with rationale, and determine the overall delegation architecture.
 
-Reference: `input\1-ATX-Assessment.md` Phase 3.
+Reference: `references\1-ATX-Assessment.md` Phase 3.
 
 ---
 
