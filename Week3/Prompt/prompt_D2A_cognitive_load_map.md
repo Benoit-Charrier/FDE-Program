@@ -46,7 +46,8 @@ Example format:
   - [2e. Process topology diagram](#2e-process-topology-diagram)
 - [3. Cognitive Load Map — Work Stream B](#3-cognitive-load-map--work-stream-b)
 - [4. Cross-work-stream observations](#4-cross-work-stream-observations)
-- [5. Assumption log](#5-assumption-log)
+- [5. Abbreviated mapping — remaining work streams](#5-abbreviated-mapping--remaining-work-streams)
+- [6. Assumption log](#6-assumption-log)
 
 ### 1. Work stream selection and rationale
 Name the 2 work streams you will decompose. In 3–5 sentences, explain why these two — not the others — offer the most insight for agent design. Your reasoning must reference delegation potential and cognitive complexity, not just "they seem important."
@@ -114,7 +115,39 @@ After completing both maps, write 3–5 observations that apply across both. Foc
 - Patterns in where exception handling consumes disproportionate time
 
 
-### 5. Assumption log
+### 5. Abbreviated mapping — remaining work streams
+
+For the two work streams not selected for deep mapping, produce a lighter-weight entry sufficient for D2B to score and D2C to pre-screen. No lived process narrative, no zone/breakpoint tables, no Mermaid diagrams. Mark this section explicitly as lower-confidence than the full maps in §2 and §3.
+
+Repeat the following block for each remaining work stream:
+
+#### Work Stream [name]
+
+**Why not selected for deep mapping:** [one sentence — low cognitive complexity, deterministic, or lower delegation potential relative to the two selected]
+
+**JtDs (2–3 per work stream):**
+
+| JtD ID | Cognitive contract — what outcome must be produced? | Primary cognitive type | Key decisions | Key systems/data |
+|--------|---------------------------------------------------|----------------------|---------------|-----------------|
+| WS-X-1 | | decision-making / execution / synthesis / communication / exception-handling | | |
+| WS-X-2 | | | | |
+
+**Dimension sketch — scored at the work-stream level for D2B input:**
+
+| Dimension | Score (H/M/L) | Rationale (one sentence) |
+|-----------|---------------|--------------------------|
+| Cognitive Load | | |
+| Input Structure | | |
+| Decision Determinism | | |
+| Exception Frequency | | |
+| Tool/API Availability | | |
+| Compliance/Risk Sensitivity | | |
+
+**Confidence note:** These scores are derived from the scenario narrative, not from a lived process walkthrough. Flag any dimension where scenario evidence is thin.
+
+---
+
+### 6. Assumption log
 Use this format for every non-trivial claim:
 
 > **Assumption [A1]:** [what you're taking as given]
@@ -131,14 +164,16 @@ Minimum 2 assumptions in this section. More is better.
 
 - [ ] Work stream selection is justified, not assumed
 - [ ] Lived process narrative present for each selected work stream — describes actual work (pauses, consultations, informal knowledge, workarounds), not SOP steps
-- [ ] At least 2 work streams fully decomposed
-- [ ] JtDs are cognitive contracts (outcome-focused), not task descriptions
+- [ ] At least 2 work streams fully decomposed (§2 and §3)
+- [ ] All remaining work streams covered in §5 with JtD table and dimension sketch
+- [ ] JtDs are cognitive contracts (outcome-focused), not task descriptions — in all sections
 - [ ] Micro-task tables have at least 5 rows per work stream with justified scores
 - [ ] Cognitive zones are distinguished by dominant cognitive type (probabilistic / deterministic / human sense-making)
 - [ ] At least 3 breakpoints identified per work stream, with agent opportunity/risk noted
-- [ ] Process topology diagram present for each work stream
+- [ ] Process topology diagram present for each fully mapped work stream
 - [ ] The primary governance/compliance constraint from the scenario reflected in at least one breakpoint
 - [ ] No scores without justification in footnotes
+- [ ] §5 entries flagged as lower-confidence where scenario evidence is thin
 
 ## Fail signals — do not produce output that contains these
 
@@ -148,3 +183,5 @@ Minimum 2 assumptions in this section. More is better.
 - Zone definitions that group all work together as "review" — zones should separate qualitatively different cognitive activity
 - Lived process narrative replaced by a bullet list of steps — it must describe the cognitive experience of the worker (pauses, judgment calls, informal consultations), not a process flow
 - Lived process narrative that is SOP-level ("the reviewer checks the input against the policy") — name what the worker actually sees, decides, and does when the standard path doesn't apply
+- §5 dimension scores asserted without rationale — even abbreviated scores must cite the scenario evidence behind them
+- Remaining work streams omitted from §5 on the grounds that they are "simple" — low complexity still requires a JtD table and dimension sketch for D2B to score them

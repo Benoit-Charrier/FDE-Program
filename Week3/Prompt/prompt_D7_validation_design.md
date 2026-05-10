@@ -5,7 +5,7 @@ See `scenario\scenario_context.md` for the full scenario, work streams, tooling,
 
 **Agent context:** Write the validation plan for the agents designed in D4 — the primary agentic targets identified in D3. The validation plan must be consistent with:
 - D4's autonomy matrix and escalation triggers
-- D2's delegation archetypes
+- D2B's delegation archetypes (JtD archetype assignments)
 - D5's build-loop response memo (known spec gaps, builder misreads, and legitimate unknowns that were surfaced)
 - D5B's build-loop output (`Deliverables/D5B_build_loop_analysis.md`) — what was actually built, what questions the builder raised, what could not be built
 - The hard stops and HITL triggers defined in CLAUDE.md
@@ -59,7 +59,7 @@ Produce exactly three scenarios. Each must use the following structure:
 | **Scenario ID** | S-1 / S-2 / S-3 |
 | **Name** | A specific descriptive name — not "happy path" or "failure mode" |
 | **Type** | Happy path / Edge case / Failure mode |
-| **Delegation boundary tested** | Name the specific archetype assignment from D2 being stressed — the claim that this task is fully agentic, or this trigger pushes to HITL, or this action is human-only |
+| **Delegation boundary tested** | Name the specific JtD archetype assignment from D2B being stressed — the claim that this JtD is fully agentic, or this trigger pushes to HITL, or this action is human-only |
 | **Input** | Describe the specific document, record, or state the agent receives. Include numeric values (confidence scores, threshold values, field states, document metadata). Do not describe inputs generically — name the field values, thresholds, and condition that makes this case non-standard |
 | **Expected agent behaviour** | Step-by-step: what does the agent do at each decision point? What does it write, enqueue, flag, or halt? |
 | **Pass criteria** | Observable outputs that confirm correct behaviour — name the field, the value, the queue entry, the log line |

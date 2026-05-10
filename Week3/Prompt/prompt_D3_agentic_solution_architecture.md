@@ -2,7 +2,7 @@
 
 ## Inputs (read all before writing)
 - `Deliverables/D2A_cognitive_load_map.md` — micro-task breakdown, cognitive hotspots, breakpoints
-- `Deliverables/D2B_delegation_suitability_matrix.md` — archetype assignments and dimension scores per task cluster
+- `Deliverables/D2B_delegation_suitability_matrix.md` — archetype assignments and dimension scores per JtD
 - `Deliverables/D2C_volume_value_analysis.md` — prioritisation by volume × value
 - `Deliverables/D2_engagement_intake_scope.md` - MVP scope
 - `scenario/scenario_context.md` — systems, constraints, stakeholders, governance requirements
@@ -31,14 +31,14 @@ Generate after the full document is written. Markdown anchor links, exact sectio
 
 ### 2. Workflow-to-agent mapping
 
-Table format. For each task cluster from D3B, state:
+Table format. For each JtD from D2B, state:
 
-| Task cluster (from D2B) | Delegation archetype (from D2B) | Agentic? | Agent / role assigned | Justification |
-|-------------------------|---------------------------------|----------|-----------------------|---------------|
+| JtD (from D2B) | Delegation archetype (from D2B) | Agentic? | Agent / role assigned | Justification |
+|----------------|---------------------------------|----------|-----------------------|---------------|
 
 - **Agentic?** — Yes / Partial (HITL) / No (stays human)
-- **Justification** — cite the specific D3B dimension scores or D3C priority that drove the decision; do not assert without evidence
-- Every "No" must name the reason from D3B (which dimension blocked delegation) — not just "too complex"
+- **Justification** — cite the specific D2B dimension scores or D2C priority that drove the decision; do not assert without evidence
+- Every "No" must name the reason from D2B (which dimension blocked delegation) — not just "too complex"
 
 Below the table: one paragraph identifying the **AI-native moment** — the specific point in the workflow where agent reasoning over context determines an outcome that a rule-based system could not reach. If no such moment exists, the architecture is not AI-native and must be redesigned before proceeding.
 
@@ -48,7 +48,7 @@ For each agent in the architecture, produce a compact purpose block:
 
 > **Agent [N]: [name]**
 > **Job to be done:** [the cognitive contract — what outcome does this agent produce?]
-> **Workflow segments covered:** [which task clusters from section 2]
+> **Workflow segments covered:** [which JtDs from section 2]
 > **Tools required:** [what the agent must be able to call or write to]
 > **Context required:** [what data the agent must see to do its job]
 > **Escalation triggers:** [the specific conditions that route to HITL or human takeover]
@@ -108,7 +108,7 @@ What was chosen. One sentence, direct.
 
 Bulleted list. For each workflow segment that stays human-led (from section 2):
 
-> **[Task cluster]** — stays human because: [the specific D3B dimension that blocked delegation, e.g., "exception frequency H, decision determinism L"]. Agent role: [what the agent does to support the human in this segment, if anything]. Future delegation path: [the condition under which this could become agentic — or "no clear path" if none exists].
+> **[JtD]** — stays human because: [the specific D2B dimension that blocked delegation, e.g., "exception frequency H, decision determinism L"]. Agent role: [what the agent does to support the human in this segment, if anything]. Future delegation path: [the condition under which this could become agentic — or "no clear path" if none exists].
 
 This section is not a failure list. A well-designed architecture has non-agentic residual. The question is whether it is the *right* residual.
 
@@ -126,9 +126,9 @@ Minimum 3 assumptions. Every ADR "Assumes" line must have a corresponding entry 
 
 ## Acceptance criteria (all must pass)
 
-- [ ] Every task cluster from D3B appears in section 2 — nothing is silently dropped
-- [ ] Every "agentic" assignment in section 2 traces to a D3B archetype or D3C priority score — not asserted
-- [ ] Every "no" in section 2 names the blocking D3B dimension — not just "too complex" or "too risky"
+- [ ] Every JtD from D2B appears in section 2 — nothing is silently dropped
+- [ ] Every "agentic" assignment in section 2 traces to a D2B archetype or D2C priority score — not asserted
+- [ ] Every "no" in section 2 names the blocking D2B dimension — not just "too complex" or "too risky"
 - [ ] AI-native moment is explicitly named in section 2 — if it cannot be named, the architecture is not AI-native
 - [ ] Each agent purpose block includes governance constraint — even if the answer is "none applies"
 - [ ] Autonomy matrix covers every action the architecture takes — no gaps
@@ -141,8 +141,8 @@ Minimum 3 assumptions. Every ADR "Assumes" line must have a corresponding entry 
 
 ## Fail signals — do not produce output that contains these
 
-- Task clusters from D2B missing from section 2 without explanation
-- "Fully agentic" assigned to a segment that D3B scored as exception-heavy or regulation-sensitive, without naming and justifying the override
+- JtDs from D2B missing from section 2 without explanation
+- "Fully agentic" assigned to a segment that D2B scored as exception-heavy or regulation-sensitive, without naming and justifying the override
 - ADR alternatives that exist only to be dismissed — real trade-offs must be visible
 - ADR consequences that only describe benefits — every decision forecloses something
 - An autonomy matrix with no "human takes over" row — every production architecture has hard stops

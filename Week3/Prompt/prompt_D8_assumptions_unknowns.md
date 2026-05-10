@@ -1,16 +1,16 @@
-# Prompt: Deliverable 9 — Assumptions & Unknowns
+# Prompt: Deliverable D8 — Assumptions & Unknowns
 
 ## Scenario (read this first)
 See `scenario\scenario_context.md` for the full scenario, work streams, tooling, and named-systems guidance. Do not invent numbers, systems, or constraints not present in the scenario. Every number you use must trace back to the scenario or be explicitly labelled as an assumption.
 
-**Agent context:** Produce this document for the agent designed in D4. Pull the assumptions already logged across D0–D5 — do not repeat analysis, consolidate it. The value of this deliverable is honesty, not comprehensiveness: a plausible-sounding guess that turns out to be wrong mid-build is more expensive than an explicit "I don't know."
+**Agent context:** Produce this document for the agents specified in D4. Pull the assumptions already logged across all prior deliverables — do not repeat analysis, consolidate it. The value of this deliverable is honesty, not comprehensiveness: a plausible-sounding guess that turns out to be wrong mid-build is more expensive than an explicit "I don't know."
 
 ---
 
 ## Your task
 Produce an Assumptions & Unknowns register. Be concise. Output file: `deliverables\D9_Assumptions_&_Unknowns.md`.
 
-Read back through D0C (problem statement), D0D (discovery), D1 (cognitive load map), D2 (delegation suitability matrix), D3 (volume/value analysis), D4 (agent purpose document), and D5 (system/data inventory). Every assumption or unknown flagged in those deliverables must appear here. Then add any that are still missing.
+Read back through every prior deliverable in sequence: D0C (discovery synthesis), D0D (discovery questions), D1 (problem framing & success metrics), D2A (cognitive load map), D2B (delegation suitability matrix), D2C (volume × value analysis), D2D (engagement intake & scope), D3 (agentic solution architecture), D4 (capability specifications), and D5 (build-loop response memo). Every assumption or unknown flagged in those deliverables must appear here. Then add any that are still missing.
 
 ---
 
@@ -37,11 +37,11 @@ Example format:
 
 ### 1. Consolidated assumption register
 
-Pull every assumption already logged in D0C–D5. Consolidate duplicates. Use this format for each entry:
+Pull every assumption already logged in D0C through D5. Consolidate duplicates. Use this format for each entry:
 
 | ID | Assumption | Source deliverable | Category | Why it matters | If wrong | Confidence |
 |----|-----------|-------------------|----------|----------------|----------|------------|
-| A-1 | | D0 / D1 / D2 / D3 / D4 / D5 | data / systems / organisation / problem definition | | | low / medium / high |
+| A-1 | | D0C / D0D / D1 / D2A / D2B / D2C / D2D / D3 / D4 / D5 | data / systems / organisation / problem definition | | | low / medium / high |
 
 **Categories:**
 - **data** — assumptions about what data exists, its quality, its format, or its accessibility

@@ -38,6 +38,8 @@ Example format:
 - [6. Suitability gate check](#6-suitability-gate-check)
 - [7. Primary agentic target — selection and justification](#7-primary-agentic-target--selection-and-justification)
 - [8. Preliminary TCO sense-check](#8-preliminary-tco-sense-check)
+- [9. Feasibility scoring](#9-feasibility-scoring)
+- [10. Implementation sequencing and wave assignment](#10-implementation-sequencing-and-wave-assignment)
 
 ### 1. Suitability pre-screening (ATX Step 1)
 
@@ -46,7 +48,7 @@ Before scoring volume or value, apply the four suitability criteria from `refere
 | Work stream | Solvable by rules/RPA only? | Tacit judgment with no structure? | Critical integrations unavailable? | Compliance risk with no viable HITL? | Pre-screen result |
 |-------------|---|---|---|---|---|
 
-For each work stream, state the pre-screen result (Pass / Conditional pass / Conditional — not yet delegatable / Fail — Human Only) and a one-sentence rationale. Note which work streams proceed to the volume × value analysis. Work streams that fail the gate may still appear on the grid for diagnostic completeness, but must be labelled as excluded from the agentic candidate set.
+For each work stream, derive the pre-screen result from its JtDs in D2B: a work stream's result is governed by its most restrictive JtD. If any JtD in the work stream was assigned Human Only in D2B, the work stream is Conditional or Fail unless a viable HITL boundary clearly isolates that JtD from the agentic scope. State the pre-screen result (Pass / Conditional pass / Conditional — not yet delegatable / Fail — Human Only) and a one-sentence rationale citing the specific JtD that governs the result. Note which work streams proceed to the volume × value analysis. Work streams that fail the gate may still appear on the grid for diagnostic completeness, but must be labelled as excluded from the agentic candidate set. Resolve any discrepancy between D2B archetype assignments and this pre-screen result before proceeding to §2.
 
 ### 2. Volume derivation
 Before scoring, derive the per-work-stream volume from the scenario numbers. Show your arithmetic.
@@ -84,17 +86,37 @@ For each work stream, score both dimensions using the exact scales from `referen
 
 **Agentic Value Score calculation — do this for every work stream:**
 1. Assign a Volume Score (1–5) using the Execution Frequency scale above. Cite the weekly case volume derived in §2.
-2. Assign a Non-Determinism Score (1–5) using the Non-Deterministic Decision Effort scale above. Cite the specific decision types present in that work stream.
+2. Assign a Non-Determinism Score (1–5) by translating the D2A micro-task dimension scores for that work stream using the derivation rule below. Do not re-score from the scenario — the D2A evidence base is the authoritative input.
 3. Multiply: Agentic Value Score = Volume Score × Non-Determinism Score.
 4. Enter the product in the table column "Agentic Value Score (product)".
 5. Interpret the score against the thresholds below and record the candidate status.
+
+**Non-determinism derivation rule — translating D2A scores to the 1–5 scale:**
+
+The non-determinism score is a read-out of four D2A dimensions. For each work stream, look at the pattern of scores across its micro-task inventory (§2d/§3d for fully mapped work streams; §5 dimension sketch for abbreviated ones):
+
+| D2A dimension | How it contributes |
+|---|---|
+| Decision Determinism | Inverse: L = high non-determinism; H = low |
+| Exception Frequency | Direct: H = high non-determinism; L = low |
+| Cognitive Load | Direct: H = high non-determinism; L = low |
+| Input Structure | Inverse: L (unstructured) = high non-determinism; H (structured) = low |
+
+Apply this translation:
+- **Score 5**: Decision Determinism = L and Exception Frequency = H dominate the micro-task inventory; synthesis across multiple data sources required (Cognitive Load = H)
+- **Score 4**: Decision Determinism = M/L with significant exceptions; contextual adaptation required but patterns exist
+- **Score 3**: Decision Determinism = M; core path rule-based but meaningful exceptions present; mixed Cognitive Load
+- **Score 2**: Decision Determinism = H; small reasoning component, mostly structured rules with edge cases (Exception Frequency = L/M)
+- **Score 1**: Decision Determinism = H throughout; Input Structure = H; no meaningful exceptions — pure rules
+
+In the justification note below the table, cite the specific D2A dimension pattern that produced the score (e.g. "Decision Determinism = L on 4 of 6 micro-tasks, Exception Frequency = H — translates to score 4"). For the two abbreviated work streams in D2A §5, cite the dimension sketch scores. If D2A scores are ambiguous or span a wide range, explain which dimensions were given more weight and why.
 
 **Agentic candidate thresholds:**
 - Score ≥ 15: Strong agentic candidate
 - Score 8–14: Consider agentic, validate with TCO
 - Score < 8: Use rule-based automation or do not automate
 
-Justify each score in a note below the table. Do not assert — cite the specific nature of the work. Scores must differentiate across all 4 work streams (minimum 2-point range on Non-Determinism).
+Scores must differentiate across all 4 work streams (minimum 2-point range on Non-Determinism). If two work streams produce the same translation, re-examine D2A — identical non-determinism scores for different work streams is a signal that the D2A dimension scoring was not sufficiently granular.
 
 ### 4. Volume × Value grid (Mermaid quadrantChart)
 
@@ -143,15 +165,15 @@ For each work stream, one paragraph:
 The scenario's primary governance constraint must appear in the risk assessment of at least one work stream.
 
 ### 6. Suitability gate check
-Run the suitability gate from `references\atx-scoring.md` on the top 2 agentic candidates (by Agentic Value Score):
+Run the suitability gate from `references\atx-scoring.md` on the top 2 agentic candidates (by Agentic Value Score). Pull H/M/L ratings from D2B — use the most restrictive score across that work stream's JtDs for each dimension. Do not re-score independently.
 
 | Factor | Work Stream A | Work Stream B |
 |--------|--------------|--------------|
-| Input Structure | H/M/L | H/M/L |
-| Decision Determinism | H/M/L | H/M/L |
-| Tool Coverage | H/M/L | H/M/L |
-| Exception Rate | H/M/L | H/M/L |
-| Compliance Risk | H/M/L | H/M/L |
+| Input Structure | H/M/L (from D2B) | H/M/L (from D2B) |
+| Decision Determinism | H/M/L (from D2B) | H/M/L (from D2B) |
+| Tool Coverage | H/M/L (from D2B) | H/M/L (from D2B) |
+| Exception Rate | H/M/L (from D2B) | H/M/L (from D2B) |
+| Compliance Risk | H/M/L (from D2B) | H/M/L (from D2B) |
 | Gate Result | Pass / Conditional / Fail | Pass / Conditional / Fail |
 
 ### 7. Primary agentic target — selection and justification
@@ -177,7 +199,7 @@ Agent cost estimate:
   Estimated tokens per case: [estimate with rationale]
   Model: [name your assumption]
   Estimated token cost per case: [calculated]
-  Estimated HITL rate: [% — tie to scenario's stated escalation or routing rates]
+  Estimated HITL rate: [% — derive from D2A breakpoints for this work stream: each breakpoint marked as human-anchored is a HITL event; use the task time from D2A's micro-task inventory to estimate what fraction of case time remains human. If the scenario states an explicit escalation rate, use that as a cross-check.]
   HITL cost per case: [calculated]
   Estimated agent cost per case: [sum]
   Annual agent cost: [calculated]
@@ -189,6 +211,53 @@ Payback period: [calculated]
 
 All figures not in the scenario must be labelled as assumptions. The goal is directional — does the economics likely close?
 
+### 9. Feasibility scoring
+
+Score each candidate with an Agentic Value Score ≥ 8 on the six feasibility factors from `references\1-ATX-Assessment.md` Phase 4. Score 1–5 per factor (1 = low feasibility / high barrier; 5 = high feasibility / no barrier). Show the total feasibility score and a one-sentence rationale per factor.
+
+| Factor | Description | [Work Stream A] | [Work Stream B] |
+|--------|-------------|-----------------|-----------------|
+| Data availability | Is required data accessible and clean? | /5 | /5 |
+| System integration feasibility | APIs, connectors, or reasonable build effort? | /5 | /5 |
+| Compliance risk | Red flags for regulation, audit, or irreversibility? | /5 | /5 |
+| Context stability | Does the domain change frequently? | /5 | /5 |
+| Organisational readiness | Change management, HITL tolerance, leadership buy-in? | /5 | /5 |
+| TCO viability | Does the preliminary economics close (from §8)? | /5 | /5 |
+| **Total** | | **/30** | **/30** |
+
+Below the table, note which factors represent hard blockers (score 1–2) versus manageable risks (score 3) versus clear strengths (score 4–5). A hard blocker on Data availability, System integration feasibility, or Compliance risk must be named in §10 as a prerequisite dependency.
+
+### 10. Implementation sequencing and wave assignment
+
+Using the sequencing criteria and wave structure from `references\atx-scoring.md` Step 4, assign each candidate to a wave and state the sequencing logic.
+
+**Sequencing criteria (apply to rank candidates within and across waves):**
+
+| Criterion | Weight | [Work Stream A] | [Work Stream B] |
+|-----------|--------|-----------------|-----------------|
+| Self-financing ROI | High | | |
+| Integration reusability | High | | |
+| Low compliance risk | Medium | | |
+| Data readiness | Medium | | |
+| Organisational readiness | Medium | | |
+| Strategic visibility | Low | | |
+
+**Wave assignment:**
+
+For each candidate, state:
+
+```
+Candidate: [work stream name]
+Wave: [1 / 2 / 3]
+Wave rationale: [one sentence — why this wave, not an earlier or later one]
+Key integrations to build: [list — name the system connections this agent requires]
+Shared assets created: [list — integrations or platform components that future agents can reuse]
+Dependencies / blockers: [prerequisites that must be resolved before this wave can begin]
+Recommended next step: [proceed to Agent Mapping / validate data / governance review]
+```
+
+**Compounding logic:** After completing all wave assignments, write 2–3 sentences explaining which integrations built in Wave 1 reduce the marginal cost of Wave 2 and beyond. This is the compounding thesis applied to this specific scenario — name the shared assets explicitly.
+
 ---
 
 ## Acceptance criteria (all must pass)
@@ -196,13 +265,17 @@ All figures not in the scenario must be labelled as assumptions. The goal is dir
 - [ ] Suitability pre-screening present as §1 with a table covering all 4 work streams against the four ATX Step 1 criteria; pre-screen result stated for each
 - [ ] All 4 work streams appear on the grid
 - [ ] Volume derivation shows arithmetic traced to scenario numbers
+- [ ] Non-determinism scores derived from D2A dimension patterns using the translation rule in §3 — not re-scored from the scenario
 - [ ] Scores justified — not asserted
-- [ ] Suitability gate run on the top 2 candidates
+- [ ] Suitability gate run on the top 2 candidates using D2B scores
 - [ ] Primary target named and justified with scenario-grounded reasoning
 - [ ] Risk analysis present for every work stream (not just the primary target)
 - [ ] The scenario's primary governance constraint reflected in risk analysis
-- [ ] TCO sense-check present with all assumptions labelled
+- [ ] TCO sense-check present with all assumptions labelled and HITL rate derived from D2A breakpoints
 - [ ] Non-determinism scores differentiate the work streams (at least a 2-point range across all 4)
+- [ ] Feasibility scoring present for all candidates with Agentic Value Score ≥ 8; hard blockers explicitly named
+- [ ] Wave assignment present for each candidate with sequencing rationale, integrations to build, and shared assets created
+- [ ] Compounding logic stated — names specific shared assets and the future agents they benefit
 
 ## Fail signals — do not produce output that contains these
 
@@ -211,3 +284,6 @@ All figures not in the scenario must be labelled as assumptions. The goal is dir
 - TCO estimate with no arithmetic shown
 - Risk analysis that says "agents can make mistakes" without naming the specific mistake type and consequence in this scenario
 - Volume numbers with no trace to the scenario's stated volume figures
+- Non-determinism scores that contradict D2A dimension patterns without explanation
+- Feasibility scoring omitted or applied only to the primary target — all candidates scoring ≥ 8 must be scored
+- Wave assignment with no compounding logic — stating waves without naming the shared assets that make sequencing economically rational is not implementation sequencing, it is a list

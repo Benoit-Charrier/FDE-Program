@@ -37,25 +37,25 @@ Example format:
 - [5. Delegation boundary defence](#5-delegation-boundary-defence)
 - [6. Assumption log](#6-assumption-log)
 
-### 1. Task cluster definition
-Before scoring, define the task clusters you will score. These may be the JtDs from D1 or aggregated micro-task groups. List each cluster with a one-sentence description and which work stream it belongs to. Aim for 6–10 clusters total across all four work streams.
+### 1. JtD inventory
+Before scoring, list the JtDs you will score. Use the JtDs from D2A directly: §2b and §3b for the two fully mapped work streams; §5 for the remaining work streams. Do not derive new JtDs here — if a work stream has no JtDs in D2A, return to D2A and complete §5 before proceeding. List each JtD with a one-sentence description of its cognitive contract and which work stream it belongs to.
 
 ### 2. Delegation Suitability Matrix
 
-One table covering all task clusters:
+One table covering all JtDs:
 
-| Task Cluster | Work Stream | Input Structure (H/M/L) | Decision Determinism (H/M/L) | Tool Coverage (H/M/L) | Context Complexity (H/M/L) | Exception Rate (H/M/L) | Latency Constraint (H/M/L) | Risk/Compliance (H/M/L) | Suitability Score | Delegation Archetype |
-|-------------|-------------|------------------------|------------------------------|----------------------|---------------------------|------------------------|---------------------------|------------------------|-------------------|----------------------|
+| JtD | Work Stream | Input Structure (H/M/L) | Decision Determinism (H/M/L) | Tool Coverage (H/M/L) | Context Complexity (H/M/L) | Exception Rate (H/M/L) | Latency Constraint (H/M/L) | Risk/Compliance (H/M/L) | Suitability Score | Delegation Archetype |
+|-----|-------------|------------------------|------------------------------|----------------------|---------------------------|------------------------|---------------------------|------------------------|-------------------|----------------------|
 
 **Suitability score**: count the number of dimensions at High suitability (for input structure, decision determinism, tool coverage — higher = better; for context complexity, exception rate, latency constraint, risk/compliance — lower = better). Express as a score out of 7.
 
-**Scoring notes:** Below the table, add a brief justification (2–4 sentences) for each cluster's archetype assignment. Do not assert; justify.
+**Scoring notes:** Below the table, add a brief justification (2–4 sentences) for each JtD's archetype assignment. Do not assert; justify.
 
 ### 3. Delegation archetype assignment with rationale
 
-For each task cluster, state its archetype and defend it. Use this format:
+For each JtD, state its archetype and defend it. Use this format:
 
-> **Cluster [C-N] — [name]**
+> **JtD [J-N] — [name]**
 > **Archetype:** [Human Only / Human-led + Automation Support / Human-led + Agent Support / Agent-led + Human Oversight / Fully Agentic]
 > **Rationale:** [cite the specific dimensions that drove this assignment — at least 2 dimensions with their scores]
 > **Governance rule impact (if applicable):** [does the scenario's primary hard constraint change the archetype? If so, how?]
@@ -65,10 +65,10 @@ For each task cluster, state its archetype and defend it. Use this format:
 
 After completing all cluster assignments, step back and describe the overall delegation architecture as a system:
 
-- Which clusters form the **autonomous backbone** (fully agentic or agent-led with oversight)?
-- Which clusters are the **human-anchored gates** that the agent cannot cross without approval?
-- Which clusters are **not worth automating** and why?
-- Where is the scenario's primary hard constraint enforced in the architecture? Name the exact cluster(s) and archetype(s) that implement it.
+- Which JtDs form the **autonomous backbone** (fully agentic or agent-led with oversight)?
+- Which JtDs are the **human-anchored gates** that the agent cannot cross without approval?
+- Which JtDs are **not worth automating** and why?
+- Where is the scenario's primary hard constraint enforced in the architecture? Name the exact JtD(s) and archetype(s) that implement it.
 
 Write this as a coherent 3–5 paragraph narrative, not as a list.
 
@@ -76,7 +76,7 @@ Write this as a coherent 3–5 paragraph narrative, not as a list.
 
 Pick the 2 most debatable archetype assignments (where a reasonable person might argue for a different archetype). For each:
 
-> **Contested assignment:** [cluster name] — assigned [archetype]
+> **Contested assignment:** [JtD name] — assigned [archetype]
 > **The counter-argument:** [why someone might assign a more or less autonomous archetype]
 > **Why the assigned archetype is correct for this scenario:** [specific reasoning tied to scenario facts]
 > **What would change the assignment:** [conditions under which you would revise it]
@@ -96,7 +96,7 @@ Minimum 2 assumptions in this section. More is better.
 ## Acceptance criteria (all must pass)
 
 - [ ] All work streams from scenario_context.md represented in the matrix
-- [ ] At least 6 task clusters scored
+- [ ] At least 2 JtDs scored per work stream (minimum 8 JtDs total)
 - [ ] Every archetype assignment has a written rationale citing at least 2 dimensions
 - [ ] The scenario's primary hard constraint is explicitly reflected in the architecture
 - [ ] Anti-pattern check performed for every cluster (no agent assigned to purely deterministic work)
@@ -106,8 +106,9 @@ Minimum 2 assumptions in this section. More is better.
 
 ## Fail signals — do not produce output that contains these
 
-- Assigning "agent-led" archetype to work that requires the judgment expertise the scenario marks as Human Only, without explaining how the governance constraint is satisfied
-- All clusters assigned the same archetype (that means you haven't differentiated)
+- Assigning "agent-led" archetype to a JtD that requires the judgment expertise the scenario marks as Human Only, without explaining how the governance constraint is satisfied
+- All JtDs assigned the same archetype (that means you haven't differentiated)
 - Anti-pattern check missing — if you can't confirm "this is not solvable by a script," you haven't done the analysis
 - Rationale that says "this is complex, therefore human-only" without naming which specific suitability dimensions are Low
 - Architecture summary that is just a list of archetypes restated, not a description of how they work together
+- JtDs for the two work streams not in D2A invented without grounding in the scenario — derive them from the scenario's stated volume, decision types, and system touchpoints
