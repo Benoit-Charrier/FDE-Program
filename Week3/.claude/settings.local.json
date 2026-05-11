@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:medflexstaffing.com)",
+      "WebFetch(domain:mediflextalent.com)",
+      "WebFetch(domain:medflex.de)"
+    ]
+  }
+}

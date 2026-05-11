@@ -17,6 +17,14 @@ This is Phase 2 of the ATX Assessment. Following the Phase 2 step-by-step from `
 
 Reference: `references\1-ATX-Assessment.md` Phase 2 and `references\atx-concepts.md`.
 
+The reference-defined hierarchy (atx-concepts.md + 1-atx-assessment.md):
+Work stream / candidate process   ← Phase 1 output ("Points of Pain inventory")
+  └─ JtD (cognitive contract)     ← Phase 2 decomposition unit; "atomic units of delegation"
+       └─ Zone (cluster of micro-tasks sharing a cognitive type, within a JtD)
+            └─ Micro-task         ← Phase 2 scoring unit (8 dimensions)
+
+Zones exist inside a JtD, not at the work-stream level. The reference is explicit: "Within a single JtD, cognitive effort is not uniform — Cognitive Zones are clusters of similar cognitive activity."
+
 Choose the 2 work streams with the highest delegation potential AND the highest cognitive complexity. Justify your selection before proceeding.
 
 ---
@@ -68,7 +76,7 @@ Cover:
 Flag explicitly where you are reconstructing from the scenario versus making a labelled assumption. This narrative is the foundation for the JtD decomposition — do not skip it or replace it with a bullet list of steps.
 
 #### 2b. Jobs to be Done decomposition (step 2)
-List 2–4 JtDs for this work stream in the table below. JtDs are cognitive contracts — outcome-focused, not task descriptions.
+List 5 JtDs for this work stream in the table below. JtDs are cognitive contracts — outcome-focused, not task descriptions.
 
 | JtD ID | Cognitive contract - what outcome must be produced?] | Trigger - what starts this job? | Actor - who currently does this?| Key decisions - what must be decided to complete it?| Key systems/data - what information is required?| Primary cognitive type | Expected output - what is produced?|
 |--------|----------------------------------------|---------|-------|---------------|-----------------|----------------------|-----------------|

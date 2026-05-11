@@ -3,7 +3,7 @@
 ## Inputs (read all before writing)
 - `Deliverables/D2A_cognitive_load_map.md` — micro-task breakdown, cognitive hotspots, breakpoints
 - `Deliverables/D2B_delegation_suitability_matrix.md` — archetype assignments and dimension scores per JtD
-- `Deliverables/D2C_volume_value_analysis.md` — prioritisation by volume × value
+- `Deliverables/D2C_volume_value_analysis.md` — prioritisation by volume × value, wave
 - `scenario/scenario_context.md` — systems, constraints, stakeholders, governance requirements
 
 See `scenario\scenario_context.md` for the full scenario, stakeholders, systems, and constraints. Do not invent numbers, people, or constraints not present in the scenario. Every claim must trace back to the scenario or be explicitly labelled as an assumption.
