@@ -3,9 +3,11 @@
 ## Scenario (read this first)
 See `scenario\scenario_context.md` for the full scenario, work streams, tooling, and named-systems guidance. Do not invent numbers, systems, or constraints not present in the scenario. Every number you use must trace back to the scenario or be explicitly labelled as an assumption.
 
+Read deliverables\D0C_discovery.md
+
 ## Your task
 Produce a problem framing and success metrics document. Output file: `Deliverables\D1_problem_framing.md`.
-
+"10x without 10x-ing" decoded into architectural requirements (e.g., "agent must hold N concurrent coordinator decisions/min"); measurable success metrics for MedFlex, hospitals, nurses.
 ---
 
 ## Required structure

@@ -38,7 +38,7 @@ Example format:
 - [6. Assumption log](#6-assumption-log)
 
 ### 1. JtD inventory
-Before scoring, list the JtDs you will score. Use the JtDs from D2A directly: §2b and §3b for the two fully mapped work streams; §5 for the remaining work streams. Do not derive new JtDs here — if a work stream has no JtDs in D2A, return to D2A and complete §5 before proceeding. List each JtD with a one-sentence description of its cognitive contract and which work stream it belongs to.
+Before scoring, list the JtDs you will score. Use the JtDs from D2A directly: §2b and §3b for the two fully mapped work streams; Do not derive new JtDs here — if a work stream has no JtDs in D2A, return to D2A and complete §5 before proceeding. List each JtD with a one-sentence description of its cognitive contract and which work stream it belongs to.
 
 ### 2. Delegation Suitability Matrix
 

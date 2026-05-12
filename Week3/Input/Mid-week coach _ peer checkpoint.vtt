@@ -1,0 +1,5173 @@
+WEBVTT
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/190-0
+00:00:04.487 --> 00:00:05.127
+<v Krzysztof Wilniewczyc>Editors.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/225-0
+00:00:04.927 --> 00:00:08.248
+<v Aliaksandr Batashou>So, yet another hour of questions,
+so yeah,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/225-1
+00:00:08.248 --> 00:00:13.985
+<v Aliaksandr Batashou>please apologize if I will be like
+sometimes a little bit slow in answering</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/225-2
+00:00:13.985 --> 00:00:18.288
+<v Aliaksandr Batashou>to your question,
+but it's actually good that I'm coming</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/225-3
+00:00:18.288 --> 00:00:22.062
+<v Aliaksandr Batashou>from from the session from with your
+competitors,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/225-4
+00:00:22.062 --> 00:00:24.327
+<v Aliaksandr Batashou>because I'll probably will be.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/231-0
+00:00:24.487 --> 00:00:29.447
+<v Aliaksandr Batashou>A little bit narrowing down the park,
+because...</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/270-0
+00:00:30.567 --> 00:00:38.236
+<v Aliaksandr Batashou>The feedback I had from the previous call
+is, is it's too genetic, right?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/270-1
+00:00:38.236 --> 00:00:46.527
+<v Aliaksandr Batashou>And the little detail, blah blah blah,
+so I'll try to be as much as specific as</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/270-2
+00:00:46.527 --> 00:00:51.087
+<v Aliaksandr Batashou>possible,
+but the same feedback we we gave.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/273-0
+00:00:51.207 --> 00:00:53.607
+<v Aliaksandr Batashou>to the guys from the previous session
+that.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/285-0
+00:00:55.207 --> 00:00:59.865
+<v Aliaksandr Batashou>This is this is pretty much typical when
+you you talk to C-level people,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/285-1
+00:00:59.865 --> 00:01:00.887
+<v Aliaksandr Batashou>they don't know.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/313-0
+00:01:02.167 --> 00:01:07.432
+<v Aliaksandr Batashou>many technical details.
+And because on the call is just CEO,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/313-1
+00:01:07.432 --> 00:01:14.423
+<v Aliaksandr Batashou>there are no CTO or operational person,
+the CEO not always can answer to all the</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/313-2
+00:01:14.423 --> 00:01:15.287
+<v Aliaksandr Batashou>questions.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/312-0
+00:01:15.607 --> 00:01:15.847
+<v Benoit Charrier>Yep.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/329-0
+00:01:18.327 --> 00:01:23.520
+<v Aliaksandr Batashou>Yeah, so, yeah, but at the same time,
+I understand that you need to somehow</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/319-0
+00:01:18.487 --> 00:01:19.527
+<v Benoit Charrier>Exactly, yeah.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/329-1
+00:01:23.520 --> 00:01:24.887
+<v Aliaksandr Batashou>shape your solution.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/345-0
+00:01:25.727 --> 00:01:30.047
+<v Aliaksandr Batashou>Alright, so you need some details,
+and I will be trying to do it, like,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/345-1
+00:01:30.047 --> 00:01:33.047
+<v Aliaksandr Batashou>will try to do my bus to get those those
+details.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/401-0
+00:01:34.407 --> 00:01:38.301
+<v Benoit Charrier>Okay, and as information,
+we have a lot of people on the call</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/347-0
+00:01:34.967 --> 00:01:35.447
+<v Aliaksandr Batashou>Um...</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/401-1
+00:01:38.301 --> 00:01:41.505
+<v Benoit Charrier>because I guess Anna and Tital were not
+available.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/401-2
+00:01:41.505 --> 00:01:44.646
+<v Benoit Charrier>So I forwarded the invitation to the
+other squad.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/401-3
+00:01:44.646 --> 00:01:49.609
+<v Benoit Charrier>So you can see we have got 17 people on
+the call. So it's not just your squad,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/381-0
+00:01:48.247 --> 00:01:48.967
+<v Aliaksandr Batashou>Yeah.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/401-4
+00:01:49.609 --> 00:01:54.007
+<v Benoit Charrier>right? So that's going to be, you know,
+I thought, okay, they ask. So</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/391-0
+00:01:51.247 --> 00:01:52.087
+<v Aliaksandr Batashou>Thank you for that.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/395-0
+00:01:54.967 --> 00:01:55.247
+<v Aliaksandr Batashou>Okay.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/427-0
+00:01:54.967 --> 00:01:59.620
+<v Benoit Charrier>We try to coordinate before this call to
+see if we can have some structure and</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/427-1
+00:01:59.620 --> 00:02:03.508
+<v Benoit Charrier>order, but we'll see how we, you know,
+if we're able to run this.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/427-2
+00:02:03.508 --> 00:02:06.807
+<v Benoit Charrier>Not everybody's going to ask questions,
+I guess, but...</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/455-0
+00:02:08.247 --> 00:02:12.251
+<v Aliaksandr Batashou>Okay, so the way how it would work,
+you raise your hand,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/455-1
+00:02:12.251 --> 00:02:17.240
+<v Aliaksandr Batashou>and then based on the sequence,
+you will be like unmuting yourself and</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/455-2
+00:02:17.240 --> 00:02:21.104
+<v Aliaksandr Batashou>asking the question. Okay,
+so let's move on. I'm Hugo.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/455-3
+00:02:21.104 --> 00:02:24.407
+<v Aliaksandr Batashou>Let's get started. And by the way,
+I am not...</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/480-0
+00:02:26.887 --> 00:02:30.617
+<v Aliaksandr Batashou>Like, very familiar,
+familiar with the business itself and</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/480-1
+00:02:30.617 --> 00:02:34.285
+<v Aliaksandr Batashou>business demand, right? So,
+some question will be just my</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/480-2
+00:02:34.285 --> 00:02:37.447
+<v Aliaksandr Batashou>interpretation, it's nothing with reality,
+right?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/488-0
+00:02:38.327 --> 00:02:41.081
+<v Benoit Charrier>But you have more information on the
+scenario, no?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/488-1
+00:02:41.081 --> 00:02:42.647
+<v Benoit Charrier>Or you just making things up?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/497-0
+00:02:42.007 --> 00:02:47.687
+<v Aliaksandr Batashou>Well, because there were questions like,
+is it legal or not legal? I don't know.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/499-0
+00:02:48.007 --> 00:02:48.807
+<v Benoit Charrier>Yeah, okay.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/553-0
+00:02:51.447 --> 00:02:55.371
+<v Benoit Charrier>All right, so what I tried,
+what I asked the team is to try to still</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/509-0
+00:02:52.407 --> 00:02:53.687
+<v Aliaksandr Batashou>Okay, okay.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/553-1
+00:02:55.371 --> 00:02:58.784
+<v Benoit Charrier>follow a structure,
+like following the guidelines we had on</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/553-2
+00:02:58.784 --> 00:03:02.651
+<v Benoit Charrier>the questioning, you know,
+from from broad funnel to narrow funnel,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/553-3
+00:03:02.651 --> 00:03:05.780
+<v Benoit Charrier>so we can have a,
+we don't go jump all over the place,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/553-4
+00:03:05.780 --> 00:03:08.567
+<v Benoit Charrier>but we'll see if we if we manage to do
+this. So,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/570-0
+00:03:08.007 --> 00:03:12.019
+<v Alexandra Rendon>And, and I think,
+and I think we can go straight to the</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/546-0
+00:03:08.247 --> 00:03:08.727
+<v Aliaksandr Batashou>Okay.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/570-1
+00:03:12.019 --> 00:03:16.247
+<v Alexandra Rendon>questions, right?
+Rather than do a context, yeah, in time.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/559-0
+00:03:13.287 --> 00:03:14.567
+<v Aliaksandr Batashou>Uh, uh.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/586-0
+00:03:15.927 --> 00:03:18.385
+<v Benoit Charrier>Yeah, see,
+Krzysztof was going to do the context</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/568-0
+00:03:16.087 --> 00:03:17.367
+<v Aliaksandr Batashou>Yeah, we kind of.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/586-1
+00:03:18.385 --> 00:03:21.447
+<v Benoit Charrier>setting, but um, Krzysztof,
+if you want to add a few things.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/582-0
+00:03:19.367 --> 00:03:20.727
+<v Alexandra Rendon>Yeah, probably.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/579-0
+00:03:19.847 --> 00:03:20.247
+<v Aliaksandr Batashou>I...</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/596-0
+00:03:19.927 --> 00:03:24.247
+<v Krzysztof Wilniewczyc>Okay, we can skip it. It's fine.
+We already did it. Yeah.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/597-0
+00:03:22.247 --> 00:03:25.127
+<v Alexandra Rendon>Yeah, I think so.
+Let's go to the questions.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/592-0
+00:03:22.647 --> 00:03:23.127
+<v Aliaksandr Batashou>Yeah, they.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/642-0
+00:03:25.527 --> 00:03:30.155
+<v Aliaksandr Batashou>The concept is pretty much simple, right?
+So I'm CEO, I want to grow my business.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/604-0
+00:03:28.087 --> 00:03:28.567
+<v Alexandra Rendon>Mhm.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/642-1
+00:03:30.155 --> 00:03:33.823
+<v Aliaksandr Batashou>In order to grow my business,
+I want to optimize operation team.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/642-2
+00:03:33.823 --> 00:03:38.169
+<v Aliaksandr Batashou>I want them to be as productive as most
+of them because I don't want to grow</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/642-3
+00:03:38.169 --> 00:03:40.709
+<v Aliaksandr Batashou>operation team.
+I want to grow the business,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/642-4
+00:03:40.709 --> 00:03:42.967
+<v Aliaksandr Batashou>but I don't want to grow operation team.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/644-0
+00:03:45.847 --> 00:03:46.567
+<v Aliaksandr Batashou>Go ahead.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/645-0
+00:03:46.327 --> 00:03:46.727
+<v Benoit Charrier>Alright.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/689-0
+00:03:48.647 --> 00:03:53.156
+<v Tamas Kiss>Okay, so if I may start,
+I'm not sure if I'm following the</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/689-1
+00:03:53.156 --> 00:03:56.672
+<v Tamas Kiss>sequence mentioned by Benoit,
+but let's hope.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/689-2
+00:03:56.672 --> 00:04:03.016
+<v Tamas Kiss>So my main question is that there was two
+AI projects mentioned which were failed.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/689-3
+00:04:03.016 --> 00:04:09.207
+<v Tamas Kiss>What was the reason they were failed?
+I mean, specifically, what made them fail?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/695-0
+00:04:09.607 --> 00:04:14.487
+<v Tamas Kiss>accuracy, trust, workflow fit, UX, money.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/696-0
+00:04:17.287 --> 00:04:17.607
+<v Aliaksandr Batashou>Ihar.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/703-0
+00:04:19.527 --> 00:04:21.607
+<v Aliaksandr Batashou>You mean the chatbot?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/709-0
+00:04:22.007 --> 00:04:23.658
+<v Tamas Kiss>Yeah,
+there was a chatbot and the</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/709-1
+00:04:23.658 --> 00:04:24.727
+<v Tamas Kiss>recommendation engine.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/757-0
+00:04:25.767 --> 00:04:30.581
+<v Aliaksandr Batashou>The chat was deployed to actually to
+hospitals, and because we are,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/757-1
+00:04:30.581 --> 00:04:35.112
+<v Aliaksandr Batashou>because we are like operating on the
+competitive market, right,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/757-2
+00:04:35.112 --> 00:04:39.148
+<v Aliaksandr Batashou>for the hospitals,
+it was not the right solution, right?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/757-3
+00:04:39.148 --> 00:04:44.812
+<v Aliaksandr Batashou>Because chatting with us with our chat
+bot and then chatting with chat bot from</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/757-4
+00:04:44.812 --> 00:04:46.087
+<v Aliaksandr Batashou>other other other.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/760-0
+00:04:46.327 --> 00:04:48.487
+<v Aliaksandr Batashou>competitor was not the option.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/789-0
+00:04:52.007 --> 00:04:57.771
+<v Aliaksandr Batashou>And then the second one was they did my
+recommendation.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/769-0
+00:04:54.967 --> 00:04:56.087
+<v Tamas Kiss>Recommendation engine.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/789-1
+00:04:57.771 --> 00:05:02.506
+<v Aliaksandr Batashou>I think that it was making too many
+mistakes.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/789-2
+00:05:02.506 --> 00:05:06.727
+<v Aliaksandr Batashou>But when I say to make too many mistakes,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/799-0
+00:05:09.927 --> 00:05:12.980
+<v Aliaksandr Batashou>We haven't done any like precise
+investigation,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/799-1
+00:05:12.980 --> 00:05:15.207
+<v Aliaksandr Batashou>but it might be a combination of...</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/801-0
+00:05:18.407 --> 00:05:19.207
+<v Aliaksandr Batashou>Technical.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/814-0
+00:05:20.087 --> 00:05:24.424
+<v Aliaksandr Batashou>Gaps in in the solution,
+and 2nd not enough training which we put</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/814-1
+00:05:24.424 --> 00:05:25.607
+<v Aliaksandr Batashou>towards the stuff.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/818-0
+00:05:27.327 --> 00:05:28.807
+<v Tamas Kiss>OK, X.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/824-0
+00:05:29.767 --> 00:05:31.287
+<v Tamas Kiss>I give the chance for others.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/849-0
+00:05:30.167 --> 00:05:34.409
+<v Benoit Charrier>I have one question then.
+So when a shift goes unfulfilled, is it,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/849-1
+00:05:34.409 --> 00:05:38.398
+<v Benoit Charrier>what's the most common reason for the
+shift to be unfulfilled?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/849-2
+00:05:38.398 --> 00:05:43.527
+<v Benoit Charrier>Is it because there's just not enough
+nurses around or because of other reasons?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/858-0
+00:05:46.247 --> 00:05:51.447
+<v Aliaksandr Batashou>Well, okay, so we do have their database.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/895-0
+00:05:52.687 --> 00:05:59.693
+<v Aliaksandr Batashou>of nurses. So they usually come to us,
+they go through the onboarding process</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/895-1
+00:05:59.693 --> 00:06:05.082
+<v Aliaksandr Batashou>where we share all the qualifications,
+we do their profile.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/895-2
+00:06:05.082 --> 00:06:09.932
+<v Aliaksandr Batashou>So basically they go through that
+onboarding process,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/895-3
+00:06:09.932 --> 00:06:12.807
+<v Aliaksandr Batashou>then this is a separate process.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/926-0
+00:06:15.447 --> 00:06:18.976
+<v Aliaksandr Batashou>From time to time,
+we recheck that qualification. And again,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/926-1
+00:06:18.976 --> 00:06:21.638
+<v Aliaksandr Batashou>this is a separate team.
+This is not my team,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/926-2
+00:06:21.638 --> 00:06:25.456
+<v Aliaksandr Batashou>which is like coordinator team,
+which is machine request from the</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/926-3
+00:06:25.456 --> 00:06:27.887
+<v Aliaksandr Batashou>hospitals to nourish it. Separate project.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/927-0
+00:06:29.127 --> 00:06:29.527
+<v Aliaksandr Batashou>Uh...</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/944-0
+00:06:31.287 --> 00:06:33.807
+<v Aliaksandr Batashou>And again,
+I mentioned that we are in the</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/944-1
+00:06:33.807 --> 00:06:37.107
+<v Aliaksandr Batashou>competitive market.
+Hospitals usually submit requests,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/944-2
+00:06:37.107 --> 00:06:38.007
+<v Aliaksandr Batashou>not just to us.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/953-0
+00:06:39.927 --> 00:06:44.327
+<v Aliaksandr Batashou>Meaning that if we don't supply,
+then someone will supply.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/961-0
+00:06:45.927 --> 00:06:51.127
+<v Aliaksandr Batashou>So far,
+it's not a big problem for me because...</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/997-0
+00:06:52.087 --> 00:06:56.508
+<v Aliaksandr Batashou>The database of nurses we currently have,
+it's enough,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/997-1
+00:06:56.508 --> 00:07:02.617
+<v Aliaksandr Batashou>but I want to grow the business.
+We will be growing database of the nurses,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/977-0
+00:06:58.407 --> 00:06:58.887
+<v Benoit Charrier>Okay.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/997-2
+00:07:02.617 --> 00:07:08.887
+<v Aliaksandr Batashou>and this is for my marketing team to
+attract more businesses and attract more</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/999-0
+00:07:10.727 --> 00:07:11.447
+<v Aliaksandr Batashou>Uh, nurses.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1001-0
+00:07:14.007 --> 00:07:14.527
+<v Benoit Charrier>Okay.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1019-0
+00:07:15.367 --> 00:07:19.633
+<v Benoit Charrier>So then the main reason why you're not
+fulfilling some of the nurses is because</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1019-1
+00:07:19.633 --> 00:07:22.087
+<v Benoit Charrier>it takes too long to respond to the
+hospital.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1042-0
+00:07:23.127 --> 00:07:29.151
+<v Aliaksandr Batashou>Yeah, because this is, yeah, exactly.
+This is the competitive market, right?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1042-1
+00:07:29.151 --> 00:07:35.489
+<v Aliaksandr Batashou>So if someone submits quicker than I do,
+then hospital can make decision quicker</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1042-2
+00:07:35.489 --> 00:07:37.367
+<v Aliaksandr Batashou>and select someone else.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1046-0
+00:07:39.087 --> 00:07:40.487
+<v Benoit Charrier>Ekaterina, go ahead.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1045-0
+00:07:39.607 --> 00:07:40.087
+<v Aliaksandr Batashou>Is it not?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1050-0
+00:07:41.367 --> 00:07:41.607
+<v Aliaksandr Batashou>Yeah.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1085-0
+00:07:41.527 --> 00:07:45.677
+<v Ekaterina Bandurina>Yeah,
+I wanted to jump back to the previous</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1085-1
+00:07:45.677 --> 00:07:51.527
+<v Ekaterina Bandurina>question regarding the failed AI projects
+that you mentioned,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1085-2
+00:07:51.527 --> 00:07:58.508
+<v Ekaterina Bandurina>the chat bot that hospital staff rejected.
+It was because they prefer the</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1085-3
+00:07:58.508 --> 00:08:01.527
+<v Ekaterina Bandurina>conservative existing submission</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1093-0
+00:08:02.247 --> 00:08:08.967
+<v Ekaterina Bandurina>channels like email, portal, and phone,
+and which one you actually use more.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1098-0
+00:08:10.487 --> 00:08:13.607
+<v Aliaksandr Batashou>They still prefer to use emails.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1104-0
+00:08:15.207 --> 00:08:18.327
+<v Aliaksandr Batashou>Uh, but it's probably the biggest,
+the biggest channel.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1105-0
+00:08:19.287 --> 00:08:20.327
+<v Aliaksandr Batashou>The.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1123-0
+00:08:22.367 --> 00:08:25.882
+<v Aliaksandr Batashou>As I mentioned,
+the chat bot was only specific for us,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1123-1
+00:08:25.882 --> 00:08:28.567
+<v Aliaksandr Batashou>but we are not the only supplier for that.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1126-0
+00:08:29.767 --> 00:08:30.887
+<v Aliaksandr Batashou>That's one of the reasons.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1125-0
+00:08:29.927 --> 00:08:30.407
+<v Ekaterina Bandurina>Mhm.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1134-0
+00:08:34.207 --> 00:08:36.567
+<v Benoit Charrier>OK, thank you, Rajesh.
+Do you want to next question?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1165-0
+00:08:37.767 --> 00:08:42.338
+<v Rajpriya Alavandar>Yeah, so on a typical day,
+where do your coordinators spend most of</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1165-1
+00:08:42.338 --> 00:08:47.313
+<v Rajpriya Alavandar>their time? And if you, I mean,
+if what's the part of the day that if you</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1165-2
+00:08:47.313 --> 00:08:52.087
+<v Rajpriya Alavandar>could cut into half would make the
+biggest difference to the business?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1188-0
+00:08:54.647 --> 00:08:57.847
+<v Aliaksandr Batashou>Well,
+the best person to answer to your</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1188-1
+00:08:57.847 --> 00:09:03.367
+<v Aliaksandr Batashou>question would be my head of operation,
+but from the top of my head,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1188-2
+00:09:03.367 --> 00:09:04.887
+<v Aliaksandr Batashou>the usual day of...</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1223-0
+00:09:05.807 --> 00:09:11.821
+<v Aliaksandr Batashou>A coordinator looks like they scan
+request and then match potential</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1223-1
+00:09:11.821 --> 00:09:18.720
+<v Aliaksandr Batashou>candidates who actually confirm their
+availability to a specific slot request</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1209-0
+00:09:16.967 --> 00:09:17.447
+<v Rajpriya Alavandar>Mhm.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1223-2
+00:09:18.720 --> 00:09:23.408
+<v Aliaksandr Batashou>by hospital.
+That's matching availability of people,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1223-3
+00:09:23.408 --> 00:09:24.647
+<v Aliaksandr Batashou>their profile.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1230-0
+00:09:25.047 --> 00:09:28.247
+<v Aliaksandr Batashou>This is the biggest,
+the biggest time-consuming part.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1231-0
+00:09:29.007 --> 00:09:29.767
+<v Rajpriya Alavandar>Great, thank you.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1234-0
+00:09:32.567 --> 00:09:34.047
+<v Benoit Charrier>Uh, where's next, Josiane?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1260-0
+00:09:36.127 --> 00:09:39.694
+<v Giuseppe Ardito>Hi, yeah,
+so my question is around the 7% rate</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1260-1
+00:09:39.694 --> 00:09:43.261
+<v Giuseppe Ardito>mismatch.
+Could you tell me exactly how do you</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1245-0
+00:09:41.047 --> 00:09:41.367
+<v Aliaksandr Batashou>Yeah.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1260-2
+00:09:43.261 --> 00:09:47.968
+<v Giuseppe Ardito>gather this statistic?
+Because I would like to know what this</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1260-3
+00:09:47.968 --> 00:09:48.727
+<v Giuseppe Ardito>link goes.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1275-0
+00:09:50.247 --> 00:09:57.127
+<v Aliaksandr Batashou>It's purely based on the data we get from
+the hospital. They say they...</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1269-0
+00:09:53.487 --> 00:09:53.607
+<v Giuseppe Ardito>Yeah.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1281-0
+00:09:58.487 --> 00:10:01.087
+<v Aliaksandr Batashou>The other rejected because of the...</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1291-0
+00:10:03.127 --> 00:10:11.367
+<v Aliaksandr Batashou>That qualification mismatch to the to the
+to the.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1297-0
+00:10:12.727 --> 00:10:13.207
+<v Aliaksandr Batashou>Ohh.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1301-0
+00:10:15.207 --> 00:10:18.247
+<v Aliaksandr Batashou>To the request, and 2nd is...</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1312-0
+00:10:20.247 --> 00:10:22.807
+<v Aliaksandr Batashou>Again,
+because we're in competitive market,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1312-1
+00:10:22.807 --> 00:10:24.087
+<v Aliaksandr Batashou>they sometimes select.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1331-0
+00:10:26.487 --> 00:10:32.244
+<v Aliaksandr Batashou>preferred candidates not only by their
+qualification mesh,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1331-1
+00:10:32.244 --> 00:10:39.367
+<v Aliaksandr Batashou>but actually based on the feedback that
+North have, specific North have.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1347-0
+00:10:42.327 --> 00:10:48.729
+<v Giuseppe Ardito>Okay, thank you. So, yeah, basically,
+it seems like the speed is one of the</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1337-0
+00:10:43.807 --> 00:10:44.007
+<v Benoit Charrier>But.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1347-1
+00:10:48.729 --> 00:10:51.847
+<v Giuseppe Ardito>main issues here. Would you say that?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1360-0
+00:10:53.447 --> 00:10:58.367
+<v Aliaksandr Batashou>Pete and still qualification.
+I still like machine requested the</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1360-1
+00:10:58.367 --> 00:11:00.487
+<v Aliaksandr Batashou>qualification of the person.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1410-0
+00:11:01.927 --> 00:11:07.231
+<v Benoit Charrier>So you just said on the mismatch part,
+you said that the nurse don't always then</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1363-0
+00:11:02.167 --> 00:11:02.727
+<v Giuseppe Ardito>Okay, thank you.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1369-0
+00:11:02.487 --> 00:11:03.527
+<v Aliaksandr Batashou>What, what, what?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1410-1
+00:11:07.231 --> 00:11:10.767
+<v Benoit Charrier>use the actual facts,
+they just from their knowledge,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1410-2
+00:11:10.767 --> 00:11:14.630
+<v Benoit Charrier>because her hospital liked her nurse or
+maybe it was okay,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1410-3
+00:11:14.630 --> 00:11:19.607
+<v Benoit Charrier>even though she doesn't have the
+qualification or certification, you still,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1412-0
+00:11:20.567 --> 00:11:22.087
+<v Benoit Charrier>Provide that nurse to the hospital.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1449-0
+00:11:23.047 --> 00:11:26.918
+<v Aliaksandr Batashou>Well, still,
+the final decision is with hospital,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1449-1
+00:11:26.918 --> 00:11:33.345
+<v Aliaksandr Batashou>right? They decide with whom to go, right?
+Our role is to submit the best matching</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1425-0
+00:11:30.007 --> 00:11:30.487
+<v Benoit Charrier>Mhm.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1449-2
+00:11:33.345 --> 00:11:39.075
+<v Aliaksandr Batashou>profile as possible. And yeah, I mean,
+again, this is competitive market.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1449-3
+00:11:39.075 --> 00:11:42.327
+<v Aliaksandr Batashou>We better to offer something than nothing.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1456-0
+00:11:43.527 --> 00:11:46.807
+<v Benoit Charrier>Yeah, OK, Tamas, go ahead, you went next.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1501-0
+00:11:47.127 --> 00:11:51.712
+<v Tamas Kiss>Yeah, you've mentioned 2.
+4 hours average time to fill,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1501-1
+00:11:51.712 --> 00:11:56.952
+<v Tamas Kiss>but what the distribution?
+Are there big deviations over there,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1501-2
+00:11:56.952 --> 00:12:01.373
+<v Tamas Kiss>like 12 hours,
+or this is rather going around 4 hours</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1501-3
+00:12:01.373 --> 00:12:04.567
+<v Tamas Kiss>and that's it, like maximum 30 minutes?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1544-0
+00:12:05.367 --> 00:12:10.181
+<v Aliaksandr Batashou>Yeah, it's around 4 hours here,
+if you would think. Normally,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1544-1
+00:12:10.181 --> 00:12:15.383
+<v Aliaksandr Batashou>it's never goes beyond that,
+because it's basically about mashing.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1544-2
+00:12:15.383 --> 00:12:19.032
+<v Aliaksandr Batashou>It's, it's, actually,
+this is a question of Q,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1544-3
+00:12:19.032 --> 00:12:25.167
+<v Aliaksandr Batashou>because the team is limited, right?
+Sometimes we get more required than usual,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1544-4
+00:12:25.167 --> 00:12:26.487
+<v Aliaksandr Batashou>and that's why...</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1557-0
+00:12:26.967 --> 00:12:30.788
+<v Aliaksandr Batashou>Sometimes we handle requests longer than
+usual.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1557-1
+00:12:30.788 --> 00:12:35.087
+<v Aliaksandr Batashou>So it's a combination of number of
+incoming requests.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1561-0
+00:12:36.087 --> 00:12:37.287
+<v Aliaksandr Batashou>And capacity we have.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1565-0
+00:12:38.647 --> 00:12:41.607
+<v Aliaksandr Batashou>and what exactly the team need to do.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1572-0
+00:12:42.647 --> 00:12:45.447
+<v Tamas Kiss>But there are no hours in delays or...</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1573-0
+00:12:46.687 --> 00:12:46.967
+<v Tamas Kiss>M.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1596-0
+00:12:51.127 --> 00:12:53.992
+<v Aliaksandr Batashou>Again,
+it occasionally may happen that it takes</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1596-1
+00:12:53.992 --> 00:12:57.515
+<v Aliaksandr Batashou>longer than four hours.
+Sometimes it may take quicker just</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1596-2
+00:12:57.515 --> 00:12:59.127
+<v Aliaksandr Batashou>because the queue is short.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1620-0
+00:13:00.407 --> 00:13:05.514
+<v Aliaksandr Batashou>And we have enough people to handle it
+immediately. Like, if we see the request,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1620-1
+00:13:05.514 --> 00:13:09.865
+<v Aliaksandr Batashou>we can handle it immediately.
+It's not like sitting in the queue for</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1620-2
+00:13:09.865 --> 00:13:11.127
+<v Aliaksandr Batashou>some period of time.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1621-0
+00:13:11.847 --> 00:13:13.367
+<v Tamas Kiss>Okay. Thanks.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1666-0
+00:13:14.167 --> 00:13:18.600
+<v Benoit Charrier>Thanks. Before I move to the next month,
+can I ask a question?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1666-1
+00:13:18.600 --> 00:13:24.301
+<v Benoit Charrier>Can you walk us through the, you know,
+on a given day when you get a request and</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1666-2
+00:13:24.301 --> 00:13:28.946
+<v Benoit Charrier>all the way to fulfillment?
+Can you walk us through that process?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1666-3
+00:13:28.946 --> 00:13:32.887
+<v Benoit Charrier>What are the nurse doing?
+What data are they accessing?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1676-0
+00:13:33.207 --> 00:13:36.967
+<v Benoit Charrier>How do they make the decision?
+Could you go through the process?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1680-0
+00:13:35.927 --> 00:13:40.807
+<v Aliaksandr Batashou>Nor so operational person. Sorry,
+could maybe I didn't get the question.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1719-0
+00:13:41.607 --> 00:13:46.630
+<v Benoit Charrier>Question is to walk us through an actual
+fulfillment of a nurse.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1719-1
+00:13:46.630 --> 00:13:52.813
+<v Benoit Charrier>So from the time you had a request from
+the hospital via different means to the</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1719-2
+00:13:52.813 --> 00:13:57.372
+<v Benoit Charrier>time you actually,
+the hospital confirms that yes, indeed,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1719-3
+00:13:57.372 --> 00:14:02.087
+<v Benoit Charrier>they want the nurse.
+Could you walk us through that process?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1722-0
+00:14:02.407 --> 00:14:03.287
+<v Benoit Charrier>End to end.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1760-0
+00:14:04.367 --> 00:14:08.504
+<v Aliaksandr Batashou>Again,
+this question is probably to my head of</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1760-1
+00:14:08.504 --> 00:14:13.346
+<v Aliaksandr Batashou>operations, but high level is again,
+there is a queue,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1760-2
+00:14:13.346 --> 00:14:18.805
+<v Aliaksandr Batashou>someone pick ups the request,
+try to find the machine person,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1760-3
+00:14:18.805 --> 00:14:23.647
+<v Aliaksandr Batashou>qualification plus availability on that
+specific slot.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1785-0
+00:14:24.647 --> 00:14:27.765
+<v Benoit Charrier>And the matching,
+that matching is done through,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1762-0
+00:14:24.847 --> 00:14:25.367
+<v Aliaksandr Batashou>And then...</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1785-1
+00:14:27.765 --> 00:14:32.602
+<v Benoit Charrier>you use a database with everything you
+need to know, credential, proximity,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1785-2
+00:14:32.602 --> 00:14:36.103
+<v Benoit Charrier>availability, hospital preferences,
+nurse preferences,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1778-0
+00:14:35.847 --> 00:14:36.247
+<v Aliaksandr Batashou>Yeah.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1785-3
+00:14:36.103 --> 00:14:38.967
+<v Benoit Charrier>all that is actually stored in the
+database.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1796-0
+00:14:40.247 --> 00:14:45.567
+<v Aliaksandr Batashou>That's everything sit there all together
+separately, right? So profile of nurse,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1796-1
+00:14:45.567 --> 00:14:46.487
+<v Aliaksandr Batashou>it's separate.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1835-0
+00:14:47.927 --> 00:14:55.628
+<v Aliaksandr Batashou>availability of that specific person,
+request from the hospital, again, slot,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1835-1
+00:14:55.628 --> 00:15:02.935
+<v Aliaksandr Batashou>they would like that person to attend,
+and the qualification requirement.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1835-2
+00:15:02.935 --> 00:15:06.687
+<v Aliaksandr Batashou>So it's everything need to be matched.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1828-0
+00:15:04.487 --> 00:15:05.287
+<v Rajpriya Alavandar>Is this so?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1841-0
+00:15:06.767 --> 00:15:09.359
+<v Aliaksandr Batashou>Together,
+that the biggest challenge might seem</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1841-1
+00:15:09.359 --> 00:15:10.007
+<v Aliaksandr Batashou>like saying.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1859-0
+00:15:11.287 --> 00:15:14.231
+<v Rajpriya Alavandar>Currently,
+are there any systems that manages this</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1845-0
+00:15:11.527 --> 00:15:11.927
+<v Aliaksandr Batashou>I mean.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1859-1
+00:15:14.231 --> 00:15:16.887
+<v Rajpriya Alavandar>or is it all manual and is it in people
+head?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1866-0
+00:15:18.727 --> 00:15:21.527
+<v Aliaksandr Batashou>Well, the Artem show shows capabilities,
+but...</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1871-0
+00:15:23.287 --> 00:15:26.647
+<v Aliaksandr Batashou>You know, it's people you really like.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1913-0
+00:15:27.927 --> 00:15:32.708
+<v Aliaksandr Batashou>making some search,
+they pick up a request and then do some</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1913-1
+00:15:32.708 --> 00:15:37.569
+<v Aliaksandr Batashou>search and then trying to match nurses.
+Some people do have,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1913-2
+00:15:37.569 --> 00:15:41.553
+<v Aliaksandr Batashou>because they work in the company for a
+long time,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1913-3
+00:15:41.553 --> 00:15:45.697
+<v Aliaksandr Batashou>they can do it quicker than others.
+Like newcomers,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1901-0
+00:15:43.607 --> 00:15:43.847
+<v Chris Edwards1>Yeah.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1913-4
+00:15:45.697 --> 00:15:48.407
+<v Aliaksandr Batashou>usually for newcomers take longer.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1916-0
+00:15:49.087 --> 00:15:50.407
+<v Aliaksandr Batashou>To find the right match.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1922-0
+00:15:51.447 --> 00:15:52.327
+<v Rajpriya Alavandar>So, the data is...</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1923-0
+00:15:51.487 --> 00:15:52.487
+<v Aliaksandr Batashou>But we at the moment.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1940-0
+00:15:53.287 --> 00:15:56.997
+<v Rajpriya Alavandar>Sorry to interject.
+So the data is in the spreadsheets or is</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1931-0
+00:15:56.247 --> 00:15:56.407
+<v Chris Edwards1>Yeah.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1940-1
+00:15:56.997 --> 00:16:00.647
+<v Rajpriya Alavandar>in, you know, well-organized databases,
+that sort of thing.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1946-0
+00:16:01.527 --> 00:16:03.847
+<v Aliaksandr Batashou>It's a database.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1948-0
+00:16:04.167 --> 00:16:05.127
+<v Rajpriya Alavandar>Okay, thank you.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1987-0
+00:16:05.367 --> 00:16:09.649
+<v Alexandra Rendon>And on that note as well, the credentials,
+for example,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1987-1
+00:16:09.649 --> 00:16:13.625
+<v Alexandra Rendon>when it comes in the emails or phone or
+the portal,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1987-2
+00:16:13.625 --> 00:16:17.296
+<v Alexandra Rendon>is this structured data or is a free text
+form?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1987-3
+00:16:17.296 --> 00:16:20.967
+<v Alexandra Rendon>So the hospitals can submit some sort of
+blurb.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1983-0
+00:16:19.687 --> 00:16:20.487
+<v Aliaksandr Batashou>Wait, text.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1988-0
+00:16:22.167 --> 00:16:22.647
+<v Alexandra Rendon>Sorry?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/1991-0
+00:16:22.207 --> 00:16:24.087
+<v Aliaksandr Batashou>Free text, free text.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2024-0
+00:16:23.807 --> 00:16:27.067
+<v Alexandra Rendon>Free text, okay,
+but we do have some sort of</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2024-1
+00:16:27.067 --> 00:16:32.937
+<v Alexandra Rendon>classification in the systems to which we
+need to match this credentials in free</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2024-2
+00:16:32.937 --> 00:16:38.807
+<v Alexandra Rendon>text to the structured credentials that
+need to be verified later by compliance.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2034-0
+00:16:39.607 --> 00:16:44.293
+<v Aliaksandr Batashou>This is done by humans,
+so they they go through request and they</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2034-1
+00:16:44.293 --> 00:16:45.447
+<v Aliaksandr Batashou>do the matching.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2053-0
+00:16:44.967 --> 00:16:50.839
+<v Alexandra Rendon>Try to try to match it to the specific
+categories that are set in the database.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2042-0
+00:16:47.127 --> 00:16:47.767
+<v Aliaksandr Batashou>Yeah, yeah.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2048-0
+00:16:49.047 --> 00:16:49.367
+<v Aliaksandr Batashou>Yeah.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2051-0
+00:16:50.527 --> 00:16:50.807
+<v Aliaksandr Batashou>Yeah.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2053-1
+00:16:50.839 --> 00:16:51.647
+<v Alexandra Rendon>OK, thanks.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2054-0
+00:16:52.167 --> 00:16:53.047
+<v Benoit Charrier>Natalia, go ahead.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2091-0
+00:16:55.767 --> 00:17:01.400
+<v Natalia Drokina>Just A pull-up question on the integrated
+system you might have.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2091-1
+00:17:01.400 --> 00:17:07.640
+<v Natalia Drokina>So all the credentials are verified
+before the nurse joined the roster,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2091-2
+00:17:07.640 --> 00:17:12.840
+<v Natalia Drokina>but is MedFlex receiving push
+notification from the system?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2091-3
+00:17:12.840 --> 00:17:14.487
+<v Natalia Drokina>Is it as scheduled?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2096-0
+00:17:14.567 --> 00:17:18.487
+<v Natalia Drokina>export or is someone manually checking
+the portal?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2133-0
+00:17:22.967 --> 00:17:26.825
+<v Aliaksandr Batashou>Okay,
+so there is actually a centralized system</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2133-1
+00:17:26.825 --> 00:17:30.924
+<v Aliaksandr Batashou>around ServiceNow.
+So all the requests go through,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2133-2
+00:17:30.924 --> 00:17:37.355
+<v Aliaksandr Batashou>even if they come through email or portal,
+they still lend into the ServiceNow.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2123-0
+00:17:36.287 --> 00:17:36.407
+<v Chris Edwards1>If.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2133-3
+00:17:37.355 --> 00:17:39.847
+<v Aliaksandr Batashou>And then my team is actually...</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2146-0
+00:17:40.927 --> 00:17:46.153
+<v Aliaksandr Batashou>working directly with ServiceNode,
+but it's still all the data is in a</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2146-1
+00:17:46.153 --> 00:17:47.847
+<v Aliaksandr Batashou>pretty much raw format.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2162-0
+00:17:48.967 --> 00:17:51.849
+<v Aliaksandr Batashou>And so, if it's email,
+it's just a free text;</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2162-1
+00:17:51.849 --> 00:17:55.860
+<v Aliaksandr Batashou>they see only free text,
+so ServiceNow is mostly used to manage</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2162-2
+00:17:55.860 --> 00:17:56.487
+<v Aliaksandr Batashou>the queue.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2165-0
+00:18:00.287 --> 00:18:01.287
+<v Benoit Charrier>OK, Karina.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2207-0
+00:18:01.727 --> 00:18:08.546
+<v Ekaterina Bandurina>Yeah, summarizing what you mentioned,
+that compliance verification and matching</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2207-1
+00:18:08.546 --> 00:18:14.853
+<v Ekaterina Bandurina>process basically run in parallel,
+and you prioritize to propose at least</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2207-2
+00:18:14.853 --> 00:18:20.308
+<v Ekaterina Bandurina>someone, then no one.
+So it means that compliance is not such a</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2207-3
+00:18:20.308 --> 00:18:23.207
+<v Ekaterina Bandurina>priority rather than availability.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2221-0
+00:18:23.687 --> 00:18:28.166
+<v Ekaterina Bandurina>If some nurse is not fully matching all
+criteria and compliance,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2221-1
+00:18:28.166 --> 00:18:30.647
+<v Ekaterina Bandurina>would you still propose this person?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2234-0
+00:18:31.607 --> 00:18:35.120
+<v Aliaksandr Batashou>I don't think I mentioned they are
+parallel processors.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2234-1
+00:18:35.120 --> 00:18:38.007
+<v Aliaksandr Batashou>I read that I mentioned they are
+independent.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2272-0
+00:18:40.087 --> 00:18:46.542
+<v Aliaksandr Batashou>Meaning that it's process of nurses
+onboarding is absolutely separate process.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2242-0
+00:18:44.167 --> 00:18:44.327
+<v Rajpriya Alavandar>Yeah.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2272-1
+00:18:46.542 --> 00:18:52.016
+<v Aliaksandr Batashou>While availability of nurses,
+this is pretty much dynamic process,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2272-2
+00:18:52.016 --> 00:18:55.856
+<v Aliaksandr Batashou>right?
+So because nurses might or might not be</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2257-0
+00:18:52.847 --> 00:18:52.967
+<v Ekaterina Bandurina>But.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2272-3
+00:18:55.856 --> 00:18:59.207
+<v Aliaksandr Batashou>available on specific days or even hours,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2274-0
+00:18:59.447 --> 00:19:00.727
+<v Aliaksandr Batashou>This is up to them.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2277-0
+00:19:01.767 --> 00:19:03.127
+<v Aliaksandr Batashou>Just to be the availability.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2333-0
+00:19:04.727 --> 00:19:09.101
+<v Rajpriya Alavandar>So, as part of this compliance,
+the licenses, certifications,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2287-0
+00:19:08.887 --> 00:19:09.287
+<v Chris Edwards1>Stop.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2333-1
+00:19:09.101 --> 00:19:13.405
+<v Rajpriya Alavandar>and background checks,
+when in the process does this happen?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2333-2
+00:19:13.405 --> 00:19:18.837
+<v Rajpriya Alavandar>As in when the noise joins the roster,
+and then periodically it gets checked</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2302-0
+00:19:13.607 --> 00:19:14.407
+<v Aliaksandr Batashou>Onboarding.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2312-0
+00:19:15.767 --> 00:19:17.527
+<v Aliaksandr Batashou>Yes, yeah.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2333-3
+00:19:18.837 --> 00:19:22.859
+<v Rajpriya Alavandar>when it gets expired,
+and do you get any and you get any</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2325-0
+00:19:19.287 --> 00:19:21.247
+<v Aliaksandr Batashou>Yeah, yeah.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2333-4
+00:19:22.859 --> 00:19:23.847
+<v Rajpriya Alavandar>notifications?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2345-0
+00:19:24.807 --> 00:19:30.887
+<v Aliaksandr Batashou>That's Compliance team.
+I'm not currently to optimize it for this.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2341-0
+00:19:27.927 --> 00:19:28.687
+<v Rajpriya Alavandar>OKOK.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2346-0
+00:19:32.087 --> 00:19:32.727
+<v Rajpriya Alavandar>Thank you.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2364-0
+00:19:33.527 --> 00:19:42.845
+<v Alexandra Rendon>But are there any processes to keep these
+databases like up to date? For example,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2364-1
+00:19:42.845 --> 00:19:43.527
+<v Alexandra Rendon>the...</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2367-0
+00:19:44.487 --> 00:19:46.087
+<v Aliaksandr Batashou>Yeah, absolutely.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2379-0
+00:19:44.887 --> 00:19:48.814
+<v Alexandra Rendon>the availability,
+who is updating availability of the</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2379-1
+00:19:48.814 --> 00:19:50.487
+<v Alexandra Rendon>nurses and also who is.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2397-0
+00:19:49.847 --> 00:19:54.487
+<v Aliaksandr Batashou>Availability of nurses, I mentioned it,
+availability of nurses is subject to</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2397-1
+00:19:54.487 --> 00:19:59.127
+<v Aliaksandr Batashou>nurses to update themselves, right,
+because only they know the availability.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2396-0
+00:19:59.687 --> 00:19:59.847
+<v Benoit Charrier>Good.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2428-0
+00:20:00.327 --> 00:20:05.150
+<v Aliaksandr Batashou>All right. Qualification checks.
+It's for my legal team.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2399-0
+00:20:01.847 --> 00:20:02.167
+<v Rajpriya Alavandar>Yes.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2403-0
+00:20:02.887 --> 00:20:03.687
+<v Rajpriya Alavandar>But do you have?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2428-1
+00:20:05.150 --> 00:20:12.088
+<v Aliaksandr Batashou>There is a cadence where they are legally
+obligated to recheck qualification as a</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2428-2
+00:20:12.088 --> 00:20:13.527
+<v Aliaksandr Batashou>separate process.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2447-0
+00:20:13.927 --> 00:20:17.127
+<v Alexandra Rendon>Periodically, OK.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2446-0
+00:20:15.527 --> 00:20:18.487
+<v Aliaksandr Batashou>Here you are declare, yeah,
+regulated by law.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2455-0
+00:20:16.967 --> 00:20:21.860
+<v Benoit Charrier>Is that done for an API or is it done for
+an API or is that done manually,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2455-1
+00:20:21.860 --> 00:20:23.687
+<v Benoit Charrier>the compliance verification?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2452-0
+00:20:22.567 --> 00:20:22.727
+<v Aliaksandr Batashou>The.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2456-0
+00:20:24.127 --> 00:20:25.527
+<v Aliaksandr Batashou>What, what, what is EPI?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2479-0
+00:20:26.967 --> 00:20:30.443
+<v Benoit Charrier>Well,
+do so there's a database of of the of the</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2479-1
+00:20:30.443 --> 00:20:35.803
+<v Benoit Charrier>compliance or the verification of the
+nurses, yes, for their credentials.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2479-2
+00:20:35.803 --> 00:20:37.687
+<v Benoit Charrier>Do we access that through?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2500-0
+00:20:38.007 --> 00:20:43.943
+<v Aliaksandr Batashou>I don't know. I mean,
+I don't have any issues there, right?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2500-1
+00:20:43.943 --> 00:20:49.287
+<v Aliaksandr Batashou>So I don't think we need to talk too much
+about that.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2494-0
+00:20:48.247 --> 00:20:48.727
+<v Benoit Charrier>Okay.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2519-0
+00:20:49.687 --> 00:20:53.374
+<v Benoit Charrier>So the compliance verification is not a,
+not an issue.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2504-0
+00:20:52.647 --> 00:20:53.527
+<v Aliaksandr Batashou>Not an issue.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2519-1
+00:20:53.374 --> 00:20:56.727
+<v Benoit Charrier>We don't think we need to actually focus
+on that.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2514-0
+00:20:55.047 --> 00:20:55.607
+<v Alexandra Rendon>So.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2556-0
+00:20:57.247 --> 00:21:03.102
+<v Alexandra Rendon>And there is not an issue that it is kept
+up to date and also the availability is</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2556-1
+00:21:03.102 --> 00:21:07.602
+<v Alexandra Rendon>also assumed that is kept up to date by
+the nurses themselves.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2540-0
+00:21:07.047 --> 00:21:07.527
+<v Aliaksandr Batashou>Correct.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2556-2
+00:21:07.602 --> 00:21:10.887
+<v Alexandra Rendon>And we have correct data to access for.
+Okay.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2550-0
+00:21:09.527 --> 00:21:11.047
+<v Aliaksandr Batashou>Correct. Yeah.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2549-0
+00:21:10.487 --> 00:21:10.527
+<v Chris Edwards1>I.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2558-0
+00:21:12.047 --> 00:21:14.647
+<v Benoit Charrier>Alright, it's more to Chris,
+you've been on the other question.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2605-0
+00:21:15.767 --> 00:21:18.715
+<v Chris Edwards1>Yeah,
+mine's a bit more high level actually.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2605-1
+00:21:18.715 --> 00:21:23.891
+<v Chris Edwards1>So obviously you've got competitors in
+the market and I'm guessing they've all</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2605-2
+00:21:23.891 --> 00:21:26.970
+<v Chris Edwards1>got the same access to the nurses as you
+have.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2605-3
+00:21:26.970 --> 00:21:32.080
+<v Chris Edwards1>Do you know what gives them potentially
+the edge over submitting them quicker</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2605-4
+00:21:32.080 --> 00:21:34.767
+<v Chris Edwards1>than you? And if you both submit the same</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2616-0
+00:21:34.967 --> 00:21:39.244
+<v Chris Edwards1>nurse,
+do you know what process is in place to</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2616-1
+00:21:39.244 --> 00:21:42.247
+<v Chris Edwards1>decide which agency they go with?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2632-0
+00:21:44.487 --> 00:21:48.369
+<v Aliaksandr Batashou>Yeah,
+we do have like inside information that</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2632-1
+00:21:48.369 --> 00:21:52.167
+<v Aliaksandr Batashou>some nurses are like in contract with
+other.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2641-0
+00:21:53.687 --> 00:22:00.442
+<v Aliaksandr Batashou>agencies like we.
+And we do have feeling that sometimes</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2641-1
+00:22:00.442 --> 00:22:01.287
+<v Aliaksandr Batashou>they...</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2653-0
+00:22:04.167 --> 00:22:10.567
+<v Aliaksandr Batashou>Well, as I mentioned before,
+that's up to hospital to accept specific</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2653-1
+00:22:10.567 --> 00:22:11.847
+<v Aliaksandr Batashou>person or not.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2654-0
+00:22:13.047 --> 00:22:13.687
+<v Aliaksandr Batashou>Ohh.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2691-0
+00:22:15.607 --> 00:22:21.784
+<v Aliaksandr Batashou>Sometimes nurses accepting other agencies
+just because they pay a little bit more</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2691-1
+00:22:21.784 --> 00:22:25.852
+<v Aliaksandr Batashou>than we are,
+and sometimes it's the other way around.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2691-2
+00:22:25.852 --> 00:22:29.242
+<v Aliaksandr Batashou>Again,
+because this is a competitive market,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2691-3
+00:22:29.242 --> 00:22:33.009
+<v Aliaksandr Batashou>so we are,
+based on the contract we have with the</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2691-4
+00:22:33.009 --> 00:22:33.687
+<v Aliaksandr Batashou>hospital,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2699-0
+00:22:34.087 --> 00:22:40.647
+<v Aliaksandr Batashou>We we can give that person specific
+person, I mean, applying nurse.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2700-0
+00:22:44.327 --> 00:22:44.967
+<v Aliaksandr Batashou>Oh.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2702-0
+00:22:47.687 --> 00:22:48.447
+<v Aliaksandr Batashou>Be so bad.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2703-0
+00:22:50.167 --> 00:22:50.207
+<v Aliaksandr Batashou>Uh...</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2705-0
+00:22:52.807 --> 00:22:53.287
+<v Aliaksandr Batashou>Right.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2706-0
+00:22:54.407 --> 00:22:54.727
+<v Aliaksandr Batashou>S.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2755-0
+00:22:55.607 --> 00:22:59.746
+<v Aliaksandr Batashou>Some competitors may have other contract
+with the hospital,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2755-1
+00:22:59.746 --> 00:23:04.231
+<v Aliaksandr Batashou>and they might be in a position to give
+higher ed for the nurse.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2755-2
+00:23:04.231 --> 00:23:08.232
+<v Aliaksandr Batashou>Or maybe they compromise with that margin.
+We don't know.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2755-3
+00:23:08.232 --> 00:23:13.407
+<v Aliaksandr Batashou>But it's pretty much possible that the
+same nurse will be submitted by two</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2755-4
+00:23:13.407 --> 00:23:16.167
+<v Aliaksandr Batashou>different agencies. And then again, it's</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2759-0
+00:23:16.647 --> 00:23:20.327
+<v Aliaksandr Batashou>Up to for people to decide to decide with
+whom to proceed.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2763-0
+00:23:22.807 --> 00:23:24.487
+<v Benoit Charrier>All right, Giuseppe, you next?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2802-0
+00:23:26.487 --> 00:23:31.550
+<v Giuseppe Ardito>Okay, so my question is around hospitals.
+Do all hospitals impose the same</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2802-1
+00:23:31.550 --> 00:23:36.478
+<v Giuseppe Ardito>constraint or are some, you know,
+more easy to trust and others are more</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2802-2
+00:23:36.478 --> 00:23:42.149
+<v Giuseppe Ardito>picky and the requirements are consistent
+with each other or the difference between</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2802-3
+00:23:42.149 --> 00:23:42.487
+<v Giuseppe Ardito>them?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2819-0
+00:23:44.327 --> 00:23:52.378
+<v Aliaksandr Batashou>All the there is some flexibilities.
+The for some hospitals we are rather</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2810-0
+00:23:47.847 --> 00:23:48.807
+<v Benoit Charrier>Oops, stop, stop.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2819-1
+00:23:52.378 --> 00:23:55.207
+<v Aliaksandr Batashou>prefer it agency and it's.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2826-0
+00:23:57.447 --> 00:24:00.967
+<v Aliaksandr Batashou>Job of my sales team to be.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2830-0
+00:24:02.047 --> 00:24:03.367
+<v Aliaksandr Batashou>On that preferred list.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2832-0
+00:24:04.527 --> 00:24:05.767
+<v Aliaksandr Batashou>of supply agencies.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2844-0
+00:24:07.447 --> 00:24:13.447
+<v Aliaksandr Batashou>So it's more like in the commercial side
+of thing rather than operational.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2875-0
+00:24:16.727 --> 00:24:19.869
+<v Giuseppe Ardito>OK,
+you don't have a particular statistics</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2875-1
+00:24:19.869 --> 00:24:23.962
+<v Giuseppe Ardito>about, you know,
+what are the requirements if we had to</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2875-2
+00:24:23.962 --> 00:24:28.567
+<v Giuseppe Ardito>consider, you know,
+all of the hospitals you are working with?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2871-0
+00:24:28.567 --> 00:24:28.727
+<v Aliaksandr Batashou>Yeah.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2890-0
+00:24:30.087 --> 00:24:35.219
+<v Aliaksandr Batashou>I think there might be some deviations,
+but normally everyone operates on the</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2890-1
+00:24:35.219 --> 00:24:38.247
+<v Aliaksandr Batashou>regulated market,
+and so they often spenders.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2892-0
+00:24:40.567 --> 00:24:41.287
+<v Giuseppe Ardito>OK, thank you.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2896-0
+00:24:41.527 --> 00:24:41.927
+<v Benoit Charrier>Thanks.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2925-0
+00:24:42.327 --> 00:24:49.737
+<v Tamas Kiss>Okay, then if there is a wrong match,
+what is the cost of it? Is it reversible?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2904-0
+00:24:47.047 --> 00:24:47.167
+<v Aliaksandr Batashou>Yeah.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2925-1
+00:24:49.737 --> 00:24:54.739
+<v Tamas Kiss>And if not,
+then is it MetFlex or the hospital or the</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2925-2
+00:24:54.739 --> 00:24:56.407
+<v Tamas Kiss>nurse who suffers?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2927-0
+00:24:58.327 --> 00:25:00.007
+<v Aliaksandr Batashou>No, uh, well...</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2933-0
+00:25:01.287 --> 00:25:06.887
+<v Aliaksandr Batashou>If, if it's not a match,
+it's because they...</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2949-0
+00:25:09.407 --> 00:25:17.720
+<v Aliaksandr Batashou>Hospitals, they made the final decision.
+It's more in reputational area for us,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2949-1
+00:25:17.720 --> 00:25:18.967
+<v Aliaksandr Batashou>right? So...</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2959-0
+00:25:20.487 --> 00:25:26.327
+<v Aliaksandr Batashou>Our job is to make the best,
+to offer to them the best possible match.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2969-0
+00:25:27.447 --> 00:25:31.327
+<v Aliaksandr Batashou>All right, so,
+so start the reputational and...</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2963-0
+00:25:27.847 --> 00:25:28.487
+<v Tamas Kiss>Okay.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2966-0
+00:25:29.127 --> 00:25:29.367
+<v Benoit Charrier>To.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2974-0
+00:25:32.567 --> 00:25:35.607
+<v Aliaksandr Batashou>but no direct financial impact.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2988-0
+00:25:36.407 --> 00:25:40.602
+<v Tamas Kiss>Okay,
+and if in case an agent would say 70%</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/2988-1
+00:25:40.602 --> 00:25:43.367
+<v Tamas Kiss>confident the nurse is a fit.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3006-0
+00:25:44.527 --> 00:25:49.953
+<v Tamas Kiss>What would you do with that?
+Match it anyway or escalate it or on hold</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3006-1
+00:25:49.953 --> 00:25:52.247
+<v Tamas Kiss>or what will be your decision?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3007-0
+00:25:53.767 --> 00:25:54.527
+<v Aliaksandr Batashou>Um...</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3012-0
+00:25:55.767 --> 00:25:59.767
+<v Aliaksandr Batashou>Sometimes, it's on uh, um, calculators.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3021-0
+00:26:01.927 --> 00:26:06.727
+<v Aliaksandr Batashou>Uh, the children, so they decided,
+would it make sense to submit or not?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3028-0
+00:26:09.447 --> 00:26:12.586
+<v Aliaksandr Batashou>So yeah,
+it's more like there is no yet</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3028-1
+00:26:12.586 --> 00:26:13.607
+<v Aliaksandr Batashou>well-defined.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3043-0
+00:26:15.047 --> 00:26:18.887
+<v Tamas Kiss>But what was the practice or what's your
+feeling? How would they act?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3035-0
+00:26:15.087 --> 00:26:16.007
+<v Aliaksandr Batashou>According.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3064-0
+00:26:22.007 --> 00:26:25.552
+<v Aliaksandr Batashou>Yeah, because again,
+this is a competitive market and we are</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3064-1
+00:26:25.552 --> 00:26:28.750
+<v Aliaksandr Batashou>not the only agency who will be
+submitting candidates.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3064-2
+00:26:28.750 --> 00:26:30.087
+<v Aliaksandr Batashou>We would prefer submit.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3094-0
+00:26:31.287 --> 00:26:38.317
+<v Aliaksandr Batashou>at least something than nothing and let
+the hospital decide and balancing that</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3094-1
+00:26:38.317 --> 00:26:43.123
+<v Aliaksandr Batashou>reputational side of things which I
+mentioned before.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3082-0
+00:26:40.927 --> 00:26:41.367
+<v Tamas Kiss>Okay.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3094-2
+00:26:43.123 --> 00:26:49.887
+<v Aliaksandr Batashou>So it so it did not exact number 7050.
+It sometimes is more on a on a on a.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3102-0
+00:26:50.887 --> 00:26:55.287
+<v Aliaksandr Batashou>I had the team experience working with
+specific hospitals.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3150-0
+00:26:57.447 --> 00:27:01.494
+<v Benoit Charrier>So would you require a coordinator to
+validate a match?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3150-1
+00:27:01.494 --> 00:27:05.251
+<v Benoit Charrier>So if an AI agent would propose a nurse
+as a match,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3150-2
+00:27:05.251 --> 00:27:10.961
+<v Benoit Charrier>would you require human in the loop?
+So require a coordinator to actually say,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3150-3
+00:27:10.961 --> 00:27:15.297
+<v Benoit Charrier>yes, okay, I agree,
+let's propose it to the hospital or let</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3150-4
+00:27:15.297 --> 00:27:16.887
+<v Benoit Charrier>the agent just submit?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3144-0
+00:27:15.687 --> 00:27:16.247
+<v Aliaksandr Batashou>Um...</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3163-0
+00:27:17.447 --> 00:27:21.959
+<v Aliaksandr Batashou>I'm not an expert in this area,
+to be honest. I mean, if you say yes,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3163-1
+00:27:21.959 --> 00:27:24.087
+<v Aliaksandr Batashou>you don't need human in the loop.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3159-0
+00:27:25.967 --> 00:27:26.167
+<v Tamas Kiss>SS.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3167-0
+00:27:27.287 --> 00:27:28.967
+<v Aliaksandr Batashou>Then I would rely on the Ardito.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3210-0
+00:27:31.287 --> 00:27:36.186
+<v Benoit Charrier>Okay, from your answer,
+you seem to say that you said that it's</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3210-1
+00:27:36.186 --> 00:27:40.396
+<v Benoit Charrier>okay if it doesn't know,
+if it's not a complete match,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3210-2
+00:27:40.396 --> 00:27:44.147
+<v Benoit Charrier>we'd rather submit someone a nurse than
+nothing.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3210-3
+00:27:44.147 --> 00:27:47.591
+<v Benoit Charrier>So it sounds like there is margin for
+error,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3210-4
+00:27:47.591 --> 00:27:50.807
+<v Benoit Charrier>do not concern about compliance or others.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3213-0
+00:27:51.127 --> 00:27:53.567
+<v Benoit Charrier>Or am I misunderstood?
+Did I misunderstand?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3245-0
+00:27:54.807 --> 00:28:01.565
+<v Aliaksandr Batashou>I'm just hoping this is not something you
+do for the first time, so you know, like,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3245-1
+00:28:01.565 --> 00:28:07.116
+<v Aliaksandr Batashou>what are the consequences of removing
+humans from the lobe? So yeah,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3245-2
+00:28:07.116 --> 00:28:08.967
+<v Aliaksandr Batashou>I'm all yours. Tell me.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3295-0
+00:28:09.847 --> 00:28:13.445
+<v Benoit Charrier>Yeah, we do.
+We do have some experience and we can put</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3295-1
+00:28:13.445 --> 00:28:17.175
+<v Benoit Charrier>some risk tolerance in the system, right,
+to flag if we,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3295-2
+00:28:17.175 --> 00:28:20.512
+<v Benoit Charrier>that's why I think Tamas was asking about
+the 70%,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3295-3
+00:28:20.512 --> 00:28:25.615
+<v Benoit Charrier>because we could also do something like
+this where we would propose that if a</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3295-4
+00:28:25.615 --> 00:28:29.607
+<v Benoit Charrier>match doesn't seem completely like 90%
+matching, we can then</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3301-0
+00:28:30.807 --> 00:28:34.248
+<v Benoit Charrier>ask a coordinator to review,
+would that be something that would work</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3301-1
+00:28:34.248 --> 00:28:34.647
+<v Benoit Charrier>for you?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3316-0
+00:28:35.527 --> 00:28:38.039
+<v Aliaksandr Batashou>Yeah,
+as soon as you give me the list of recent,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3316-1
+00:28:38.039 --> 00:28:41.167
+<v Aliaksandr Batashou>like potential consequences,
+I'm happy to make the decision.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3317-0
+00:28:41.847 --> 00:28:42.247
+<v Benoit Charrier>Okay.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3321-0
+00:28:43.687 --> 00:28:45.287
+<v Benoit Charrier>Ekaterina, you are next.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3363-0
+00:28:46.167 --> 00:28:50.008
+<v Ekaterina Bandurina>You mentioned that you want to grow,
+essentially,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3363-1
+00:28:50.008 --> 00:28:56.232
+<v Ekaterina Bandurina>set your goal is to grow the business 10
+times more without needing to expanding</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3334-0
+00:28:51.287 --> 00:28:51.527
+<v Aliaksandr Batashou>Okay.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3363-2
+00:28:56.232 --> 00:29:01.611
+<v Ekaterina Bandurina>personnel 10 times more, yeah? So,
+and we know about the pain points,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3344-0
+00:28:57.207 --> 00:28:57.367
+<v Aliaksandr Batashou>Mm.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3363-3
+00:29:01.611 --> 00:29:05.607
+<v Ekaterina Bandurina>like the average time to for this process
+takes for</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3400-0
+00:29:05.767 --> 00:29:10.614
+<v Ekaterina Bandurina>for up to more of the four hours,
+and that mismatch rate is 7%,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3400-1
+00:29:10.614 --> 00:29:15.689
+<v Ekaterina Bandurina>and no-share rate is 12. So,
+maybe there are other pain points and</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3400-2
+00:29:15.689 --> 00:29:21.521
+<v Ekaterina Bandurina>what that prevent you to grow the
+business, so expand it too much, or which,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3400-3
+00:29:21.521 --> 00:29:25.687
+<v Ekaterina Bandurina>if it's only the three,
+what will be the most painful?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3401-0
+00:29:25.287 --> 00:29:26.167
+<v Aliaksandr Batashou>Yeah.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3424-0
+00:29:28.567 --> 00:29:33.804
+<v Aliaksandr Batashou>I want to be flexible because this is
+competitive marketing, and yes,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3424-1
+00:29:33.804 --> 00:29:38.967
+<v Aliaksandr Batashou>we do have plans to grow the business,
+but I want to be flexible on.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3444-0
+00:29:40.247 --> 00:29:49.095
+<v Aliaksandr Batashou>On and actually be prepared as a business
+to grow the number of people I have in</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3444-1
+00:29:49.095 --> 00:29:56.087
+<v Aliaksandr Batashou>the separation team to support the
+business, but it need to be.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3488-0
+00:29:57.847 --> 00:30:02.810
+<v Aliaksandr Batashou>very streamlined from onboarding
+perspective. So I want to be flexible.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3488-1
+00:30:02.810 --> 00:30:08.187
+<v Aliaksandr Batashou>I don't want to spend too much time to
+train the people. This is, by the way,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3488-2
+00:30:08.187 --> 00:30:11.702
+<v Aliaksandr Batashou>one of my biggest problem.
+I need to train people.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3488-3
+00:30:11.702 --> 00:30:17.010
+<v Aliaksandr Batashou>So my operation team required quite
+significant training so they could match</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3488-4
+00:30:17.010 --> 00:30:18.527
+<v Aliaksandr Batashou>profiles and requests.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3497-0
+00:30:19.087 --> 00:30:22.607
+<v Aliaksandr Batashou>And I want it to be as simple as possible
+for now.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3509-0
+00:30:23.767 --> 00:30:27.349
+<v Aliaksandr Batashou>Right,
+including including onboarding time of</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3509-1
+00:30:27.349 --> 00:30:31.087
+<v Aliaksandr Batashou>that new personnel,
+if I would need to grow it.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3535-0
+00:30:32.927 --> 00:30:36.052
+<v Ekaterina Bandurina>So,
+your pain point is rather the onboarding</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3535-1
+00:30:36.052 --> 00:30:40.565
+<v Ekaterina Bandurina>of your own personnel,
+since you still will expand the amount of</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3535-2
+00:30:40.565 --> 00:30:42.927
+<v Ekaterina Bandurina>colleagues working on this, not...</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3555-0
+00:30:42.927 --> 00:30:47.547
+<v Aliaksandr Batashou>It's not a pain for me at the moment
+because my team is pretty much stable at</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3536-0
+00:30:45.207 --> 00:30:45.647
+<v Ekaterina Bandurina>Mmh.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3555-1
+00:30:47.547 --> 00:30:50.212
+<v Aliaksandr Batashou>the moment.
+But if I would grow my business,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3555-2
+00:30:50.212 --> 00:30:52.167
+<v Aliaksandr Batashou>maybe I would need to grow the...</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3551-0
+00:30:51.567 --> 00:30:51.687
+<v Ekaterina Bandurina>Okay.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3570-0
+00:30:53.407 --> 00:30:58.154
+<v Aliaksandr Batashou>the personal team as well. I don't want,
+but maybe I would need.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3570-1
+00:30:58.154 --> 00:31:01.807
+<v Aliaksandr Batashou>And I don't want to spend a lot for the
+training.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3603-0
+00:31:05.487 --> 00:31:11.631
+<v Benoit Charrier>If we apply the AI to your processes,
+you probably would be able to get a lot</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3603-1
+00:31:11.631 --> 00:31:17.381
+<v Benoit Charrier>more shift matching with your aid
+coordinators. Their work would change,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3603-2
+00:31:17.381 --> 00:31:23.447
+<v Benoit Charrier>learning more to use the agents than
+actually doing the matching themselves.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3605-0
+00:31:23.887 --> 00:31:25.087
+<v Benoit Charrier>Would that, would that work?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3615-0
+00:31:26.447 --> 00:31:30.927
+<v Benoit Charrier>Would your team be willing to transform
+and change and start using AI?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3628-0
+00:31:32.527 --> 00:31:36.563
+<v Aliaksandr Batashou>Yeah, I just,
+I just recalled it until a successful</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3628-1
+00:31:36.563 --> 00:31:40.367
+<v Aliaksandr Batashou>machine engine, so let's see how it goes,
+right?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3630-0
+00:31:42.047 --> 00:31:42.527
+<v Benoit Charrier>Yes.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3635-0
+00:31:43.727 --> 00:31:45.407
+<v Benoit Charrier>Yeah, no, no, Nazia.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3636-0
+00:31:47.007 --> 00:31:47.647
+<v Benoit Charrier>Go next.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3639-0
+00:31:48.807 --> 00:31:49.527
+<v Benoit Charrier>Natalia, sorry.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3674-0
+00:31:49.727 --> 00:31:53.869
+<v Natalia Drokina>Yeah,
+going back to compliance verification.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3674-1
+00:31:53.869 --> 00:32:00.682
+<v Natalia Drokina>So if we imagine if a nurse credential
+expires in, let's say, seven days,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3674-2
+00:32:00.682 --> 00:32:08.047
+<v Natalia Drokina>and the shift is already being set for
+two upcoming weeks, does the system know</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3688-0
+00:32:08.127 --> 00:32:13.915
+<v Natalia Drokina>beforehand that match is going to be
+invalid or it's up to human.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3681-0
+00:32:12.047 --> 00:32:12.527
+<v Aliaksandr Batashou>Yes.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3688-1
+00:32:13.915 --> 00:32:15.407
+<v Natalia Drokina>The system knows.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3691-0
+00:32:14.607 --> 00:32:17.647
+<v Aliaksandr Batashou>No, no, we we cannot.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3714-0
+00:32:18.527 --> 00:32:23.309
+<v Aliaksandr Batashou>We cannot offer a person,
+we know that on their assignment date</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3714-1
+00:32:23.309 --> 00:32:29.287
+<v Aliaksandr Batashou>that the certificate or the compliance is
+invalidated and need to be rechecked.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3716-0
+00:32:30.527 --> 00:32:31.087
+<v Aliaksandr Batashou>Toots.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3718-0
+00:32:30.527 --> 00:32:33.007
+<v Alexandra Rendon>But that is manual, it's a manual check.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3720-0
+00:32:35.247 --> 00:32:35.727
+<v Alexandra Rendon>Right now.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3726-0
+00:32:37.247 --> 00:32:39.647
+<v Aliaksandr Batashou>Yeah, it is, but it's a regular one.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3740-0
+00:32:42.447 --> 00:32:48.551
+<v Natalia Drokina>And sorry to follow up,
+is that something that only surface when</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3740-1
+00:32:48.551 --> 00:32:51.087
+<v Natalia Drokina>the lapse actually happens?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3742-0
+00:32:53.647 --> 00:32:54.367
+<v Natalia Drokina>Am I right?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3748-0
+00:32:54.047 --> 00:32:56.847
+<v Aliaksandr Batashou>Sorry, say it again, I'm not with you.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3762-0
+00:32:58.447 --> 00:33:01.833
+<v Natalia Drokina>So,
+the invalid shift is only will be</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3762-1
+00:33:01.833 --> 00:33:05.487
+<v Natalia Drokina>surfacing when the labs actually happens.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3769-0
+00:33:07.807 --> 00:33:09.807
+<v Natalia Drokina>And in this case, you are manly.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3767-0
+00:33:08.047 --> 00:33:08.367
+<v Aliaksandr Batashou>But.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3772-0
+00:33:11.487 --> 00:33:12.447
+<v Natalia Drokina>Verifying it.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3780-0
+00:33:14.047 --> 00:33:18.367
+<v Aliaksandr Batashou>But now, but coordinators again,
+coordinators should not be.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3789-0
+00:33:19.647 --> 00:33:23.967
+<v Aliaksandr Batashou>Proposing nurses,
+knowing that on the date of the...</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3791-0
+00:33:25.207 --> 00:33:26.047
+<v Aliaksandr Batashou>Appointment.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3803-0
+00:33:28.607 --> 00:33:33.967
+<v Aliaksandr Batashou>A the the the the qualification
+verification expired.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3804-0
+00:33:35.047 --> 00:33:35.567
+<v Aliaksandr Batashou>All right.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3810-0
+00:33:35.967 --> 00:33:38.447
+<v Natalia Drokina>So it happens manually beforehand.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3825-0
+00:33:39.487 --> 00:33:42.703
+<v Aliaksandr Batashou>Yes,
+all the qualification checks happens in</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3814-0
+00:33:40.687 --> 00:33:40.847
+<v Natalia Drokina>Mm.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3825-1
+00:33:42.703 --> 00:33:44.847
+<v Aliaksandr Batashou>advance on a regular schedule.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3834-0
+00:33:47.487 --> 00:33:53.567
+<v Aliaksandr Batashou>And I'd say indicated on the system that,
+well, one day the expiration then is.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3882-0
+00:33:55.807 --> 00:33:59.951
+<v Benoit Charrier>So if I just may jump in here,
+it's a two-step process.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3841-0
+00:33:56.527 --> 00:33:57.007
+<v Natalia Drokina>Thank you.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3882-1
+00:33:59.951 --> 00:34:04.317
+<v Benoit Charrier>There's a parallel process for checking
+the qualification,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3882-2
+00:34:04.317 --> 00:34:09.202
+<v Benoit Charrier>the certification of the nurses,
+separate process done regularly.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3861-0
+00:34:06.927 --> 00:34:07.167
+<v Aliaksandr Batashou>Yeah.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3865-0
+00:34:08.767 --> 00:34:09.327
+<v Aliaksandr Batashou>Mmh.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3882-3
+00:34:09.202 --> 00:34:13.198
+<v Benoit Charrier>But then when a coordinator assigns or
+finds a nurse,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3882-4
+00:34:13.198 --> 00:34:15.567
+<v Benoit Charrier>he needs to verify in the system</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3886-0
+00:34:16.047 --> 00:34:18.527
+<v Benoit Charrier>that those certifications are valid.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3898-0
+00:34:19.407 --> 00:34:25.567
+<v Aliaksandr Batashou>It's straightaway available on the
+specific NARS card.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3895-0
+00:34:24.127 --> 00:34:24.447
+<v Benoit Charrier>Ohh.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3914-0
+00:34:26.047 --> 00:34:31.407
+<v Benoit Charrier>Yeah, okay. Thanks. I guess so.
+Let's go back to the... So, Rajiv,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3902-0
+00:34:28.247 --> 00:34:28.847
+<v Aliaksandr Batashou>Profile.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3907-0
+00:34:30.287 --> 00:34:30.527
+<v Rajpriya Alavandar>Ann.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3914-1
+00:34:31.407 --> 00:34:32.927
+<v Benoit Charrier>your turn, I guess.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3949-0
+00:34:32.447 --> 00:34:35.654
+<v Rajpriya Alavandar>Yeah, yeah,
+going back to the topic on nurses,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3949-1
+00:34:35.654 --> 00:34:40.976
+<v Rajpriya Alavandar>so you mentioned that the that is a,
+I'm assuming when you say the nurses can</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3949-2
+00:34:40.976 --> 00:34:45.070
+<v Rajpriya Alavandar>mark the availability,
+it's a system and all and and you're</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3937-0
+00:34:44.407 --> 00:34:44.687
+<v Aliaksandr Batashou>Mm.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3949-3
+00:34:45.070 --> 00:34:48.687
+<v Rajpriya Alavandar>happy with the system as of today and you
+don't see.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3951-0
+00:34:49.727 --> 00:34:51.087
+<v Rajpriya Alavandar>Any problems with it?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3978-0
+00:34:52.527 --> 00:34:59.304
+<v Aliaksandr Batashou>Now, so far so good, we, well, the nurses,
+the nurses need to have the flexibility</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3956-0
+00:34:54.447 --> 00:34:55.007
+<v Rajpriya Alavandar>Thank you.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3978-1
+00:34:59.304 --> 00:35:04.367
+<v Aliaksandr Batashou>to mark where they're available,
+where they're not. Yeah, so.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3977-0
+00:35:05.167 --> 00:35:05.647
+<v Rajpriya Alavandar>All right.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3980-0
+00:35:06.047 --> 00:35:06.767
+<v Aliaksandr Batashou>No problem there.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3981-0
+00:35:08.847 --> 00:35:09.567
+<v Benoit Charrier>Giuseppe.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/3988-0
+00:35:11.407 --> 00:35:12.887
+<v Benoit Charrier>Sorry, you're the one next one.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4000-0
+00:35:13.167 --> 00:35:16.749
+<v Vadzim Miliantsei>Yeah, 2 questions.
+You mentioned feedback for the nurses</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4000-1
+00:35:16.749 --> 00:35:19.327
+<v Vadzim Miliantsei>from hospitals. Do you have access to it?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4002-0
+00:35:21.407 --> 00:35:22.447
+<v Aliaksandr Batashou>Access to where I center.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4019-0
+00:35:22.927 --> 00:35:26.058
+<v Vadzim Miliantsei>Access to feedback from hospitals.
+Do you have access to it?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4019-1
+00:35:26.058 --> 00:35:29.087
+<v Vadzim Miliantsei>Maybe hospitals share with you this
+feedback or something.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4058-0
+00:35:29.727 --> 00:35:32.921
+<v Aliaksandr Batashou>No,
+we would ever get like a candidate</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4058-1
+00:35:32.921 --> 00:35:37.590
+<v Aliaksandr Batashou>rejection, but it, and well,
+when we bring new contract,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4058-2
+00:35:37.590 --> 00:35:44.225
+<v Aliaksandr Batashou>we usually talk to them and like try to
+negotiate if we can do a better service,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4058-3
+00:35:44.225 --> 00:35:45.127
+<v Aliaksandr Batashou>but they...</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4076-0
+00:35:44.447 --> 00:35:47.564
+<v Vadzim Miliantsei>Okay,
+but what about different feedbacks from</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4076-1
+00:35:47.564 --> 00:35:50.816
+<v Vadzim Miliantsei>different hospitals for the same nurse?
+I mean,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4076-2
+00:35:50.816 --> 00:35:55.967
+<v Vadzim Miliantsei>we can match one nurse to one hospital,
+you know, if the feedback was good.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4079-0
+00:35:58.207 --> 00:35:59.887
+<v Aliaksandr Batashou>Well, we...</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4086-0
+00:36:01.727 --> 00:36:05.727
+<v Aliaksandr Batashou>We marked this in our systems, but...</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4097-0
+00:36:07.167 --> 00:36:13.563
+<v Aliaksandr Batashou>Other agencies can do the same,
+and the ranking system even might be kind</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4097-1
+00:36:13.563 --> 00:36:14.687
+<v Aliaksandr Batashou>of different.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4104-0
+00:36:16.527 --> 00:36:18.701
+<v Aliaksandr Batashou>So,
+I don't think there is like an industry</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4104-1
+00:36:18.701 --> 00:36:19.887
+<v Aliaksandr Batashou>standard in this regard.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4122-0
+00:36:21.887 --> 00:36:28.310
+<v Vadzim Miliantsei>Okay, thank you. And another question,
+does Nors have to accept or she only like</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4122-1
+00:36:28.310 --> 00:36:31.007
+<v Vadzim Miliantsei>matches your availability and see?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4130-0
+00:36:32.127 --> 00:36:37.631
+<v Aliaksandr Batashou>They need to make their availability, uh,
+and sometimes, uh, well, what happens,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4130-1
+00:36:37.631 --> 00:36:38.447
+<v Aliaksandr Batashou>they they...</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4133-0
+00:36:39.887 --> 00:36:41.887
+<v Aliaksandr Batashou>They don't show up.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4137-0
+00:36:44.407 --> 00:36:46.207
+<v Aliaksandr Batashou>And we do have such cases.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4153-0
+00:36:47.887 --> 00:36:51.964
+<v Vadzim Miliantsei>So, we don't need to pre-acknowledge,
+like we need to show,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4142-0
+00:36:48.527 --> 00:36:48.927
+<v Aliaksandr Batashou>Up.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4153-1
+00:36:51.964 --> 00:36:54.207
+<v Vadzim Miliantsei>like we accepted this assignment.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4177-0
+00:36:54.447 --> 00:37:00.659
+<v Aliaksandr Batashou>We do check no show up cases.
+As soon as we see that this happening too</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4177-1
+00:37:00.659 --> 00:37:07.045
+<v Aliaksandr Batashou>often with that specific person,
+we actually can offboard the person from</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4177-2
+00:37:07.045 --> 00:37:08.167
+<v Aliaksandr Batashou>our database.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4174-0
+00:37:08.847 --> 00:37:09.567
+<v Vadzim Miliantsei>Got to think.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4195-0
+00:37:10.447 --> 00:37:15.080
+<v Benoit Charrier>So to just follow up on that, yeah,
+I see there is a no-show rate of 12%.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4195-1
+00:37:15.080 --> 00:37:17.647
+<v Benoit Charrier>So is that a big impact to your business?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4233-0
+00:37:20.927 --> 00:37:24.863
+<v Aliaksandr Batashou>Yes. Well,
+it's difficult to say that big or small,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4233-1
+00:37:24.863 --> 00:37:30.919
+<v Aliaksandr Batashou>but obviously there is some impact and we
+want to reduce that number as much as</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4233-2
+00:37:30.919 --> 00:37:36.444
+<v Aliaksandr Batashou>possible. But as you can imagine,
+it's not always in our power to do so.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4217-0
+00:37:32.127 --> 00:37:32.527
+<v Rajpriya Alavandar>But.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4233-3
+00:37:36.444 --> 00:37:39.927
+<v Aliaksandr Batashou>When we sometimes ask why you didn't show
+up,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4243-0
+00:37:41.167 --> 00:37:46.653
+<v Aliaksandr Batashou>Well, people are not always honest, right?
+So there might be so many different</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4243-1
+00:37:46.653 --> 00:37:47.487
+<v Aliaksandr Batashou>reasons why.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4256-0
+00:37:49.007 --> 00:37:54.813
+<v Aliaksandr Batashou>including attending some other hospital
+submitted by other agency,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4256-1
+00:37:54.813 --> 00:37:56.287
+<v Aliaksandr Batashou>but with Siarhei.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4274-0
+00:37:59.167 --> 00:38:03.633
+<v Natalia Drokina>And when it happens,
+does the MedFlex find out on its own</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4259-0
+00:37:59.687 --> 00:37:59.967
+<v Aliaksandr Batashou>Right.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4261-0
+00:37:59.887 --> 00:38:00.367
+<v Alexandra Rendon>So.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4274-1
+00:38:03.633 --> 00:38:07.407
+<v Natalia Drokina>before the shift or when the hospital
+calls you?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4279-0
+00:38:08.527 --> 00:38:11.647
+<v Aliaksandr Batashou>Hospital call, unfortunately.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4286-0
+00:38:15.247 --> 00:38:16.047
+<v Alexandra Rendon>So.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4295-0
+00:38:15.327 --> 00:38:19.762
+<v Aliaksandr Batashou>So, we have, we have been notified, yeah,
+we we are notified by the hospital that</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4295-1
+00:38:19.762 --> 00:38:21.007
+<v Aliaksandr Batashou>someone didn't show up.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4346-0
+00:38:22.367 --> 00:38:27.245
+<v Rajpriya Alavandar>And how do you manage the nurses
+requirements as in if the nurse says I</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4300-0
+00:38:23.807 --> 00:38:23.967
+<v Alexandra Rendon>Mm.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4346-1
+00:38:27.245 --> 00:38:30.701
+<v Rajpriya Alavandar>want this,
+I'm looking for this kind of job or you</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4346-2
+00:38:30.701 --> 00:38:35.850
+<v Rajpriya Alavandar>know, the location preferences basically,
+where is it maintained the nurses</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4346-3
+00:38:35.850 --> 00:38:40.593
+<v Rajpriya Alavandar>preferences versus the hospital
+preferences and the individual client</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4346-4
+00:38:40.593 --> 00:38:41.407
+<v Rajpriya Alavandar>preferences?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4387-0
+00:38:42.687 --> 00:38:47.775
+<v Aliaksandr Batashou>I think the most important part is
+qualification and second is actually</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4387-1
+00:38:47.775 --> 00:38:52.085
+<v Aliaksandr Batashou>preferences, right?
+So if you're not qualifying for the job,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4362-0
+00:38:50.247 --> 00:38:50.407
+<v Rajpriya Alavandar>Yeah.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4387-2
+00:38:52.085 --> 00:38:56.396
+<v Aliaksandr Batashou>but you prefer to have it,
+legally it's not possible, right?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4387-3
+00:38:56.396 --> 00:38:59.647
+<v Aliaksandr Batashou>So you need to be qualified first and
+then we</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4394-0
+00:39:00.927 --> 00:39:05.887
+<v Aliaksandr Batashou>count on the preferences,
+much in preferences of nurse and hospital.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4408-0
+00:39:06.967 --> 00:39:11.487
+<v Rajpriya Alavandar>Yeah, so is it managed manually,
+or is that a system where you could?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4411-0
+00:39:10.807 --> 00:39:13.527
+<v Aliaksandr Batashou>It's all the way manual at the moment.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4412-0
+00:39:13.327 --> 00:39:13.847
+<v Rajpriya Alavandar>Okay.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4443-0
+00:39:15.007 --> 00:39:23.023
+<v Alexandra Rendon>So, to following up on that one,
+so the process after our nurse is matched,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4443-1
+00:39:23.023 --> 00:39:28.296
+<v Alexandra Rendon>then compliance is checked,
+and then if all good,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4443-2
+00:39:28.296 --> 00:39:33.887
+<v Alexandra Rendon>then someone calls the the nurse that won
+the shift.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4479-0
+00:39:33.967 --> 00:39:40.373
+<v Alexandra Rendon>to confirm that their availability and
+that they can go and they're interested</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4479-1
+00:39:40.373 --> 00:39:44.184
+<v Alexandra Rendon>and so on.
+Is there such a process as well to,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4479-2
+00:39:44.184 --> 00:39:49.617
+<v Alexandra Rendon>after all, is matched up,
+then the nurses get called to confirm to</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4479-3
+00:39:49.617 --> 00:39:51.807
+<v Alexandra Rendon>reduce this no-show, right?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4480-0
+00:39:51.647 --> 00:39:54.240
+<v Aliaksandr Batashou>Now,
+we fully learned the submission of the</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4480-1
+00:39:54.240 --> 00:39:55.007
+<v Aliaksandr Batashou>availability.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4492-0
+00:39:56.367 --> 00:39:58.676
+<v Alexandra Rendon>So,
+but then the nurse is somehow notified</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4492-1
+00:39:58.676 --> 00:40:00.127
+<v Alexandra Rendon>that she needs to go there.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4501-0
+00:39:59.327 --> 00:40:03.767
+<v Aliaksandr Batashou>Oh yeah, yeah, yeah, yes, yeah, yes, we,
+we...</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4505-0
+00:40:02.367 --> 00:40:05.367
+<v Alexandra Rendon>So there's a system that notifies
+automatically the...</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4533-0
+00:40:05.487 --> 00:40:08.192
+<v Aliaksandr Batashou>Automatically,
+as when identified that well,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4533-1
+00:40:08.192 --> 00:40:11.678
+<v Aliaksandr Batashou>well first when that person is proposed
+to your hospital,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4533-2
+00:40:11.678 --> 00:40:14.323
+<v Aliaksandr Batashou>and then when it's accepted by
+hospitality,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4533-3
+00:40:14.323 --> 00:40:16.127
+<v Aliaksandr Batashou>not then notification to them.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4549-0
+00:40:17.007 --> 00:40:20.181
+<v Alexandra Rendon>Okay,
+but no process to confirm this manually</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4536-0
+00:40:18.207 --> 00:40:18.447
+<v Ekaterina Bandurina>Okay.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4549-1
+00:40:20.181 --> 00:40:24.047
+<v Alexandra Rendon>by the coordinator that the nurse said,
+yes, I'm going.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4563-0
+00:40:24.927 --> 00:40:28.720
+<v Aliaksandr Batashou>Normally,
+it's confirmed through the SMS or text</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4563-1
+00:40:28.720 --> 00:40:32.127
+<v Aliaksandr Batashou>message. Sorry,
+it's text message or email.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4560-0
+00:40:30.687 --> 00:40:30.767
+<v Alexandra Rendon>Oh.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4571-0
+00:40:33.207 --> 00:40:34.127
+<v Aliaksandr Batashou>And it's.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4576-0
+00:40:33.407 --> 00:40:35.241
+<v Ekaterina Bandurina>Sorry,
+but you just mentioned that you don't</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4580-0
+00:40:33.647 --> 00:40:38.127
+<v Alexandra Rendon>From whom to whom? From whom to whom?
+The SMS.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4576-1
+00:40:35.241 --> 00:40:35.567
+<v Ekaterina Bandurina>capture.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4584-0
+00:40:37.407 --> 00:40:40.767
+<v Aliaksandr Batashou>No, nor should get notification from us.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4598-0
+00:40:41.807 --> 00:40:45.607
+<v Alexandra Rendon>via SMS that they got a shift somewhere.
+Okay.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4603-0
+00:40:44.687 --> 00:40:48.927
+<v Aliaksandr Batashou>via SMS or email,
+depending on their preferences.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4644-0
+00:40:49.687 --> 00:40:52.762
+<v Alexandra Rendon>Okay.
+And the other question that I had is,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4644-1
+00:40:52.762 --> 00:40:58.143
+<v Alexandra Rendon>is there a specific part of the process
+that you would not like to hand over</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4644-2
+00:40:58.143 --> 00:41:02.826
+<v Alexandra Rendon>completely to an agent?
+Is there a sensitive part or in this case,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4644-3
+00:41:02.826 --> 00:41:06.879
+<v Alexandra Rendon>in this industry,
+there's no really real sensitivity here</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4644-4
+00:41:06.879 --> 00:41:08.487
+<v Alexandra Rendon>that should be handled?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4655-0
+00:41:08.767 --> 00:41:13.429
+<v Alexandra Rendon>by someone in the process, specifically,
+hand it over to a human to make this</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4655-1
+00:41:13.429 --> 00:41:13.967
+<v Alexandra Rendon>decision.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4664-0
+00:41:15.007 --> 00:41:20.161
+<v Aliaksandr Batashou>Nothing I can recall.
+Maybe there are some very specific</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4664-1
+00:41:20.161 --> 00:41:21.247
+<v Aliaksandr Batashou>preferences.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4670-0
+00:41:23.327 --> 00:41:27.967
+<v Aliaksandr Batashou>Um, maybe, uh, sometimes we, we may have..
+.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4679-0
+00:41:29.967 --> 00:41:35.487
+<v Aliaksandr Batashou>regular clients which require like almost
+permanent nursery.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4689-0
+00:41:36.847 --> 00:41:40.609
+<v Aliaksandr Batashou>They may have their own preferences,
+not very specific ones,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4689-1
+00:41:40.609 --> 00:41:41.967
+<v Aliaksandr Batashou>but because they'll...</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4690-0
+00:41:43.327 --> 00:41:43.807
+<v Aliaksandr Batashou>Look.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4707-0
+00:41:44.527 --> 00:41:51.678
+<v Alexandra Rendon>So when the specific preferences come up,
+someone needs to actually intervene in</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4707-1
+00:41:51.678 --> 00:41:54.327
+<v Alexandra Rendon>the process and say yes or no.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4708-0
+00:41:57.407 --> 00:41:57.567
+<v Aliaksandr Batashou>Uhh...</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4714-0
+00:42:00.287 --> 00:42:02.447
+<v Aliaksandr Batashou>We don't have any any indication that...</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4721-0
+00:42:03.567 --> 00:42:06.527
+<v Aliaksandr Batashou>Specific requests need to be prioritized
+over others.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4731-0
+00:42:07.687 --> 00:42:12.509
+<v Aliaksandr Batashou>All right,
+so meaning that there might be some</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4731-1
+00:42:12.509 --> 00:42:14.767
+<v Aliaksandr Batashou>specific requirements.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4734-0
+00:42:15.967 --> 00:42:17.567
+<v Aliaksandr Batashou>Which not that is a...</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4745-0
+00:42:18.607 --> 00:42:22.607
+<v Aliaksandr Batashou>I can imagine that cannot be that easy to
+be matched optimatically.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4758-0
+00:42:24.687 --> 00:42:32.020
+<v Alexandra Rendon>So you are okay with handing over a
+process to an agent completely without</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4758-1
+00:42:32.020 --> 00:42:32.607
+<v Alexandra Rendon>any...</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4764-0
+00:42:34.447 --> 00:42:35.327
+<v Aliaksandr Batashou>Michael.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4775-0
+00:42:34.607 --> 00:42:38.367
+<v Alexandra Rendon>A specific decision in your business that
+needs to be done by a person.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4779-0
+00:42:37.407 --> 00:42:41.407
+<v Aliaksandr Batashou>My goal,
+my goal is automated as much as possible.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4781-0
+00:42:44.247 --> 00:42:44.527
+<v Benoit Charrier>Yeah.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4803-0
+00:42:44.607 --> 00:42:50.763
+<v Alexandra Rendon>But are the but no sensitivities and no
+something that in your business needs to</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4791-0
+00:42:44.687 --> 00:42:46.607
+<v Rajpriya Alavandar>Are there any? Sorry, go.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4789-0
+00:42:45.927 --> 00:42:46.207
+<v Benoit Charrier>Vegh.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4803-1
+00:42:50.763 --> 00:42:52.207
+<v Alexandra Rendon>be done by a human.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4807-0
+00:42:54.687 --> 00:42:56.367
+<v Aliaksandr Batashou>No, yeah, well...</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4826-0
+00:42:57.967 --> 00:43:01.135
+<v Aliaksandr Batashou>Data protection is all the decision might
+be in place, right?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4826-1
+00:43:01.135 --> 00:43:04.253
+<v Aliaksandr Batashou>But when you say sensitivity,
+what do you mean specifically?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4826-2
+00:43:04.253 --> 00:43:05.327
+<v Aliaksandr Batashou>Any specific example?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4856-0
+00:43:08.367 --> 00:43:16.712
+<v Alexandra Rendon>that a decision to put a nurse into a
+specific shift has a specific constraint</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4856-1
+00:43:16.712 --> 00:43:22.099
+<v Alexandra Rendon>for a specific case that a human needs to
+say, no,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4856-2
+00:43:22.099 --> 00:43:27.487
+<v Alexandra Rendon>we cannot put this nurse because it's too
+risky or</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4897-0
+00:43:28.047 --> 00:43:31.862
+<v Alexandra Rendon>something happens,
+last time that we put it there was a</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4897-1
+00:43:31.862 --> 00:43:37.449
+<v Alexandra Rendon>problem, so someone needs to be done that.
+Or we just assign as long as they meet</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4897-2
+00:43:37.449 --> 00:43:42.355
+<v Alexandra Rendon>the criteria, we assign them.
+No one really needs to actually intervene</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4897-3
+00:43:42.355 --> 00:43:45.967
+<v Alexandra Rendon>to check and say, yes, you did it okay,
+agent, fine.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4900-0
+00:43:46.367 --> 00:43:49.617
+<v Aliaksandr Batashou>Unless,
+unless there are no specific nodes in</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4900-1
+00:43:49.617 --> 00:43:50.607
+<v Aliaksandr Batashou>nurse profile.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4904-0
+00:43:53.007 --> 00:43:55.167
+<v Aliaksandr Batashou>That's that shouldn't be an issue.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4905-0
+00:43:55.487 --> 00:43:56.007
+<v Alexandra Rendon>Okay.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4914-0
+00:43:56.367 --> 00:43:58.527
+<v Benoit Charrier>Right, we have, we have.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4909-0
+00:43:57.047 --> 00:43:57.567
+<v Alexandra Rendon>Thanks.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4915-0
+00:43:57.407 --> 00:43:58.847
+<v Ekaterina Bandurina>For example, which nodes?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4939-0
+00:43:59.887 --> 00:44:03.937
+<v Benoit Charrier>So, we have 15 minutes left in the call,
+so I want to make sure that we also focus</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4939-1
+00:44:03.937 --> 00:44:07.647
+<v Benoit Charrier>on the top questions, but so Pavel,
+go ahead and do the next next question.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4974-0
+00:44:07.407 --> 00:44:09.913
+<v Pavel Klimasheuski>Yeah,
+for a small clarification regarding what</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4974-1
+00:44:09.913 --> 00:44:13.113
+<v Pavel Klimasheuski>Alexander just asked,
+you said that you notified the nurses</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4974-2
+00:44:13.113 --> 00:44:17.167
+<v Pavel Klimasheuski>about these shifts they will have,
+but do you receive any confirmation that</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4974-3
+00:44:17.167 --> 00:44:20.473
+<v Pavel Klimasheuski>the nurse did this,
+that they saw this confirmation that they</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/4974-4
+00:44:20.473 --> 00:44:21.967
+<v Pavel Klimasheuski>know that they have a shift?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5008-0
+00:44:23.247 --> 00:44:27.514
+<v Aliaksandr Batashou>By default, if not require,
+meaning that they accept it. So they can,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5008-1
+00:44:27.514 --> 00:44:32.331
+<v Aliaksandr Batashou>for whatever reason, they can reply,
+refusing it. It's possible. But actually,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5008-2
+00:44:32.331 --> 00:44:36.172
+<v Aliaksandr Batashou>they cannot reply. Actually,
+they need to call us and say that</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5008-3
+00:44:36.172 --> 00:44:38.367
+<v Aliaksandr Batashou>something changed in their schedule.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5028-0
+00:44:38.687 --> 00:44:42.353
+<v Pavel Klimasheuski>Okay, but if they basically miss this,
+that means in your system,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5028-1
+00:44:42.353 --> 00:44:46.687
+<v Pavel Klimasheuski>you will count it as it accepted. In fact,
+they don't know about the... Okay.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5039-0
+00:44:45.407 --> 00:44:50.358
+<v Aliaksandr Batashou>Yep, yep,
+that that's up to them to to be like</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5039-1
+00:44:50.358 --> 00:44:56.047
+<v Aliaksandr Batashou>available for for email notification and
+being there.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5056-0
+00:44:57.807 --> 00:45:02.927
+<v Aliaksandr Batashou>network so they could see all the
+incoming notification.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5044-0
+00:44:59.487 --> 00:44:59.967
+<v Pavel Klimasheuski>Okay.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5068-0
+00:45:02.927 --> 00:45:05.926
+<v Pavel Klimasheuski>And what are the time constraints between,
+you know,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5068-1
+00:45:05.926 --> 00:45:09.549
+<v Pavel Klimasheuski>receiving identification and having the
+physical shift? I mean,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5068-2
+00:45:09.549 --> 00:45:11.247
+<v Pavel Klimasheuski>like two or three days a week.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5069-0
+00:45:13.567 --> 00:45:14.687
+<v Aliaksandr Batashou>Um...</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5095-0
+00:45:15.887 --> 00:45:19.610
+<v Aliaksandr Batashou>Yeah, because we, if they,
+for whatever reason,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5095-1
+00:45:19.610 --> 00:45:25.661
+<v Aliaksandr Batashou>they they cannot show up and they they
+must do notify us no longer than in 24</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5095-2
+00:45:25.661 --> 00:45:26.127
+<v Aliaksandr Batashou>hours.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5098-0
+00:45:26.447 --> 00:45:29.407
+<v Pavel Klimasheuski>Okay, and you notify them in what advance?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5106-0
+00:45:32.367 --> 00:45:35.024
+<v Aliaksandr Batashou>Yeah,
+usually it's happening two or three days</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5106-1
+00:45:35.024 --> 00:45:35.647
+<v Aliaksandr Batashou>in advance.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5153-0
+00:45:35.647 --> 00:45:39.525
+<v Pavel Klimasheuski>Two, three days. Okay. And okay,
+another more high level question. Yeah,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5153-1
+00:45:39.525 --> 00:45:43.935
+<v Pavel Klimasheuski>you know that you want to have everything
+automated and we will try to do our best</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5153-2
+00:45:43.935 --> 00:45:46.803
+<v Pavel Klimasheuski>to do that.
+But maybe you have something specifically</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5153-3
+00:45:46.803 --> 00:45:49.619
+<v Pavel Klimasheuski>that you would highlight as red flag for
+automation.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5153-4
+00:45:49.619 --> 00:45:53.232
+<v Pavel Klimasheuski>Or I would say that you're kind of very
+skeptical about automation.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5153-5
+00:45:53.232 --> 00:45:56.367
+<v Pavel Klimasheuski>Is there anything in your mind that you
+can recall or not?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5154-0
+00:45:57.967 --> 00:45:58.407
+<v Pavel Klimasheuski>That.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5166-0
+00:45:59.407 --> 00:46:04.310
+<v Pavel Klimasheuski>You have a feeling that agent is very not
+good enough for this work in your</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5160-0
+00:46:01.007 --> 00:46:01.647
+<v Aliaksandr Batashou>Um...</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5166-1
+00:46:04.310 --> 00:46:05.407
+<v Pavel Klimasheuski>personal feeling.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5167-0
+00:46:06.367 --> 00:46:07.087
+<v Aliaksandr Batashou>Mai.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5212-0
+00:46:09.327 --> 00:46:15.404
+<v Aliaksandr Batashou>The only the only thing I'm skeptical is
+how accurate that matching process will</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5212-1
+00:46:15.404 --> 00:46:18.781
+<v Aliaksandr Batashou>be,
+and then the second one is how my people</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5212-2
+00:46:18.781 --> 00:46:24.259
+<v Aliaksandr Batashou>will accept that agency flow because they
+refused the previous solution.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5212-3
+00:46:24.259 --> 00:46:30.412
+<v Aliaksandr Batashou>I'm not sure how bad the solution was,
+but I do have a feeling that it was like..</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5212-4
+00:46:30.412 --> 00:46:30.487
+<v Aliaksandr Batashou>.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5214-0
+00:46:30.607 --> 00:46:31.167
+<v Aliaksandr Batashou>Lack of.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5224-0
+00:46:32.767 --> 00:46:39.007
+<v Aliaksandr Batashou>lack of training and lack of trust and
+and actually partially</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5234-0
+00:46:41.967 --> 00:46:47.007
+<v Aliaksandr Batashou>Thinking they're thinking that it might
+be risk for their job security.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5288-0
+00:46:48.407 --> 00:46:51.882
+<v Pavel Klimasheuski>Okay, and the last one,
+can I call that from what I see that the</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5288-1
+00:46:51.882 --> 00:46:56.266
+<v Pavel Klimasheuski>matching process is the process where we
+see the most, you know, absence of this,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5288-2
+00:46:56.266 --> 00:46:59.207
+<v Pavel Klimasheuski>not the absence,
+presence of this gut feeling. I mean,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5288-3
+00:46:59.207 --> 00:47:02.735
+<v Pavel Klimasheuski>when the when the something is decided
+not upon the instructions,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5288-4
+00:47:02.735 --> 00:47:06.317
+<v Pavel Klimasheuski>but rather than people have some,
+you know, pattern in their head,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5288-5
+00:47:06.317 --> 00:47:10.007
+<v Pavel Klimasheuski>like this nurse would fit better,
+this nurse would fit less without.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5293-0
+00:47:10.527 --> 00:47:14.287
+<v Pavel Klimasheuski>Any direct hints on that, you know,
+based on the experience?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5320-0
+00:47:15.647 --> 00:47:19.070
+<v Aliaksandr Batashou>Yeah,
+I do have for what very experienced</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5320-1
+00:47:19.070 --> 00:47:23.797
+<v Aliaksandr Batashou>people in my team, someone,
+some some people work for me,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5320-2
+00:47:23.797 --> 00:47:28.687
+<v Aliaksandr Batashou>like 10 more, 10 plus, yeah,
+they're they actually do have.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5322-0
+00:47:30.207 --> 00:47:31.487
+<v Aliaksandr Batashou>As you mentioned, feeling.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5323-0
+00:47:32.407 --> 00:47:32.527
+<v Pavel Klimasheuski>Yeah.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5324-0
+00:47:32.847 --> 00:47:32.887
+<v Aliaksandr Batashou>Uh...</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5325-0
+00:47:34.767 --> 00:47:34.887
+<v Aliaksandr Batashou>The.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5356-0
+00:47:37.567 --> 00:47:42.583
+<v Aliaksandr Batashou>They know how to act better in specific
+cases,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5356-1
+00:47:42.583 --> 00:47:50.055
+<v Aliaksandr Batashou>assuming the specific request and even
+sometimes specification of the</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5356-2
+00:47:50.055 --> 00:47:56.247
+<v Aliaksandr Batashou>specialization of the hospital,
+matching into the nurses.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5357-0
+00:47:57.087 --> 00:47:57.887
+<v Pavel Klimasheuski>Okay, thanks.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5359-0
+00:47:57.167 --> 00:47:58.287
+<v Aliaksandr Batashou>So, yeah, it's...</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5368-0
+00:48:00.527 --> 00:48:02.367
+<v Natalia Drokina>So let's say in a worst case...</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5367-0
+00:48:00.687 --> 00:48:02.447
+<v Aliaksandr Batashou>Um, two months are still making.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5379-0
+00:48:03.527 --> 00:48:08.043
+<v Natalia Drokina>In a worst case,
+you will have eight different judgment</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5372-0
+00:48:03.567 --> 00:48:03.887
+<v Aliaksandr Batashou>Yeah.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5379-1
+00:48:08.043 --> 00:48:08.527
+<v Natalia Drokina>calls.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5382-0
+00:48:09.967 --> 00:48:11.247
+<v Natalia Drokina>For the matching process.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5383-0
+00:48:14.207 --> 00:48:14.847
+<v Aliaksandr Batashou>Why?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5391-0
+00:48:15.887 --> 00:48:20.207
+<v Natalia Drokina>if coordinators work on undocumented
+rules.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5396-0
+00:48:24.767 --> 00:48:26.687
+<v Natalia Drokina>There will be 8 different.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5395-0
+00:48:25.527 --> 00:48:25.687
+<v Aliaksandr Batashou>Mm.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5398-0
+00:48:28.367 --> 00:48:29.327
+<v Natalia Drokina>judgment.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5405-0
+00:48:30.527 --> 00:48:32.127
+<v Natalia Drokina>judgments in magic.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5406-0
+00:48:31.807 --> 00:48:33.407
+<v Aliaksandr Batashou>I'm not sure I'm following you.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5443-0
+00:48:34.607 --> 00:48:37.566
+<v Pavel Klimasheuski>I think Anatolii means that you have 8
+workers, right?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5443-1
+00:48:37.566 --> 00:48:41.117
+<v Pavel Klimasheuski>And that the actual judgment upon that,
+like, is this person fit,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5422-0
+00:48:38.807 --> 00:48:39.327
+<v Natalia Drokina>Yes.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5443-2
+00:48:41.117 --> 00:48:44.453
+<v Pavel Klimasheuski>or let's say what the best person for
+this specific schedule,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5443-3
+00:48:44.453 --> 00:48:48.327
+<v Pavel Klimasheuski>it can be 8 different, you know,
+decisions from eight different people.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5459-0
+00:48:48.287 --> 00:48:52.784
+<v Aliaksandr Batashou>Okay, gotcha. Actually,
+at the end of the day,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5442-0
+00:48:48.847 --> 00:48:49.407
+<v Natalia Drokina>Yes.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5459-1
+00:48:52.784 --> 00:48:58.621
+<v Aliaksandr Batashou>I'm more about hospital satisfaction on
+the specific person.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5459-2
+00:48:58.621 --> 00:49:02.927
+<v Aliaksandr Batashou>As soon as the hospital is happy,
+I'm happy.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5460-0
+00:49:05.327 --> 00:49:05.807
+<v Pavel Klimasheuski>Thank you.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5463-0
+00:49:08.207 --> 00:49:10.287
+<v Benoit Charrier>All right, Krzysztof.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5505-0
+00:49:11.287 --> 00:49:14.347
+<v Krzysztof Wilniewczyc>Yes,
+I've got a general question regarding a</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5505-1
+00:49:14.347 --> 00:49:19.857
+<v Krzysztof Wilniewczyc>cost of the no-show or the lost shift.
+What are the consequences in terms of the</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5505-2
+00:49:19.857 --> 00:49:24.414
+<v Krzysztof Wilniewczyc>money or maybe it costed you some
+relationship with the hospitals?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5505-3
+00:49:24.414 --> 00:49:28.087
+<v Krzysztof Wilniewczyc>Did you ever lost the relationship with
+the hospital?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5506-0
+00:49:30.007 --> 00:49:31.807
+<v Aliaksandr Batashou>Have I done answered this question
+already?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5515-0
+00:49:32.687 --> 00:49:34.847
+<v Krzysztof Wilniewczyc>Okay, so I need to.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5544-0
+00:49:34.207 --> 00:49:37.745
+<v Benoit Charrier>I think you, yeah,
+you mentioned that the reason there's an</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5544-1
+00:49:37.745 --> 00:49:42.167
+<v Benoit Charrier>offshore and it's more of the reason is
+because the nurses get assigned by</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5544-2
+00:49:42.167 --> 00:49:45.116
+<v Benoit Charrier>another,
+they go to another hospital because they</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5555-0
+00:49:43.727 --> 00:49:47.642
+<v Krzysztof Wilniewczyc>Yeah, yeah, but that's obvious.
+But my actual question is,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5544-3
+00:49:45.116 --> 00:49:45.647
+<v Benoit Charrier>have a...</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5555-1
+00:49:47.642 --> 00:49:52.687
+<v Krzysztof Wilniewczyc>can you estimate in terms of the actual
+money? Like, do you have any range?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5573-0
+00:49:54.527 --> 00:49:58.641
+<v Aliaksandr Batashou>No,
+it's more in a in a like relationship</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5573-1
+00:49:58.641 --> 00:50:01.287
+<v Aliaksandr Batashou>with with my clients, yeah.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5593-0
+00:49:59.887 --> 00:50:04.097
+<v Krzysztof Wilniewczyc>relationship.
+But did you ever lose the relationship</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5593-1
+00:50:04.097 --> 00:50:10.372
+<v Krzysztof Wilniewczyc>with the hospital or it was rather the
+degradation of the relationship but not</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5584-0
+00:50:06.767 --> 00:50:07.247
+<v Aliaksandr Batashou>Nah.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5593-2
+00:50:10.372 --> 00:50:11.167
+<v Krzysztof Wilniewczyc>losing it?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5601-0
+00:50:12.047 --> 00:50:17.174
+<v Aliaksandr Batashou>Not,
+but I had to give a discount to one of my</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5601-1
+00:50:17.174 --> 00:50:18.047
+<v Aliaksandr Batashou>clients.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5611-0
+00:50:18.927 --> 00:50:22.680
+<v Krzysztof Wilniewczyc>So, somehow,
+you might measure it in terms of the</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5611-1
+00:50:22.680 --> 00:50:23.807
+<v Krzysztof Wilniewczyc>financial loss.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5615-0
+00:50:24.767 --> 00:50:26.767
+<v Aliaksandr Batashou>Yeah, but it's not like black and white.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5622-0
+00:50:28.127 --> 00:50:31.127
+<v Krzysztof Wilniewczyc>So, okay,
+so no estimations were well done. Okay,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5622-1
+00:50:31.127 --> 00:50:31.727
+<v Krzysztof Wilniewczyc>thank you.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5639-0
+00:50:33.327 --> 00:50:39.067
+<v Benoit Charrier>Is this issues of no shore rate something
+that you think should be addressed here</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5639-1
+00:50:39.067 --> 00:50:40.607
+<v Benoit Charrier>in with AI, if we can?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5660-0
+00:50:44.287 --> 00:50:51.273
+<v Aliaksandr Batashou>Are we actually solving solving that
+changes all that? No show up problem here.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5660-1
+00:50:51.273 --> 00:50:54.767
+<v Aliaksandr Batashou>If we could, I would be more than happy.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5662-0
+00:50:57.887 --> 00:50:58.447
+<v Benoit Charrier>Okay.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5700-0
+00:50:58.447 --> 00:51:01.989
+<v Krzysztof Wilniewczyc>Well,
+I would say it's somehow related because</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5700-1
+00:51:01.989 --> 00:51:06.210
+<v Krzysztof Wilniewczyc>it's about the speed.
+So if you can increase the speed,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5700-2
+00:51:06.210 --> 00:51:11.938
+<v Krzysztof Wilniewczyc>then we can solve or free the no-show
+issue or the other ones or the better</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5700-3
+00:51:11.938 --> 00:51:16.687
+<v Krzysztof Wilniewczyc>matching or the quality and so on.
+So definitely it's related.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5703-0
+00:51:18.447 --> 00:51:21.967
+<v Aliaksandr Batashou>Cool, then the more problems we solve,
+the better.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5704-0
+00:51:23.647 --> 00:51:23.927
+<v Krzysztof Wilniewczyc>That's.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5711-0
+00:51:24.807 --> 00:51:25.327
+<v Tamas Kiss>Okay.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5749-0
+00:51:25.247 --> 00:51:28.931
+<v Benoit Charrier>Yeah,
+we have to drill into this one separately,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5749-1
+00:51:28.931 --> 00:51:34.194
+<v Benoit Charrier>the no shore rate, it seems.
+If I can ask a question before I let the</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5749-2
+00:51:34.194 --> 00:51:38.705
+<v Benoit Charrier>others, you mentioned,
+I'm trying to understand the success</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5749-3
+00:51:38.705 --> 00:51:42.239
+<v Benoit Charrier>criteria,
+you mentioned 10 times the business.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5749-4
+00:51:42.239 --> 00:51:45.247
+<v Benoit Charrier>What would be a success metrics for you?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5780-0
+00:51:47.247 --> 00:51:50.558
+<v Benoit Charrier>10 times,
+we don't have the size of your business,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5780-1
+00:51:50.558 --> 00:51:54.844
+<v Benoit Charrier>so would it be 10 times the number of
+shift making? So, you know,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5780-2
+00:51:54.844 --> 00:51:57.896
+<v Benoit Charrier>you do 120 a day today.
+If we went up to 1200,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5780-3
+00:51:57.896 --> 00:52:02.247
+<v Benoit Charrier>that would be a success metric.
+So what would be a success metric?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5800-0
+00:52:02.447 --> 00:52:07.624
+<v Aliaksandr Batashou>Yeah,
+more my target in a in a in the Q2 years</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5800-1
+00:52:07.624 --> 00:52:15.887
+<v Aliaksandr Batashou>time to have 200 millions in revenue,
+which in the current way is like 14.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5807-0
+00:52:18.847 --> 00:52:20.687
+<v Tamas Kiss>What's the current? Sorry,
+I couldn't hear it.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5805-0
+00:52:19.167 --> 00:52:19.647
+<v Benoit Charrier>Okay.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5811-0
+00:52:21.647 --> 00:52:22.607
+<v Tamas Kiss>The current revenue.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5810-0
+00:52:21.847 --> 00:52:22.287
+<v Benoit Charrier>Fourteen.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5826-0
+00:52:24.207 --> 00:52:28.847
+<v Benoit Charrier>Fourteen million millions want to go to
+wants to go to 200 in two years.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5818-0
+00:52:25.407 --> 00:52:26.127
+<v Tamas Kiss>14, okay.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5824-0
+00:52:28.327 --> 00:52:28.687
+<v Tamas Kiss>Okay.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5845-0
+00:52:30.127 --> 00:52:33.091
+<v Benoit Charrier>But it mentions that you'd like to do it
+in eight weeks.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5845-1
+00:52:33.091 --> 00:52:37.095
+<v Benoit Charrier>So in some of the information we got,
+what would you expect to have in eight</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5845-2
+00:52:37.095 --> 00:52:37.407
+<v Benoit Charrier>weeks?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5853-0
+00:52:38.407 --> 00:52:42.447
+<v Aliaksandr Batashou>What I want in my ethics to grow my
+business to 200.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5857-0
+00:52:43.887 --> 00:52:44.687
+<v Benoit Charrier>In Edwards.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5855-0
+00:52:44.127 --> 00:52:44.447
+<v Aliaksandr Batashou>Touch.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5884-0
+00:52:47.527 --> 00:52:53.224
+<v Aliaksandr Batashou>No, well, it's a fair question,
+but I want to actually to give the best</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5884-1
+00:52:53.224 --> 00:52:58.527
+<v Aliaksandr Batashou>proposal what I can get into in those
+eight weeks, right? So it...</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5917-0
+00:52:59.967 --> 00:53:04.716
+<v Aliaksandr Batashou>I want to start addressing my progresses
+as soon as possible.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5917-1
+00:53:04.716 --> 00:53:09.848
+<v Aliaksandr Batashou>So I want to get that away from my
+investment as soon as possible.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5917-2
+00:53:09.848 --> 00:53:16.207
+<v Aliaksandr Batashou>So you tell me what is the best to do in
+eight weeks so I could get my money back.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5919-0
+00:53:17.487 --> 00:53:18.927
+<v Aliaksandr Batashou>Starting to get my money back.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5920-0
+00:53:20.607 --> 00:53:21.087
+<v Benoit Charrier>K.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5937-0
+00:53:21.487 --> 00:53:25.214
+<v Tamas Kiss>One quick question.
+What are the tasks for the senior</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5937-1
+00:53:25.214 --> 00:53:28.527
+<v Tamas Kiss>coordinator which is not visible by the
+system?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5951-0
+00:53:31.807 --> 00:53:39.383
+<v Aliaksandr Batashou>Make sure that we are filling all the
+requests as quick as possible,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5951-1
+00:53:39.383 --> 00:53:43.007
+<v Aliaksandr Batashou>and we there is no waiting queue.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5987-0
+00:53:47.487 --> 00:53:52.385
+<v Aliaksandr Batashou>Like if I see that there is a queue,
+then it's actually a problem.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5987-1
+00:53:52.385 --> 00:53:57.430
+<v Aliaksandr Batashou>So my job is to make sure there is no
+queue, because as I mentioned,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5987-2
+00:53:57.430 --> 00:54:03.060
+<v Aliaksandr Batashou>if there is a queue, then we actually,
+it takes us even longer to submit our</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5987-3
+00:54:03.060 --> 00:54:05.327
+<v Aliaksandr Batashou>proposal and time is a problem.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5988-0
+00:54:08.327 --> 00:54:08.767
+<v Tamas Kiss>OK.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6012-0
+00:54:09.727 --> 00:54:14.332
+<v Benoit Charrier>When you say there is no queue,
+you mean like your 8 coordinators have</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/5998-0
+00:54:13.807 --> 00:54:14.127
+<v Aliaksandr Batashou>Yeah.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6012-1
+00:54:14.332 --> 00:54:16.927
+<v Benoit Charrier>actually are working on all the tickets?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6015-0
+00:54:15.327 --> 00:54:19.887
+<v Aliaksandr Batashou>It's actually mean as we process all the
+requests on the go.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6016-0
+00:54:20.807 --> 00:54:21.247
+<v Benoit Charrier>Yeah.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6017-0
+00:54:23.167 --> 00:54:23.487
+<v Benoit Charrier>Yep.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6019-0
+00:54:24.487 --> 00:54:25.007
+<v Benoit Charrier>Tetiana.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6055-0
+00:54:26.567 --> 00:54:34.389
+<v Ekaterina Bandurina>In case if the same nurses are matching
+to different hospital requests, do you,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6055-1
+00:54:34.389 --> 00:54:41.233
+<v Ekaterina Bandurina>how do you do personal reserves them?
+So is it only one nurse that is</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6055-2
+00:54:41.233 --> 00:54:45.927
+<v Ekaterina Bandurina>pre-reserved till the nurse will confirm
+final?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6073-0
+00:54:46.847 --> 00:54:53.225
+<v Ekaterina Bandurina>availability or it's like reservation is
+to three nurses for each request and</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6073-1
+00:54:53.225 --> 00:54:57.887
+<v Ekaterina Bandurina>others hospital requests,
+they are not visible for them.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6097-0
+00:55:00.447 --> 00:55:05.856
+<v Aliaksandr Batashou>It's not feasible for nurses at all.
+We just submitted to hospital and then</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6097-1
+00:55:05.856 --> 00:55:10.767
+<v Aliaksandr Batashou>notify them which hospital they need to
+have to go. They have to go.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6098-0
+00:55:12.287 --> 00:55:12.447
+<v Aliaksandr Batashou>Ohh...</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6138-0
+00:55:12.367 --> 00:55:19.244
+<v Ekaterina Bandurina>I mean, for you, not for nurses visible.
+I mean, your coordinators, for example,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6138-1
+00:55:19.244 --> 00:55:23.405
+<v Ekaterina Bandurina>have three,
+the same nurses that are matching to</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6138-2
+00:55:23.405 --> 00:55:28.670
+<v Ekaterina Bandurina>different hospitals.
+And do you reserve for each hospital one</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6138-3
+00:55:28.670 --> 00:55:31.727
+<v Ekaterina Bandurina>nurse, which is matching or several?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6139-0
+00:55:30.367 --> 00:55:34.287
+<v Aliaksandr Batashou>No, it will not be no,
+it will not be efficient for the business.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6140-0
+00:55:35.247 --> 00:55:35.407
+<v Ekaterina Bandurina>Mm.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6150-0
+00:55:36.287 --> 00:55:39.567
+<v Aliaksandr Batashou>Because other competitors do pretty much
+the same.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6170-0
+00:55:40.847 --> 00:55:43.887
+<v Aliaksandr Batashou>Right,
+so we submit a couple of nurses to</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6170-1
+00:55:43.887 --> 00:55:48.447
+<v Aliaksandr Batashou>different hospitals,
+and then as soon as someone is confirmed.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6169-0
+00:55:48.847 --> 00:55:49.327
+<v Ekaterina Bandurina>Mhm.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6178-0
+00:55:49.567 --> 00:55:52.927
+<v Aliaksandr Batashou>then we remove it from other hospital
+submission.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6208-0
+00:55:53.887 --> 00:55:59.755
+<v Ekaterina Bandurina>OK, so at the same time,
+you sent all three nurses to the same</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6208-1
+00:55:59.755 --> 00:56:05.902
+<v Ekaterina Bandurina>different hospitals. OK,
+and what if they all of them confirm the</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6197-0
+00:56:01.487 --> 00:56:02.287
+<v Aliaksandr Batashou>Yeah, yep.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6208-2
+00:56:05.902 --> 00:56:06.927
+<v Ekaterina Bandurina>same nurse?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6210-0
+00:56:07.767 --> 00:56:10.607
+<v Aliaksandr Batashou>Then, then we work our proposal.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6212-0
+00:56:11.407 --> 00:56:11.967
+<v Ekaterina Bandurina>Okay.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6219-0
+00:56:14.287 --> 00:56:17.007
+<v Benoit Charrier>We have two minutes left in our call.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6218-0
+00:56:18.407 --> 00:56:18.687
+<v Aliaksandr Batashou>Yeah.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6239-0
+00:56:19.967 --> 00:56:28.035
+<v Aliaksandr Batashou>Now, we we need actually need to finish,
+and so let's stop the questions.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6239-1
+00:56:28.035 --> 00:56:32.287
+<v Aliaksandr Batashou>I'm back to my role of the coach, yeah.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6235-0
+00:56:28.767 --> 00:56:29.247
+<v Benoit Charrier>Okay.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6241-0
+00:56:35.167 --> 00:56:36.367
+<v Aliaksandr Batashou>Any questions, guys?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6255-0
+00:56:37.447 --> 00:56:40.948
+<v Aliaksandr Batashou>about the session,
+I do have one feedback which I actually</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6255-1
+00:56:40.948 --> 00:56:42.847
+<v Aliaksandr Batashou>mentioned to other team as well.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6257-0
+00:56:44.607 --> 00:56:45.567
+<v Aliaksandr Batashou>I think you.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6261-0
+00:56:46.607 --> 00:56:48.207
+<v Aliaksandr Batashou>I don't know what the reason is, but...</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6303-0
+00:56:49.407 --> 00:56:53.503
+<v Aliaksandr Batashou>You and the other team,
+you focused a lot on that legal sort of</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6303-1
+00:56:53.503 --> 00:56:58.623
+<v Aliaksandr Batashou>things. Like I, from the very beginning,
+I mentioned that's a separate process.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6303-2
+00:56:58.623 --> 00:57:03.871
+<v Aliaksandr Batashou>There is a separate team on boarding the
+nurses and for coordinators is available</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6303-3
+00:57:03.871 --> 00:57:08.991
+<v Aliaksandr Batashou>if the nurse is like accepted properly on
+boarded and can be offered you to the</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6303-4
+00:57:08.991 --> 00:57:09.567
+<v Aliaksandr Batashou>hospital.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6313-0
+00:57:10.287 --> 00:57:13.493
+<v Aliaksandr Batashou>End of the story,
+but you all for some reason been keep</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6313-1
+00:57:13.493 --> 00:57:15.727
+<v Aliaksandr Batashou>asking this question. I'm not sure why.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6336-0
+00:57:19.007 --> 00:57:22.448
+<v Benoit Charrier>I think that's, you know,
+that's our training in a way.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6336-1
+00:57:22.448 --> 00:57:25.582
+<v Benoit Charrier>We've been trained to look at risk and
+compliance,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6336-2
+00:57:25.582 --> 00:57:27.487
+<v Benoit Charrier>especially with AI and in that.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6347-0
+00:57:28.447 --> 00:57:31.856
+<v Aliaksandr Batashou>No, but as soon as I said,
+that's separate thing,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6343-0
+00:57:30.847 --> 00:57:31.327
+<v Benoit Charrier>Yeah.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6347-1
+00:57:31.856 --> 00:57:34.447
+<v Aliaksandr Batashou>nothing to do with the currency. Done.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6348-0
+00:57:36.887 --> 00:57:37.247
+<v Benoit Charrier>What?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6389-0
+00:57:37.887 --> 00:57:43.363
+<v Alexandra Rendon>Can I ask just one more last question?
+In terms of the coordinators,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6389-1
+00:57:43.363 --> 00:57:48.919
+<v Alexandra Rendon>what do you expect the impact to be from
+this agentic implementation?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6389-2
+00:57:48.919 --> 00:57:52.649
+<v Alexandra Rendon>Because if we are able to automate
+everything,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6389-3
+00:57:52.649 --> 00:57:57.967
+<v Alexandra Rendon>then what would be the job of the
+coordinators? Are you expecting?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6393-0
+00:57:58.607 --> 00:58:01.967
+<v Alexandra Rendon>that layoffs will be also part of the
+process.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6394-0
+00:58:03.247 --> 00:58:03.927
+<v Aliaksandr Batashou>Ohh.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6409-0
+00:58:06.207 --> 00:58:09.247
+<v Aliaksandr Batashou>You're worse than me to go back to my
+role on CEO.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6405-0
+00:58:09.807 --> 00:58:10.367
+<v Alexandra Rendon>Sorry.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6424-0
+00:58:10.047 --> 00:58:15.112
+<v Benoit Charrier>Yeah, it's gonna work. We don't,
+do we do you need the answer? Alexandra,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6432-0
+00:58:14.527 --> 00:58:18.784
+<v Alexandra Rendon>Did we answer that? Because I mean,
+are you really,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6424-1
+00:58:15.112 --> 00:58:16.687
+<v Benoit Charrier>do you know, because...</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6428-0
+00:58:18.767 --> 00:58:19.687
+<v Benoit Charrier>It doesn't matter.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6432-1
+00:58:18.784 --> 00:58:21.487
+<v Alexandra Rendon>what happens to the coordinators?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6447-0
+00:58:22.927 --> 00:58:25.327
+<v Alexandra Rendon>If you are able to automate everything.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6466-0
+00:58:22.967 --> 00:58:26.866
+<v Aliaksandr Batashou>I mentioned that,
+I mentioned that I want to grow my</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6466-1
+00:58:26.866 --> 00:58:31.427
+<v Aliaksandr Batashou>business. So I would,
+I'm expecting to more requests from the</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6466-2
+00:58:31.427 --> 00:58:35.327
+<v Aliaksandr Batashou>hospitals with the same number of people
+in my team.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6523-0
+00:58:36.927 --> 00:58:40.676
+<v Alexandra Rendon>But if we can automate the whole process,
+yeah, exactly, exactly,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6479-0
+00:58:37.727 --> 00:58:40.287
+<v Pavel Klimasheuski>Or less people with the same amount of
+hospital.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6523-1
+00:58:40.676 --> 00:58:43.459
+<v Alexandra Rendon>because you're expecting to automate
+everything,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6489-0
+00:58:41.167 --> 00:58:43.447
+<v Aliaksandr Batashou>Okay. Okay.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6523-2
+00:58:43.459 --> 00:58:46.243
+<v Alexandra Rendon>then the coordinators will have less to
+do, but,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6523-3
+00:58:46.243 --> 00:58:50.958
+<v Alexandra Rendon>and you don't want them to be in the loop
+because you don't want any decisions for</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6498-0
+00:58:46.767 --> 00:58:47.327
+<v Aliaksandr Batashou>On.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6504-0
+00:58:49.647 --> 00:58:49.887
+<v Aliaksandr Batashou>Up.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6523-4
+00:58:50.958 --> 00:58:54.026
+<v Alexandra Rendon>them to be made,
+then what kind of work would they be</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6511-0
+00:58:51.287 --> 00:58:51.887
+<v Benoit Charrier>Doesn't matter.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6523-5
+00:58:54.026 --> 00:58:54.367
+<v Alexandra Rendon>doing?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6520-0
+00:58:54.847 --> 00:58:56.367
+<v Aliaksandr Batashou>We'll be happy to review a solution.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6528-0
+00:58:57.887 --> 00:58:58.407
+<v Benoit Charrier>Yeah.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6575-0
+00:58:57.967 --> 00:59:00.326
+<v Pavel Klimasheuski>Sorry,
+can I ask a question for you to as a</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6530-0
+00:58:58.287 --> 00:58:58.767
+<v Alexandra Rendon>Okay.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6575-1
+00:59:00.326 --> 00:59:04.508
+<v Pavel Klimasheuski>coach, actually, if you don't mind?
+I haven't asked you this as when you were</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6540-0
+00:59:03.167 --> 00:59:03.487
+<v Aliaksandr Batashou>Yeah.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6575-2
+00:59:04.508 --> 00:59:07.833
+<v Pavel Klimasheuski>in the role, but what do you think?
+When we talk to the CEOs,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6575-3
+00:59:07.833 --> 00:59:11.961
+<v Pavel Klimasheuski>should we actually understand their
+strategic approach? I mean, for example,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6575-4
+00:59:11.961 --> 00:59:14.910
+<v Pavel Klimasheuski>AI transformation, right?
+We can do it sharp, rapidly,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6575-5
+00:59:14.910 --> 00:59:17.967
+<v Pavel Klimasheuski>with a higher risk,
+or we can do it in a conservatively.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6600-0
+00:59:18.367 --> 00:59:22.182
+<v Pavel Klimasheuski>with a more feedback loop and going
+gracefully, step by step.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6600-1
+00:59:22.182 --> 00:59:26.982
+<v Pavel Klimasheuski>Is it something that we should actually
+ask or is it something that we should</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6600-2
+00:59:26.982 --> 00:59:30.367
+<v Pavel Klimasheuski>actually push them to do?
+What is the better approach?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6640-0
+00:59:30.607 --> 00:59:35.156
+<v Aliaksandr Batashou>It's a very good question,
+but depending on the size of the</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6640-1
+00:59:35.156 --> 00:59:38.492
+<v Aliaksandr Batashou>organization,
+maturity of the organization,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6640-2
+00:59:38.492 --> 00:59:42.890
+<v Aliaksandr Batashou>some CEO just heard that there is some
+something like AI,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6640-3
+00:59:42.890 --> 00:59:47.590
+<v Aliaksandr Batashou>but they have no idea how that AI can
+help to their business.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6640-4
+00:59:47.590 --> 00:59:50.927
+<v Aliaksandr Batashou>Some CEO are more advanced and they
+clearly</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6632-0
+00:59:47.647 --> 00:59:48.207
+<v Pavel Klimasheuski>Yeah.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6674-0
+00:59:51.407 --> 00:59:57.067
+<v Aliaksandr Batashou>themselves understand where AI could be
+applicable to that business.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6674-1
+00:59:57.067 --> 01:00:01.988
+<v Aliaksandr Batashou>So unfortunately,
+by all I think there is no single recipe,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6674-2
+01:00:01.988 --> 01:00:07.567
+<v Aliaksandr Batashou>right? You just need to feel that person,
+like is a person actually</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6666-0
+01:00:02.847 --> 01:00:04.487
+<v Pavel Klimasheuski>Yeah, but I mean as EPAM we...</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6672-0
+01:00:09.167 --> 01:00:09.647
+<v Benoit Charrier>Yeah.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6707-0
+01:00:09.647 --> 01:00:15.435
+<v Aliaksandr Batashou>has already some ideas, right?
+What is his current knowledge of AI or is</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6707-1
+01:00:15.435 --> 01:00:21.223
+<v Aliaksandr Batashou>just articles saying that AI can change
+your business and period, right?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6707-2
+01:00:21.223 --> 01:00:25.901
+<v Aliaksandr Batashou>Nothing more than that.
+Like reality and marketing, noise,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6707-3
+01:00:25.901 --> 01:00:27.567
+<v Aliaksandr Batashou>two different things.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6716-0
+01:00:28.407 --> 01:00:28.847
+<v Aliaksandr Batashou>Right.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6719-0
+01:00:29.527 --> 01:00:31.167
+<v Pavel Klimasheuski>Okay, I'll rephrase.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6723-0
+01:00:29.807 --> 01:00:33.007
+<v Aliaksandr Batashou>And I think our, and I think our, our...</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6749-0
+01:00:34.167 --> 01:00:37.568
+<v Aliaksandr Batashou>Like,
+goal at the at the at the partner of</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6749-1
+01:00:37.568 --> 01:00:42.947
+<v Aliaksandr Batashou>decline is actually to educate them and
+say, "That's that's doable,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6749-2
+01:00:42.947 --> 01:00:44.767
+<v Aliaksandr Batashou>that's not yet doable."</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6751-0
+01:00:45.847 --> 01:00:47.407
+<v Aliaksandr Batashou>That would work, that wouldn't.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6756-0
+01:00:48.367 --> 01:00:48.927
+<v Aliaksandr Batashou>I've.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6800-0
+01:00:48.527 --> 01:00:51.957
+<v Pavel Klimasheuski>But this, but as a long-term goals,
+I mean, for us, for the EPAM,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6800-1
+01:00:51.957 --> 01:00:55.855
+<v Pavel Klimasheuski>let's say we should make them more like
+make our clients happy or make our</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6800-2
+01:00:55.855 --> 01:00:58.973
+<v Pavel Klimasheuski>clients' business efficient,
+even if it can meet, you know,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6800-3
+01:00:58.973 --> 01:01:02.300
+<v Pavel Klimasheuski>some resilience at the beginning,
+what what we do prioritizing,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6800-4
+01:01:02.300 --> 01:01:04.847
+<v Pavel Klimasheuski>or also depends, I mean,
+that's also the answer.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6790-0
+01:01:03.087 --> 01:01:03.247
+<v Aliaksandr Batashou>Yeah.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6826-0
+01:01:04.527 --> 01:01:08.094
+<v Aliaksandr Batashou>I think it's been told by the C-level a
+long, long time ago,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6826-1
+01:01:08.094 --> 01:01:12.596
+<v Aliaksandr Batashou>if our clients are successful with their
+business, then we are good as well.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6826-2
+01:01:12.596 --> 01:01:15.286
+<v Aliaksandr Batashou>If they are not successful in their
+business,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6826-3
+01:01:15.286 --> 01:01:18.327
+<v Aliaksandr Batashou>then at some point we just do not have
+that client.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6821-0
+01:01:19.167 --> 01:01:19.767
+<v Pavel Klimasheuski>Okay.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6830-0
+01:01:20.527 --> 01:01:21.487
+<v Benoit Charrier>Going back to the...</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6835-0
+01:01:20.607 --> 01:01:22.047
+<v Pavel Klimasheuski>So, sometimes we need to push them.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6828-0
+01:01:20.847 --> 01:01:21.327
+<v Tamas Kiss>But it.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6881-0
+01:01:22.607 --> 01:01:27.647
+<v Benoit Charrier>Going back to the scenario,
+because you know we still want to,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6834-0
+01:01:22.767 --> 01:01:23.487
+<v Tamas Kiss>But I think it.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6881-1
+01:01:27.647 --> 01:01:34.047
+<v Benoit Charrier>the reason also that I think people ask
+about the compliance, the verification,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6881-2
+01:01:34.047 --> 01:01:38.927
+<v Benoit Charrier>it's because the, you know,
+when we run our AI on discovery,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6881-3
+01:01:38.927 --> 01:01:44.527
+<v Benoit Charrier>one of the top work stream that could be
+agentic is the verification.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6931-0
+01:01:46.047 --> 01:01:49.677
+<v Benoit Charrier>Like, I, I run the, you know,
+we run the thing that were the two work</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6931-1
+01:01:49.677 --> 01:01:53.722
+<v Benoit Charrier>streams that that come up is the matching
+and the second one is verifying the</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6931-2
+01:01:53.722 --> 01:01:56.055
+<v Benoit Charrier>compliance,
+and that's why I think you know,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6931-3
+01:01:56.055 --> 01:01:59.789
+<v Benoit Charrier>we because we said, "Ohh no, I don't,
+I don't need it, I don't need it,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6909-0
+01:01:59.087 --> 01:01:59.647
+<v Aliaksandr Batashou>Okay.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6931-4
+01:01:59.789 --> 01:02:02.849
+<v Benoit Charrier>that's why maybe I,
+at least that's why I kept asking, so,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6931-5
+01:02:02.849 --> 01:02:07.101
+<v Benoit Charrier>but not even kept asking, but you know,
+ask one or two questions and people maybe</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6931-6
+01:02:07.101 --> 01:02:08.087
+<v Benoit Charrier>also ask for that."</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6934-0
+01:02:08.167 --> 01:02:09.407
+<v Benoit Charrier>That's one of the reason, I think.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6967-0
+01:02:10.047 --> 01:02:17.133
+<v Aliaksandr Batashou>Okay, look, I think if this is the case,
+then we are expecting for you from you</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6967-1
+01:02:17.133 --> 01:02:22.271
+<v Aliaksandr Batashou>too much, right?
+So I would prefer you at least solve one</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6967-2
+01:02:22.271 --> 01:02:29.447
+<v Aliaksandr Batashou>business problem, but solve it properly,
+because they're two different problems.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6990-0
+01:02:29.567 --> 01:02:36.787
+<v Aliaksandr Batashou>Right, one is that the verification,
+and 2nd is the operation of the of the</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/6990-1
+01:02:36.787 --> 01:02:38.687
+<v Aliaksandr Batashou>coordinators, right?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7036-0
+01:02:38.207 --> 01:02:40.640
+<v Benoit Charrier>Yeah,
+but you know how sometimes the CEO may</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7036-1
+01:02:40.640 --> 01:02:44.911
+<v Benoit Charrier>think the problem is somewhere and when
+you start digging, actually, you know,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7036-2
+01:02:44.911 --> 01:02:48.912
+<v Benoit Charrier>you can save them also increase the
+business because you solved the other</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7036-3
+01:02:48.912 --> 01:02:52.696
+<v Benoit Charrier>problem that they didn't mention,
+what they thought wasn't a problem.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7036-4
+01:02:52.696 --> 01:02:56.967
+<v Benoit Charrier>So that's why, you know, I don't know,
+we don't know how much trick you put in</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7036-5
+01:02:56.967 --> 01:02:57.887
+<v Benoit Charrier>the scenario yet.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7050-0
+01:02:58.327 --> 01:03:04.449
+<v Aliaksandr Batashou>No, no, look, you're actually right.
+If I will be growing my business,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7039-0
+01:02:59.127 --> 01:02:59.647
+<v Benoit Charrier>It's a...</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7050-1
+01:03:04.449 --> 01:03:07.727
+<v Aliaksandr Batashou>then that verification process will...</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7049-0
+01:03:08.847 --> 01:03:09.167
+<v Benoit Charrier>Yeah.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7062-0
+01:03:09.167 --> 01:03:13.868
+<v Aliaksandr Batashou>Increases well, alright, in demand.
+Maybe then I will have to put something</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7058-0
+01:03:11.087 --> 01:03:11.567
+<v Benoit Charrier>Exactly.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7062-1
+01:03:13.868 --> 01:03:15.167
+<v Aliaksandr Batashou>there as well, but...</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7070-0
+01:03:16.967 --> 01:03:19.413
+<v Aliaksandr Batashou>Two different facts,
+still two different paths,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7070-1
+01:03:19.413 --> 01:03:20.687
+<v Aliaksandr Batashou>like two different teams.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7075-0
+01:03:21.767 --> 01:03:23.727
+<v Aliaksandr Batashou>It's not the same single process.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7076-0
+01:03:25.327 --> 01:03:25.647
+<v Benoit Charrier>Yeah.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7143-0
+01:03:29.087 --> 01:03:33.253
+<v Benoit Charrier>And what I find, I guess,
+in this session with the customer here is</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7143-1
+01:03:33.253 --> 01:03:37.788
+<v Benoit Charrier>to follow the script of understanding,
+you know, what the cognitive load,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7143-2
+01:03:37.788 --> 01:03:42.996
+<v Benoit Charrier>where is the breakpoints. We didn't quite,
+I don't know that we addressed it in this</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7143-3
+01:03:42.996 --> 01:03:46.367
+<v Benoit Charrier>call to then get to the point where, okay,
+what works.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7143-4
+01:03:46.367 --> 01:03:51.085
+<v Benoit Charrier>So it sounds from what you said, see,
+the work stream we need to focus on is</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7143-5
+01:03:51.085 --> 01:03:52.127
+<v Benoit Charrier>the intake or the</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7170-0
+01:03:52.527 --> 01:03:56.361
+<v Benoit Charrier>Actually, the matching, right?
+That's what when we should the business</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7170-1
+01:03:56.361 --> 01:03:58.899
+<v Benoit Charrier>problem we need to focus,
+and then after that,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7170-2
+01:03:58.899 --> 01:04:03.219
+<v Benoit Charrier>but to understand after that what job to
+be done inside that work stream can be</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7170-3
+01:04:03.219 --> 01:04:05.487
+<v Benoit Charrier>agentic, not sure we got, you know, the...</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7173-0
+01:04:06.527 --> 01:04:08.527
+<v Benoit Charrier>to get that answer in this call, but...</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7168-0
+01:04:06.767 --> 01:04:07.087
+<v Aliaksandr Batashou>Yeah.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7176-0
+01:04:09.407 --> 01:04:12.367
+<v Aliaksandr Batashou>By the way, the.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7216-0
+01:04:14.207 --> 01:04:18.076
+<v Aliaksandr Batashou>classification, come on,
+qualification check.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7216-1
+01:04:18.076 --> 01:04:23.627
+<v Aliaksandr Batashou>It might not be even fully written on my
+team as such, right? So,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7216-2
+01:04:23.627 --> 01:04:30.524
+<v Aliaksandr Batashou>because it's pretty much formal process.
+It's the same like validating if someone</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7216-3
+01:04:30.524 --> 01:04:32.207
+<v Aliaksandr Batashou>submitted a license.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7233-0
+01:04:32.607 --> 01:04:36.048
+<v Aliaksandr Batashou>How can I check that this is actually a
+valid license?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7233-1
+01:04:36.048 --> 01:04:38.927
+<v Aliaksandr Batashou>I will use such party service, right? Say.
+..</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7276-0
+01:04:38.367 --> 01:04:42.604
+<v Benoit Charrier>Yeah, I mean, we we can pop this,
+even even if we focus on this just one</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7235-0
+01:04:40.167 --> 01:04:40.367
+<v Aliaksandr Batashou>And.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7276-1
+01:04:42.604 --> 01:04:46.203
+<v Benoit Charrier>matching part, you know,
+just to feedback on the on the call,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7276-2
+01:04:46.203 --> 01:04:50.731
+<v Benoit Charrier>like how we run the call and whether we
+were able to understand the cognitive</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7276-3
+01:04:50.731 --> 01:04:55.259
+<v Benoit Charrier>load and what we can delegate and and and
+you know, with all the breakpoints,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7276-4
+01:04:55.259 --> 01:04:57.407
+<v Benoit Charrier>I'm not sure we actually had all the.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7281-0
+01:04:58.207 --> 01:05:01.007
+<v Benoit Charrier>Questions for that yet, but...</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7280-0
+01:05:01.407 --> 01:05:01.887
+<v Aliaksandr Batashou>Yeah.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7282-0
+01:05:03.327 --> 01:05:03.647
+<v Benoit Charrier>Yes.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7330-0
+01:05:03.367 --> 01:05:09.198
+<v Aliaksandr Batashou>And yeah, I apologize, guys. First of all,
+I need to go on a second. Yeah,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7330-1
+01:05:09.198 --> 01:05:14.407
+<v Aliaksandr Batashou>don't get all the, like,
+my responses as a source of like complete</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7330-2
+01:05:14.407 --> 01:05:17.750
+<v Aliaksandr Batashou>truth,
+which is actually may happen on the</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7330-3
+01:05:17.750 --> 01:05:22.725
+<v Aliaksandr Batashou>market. That's again,
+I was like trying to find the answer that</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7311-0
+01:05:18.047 --> 01:05:18.367
+<v Benoit Charrier>Yeah.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7330-4
+01:05:22.725 --> 01:05:25.447
+<v Aliaksandr Batashou>sometimes in the goal and sometimes</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7334-0
+01:05:26.527 --> 01:05:29.327
+<v Aliaksandr Batashou>Uh, when I had a call with a reply,
+it sounds like a rubbish.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7336-0
+01:05:31.887 --> 01:05:32.207
+<v Aliaksandr Batashou>All right.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7352-0
+01:05:35.007 --> 01:05:39.130
+<v Benoit Charrier>Alright, anyone? I guess we we overtime,
+so anyone wants to ask,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7352-1
+01:05:39.130 --> 01:05:41.287
+<v Benoit Charrier>add anything or ask anything else?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7358-0
+01:05:40.687 --> 01:05:44.847
+<v Vadzim Miliantsei>I don't think we catch any contradictions,
+did we?</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7362-0
+01:05:44.647 --> 01:05:44.847
+<v Benoit Charrier>Yeah.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7366-0
+01:05:46.127 --> 01:05:48.447
+<v Ekaterina Bandurina>I think we did.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7367-0
+01:05:48.527 --> 01:05:49.887
+<v Aliaksandr Batashou>I want to logical.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7373-0
+01:05:51.807 --> 01:05:52.927
+<v Aliaksandr Batashou>Ohh, OK.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7374-0
+01:05:53.567 --> 01:05:55.247
+<v Andrei Barviyuk>The main contradiction.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7372-0
+01:05:53.727 --> 01:05:54.607
+<v Ekaterina Bandurina>For example...</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7386-0
+01:05:56.087 --> 01:05:59.967
+<v Ekaterina Bandurina>When I assume that, uh-huh, yes.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7381-0
+01:05:57.287 --> 01:05:58.447
+<v Aliaksandr Batashou>No, I think.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7398-0
+01:05:59.647 --> 01:06:06.900
+<v Aliaksandr Batashou>I think was was one actually I was just
+thinking how it actually could work if we</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7398-1
+01:06:06.900 --> 01:06:10.527
+<v Aliaksandr Batashou>submit nurses to multiple like hospitals.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7399-0
+01:06:10.887 --> 01:06:12.047
+<v Benoit Charrier>Alright, is the...</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7405-0
+01:06:13.487 --> 01:06:18.287
+<v Aliaksandr Batashou>I don't know. I don't know, really.
+I mean.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7430-0
+01:06:22.767 --> 01:06:27.699
+<v Aliaksandr Batashou>Yeah, just work with what I told, right?
+But it's might not be the other thing,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7425-0
+01:06:25.127 --> 01:06:26.967
+<v Benoit Charrier>Yeah,
+but that happens with the competitor,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7425-1
+01:06:26.967 --> 01:06:27.887
+<v Benoit Charrier>right? That same note.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7430-1
+01:06:27.699 --> 01:06:29.487
+<v Aliaksandr Batashou>might not be the other thing.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7468-0
+01:06:28.847 --> 01:06:31.344
+<v Benoit Charrier>Yeah,
+and the same nurse may also be assigned</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7468-1
+01:06:31.344 --> 01:06:35.308
+<v Benoit Charrier>by another vendor as well, right?
+While you were trying to assign her or</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7468-2
+01:06:35.308 --> 01:06:39.217
+<v Benoit Charrier>we've already assigned and she gets
+assigned somewhere, it's got to be,</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7468-3
+01:06:39.217 --> 01:06:43.887
+<v Benoit Charrier>that's why they know the no-show and then,
+yeah, it's going to be quite difficult to.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7472-0
+01:06:45.407 --> 01:06:47.007
+<v Benoit Charrier>To get to the point we actually, yeah.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7465-0
+01:06:45.807 --> 01:06:46.287
+<v Aliaksandr Batashou>Yeah.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7474-0
+01:06:46.447 --> 01:06:48.047
+<v Natalia Drokina>Second currency question.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7478-0
+01:06:48.127 --> 01:06:49.087
+<v Benoit Charrier>Yeah, yeah, yeah.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7480-0
+01:06:49.167 --> 01:06:50.207
+<v Natalia Drokina>More of a design, yeah.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7481-0
+01:06:50.767 --> 01:06:51.007
+<v Benoit Charrier>Yeah.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7494-0
+01:06:52.127 --> 01:06:53.807
+<v Aliaksandr Batashou>Okay, good luck, guys.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7498-0
+01:06:52.927 --> 01:06:54.847
+<v Pavel Klimasheuski>Thanks, Alexandra. That was fun.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7507-0
+01:06:53.087 --> 01:06:54.767
+<v Benoit Charrier>Alright, thanks a lot. It was fun.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7509-0
+01:06:54.607 --> 01:06:56.687
+<v Tamas Kiss>Thank you. Thank you very much.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7514-0
+01:06:55.887 --> 01:06:57.007
+<v Benoit Charrier>Bye.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7525-0
+01:06:56.247 --> 01:06:59.007
+<v Alexandra Rendon>Thank you. Bye. Thank you.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7521-0
+01:06:57.367 --> 01:06:58.607
+<v Ekaterina Bandurina>Thank you. Bye-bye.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7520-0
+01:06:58.207 --> 01:06:58.527
+<v Tamas Kiss>Bye.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7522-0
+01:06:58.527 --> 01:06:58.927
+<v Pavel Klimasheuski>Adeel.</v>
+
+ef5f123d-bac3-498e-964a-c652b9a59c80/7527-0
+01:06:59.807 --> 01:07:00.127
+<v Giuseppe Ardito>I.</v>
