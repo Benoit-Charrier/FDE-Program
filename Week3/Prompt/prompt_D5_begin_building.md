@@ -10,7 +10,7 @@ Build the **first agent** described in `Deliverables/D4_capability_specs.md`.
 
 1. Tell me what you can build confidently without asking any questions.
 2. Tell me what you need to clarify before building the rest — list each question precisely, naming the spec section it relates to.
-3. Build the parts you are confident about. Use the guidelines in `input/build_guidelines.md`.
+3. Build the one part you are confident about. Just enough so we can run the build_loop-response on some code snipet. Use the guidelines in `input/build_guidelines.md`.
 
 Write all output (what was built, questions raised, what could not be built) to `Deliverables/D5B_build_loop_analysis.md` under a section headed **Agent A**.
 

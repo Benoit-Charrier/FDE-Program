@@ -60,7 +60,7 @@ Each deliverable has a corresponding prompt in `Prompt/`. Work through them in s
 | D4 | Two Production-Grade Capability Specifications | `prompt_D4_capability_specs.md` | `Deliverables/D4_capability_specs.md` | prompt ready |
 | D5 | Build-Loop Response Memo | `prompt_D5_build_loop_response.md` | `Deliverables/D5_build_loop_response.md` | prompt ready |
 | ↳ D5B | Begin Building — closed build loop *(run twice: Agent A then Agent B; see prompt for sequence)* | `prompt_D5_begin_building.md` | `Deliverables/D5B_build_loop_analysis.md` | prompt ready |
-| D6 | Client Feedback Response | *(prompt TBD)* | `Deliverables/D6_client_feedback_response.md` | — |
+| D6 | Client Feedback Response | `prompt_D6_client_feedback_response.md` | `Deliverables/D6_client_feedback_response.md` | prompt ready |
 | D7 | Validation Plan | `prompt_D7_validation_design.md` | `Deliverables/D7_validation_plan.md` | prompt ready |
 | ↳ D7A | Validation Design Diagnosis *(post-validation test run — runs after D7)* | `prompt_D7A_Validation_design_diagnosis.md` | `Deliverables/D7A_validation_design_diagnosis.md` | prompt ready |
 | D8 | Assumptions & Unknowns | `prompt_D8_assumptions_unknowns.md` | `Deliverables/D8_Assumptions_&_Unknowns.md` | prompt ready |

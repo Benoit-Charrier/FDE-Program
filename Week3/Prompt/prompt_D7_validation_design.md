@@ -19,6 +19,30 @@ Reference: `references\spec-ambiguity-vs-builder-mistakes.md` — use the failur
 
 ---
 
+## What strong looks like
+
+A strong validation plan covers four dimensions simultaneously. A plan that addresses fewer than four is incomplete.
+
+1. **Accuracy + edge cases** — the plan tests not just the happy path but the cases that sit exactly at decision boundaries: a confidence score at the threshold, a credential expiry the day of the shift, a facility name one character away from the fuzzy-match cutoff. Each edge case specifies the input values, the expected branch, and the observable output that proves the correct branch fired — not prose describing expected behaviour.
+
+2. **Failure modes** — the plan names quiet failures explicitly: cases where the agent produces output, no exception is raised, no human is alerted, but the output is wrong. Each failure mode names the specific mechanism (not "classification error" — the precise condition), what was written or omitted, why no one notices immediately, and the specific detection check (field name, threshold, person, schedule).
+
+3. **Compliance risk** — the plan names every regulatory constraint that the agent can violate silently: a credential placed in a state where the nurse has no active licence, a submission that bypasses the DNR check because the list was unavailable, a profile note classified as NEUTRAL when the note contains a hard facility exclusion. Each compliance risk has a detection check and a mitigation strategy — not just a flag that the risk exists.
+
+4. **Infrastructure failure modes with named mitigations** — a strong plan names the following four specifically; a plan that omits any of them is missing a production risk category:
+
+   - **State portal / external API rate limits** — the nurse database or state regulatory database returns 429 or throttles queries during peak fill hours (960 decisions/day = ~2 queries/minute average, but peak may be 10×). Mitigation must be named: request queuing, exponential backoff, credential re-check retry cap, or fallback to cached status with staleness flag.
+   - **Regulatory drift** — state licensing rules change (new compact licence states, updated scope-of-practice rules, new certification requirements for a specialty). The agent's hard-coded credential gate logic (HR-2, HR-3) becomes incorrect without a code change. Mitigation must name the mechanism for detecting rule changes before the agent ships a non-compliant placement: a scheduled rule review cadence, a compliance team sign-off gate on agent deployments, or a versioned rules config that triggers re-validation when updated.
+   - **Model accuracy drift** — the LLM used for profile note classification (WS2-T8) or field extraction (WS1-T3) produces different outputs over time as the model is updated or fine-tuned. A note previously classified as RISK_SIGNAL is now classified NEUTRAL, and a non-compliant nurse is submitted without a coordinator flag. Mitigation must name: a fixed golden-set evaluation (N sample notes with ground-truth labels, run on every model update), an alert threshold (if classification agreement with golden set drops below X%, freeze the model version), and who owns the threshold review.
+   - **Single points of failure** — the agent has at least three SPOFs: ServiceNow (all reads and writes fail if the instance is down), the nurse database (all shortlist generation blocks), and the LLM API (profile note classification falls back to RISK_SIGNAL for all notes, inflating HITL rate). Each SPOF must be named with: the agent behaviour when it is unavailable (graceful degrade, block, fallback), the maximum acceptable outage duration before coordinator workflow is materially disrupted, and the alert path (who is notified, within what SLA).
+
+**Anti-patterns to avoid:**
+- A validation plan that names risk categories but does not provide specific mitigations is a risk register, not a validation plan.
+- "Monitor logs" and "review periodically" are not mitigations — name the field, threshold, person, and schedule.
+- A compliance risk entry that says "the agent may place an uncredentialed nurse" without specifying the detection check and recovery path is incomplete.
+
+---
+
 ## Required structure
 
 ### 0. Executive summary

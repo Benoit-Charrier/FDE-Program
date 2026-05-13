@@ -30,7 +30,7 @@
 | JtD (from D2B) | Delegation archetype (D2B) | Agentic? | Agent / role assigned | Justification |
 |---|---|---|---|---|
 | WS1-JtD-1: Message classification and routing | Human-led + Agent Support | Partial (HITL) | Intake & Matching Agent | D2B 3/7: Tool Coverage H enables auto-routing for standard facility templates; Input Structure L and Exception Rate M require HITL for non-standard or combined-type messages; misclassification is recoverable, so partial delegation is safe |
-| WS1-JtD-2: Parameter extraction from unstructured request | Human-led + Agent Support | Partial (HITL) | Intake & Matching Agent | D2B 1/7: despite low score, LLM extraction from free text is the minimum required capability — no script or RPA alternative exists for unstructured intake [DS-confirmed]; agent extracts high-confidence fields (datetime, facility name via lookup, urgency signal) and pre-populates structured brief in HITL queue; coordinator completes remaining fields (specialty, credential level, unit type) in under 90 seconds — brief completion mode, not shadow mode; brief enters WS2 with all fields populated |
+| WS1-JtD-2: Parameter extraction from unstructured request | Human-led + Agent Support | Partial (HITL) | Intake & Matching Agent | D2B 1/7: despite low score, LLM extraction from free text is the minimum required capability — no script or RPA alternative exists for unstructured intake [DS-confirmed]; agent drafts brief, coordinator validates hard/soft interpretation before brief enters WS2 |
 | WS1-JtD-3: Credential requirement ambiguity resolution | Human Only | No | Coordinator | D2B 0/7: Decision Determinism L (no governing rule exists [A-WS1-2]); Tool Coverage L (no facility preference profiles [D0C: U-3]); Risk H (wrong interpretation propagates to WS2 mismatch rate); blocking dimension: Tool Coverage L — no data to support agent judgment |
 | WS1-JtD-4: Urgency classification and queue assignment | Agent-led + Human Oversight | Partial (HITL) | Intake & Matching Agent | D2B 4/7: explicit urgency is fully deterministic; implicit urgency (inferred from datetime proximity) requires agent-level datetime inference; human oversight preserved for edge case where pre-emption is triggered with ambiguous signal; same-day fill loss is high-cost at competitive fill rates [DS-confirmed] |
 | WS2-JtD-1: Brief completeness check before matching | Agent-led + Human Oversight | Partial (HITL) | Intake & Matching Agent | D2B 2/7: schema validation (fields present/absent) is deterministic and agent-executed; judgment edge (ambiguous specialty term vs. missing field) requires HITL routing; this is the WS1→WS2 cascade error firewall [D2A: Obs 1] |
@@ -168,7 +168,7 @@ When coordinator agreement rate on the agent's top-ranked candidate exceeds 85% 
 The WS1 extraction, WS2 matching, and WS3 credential check form a sequential pipeline where each stage's output is the next stage's primary input. The key dependency is that the hard/soft credential classification determined in WS1 (or resolved by the HITL coordinator in WS1-JtD-3) must be present and consistent when WS2-JtD-2 constructs its database query — a strict filter (certified required) produces a different candidate pool than a preference filter (certified preferred). A multi-agent design with separate Intake Agent and Matching Agent communicating via message-passing must serialize the credential classification result across an inter-agent boundary. The question is whether that boundary introduces fragmentation risk that exceeds its modular benefits.
 
 **Decision:**
-A single Intake & Matching Agent handles WS1 extraction, WS2 matching, and WS3 credential check as sequential tool calls within one context window. The WS1→WS2 handoff uses a **stable brief schema as the interface contract** — WS2 is always built to consume this schema regardless of whether WS1-lite (week-6 pilot), Wave 1 WS1 (brief completion mode), or Wave 2 WS1 (full pipeline) produced it. This decouples WS2 development from WS1 completion: WS2 can be built and piloted before WS1 reaches full pipeline coverage, because the schema is the contract, not who filled it in.
+A single Intake & Matching Agent handles WS1 extraction, WS2 matching, and WS3 credential check as sequential tool calls within one context window.
 
 **Alternatives considered:**
 
@@ -190,7 +190,7 @@ If WS1 intake volume exceeds WS2 matching capacity by more than 3× during peak 
 
 **ADR-3: Wave sequencing — confirmation automation before matching automation**
 
-**Status:** Revised — revisit condition triggered
+**Status:** Proposed
 
 **Context:**
 D2C Wave assignment places WS4 (active confirmation loop) and WS1 (NLP extraction) in Wave 1 and WS2 (matching agent) in Wave 2. The business case's primary value driver is WS2 — it is the throughput bottleneck and the revenue capacity unlock. The question is whether deploying WS4 and WS1 first genuinely enables WS2, or whether it is a delay that pushes the business-case deliverable out by 4–6 weeks unnecessarily.
@@ -213,22 +213,6 @@ WS4 active confirmation loop and WS1 NLP extraction deploy in Wave 1; WS2 matchi
 
 **Revisit condition:**
 If Marcus explicitly confirms at the engagement kickoff that a no-show rate improvement at 8 weeks is an insufficient proof point and insists on time-to-fill demonstration, the wave sequencing must be renegotiated — the mitigation would be to scope Wave 1 to a WS2 pilot on a narrow sub-segment (e.g., one facility, one specialty type) in parallel with WS4, accepting the adoption risk for that sub-segment while building the broader trust foundation.
-
-**Revision (triggered — see D6 P1 response):**
-Marcus's P1 pushback ("my board update is in 6 weeks; WS2 goes live at week 12") meets this condition verbatim. Wave sequencing is revised as follows:
-
-| Phase | Timing | Change from original |
-|-------|--------|----------------------|
-| Wave 1 | Weeks 1–8 | WS1 in **brief completion mode** (replaces shadow mode) — coordinator actively completes partially-filled forms from day 1 of week 9; HITL queue live for coordinators; shared infrastructure built |
-| **Narrow WS2 pilot** | **Week 6** | **New** — 1 facility, 1 specialty, 2 coordinators; WS1-lite produces stable brief schema; Intake & Matching Agent generates real shortlist; coordinator selects in HITL queue |
-| Wave 2 Phase 1 | ~Week 12 | Unchanged — full WS2 HITL rollout to all 8 coordinators; WS1 cuts over to full pipeline |
-| Wave 2 Phase 2 | Post-Phase 1 gate | Unchanged — autonomous clean-fill submissions |
-
-**WS1-lite:** A constrained version of WS1 scoped to the week-6 pilot — extracts shift datetime, facility name (matched against a known facility lookup), and urgency signal. The remaining fields (specialty, credential level, unit type) are surfaced to the coordinator as a structured form to complete in under 90 seconds.
-
-**Stable brief schema as interface contract:** WS2 is built to the stable structured brief schema from day 1. WS1-lite produces that schema. Wave 1 full WS1 produces that same schema with higher extraction coverage. Wave 2 WS1 produces that same schema autonomously. WS2 is never rewritten — the interface contract is fixed from week 6; only the producer side (WS1) evolves.
-
-**Risk accepted:** API validation for a single facility must complete by week 4. Minimal HITL interface (shortlist view, approve button, time-to-fill clock) must be ready by week 5. The credential gate (WS3-JtD-1) is non-negotiable and active on day 1 of the pilot.
 
 ---
 

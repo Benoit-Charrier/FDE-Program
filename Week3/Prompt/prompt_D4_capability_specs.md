@@ -12,12 +12,23 @@
 - `references/production-spec-checklist.md` — quality gate; self-audit against all criteria before finalising
 - `references/spec-ambiguity-vs-builder-mistakes.md` — proactively classify every ambiguity you leave in the spec; no silent gaps
 
+## What strong looks like
+
+Use these four bars as a self-check before finalising. A spec that fails any one is not production-grade.
+
+1. **Precise enough for Claude Code to build from without guessing at intent.** Every decision has a code-evaluable condition (no "good match," no "appropriate"). Every entity has typed fields, constraints, and a complete state machine. Every integration has authentication, error codes, retry policy, and rate limits specified. If a builder would need to ask a clarifying question to implement any section, the spec is not strong.
+2. **One glossary, not two.** Every entity used by both specs is defined once in the preamble shared entity block. Field names, types, enum values, and state machine transitions are identical across both specs — no silent divergence.
+3. **Worked examples for edge cases.** Every branching decision in §6 includes at least one worked example showing the concrete input values, which branch fires, and the exact output or state change. Every integration contract includes a real example request and response (not a template — actual values drawn from the scenario). Edge cases in entity state machines must be illustrated by example, not only by rule.
+4. **Every assumption named with a confidence level.** Every inference, design choice, or data gap not directly stated in the scenario must appear in §14 with a confidence level (Low / Medium / High) and the impact if the assumption is wrong. Silent assumptions are spec defects.
+
+---
+
 ## Your task
-Produce two production-grade capability specifications — one per agent selected from D3. Output file: `Deliverables/D4_capability_specs.md`.
+Produce two production-grade capability specifications — one per agent selected from D3. Output files: `Deliverables/D4a_capability_specs.md`, `Deliverables/D4b_capability_specs.md`.
 
 Each spec must be **precise enough for Claude Code to build from without asking a clarifying question** about the agent's purpose, scope, entities, decision logic, integration contracts, or escalation triggers. Where something cannot be specified from the scenario, classify it explicitly using the spec-ambiguity-vs-builder taxonomy (see section 14).
 
-**Shared entity requirement:** If both agents use the same entity (e.g., Nurse, Shift, Placement, CredentialRecord), define it once in a shared section and reference it from both specs. Shared entities must be identical across both specs — no silent divergence in field names, types, enums, or state machines.
+**Shared entity requirement:** If both agents use the same entity (e.g., Nurse, Shift, Placement, CredentialRecord), define it once in a shared section and reference it from both specs. Shared entities must be identical across both specs — no silent divergence in field names, types, enums, or state machines. one glossary, not two.  Worked examples for edge cases. Marked assumptions named with confidence levels.
 
 ---
 
@@ -268,6 +279,10 @@ Logic:
 Output: [what is produced or changed as a result]
 Delegation tier: [AGENT_ALONE / AGENT_LOGS / AGENT_PROPOSES / HUMAN_DECIDES]
 Confidence gate: [if agent confidence < X%, what happens — numeric threshold required; no threshold without a named action below it]
+Worked example:
+  Input values: [concrete values — use real entities from the scenario where possible]
+  Branch taken: [which IF condition fires and why]
+  Output: [exact state change, queue item written, or action produced]
 ```
 
 **Anti-pattern:** "If the nurse is a good match" — not a decision rule. Every condition must be evaluable by code without human judgment. If it requires judgment, it belongs in the HITL path, not the decision logic.
@@ -410,9 +425,9 @@ Minimum 5 failure modes per spec. Required types — all must be present:
 
 Before submitting, classify every gap or assumption in the spec using the taxonomy from `references/spec-ambiguity-vs-builder-mistakes.md`:
 
-| Item | Type | Description | Impact if unresolved | Resolution |
-|------|------|-------------|----------------------|------------|
-| [A-N] | Spec ambiguity / Design gap / Unknown | [what is unclear or missing] | [what a builder would guess wrong] | [what is needed to resolve — client question, API doc, assumption] |
+| Item | Type | Confidence | Description | Impact if unresolved | Resolution |
+|------|------|------------|-------------|----------------------|------------|
+| [A-N] | Spec ambiguity / Design gap / Unknown | Low / Medium / High | [what is unclear or missing] | [what a builder would guess wrong] | [what is needed to resolve — client question, API doc, assumption] |
 
 Every `[UNKNOWN]` and `[SCOPE-OUT]` marker in the spec must have a corresponding entry here. Every Required + API unknown row from Preamble §4 must have a corresponding entry here. Minimum 3 entries per spec.
 
