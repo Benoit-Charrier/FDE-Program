@@ -208,7 +208,17 @@ Annual saving:           annual_baseline - total_annual_agent_cost = $[X]
 Build cost:
   [Itemise: discovery + design, development, integration, testing, change management]
   Total build cost: $[X] [label as assumption]
+```
 
+**Build cost estimation methodology (required):** The scenario contains no build cost data. Every line item must be sized by an explicit estimation basis — typically FTE-week estimate × blended services rate ($150–250/hr for enterprise IT: architects at the higher end, developers mid-range, trainers lower). For each line, include a one-line note showing the implicit derivation (e.g., *"ServiceNow integration: ~4 developer weeks × $200/hr + platform licensing overhead"*). Do not state a single-line total without this decomposition.
+
+After the itemisation, include the following three cross-checks:
+
+1. **Industry range:** State whether the total falls within the typical range for comparable projects in this domain (e.g., healthcare data integration: $500K–$2M). If the estimate sits outside the range, explain why.
+2. **Sensitivity validation:** Verify that the business case survives at 2× build cost (see §10 sensitivity). If it does not, flag that build cost is load-bearing and requires early scope control before commitment.
+3. **Wave attribution:** If any component properly belongs to a different wave's budget (e.g., a prerequisite use case that is Wave 1 but costed here as a WS dependency), name the component, its attributed wave, and state both the standalone cost (without the prerequisite) and the full dependency-stack cost. This prevents double-counting in the compounding roadmap.
+
+```
 Payback period:          build_cost ÷ annual_saving = [X months/years]
 
 Year-by-year net (cumulative):
@@ -371,7 +381,7 @@ Required minimum assumptions:
 - Token cost presented as the dominant cost component without checking whether HITL cost is larger
 - All processing steps assigned to the same model tier (typically Sonnet or Opus throughout) without evaluating whether cheaper tiers are sufficient for deterministic steps
 - Sensitivity analysis that only models optimistic or base-case scenarios — conservative scenario is required
-- Build cost stated as a single number with no itemisation and no confidence label
+- Build cost stated as a single number with no itemisation, no confidence label, and no estimation methodology — each line must show how it was derived (FTE-week basis or comparable project benchmark) and include the three cross-checks: industry range, 2× sensitivity validation, and wave attribution for any prerequisite components
 - HITL rate stated as a percentage with no derivation — it must trace to D2A breakpoints or D2B archetype assignments, not be pulled from air
 - Sensitivity analysis conclusion that only says "the numbers change" — it must state whether the business case still holds and what the conservative payback period is
 - Multi-model comparison that omits the HITL rate impact of each model option — if a better model reduces the HITL rate, that saving must be quantified and compared to the token cost premium

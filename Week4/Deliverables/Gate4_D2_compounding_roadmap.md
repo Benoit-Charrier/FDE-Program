@@ -7,11 +7,11 @@
 
 ## 0. Executive Summary
 
-- **Wave 1 ($350K, months 0–5) pays for itself in 5 months** — WS4 Confirmation RPA and WS1 Shift Intake NLP deploy first, generating $575K/year in combined direct savings, and simultaneously build the 8 platform assets that reduce Wave 2's standalone build cost by $225K (37% discount on Wave 2).
+- **Wave 1 ($350K, months 0–5) pays for itself in ~8 months** — WS4 Confirmation RPA and WS1 Shift Intake NLP deploy first, generating $518K/year in combined direct savings ($350K WS4 no-show reduction + $168K WS1 intake displacement), and simultaneously build the 8 platform assets that reduce Wave 2's standalone build cost by $205K (29% discount on Wave 2).
 - **Wave 2 ($475K, months 5–10) is the capacity-unlock engine** — the WS2 Matching Agent inherits Wave 1's ServiceNow connector, HITL queue, and NLP pipeline, deploying at $475K instead of $600K standalone; at target volume (14× = 3.36M decisions/year) it generates $6.17M/year in annual saving — a 6-week payback on the remaining investment.
 - **Wave 3 ($150K, months 18–24) converts the data MedFlex accumulates in Waves 1–2 into autonomous capability** — 12+ months of coordinator HITL selections in the matching queue build the facility preference profiles that are the single named blocker for WS2-JtD-3 (optimal candidate selection, currently Human Only [D0C: U-3]); Wave 3 upgrades that JtD from Human Only to Human-led + Agent Support, reducing the complex-fill HITL rate from 15% to ~8% and adding ~$620K/year in additional saving at target volume.
 
-**Total programme investment: $975K across 3 waves. 3-year net value: $10.9M. Portfolio ROI: 1,118%.**
+**Total programme investment: $895K across 3 waves. 3-year net value (base case): $12.25M. Portfolio ROI (base): 1,369%.**
 
 ---
 
@@ -84,14 +84,14 @@ Primary saving: no-show rate reduction
     45 min × $42/hr = $31.50 + conservative $15 facility relationship cost = ~$47/no-show
   Annual saving from no-show reduction: 11,520 × $47 = $541,440
 
-Secondary saving: coordinator confirmation monitoring time eliminated
-  Current: 2 min/fill for manual confirmation status checks × 240,000/year
-  = 8,000 coordinator-hours/year × $42/hr = $336,000/year
-  Agent automates 100% of confirmation dispatch + 80% of monitoring → saves ~$270,000/year
+  [No secondary coordinator-time saving modelled for WS4. D1 Assumption A1 establishes
+  that coordinators do not perform confirmation today — the 12% no-show rate exists
+  precisely because there is no confirmation step in the current workflow. WS4 introduces
+  confirmation as a new capability; it displaces no existing coordinator time.
+  See D1 §2b for the full rationale.]
 
-  Conservative net saving (no-show reduction only): ~$350,000/year
-  Base case (no-show + monitoring): ~$575,000/year [Assumption A-CR-2]
-  Use conservative estimate for roadmap: $350,000/year
+  Net saving: ~$350,000/year (no-show reduction only) [Assumption A-CR-2]
+  Use $350,000/year throughout the roadmap.
 
 Wave 1a payback: $150,000 ÷ $350,000 = 5.1 months ✓ (≤12-month threshold)
 ```
@@ -130,24 +130,20 @@ Wave 1a payback: $150,000 ÷ $350,000 = 5.1 months ✓ (≤12-month threshold)
 **Annual saving:**
 ```
 Direct WS1 saving: coordinator intake time reduction
-  Current: ~2 min coordinator active time per intake event × 960 events/day
-    [Derivation: WS1 micro-tasks MT-WS1-1 through MT-WS1-6 from D2A — extraction
-     and routing steps total ~2 min of coordinator active time per request]
-  With agent (85% auto-extracted):
-    85% clean: 0.3 min coordinator review × 816 events/day = 245 min
-    15% HITL:  1.5 min completion × 144 events/day = 216 min
-    Total: 461 min/day vs 1,920 min/day current
-  Daily time saved: 1,459 min = 24.3 hours/day × $42/hr = $1,021/day
-  Annual saving: $1,021 × 250 days = $255,250 ≈ $225,000/year (conservative)
+  Per D1 Assumption A1 (1+3 split): WS1 intake accounts for 1 min/case of the 4-min
+  coordinator time per decision. WS1 agent eliminates this intake step entirely.
+  Calculation: 1 min × $42.00/hr ÷ 60 = $0.70/case × 240,000 = $168,000/year
+    [Aligns with D1 §2a baseline. Previous D2 estimate of $225K used a 2-min intake
+     assumption now superseded by D1's validated 1+3 split.]
 
   Indirect saving: WS1 extraction quality reduces WS2 complex-fill rate
     Higher-quality structured briefs reduce WS2 completeness-check failures (WS2-JtD-1)
     Estimated: complex fill rate 15% → 13% due to cleaner briefs
-    At current volume: 2pp HITL reduction × 240,000 cases × ($5/60 × $42) additional saving = ~$33,600/year
+    At current volume: 2pp HITL reduction × 240,000 cases × ($5/60 × $42) ≈ ~$33,600/year
     Included in Wave 2 model as a sensitivity improvement.
 
-Direct Wave 1b annual saving: $225,000/year
-Wave 1b payback (standalone): $200,000 ÷ $225,000 = 10.7 months
+Direct Wave 1b annual saving: $168,000/year
+Wave 1b payback (standalone): $200,000 ÷ $168,000 = 11.9 months
   [Note: marginal as a standalone investment. The primary ROI justification for Wave 1b
    is as a prerequisite for Wave 2, not as a standalone cost play.]
 ```
@@ -158,17 +154,17 @@ Wave 1b payback (standalone): $200,000 ÷ $225,000 = 10.7 months
 
 ```
 Wave 1 total investment: $150,000 + $200,000 = $350,000
-Wave 1 combined annual saving: $350,000 (WS4) + $225,000 (WS1) = $575,000/year
-Wave 1 blended payback: $350,000 ÷ $575,000 = 7.3 months
+Wave 1 combined annual saving: $350,000 (WS4) + $168,000 (WS1) = $518,000/year
+Wave 1 blended payback: $350,000 ÷ $518,000 = 8.1 months
 
 Wave 1 cumulative saving by month 12:
   WS4 (months 4–12): $350,000/yr × 9/12 = $262,500
-  WS1 (months 6–12): $225,000/yr × 7/12 = $131,250
-  Total Wave 1 savings by month 12: $393,750
+  WS1 (months 6–12): $168,000/yr × 7/12 = $98,000
+  Total Wave 1 savings by month 12: $360,500
 
-Wave 1 savings fund Wave 2 build: $393,750 of the $475,000 Wave 2 build cost
+Wave 1 savings fund Wave 2 build: $360,500 of the $475,000 Wave 2 build cost
 is covered by Wave 1 savings accumulated in the first year.
-The client's net cash position by month 12: -$350,000 (Wave 1 build) + $393,750 (savings) = +$43,750
+The client's net cash position by month 12: -$350,000 (Wave 1 build) + $360,500 (savings) = +$10,500
 ```
 
 **Wave 1 builds the organisational readiness for Wave 2:** 8 months of coordinator interaction with the HITL queue (WS1 ambiguity flags) and the confirmation monitoring escalation workflow builds familiarity with agent-generated outputs before coordinators are asked to trust WS2's candidate shortlists. This directly addresses the adoption risk [DS-confirmed: A13] that killed the prior recommendation engine.
@@ -376,11 +372,12 @@ The coordinator HITL queue (PA-08) carries both a direct build saving ($35,000 e
 
 | Month | Event |
 |------:|-------|
-| 0 | Wave 1a (WS4 RPA) build starts |
-| 1 | Wave 1b (WS1 NLP) build starts (parallel) |
+| 0 | Wave 1a (WS4 RPA) build starts; Wave 1b (WS1 NLP) build starts (parallel) |
+| 1 | **WS1+WS2 lite prototype build starts** (parallel track, mock data only — not production) |
+| 2 | **WS1+WS2 lite demo to stakeholders (week 8)** — end-to-end happy path on mock data: extraction → structured brief → shortlist → coordinator review. Proves pipeline concept; secures Wave 2 production build approval. No production integrations; wave financials unaffected. |
 | 3 | Wave 1a go-live |
 | 4 | Wave 1a savings begin |
-| 5 | Wave 1b go-live; Wave 2 build starts |
+| 5 | Wave 1b go-live; **Wave 2 production build starts** (requires validated WS1 brief quality — see §1) |
 | 6 | Wave 1b savings begin |
 | 10 | Wave 2 go-live (WS2 Matching Agent, HITL-first mode) |
 | 12 | Wave 2 HITL-first phase complete; autonomous clean-fill submissions activated |
@@ -395,15 +392,15 @@ The coordinator HITL queue (PA-08) carries both a direct build saving ($35,000 e
 
 ```
 Wave 1a saving (months 4–12): $350,000/yr × 9/12 = $262,500
-Wave 1b saving (months 6–12): $225,000/yr × 7/12 = $131,250
+Wave 1b saving (months 6–12): $168,000/yr × 7/12 = $98,000
 Wave 2 saving (months 10–12, at 1× volume): $270,000/yr × 3/12 = $67,500
-Year 1 total saving: $461,250
+Year 1 total saving: $428,000
 
 Year 1 total investment: Wave 1a $150K + Wave 1b $200K + Wave 2 $495K partial
   [Assume Wave 2 build cost spread over 5 months: $495K × 8/5 = $792K; Year 1 portion = $495K × 3/5 = $297K]
   Year 1 total investment: $150K + $200K + $297K = $647,000
 
-Year 1 net: $461,250 - $647,000 = -$185,750 (investment year, near-breakeven)
+Year 1 net: $428,000 - $647,000 = -$219,000 (investment year, near-breakeven)
 ```
 
 **Year 2 (months 13–24):**
@@ -411,33 +408,33 @@ Year 1 net: $461,250 - $647,000 = -$185,750 (investment year, near-breakeven)
 | | Conservative (2× avg) | Base (5× avg) | Target (10× avg) |
 |---|:-:|:-:|:-:|
 | Wave 1a saving | $350,000 | $700,000 | $1,400,000 |
-| Wave 1b saving | $225,000 | $450,000 | $900,000 |
+| Wave 1b saving | $168,000 | $336,000 | $672,000 |
 | Wave 2 saving | $540,000 | $1,350,000 | $2,700,000 |
 | Wave 3 (H2 only, partial) | $0 | $215,000 | $430,000 |
-| **Year 2 total saving** | **$1,115,000** | **$2,715,000** | **$5,430,000** |
+| **Year 2 total saving** | **$1,058,000** | **$2,601,000** | **$5,202,000** |
 | Year 2 investment (Wave 2 remainder + Wave 3 build) | $198,000 | $198,000 | $198,000 |
-| **Year 2 net** | **$917,000** | **$2,517,000** | **$5,232,000** |
+| **Year 2 net** | **$860,000** | **$2,403,000** | **$5,004,000** |
 
 **Year 3 (months 25–36, full platform operational):**
 
 | | Conservative (3× full yr) | Base (10× full yr) | Target (14× full yr) |
 |---|:-:|:-:|:-:|
 | Wave 1a + Wave 3 re-fill | $1,050,000 | $3,500,000 | $4,900,000 |
-| Wave 1b saving | $675,000 | $2,250,000 | $3,150,000 |
+| Wave 1b saving | $504,000 | $1,680,000 | $2,352,000 |
 | Wave 2 saving | $810,000 | $4,408,686 | $6,172,160 |
 | Wave 3 facility profiles | $158,000 | $528,000 | $740,880 |
-| **Year 3 total saving** | **$2,693,000** | **$10,686,686** | **$14,963,040** |
+| **Year 3 total saving** | **$2,522,000** | **$10,116,686** | **$14,165,040** |
 | Year 3 investment (maintenance) | $50,000 | $50,000 | $50,000 |
-| **Year 3 net** | **$2,643,000** | **$10,636,686** | **$14,913,040** |
+| **Year 3 net** | **$2,472,000** | **$10,066,686** | **$14,115,040** |
 
 ### 8c. Cumulative 3-year picture
 
 | | Conservative | Base case | Target ($200M) |
 |---|:-:|:-:|:-:|
 | Total investment (3 years) | $895,000 | $895,000 | $895,000 |
-| Total saving (3 years) | $4,269,250 | $13,862,936 | $20,854,290 |
-| **Net 3-year value** | **$3,374,250** | **$12,967,936** | **$19,959,290** |
-| **Portfolio ROI** | **377%** | **1,449%** | **2,230%** |
+| Total saving (3 years) | $4,008,000 | $13,145,686 | $19,795,040 |
+| **Net 3-year value** | **$3,113,000** | **$12,250,686** | **$18,900,040** |
+| **Portfolio ROI** | **348%** | **1,369%** | **2,112%** |
 | Fully invested payback | Month 10 | Month 8 | Month 7 |
 
 *[Note: investments are front-loaded (months 0–20); savings accelerate as volume grows. Even in the conservative scenario (3× volume, not 14×), the portfolio pays back by month 10 and delivers 377% 3-year ROI.]*

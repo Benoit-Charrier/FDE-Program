@@ -1,33 +1,39 @@
-# Prompt: D5B — Begin Building (Closed Build Loop)
+# Prompt: Gate 4 D7 — Begin Building (Dmytro's Intake Spec)
 
-This prompt is run **twice** — once per agent, in sequence. Do not run both agents in the same session. Fix the spec between runs.
-
----
-
-## Pass 1 — Agent A
-
-Build the **first agent** described in `Deliverables/D4_capability_specs.md`.
-
-1. Tell me what you can build confidently without asking any questions.
-2. Tell me what you need to clarify before building the rest — list each question precisely, naming the spec section it relates to.
-3. Build the one part you are confident about. Just enough so we can run the build_loop-response on some code snipet. Use the guidelines in `input/build_guidelines.md`.
-
-Write all output (what was built, questions raised, what could not be built) to `Deliverables/D5B_build_loop_analysis.md` under a section headed **Agent A**.
-
-**Stop here.** Before running Pass 2:
-- Run `prompt_D5_build_loop_response.md` on the Agent A output to classify every signal
-- Revise `Deliverables/D4_capability_specs.md` to address all spec gaps and legitimate unknowns surfaced in Agent A's build loop
+This prompt is run **once**. The spec under build is Dmytro's intake agent spec. The output feeds directly into `prompt_D5_build_loop_response.md`, which produces the final D7 deliverable.
 
 ---
 
-## Pass 2 — Agent B
+## The build task
 
-After the D5 build-loop response for Agent A is complete and D4 has been revised, build the **second agent** described in the updated `Deliverables/D4_capability_specs.md`.
+Build the agent described in `Spec_review_input1/04a-capability-spec-intake-Dmytro.md`.
 
-1. Tell me what you can build confidently without asking any questions.
-2. Tell me what you need to clarify before building the rest — list each question precisely, naming the spec section it relates to.
-3. Build the parts you are confident about. Use the guidelines in `input/build_guidelines.md`.
+Read the spec in full before writing a single line of code. Use the guidelines in `Input/build_guidelines.md`.
 
-Append all output to `Deliverables/D5B_build_loop_analysis.md` under a section headed **Agent B**.
+Then produce three outputs in sequence:
 
-Then run `prompt_D5_build_loop_response.md` again on the Agent B output to produce the final D5 diagnostic memo covering both agents.
+**1. What I can build confidently without asking any questions**
+
+List the parts of the spec that are complete enough to implement immediately — specific sections, flows, or integration contracts where every decision is made and every edge case is covered. Be precise: name the sections, not just "most of the spec."
+
+**2. What I need to clarify before building the rest**
+
+List each open question precisely. For each:
+- Name the spec section it relates to
+- State exactly what is ambiguous or missing
+- State what assumption you would make if forced to proceed, and whether that assumption is safe or risky
+
+Format:
+> *[Section name]*: [Exact question]. If unanswered, I would assume [X] — this is [safe / risky] because [reason].
+
+**3. Build the part you are most confident about**
+
+Build the single component or integration contract you rated most complete. Enough code to demonstrate a real implementation choice — not scaffolding. Name what you chose to build and why (most complete, fewest open questions).
+
+---
+
+## Output
+
+Write everything — what was built, questions raised, what could not be built and why — to `Deliverables/Gate4_D7_build_loop_reflection.md` under a section headed **Build Loop Output**.
+
+Then run `prompt_D5_build_loop_response.md` on this output.

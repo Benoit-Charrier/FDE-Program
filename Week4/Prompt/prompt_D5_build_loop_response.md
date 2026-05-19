@@ -1,18 +1,23 @@
-# Prompt: Deliverable D5 — Build-Loop Response Memo
+# Prompt: Gate 4 D7 — Build-Loop Reflection
 
 ## What this deliverable is
 
-A formal diagnostic memo applying the 5-category build-loop taxonomy to every signal produced when Claude Code built against your **MedFlex D4 capability specs**. This is not a narrative of what went wrong — it is a structured classification of each signal with the correct corrective action written in the right tone for each category.
+Gate 4 D7 is a build-loop reflection on a peer's spec. It has two parts:
 
-**D5 is about your own MedFlex spec and its build output.** The Cascade Public Libraries fixture and any other practice scenarios are preparatory exercises that develop the diagnostic skill before you apply it here. D9 is a separate reflective deliverable.
+1. **Signal classification** — apply the 5-category taxonomy to every signal the build loop produced against Dmytro's intake spec. Same rigour as a D5 diagnostic memo: every signal classified, every classification defended, every spec gap given revised text.
+
+2. **Peer review vs. build loop comparison** — compare the signals the build loop surfaced against the findings in your D3 peer review of the same spec. What did the peer review catch that the build loop didn't? What did the build loop surface that the peer review missed? What does that tell you about the relative value of each method?
+
+This is not a narrative of what went wrong. The classification is structured and evidenced; the comparison is honest and specific.
 
 ---
 
 ## Inputs (read all before writing)
 
 - `references/spec-ambiguity-vs-builder-mistakes.md` — the taxonomy, diagnostic decision tree, and response templates. The response templates define the exact format and tone for each category. Do not invent your own format.
-- Your D4 MedFlex capability specs (`Deliverables/D4_capability_specs.md`)
-- The D5B build-loop output (`Deliverables/D5_build_loop_analysis.md`) — what was built, questions the builder raised, what could not be built due to spec gaps; this is the raw material for the signal inventory in §1
+- Dmytro's intake spec (`Spec_review_input1/04a-capability-spec-intake-Dmytro.md`) — the spec the build loop ran against
+- The D7 build loop output (`Deliverables/Gate4_D7_build_loop_reflection.md`, section **Build Loop Output**) — what was built, questions raised, what could not be built; this is the raw material for the signal inventory in §1
+- Your D3 peer review of this spec (`Deliverables/Gate4_D3_peer_review_portfolio.md`, Spec 1 section) — the findings from the peer review that the build loop should be compared against
 
 **Read the taxonomy end-to-end before classifying a single signal.** The most common failure is naming the surface signal ("the test is wrong") without reading the spec alongside the code to determine whether the test reflects a real gap in the spec's semantics.
 
@@ -37,7 +42,7 @@ A formal diagnostic memo applying the 5-category build-loop taxonomy to every si
 
 ## Required structure
 
-Output file: `Deliverables/D5_build_loop_response_memo.md`
+Output file: append to `Deliverables/Gate4_D7_build_loop_reflection.md` after the **Build Loop Output** section
 
 ### 1. Signal inventory
 
@@ -105,18 +110,25 @@ Please revise:
 
 Do not include re-prompts for spec gaps — re-prompting the builder for your own ambiguity is a graded failure mode.
 
-### 5. Diagnostic accuracy self-assessment
+### 5. Peer review vs. build loop comparison (D7 deliverable)
 
-Complete the following three statements honestly. Graded on candour, not on having a perfect diagnosis.
+This is the core of D7. Compare the signals from the build loop against the findings from the D3 peer review of the same spec. Be specific — name each finding by its ID (B1–B5, C1–C3 from the peer review; S-N from the build loop).
 
-**Hardest classification call:**
-"The hardest call in this fixture was Signal [S-N]. I initially read it as [category A] because [reason]. On closer reading I classified it as [final category] because [evidence]. The distinguishing factor was [specific detail from spec or code]."
+**What the build loop caught that the peer review also caught**
 
-**Closest miss:**
-"The signal I came closest to misclassifying was [S-N]. The risk of error was [describe the trap — what made it look like the wrong category]. I avoided the error by [what check or evidence confirmed the correct classification]."
+For each overlapping finding: name the peer review ID, the build loop signal, and one sentence on why both methods converge on this issue. Convergence signals high-confidence blockers.
 
-**Pre-session prediction:**
-"Before the build loop, I predicted the hardest part of build-loop diagnosis would be [your pre-submitted prediction]. Looking at this fixture, that prediction was [accurate / partially accurate / wrong] because [one sentence]."
+**What the peer review caught that the build loop missed**
+
+For each peer review finding (B1–B5, C1–C3) that did not surface as a build loop signal: state why the build loop would not surface it. Is it a logic error only visible at spec-reading level? A missing config parameter that a builder would hardcode silently? A cross-contract inconsistency only visible when reading the full spec rather than building one component?
+
+**What the build loop surfaced that the peer review missed**
+
+For each build loop signal not present in the peer review: state what it is and why the peer reviewer would have missed it. Is it an environment-specific issue? An implementation choice the spec leaves open that only becomes visible when you commit to code?
+
+**One-paragraph honest assessment**
+
+Answer directly: which method caught the issues most likely to cause silent wrong behaviour in production — the peer review or the build loop? What does this fixture tell you about the limits of each method, and what would a complete spec-validation process look like that uses both?
 
 ---
 
@@ -129,8 +141,10 @@ Complete the following three statements honestly. Graded on candour, not on havi
 - [ ] Every spec gap and legitimate unknown has a revised spec text in Section 3 — not "I would clarify this" but the actual revised wording
 - [ ] Every builder misread has a direct re-prompt in Section 4 — specific, citing the spec, stating the exact fix
 - [ ] No re-prompt written for a spec gap — the builder cannot fix your ambiguity
-- [ ] Self-assessment in Section 5 names the hardest call with evidence — not "everything was straightforward"
 - [ ] Signal inventory is exhaustive — signals are not pre-filtered before classification
+- [ ] Section 5 comparison references every D3 peer review finding by ID (B1–B5, C1–C3) — no finding unaccounted for
+- [ ] Section 5 comparison references every build loop signal — no signal left out of the comparison
+- [ ] The one-paragraph assessment takes a position: it names which method is better for which category of issue, not "both methods are complementary"
 
 ## Fail signals — do not produce output that contains these
 
@@ -141,6 +155,7 @@ Complete the following three statements honestly. Graded on candour, not on havi
 - Treating every signal as a builder misread — a fixture with no spec gaps is not a realistic or honest diagnosis
 - Treating every signal as a spec gap — a fixture with no builder errors is also not realistic
 - Conflating unjustified addition with builder misread — different ownership and different tone; getting this wrong produces an accusatory response for something that may be a reasonable suggestion
-- Self-assessment that says "the diagnosis was clear and I had no hard calls" — coaches read this for honesty; a confident assessment with no hard calls signals that the diagnosis was not deep enough
 - Classifying a legitimate unknown as a spec gap — the distinction matters: spec gap means ambiguity existed; legitimate unknown means the spec was simply silent; the corrective response is different
 - Missing signals that are present in the build output — an incomplete signal inventory means some build failures would go uncorrected
+- Section 5 that lists peer review findings without explaining why each one did or did not surface in the build loop — the comparison requires a reason, not just a match/no-match
+- A one-paragraph assessment that concludes "both methods are complementary" without naming which is better for silent-failure detection — that is the specific question; answer it

@@ -9,14 +9,19 @@
 
 | Metric | Current volume (240K/year) | Target volume (3.36M/year — 14×) |
 |--------|:-:|:-:|
-| Baseline annual cost | $672,000 | $9,408,000 |
-| Annual agent cost | $204,000 + $200K infra = **$404,000** | $2,856,000 + $400K infra = **$3,256,000** |
-| **Annual saving** | **$268,000** | **$6,152,000** |
+| WS2 baseline (3 min/case) | $504,000 | $7,056,000 |
+| Annual agent cost | $202,560 + $200K infra = **$402,560** | $2,836,000 + $400K infra = **$3,236,000** |
+| **WS2 annual saving** | **$101,440 (marginal)** | **$3,820,160** |
+| WS1 direct saving (additive) | $168,000 | $2,352,000 |
+| **Combined WS1+WS2 saving** | **$269,440** | **$6,172,160** |
 | Build cost | $750,000 | $750,000 |
-| Payback period | **2.8 years (marginal)** | **~6 weeks (strong)** |
-| 3-year ROI | 7% | 2,360% |
+| WS2 payback | 7.4 years (standalone) | ~71 days / 10 weeks |
+| Combined WS1+WS2 payback | 2.8 years | ~6 weeks |
+| 3-year ROI (WS2 only) | Negative | 1,428% |
 
-**Bottom line:** The business case is not about cost reduction at current volume — the payback period there is marginal. The case is about **capacity unlock**: achieving Marcus Reyes's $200M board target (14× volume) without 14× headcount. At target volume, the agent avoids hiring ~79 additional coordinators, turning a $6.2M annual saving into a 6-week payback on a $750K investment.
+*WS4 note: coordinators do not perform shift confirmation today — the 12% no-show rate exists because confirmation does not happen at all. WS4 RPA is a new capability that introduces confirmation for the first time. Its benefit is no-show reduction (revenue preservation), not coordinator time displacement. WS4 economics are modelled separately in Gate 4 D2.*
+
+**Bottom line:** The case for WS2 at current volume is marginal standalone but viable combined with WS1. The compelling case is at scale: WS2 avoids hiring 51 additional matching coordinators at 14× volume (84 → 33 HITL), delivering a 10-week payback. Add WS1's $2.35M intake-automation saving and the combined programme delivers $6.17M/year — consistent with Marcus Reyes's board target economics.
 
 **Model tier finding:** Upgrading from Haiku-only to a Haiku+Sonnet blended architecture costs ~$1,800/year more in tokens but is expected to reduce the HITL rate from 20% to 15%, saving $591,000/year in coordinator time at target volume. **Token cost is not the variable that matters — HITL rate is.**
 
@@ -37,23 +42,39 @@
 ### 2a. Current human cost per case
 
 ```
-Time per case (coordinator active time):
+Total coordinator time per decision (WS1 + WS2 only):
   8 coordinators × 8-hour day = 3,840 coordinator-minutes/day
   3,840 minutes ÷ 960 decisions/day = 4.0 minutes per decision
-  [Assumption A1: all 8 coordinators fully allocated to matching. Confidence: medium.]
+
+  WS4 is excluded from this baseline: coordinators do not perform shift confirmation
+  today — there is no confirmation step in the current workflow. WS4 RPA introduces
+  confirmation as a new capability; its benefit is no-show reduction, not coordinator
+  time displacement. Including WS4 in the baseline would invent a current cost that
+  does not exist.
+
+Time allocation: WS1 + WS2 only [Assumption A1 — low confidence, see below]:
+  WS1 Shift Intake (parsing request, extracting fields, building MatchingBrief): 1 min/case
+  WS2 Matching (querying DB, applying rules, reviewing candidates, submitting):  3 min/case
+  Total:                                                                         4 min/case ✓
+
+WS2-specific baseline (this model):
+  3 min/case × $42.00/hr ÷ 60 = $2.10/case
+
+WS1 baseline (for combined-system reference):
+  1 min/case × $42.00/hr ÷ 60 = $0.70/case
 
 Fully loaded hourly cost:
   $60,000 base salary × 1.4× benefits/overhead = $84,000/year
   $84,000 ÷ 2,000 working hours = $42.00/hour fully loaded
-  [Assumption A2: US healthcare staffing coordinator market rate. Confidence: low — not stated in scenario.]
-
-Baseline cost per case: $42.00/hr × (4.0/60 hr) = $2.80/case
+  [Assumption A2: US healthcare staffing coordinator market rate. Confidence: low.]
 
 Annual volume (current): 960/day × 250 working days = 240,000 cases/year
-  [Assumption A3: 250 working days. Confidence: low — hospitals are 365-day operations;
-  250 is conservative. If 365 days: 350,400 cases/year, annual baseline = $981,120.]
+  [Assumption A3: 250 working days. Confidence: low — hospitals often operate 365 days.
+  If 365 days: 350,400 cases/year, WS2 annual baseline = $735,840.]
 
-Annual baseline cost (current): $2.80 × 240,000 = $672,000/year
+WS2 annual baseline cost (current): $2.10 × 240,000 = $504,000/year
+WS1 annual baseline cost (current): $0.70 × 240,000 = $168,000/year
+Combined WS1+WS2 baseline:          $2.80 × 240,000 = $672,000/year
 ```
 
 ### 2b. Indirect costs (not included in primary model — included for completeness)
@@ -62,7 +83,10 @@ Annual baseline cost (current): $2.80 × 240,000 = $672,000/year
 |-----------|-----------------|-------|
 | Queue cost (4.2-hr time-to-fill) | Lost placements to faster competitors | Scenario states first-to-submit wins [DS-confirmed] |
 | Error cost (7% mismatch rate) | Rework, facility relationship damage | Scenario |
+| No-show cost (12% no-show rate) | Emergency re-dispatch coordinator time + revenue leakage per unplaced shift | Scenario |
 | Opportunity cost | Coordinators doing low-value search vs. relationship work | — |
+
+*No-show cost note: The 12% no-show rate exists because there is no confirmation step in the current workflow — coordinators assign nurses but do not follow up. WS4 RPA introduces automated confirmation for the first time; it is not displacing existing coordinator work but adding a new control. The no-show benefit therefore does not appear in the coordinator time baseline ($2.80/case) and is not captured in this model. See Gate 4 D2 for WS4 standalone economics. Improved shortlist quality from WS2 may reduce no-show frequency if placement mismatch is a contributing factor — not modelled here.*
 
 These are real costs not captured in the $672K baseline. The business case is conservative by excluding them.
 
@@ -263,67 +287,99 @@ At target volume (3,360,000 cases/year):
 | Change management and coordinator training | $25,000 | Medium |
 | **Total build cost** | **$750,000** | Low overall |
 
-*[Assumption A7: $750K build cost. Confidence: low — derived from comparable healthcare data integration projects; requires architecture scoping to validate. Sensitivity: see §6.]*
+#### Estimation methodology
+
+Each line is sized by rough FTE-week estimate × blended healthcare IT services rate ($150–250/hr depending on role — architect, developer, trainer). The scenario contains no build cost data; all figures are order-of-magnitude estimates. The ServiceNow integration line ($100K) carries a premium relative to its technical complexity because ServiceNow platform licensing overhead inflates integration costs beyond pure development time.
+
+**Cross-checks:**
+- *Industry range:* Healthcare data integration projects of comparable scope (EHR integrations, NLP extraction pipelines) typically land $500K–$2M. $750K is mid-range.
+- *Sensitivity:* Business case holds at $1.5M build cost (4.4-month payback at target volume — see §6). The absolute number matters less than whether the range is plausible.
+- *Internal consistency:* Wave 2 actual cost in the compounding roadmap (Gate 4 D2) is $495K after Wave 1 platform asset reuse removes $205K of redundant build work — a 29% discount from this standalone $750K figure, which is consistent with the integration reuse mechanism.
+
+**WS1 prerequisite note:** The $150K WS1 NLP line is included here because WS2 quality depends on receiving well-structured briefs from WS1. However, WS1 is Wave 1b in the compounding roadmap and its cost properly belongs in that wave's budget. If reviewing WS2 in isolation, the standalone WS2 build cost is $600K; the $750K figure represents the full dependency stack.
+
+*[Assumption A7: $750K build cost. Confidence: low — requires architecture scoping to validate, specifically: ServiceNow tier pricing, whether the nurse database has an existing API layer, and whether any MedFlex tooling can be reused for WS1 NLP. Sensitivity: see §6.]*
 
 ### 5b. Current volume scenario (240,000 cases/year)
 
 **Using Option B (Haiku+Sonnet, recommended):**
 
 ```
-Annual baseline cost:        $2.80 × 240,000   = $672,000
-Annual agent variable cost:  $0.844 × 240,000  = $202,560
-Annual infrastructure:                          = $200,000
-Total annual cost (agent):                      = $402,560
+WS2 annual baseline (3 min/case):    $2.10 × 240,000   = $504,000
+Annual agent variable cost:          $0.844 × 240,000  = $202,560
+Annual infrastructure:                                  = $200,000
+Total annual agent cost:                                = $402,560
 
-Annual saving:               $672,000 - $402,560 = $269,440
+WS2 annual saving:                   $504,000 − $402,560 = $101,440
 
-Build cost:                  $750,000
-Payback period:              $750,000 ÷ $269,440 = 2.79 years
+Build cost:                          $750,000
+WS2 standalone payback:              $750,000 ÷ $101,440 = 7.4 years
 
-Year-by-year net (cumulative):
-  Year 1: $269,440 - $750,000 = -$480,560
-  Year 2: $269,440 - $480,560 = -$211,120
-  Year 3: $269,440 - $211,120 = +$58,320
+Year-by-year net (WS2 standalone):
+  Year 1: $101,440 − $750,000 = −$648,560
+  Year 2: $101,440 − $648,560 = −$547,120
+  Year 3: $101,440 − $547,120 = −$445,680
+  3-year ROI: −$445,680 ÷ $750,000 = −59%
 
-3-year total saving:         $269,440 × 3     = $808,320
-3-year total investment:     $750,000 build + $200,000 infra × 3 = $1,350,000
-  [Note: infrastructure cost is already subtracted in annual saving figure above —
-   this avoids double-counting. 3-year net value = $808,320 - $750,000 = $58,320]
-
-3-year ROI: $58,320 ÷ $750,000 = 7.8%
+Combined WS1+WS2 (Wave 1b + Wave 2):
+  WS1 direct saving: $168,000   (1 min × 240,000 × $0.70/min — near full automation)
+  WS2 saving:        $101,440
+  Combined annual:   $269,440 → payback $750K ÷ $269,440 = 2.8 years
+  Combined 3-year ROI: ($269,440 × 3 − $750,000) ÷ $750,000 = 7.8%
 ```
 
-**Verdict at current volume: MARGINAL.** The investment pays back in year 3 by a narrow margin. This is not the business case to present to Marcus Reyes or the board.
+**Verdict at current volume: MARGINAL.** WS2 standalone takes 7.4 years to pay back — the $200K infrastructure cost is too large relative to the $101K annual saving at this volume. Combined with WS1's $168K direct saving, the programme pays back in 2.8 years. Neither figure is the primary business case — the board-level argument requires target volume (§5c).
 
 ### 5c. Target volume scenario (3,360,000 cases/year — $200M board target)
 
 The engagement framing is explicit: "10x the business without 10x-ing the coordinators." At 14× volume, the human-only staffing cost is:
 
 ```
-Human-only scenario at 14× volume:
-  112 coordinators required (same 4 min/case × 3,360,000/year ÷ 2,000 hr/coordinator = 112)
-  Annual coordinator cost: 112 × $84,000 = $9,408,000
+─── HUMAN-ONLY WS2 AT 14× VOLUME ────────────────────────────────────────────
+WS2 coordinator headcount required (3 min matching/case, human-only):
+  3,360,000 × 3 min ÷ 60 ÷ 2,000 hr/coordinator = 84 coordinators
+Annual WS2 coordinator cost:     84 × $84,000              = $7,056,000
 
-Agent scenario at 14× volume:
-  Annual agent variable cost: $0.844 × 3,360,000  = $2,835,840
-  [HITL component implies: 0.15 × (5/60) + 0.85 × (0.5/60) × 3,360,000 = 65,800 coordinator-hrs]
-  [Coordinators needed: 65,800 ÷ 2,000 = 33 coordinators × $84K = $2,772,000 embedded in HITL]
-  Annual infrastructure (scale): $400,000
-  Total annual agent cost: $2,835,840 + $400,000 = $3,235,840
+─── AGENT SCENARIO AT 14× VOLUME ────────────────────────────────────────────
+HITL coordinator headcount (still required for WS2 review):
+  HITL hours/year:  [0.15 × (5/60) + 0.85 × (0.5/60)] × 3,360,000 = 65,800 hrs
+  Coordinators:     65,800 ÷ 2,000 hr/coordinator       = 33 coordinators
+  Annual HITL coordinator cost:  33 × $84,000            = $2,772,000
 
-Annual saving at target volume: $9,408,000 - $3,235,840 = $6,172,160
+Agent token + tool cost:         ($0.844 − $0.823) × 3,360,000 = $63,840
+  [Token $0.013 + tool $0.006 = $0.019/case × 3,360,000]
+Annual infrastructure:                                    = $400,000
 
+Total annual agent cost:         $2,772,000 + $63,840 + $400,000 = $3,235,840
+
+─── SAVING (WS2 ONLY) ───────────────────────────────────────────────────────
+WS2 coordinators avoided:        84 − 33 = 51 coordinators
+Avoided headcount cost:          51 × $84,000              = $4,284,000
+Less: additional infrastructure:                           −  $400,000
+Less: token + tool cost:                                   −   $63,840
+WS2 annual net saving:           $4,284,000 − $463,840     = $3,820,160
+
+─── PAYBACK ─────────────────────────────────────────────────────────────────
 Build cost:              $750,000
-Payback period:          $750,000 ÷ $6,172,160 = 44 days ≈ 6 weeks
+Payback period:          $750,000 ÷ $3,820,160 = 71 days ≈ 10 weeks
 
-Year 1 net (target volume): $6,172,160 - $750,000 = $5,422,160
-3-year net value:            ($6,172,160 × 3) - $750,000 = $17,766,480
-3-year ROI:                  $17,766,480 ÷ $750,000 = 2,369%
+Year 1 net (target volume): $3,820,160 − $750,000  = $3,070,160
+3-year net value:           ($3,820,160 × 3) − $750,000 = $10,710,480
+3-year ROI:                 $10,710,480 ÷ $750,000 = 1,428%
+
+─── COMBINED WS1+WS2 AT 14× VOLUME ─────────────────────────────────────────
+WS1 automation eliminates 1 min intake/case (near full automation, minimal HITL):
+  1 min × 3,360,000 ÷ 60 ÷ 2,000 = 28 coordinators avoided
+  WS1 annual saving: 28 × $84,000 = $2,352,000
+
+Combined WS1+WS2 saving:  $3,820,160 + $2,352,000 = $6,172,160
+Combined 3-year ROI:      (($6,172,160 × 3) − $750,000) ÷ $750,000 = 2,369%
+Combined payback:         $750,000 ÷ $6,172,160 = 44 days ≈ 6 weeks
 ```
 
-**Verdict at target volume: COMPELLING.** 6-week payback, $5.4M Year 1 net return, $17.8M 3-year value against a $750K investment.
+**Verdict at target volume: COMPELLING.** WS2 standalone delivers 1,428% 3-year ROI and 10-week payback at 14× volume, avoiding 51 matching coordinator hires. Combined with WS1's intake automation (28 additional avoided hires), the programme avoids 79 coordinator hires in total, delivering $6.17M/year and a 6-week payback on the $750K investment — the number Marcus Reyes takes to the board.
 
-**Important caveat [Assumption A8]:** This comparison assumes the $200M revenue target is achievable at 14× volume. If growth comes from higher-value placements at current volume (margin expansion, not throughput expansion), the agent's volume-unlock value proposition does not apply and the current-volume economics ($269K/year saving) are the relevant number. Confidence: medium — the "10x without 10x-ing coordinators" framing implies volume, not margin, is the growth driver.
+**Important caveat [Assumption A8]:** The scale economics assume the $200M revenue target is achieved through volume growth (14× decisions/day), not margin expansion at current volume. If growth is margin-driven, the current-volume combined saving ($269K/year, 2.8-year payback) is the relevant figure. Confidence: medium — "10x without 10x-ing coordinators" explicitly implies throughput, not margin.
 
 ---
 
@@ -342,33 +398,33 @@ Three scenarios are modelled across four key variables. The business case is eva
 
 *HITL rate is the dominant variable. Token cost sensitivity is negligible.*
 
-| Scenario | Annual saving | Payback period | 3-year ROI |
-|----------|:-:|:-:|:-:|
-| **Conservative** (25% HITL, +50% tokens, $70K coordinator, $1.5M build) | $4,042,000 | 4.5 months | 707% |
-| **Base case** (15% HITL, current tokens, $84K coordinator, $750K build) | $6,172,000 | 44 days | 2,369% |
-| **Optimistic** (5% HITL, -30% tokens, $100K coordinator, $500K build) | $9,023,000 | 20 days | 5,314% |
+| Scenario | WS2 human-only (14×) | WS2 annual saving | Payback period | 3-year ROI |
+|----------|:-:|:-:|:-:|:-:|
+| **Conservative** (25% HITL, +50% tokens, $70K coordinator, $1.5M build) | $5,880,000 | $2,207,360 | 8.2 months | 341% |
+| **Base case** (15% HITL, current tokens, $84K coordinator, $750K build) | $7,056,000 | $3,820,160 | 71 days | 1,428% |
+| **Optimistic** (5% HITL, −30% tokens, $100K coordinator, $500K build) | $8,400,000 | $5,920,160 | 31 days | 3,452% |
 
-**Conservative scenario detail:**
+**Conservative scenario detail (WS2 only, target volume):**
 ```
-HITL cost per case (25% complex):  0.25 × (5/60 × $35) + 0.75 × (0.5/60 × $35)
-                                 = 0.25 × $2.917 + 0.75 × $0.292 = $0.729 + $0.219 = $0.948/case
-Token cost (+50%): $0.013 × 1.5  = $0.020/case
-Total agent cost per case:         $0.948 + $0.020 + $0.006 = $0.974/case
+HITL cost per case (25% complex, $35/hr):
+  0.25 × (5/60 × $35) + 0.75 × (0.5/60 × $35) = $0.729 + $0.219 = $0.948/case
+Token cost (+50%): $0.013 × 1.5 = $0.020/case
+Total agent cost per case:  $0.948 + $0.020 + $0.006 = $0.974/case
 
-Annual agent cost (3.36M):         $0.974 × 3,360,000 = $3,272,640
-Annual infra:                      $400,000
-Total annual agent cost:           $3,672,640
+Annual agent cost (3.36M):  $0.974 × 3,360,000 = $3,272,640
+Annual infra:                                    = $400,000
+Total annual agent cost:                         = $3,672,640
 
-Human-only at conservative coordinator rate: 112 × $70,000 = $7,840,000
-Annual saving: $7,840,000 - $3,672,640 = $4,167,360
+WS2 human-only (84 coordinators × $70K): $5,880,000
+WS2 annual saving: $5,880,000 − $3,672,640 = $2,207,360
 
 Build cost: $1,500,000
-Payback: $1,500,000 ÷ $4,167,360 = 4.4 months
-3-year net: ($4,167,360 × 3) - $1,500,000 = $11,002,080
-3-year ROI: $11,002,080 ÷ $1,500,000 = 733%
+Payback: $1,500,000 ÷ $2,207,360 = 8.2 months
+3-year net: ($2,207,360 × 3) − $1,500,000 = $5,122,080
+3-year ROI: $5,122,080 ÷ $1,500,000 = 341%
 ```
 
-**Sensitivity conclusion:** The business case holds strongly under all three scenarios. Even in the conservative case — 25% HITL rate, 50% higher token costs, lower coordinator wages, and double the build cost — the payback period is 4.4 months and the 3-year ROI is 733%. The minimum condition for the business case to fail at target volume would require either the volume growth thesis to not materialise (see Assumption A8) or a HITL rate above ~85% (which would mean the agent is handling almost nothing autonomously and should not be in production).
+**Sensitivity conclusion:** The business case holds under all three scenarios. Even stacking four adverse assumptions simultaneously — 25% HITL rate, 50% higher token costs, lower coordinator wages ($70K), and double the build cost — the WS2 standalone payback is 8.2 months and the 3-year ROI is 341%. The 3-min WS2 baseline provides sufficient headroom to absorb adverse conditions. **HITL rate remains the dominant variable**: the difference between conservative (25%) and base (15%) scenarios is $1.6M/year in annual saving at target volume. Token price changes remain economically trivial.
 
 **Token price trend sensitivity:** Model prices have declined approximately 10× every 12–18 months historically. A 50% reduction in token prices from current levels (plausible within the 24-month project horizon) reduces the per-case token cost from $0.013 to $0.007 — a saving of $0.006/case × 3,360,000 = $20,000/year at target volume. **Token price declines are economically trivial relative to HITL cost.** Monitor for model quality improvements that reduce HITL rate, not for token price reductions.
 
@@ -381,11 +437,16 @@ Full compounding roadmap is Deliverable #2 (Gate 4). Summary:
 | Wave | Use case | Build cost | Annual saving (target vol) | Payback | Platform assets created |
 |------|---------|:-:|:-:|:-:|---|
 | 1a | WS4 Confirmation RPA (no-show reduction) | $150,000 | $350,000–$500,000 est. | 4–6 months | ServiceNow placement API, SMS/email gateway, notification infrastructure |
-| 1b | WS1 Shift Intake NLP | $200,000 | Primarily WS2 enabler | Indirect (via WS2 quality) | ServiceNow read/write connector, HITL queue, specialty taxonomy |
-| 2 | WS2 Matching Agent (this model) | $400,000 remaining | $6,172,000 at target vol. | 6 weeks (at target vol.) | Nurse DB API, shortlist UX, multi-submission tracker |
+| 1b | WS1 Shift Intake NLP | $200,000 | **$168,000/year** (current vol.) / **$2,352,000/year** (target vol.) direct + WS2 quality uplift (indirect) | 11.9 months (current vol. basis) | ServiceNow read/write connector, HITL queue, specialty taxonomy |
+| 2 | WS2 Matching Agent (this model) | $400,000 remaining | $3,820,160 at target vol. (WS2 only); $6,172,160 combined WS1+WS2 | 71 days / 10 weeks (WS2 only) | Nurse DB API, shortlist UX, multi-submission tracker |
 | 3 | Multi-agent orchestration (WS1+WS2+WS4 pipeline) | $150,000 | Margin improvement | < 6 months | Shared governance layer, model router |
 
-Wave 1 savings fund Wave 2 deployment. The $400K remaining WS2 build cost (after Wave 1's shared integration assets are already in production) is approximately 60% of the standalone $750K estimate — the compounding effect reduces marginal build cost.
+**WS1 saving streams — two distinct mechanisms:**
+
+- **Direct ($168K/year current vol. | $2,352,000/year target vol.):** The 1+3 split (Assumption A1) attributes 1 min/case to WS1 intake — parsing the shift request, extracting specialty/credentials/shift time, and building the structured MatchingBrief. WS1 eliminates this fraction entirely: coordinators receive a validated MatchingBrief in their queue and spend their full available time on matching decisions. Calculation: 1 min × $42.00/hr ÷ 60 = $0.70/case × 240,000 = $168,000 (current); $0.70 × 3,360,000 = $2,352,000 (target). At 14× volume this also reduces HITL coordinator headcount below the 33-coordinator figure in §5c, which was calculated from WS2 HITL hours only.
+- **Indirect — WS2 shortlist quality uplift:** Cleaner, consistently structured briefs reduce the rate at which WS2 produces ambiguous or incomplete shortlists. This supports the 15% HITL rate assumption (Option B) — higher intake error rates would push the complex-case fraction up and increase the per-case coordinator cost modelled in §4b.
+
+Wave 1 combined saving ($518K–$668K/year at current volume: $350K–$500K WS4 + $168K WS1) funds Wave 2 deployment. The $400K remaining WS2 build cost (after Wave 1's shared integration assets are already in production) is approximately 60% of the standalone $750K estimate — the compounding effect reduces marginal build cost.
 
 ---
 
@@ -405,10 +466,10 @@ These are the operating-point targets the agent must hit before production relea
 
 ## 9. Assumption Log
 
-> **[A1] All 8 coordinators fully allocated to matching.**
-> **Why it matters:** Drives the 4.0 min/case baseline. If coordinators spend 50% on non-matching tasks, active matching time is 8 min/case and the baseline cost doubles to $5.60/case.
-> **If wrong:** Baseline cost estimate is conservative; actual saving per case is larger.
-> **Confidence:** Medium.
+> **[A1] Coordinator time splits 1 min (WS1 intake) + 3 min (WS2 matching) = 4 min total per decision. WS4 has no current coordinator time cost.**
+> **Why it matters:** Drives the WS2-specific baseline of $2.10/case and the WS1 baseline of $0.70/case. WS4 is excluded because coordinators do not perform confirmation today — there is no baseline to displace. Including WS4 time in the baseline would manufacture a current cost that does not exist and inflate the combined saving.
+> **If wrong:** If WS2 takes only 2 min (WS1 takes 2 min), WS2 baseline drops to $1.40/case and standalone WS2 saving at current volume turns negative (−$67K). At target volume payback extends from 10 weeks to ~6 months. The 3-min allocation is the more conservative and defensible assumption for WS2.
+> **Confidence:** Low — no scenario data for the time split. The 1+3 approximation reflects that matching (querying, rule evaluation, profile note review, ranking, shortlist presentation) is substantially more cognitively demanding than intake parsing. Requires validation in discovery.
 
 > **[A2] US healthcare staffing coordinator fully loaded cost = $42/hr ($84K/year).**
 > **Why it matters:** HITL cost per case scales linearly with this rate. All cost comparisons depend on it.
@@ -427,12 +488,12 @@ These are the operating-point targets the agent must hit before production relea
 
 > **[A5] Infrastructure scales at ~40% of linear (economies of scale).**
 > **Why it matters:** $200K/year at current volume → $400K/year at 14× volume (not $2.8M).
-> **If wrong:** If infrastructure scales linearly: $2.8M/year — reduces annual saving by $2.4M. Would increase payback from 6 weeks to ~8 months. Still strong.
+> **If wrong:** If infrastructure scales linearly: $2.8M/year — increases infrastructure cost by $2.4M. WS2 annual saving drops from $3,820,160 to $1,420,160. Payback extends from 10 weeks to ~6 months. Still strong.
 > **Confidence:** Medium — cloud infrastructure typically sub-linear; validate at architecture review.
 
 > **[A6] Clean fill coordinator review = 30 seconds; complex fill = 5 minutes.**
 > **Why it matters:** Single most sensitive variable in the model. HITL is 97–99% of per-case agent cost.
-> **If wrong:** If clean fill review = 2 minutes (coordinator re-verifies credentials manually): HITL cost per case rises from $0.823 to $1.505 (+83%). Annual saving at target volume drops from $6.2M to $3.7M. Payback extends from 6 weeks to ~10 weeks. Still strong, but the 30-second assumption must be validated against HITL UX design and coordinator behaviour.
+> **If wrong:** If clean fill review = 2 minutes (coordinator re-verifies credentials manually): HITL cost per case rises from $0.823 to $1.715 (+108%). WS2 annual saving at target volume drops from $3,820,160 to $823,040. Payback extends from 10 weeks to ~11 months. Still viable, but the 30-second assumption is load-bearing and must be validated against HITL UX design and coordinator behaviour before committing to the economics.
 > **Confidence:** Low — depends on interface design and coordinator trust level; prior recommendation engine failure [DS-confirmed: A13] suggests coordinators may be slow to trust agent output initially.
 
 > **[A7] Build cost = $750,000.**
