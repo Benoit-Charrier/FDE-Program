@@ -1,1 +1,0 @@
-The hardest part of build-loop diagnosis for me will be builder misread
