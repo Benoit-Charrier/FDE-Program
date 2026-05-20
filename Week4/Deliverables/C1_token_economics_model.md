@@ -8,7 +8,7 @@
 ## 0. Executive Summary
 
 - **Primary agentic target:** WS1 — Administrative Adjudication, 338,000 claims/year (1,300/day × 260 working days); the business case is a 63-point gap between Greenfield's 22% auto-adjudication rate and the 85% industry benchmark (scenario.md) at a $845K/year manual baseline, representing $386K in recoverable annual labour against a $400K build investment — payback period 12.4 months on the full TCO model.
-- **Model tier finding:** Blended architecture recommended — Haiku for the five deterministic micro-tasks (format parsing, eligibility lookup, code validity, prior auth lookup, fee schedule calculation), Sonnet for the five judgment micro-tasks (eligibility discrepancy resolution, clinical plausibility assessment, prior auth partial-match resolution, clinical content routing classification, contract exception handling); the cheapest model is not the right answer because HITL cost ($1.30/claim at 25% HITL rate) is 260× larger than token cost ($0.005/claim blended), and downgrading all steps to Haiku raises the HITL rate to an estimated 35%, adding $178K/year to annual cost against a token saving of $1,300/year.
+- **Model tier finding:** Sonnet for the five judgment micro-tasks (eligibility discrepancy resolution, clinical plausibility assessment, prior auth partial-match resolution, clinical content routing classification, contract exception handling) — no LLM for the five deterministic micro-tasks (format parsing, eligibility lookup, code validity, prior auth lookup, fee schedule calculation), which execute as code or API calls; the cheapest model is not the right answer because HITL cost ($1.30/claim at 25% HITL rate) is 260× larger than token cost ($0.005/claim), and using Haiku for the judgment tasks raises the HITL rate to an estimated 35%, adding $178K/year to annual cost against a token saving of $1,300/year.
 - **Business case under conservative assumptions:** At 35% HITL rate and 2× build cost ($800K), payback extends to 4.6 years and the FTE-only business case does not hold; the case is viable only if HITL rate is held at or below 25% — which is the design-time calibration commitment, not a post-production hope — and build scope is actively managed within $400K; the conservative scenario is the strongest argument for investing in classifier accuracy before go-live rather than correcting it in production.
 
 ---
@@ -76,22 +76,22 @@ Baseline cost per case (FTE-based):
 
 ## 3. Agent Architecture — Per-Step Model Selection
 
-*WS1 micro-tasks from D2A §2d. Five deterministic tasks use Haiku (binary lookups, rule-based calculations, structured field extraction); five judgment tasks use Sonnet (pattern classification, tolerance reasoning, multi-factor routing decisions). Purely deterministic sub-tasks within any step are implemented as rules/API calls — not LLM tokens.*
+*WS1 micro-tasks from D2A §2d. Five deterministic tasks execute as code or API calls — no LLM tokens consumed. Five judgment tasks invoke Sonnet (pattern classification, tolerance reasoning, multi-factor routing). Not all judgment calls run on every claim; Steps 5 and 8 run on every claim; Steps 3, 7, and 10 are conditional, triggered only when the upstream deterministic step surfaces an exception.*
 
-| Step | Micro-task | Model tier | Rationale |
+| Step | Micro-task | Execution | Rationale |
 |------|-----------|:----------:|-----------|
-| 1 | MT-WS1-1: Format parsing and intake normalisation | **Haiku** | Parse-or-fail logic on structured inputs (EDI 837) and defined field extraction rules; DD=H in D2A; correct answer follows a format specification, not reasoning |
-| 2 | MT-WS1-2: Eligibility lookup — standard path | **Haiku** | Binary structured lookup (eligible/not eligible on service date); DD=H, CL=L in D2A; no reasoning required — the eligibility system returns a result and Haiku formats the output |
-| 3 | MT-WS1-3: Eligibility discrepancy resolution | **Sonnet** | CL=H, DD=L in D2A; requires contextual pattern recognition ("data lag vs. genuine gap") that Haiku cannot reliably produce — escalation errors here contribute directly to the 41% overturn rate |
-| 4 | MT-WS1-4: Code validity and pairing check | **Haiku** | ICD-10/CPT crosswalk rules are a structured lookup; DD=M (standard path) resolved by Haiku against a reference table; plausibility edge cases handled by Step 5 |
-| 5 | MT-WS1-5: Clinical plausibility assessment | **Sonnet** | CL=H, DD=L, EF=H in D2A — tacit clinical coding pattern recognition across diagnosis-procedure-provider combinations; no formal rule exists; Haiku on this step is the primary driver of elevated HITL rate in the Haiku-only architecture |
-| 6 | MT-WS1-6: Prior auth requirement check and lookup | **Haiku** | Structured lookup: required-or-not, present-or-not; DD=H, CL=L in D2A; a deterministic check against the prior auth system |
-| 7 | MT-WS1-7: Prior auth partial match resolution | **Sonnet** | CL=H, DD=L, EF=M in D2A — tolerance judgment (unit variance, date mismatch, code variant) with no documented threshold; Haiku cannot reason reliably about whether a 10-unit authorisation should cover a 12-unit claim |
-| 8 | MT-WS1-8: Clinical content routing classification | **Sonnet** | CL=H, DD=L, EF=H in D2A — multi-factor classification across diagnosis codes, procedure codes, and provider specialty; no formal criterion exists; this is the highest-stakes step in WS1 (false negative = URAC/NCQA compliance violation); Sonnet handles the probabilistic classification; confidence threshold gates HITL escalation |
-| 9 | MT-WS1-9: Fee schedule application and payment calculation | **Haiku** | Fee schedule is a structured rate table; cost-sharing calculation is arithmetic; DD=H, CL=L in D2A; correct answer is determined by a formula, not judgment |
-| 10 | MT-WS1-10: Fee schedule contract exception handling | **Sonnet** | CL=H, DD=L, Tool Coverage=L in D2A — contract carve-out rules may reside in unstructured documents or email; Sonnet reads the available contract context and produces a defensible rate recommendation for HITL confirmation; Haiku cannot interpret an unstructured contract document reliably |
+| 1 | MT-WS1-1: Format parsing and intake normalisation | **Code** | Parse-or-fail logic on structured inputs (EDI 837) and defined field extraction rules; DD=H in D2A; correct answer follows a format specification — an EDI parser or PDF extraction library resolves this, not an LLM |
+| 2 | MT-WS1-2: Eligibility lookup — standard path | **API call** | Binary structured lookup (eligible/not eligible on service date); DD=H, CL=L in D2A; the eligibility system returns a boolean result — no reasoning required, no tokens consumed |
+| 3 | MT-WS1-3: Eligibility discrepancy resolution | **Sonnet** (conditional, ~5% of claims) | CL=H, DD=L in D2A; triggered only when Step 2 returns a discrepancy; requires contextual pattern recognition ("data lag vs. genuine gap") that no deterministic rule can resolve — escalation errors here contribute directly to the 41% overturn rate |
+| 4 | MT-WS1-4: Code validity and pairing check | **Code / lookup table** | ICD-10/CPT crosswalk rules are a structured lookup against a reference table; DD=M in D2A; standard path is a code lookup, not LLM inference; plausibility edge cases surface as exceptions handled by Step 5 |
+| 5 | MT-WS1-5: Clinical plausibility assessment | **Sonnet** (every claim) | CL=H, DD=L, EF=H in D2A — tacit clinical coding pattern recognition across diagnosis-procedure-provider combinations; no formal rule exists; runs on every claim because no prior step can pre-screen for plausibility violations without LLM reasoning; the primary driver of elevated HITL rate in any Haiku-on-judgment architecture |
+| 6 | MT-WS1-6: Prior auth requirement check and lookup | **API call** | Structured lookup: required-or-not, present-or-not; DD=H, CL=L in D2A; the prior auth system returns a record or absence — deterministic check, no tokens consumed |
+| 7 | MT-WS1-7: Prior auth partial match resolution | **Sonnet** (conditional, ~8% of claims) | CL=H, DD=L, EF=M in D2A; triggered only when Step 6 returns a partial match; tolerance judgment (unit variance, date mismatch, code variant) with no documented threshold; the decision cannot be resolved by code because no rule defines when a 10-unit authorisation covers a 12-unit claim |
+| 8 | MT-WS1-8: Clinical content routing classification | **Sonnet** (every claim) | CL=H, DD=L, EF=H in D2A — multi-factor classification across diagnosis codes, procedure codes, and provider specialty; runs on every WS1 claim because the routing decision cannot be pre-empted by code; highest-stakes step (false negative = URAC/NCQA compliance violation); confidence threshold gates HITL escalation |
+| 9 | MT-WS1-9: Fee schedule application and payment calculation | **Code / rate table** | Fee schedule is a structured rate table; cost-sharing calculation is arithmetic; DD=H, CL=L in D2A; correct answer is computed by a formula against a lookup — an LLM call here adds latency and cost with zero quality benefit |
+| 10 | MT-WS1-10: Fee schedule contract exception handling | **Sonnet** (conditional, ~2% of claims) | CL=H, DD=L, Tool Coverage=L in D2A; triggered only when Step 9 flags a contract exception; contract carve-out rules may reside in unstructured documents; Sonnet produces a defensible rate recommendation for HITL confirmation |
 
-**Anti-pattern note:** Steps 1, 2, 4, 6, and 9 are correctly implemented as deterministic rules or API calls within the agent pipeline — these steps should not consume LLM tokens at all on the standard path. Routing LLM calls to a binary eligibility lookup or an arithmetic fee-schedule calculation adds cost with zero quality benefit. The Haiku tier label means "lowest-cost LLM for exception handling only"; the standard path for these steps is rules-based.
+**Architecture summary:** The WS1 agent is an orchestrator, not a single-call LLM pipeline. Steps 1, 4, 9 run as in-process code (EDI parsers, code validation libraries, fee arithmetic). Steps 2, 6 run as external API calls (eligibility system, prior auth system). No LLM tokens are consumed on these five paths. Sonnet is invoked only when no deterministic rule resolves the decision. Average Sonnet calls per WS1 claim: **~2.15** (Steps 5 and 8 on every claim; Steps 3, 7, 10 on ~15% of claims combined).
 
 ---
 
@@ -109,30 +109,46 @@ Baseline cost per case (FTE-based):
 
 Cache hit rate: With 1,300 claims/day processed in continuous sessions, every claim after the first in a session is a cache read. At 10× cheaper than standard input pricing, caching reduces the effective system prompt cost from $1.50/1,000 tokens to $0.15/1,000 tokens (Sonnet pricing). Across 338,000 claims/year, cache savings on the system prompt: $1.50 × 500 ÷ 1,000,000 × 338,000 = $254/year in uncached cost → $25/year in cached cost; $229/year saving [immaterial relative to HITL cost, but correctly accounted].
 
-### 4b. Per-Case Variable Input Tokens
+### 4b. Per-Judgment-Call Variable Input Tokens
 
-| Component | Tokens | Notes |
-|-----------|-------:|-------|
-| Claim record fields (member ID, service date, diagnosis codes, procedure codes, provider info, place of service) | 250 | Structured EDI-sourced fields; consistent size |
-| Prior auth record summary (auth number, procedure, dates, units) | 150 | From prior auth system lookup |
-| Eligibility record (member plan, effective dates, cost-sharing structure) | 100 | From eligibility system |
-| Fee schedule context (rate table excerpt for this procedure-provider combination) | 100 | From fee schedule system |
-| Exception context if applicable (partial match details, contract flag, plausibility concern) | 100 | Conditional; only on exception-triggering claims |
-| **Total per-case input (effective, post-cache)** | **700** | [Assumption A-G4D1-4] |
+LLM calls occur only for the five judgment micro-tasks. Each call receives only the context relevant to that specific task — not the full claim record — keeping per-call token counts low and focused.
 
-### 4c. Output Tokens Per Case
+| Judgment task | Input tokens | Output tokens | Frequency per claim |
+|---------------|-------------:|:-------------:|:-------------------:|
+| MT-WS1-5: Clinical plausibility (diagnosis codes, procedure codes, provider specialty) | 250 | 100 | Every claim (1.0×) |
+| MT-WS1-8: Clinical content routing (codes, specialty, clinical indicators) | 300 | 100 | Every claim (1.0×) |
+| MT-WS1-3: Eligibility discrepancy (eligibility record + claim service date context) | 200 | 100 | Conditional (~5%) |
+| MT-WS1-7: Prior auth partial match (auth record, procedure details, unit comparison) | 200 | 100 | Conditional (~8%) |
+| MT-WS1-10: Contract exception (fee schedule excerpt, contract flag context) | 250 | 100 | Conditional (~2%) |
 
-| Component | Tokens | Notes |
-|-----------|-------:|-------|
-| Validation disposition and structured decision code | 80 | Admin-complete / incomplete / pending / route-to-clinical |
-| Reason code(s) for the determination | 60 | ICD/CPT/prior auth failure codes as applicable |
-| HITL escalation rationale (when triggered) | 100 | Only on ~25% of claims; average across all claims |
-| Clinical content routing confidence score and supporting signal | 60 | Output of MT-WS1-8 classifier |
-| **Total per-case output** | **300** | [Assumption A-G4D1-4] |
+**Weighted per-claim token calculation:**
+```
+Always-run calls (Steps 5 and 8):
+  Input:  (1.0 × 250) + (1.0 × 300) = 550 tokens
+  Output: (1.0 × 100) + (1.0 × 100) = 200 tokens
 
-**Total tokens per case:**
-- Without caching: 500 (system) + 700 (variable input) + 300 (output) = 1,500 tokens
-- With caching: 700 (variable input) + 300 (output) + 50 (cache read, system prompt at 10% rate) = ~1,050 effective tokens
+Conditional calls (average 0.15 calls/claim at ~220 input + 100 output):
+  Input:  0.15 × 220 = 33 tokens
+  Output: 0.15 × 100 = 15 tokens
+
+System prompt cache reads (500 tokens × 10% × 2.15 calls): ~108 effective-cost tokens
+
+Total effective tokens per claim: 550 + 200 + 33 + 15 + 108 ≈ 906 ≈ ~900 tokens
+[Assumption A-G4D1-4 — revised from 1,000 tokens; directionally unchanged]
+```
+
+### 4c. Output Tokens Per Claim (aggregate)
+
+| Output type | Tokens | Notes |
+|-------------|-------:|-------|
+| MT-WS1-5 plausibility assessment result | 100 | Every claim |
+| MT-WS1-8 routing classification + confidence score | 100 | Every claim |
+| Conditional call outputs (Steps 3, 7, 10 — weighted average) | 15 | ~15% of claims × 100 tokens |
+| **Total per-claim output (weighted)** | **~215** | [Assumption A-G4D1-4] |
+
+**Total tokens per claim:**
+- Without caching: 500 (system, per call) × 2.15 + 583 (variable input) + 215 (output) = 1,873 tokens
+- With caching: 583 (variable input) + 215 (output) + 108 (system prompt cache reads) = ~906 effective tokens
 
 ### 4d. Tool Call Costs
 
@@ -211,11 +227,11 @@ Weighted HITL cost per case:
 | vs. baseline ($2.50/claim) | -25% | **-46%** | **-46%** |
 
 **HITL rate assumptions by option:**
-- **Option A (Haiku-only, 35% HITL):** Haiku applied to all five judgment micro-tasks (MT-WS1-3, 5, 7, 8, 10) produces less reliable pattern classification and tolerance reasoning than Sonnet. The coding plausibility task (MT-WS1-5, EF=H, DD=L) and clinical content routing task (MT-WS1-8, EF=H, DD=L) are the primary drivers of the elevated rate. Both tasks involve no formal rule — the agent must reason across multi-factor patterns without a deterministic decision function. Haiku's reduced reasoning capability on unstructured pattern recognition produces more borderline outputs that cannot meet the confidence threshold, escalating to HITL at a higher rate. [Assumption A-G4D1-2]
-- **Option B (Blended, 25% HITL):** Sonnet applied to all five judgment tasks brings reasoning quality to parity with the scenario's expectations for the clinical content classifier and plausibility assessor. HITL triggers are cases that are genuinely ambiguous at the BP-WS1-4 confidence threshold — not cases the model fails to process.
-- **Option C (Sonnet-only, 25% HITL):** Applying Sonnet to the five deterministic tasks (MT-WS1-1, 2, 4, 6, 9) does not materially reduce the HITL rate because those tasks do not drive HITL escalations. The binary eligibility lookup and arithmetic fee schedule calculation produce the same HITL rate regardless of model tier — the exception rate comes from data conditions (discrepancy found, partial match present), not from model capability. HITL rate is identical to Option B.
+- **Option A (Haiku for judgment tasks, 35% HITL):** Haiku applied to the five judgment micro-tasks (MT-WS1-3, 5, 7, 8, 10) produces less reliable pattern classification and tolerance reasoning than Sonnet. The coding plausibility task (MT-WS1-5, EF=H, DD=L) and clinical content routing task (MT-WS1-8, EF=H, DD=L) are the primary drivers of the elevated rate. Both tasks involve no formal rule — the agent must reason across multi-factor patterns without a deterministic decision function. Haiku's reduced reasoning capability on unstructured pattern recognition produces more borderline outputs that cannot meet the confidence threshold, escalating to HITL at a higher rate. Note: the five deterministic tasks (Steps 1, 2, 4, 6, 9) execute as code or API calls regardless of model tier — they do not appear in this comparison. [Assumption A-G4D1-2]
+- **Option B (Sonnet for judgment tasks, 25% HITL — recommended):** Sonnet applied to the five judgment tasks brings reasoning quality to parity with the scenario's expectations for the clinical content classifier and plausibility assessor. HITL triggers are cases that are genuinely ambiguous at the BP-WS1-4 confidence threshold — not cases the model fails to process.
+- **Option C (Sonnet for all tasks including deterministic, 25% HITL):** Routing Sonnet to the five deterministic tasks (Steps 1, 2, 4, 6, 9) produces no HITL rate improvement because those steps do not drive HITL escalations. The binary eligibility lookup returns a boolean from an external system; the fee schedule calculation is arithmetic against a rate table. Upgrading these to Sonnet adds token cost with zero quality or HITL benefit. HITL rate is identical to Option B.
 
-**Recommendation: Option B (blended).** Options B and C are essentially equivalent in total per-claim cost ($1.357 vs. $1.359 — a $0.002/claim or $676/year difference at current volume). The recommendation for B over C rests on architectural correctness: applying Sonnet to a binary eligibility lookup consumes 4× more tokens than Haiku for zero quality benefit on that step. The blended architecture correctly assigns expensive reasoning capacity to the steps that require it and cheap execution capacity to the steps that do not.
+**Recommendation: Option B.** Options B and C are essentially equivalent in total per-claim cost ($1.357 vs. $1.359 — a $0.002/claim or $676/year difference at current volume). Option B is correct on architectural grounds: deterministic tasks should execute as code and API calls, not LLM inference. Applying Sonnet to a binary eligibility lookup adds token cost and latency for zero benefit. The correct architecture assigns LLM reasoning capacity only to the steps that require it.
 
 **Required finding:** Token cost is not the dominant variable — HITL cost is. At the base case (Option B, 25% HITL):
 - Token cost: $0.005/claim (0.4% of total agent cost)
@@ -229,7 +245,7 @@ Weighted HITL cost per case:
 ## 6. Total Agent Cost Per Case (Recommended Option)
 
 ```
-Token cost per case:        $0.005   (blended: Haiku for deterministic, Sonnet for judgment)
+Token cost per case:        $0.005   (Sonnet for 5 judgment tasks, ~2.15 calls/claim; code/API for 5 deterministic tasks)
 Tool call cost per case:    $0.040   (4 API calls × $0.010)
 Infrastructure per case:    $0.010
 HITL cost per case:         $1.302   (25% HITL rate × 10 min × $31.25/hr)
@@ -500,10 +516,10 @@ Portfolio ROI: $593,000 ÷ $528,000 × 100 = 112%
 
 ---
 
-> **[A-G4D1-4] Token consumption per WS1 claim:** 700 effective input tokens (post-cache), 300 output tokens. Assumption based on estimated claim record size and validation output format.
+> **[A-G4D1-4] Token consumption per WS1 claim:** ~906 effective tokens (weighted across ~2.15 Sonnet calls/claim — Steps 5 and 8 on every claim, Steps 3, 7, 10 on ~15% of claims combined). Each call receives only the context relevant to that task; deterministic steps (1, 2, 4, 6, 9) consume no LLM tokens.
 > **Why it matters:** Token cost ($0.005/claim) is 0.4% of total agent cost; a 3× error in this assumption changes annual cost by $3,380 — immaterial. Token count is not the binding constraint.
 > **If wrong:** Token consumption is not the governing economic variable; calibration should focus on HITL rate, not token count.
-> **Confidence:** Low — no actual prompt has been designed; actual consumption determined during capability spec and mock testing.
+> **Confidence:** Low — no actual prompt has been designed; actual per-call consumption determined during capability spec and mock testing.
 
 ---
 
