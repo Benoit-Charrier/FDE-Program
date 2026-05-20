@@ -54,6 +54,7 @@ Issues that must be fixed before the build starts — either a builder would imp
 #### B1 — Duplicate detection omits specialty: produces silent false positives
 
 **Type:** Spec gap — functional logic error
+**Checklist criterion:** Buildability — "Every conditional ('if,' 'when,' 'unless') has explicit criteria and outcomes"; the duplicate detection conditional omits a load-bearing field from its criteria
 **Location:** Autonomy Matrix → duplicate detection row; Race Conditions table, first row; Contract 3 → duplicate detection query
 
 **Finding:**
@@ -69,6 +70,7 @@ The duplicate condition is `hospital_id + shift_date + shift_start_time ±30min 
 #### B2 — `MULTI_CLARIFICATION_CONFLICT` has no CRM status transition defined
 
 **Type:** Spec gap — missing state machine row
+**Checklist criterion:** Entity Precision — "State machine is complete: for each state, list all valid transitions and prerequisites"; MULTI_CLARIFICATION_CONFLICT is a named routing path with no corresponding state machine entry
 **Location:** Contract 1 → clarification response detection, step 5; Coordinator Queue → `reason_code` enum; CRM Request Status State Machine
 
 **Finding:**
@@ -84,6 +86,7 @@ Contract 1 step 5 routes to the coordinator queue when multiple `CLARIFICATION_P
 #### B3 — `EMAIL_POLL_INTERVAL_SECONDS` referenced in Contract 1 but missing from Configuration table
 
 **Type:** Spec gap — incomplete configuration
+**Checklist criterion:** Integration Contracts — configurable values must have a defined source (env var or config table); EMAIL_POLL_INTERVAL_SECONDS is named in two spec sections but absent from the configuration table, forcing the builder to supply the value
 **Location:** Contract 1 → first paragraph ("configurable via `EMAIL_POLL_INTERVAL_SECONDS` — add to Configuration if confirmed"); Configuration table
 
 **Finding:**
@@ -99,6 +102,7 @@ Contract 1 names `EMAIL_POLL_INTERVAL_SECONDS` as configurable with a 60-second 
 #### B4 — MedFlex operating states list is undefined: `facility_state` validation cannot be implemented
 
 **Type:** Spec gap — missing configuration
+**Checklist criterion:** Integration Contracts — "Data mapping from internal to external is documented"; the facility_state validation rule references an operating-states list with no defined source anywhere in the spec
 **Location:** Shared Glossary → `facility_state` field constraints; Contract 6 → post-parse validation
 
 **Finding:**
@@ -114,6 +118,7 @@ The spec requires `facility_state` to be validated against MedFlex's operating s
 #### B5 — Worked examples use dates that are now in the past
 
 **Type:** Spec inconsistency — test case breakage
+**Checklist criterion:** Validation Design — "At least one end-to-end happy-path scenario with concrete inputs and outputs"; hardcoded past dates make the worked examples non-reproducible as test fixtures
 **Location:** Worked Examples → Example 1 (`shift_date = 2026-05-15`); Example 2 (`shift_date = 2026-05-19`); Contract 6 → post-parse validation
 
 **Finding:**
@@ -135,6 +140,7 @@ Real design risks. Not immediate build blockers — a builder can start — but 
 #### C1 — Clarification loop has no maximum round cap: unbounded wait condition
 
 **Type:** Spec risk — explicit design choice with unacknowledged failure mode
+**Checklist criterion:** Delegation Boundaries — "Escalation paths are complete: if escalated, what happens next?"; no escalation trigger is defined for the case where clarification rounds accumulate without resolution
 **Location:** State machine → `CLARIFICATION_PENDING` self-loop note; Example 2
 
 **Finding:**
@@ -150,6 +156,7 @@ A partial clarification response resets `CLARIFICATION_TIMEOUT_MINUTES`. With no
 #### C2 — Specialty vocabulary cache TTL undefined
 
 **Type:** Spec gap — missing configuration
+**Checklist criterion:** Integration Contracts — configurable values must have a defined source; SPECIALTY_VOCABULARY_CACHE_TTL_HOURS is referenced in prose ("Refresh when cache TTL expires") but absent from the configuration table
 **Location:** Agent Startup Behavior → step 1; Configuration table
 
 **Finding:**
@@ -165,6 +172,7 @@ The spec says to cache specialty vocabulary embeddings and "Refresh when cache T
 #### C3 — Portal intake: who triggers WS1 for portal submissions is undefined
 
 **Type:** Spec gap — missing integration boundary
+**Checklist criterion:** Integration Contracts — "Fallback behavior: if the integration is unavailable, what does the agent do?"; more precisely, the boundary between portal intake and WS1 is unnamed despite PORTAL being a defined enum value — WS1 builder cannot determine whether to expect or ignore portal records
 **Location:** Scope → portal intake (out of scope); Shared Glossary → `intake_channel` enum
 
 **Finding:**
@@ -219,6 +227,23 @@ Items that look like issues but are not.
 | C1 | No clarification round cap → unbounded wait condition | Low — add config parameter + state machine note |
 | C2 | Specialty vocabulary cache TTL undefined → builder hardcodes policy | Trivial — add config parameter |
 | C3 | Portal → WS1 trigger undefined → WS1 builder makes undocumented assumption | Low — add one clarifying sentence to Scope |
+
+---
+
+### Production Spec Checklist Report
+
+Sections from `production-spec-checklist.md` evaluated against this spec. **Pass** = no findings trace here. **Partial** = concerns (C#) only. **Fail** = one or more blockers (B#) trace here.
+
+| Section | Status | Key findings |
+|---------|--------|--------------|
+| Buildability | **Fail** | B1: duplicate conditional omits specialty — criteria are incomplete. B3: `EMAIL_POLL_INTERVAL_SECONDS` referenced in two sections, absent from config table — builder-supplied constant. B4: operating states list has no defined source — validation rule is unimplementable. |
+| Entity Precision | **Fail** | B2: `MULTI_CLARIFICATION_CONFLICT` is a named routing path with no state machine entry — builder must invent a status and record-creation rule. |
+| Delegation Boundaries | **Partial** | All 13 autonomy matrix conditions are defined with explicit SLAs. C1: no clarification round cap means the escalation path for a persistent partial-response loop is undefined. |
+| Integration Contracts | **Fail** | B3/B4: two config parameters are referenced in contracts but absent from the config table (poll interval, operating states). C2: specialty cache TTL referenced in prose but absent from config table. C3: `PORTAL` channel code is defined in the Shared Glossary but the WS1 trigger boundary has no contract. |
+| Validation Design | **Fail** | B5: two worked example dates are in the past — the happy-path test is non-reproducible as a fixture. All other examples (clarification loop, cancellation, modification, UNMAPPABLE) are complete. |
+| Assumptions Register | **Partial** | Portal intake constraint and operating states list are acknowledged as open items in the spec text, but neither is formally registered with a confidence level, failure mode, or named validation owner. |
+| Economics Alignment | **Partial** | Circuit breaker and `EMAIL_POLL_COST_BUDGET_USD_PER_HOUR` alert are referenced, showing cost awareness. No token budget or batch opportunity analysis is documented. |
+| Governance | **Pass** | Audit trail schema fully defined, 6-year HIPAA retention stated, PHI "flag not log" rule is explicit, append-only constraint documented. No gaps. |
 
 ---
 
@@ -279,6 +304,7 @@ The following areas are complete enough to implement immediately:
 #### B1 — `RankerFeedback` uniqueness constraint contradicts BP5 re-rank requirement
 
 **Type:** Spec inconsistency — contradictory data model constraint
+**Checklist criterion:** Entity Precision — "No contradictory rules (e.g., 'status is immutable' AND 'status can change')"; the uniqueness constraint and the BP5 re-rank flow directly contradict each other in the same spec
 **Location:** §3.6 RankerFeedback → Constraints (last line); §10.2 Edge Case 5
 
 **Finding:**
@@ -294,6 +320,7 @@ The following areas are complete enough to implement immediately:
 #### B2 — JtD-5a update path for `submission_outcome` has no integration contract
 
 **Type:** Spec gap — missing integration contract
+**Checklist criterion:** Integration Contracts — "For every external system integration: endpoint URL, request format, response format, timeout, retry logic"; the PATCH endpoint for submission_outcome updates has none of these defined anywhere in the spec
 **Location:** §3.6 RankerFeedback → `submission_outcome` attribute; §7.3 RankerFeedback Write
 
 **Finding:**
@@ -309,6 +336,7 @@ The following areas are complete enough to implement immediately:
 #### B3 — `edit_reason` required vs. optional for `EDITED` action contradicts state machine note
 
 **Type:** Spec inconsistency — contradictory field constraints
+**Checklist criterion:** Entity Precision — "No contradictory rules"; edit_reason is simultaneously required and nullable for the same action type in two different locations in the same spec
 **Location:** §3.5 CoordinatorReview → `edit_reason` attribute; §3.5 Constraints → action = APPROVED bullet
 
 **Finding:**
@@ -324,6 +352,7 @@ The data model states: *"edit_reason: required if action = EDITED, max 500 chars
 #### B4 — `EXPIRED` status has no entry transition in the state machine
 
 **Type:** Spec gap — incomplete state machine
+**Checklist criterion:** Entity Precision — "State machine is complete: for each state, list all valid transitions and prerequisites"; EXPIRED has an exit transition defined but no entry transition — it is currently unreachable dead code
 **Location:** §3.4 RankedShortlist → State Machine; §5 Autonomy Matrix → Escalation SLAs note
 
 **Finding:**
@@ -343,6 +372,7 @@ The `EXPIRED` status appears in the status enum and has an exit transition defin
 #### C1 — DUPLICATE_IN_FLIGHT 4-hour window is a magic constant despite "all timeouts are configurable" claim
 
 **Type:** Spec inconsistency — self-contradicting configurability claim
+**Checklist criterion:** Delegation Boundaries — "All decision thresholds are numeric or boolean (no fuzzy 'might' conditions)"; the threshold is numeric but the spec's own claim that all timeouts are configurable is violated — the value is hardcoded in prose and absent from the config table
 **Location:** §8.1 Disqualification Pass → DUPLICATE_IN_FLIGHT condition; §5 Autonomy Matrix → Escalation SLAs note
 
 **Finding:**
@@ -358,6 +388,7 @@ The `EXPIRED` status appears in the status enum and has an exit transition defin
 #### C2 — APPROVED action does not enforce `candidates[0]` selection at the API validation layer: silent A19 training corruption
 
 **Type:** Spec gap — missing server-side validation
+**Checklist criterion:** Delegation Boundaries — "Every action is labeled: [Agent Alone] [Agent + Log] [Agent + Review] [Human]"; the APPROVED→candidates[0] enforcement boundary is declared in the data model but absent from the API delegation contract, creating a gap between what is specified and what is enforced
 **Location:** §3.5 CoordinatorReview → Constraints; §7.5 Internal Coordinator Review API → Error responses
 
 **Finding:**
@@ -373,6 +404,7 @@ The `EXPIRED` status appears in the status enum and has an exit transition defin
 #### C3 — Hospital geocoded coordinates have no integration contract
 
 **Type:** Spec gap — missing integration dependency
+**Checklist criterion:** Integration Contracts — "For every external system integration: endpoint URL, request format, response format, timeout, retry logic, fallback behavior"; hospital location coordinates are consumed in the scoring hot path but the retrieval contract has none of these defined
 **Location:** §7.4 Geocoding → data mapping note; §8.3 proximity_score definition
 
 **Finding:**
@@ -430,6 +462,23 @@ The `EXPIRED` status appears in the status enum and has an exit transition defin
 | C1 | DUPLICATE_IN_FLIGHT 4-hour window not in config → hardcoded, non-tunable | Trivial — add config parameter |
 | C2 | APPROVED action doesn't validate candidates[0] → silent A19 label corruption | Trivial — add one HTTP 400 validation case to §7.5 |
 | C3 | Hospital lat/lng retrieval has no integration contract → builder invents fallback logic | Low — add §7.6 ServiceNow hospital location read |
+
+---
+
+### Production Spec Checklist Report
+
+Sections from `production-spec-checklist.md` evaluated against this spec. **Pass** = no findings trace here. **Partial** = concerns (C#) only. **Fail** = one or more blockers (B#) trace here.
+
+| Section | Status | Key findings |
+|---------|--------|--------------|
+| Buildability | **Fail** | B1 and B3 create direct implementation contradictions — builder cannot implement RankerFeedback writes (uniqueness vs. re-rank) or EDITED validation (required vs. nullable edit_reason) without inventing a resolution. Both contradictions are in formal schema definitions, so the builder will follow the schema and get one of the two wrong. |
+| Entity Precision | **Fail** | B1: uniqueness constraint directly contradicts BP5 re-rank requirement. B3: `edit_reason` is simultaneously required and nullable for the same action type in two separate spec locations. B4: `EXPIRED` status has an exit transition but no entry transition — it is unreachable dead code. |
+| Delegation Boundaries | **Fail** | C1: DUPLICATE_IN_FLIGHT window (4 hours) is hardcoded in prose despite the spec's explicit claim that "all timeouts are configurable parameters." C2: APPROVED→candidates[0] enforcement is declared in the data model but absent from the API validation contract — the delegation boundary is not enforced at the system boundary. |
+| Integration Contracts | **Fail** | B2: `submission_outcome` update path has no PATCH contract — endpoint, request, response, retry, and auth are all undefined. C3: hospital location coordinates are consumed in the scoring formula but the ServiceNow retrieval contract (endpoint, error handling, null-lat/lng fallback) is absent. |
+| Validation Design | **Pass** | Five named edge cases with explicit setup, expected execution, and pass criteria. Three failure modes with recovery paths. Happy-path scenario is complete. Conditional on B1 and B3 fixes for the BP5 re-rank test case. |
+| Assumptions Register | **Pass** | A1–A24 explicitly listed with confidence levels, failure modes, and named validation owners. Flagged assumptions have specific stakeholders assigned. This is the strongest section in the spec. |
+| Economics Alignment | **Pass** | LLM is explicitly excluded from the MVP scoring hot path with rationale. Deterministic formula eliminates per-request LLM cost. §9 config file enables model substitution without code changes. No token budget issues to flag. |
+| Governance | **Pass** | Audit log schema with full field-level detail, 2-year retention with explicit compliance rationale (non-PHI operational data), HITL SLAs, override logging with non-repudiation, and compliance scope all defined. |
 
 ---
 

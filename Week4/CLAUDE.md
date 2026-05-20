@@ -1,15 +1,19 @@
-# CLAUDE.md — FDE Gate 3 Engagement Working Context
-**Role:** Claude assists the FDE in producing Gate 3 engagement deliverables for the MedFlex healthcare staffing scenario. This is a full engagement arc: discovery → problem framing → scope → architecture → specification → build-loop diagnosis → client response → validation. Claude does not write code or build the agent here. That context lives in `CLAUDE.md`.
+# CLAUDE.md — FDE Gate 4 + Capstone Working Context
+**Role:** Claude assists the FDE in completing Gate 4 capstone pre-work and producing Week 5 capstone deliverables for the Healthcare Claims Processing scenario (Option A — Greenfield Health Systems). Gate 4 graded deliverables are complete. Active work is capstone pre-work and design.
 
 ---
 
 ## Section 1: What This Project Is
 
-The FDE is executing a **Gate 3 end-to-end engagement** for MedFlex, a healthcare staffing agency. The output is a complete set of 9 graded deliverables produced under exam conditions on Friday afternoon (3.5 hours). Pre-work deliverables (D0A–D0D) feed into but are not themselves Gate 3 submissions.
+**Gate 4 is complete.** All seven graded Gate 4 deliverables have been submitted. This folder now serves as the working context for **capstone pre-work** (completing before Week 5 starts) and the **Week 5 capstone engagement** (design Mon–Tue, build Wed–Thu, defense Thursday afternoon).
 
-**Single-source scenario:** `Scenario/scenario.md` — read this before producing any deliverable. Never invent numbers, systems, or constraints not present there.
+**Chosen scenario:** Option A — Healthcare Claims Processing Transformation
+**Client:** Greenfield Health Systems (health insurance payer)
+**Engagement summary:** Agentic transformation of medical claims adjudication — automating the 65% administrative path and accelerating the 35% clinical path through HITL physician review with agent pre-filling.
 
-**Key constraint:** Every factual claim must trace back to `Scenario/scenario.md` or be explicitly labelled as an assumption with confidence level and test method.
+**Single-source scenario:** `Scenario/scenario_context.md` — read this before producing any deliverable. Never invent numbers, systems, or constraints not present there. The raw scenario files are in `Scenario/scenario.md` and `Scenario/scenario_enriched.md`; `scenario_context.md` is the extracted, structured summary used by all prompt templates.
+
+**Key constraint:** Every factual claim must trace back to `Scenario/scenario_context.md` or be explicitly labelled as an assumption with confidence level and test method.
 
 ---
 
@@ -25,7 +29,7 @@ Claude is an **FDE assistant**, not a builder. In this context:
 - Produce artefacts the FDE can review, approve, and submit
 
 **Claude does not:**
-- Write code, build systems, or produce technical specifications (that is build-loop work)
+- Write code, build systems, or produce the prototype (that is Week 5 build-phase work)
 - Make delegation decisions for the FDE — propose them with rationale, await approval
 - Present inferences about the client's tooling or team behaviour as facts unless the scenario states them
 - Proceed to the next deliverable without explicit FDE approval on the current one
@@ -34,45 +38,65 @@ Claude is an **FDE assistant**, not a builder. In this context:
 
 ## Section 3: Deliverable Pipeline
 
-### Pre-work (preparation — not Gate 3 submissions)
+### Gate 4 graded deliverables — ALL COMPLETE
 
-These run before the Gate 3 timed window. They feed the Gate 3 deliverables but are not themselves graded submissions.
+| # | Deliverable | Output file | Status |
+|---|-------------|-------------|--------|
+| D1 | Token Economics Model | `Deliverables/Gate4_D1_token_economics_model.md` | ✓ Complete |
+| D2 | Compounding Roadmap | `Deliverables/Gate4_D2_compounding_roadmap.md` | ✓ Complete |
+| D3 | Peer Review Portfolio (2 specs) | `Deliverables/Gate4_D3_peer_review_portfolio.md` | ✓ Complete |
+| D4 | Build Governance Response ("The Build Is Running") | `Deliverables/Gate4_D4_build_is_running.md` | ✓ Complete |
+| D5 | Handoff Review + Escalation Email | `Deliverables/Gate4_D5_handoff_review.md` | ✓ Complete |
+| D6 | Capstone Proposal | `Deliverables/Gate4_D6_capstone_proposal.md` | ✓ Complete |
+| D7 | Build-Loop Reflection | `Deliverables/Gate4_D7_build_loop_reflection.md` | ✓ Complete |
 
-| # | Deliverable | Prompt | Output file |
-|---|-------------|--------|-------------|
-| D0A | Domain Research *(run before reading scenario detail)* | `prompt_D0A_domain_research.md` | `Deliverables/D0A_domain_research.md` |
-| D0B | Scenario Context (source of truth) | `prompt_D0B_scenario_context.md` | `Scenario/scenario.md` |
-| D0C | Discovery Synthesis *(generic template)* | `prompt_D0C_discovery.md` | `Deliverables/D0C_discovery.md` |
-| D0D | Discovery Questions for Main Stakeholder | `prompt_D0D_discovery_questions.md` | `Deliverables/D0D_discovery_questions.md` |
+---
 
-### Gate 3 deliverables (graded — produced in the 3.5-hour timed window)
+### Capstone pre-work — run before Week 5 Monday
 
-Each deliverable has a corresponding prompt in `Prompt/`. Work through them in sequence. The FDE approves each before proceeding.
+These are not graded deliverables. They build domain fluency and a structured scenario summary before the sealed pack drops Monday Week 5.
 
 | # | Deliverable | Prompt | Output file | Status |
 |---|-------------|--------|-------------|--------|
-| D1 | Problem Framing & Success Metrics | `prompt_D1_problem_framing.md` | `Deliverables/D1_problem_framing.md` | prompt ready |
-| D2 | Engagement Intake & Scope | `prompt_D2D_engagement_intake_scope.md` | `Deliverables/D2_engagement_intake_scope.md` | prompt ready |
-| ↳ D2A | Cognitive Load Map *(ATX input to D2)* | `prompt_D2A_cognitive_load_map.md` | `Deliverables/D2A_cognitive_load_map.md` | prompt ready |
-| ↳ D2B | Delegation Suitability Matrix *(ATX input to D2)* | `prompt_D2B_delegation_suitability_matrix.md` | `Deliverables/D2B_delegation_suitability_matrix.md` | prompt ready |
-| ↳ D2C | Volume × Value Analysis *(ATX input to D2)* | `prompt_D2C_volume_value_analysis.md` | `Deliverables/D2C_volume_value_analysis.md` | prompt ready |
-| D3 | Agentic Solution Architecture + ADRs | `prompt_D3_agentic_solution_architecture.md` | `Deliverables/D3_solution_architecture.md` | prompt ready |
-| D4 | Two Production-Grade Capability Specifications *(run in 4 passes — see Section 4)* | `prompt_D4_capability_specs.md` | `D4_preamble_capability_spec.md` + `D4a_capability_spec.md` + `D4b_capability_spec.md` | prompt ready |
-| D5 | Build-Loop Response Memo | `prompt_D5_build_loop_response.md` | `Deliverables/D5_build_loop_response.md` | prompt ready |
-| ↳ D5B | Begin Building — closed build loop *(run twice: Agent A then Agent B; see prompt for sequence)* | `prompt_D5_begin_building.md` | `Deliverables/D5B_build_loop_analysis.md` | prompt ready |
-| D6 | Client Feedback Response | `prompt_D6_client_feedback_response.md` | `Deliverables/D6_client_feedback_response.md` | prompt ready |
-| D7 | Validation Plan | `prompt_D7_validation_design.md` | `Deliverables/D7_validation_plan.md` | prompt ready |
-| ↳ D7A | Validation Design Diagnosis *(post-validation test run — runs after D7)* | `prompt_D7A_Validation_design_diagnosis.md` | `Deliverables/D7A_validation_design_diagnosis.md` | prompt ready |
-| D8 | Assumptions & Unknowns | `prompt_D8_assumptions_unknowns.md` | `Deliverables/D8_Assumptions_&_Unknowns.md` | prompt ready |
-| D9 | Self-Spec Build-Loop Reflection | `prompt_D9_self_spec_reflection.md` | `Deliverables/D9_self_spec_reflection.md` | prompt ready |
+| D0A | Domain Research — Claims Processing | `Prompt/prompt_D0A_domain_research.md` | `Deliverables/Gate4_D0A_domain_research_claims_processing.md` | ✓ Complete |
+| D0B | Scenario Context (source of truth) | `Prompt/prompt_D0B_scenario_context.md` | `Scenario/scenario_context.md` | ✓ Complete |
+| D0C | Discovery Synthesis | `Prompt/prompt_D0C_discovery.md` | `Deliverables/D0C_discovery.md` | ⬜ Next |
+| D0D | Discovery Questions | `Prompt/prompt_D0D_discovery_questions.md` | `Deliverables/D0D_discovery_questions.md` | ⬜ Pending |
 
-**Build loop sequence (D5B → D5):** Run `prompt_D5_begin_building.md` on Agent A first. Review the output, then run `prompt_D5_build_loop_response.md` to classify signals and revise D4. Then run the begin-building prompt on Agent B. Each question and each build gap is a spec deficiency. See the D5B prompt for the full two-pass sequence.
+---
 
-### Supporting tools (not graded deliverables)
+### Week 5 capstone deliverables — design phase (Mon–Tue)
 
-| Tool | Prompt | Purpose |
-|------|--------|---------|
-| Stakeholder Deck | `prompt_stakeholder_deck.md` | Synthesises D1–D6 into a stakeholder-facing slide deck |
+Produced after the sealed scenario pack is released Monday Week 5. Work through in sequence; FDE approves each before proceeding.
+
+| # | Deliverable | Status |
+|---|-------------|--------|
+| C1 | Problem Framing & Success Metrics | ⬜ Not started |
+| C2 | Cognitive Load Map | ⬜ Not started |
+| C3 | Delegation Suitability Matrix | ⬜ Not started |
+| C4 | Agent Purpose Documents | ⬜ Not started |
+| C5 | Architecture Decision Records (3+ ADRs) | ⬜ Not started |
+| C6 | Two Production-Grade Capability Specifications | ⬜ Not started |
+| C7 | Integration Specifications | ⬜ Not started |
+| C8 | Token Economics Model | ⬜ Not started |
+| C9 | Validation Plan | ⬜ Not started |
+| C10 | Stakeholder Alignment Memo | ⬜ Not started |
+| C11 | CLAUDE.md + Project Configuration | ⬜ Not started |
+
+### Week 5 capstone deliverables — build phase (Wed–Thu)
+
+| # | Deliverable | Status |
+|---|-------------|--------|
+| C12 | Working Prototype (happy path + failure-mode escalation + edge case + tests + demo script) | ⬜ Not started |
+
+**Capability spec execution: run in 4 passes — do not attempt in a single session:**
+
+| Pass | Scope | Output file |
+|------|-------|-------------|
+| 1 | Preamble §1–§7 (shared foundation for both agents) | `Deliverables/C6_preamble_capability_spec.md` |
+| 2 | Spec A §0–§11 + §14 (WS1: administrative screener) | `Deliverables/C6a_capability_spec.md` |
+| 3 | Spec B §0–§11 + §14 (WS2: clinical classifier + HITL routing) | `Deliverables/C6b_capability_spec.md` |
+| 4 | Both specs §12–§13 (failure modes + audit/governance — append to C6a and C6b) | Updates C6a and C6b |
 
 ---
 
@@ -80,53 +104,55 @@ Each deliverable has a corresponding prompt in `Prompt/`. Work through them in s
 
 These are the criteria Claude applies when producing and self-reviewing any deliverable.
 
-### Cognitive Load Map (D2A)
+### Cognitive Load Map (C2)
 - Must reflect **lived work**, not the documented SOP
 - Micro-tasks must include dimension scores (cognitive load, input structure, decision determinism, exception frequency, latency, risk/compliance, tool coverage)
 - Breakpoints must identify the specific moment control shifts — not just "human reviews"
 - Zones must correspond to meaningful clusters of cognitive activity, not to org chart labels
+- **Claims-specific:** The clinical/administrative classification decision is the primary cognitive hotspot — it must appear as a named zone with a clear breakpoint
 
-### Delegation Suitability Matrix (D2B)
+### Delegation Suitability Matrix (C3)
 - Every task cluster must have a named archetype with explicit rationale
 - **Anti-pattern:** "fully agentic" assigned to tasks with high exception frequency, low decision determinism, or regulatory sensitivity without justification
-- The most common failure: defaulting everything to fully agentic. If all tasks are fully agentic, the matrix has not done its work
+- The most common failure: defaulting everything to fully agentic
 - Each archetype assignment must name the dimension(s) that drove it
+- **Claims-specific:** Medical necessity determination is a hard HITL — URAC/NCQA accreditation requires licensed reviewer sign-off. Do not assign fully agentic to this step regardless of confidence score
 
-### Capability Specifications (D4)
+### Capability Specifications (C6)
 - Each spec must be precise enough for Claude Code to build from without guessing at intent
 - Shared entities (data models, enums, status fields) must be consistent across both specs
 - Every ambiguity that cannot be resolved must be named as an assumption with a confidence level
 - Autonomy boundaries must distinguish: decide alone / route to HITL / refuse — not just described in prose
+- **Claims-specific:** The confidence threshold for clinical classification must be a named, configurable parameter — not hardcoded. The delegation boundary at threshold < X must escalate to HITL, not auto-approve.
 
-**D4 execution: run in 4 passes — do not attempt in a single session (times out after 2+ hours):**
-
-| Pass | Scope | Output file |
-|------|-------|-------------|
-| 1 | Preamble §1–§7 (shared foundation for both agents) | `D4_preamble_capability_spec.md` |
-| 2 | Spec A §0–§11 + §14 (WS1: structure, decisions, integrations, error handling) | `D4a_capability_spec.md` |
-| 3 | Spec B §0–§11 + §14 (WS2: same shape, references preamble entities) | `D4b_capability_spec.md` |
-| 4 | Both specs §12–§13 (failure modes + audit/governance — append to D4a and D4b) | Updates D4a and D4b |
-
-Each pass is independently completable. §12 and §13 are required for D7 (validation plan) — do not skip them. Defer them to Pass 4, not permanently.
+### Stakeholder Alignment Memo (C10)
+- Must name each stakeholder's actual concern (not a strawman)
+- Must identify what is negotiable vs. non-negotiable for each stakeholder
+- **Claims-specific:** The resolved 35%/65% split from the Exchange 3 Slack conversation is the negotiated outcome — the memo documents and formalises this, it does not re-negotiate it
+- Must include sign-off lines for all three stakeholders (Sarah Chen / CFO, Dr. Marcus Webb / CMO, James Liu / VP Operations)
 
 ### Discovery Questions (D0D)
 - Each question must name: what would change in the design if answered differently
 - Generic questions ("walk me through your process") are not acceptable
 - Questions must be grounded in specific tensions, system constraints, or stakeholder concerns named in the scenario
-- Target: questions whose answers would materially shift the delegation archetype or the agent scope boundary
+- **Claims-specific priority questions:** clinical content definition, system API availability, prior auth matching, current routing decision logic
 
 ---
 
 ## Section 5: Assumption Discipline
 
-Every non-trivial claim that is not directly stated in `Scenario/scenario.md` must be logged as an assumption in this format:
+Every non-trivial claim that is not directly stated in `Scenario/scenario_context.md` must be logged as an assumption in this format:
 
 > **Assumption [A#]:** [what is being taken as given]
 > **Why it matters:** [what spec decision or metric it drives]
 > **If wrong:** [what breaks or changes]
 > **Confidence:** low / medium / high
 
-Quiet inference dressed as fact is the primary Week 2 failure mode. When in doubt, surface the assumption rather than embed it silently.
+**Known open assumptions from scenario_context.md:**
+- The 35%/65% clinical/admin split is Dr. Webb's estimate ("maybe 30–35%") — not a measured baseline
+- 2,000 claims/day (scenario.md) and 1,667 claims/day (Sarah Chen, Exchange 3) are both stated but unreconciled
+- "Clinical content" is undefined in the scenario — this definition is a required design output (C6)
+- No systems are named in the scenario — all tooling references are assumptions
 
 ---
 
@@ -134,21 +160,23 @@ Quiet inference dressed as fact is the primary Week 2 failure mode. When in doub
 
 | File | Purpose |
 |------|---------|
-| `references/the-fde.md` | Role definition and FDE mindset — the frame for all work |
-| `references/atx-concepts.md` | ATX theory: digital labour, cognitive zones, delegation archetypes |
-| `references/1-atx-assessment.md` | ATX methodology: four phases, interview guide, scoring framework |
-| `references/atx-agent-mapping.md` | Mapping cognitive work to agent designs |
-| `references/atx-scoring.md` | Volume × value, delegation suitability scoring |
-| `references/atx-economics.md` | Economics of digital labour |
-| `references/claude-md-examples-guide.md` | Quality tiers for CLAUDE.md when moving into build mode |
-| `references/spec-ambiguity-vs-builder-mistakes.md` | Taxonomy for diagnosing build-loop failures |
-| `references/production-spec-checklist.md` | Checklist for spec completeness before the build loop |
-| `references/integration-spec-template.md` | Template and examples for integration contracts (10 required sections) |
-| `references/discovery-questioning-patterns.md` | Patterns for effective discovery questioning |
-| `references/Thinking-Discipline-Primer.md` | Cognitive discipline primer for structured analysis |
-| `Input/build_guidelines.md` | Guidelines passed to Claude Code during the build loop (D5B) |
-| `Scenario/scenario.md` | Single-source-of-truth for the MedFlex engagement |
-| `Deliverables/CLAUDE.md` | Agent-build constitution — separate context for the build loop |
+| `References/the-fde.md` | Role definition and FDE mindset — the frame for all work |
+| `References/atx-concepts.md` | ATX theory: digital labour, cognitive zones, delegation archetypes |
+| `References/1-atx-assessment.md` | ATX methodology: four phases, interview guide, scoring framework |
+| `References/atx-agent-mapping.md` | Mapping cognitive work to agent designs |
+| `References/atx-scoring.md` | Volume × value, delegation suitability scoring |
+| `References/atx-economics.md` | Economics of digital labour |
+| `References/spec-ambiguity-vs-builder-mistakes.md` | Taxonomy for diagnosing build-loop failures |
+| `References/production-spec-checklist.md` | Checklist for spec completeness before the build loop |
+| `References/integration-spec-template.md` | Template and examples for integration contracts (10 required sections) |
+| `References/discovery-questioning-patterns.md` | Patterns for effective discovery questioning |
+| `References/Thinking-Discipline-Primer.md` | Cognitive discipline primer for structured analysis |
+| `References/claude-md-examples-guide.md` | Quality tiers for CLAUDE.md when moving into build mode (use for C11) |
+| `Scenario/scenario_context.md` | **Single-source-of-truth** for the Greenfield Health Systems engagement |
+| `Scenario/scenario.md` | Raw scenario source (Option A extract) |
+| `Scenario/scenario_enriched.md` | Stakeholder exchanges (CFO/CMO/VP Ops emails and Slack) |
+| `capstone-scenario-options.md` | Full capstone schedule, deliverable package, defense format, automatic-fail criteria |
+| `capstone-stakeholder-tensions.md` | Full stakeholder exchange transcripts for Option A |
 
 ---
 
@@ -166,9 +194,11 @@ Quiet inference dressed as fact is the primary Week 2 failure mode. When in doub
 - Any assumption with **low confidence** that would materially affect the agent scope
 - Any deliverable that is complete and ready for review — present it, await approval before moving on
 - Any case where the scenario is genuinely ambiguous and multiple readings are defensible
+- Capability spec confidence thresholds — these are design decisions, not defaults
 
 ### Never do without explicit FDE instruction:
 - Move to the next deliverable before the current one is approved
 - Present an assumption as a scenario fact
-- Assign a fully agentic archetype to a task with regulatory or irreversibility risk without naming and justifying the exception
-- Produce content for the build loop (code, technical spec) — that belongs to the build context in `Deliverables/CLAUDE.md`
+- Assign a fully agentic archetype to medical necessity determination (URAC hard stop)
+- Write prototype code — that belongs to the build phase (C12) with its own CLAUDE.md
+- Treat the 35%/65% split as a measured fact — it is a stakeholder estimate

@@ -1,36 +1,45 @@
-## 3. The MedFlex scenario
 
-> **MedFlex** — healthcare staffing agency, 200 employees, 5-state US region. B2B with hospital systems and B2C with travel nurses.
->
-> ### Current operations
->
-> - **Hospitals submit shift requests** via email, portal, or phone.
-> - **8 coordinators manually match nurses to shifts** based on credentials, proximity, availability, hospital preferences, nurse preferences.
-> - **Compliance verification** — license checks, background, training certifications — done manually against state regulatory databases.
-> - **~120 shift-matching decisions per coordinator per day.**
-> - **Average time to fill: 4.2 hours.** Target: under 1 hour.
-> - **Mismatch rate (wrong credentials for facility type): 7%.**
-> - **No-show rate: 12%.**
->
-> ### Your stakeholder — Marcus Reyes, CEO
->
-> Just closed Series B. Board wants significant growth on the horizon of in 24 months. Two failed AI projects already (a chatbot hospital staff rejected; a recommendation engine nobody used). Background: operations + growth, not engineering. Tone: confident, time-pressured, results-oriented. Cuts off rambling questions. Respects FDEs who challenge framing with substance. 
->
-> ### Engagement framing
->
-> *"10x the business without 10x-ing the coordinators"* — in 8 weeks.
->
-> ### What's in scope
->
-> Design the agentic transformation of MedFlex's matching + compliance + coordination workflow. Architecture, agent decision points, capability specifications, ADRs, validation plan, build-loop response. Deliverables in §6.
->
-> ### What's out of scope (named explicitly so the gate doesn't drift)
->
-> - Building a hospital-facing portal for shift submission. They submit by email/portal/phone today; your engagement does not change that channel.
-> - Building a nurse-facing mobile app. Nurses today are reached by phone, SMS, or email; same.
-> - Pricing engine / margin optimisation. The agent matches; the pricing remains MedFlex's existing process.
-> - Continuing-education renewal automation for nurses. Not in v1.
->
-> **You are the FDE. Marcus is your point of contact through the engagement. Go.**
+
+### Option A — Healthcare Claims Processing Transformation
+
+A health insurance payer processes 2,000 claims/day with a team of 45 processors. Claims arrive from providers in multiple formats (EDI 837, PDFs, portal submissions). Each claim requires eligibility verification, coding validation, medical necessity review, and payment determination.
+
+- **Current average processing time:** 35 minutes per claim
+- **Auto-adjudication rate:** 22% (industry benchmark: 85%)
+- **Denial appeal overturn rate:** 41% (indicating first-pass errors)
+
+Design the agentic transformation: which parts of claims processing become agentic, at what delegation levels, with what economics?
+
+## Stakeholder tensions
+
+Each scenario includes **stakeholder tension** explored in `capstone-stakeholder-tensions.md` (also in this folder). Read the tensions for your chosen scenario when drafting your Gate 4 capstone proposal — they shape the **stakeholder alignment memo** (Deliverable #10).
+
+---
+
+
+### Build deliverable (Wed–Thu, submitted Virtual Thursday afternoon)
+
+12. **Working prototype** — a runnable Claude Code project that implements your design. **Mock data is required** — the program has no client data; the prototype is a demonstration, not a production build. The prototype must include:
+    - **One primary agentic flow** end-to-end
+    - **One failure-mode escalation** that fires correctly
+    - **At least one edge case** handled
+    - **Tests covering all three paths**
+    - **Demo script** showing how to run the three paths in sequence in under 5 minutes
+
+**The prototype does not need to implement every flow in your design.** The skill being tested is *"your spec is buildable,"* not *"you can build everything in one week."* Cut scope honestly during the build if the happy path isn't working yet — a working happy path + working escalation + one edge case beats an ambitious half-built system.
+
+---
+
+
+## Automatic-fail indicators (regardless of score)
+
+The detailed rubric (criteria, weights, pass thresholds) is released Virtual Monday Week 5 alongside the sealed scenario pack. Independent of the numeric score, any of the following triggers an automatic fail:
+
+- **Built a traditional rules engine instead of an agentic solution** — the core FDE test
+- **Failed to distinguish what should be agentic from what should stay human** — delegation boundaries undefined or arbitrary
+- **Prototype does not run at all during the live demo** (regardless of design quality)
+- **Narrated slides instead of demoing running code** — the demo is a live demo by definition
+- **Validation is happy-path only with no failure-mode coverage** — no honest validation
+- **Build is unfaithful to your own design** — the prototype implements something the design did not describe, or silently omits something the design required, without an explicit amendment note
 
 ---

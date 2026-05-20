@@ -57,6 +57,7 @@ Issues that must be fixed before the build starts. A blocker is any issue where:
 For each blocker:
 - **ID**: B1, B2, …
 - **Type**: from the spec-ambiguity-vs-builder-mistakes taxonomy
+- **Checklist criterion**: the specific section and criterion from `production-spec-checklist.md` this issue violates — quote the criterion briefly (e.g., `Entity Precision — "No contradictory rules"`). Use the checklist as a diagnostic lens: identify the issue through the taxonomy first, then map it to the checklist criterion that names the gap. Do not reproduce the entire checklist — cite the one line that applies.
 - **Location**: name the exact section, table row, or field where the issue appears
 - **Finding**: what is wrong
 - **If built as-is**: what a builder would implement as a result — the concrete wrong behaviour or guess they would produce
@@ -66,7 +67,7 @@ For each blocker:
 
 Real issues that do not block the build start but must be resolved before pilot or production. A concern is a design risk, an undefined edge case, or a missing configuration parameter that ops will need.
 
-Same format as Blockers (ID: C1, C2, …).
+Same format as Blockers (ID: C1, C2, …), including the Checklist criterion line.
 
 ---
 
@@ -92,6 +93,27 @@ Two tables — no severity column.
 |----|-------|----------------|
 | B1 | [one-line description] | Trivial / Low / Medium |
 | … | … | … |
+
+---
+
+### Production Spec Checklist Report
+
+One table covering all eight sections from `production-spec-checklist.md`:
+
+| Section | Status | Key findings |
+|---------|--------|--------------|
+| Buildability | Pass / Partial / Fail | Which blockers or concerns trace here; one sentence per row. |
+| Entity Precision | … | … |
+| Delegation Boundaries | … | … |
+| Integration Contracts | … | … |
+| Validation Design | … | … |
+| Assumptions Register | … | … |
+| Economics Alignment | … | … |
+| Governance | … | … |
+
+**Status key:** **Pass** = no blockers or concerns trace to this section. **Partial** = concerns (C#) only — no blockers. **Fail** = one or more blockers (B#) trace here.
+
+The table must be consistent with the findings above: if a section is Fail, at least one B# finding must cite that checklist section in its Checklist criterion line.
 
 ---
 
