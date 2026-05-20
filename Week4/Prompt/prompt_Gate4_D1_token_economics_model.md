@@ -15,7 +15,7 @@ If a prior deliverable is unavailable, derive the missing inputs from the scenar
 
 ## Your task
 
-Produce a token economics model for the primary agentic target from your Volume × Value analysis. This is a CFO-grade business case, not a back-of-envelope estimate. Output file: `Deliverables/Gate4_D1_token_economics_model.md`.
+Produce a token economics model for the primary agentic target from your Volume × Value analysis. This is a CFO-grade business case, not a back-of-envelope estimate. Output file: `Deliverables/C1_token_economics_model.md`.
 
 The model must cover: baseline human cost, agent cost per case broken down by component (tokens + tools + infrastructure + HITL), multi-model analysis showing *when to use which model tier*, annual saving, build cost, payback period, and a sensitivity analysis that shows whether the business case holds under conservative assumptions.
 

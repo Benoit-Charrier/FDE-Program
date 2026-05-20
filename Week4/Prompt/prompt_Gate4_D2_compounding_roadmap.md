@@ -2,7 +2,7 @@
 
 ## Inputs (read all of these before producing any output)
 
-1. **Token economics model** — `Deliverables/Gate4_D1_token_economics_model.md`. Source of truth for build costs, annual savings per use case, and ROI figures. Do not recompute; reference D1 figures directly.
+1. **Token economics model** — `Deliverables/C1_token_economics_model.md`. Source of truth for build costs, annual savings per use case, and ROI figures. Do not recompute; reference D1 figures directly.
 2. **Volume × value analysis** — `Deliverables/D2C_volume_value_analysis.md` (or equivalent). Source of wave assignments and volume figures for each use case.
 3. **Solution architecture** — `Deliverables/D3_solution_architecture.md` (or equivalent). Source of agent design, platform assets, and integration dependencies.
 4. **Capability specs** — `Deliverables/D4a_capability_spec.md` and `Deliverables/D4b_capability_spec.md` (or equivalent). Source of integration requirements that drive platform asset definitions.
