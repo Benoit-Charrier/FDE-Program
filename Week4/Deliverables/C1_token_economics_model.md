@@ -62,8 +62,13 @@ WS1 FTE allocation:
   WS1 share: 20 × 65% routing split = 13 FTEs [Assumption A-D2C-3 from D2C]
   Annual WS1 labour baseline: 13 × $65,000 = $845,000/year
 
-Baseline cost per case (FTE-based):
-  $845,000 ÷ 338,000 claims/year = $2.50/claim
+Baseline cost per case (time-based):
+  35 min/claim × ($31.25/hr ÷ 60 min/hr) = $18.23/claim
+  [The FTE-allocated rate ($845,000 ÷ 338,000 = $2.50/claim) is not a meaningful unit cost:
+   it spreads 13 FTEs' budget over 338,000 arriving claims, but those 13 FTEs can only
+   sustain 46,423 claims/year at 35 min/claim — 86% of arriving claims accumulate as backlog.
+   The time-based figure ($18.23/claim) is the correct per-claim cost comparator: it
+   represents what a human processor actually spends on each claim that gets processed.]
 ```
 
 **Indirect costs not captured in the primary model:**
@@ -224,7 +229,7 @@ Weighted HITL cost per case:
 | HITL cost per case | $1.823 | $1.302 | $1.302 |
 | Infrastructure cost per case | $0.010 | $0.010 | $0.010 |
 | **Total agent cost per case** | **$1.875** | **$1.357** | **$1.359** |
-| vs. baseline ($2.50/claim) | -25% | **-46%** | **-46%** |
+| vs. baseline ($18.23/claim) | -90% | **-93%** | **-93%** |
 
 **HITL rate assumptions by option:**
 - **Option A (Haiku for judgment tasks, 35% HITL):** Haiku applied to the five judgment micro-tasks (MT-WS1-3, 5, 7, 8, 10) produces less reliable pattern classification and tolerance reasoning than Sonnet. The coding plausibility task (MT-WS1-5, EF=H, DD=L) and clinical content routing task (MT-WS1-8, EF=H, DD=L) are the primary drivers of the elevated rate. Both tasks involve no formal rule — the agent must reason across multi-factor patterns without a deterministic decision function. Haiku's reduced reasoning capability on unstructured pattern recognition produces more borderline outputs that cannot meet the confidence threshold, escalating to HITL at a higher rate. Note: the five deterministic tasks (Steps 1, 2, 4, 6, 9) execute as code or API calls regardless of model tier — they do not appear in this comparison. [Assumption A-G4D1-2]
@@ -251,7 +256,7 @@ Infrastructure per case:    $0.010
 HITL cost per case:         $1.302   (25% HITL rate × 10 min × $31.25/hr)
 Total agent cost per case:  $1.357
 
-vs. Baseline: $2.50/claim → 46% reduction in per-claim cost
+vs. Baseline: $18.23/claim → 93% reduction in per-claim cost
 ```
 
 ---
@@ -282,6 +287,17 @@ Annual agent running cost (Option B):
 Annual saving (WS1 direct model):
   $845,000 - $465,000 = $380,000/year
 
+Annual value (cost avoidance model — full throughput):
+  Manual cost to process all 338,000 admin claims/year: 338,000 × $18.23 = $6,162,000
+    (would require ~95 FTEs at $65K — D2C reconciliation note)
+  Agent cost: $465,000/year
+  Cost avoidance vs. full manual staffing: $5,697,000/year
+  [Greenfield's 13-FTE model currently processes ~46,423 admin claims/year (14% of arriving
+   volume) — the remaining 86% accumulates as backlog, producing the 9-day cycle time and
+   active SLA penalties. The $380K direct saving is the cash released from current headcount;
+   the $5.7M cost avoidance is the full economic value of matching agent throughput manually.
+   Payback and ROI calculations use the conservative $380K direct saving figure.]
+
 Annual saving (CFO FTE reduction model — gross):
   8 FTE reduction × $65,000 = $520,000/year (Exchange 1)
   [This is the gross labour saving from headcount reduction.
@@ -309,14 +325,14 @@ Annual saving (CFO FTE reduction model — gross):
 
 1. **Industry range:** Healthcare payer process automation: $500K–$2M for full enterprise deployment. $400K–$420K is below the low end of the enterprise range, appropriate for a focused single-work-stream Wave 1 scope. Full programme cost across Waves 1–3 would likely fall at $700K–$1M, consistent with the industry range for a multi-work-stream clinical operations transformation.
 
-2. **Sensitivity validation:** At 2× build cost ($840K), payback extends to $840K ÷ $386K = 2.2 years — exceeds the 12-month threshold. Build cost is load-bearing: the business case does not survive a 2× build overrun on the FTE-only model. Scope control before commitment is a prerequisite to signing off on this business case.
+2. **Sensitivity validation:** At 2× build cost ($840K), payback extends to $840K ÷ $380K = 2.2 years — exceeds the 12-month threshold. Build cost is load-bearing: the business case does not survive a 2× build overrun on the FTE-only model. Scope control before commitment is a prerequisite to signing off on this business case.
 
 3. **Wave attribution:** The clinical content classifier ($64K) is a Wave 1 asset built for WS1-JtD-2 that is directly reused by WS2-JtD-1 (routing verification) in Wave 2 at zero additional build cost. The intake processing pipeline ($32K) is reused for clinical document extraction in WS2-JtD-2. Total Wave 1 assets inherited by Wave 2 at zero marginal cost: $96K. Wave 2 standalone build cost (without reuse): ~$220K. Wave 2 build cost with reuse: ~$124K. Wave 1 directly reduces Wave 2 marginal cost by $96K — more than the entire cost of building Wave 2's clinical document extraction component from scratch.
 
 ```
 Payback period (full TCO model):
-  $420,000 ÷ $386,000/year = 13.0 months
-  [At $400K budget (scope-managed): $400,000 ÷ $386,000 = 12.4 months — marginally above 12-month target]
+  $420,000 ÷ $380,000/year = 13.2 months
+  [At $400K budget (scope-managed): $400,000 ÷ $380,000 = 12.6 months]
 
 Payback period (CFO gross FTE model):
   $420,000 ÷ $520,000/year = 9.7 months ✓
@@ -378,7 +394,7 @@ Platform assets built in Wave 1 (reused in Wave 2):
 Funded by: Sarah Chen's committed $400K implementation budget (Exchange 1)
 ```
 
-**Wave 1 payback note:** At $420K total build cost and $380K/year saving, payback is 13.2 months — marginally over the 12-month threshold. On the scope-managed $400K budget, payback is 13.2 months. On the CFO's gross FTE model ($520K/year), payback is 9.2–9.7 months. The business case is not comfortably self-financing within 12 months on the full TCO model at the $420K build estimate. **Client risk exposure:** the first ~13 months after build start are net negative; the investment is recovered shortly after the first anniversary of go-live. This is within normal enterprise IT project expectations and does not represent a material risk, but the engagement should track break-even explicitly and flag to Sarah Chen if HITL rate exceeds 25% during calibration.
+**Wave 1 payback note:** At $420K total build cost and $380K/year saving, payback is 13.2 months — marginally over the 12-month threshold. On the scope-managed $400K budget, payback is 12.6 months. On the CFO's gross FTE model ($520K/year), payback is 9.2–9.7 months. The business case is not comfortably self-financing within 12 months on the full TCO model at the $420K build estimate. **Client risk exposure:** the first ~13 months after build start are net negative; the investment is recovered shortly after the first anniversary of go-live. This is within normal enterprise IT project expectations and does not represent a material risk, but the engagement should track break-even explicitly and flag to Sarah Chen if HITL rate exceeds 25% during calibration.
 
 ---
 
@@ -517,7 +533,7 @@ Portfolio ROI: $578,000 ÷ $528,000 × 100 = 110%
 ---
 
 > **[A-G4D1-3] Fully loaded cost per WS1 reviewer:** $65,000/year (salary ~$47K + 38% benefits/overhead). Not stated in scenario.
-> **Why it matters:** The entire baseline cost model ($845K) and annual saving ($386K) rest on this figure. A 20% change moves the annual saving by ~$77K.
+> **Why it matters:** The entire baseline cost model ($845K) and annual saving ($380K) rest on this figure. A 20% change moves the annual saving by ~$76K.
 > **If wrong:** At $50K/year: baseline = $650K, saving ≈ $191K, payback ~26 months — weak case. At $80K/year: baseline = $1,040K, saving ≈ $581K, payback ~8.7 months — strong case. Must be confirmed in discovery.
 > **Confidence:** Medium — $65K is consistent with published US healthcare claims processor compensation data; order-of-magnitude is reliable, exact figure requires confirmation.
 
@@ -531,8 +547,8 @@ Portfolio ROI: $578,000 ÷ $528,000 × 100 = 110%
 ---
 
 > **[A-G4D1-5] Tool call cost:** $0.010/call × 4 calls = $0.040/claim. API call costs depend on vendor contracts and system architecture not described in the scenario.
-> **Why it matters:** Tool call cost ($13,520/year) is 3% of annual agent running cost; not the dominant variable.
-> **If wrong:** At $0.05/call (5× higher): tool call cost rises to $0.20/claim = $67,600/year additional — adds 18% to agent running cost and reduces annual saving from $386K to ~$318K. Would require confirming external API pricing in discovery.
+> **Why it matters:** Tool call cost ($18,980/year) is 4% of annual agent running cost; not the dominant variable.
+> **If wrong:** At $0.05/call (5× higher): tool call cost rises to ~$0.23/claim blended = $75,920/year additional — adds 16% to agent running cost and reduces annual saving from $380K to ~$304K. Would require confirming external API pricing in discovery.
 > **Confidence:** Low — no systems named in scenario; $0.01/call is an internal API cost estimate.
 
 ---
