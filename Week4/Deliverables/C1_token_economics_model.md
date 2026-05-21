@@ -7,7 +7,7 @@
 
 ## 0. Executive Summary
 
-- **Primary agentic target:** WS1 — Administrative Adjudication, 338,000 claims/year (1,300/day × 260 working days); the business case is a 63-point gap between Greenfield's 22% auto-adjudication rate and the 85% industry benchmark (scenario.md) at a $845K/year manual baseline, representing $386K in recoverable annual labour against a $400K build investment — payback period 12.4 months on the full TCO model.
+- **Primary agentic target:** WS1 — Administrative Adjudication, 338,000 claims/year (1,300/day × 260 working days); the business case is a 63-point gap between Greenfield's 22% auto-adjudication rate and the 85% industry benchmark (scenario.md) at a $845K/year manual baseline, representing $380K in recoverable annual labour against a $400K build investment — payback period 13.2 months on the full TCO model.
 - **Model tier finding:** Sonnet for the five judgment micro-tasks (eligibility discrepancy resolution, clinical plausibility assessment, prior auth partial-match resolution, clinical content routing classification, contract exception handling) — no LLM for the five deterministic micro-tasks (format parsing, eligibility lookup, code validity, prior auth lookup, fee schedule calculation), which execute as code or API calls; the cheapest model is not the right answer because HITL cost ($1.30/claim at 25% HITL rate) is 260× larger than token cost ($0.005/claim), and using Haiku for the judgment tasks raises the HITL rate to an estimated 35%, adding $178K/year to annual cost against a token saving of $1,300/year.
 - **Business case under conservative assumptions:** At 35% HITL rate and 2× build cost ($800K), payback extends to 4.6 years and the FTE-only business case does not hold; the case is viable only if HITL rate is held at or below 25% — which is the design-time calibration commitment, not a post-production hope — and build scope is actively managed within $400K; the conservative scenario is the strongest argument for investing in classifier accuracy before go-live rather than correcting it in production.
 
@@ -33,7 +33,7 @@
 
 ## 1. Scenario Context and Primary Agentic Target
 
-**Engagement:** Greenfield Health Systems — medical claims adjudication payer operation. **Primary agentic target:** WS1 — Administrative Adjudication, selected from the D2C Volume × Value analysis (Agentic Value Score 20/25; Wave 1 assignment). Current annual volume: 338,000 WS1 claims/year (1,300/day × 260 working days — Assumption A-G4D1-1), derived from the 65%/35% administrative/clinical routing split applied to the scenario's 2,000 claims/day figure (scenario_context.md §4). No growth target is stated in the scenario for Greenfield Health Systems; §8 is omitted accordingly. The single constraint that makes manual scaling impossible is the 2.5× daily processing deficit: Greenfield's 45-processor team can sustain approximately 617 claims/day of throughput against 2,000 arriving daily (derived from 35 min/claim × 45 processors × 480 min/day ÷ 35 min = 617/day — Assumption A-G4D1-2), producing the backlog that puts cycle time at 9+ days and triggers the active SLA penalties James Liu is absorbing (Exchange 3). The ROI is calculable because the scenario provides: a concrete daily volume (2,000/day), a measurable auto-adjudication baseline (22%), a named industry benchmark (85%), a specific FTE headcount (20 review staff), and a committed build budget ($400K, Sarah Chen, Exchange 1). The substitution opportunity is defined enough to close the arithmetic.
+**Engagement:** Greenfield Health Systems — medical claims adjudication payer operation. **Primary agentic target:** WS1 — Administrative Adjudication, selected from the D2C Volume × Value analysis (Agentic Value Score 20/25; Wave 1 assignment). Current annual volume: 338,000 WS1 claims/year (1,300/day × 260 working days — Assumption A-G4D1-1), derived from the 65%/35% administrative/clinical routing split applied to the scenario's 2,000 claims/day figure (scenario_context.md §4). No growth target is stated in the scenario for Greenfield Health Systems; §8 is omitted accordingly. The single constraint that makes manual scaling impossible is the 7.3× daily processing deficit: Greenfield's 20 claims review staff can sustain approximately 274 claims/day of throughput against 2,000 arriving daily (derived from 20 review staff × 480 min/day ÷ 35 min = 274/day — Assumption A-G4D1-2), producing the backlog that puts cycle time at 9+ days and triggers the active SLA penalties James Liu is absorbing (Exchange 3). The ROI is calculable because the scenario provides: a concrete daily volume (2,000/day), a measurable auto-adjudication baseline (22%), a named industry benchmark (85%), a specific FTE headcount (20 review staff), and a committed build budget ($400K, Sarah Chen, Exchange 1). The substitution opportunity is defined enough to close the arithmetic.
 
 ---
 
@@ -84,10 +84,10 @@ Baseline cost per case (FTE-based):
 | 2 | MT-WS1-2: Eligibility lookup — standard path | **API call** | Binary structured lookup (eligible/not eligible on service date); DD=H, CL=L in D2A; the eligibility system returns a boolean result — no reasoning required, no tokens consumed |
 | 3 | MT-WS1-3: Eligibility discrepancy resolution | **Sonnet** (conditional, ~5% of claims) | CL=H, DD=L in D2A; triggered only when Step 2 returns a discrepancy; requires contextual pattern recognition ("data lag vs. genuine gap") that no deterministic rule can resolve — escalation errors here contribute directly to the 41% overturn rate |
 | 4 | MT-WS1-4: Code validity and pairing check | **Code / lookup table** | ICD-10/CPT crosswalk rules are a structured lookup against a reference table; DD=M in D2A; standard path is a code lookup, not LLM inference; plausibility edge cases surface as exceptions handled by Step 5 |
-| 5 | MT-WS1-5: Clinical plausibility assessment | **Sonnet** (every claim) | CL=H, DD=L, EF=H in D2A — tacit clinical coding pattern recognition across diagnosis-procedure-provider combinations; no formal rule exists; runs on every claim because no prior step can pre-screen for plausibility violations without LLM reasoning; the primary driver of elevated HITL rate in any Haiku-on-judgment architecture |
+| 5 | MT-WS1-5: Clinical plausibility assessment | **Sonnet** (every claim) | CL=H, DD=L, EF=H in D2A — tacit clinical coding pattern recognition across diagnosis-procedure-provider combinations; no formal rule exists; runs on every claim entering the WS1 routing pipeline (2,000/day — both administrative and clinical paths, as the routing decision at Step 8 has not yet been made) because no prior step can pre-screen for plausibility violations without LLM reasoning; the primary driver of elevated HITL rate in any Haiku-on-judgment architecture |
 | 6 | MT-WS1-6: Prior auth requirement check and lookup | **API call** | Structured lookup: required-or-not, present-or-not; DD=H, CL=L in D2A; the prior auth system returns a record or absence — deterministic check, no tokens consumed |
 | 7 | MT-WS1-7: Prior auth partial match resolution | **Sonnet** (conditional, ~8% of claims) | CL=H, DD=L, EF=M in D2A; triggered only when Step 6 returns a partial match; tolerance judgment (unit variance, date mismatch, code variant) with no documented threshold; the decision cannot be resolved by code because no rule defines when a 10-unit authorisation covers a 12-unit claim |
-| 8 | MT-WS1-8: Clinical content routing classification | **Sonnet** (every claim) | CL=H, DD=L, EF=H in D2A — multi-factor classification across diagnosis codes, procedure codes, and provider specialty; runs on every WS1 claim because the routing decision cannot be pre-empted by code; highest-stakes step (false negative = URAC/NCQA compliance violation); confidence threshold gates HITL escalation |
+| 8 | MT-WS1-8: Clinical content routing classification | **Sonnet** (every claim) | CL=H, DD=L, EF=H in D2A — multi-factor classification across diagnosis codes, procedure codes, and provider specialty; runs on every claim entering WS1 (2,000/day — this step produces the routing decision that splits claims to administrative or clinical path; it cannot be pre-empted by code); highest-stakes step (false negative = URAC/NCQA compliance violation); confidence threshold gates HITL escalation |
 | 9 | MT-WS1-9: Fee schedule application and payment calculation | **Code / rate table** | Fee schedule is a structured rate table; cost-sharing calculation is arithmetic; DD=H, CL=L in D2A; correct answer is computed by a formula against a lookup — an LLM call here adds latency and cost with zero quality benefit |
 | 10 | MT-WS1-10: Fee schedule contract exception handling | **Sonnet** (conditional, ~2% of claims) | CL=H, DD=L, Tool Coverage=L in D2A; triggered only when Step 9 flags a contract exception; contract carve-out rules may reside in unstructured documents; Sonnet produces a defensible rate recommendation for HITL confirmation |
 
@@ -107,7 +107,7 @@ Baseline cost per case (FTE-based):
 | Compliance boundary instructions (clinical content routing rules) | 50 | Cache read |
 | **Total cacheable** | **500** | Amortised across all claims in session |
 
-Cache hit rate: With 1,300 claims/day processed in continuous sessions, every claim after the first in a session is a cache read. At 10× cheaper than standard input pricing, caching reduces the effective system prompt cost from $1.50/1,000 tokens to $0.15/1,000 tokens (Sonnet pricing). Across 338,000 claims/year, cache savings on the system prompt: $1.50 × 500 ÷ 1,000,000 × 338,000 = $254/year in uncached cost → $25/year in cached cost; $229/year saving [immaterial relative to HITL cost, but correctly accounted].
+Cache hit rate: With 2,000 claims/day processed in continuous sessions (steps 1–8 route all incoming claims; steps 9–10 process the 1,300 administrative-path claims), every claim after the first in a session is a cache read. At 10× cheaper than standard input pricing, caching reduces the effective system prompt cost from $1.50/1,000 tokens to $0.15/1,000 tokens (Sonnet pricing). Across 520,000 total claims/year, cache savings on the system prompt: $1.50 × 500 ÷ 1,000,000 × 520,000 = $390/year in uncached cost → $39/year in cached cost; $351/year saving [immaterial relative to HITL cost, but correctly accounted].
 
 ### 4b. Per-Judgment-Call Variable Input Tokens
 
@@ -115,8 +115,8 @@ LLM calls occur only for the five judgment micro-tasks. Each call receives only 
 
 | Judgment task | Input tokens | Output tokens | Frequency per claim |
 |---------------|-------------:|:-------------:|:-------------------:|
-| MT-WS1-5: Clinical plausibility (diagnosis codes, procedure codes, provider specialty) | 250 | 100 | Every claim (1.0×) |
-| MT-WS1-8: Clinical content routing (codes, specialty, clinical indicators) | 300 | 100 | Every claim (1.0×) |
+| MT-WS1-5: Clinical plausibility (diagnosis codes, procedure codes, provider specialty) | 250 | 100 | Every claim entering routing (2,000/day; 1.0×) |
+| MT-WS1-8: Clinical content routing (codes, specialty, clinical indicators) | 300 | 100 | Every claim entering routing (2,000/day; 1.0×) |
 | MT-WS1-3: Eligibility discrepancy (eligibility record + claim service date context) | 200 | 100 | Conditional (~5%) |
 | MT-WS1-7: Prior auth partial match (auth record, procedure details, unit comparison) | 200 | 100 | Conditional (~8%) |
 | MT-WS1-10: Contract exception (fee schedule excerpt, contract flag context) | 250 | 100 | Conditional (~2%) |
@@ -157,10 +157,10 @@ Total effective tokens per claim: 550 + 200 + 33 + 15 + 108 ≈ 906 ≈ ~900 tok
 | Eligibility system API | Member eligibility lookup on service date | $0.010 | Every claim |
 | Code validation API / reference data | ICD-10/CPT crosswalk and validity check | $0.010 | Every claim |
 | Prior auth system API | Prior auth presence and detail lookup | $0.010 | Every claim |
-| Fee schedule system API | Rate lookup for procedure-provider combination | $0.010 | Every claim |
-| **Total tool call cost** | | **$0.040/claim** | All 4 calls on every WS1 claim |
+| Fee schedule system API | Rate lookup for procedure-provider combination | $0.010 | Admin-path claims only (1,300/day) |
+| **Total tool call cost** | | **$0.040/admin claim; $0.030/clinical routing claim** | First 3 APIs on all 2,000/day; fee schedule on admin path (1,300/day) only |
 
-[Assumption A-G4D1-5: $0.01/call; all four systems unnamed in scenario; costs are industry-typical estimates for REST API calls within a cloud environment. No third-party premium APIs are assumed.] Tool call costs are immaterial relative to HITL costs ($0.04/claim vs. $1.30/claim) but are not zero and are correctly included.
+[Assumption A-G4D1-5: $0.01/call; all four systems unnamed in scenario; costs are industry-typical estimates for REST API calls within a cloud environment. No third-party premium APIs are assumed.] Tool call costs are immaterial relative to HITL costs but are not zero and are correctly included. Annual tool call cost: (520,000 × $0.030) + (338,000 × $0.010) = $15,600 + $3,380 = $18,980/year.
 
 ### 4e. Infrastructure Cost
 
@@ -265,15 +265,22 @@ Annual baseline cost:
   13 WS1 FTEs × $65,000 = $845,000/year  [Assumptions A-D2C-3, A-G4D1-3]
 
 Annual agent running cost (Option B):
-  Token cost:        $0.005 × 338,000 =  $1,690/year
-  Tool calls:        $0.040 × 338,000 = $13,520/year
-  Infrastructure:    $0.010 × 338,000 =  $3,380/year
+  [Steps 1–8 process all 2,000 claims/day (520,000/year); steps 9–10 process admin-path only (1,300/day, 338,000/year)]
+  Token cost:    Admin path (338,000 × $0.005):                    $1,690/year
+    Clinical routing — steps 1–8 only (182,000 × $0.005):  $910/year
+    Total token cost:                                    $2,600/year
+  Tool calls:
+    Eligibility, coding, prior auth (520,000 × $0.030):   $15,600/year
+    Fee schedule API (admin path, 338,000 × $0.010):       $3,380/year
+    Total tool call cost:                                 $18,980/year
+  Infrastructure:    $3,360/year  [fixed: $280/month × 12]
   HITL labour:       338,000 × 0.25 × (10/60) × $31.25 = $440,104/year
     [FTE equivalent: 14,083 person-hours ÷ 2,080 hrs/FTE = 6.8 FTEs retained for WS1 HITL]
-  Total annual running cost: $458,694/year ≈ $459,000/year
+    [Conservative: clinical-path claims may also trigger HITL at BPs 1–4 before WS2 routing; not modelled here]
+  Total annual running cost: $2,600 + $18,980 + $3,360 + $440,104 = $465,044/year ≈ $465,000/year
 
 Annual saving (WS1 direct model):
-  $845,000 - $459,000 = $386,000/year
+  $845,000 - $465,000 = $380,000/year
 
 Annual saving (CFO FTE reduction model — gross):
   8 FTE reduction × $65,000 = $520,000/year (Exchange 1)
@@ -315,20 +322,20 @@ Payback period (CFO gross FTE model):
   $420,000 ÷ $520,000/year = 9.7 months ✓
   [At $400K budget: $400,000 ÷ $520,000 = 9.2 months ✓]
 
-Year-by-year cumulative net (full TCO model, $420K build, $386K/year saving):
+Year-by-year cumulative net (full TCO model, $420K build, $380K/year saving):
   [Assumption A-G4D1-11: build completes at month 6; Year 1 includes 6 months of running savings]
-  Year 1: ($386,000 × 6/12) - $420,000 = $193,000 - $420,000 = -$227,000 (investment phase)
-  Year 2: -$227,000 + $386,000 = +$159,000 cumulative (break-even at ~month 13)
-  Year 3: +$159,000 + $386,000 = +$545,000 cumulative
+  Year 1: ($380,000 × 6/12) - $420,000 = $190,000 - $420,000 = -$230,000 (investment phase)
+  Year 2: -$230,000 + $380,000 = +$150,000 cumulative (break-even at ~month 13)
+  Year 3: +$150,000 + $380,000 = +$530,000 cumulative
 
 3-year ROI:
-  Total saving (3 years, phased): $386,000 × 2.5 = $965,000
+  Total saving (3 years, phased): $380,000 × 2.5 = $950,000
   Total investment: $420,000
-  Net 3-year value: $965,000 - $420,000 = $545,000
-  3-year ROI: $545,000 ÷ $420,000 × 100 = 130%
+  Net 3-year value: $950,000 - $420,000 = $530,000
+  3-year ROI: $530,000 ÷ $420,000 × 100 = 126%
 ```
 
-**Verdict:** The current-volume economics are marginal on the full TCO model (payback 12–13 months, 3-year ROI 130%) and compelling on the CFO's gross FTE model (payback 9–10 months). The condition that changes the verdict: HITL rate. If calibration delivers a 15% HITL rate (optimistic), annual saving rises to $559K and payback drops to 9 months — a strong case. If HITL rate settles at 35%, annual saving falls to $208K and payback extends to 2 years — a weak case that does not support the investment. HITL rate management is not a post-production concern; it is the primary success criterion for the build phase.
+**Verdict:** The current-volume economics are marginal on the full TCO model (payback ~13 months, 3-year ROI 126%) and compelling on the CFO's gross FTE model (payback 9–10 months). The condition that changes the verdict: HITL rate. If calibration delivers a 15% HITL rate (optimistic), annual saving rises to $559K and payback drops to 9 months — a strong case. If HITL rate settles at 35%, annual saving falls to $208K and payback extends to 2 years — a weak case that does not support the investment. HITL rate management is not a post-production concern; it is the primary success criterion for the build phase.
 
 ---
 
@@ -350,11 +357,11 @@ Use cases in this wave:
     Payback: N/A standalone — Wave 1 prerequisite; ROI realised through WS1
   WS1 — Administrative adjudication agent:
     Build cost: $388,000 (Wave 1 total minus INT: $420K - $32K)
-    Annual saving: $386,000/year (full TCO model)
-    Payback: $388,000 ÷ $386,000 = 12.0 months ✓ (at the gate; see note)
+    Annual saving: $380,000/year (full TCO model)
+    Payback: $388,000 ÷ $380,000 = 12.2 months ✓ (within tolerance; see note)
 
 Wave 1 cumulative saving by month 12 (6 months running):
-  $386,000 × 6/12 = $193,000
+  $380,000 × 6/12 = $190,000
 
 Platform assets built in Wave 1 (reused in Wave 2):
   - Member eligibility API integration: saves ~$16,000 in Wave 2 build cost
@@ -371,7 +378,7 @@ Platform assets built in Wave 1 (reused in Wave 2):
 Funded by: Sarah Chen's committed $400K implementation budget (Exchange 1)
 ```
 
-**Wave 1 payback note:** At $420K total build cost and $386K/year saving, payback is 13.0 months — marginally over the 12-month threshold. On the scope-managed $400K budget, payback is 12.4 months. On the CFO's gross FTE model ($520K/year), payback is 9.2–9.7 months. The business case is not comfortably self-financing within 12 months on the full TCO model at the $420K build estimate. **Client risk exposure:** the first ~13 months after build start are net negative; the investment is recovered shortly after the first anniversary of go-live. This is within normal enterprise IT project expectations and does not represent a material risk, but the engagement should track break-even explicitly and flag to Sarah Chen if HITL rate exceeds 25% during calibration.
+**Wave 1 payback note:** At $420K total build cost and $380K/year saving, payback is 13.2 months — marginally over the 12-month threshold. On the scope-managed $400K budget, payback is 13.2 months. On the CFO's gross FTE model ($520K/year), payback is 9.2–9.7 months. The business case is not comfortably self-financing within 12 months on the full TCO model at the $420K build estimate. **Client risk exposure:** the first ~13 months after build start are net negative; the investment is recovered shortly after the first anniversary of go-live. This is within normal enterprise IT project expectations and does not represent a material risk, but the engagement should track break-even explicitly and flag to Sarah Chen if HITL rate exceeds 25% during calibration.
 
 ---
 
@@ -391,7 +398,7 @@ Use cases in this wave:
     Payback: $108,000 ÷ $104,000 = 12.5 months ✓ (within tolerance)
 
 Wave 2 cumulative saving by month 24 (12 months running):
-  WS1: $386,000/year × 12 months = $386,000 (full second year)
+  WS1: $380,000/year × 12 months = $380,000 (full second year)
   WS2: $104,000/year × 12 months = $104,000 (first full year)
   Wave 2 cumulative: $490,000 in Year 2 alone
 
@@ -437,12 +444,12 @@ Total investment (Wave 1 + Wave 2 only; Wave 3 deferred):
   Total: $528,000
 
 Total saving (3 years, phased):
-  WS1: $386,000/year × 2.5 years (running from month 7) = $965,000
+  WS1: $380,000/year × 2.5 years (running from month 7) = $950,000
   WS2: $104,000/year × 1.5 years (running from month 13) = $156,000
-  Total saving: $1,121,000
+  Total saving: $1,106,000
 
-Net 3-year value: $1,121,000 - $528,000 = $593,000
-Portfolio ROI: $593,000 ÷ $528,000 × 100 = 112%
+Net 3-year value: $1,106,000 - $528,000 = $578,000
+Portfolio ROI: $578,000 ÷ $528,000 × 100 = 110%
 ```
 
 **Compounding logic:** The clinical content classifier — built and CMO-certified for WS1-JtD-2 at a cost of $64,000 — is the single platform asset that most reduces Wave 2 marginal cost. It eliminates the $60,000 rebuild cost and, more importantly, it eliminates the CMO certification process from Wave 2 entirely. Dr. Marcus Webb's team certification of the classifier is the highest-effort governance activity in the engagement (it requires establishing and validating the clinical content definition that Sarah Chen explicitly requested in Exchange 3). That process happens once in Wave 1; Wave 2 inherits a certified classifier that it extends rather than re-certifies. Without this reuse, Wave 2 would require not just $60,000 in build cost but 4–6 weeks of CMO team engagement before any clinical-path work could begin — the reuse saves time that does not show up in the cost model but is the primary reason Wave 2 can be delivered in 6 months rather than 9+. The prior auth and eligibility integrations, each saving $16,000, are the next most valuable — not for their cost but because they are validated data pipelines that both WS1 and WS2 agents call against the same upstream sources, meaning data schema issues discovered in Wave 1 are resolved before Wave 2 production routing begins.
@@ -462,21 +469,21 @@ Portfolio ROI: $593,000 ÷ $528,000 × 100 = 112%
 | Scenario | Annual saving | Payback period |
 |----------|:---:|:---:|
 | Conservative (all three variables adverse simultaneously) | $119,000 | 7.1 years |
-| Conservative (HITL only, base build and FTE) | $208,000 | 2.0 years |
-| Conservative (build cost only, base HITL and FTE) | $386,000 | 2.2 years |
-| **Base case** | **$386,000** | **13.0 months** |
-| Optimistic (HITL only, base build and FTE) | $559,000 | 9.0 months |
+| Conservative (HITL only, base build and FTE) | $202,000 | 2.1 years |
+| Conservative (build cost only, base HITL and FTE) | $380,000 | 2.2 years |
+| **Base case** | **$380,000** | **13.2 months** |
+| Optimistic (HITL only, base build and FTE) | $555,000 | 9.1 months |
 | Optimistic (all three variables favourable simultaneously) | $656,000 | 5.2 months |
 
 *Annual saving calculations:*
-- *35% HITL: 338,000 × 0.35 × (10/60) × $31.25 = $617,708 HITL labour; target total: $617,708 + $18,590 tech = $636,298; saving: $845,000 - $636,298 = $208,702*
-- *25% HITL (base): $845,000 - $459,000 = $386,000*
-- *15% HITL: 338,000 × 0.15 × (10/60) × $31.25 = $264,688 HITL labour; saving: $845,000 - $283,278 = $561,722 ≈ $559,000*
+- *35% HITL: 338,000 × 0.35 × (10/60) × $31.25 = $617,708 HITL labour; tech total: $2,600 + $18,980 + $3,360 = $24,940; total: $617,708 + $24,940 = $642,648; saving: $845,000 - $642,648 ≈ $202,000*
+- *25% HITL (base): $845,000 - $465,000 = $380,000*
+- *15% HITL: 338,000 × 0.15 × (10/60) × $31.25 = $264,688 HITL labour; total: $264,688 + $24,940 = $289,628; saving: $845,000 - $289,628 ≈ $555,000*
 - *$55K FTE adjusts both baseline and HITL labour proportionally*
 
 **Does the business case hold in the conservative scenario?** No — the business case does not hold under a combined conservative scenario (payback 7.1 years) or under any single adverse variable at the full magnitude (HITL 35%: 2-year payback; build 2×: 2.2-year payback). The FTE-only model passes only at the base case and optimistic scenarios. **The load-bearing assumption is HITL rate.** The difference between a successful deployment (base: 12.4 months payback) and a failed one (conservative HITL: 2.0 years) is a 10-percentage-point shift in how often a claim reaches a human reviewer. This means the go/no-go decision for production release should be: *does the agent achieve ≤25% HITL rate in mock calibration testing before a single live claim is processed?* If it does not, the deployment should be halted and the classifier and plausibility assessor should be retrained — not released and optimised in production, where every additional HITL event erodes the business case in real time.
 
-**Token price sensitivity:** A ±50% change in token prices changes annual token cost by ±$845/year (50% × $1,690). This is immaterial — it represents 0.22% of the annual saving and would not affect any business decision. Token price sensitivity is not a material variable in this model.
+**Token price sensitivity:** A ±50% change in token prices changes annual token cost by ±$1,300/year (50% × $2,600). This is immaterial — it represents 0.34% of the annual saving and would not affect any business decision. Token price sensitivity is not a material variable in this model.
 
 ---
 
@@ -486,7 +493,7 @@ Portfolio ROI: $593,000 ÷ $528,000 × 100 = 112%
 |--------|--------|-------------------------------|
 | Clinical content classifier recall (true positive rate for clinical claims) | ≥99.5% | At 99.0% recall: ~1,690 clinical claims/year bypass physician review = URAC/NCQA compliance event; agent is suspended; full manual review resumes; 100% of anticipated saving is lost until classifier is retrained and re-certified |
 | Clinical content classifier precision (true positive rate for admin claims) | ≥92% | At 85% precision: ~8% of admin claims over-routed to WS2 physician queue = ~27,040 claims/year added to physician queue; Dr. Webb's 20 claims/hour target is unachievable; WS2 cycle time target (6–7 days) is missed |
-| WS1 HITL rate | ≤25% — calibration gate; do not release to production above this threshold | At 35% HITL: annual saving drops from $386K to $208K; payback extends from 13 months to 24 months; the business case is marginal and may not recover CFO commitment to the programme |
+| WS1 HITL rate | ≤25% — calibration gate; do not release to production above this threshold | At 35% HITL: annual saving drops from $380K to ~$202K; payback extends from 13 months to ~25 months; the business case is marginal and may not recover CFO commitment to the programme |
 | Tokens per case | ≤1,000 effective tokens | At 3× estimate (3,000 tokens): token cost rises from $0.005 to $0.015/claim = $3,380/year additional — immaterial; token budget is not a binding constraint |
 | Processing latency per claim (standard path) | ≤60 seconds end-to-end | WS1 claims are batch-processed within a 7-day SLA; 60-second latency is orders of magnitude below the SLA threshold. Latency concern is operational (queue backlog, UI responsiveness for HITL reviewers) not SLA-driven |
 | Compliance gate | 0 clinical claims reaching payment path without physician sign-off | Zero tolerance; one violation triggers URAC audit; agent is suspended pending investigation regardless of claim volume or economic impact |
@@ -502,7 +509,7 @@ Portfolio ROI: $593,000 ÷ $528,000 × 100 = 112%
 
 ---
 
-> **[A-G4D1-2] WS1 processing throughput deficit:** 617 claims/day current throughput (45 processors × 8 hrs × 60 min ÷ 35 min/claim) vs. 2,000/day arriving. Used to illustrate the capacity problem; not directly used in economic calculations.
+> **[A-G4D1-2] WS1 processing throughput deficit:** 274 claims/day current throughput (20 review staff × 8 hrs × 60 min ÷ 35 min/claim) vs. 2,000/day arriving — a 7.3× overload against the review staff. Used to illustrate the capacity problem; not directly used in economic calculations.
 > **Why it matters:** Confirms that the cycle time crisis is structural, not headcount-solvable, which strengthens the case for agentic intervention.
 > **If wrong:** If processors handle multiple tasks simultaneously and 35 min/claim overstates single-claim time, throughput may be higher; does not change the primary economic model.
 > **Confidence:** Medium — arithmetic is consistent with the observed 9-day cycle time.

@@ -56,9 +56,10 @@
 
 **WS1 — Administrative adjudication:**
 - 65% of claims routed to administrative path (scenario_context.md Section 4, negotiated split from Exchange 3)
-- Daily: 2,000 × 0.65 = **1,300 claims/day**
-- Weekly: 1,300 × 5 = **6,500 claims/week**
-- *Note: the 65% split is a stakeholder-negotiated estimate, not a measured baseline (Assumption A-2, scenario_context.md). All WS1 volumes are derived figures.*
+- Daily (full pipeline, steps 1–8 — eligibility, coding, prior auth, routing classification): **2,000 claims/day** — all incoming claims pass through validation and routing before the split
+- Daily (administrative path only, steps 9–10 — payment determination): 2,000 × 0.65 = **1,300 claims/day**
+- Weekly (administrative path): 1,300 × 5 = **6,500 claims/week**
+- *Note: the 65% split is a stakeholder-negotiated estimate, not a measured baseline (Assumption A-2, scenario_context.md). All WS1 volumes are derived figures. The routing decision at step 8 is what produces the 65%/35% split; steps 1–8 therefore operate on all 2,000 claims/day.*
 
 **WS2 — Clinical review:**
 - 35% of claims routed to clinical path (scenario_context.md Section 4)
@@ -85,7 +86,7 @@
 
 | Work Stream | Volume Score (1–5) | Non-Determinism Score (1–5) | Agentic Value Score | Quadrant |
 |---|---|---|---|---|
-| WS1 — Administrative adjudication | **5** (1,300/day — hundreds+ per day) | **4** (significant reasoning; see justification) | **20** | Top-right — Primary agentic target |
+| WS1 — Administrative adjudication | **5** (2,000/day through validation and routing; 1,300/day on the administrative path — hundreds+ per day either way) | **4** (significant reasoning; see justification) | **20** | Top-right — Primary agentic target |
 | WS2 — Clinical review | **5** (700/day — hundreds+ per day) | **5** (high reasoning; see justification) | **25** | Top-right — Primary agentic target (compliance-constrained) |
 | INT — Intake processing | **5** (2,000/day — hundreds+ per day) | **2** (mostly deterministic; see justification) | **10** | Top-left — Rules / RPA only |
 | APP — Denial appeals | **3** (~43/day — 10–50 per day; estimate, see Assumption A-D2C-2) | **4** (significant reasoning; see justification) | **12** | Bottom-right — Select agentic use cases |
@@ -194,7 +195,7 @@ WS1 wins on the Volume × Value grid by combining an Agentic Value Score of 20/2
 
 WS1 passes the suitability gate with two resolvable conditions: API confirmation for the four system types (eligibility, code lookup, prior auth, fee schedule) and certification of the clinical content classifier by Dr. Webb's team. Neither condition is a hard blocker — both have a clear discovery and design path. The compliance risk is manageable because every WS1 JtD has a HITL escalation design and because errors are recoverable through the appeals process (unlike WS2 clinical determination errors, which carry patient care consequences).
 
-The specific business pain WS1 addresses is the most quantified problem in the scenario: the 63-point auto-adjudication gap (22% current vs. 85% benchmark, scenario.md) produces ~1,560 claims/day of manual processing work against a team capacity of ~617 claims/day — a 2.5× daily deficit that is the direct structural cause of the 8–9 day cycle time and the SLA penalties James Liu is currently absorbing (Exchange 3). WS1 automation at 85% coverage closes this gap by reducing the manual workload to ~195 administrative exceptions/day plus the 700 physician-reviewed clinical claims, which is achievable with a reduced team of 7 reviewers (James Liu, Exchange 3).
+The specific business pain WS1 addresses is the most quantified problem in the scenario: the 63-point auto-adjudication gap (22% current vs. 85% benchmark, scenario.md) produces ~1,560 claims/day of manual processing work against a 20-person review staff capacity of ~274 claims/day — a 5.7× daily deficit that is the direct structural cause of the 8–9 day cycle time and the SLA penalties James Liu is currently absorbing (Exchange 3). WS1 automation at 85% coverage closes this gap by reducing the manual workload to ~195 administrative exceptions/day plus the 700 physician-reviewed clinical claims, which is achievable with a reduced team of 7 reviewers (James Liu, Exchange 3).
 
 The single biggest risk to agentic success in WS1 is the clinical content classifier. If the clinical content definition cannot be produced as a precise, classifier-compatible specification — or if Dr. Webb's team cannot certify a classifier at an acceptable false-negative rate — the routing architecture collapses and the 65%/35% split cannot be implemented. The entire WS1 economic case depends on correctly routing 65% of claims to the autonomous administrative path; a classifier that over-routes to WS2 (high false positive rate) degrades the economic case; one that under-routes (false negatives) creates URAC/NCQA compliance violations. The classifier design is the highest-leverage and highest-risk single component in the engagement.
 
