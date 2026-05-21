@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agentic Claims Transformation — Greenfield Health Systems</title>
+  <meta name="author" content="Benoit Charrier">
+  <meta name="description" content="Executive proposal for agentic transformation of medical claims adjudication">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #222;
+      background: #fff;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 32px 60px;
+    }
+    /* Navigation */
+    nav {
+      position: sticky;
+      top: 0;
+      background: #fff;
+      border-bottom: 2px solid #1a4a7a;
+      z-index: 100;
+      padding: 10px 0;
+    }
+    .nav-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 32px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 18px;
+      align-items: center;
+    }
+    .nav-brand {
+      font-weight: 700;
+      color: #1a4a7a;
+      font-size: 13px;
+      white-space: nowrap;
+      margin-right: 8px;
+    }
+    nav a {
+      color: #1a4a7a;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    nav a:hover { text-decoration: underline; }
+    /* Headings */
+    h1 { font-size: 1.7rem; color: #1a4a7a; margin: 2rem 0 0.75rem; }
+    h2 { font-size: 1.4rem; color: #1a4a7a; margin: 2.5rem 0 0.75rem; border-bottom: 2px solid #dde3ea; padding-bottom: 0.4rem; }
+    h3 { font-size: 1.1rem; color: #1a4a7a; margin: 1.75rem 0 0.6rem; }
+    h4 { font-size: 1rem; color: #1a4a7a; margin: 1.25rem 0 0.4rem; }
+    .section-num { color: #888; font-weight: 400; margin-right: 0.35em; }
+    /* Body text */
+    p { margin-bottom: 0.9rem; }
+    strong { color: #111; }
+    /* Lists */
+    ul, ol { margin: 0.4rem 0 0.9rem 1.6rem; }
+    li { margin-bottom: 0.3rem; }
+    /* Tables */
+    table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.92rem; }
+    th { background: #1a4a7a; color: #fff; padding: 10px 14px; text-align: left; font-weight: 600; }
+    td { padding: 10px 14px; border-bottom: 1px solid #dde3ea; vertical-align: top; }
+    tr:nth-child(even) td { background: #f7f9fb; }
+    tr:nth-child(odd) td { background: #fff; }
+    td:not(:last-child), th:not(:last-child) { border-right: 1px solid #dde3ea; }
+    /* Callout boxes */
+    .exec-summary {
+      background: #eaf2fb;
+      border-left: 4px solid #1a4a7a;
+      padding: 20px 24px;
+      font-size: 17px;
+      margin: 1.5rem 0;
+      border-radius: 0 4px 4px 0;
+    }
+    .exec-summary p:last-child { margin-bottom: 0; }
+    .risk-callout {
+      background: #fff8f0;
+      border-left: 4px solid #a05c00;
+      padding: 16px 20px;
+      margin: 1rem 0;
+      border-radius: 0 4px 4px 0;
+    }
+    .risk-callout table { margin: 0.5rem 0 0; }
+    .compliance-gate {
+      background: #fff5f5;
+      border-left: 4px solid #c0392b;
+      padding: 16px 20px;
+      margin: 1.5rem 0;
+      border-radius: 0 4px 4px 0;
+    }
+    .compliance-gate .gate-label { color: #c0392b; font-weight: 700; }
+    /* Mermaid diagrams */
+    .mermaid-wrap { margin: 1.5rem 0; overflow-x: auto; }
+    .mermaid { min-width: 400px; }
+    .diagram-caption {
+      font-style: italic;
+      color: #666;
+      font-size: 0.88rem;
+      text-align: center;
+      margin-top: 0.5rem;
+    }
+    /* Blockquote */
+    blockquote {
+      border-left: 3px solid #dde3ea;
+      padding: 0.75rem 1.25rem;
+      color: #444;
+      margin: 1.25rem 0;
+      font-size: 0.95rem;
+      background: #f7f9fb;
+    }
+    /* Cover */
+    .cover-block { margin: 2rem 0 2.5rem; }
+    .cover-block p { font-size: 1.05rem; }
+    /* Root cause blocks */
+    .root-cause {
+      border-left: 3px solid #1a4a7a;
+      padding: 0.75rem 1rem;
+      margin: 1.25rem 0;
+      background: #f7f9fb;
+    }
+    .root-cause h4 { margin-top: 0; }
+    /* Separator */
+    hr { border: none; border-top: 1px solid #dde3ea; margin: 2rem 0; }
+    /* Print styles */
+    @media print {
+      nav { display: none !important; }
+      body { font-size: 12px; }
+      .container { max-width: 100%; padding: 0 16px; }
+      h2 { page-break-before: always; }
+      h2:first-of-type { page-break-before: avoid; }
+      table { page-break-inside: avoid; }
+      .exec-summary, .risk-callout, .compliance-gate, .root-cause, blockquote {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      th { background: #1a4a7a !important; color: #fff !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
+    @media (max-width: 660px) {
+      .container { padding: 0 16px 40px; }
+      .nav-inner { padding: 0 16px; }
+      th, td { padding: 7px 9px; font-size: 0.85rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <span class="nav-brand">Greenfield Health Systems</span>
+    <a href="#executive-summary">1. Executive Summary</a>
+    <a href="#problem-statement">2. Problem Statement</a>
+    <a href="#stakeholder-map">3. Stakeholder Map</a>
+    <a href="#proposed-solution">4. Proposed Solution</a>
+    <a href="#business-case">5. Business Case</a>
+    <a href="#success-metrics">6. Success Metrics</a>
+  </div>
+</nav>
+
+<div class="container">
+
+  <!-- Cover -->
+  <div class="cover-block">
+    <p>This proposal is submitted to Greenfield Health Systems on 2026-05-21. It covers the engagement scope of medical claims adjudication transformation and proposes an agentic pipeline that processes the administrative path without physician involvement and pre-fills the clinical review packet for the physician-reviewed path — reducing per-claim cost by 98.3%, recovering $732,000 per year against the current workforce baseline, and eliminating the active SLA penalty exposure documented by VP Operations James Liu.</p>
+  </div>
+
+  <hr>
+
+  <!-- Section 1: Executive Summary -->
+  <section id="executive-summary">
+    <h2><span class="section-num">1.</span> Executive Summary</h2>
+    <div class="exec-summary">
+      <p>Greenfield Health Systems processes 2,000 claims per day at a 22% auto-adjudication rate — 63 points below the 85% industry benchmark — because every claim enters the same full-manual workflow regardless of complexity. The result is a $1.3M/year processing cost, active SLA penalty incurrence, and a 41% denial appeal overturn rate that signals systematic first-pass errors.</p>
+    </div>
+
+    <p><strong>Current state — the three numbers that define the problem:</strong></p>
+    <table>
+      <thead>
+        <tr><th>Metric</th><th>Current</th><th>Benchmark / threshold</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Auto-adjudication rate</td><td>22%</td><td>85% industry benchmark</td></tr>
+        <tr><td>Average cycle time</td><td>8–9 days</td><td>7-day contractual SLA (penalties live)</td></tr>
+        <tr><td>Denial appeal overturn rate</td><td>41%</td><td>Indicator of systematic first-pass routing errors</td></tr>
+      </tbody>
+    </table>
+
+    <p><strong>What the solution does:</strong></p>
+    <ul>
+      <li>Builds a clinical content classifier to separate the administrative path (est. 65% of claims) from the clinical path (est. 35%) — Dr. Webb's estimate, to be validated in mock calibration</li>
+      <li>Deploys an administrative adjudication agent to handle the administrative path end-to-end — eligibility, coding, prior auth, and payment determination — without physician involvement</li>
+      <li>Deploys a clinical pre-screening agent (Wave 2, conditional) to pre-fill the physician review packet, reducing physician review time from 35 min to ~3 min per claim</li>
+      <li>Retains physician sign-off on every clinical determination — required by URAC/NCQA accreditation, preserved by design</li>
+    </ul>
+
+    <p><strong>Business case at a glance:</strong></p>
+    <ul>
+      <li>Per-claim cost: $18.23 → $0.315 (98.3% reduction)</li>
+      <li>Annual workforce cost: $1.3M → $568K (7 retained staff + agent infrastructure)</li>
+      <li>Annual saving: $732,000 &nbsp;|&nbsp; Build cost: $420,000 &nbsp;|&nbsp; Payback: 6.9 months</li>
+    </ul>
+  </section>
+
+  <!-- Section 2: Problem Statement -->
+  <section id="problem-statement">
+    <h2><span class="section-num">2.</span> Problem Statement</h2>
+
+    <h3>2.1 What we heard</h3>
+
+    <p>Greenfield Health Systems processes ~50,000 medical claims per month (≈2,000/day). Claims arrive in three formats — EDI 837, PDF, and portal submissions — each requiring eligibility verification, coding validation, medical necessity review, and payment determination before a decision can be made.</p>
+
+    <p><strong>Current state:</strong></p>
+    <ul>
+      <li><strong>Auto-adjudication rate:</strong> 22% (industry benchmark: 85%) — approximately 1,560 claims per day handled manually that do not need to be</li>
+      <li><strong>Average cycle time:</strong> 8–9 days against a 7-day contractual SLA — contractual penalties are active today, not a future risk</li>
+      <li><strong>Denial appeal overturn rate:</strong> 41% — systematic first-pass routing errors, not edge-case mistakes</li>
+      <li><strong>Average processing time per claim:</strong> 35 minutes, most of it spent on rule-governed lookups with deterministic correct answers</li>
+    </ul>
+
+    <p>The core problem is structural. Eligibility checks, coding validation, prior auth completeness, and format verification are deterministic lookups — the answer either satisfies a rule or it does not. These tasks sit in the same undifferentiated workflow as genuine medical necessity decisions that require physician judgment. The result: deterministic work is being done at physician cost, and the absence of any formal triage mechanism means the clinical/administrative boundary is decided differently by every processor who handles a borderline claim.</p>
+
+    <p>Stakeholder alignment has converged on the resolution. CFO Sarah Chen requires cost reduction — a $400K budget commitment contingent on ≥8 FTE headcount reduction (Exchange 1). CMO Dr. Marcus Webb requires physician sign-off on every clinical determination as a non-negotiable URAC/NCQA requirement, and flags that "clinical content" has no formal definition — without it, no classifier can be built or certified (Exchange 2, Exchange 3). VP Operations James Liu requires cycle time below the 7-day SLA threshold and names the 41% overturn rate as evidence that incorrect routing is a systematic, not occasional, failure (Exchange 3). The resolution negotiated across those three positions is:</p>
+    <ul>
+      <li><strong>~65% of claims</strong> have no clinical content — administrative path, agent adjudicates without physician involvement <em>(Dr. Webb's estimate, to be validated against historical data)</em></li>
+      <li><strong>~35% of claims</strong> have genuine clinical content — physician review required by URAC/NCQA accreditation, but with an agent-assembled pre-filled packet reducing physician review time from 35 minutes to ~3 minutes per claim</li>
+    </ul>
+
+    <p>The design question is already answered at the routing boundary. The build question is whether the clinical content classifier can reliably make that split.</p>
+
+    <h3>2.2 What is broken</h3>
+
+    <div class="root-cause">
+      <h4>B-1 — No mechanism to separate administrative from clinical work before processing starts</h4>
+      <p>Every claim enters the same 35-minute full-manual workflow regardless of complexity.</p>
+      <ul>
+        <li><strong>Symptom:</strong> 22% auto-adjudication rate; ~1,560 claims/day in unnecessary full manual review; 8–9 day cycle time; live SLA penalties</li>
+        <li><strong>Root cause:</strong> No clinical content classifier exists — because "clinical content" has no agreed cross-functional definition. Sarah Chen asked Dr. Webb for one in Exchange 3. It has not been produced.</li>
+        <li><strong>If fixed:</strong> Est. 65% of claims processed by agent with no physician involvement; cycle time targets of ≤5 days (admin) and ≤7 days (clinical) become achievable</li>
+      </ul>
+    </div>
+
+    <div class="root-cause">
+      <h4>B-2 — Routing and adjudication decisions made without formal criteria</h4>
+      <p>Processors route claims using personal pattern recognition; physicians assemble review context manually.</p>
+      <ul>
+        <li><strong>Symptom:</strong> 41% denial appeal overturn rate — 4 in 10 first-pass denials were wrong; providers bear appeal overhead on correctly-submitted claims; Greenfield incurs full re-adjudication cost on every overturned decision</li>
+        <li><strong>Root cause:</strong> No documented clinical flagging criterion; no quality feedback loop surfacing routing errors back to processors; the overturn rate is lagging — thousands of incorrect decisions accumulate before it appears in reporting</li>
+        <li><strong>If fixed:</strong> Formal classifier eliminates routing errors at source; agent-generated pre-filled packet ensures physicians decide against complete, consistently structured evidence</li>
+      </ul>
+    </div>
+
+    <h3>2.3 Why automation, not process change or hiring</h3>
+
+    <table>
+      <thead>
+        <tr><th>Alternative</th><th>What it addresses</th><th>Why it doesn't close the gap</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>RPA / rules engine</strong></td>
+          <td>Binary rule lookups — eligibility checks, fee schedule calculation</td>
+          <td>Cannot classify clinical content. Routing requires pattern recognition across diagnosis codes, procedure codes, and provider specialty — the boundary is judgment-dependent and currently undefined. The 41% overturn rate is a classification accuracy failure, not a rules compliance failure. RPA does not fix it.</td>
+        </tr>
+        <tr>
+          <td><strong>Workflow / case management tool</strong></td>
+          <td>Queue visibility and task routing between processors</td>
+          <td>Doesn't reduce the 35 minutes of processing work inside each claim. Auto-adjudication rate stays at 22%. Cycle time stays above SLA. The bottleneck is per-claim work, not routing speed between processors.</td>
+        </tr>
+        <tr>
+          <td><strong>Hiring</strong></td>
+          <td>Raw throughput</td>
+          <td>Contradicts CFO mandate (Exchange 1: 40% headcount reduction is the condition for the $400K budget). Adds processors applying the same undocumented routing criteria at higher cost — produces more claims at the same 41% overturn rate.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Section 3: Stakeholder Map -->
+  <section id="stakeholder-map">
+    <h2><span class="section-num">3.</span> Stakeholder Map</h2>
+
+    <table>
+      <thead>
+        <tr><th>Stakeholder</th><th>Role</th><th>Primary concern</th><th>What success looks like for them</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Sarah Chen</strong></td>
+          <td>CFO</td>
+          <td>Cost per claim and headcount; $400K budget commitment contingent on ≥8 FTE reduction (Exchange 1)</td>
+          <td>Annual workforce cost reduced from $1.3M to $568K; payback inside 12 months; no budget overrun on Wave 1 build</td>
+        </tr>
+        <tr>
+          <td><strong>Dr. Marcus Webb</strong></td>
+          <td>CMO</td>
+          <td>URAC/NCQA accreditation; physician sign-off on all clinical determinations; clinical content definition produced before any routing automation goes live (Exchange 2, Exchange 3)</td>
+          <td>Physician sign-off preserved by design on every clinical claim; classifier certified before go-live; physician review time reduced to ≤3 min per claim with pre-filled packet</td>
+        </tr>
+        <tr>
+          <td><strong>James Liu</strong></td>
+          <td>VP Operations</td>
+          <td>Cycle time below 7-day SLA threshold; SLA penalty elimination; queue stability and predictable throughput (Exchange 3)</td>
+          <td>Zero claims exceeding 7-day threshold; administrative cycle time ≤5 days; clinical cycle time ≤7 days; denial overturn rate ≤15%</td>
+        </tr>
+        <tr>
+          <td><strong>Claims processors and clinical reviewers</strong></td>
+          <td>Operational team currently handling all claims manually</td>
+          <td>Role clarity and workload manageability after automation; scope of the retained role post-deployment</td>
+          <td>7 retained staff with a clear exception-review function rather than full-manual adjudication; physician reviewers spending time on clinical judgment, not document assembly</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>The key tension this solution resolves is the conflict between Sarah Chen's requirement for maximum cost reduction and Dr. Marcus Webb's requirement for physician sign-off on clinical determinations. These are not compatible goals if pursued simultaneously across all claim types — full automation would satisfy the CFO's cost target but violate URAC/NCQA accreditation; physician review of all claims would satisfy the CMO's compliance requirement but preserve the cost structure the CFO is mandated to reduce. The resolution, arrived at in Exchange 3, is the 65%/35% routing split: the administrative path — the estimated 65% of claims with no clinical content — is fully automated, satisfying the cost reduction mandate; the clinical path — the estimated 35% — retains physician review, satisfying the accreditation mandate, while the agent pre-fills the review packet to recover physician capacity within that constrained scope. This routing split is a stakeholder-negotiated design decision, not a proposition this proposal is introducing. The proposal implements and operationalises it.</p>
+  </section>
+
+  <!-- Section 4: Proposed Solution -->
+  <section id="proposed-solution">
+    <h2><span class="section-num">4.</span> Proposed Solution</h2>
+
+    <p><strong>In scope — this engagement:</strong></p>
+    <ul>
+      <li>Claim intake normalisation: parsing EDI 837, PDF, and portal submissions into a canonical structured record; anomaly and duplicate detection</li>
+      <li>Administrative adjudication agent: eligibility verification, coding validation, prior authorisation check, clinical content routing classification, and payment determination for the estimated 65% of claims on the administrative path</li>
+      <li>Clinical pre-screening agent: routing verification and pre-filled physician review packet assembly for the estimated 35% of claims on the clinical path (Wave 2 — conditional on clinical notes API confirmation)</li>
+      <li>Clinical content classifier: a shared component, built in Wave 1 and certified by Dr. Webb's team, that classifies each claim's routing path and is reused by the Wave 2 clinical review agent</li>
+      <li>Denial appeals support agent (Wave 3): root cause classification and context assembly for denial appeals, conditional on Wave 1 steady-state quality data</li>
+    </ul>
+
+    <h3>4.2 Work streams and agents</h3>
+
+    <h4>INT — Intake and Anomaly Detection</h4>
+    <ul>
+      <li>Receives inbound claim submissions in all formats Greenfield accepts — EDI 837 electronic files, PDFs, and portal submissions — and transforms them into a single canonical structured record before any downstream processing begins.</li>
+      <li>Detects anomalies automatically: malformed submissions missing required fields, duplicate submissions matching a prior claim on member ID, service date, and procedure code.</li>
+      <li>Returns rejected submissions to providers with a specific, actionable error code rather than a generic rejection, reducing the resubmission cycle that currently adds to queue volume.</li>
+    </ul>
+
+    <hr>
+
+    <h4>WS1 — Administrative Adjudication</h4>
+    <ul>
+      <li>Runs every normalised claim through the complete administrative adjudication pipeline: eligibility verification, coding validation for ICD-10/CPT code validity and clinical plausibility, prior authorisation check and partial-match resolution, and clinical content routing classification to determine whether the claim proceeds on the administrative path or routes to the physician review queue.</li>
+      <li>For the approximately 65% of claims classified as administrative (stakeholder estimate, not a validated baseline), applies the fee schedule and produces a final payment determination without physician involvement — the agent either approves the claim with a payment amount, rejects it with specific failure codes, or escalates a flagged exception to HITL review.</li>
+      <li>Escalates to a human reviewer when the clinical content classifier's confidence falls below the configured threshold, when eligibility shows a discrepancy requiring contextual judgment, when prior authorisation has a partial match without a clear rule resolution, or when a coding plausibility flag cannot be resolved deterministically.</li>
+      <li>Escalated claims appear in an <strong>exception review queue</strong> — a lightweight reviewer interface that presents the agent's structured escalation reason, the specific signal that triggered the flag, and the full claim context. The reviewer sees a pre-populated entry and records their decision (approve, reject, or escalate to physician) without needing to re-gather claim documents. The queue is the handoff boundary between the agent and the retained exception-review staff.</li>
+    </ul>
+
+    <div class="mermaid-wrap">
+      <div class="mermaid">
+flowchart TD
+    W1A_IN([Claim arrives in intake queue])
+    W1A_FMT([MT-WS1-1 Format parsing and normalisation])
+    W1A_ELG([MT-WS1-2 Eligibility lookup])
+    W1A_BP1{BP-WS1-1 Eligibility discrepancy?}
+    W1A_DSC([MT-WS1-3 Eligibility edge-case resolution])
+    W1A_COD([MT-WS1-4 Code validity and pairing check])
+    W1A_BP2{BP-WS1-2 Plausibility concern?}
+    W1A_PLS([MT-WS1-5 Clinical plausibility assessment])
+    W1A_OUT([Code and eligibility checks complete — Phase 2])
+    W1A_IN --> W1A_FMT
+    W1A_FMT --> W1A_ELG
+    W1A_ELG --> W1A_BP1
+    W1A_BP1 -->|No discrepancy| W1A_COD
+    W1A_BP1 -->|Discrepancy found| W1A_DSC
+    W1A_DSC --> W1A_COD
+    W1A_COD --> W1A_BP2
+    W1A_BP2 -->|Standard path| W1A_OUT
+    W1A_BP2 -->|Plausibility flag| W1A_PLS
+    W1A_PLS --> W1A_OUT
+    style W1A_IN fill:#f8f9fa,color:#000000,stroke:#6c757d
+    style W1A_FMT fill:#d4edda,color:#155724,stroke:#155724
+    style W1A_ELG fill:#d4edda,color:#155724,stroke:#155724
+    style W1A_DSC fill:#fff3cd,color:#856404,stroke:#856404
+    style W1A_COD fill:#d4edda,color:#155724,stroke:#155724
+    style W1A_PLS fill:#fff3cd,color:#856404,stroke:#856404
+    style W1A_BP1 fill:#cce5ff,color:#004085,stroke:#004085
+    style W1A_BP2 fill:#cce5ff,color:#004085,stroke:#004085
+    style W1A_OUT fill:#f8f9fa,color:#000000,stroke:#6c757d
+      </div>
+      <p class="diagram-caption">WS1 Phase 1 — Eligibility verification, code validity, and clinical plausibility assessment</p>
+    </div>
+
+    <div class="mermaid-wrap">
+      <div class="mermaid">
+flowchart TD
+    W1B_IN([Code and eligibility checks complete])
+    W1B_PAR([MT-WS1-6 Prior auth requirement check and lookup])
+    W1B_BP3{BP-WS1-3 Prior auth partial match?}
+    W1B_PMR([MT-WS1-7 Partial match resolution])
+    W1B_BP4{BP-WS1-4 Clinical content present?}
+    W1B_WS2([Route to WS2 clinical review queue])
+    W1B_FEE([MT-WS1-9 Fee schedule calculation and payment approval])
+    W1B_END([Administrative claim adjudicated])
+    W1B_IN --> W1B_PAR
+    W1B_PAR --> W1B_BP3
+    W1B_BP3 -->|Complete match or not required| W1B_BP4
+    W1B_BP3 -->|Partial match| W1B_PMR
+    W1B_PMR --> W1B_BP4
+    W1B_BP4 -->|Clinical content detected| W1B_WS2
+    W1B_BP4 -->|Administrative only| W1B_FEE
+    W1B_FEE --> W1B_END
+    style W1B_IN fill:#f8f9fa,color:#000000,stroke:#6c757d
+    style W1B_PAR fill:#d4edda,color:#155724,stroke:#155724
+    style W1B_PMR fill:#fff3cd,color:#856404,stroke:#856404
+    style W1B_WS2 fill:#fff3cd,color:#856404,stroke:#856404
+    style W1B_FEE fill:#d4edda,color:#155724,stroke:#155724
+    style W1B_END fill:#f8f9fa,color:#000000,stroke:#6c757d
+    style W1B_BP3 fill:#cce5ff,color:#004085,stroke:#004085
+    style W1B_BP4 fill:#f8d7da,color:#721c24,stroke:#721c24
+      </div>
+      <p class="diagram-caption">WS1 Phase 2 — Prior authorisation check, clinical content routing classification (compliance gate, red), and payment determination</p>
+    </div>
+
+    <hr>
+
+    <h4>WS2 — Clinical Pre-Screening <em>(Wave 2 — conditional on clinical notes API confirmation)</em></h4>
+    <ul>
+      <li>Receives claims routed from WS1 as requiring physician review and first verifies that the routing classification was correct — re-checking the clinical content flag against the certified classifier before proceeding, to prevent administrative claims accumulating in the physician queue.</li>
+      <li>Retrieves and assembles all documentation a physician needs to make a medical necessity determination: diagnosis codes, procedure history, prior authorisation records, clinical notes summary, and member history — structured into a pre-filled review packet so physicians can begin their review immediately rather than spending time on document gathering.</li>
+      <li>Manages the information-pending state for claims where clinical documentation is incomplete: drafts a provider outreach request, holds the claim in a monitored state, and re-queues it promptly when documentation arrives.</li>
+      <li>Delivers the assembled packet to a <strong>physician review interface</strong> — a structured layout presenting diagnosis codes, procedure history, prior authorisation records, clinical notes summary, and member history in a consistent format. The physician reviews the pre-filled packet, records their medical necessity determination, and signs off directly in the interface. The sign-off generates the URAC/NCQA-compliant audit record confirming licensed reviewer approval before any clinical payment determination is processed.</li>
+    </ul>
+
+    <div class="mermaid-wrap">
+      <div class="mermaid">
+flowchart TD
+    W2A_IN([Clinical claim arrives in review queue])
+    W2A_VFY([MT-WS2-1 Clinical content flag verification])
+    W2A_BP1{BP-WS2-1 Routing confidence threshold met?}
+    W2A_RTN([Re-route to WS1 or escalate to classifier review])
+    W2A_DOC([MT-WS2-2 Clinical documentation retrieval])
+    W2A_BP2{BP-WS2-2 Documentation complete?}
+    W2A_PAH([MT-WS2-3 Prior auth history synthesis])
+    W2A_PKT([Pre-filled review packet assembled — Phase 2])
+    W2A_IN --> W2A_VFY
+    W2A_VFY --> W2A_BP1
+    W2A_BP1 -->|Confirmed clinical| W2A_DOC
+    W2A_BP1 -->|Routing uncertain| W2A_RTN
+    W2A_DOC --> W2A_BP2
+    W2A_BP2 -->|Complete| W2A_PAH
+    W2A_BP2 -->|Incomplete — request provider docs| W2A_DOC
+    W2A_PAH --> W2A_PKT
+    style W2A_IN fill:#f8f9fa,color:#000000,stroke:#6c757d
+    style W2A_VFY fill:#fff3cd,color:#856404,stroke:#856404
+    style W2A_RTN fill:#fff3cd,color:#856404,stroke:#856404
+    style W2A_DOC fill:#d4edda,color:#155724,stroke:#155724
+    style W2A_PAH fill:#d4edda,color:#155724,stroke:#155724
+    style W2A_PKT fill:#d4edda,color:#155724,stroke:#155724
+    style W2A_BP1 fill:#f8d7da,color:#721c24,stroke:#721c24
+    style W2A_BP2 fill:#cce5ff,color:#004085,stroke:#004085
+      </div>
+      <p class="diagram-caption">WS2 Phase 1 — Routing verification, clinical documentation retrieval, and review packet assembly</p>
+    </div>
+
+    <div class="mermaid-wrap">
+      <div class="mermaid">
+flowchart TD
+    W2B_PKT([Pre-filled review packet ready])
+    W2B_PHY([MT-WS2-4 Physician medical necessity review])
+    W2B_BP3{BP-WS2-3 Medical necessity determination — COMPLIANCE GATE}
+    W2B_BP4{BP-WS2-4 Additional information needed?}
+    W2B_AIR([MT-WS2-5 Additional info request — async wait])
+    W2B_DOC([MT-WS2-6 Determination documentation and notification])
+    W2B_END([Claim adjudicated — member and provider notified])
+    W2B_PKT --> W2B_PHY
+    W2B_PHY --> W2B_BP3
+    W2B_BP3 -->|Approve| W2B_DOC
+    W2B_BP3 -->|Deny| W2B_DOC
+    W2B_BP3 -->|Insufficient evidence| W2B_BP4
+    W2B_BP4 -->|Request needed| W2B_AIR
+    W2B_AIR --> W2B_PHY
+    W2B_BP4 -->|Proceed with available context| W2B_DOC
+    W2B_DOC --> W2B_END
+    style W2B_PKT fill:#f8f9fa,color:#000000,stroke:#6c757d
+    style W2B_PHY fill:#fff3cd,color:#856404,stroke:#856404
+    style W2B_AIR fill:#fff3cd,color:#856404,stroke:#856404
+    style W2B_DOC fill:#d4edda,color:#155724,stroke:#155724
+    style W2B_END fill:#f8f9fa,color:#000000,stroke:#6c757d
+    style W2B_BP3 fill:#f8d7da,color:#721c24,stroke:#721c24
+    style W2B_BP4 fill:#cce5ff,color:#004085,stroke:#004085
+      </div>
+      <p class="diagram-caption">WS2 Phase 2 — Physician medical necessity review (URAC/NCQA compliance gate, red); physician sign-off is required by accreditation on every clinical determination</p>
+    </div>
+
+    <hr>
+
+    <h4>APP — Denial Appeals Support <em>(Wave 3 — conditional on Wave 1 steady-state quality data)</em></h4>
+    <ul>
+      <li>Receives inbound denial appeal submissions and classifies each appeal by root cause — coding error, eligibility dispute, medical necessity determination, or prior authorisation gap — so the reviewing team knows immediately what category of error they are examining.</li>
+      <li>Assembles the prior context needed for the appeal review: the original claim record, the denial reason codes, the relevant prior authorisation history, and — for clinical appeal sub-types — a structured evidence summary for physician review.</li>
+      <li>For clinical appeal sub-types, flags mandatory physician review before any determination is issued, applying the same URAC/NCQA requirement that governs primary clinical determinations; the agent proposes a root cause classification and assembles context, but the determination in every case is human.</li>
+    </ul>
+
+    <hr>
+
+    <h4>Volume and value positioning of the four adjudication work streams</h4>
+    <div class="mermaid-wrap">
+      <div class="mermaid">
+quadrantChart
+    title Volume x Value Analysis - Greenfield Health Systems
+    x-axis Low Non-Determinism --> High Non-Determinism
+    y-axis Low Volume --> High Volume
+    quadrant-1 Primary targets — automate now
+    quadrant-2 Rules and automation
+    quadrant-3 Not worth automating
+    quadrant-4 Selected use cases
+    WS1 Admin Adjudication: [0.71, 0.88]
+    WS2 Clinical Review: [0.93, 0.93]
+    INT Intake Processing: [0.25, 0.82]
+    APP Denial Appeals: [0.79, 0.42]
+      </div>
+      <p class="diagram-caption">Volume × Value quadrant positioning for all four work streams. Axes: x = degree of judgment required (non-determinism); y = daily transaction volume.</p>
+    </div>
+
+    <p>WS1 is the Wave 1 primary automation target because it combines high daily volume with the highest ratio of judgment-requiring decisions that are currently driving manual throughput failures — the administrative adjudication pipeline is where the clinical content routing decision and the coding plausibility assessment occur, and these are the steps that produce both the SLA backlog and the first-pass errors behind the 41% overturn rate. WS2 scores the highest on the judgment axis but cannot be the primary automation target: URAC/NCQA accreditation limits the agent's scope on the clinical path to context assembly only, which means the WS2 agent eliminates physician preparation time but cannot reduce physician review headcount — the physician review step remains human regardless of the agent's accuracy level.</p>
+
+    <h3>4.3 Delivery waves</h3>
+
+    <table>
+      <thead>
+        <tr><th>Wave</th><th>Scope</th><th>Timeline</th><th>Agent components activated</th><th>Annual saving (incremental)</th><th>What this wave funds</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Wave 1</strong></td>
+          <td>Intake normalisation + administrative adjudication; clinical content classifier built and CMO-certified</td>
+          <td>Months 1–6 build; months 7+ running</td>
+          <td>Intake &amp; Anomaly Agent, WS1 Administrative Adjudication Agent</td>
+          <td>$732,000/year (net of $113K agent running cost and $455K retained staff)</td>
+          <td>Sarah Chen's committed $400K budget; Wave 2 build funded by Wave 1 running savings</td>
+        </tr>
+        <tr>
+          <td><strong>Wave 2</strong></td>
+          <td>Clinical pre-screening — routing verification and pre-filled physician review packet; <strong>hard prerequisite: clinical notes API confirmation required before build begins</strong></td>
+          <td>Months 7–12 build (conditional); months 13+ running</td>
+          <td>Clinical Review Support Agent</td>
+          <td>$104,000/year incremental (net of $91K WS2 agent running cost)</td>
+          <td>Wave 1 accumulated savings ($366K by month 12) plus $112K build cost reduction from Wave 1 platform reuse</td>
+        </tr>
+        <tr>
+          <td><strong>Wave 3</strong></td>
+          <td>Denial appeals root cause classification and context assembly; conditional on 90-day WS1 steady state</td>
+          <td>Months 13+ planning; months 19+ build (conditional)</td>
+          <td>Appeals Support Agent</td>
+          <td>Dependent on residual appeal volume after WS1 quality improvement — not calculable before Wave 1 production data</td>
+          <td>Wave 1 + Wave 2 accumulated savings</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>The compounding logic is material. The clinical content classifier — built in Wave 1 at a cost of $64,000 and certified by Dr. Marcus Webb's team — is the single platform asset that most reduces Wave 2's marginal build cost. Without reuse, Wave 2 would require not only an estimated $60,000 in classifier rebuild cost but, more significantly, a full CMO certification process before any Wave 2 clinical-path routing could begin. That certification process happens once in Wave 1; Wave 2 inherits a certified classifier that it extends rather than re-certifies, saving 4–6 weeks of CMO team engagement that does not appear as a line item in the cost model but is the primary reason Wave 2 can be delivered in 6 months rather than 9 or more. The prior authorisation and eligibility API integrations each save an estimated $16,000 in Wave 2 build cost and provide validated data pipelines whose schema issues are discovered and resolved in Wave 1, so Wave 2 production routing begins against integrations already tested under live claim volume.</p>
+
+    <h3>4.4 Assumptions, constraints, and risks</h3>
+
+    <p><strong>Key assumptions:</strong></p>
+    <table>
+      <thead>
+        <tr><th>Assumption</th><th>Source</th><th>Why it matters</th><th>If wrong</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>65%/35% administrative/clinical routing split is a stakeholder estimate, not a validated baseline</td>
+          <td>Dr. Marcus Webb, Exchange 3 ("honestly? maybe 30–35%")</td>
+          <td>Drives the economic model: if the clinical share is materially higher, the HITL physician queue is larger than modelled, cycle time targets for WS2 become harder to meet, and the headcount reduction from 20 to 7 reviewers may require more physician capacity</td>
+          <td>A higher clinical rate (e.g. 50%) requires either additional physician capacity or a more conservative classifier threshold; must be validated against historical claims data in the design phase</td>
+        </tr>
+        <tr>
+          <td>Clinical content definition does not yet exist and must be produced as a design output before classifier build</td>
+          <td>scenario_context.md; Sarah Chen, Exchange 3</td>
+          <td>The classifier cannot be built or certified without a formally agreed definition; the clinical content definition is the critical-path item for Wave 1</td>
+          <td>If the definition takes longer to agree than planned, Wave 1 timeline extends; this is a stakeholder alignment risk between CMO and Operations</td>
+        </tr>
+        <tr>
+          <td>Eligibility, prior auth, fee schedule, and clinical notes source systems are accessible as programmatic APIs</td>
+          <td>All system names absent from current engagement documentation — unconfirmed assumption</td>
+          <td>Wave 1 depends on at least three of these integrations; Wave 2 is wholly dependent on the clinical notes API</td>
+          <td>Clinical notes integration infeasibility is a Wave 2 hard blocker — Wave 2 build cannot begin without confirmed API access; Wave 1 remains viable without the clinical notes integration</td>
+        </tr>
+        <tr>
+          <td>25% HITL rate at 2-minute average exception review time — the economic model's primary calibration commitment</td>
+          <td>Derived from WS1 breakpoint exception frequency estimates; calibrated against Dr. Webb's 20 claims/hour clinical review benchmark</td>
+          <td>HITL cost is 82.5% of total agent cost per claim; the HITL rate is the dominant variable in the cost model</td>
+          <td>At 35% HITL, annual saving falls from $732K to approximately $697K — a $35K reduction that does not affect the investment verdict; the compliance concern at a high HITL rate is that the classifier is not ready for production</td>
+        </tr>
+        <tr>
+          <td>$65,000 fully loaded annual cost per reviewer — the FTE baseline the business case rests on</td>
+          <td>Assumption: US healthcare claims processor at mid-market compensation; not stated in the scenario</td>
+          <td>The current $1.3M workforce cost and the $455K retained staff cost both derive from this figure; a 20% change in FTE rate shifts the annual saving by approximately $260K</td>
+          <td>At $50K/year FTE rate the business case is weak (payback ~26 months); at $80K/year it strengthens (payback ~8.7 months); must be confirmed during the design phase</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><strong>Out of scope:</strong></p>
+    <ul>
+      <li>Medical necessity determination: a licensed physician or advanced practice provider must make every clinical determination — this boundary is set by URAC/NCQA accreditation, not by this design</li>
+      <li>Clinical appeals determinations requiring physician review: same regulatory requirement as primary clinical determinations; agent provides context and root cause classification only</li>
+      <li>Provider-facing systems and portals: no changes to provider claim submission interfaces</li>
+      <li>Member communication systems: denial notice and explanation-of-benefits delivery remain in existing systems</li>
+      <li>Wave 3 (appeals support) detailed build: not scoped until Wave 1 produces 90 days of steady-state appeal pattern data</li>
+    </ul>
+
+    <p><strong>Constraints:</strong></p>
+    <ol>
+      <li><strong>Budget:</strong> Sarah Chen's committed Wave 1 budget is $400,000 (Exchange 1). The Wave 1 build estimate is $420,000 — 5% over the committed amount. Scope management recommendation: defer provider rejection notice templating and advanced analytics dashboard to Wave 2, targeting a $400,000 Wave 1 scope. At the unmanaged $420,000 estimate, payback is 6.9 months — still inside the 12-month threshold.</li>
+      <li><strong>Compliance:</strong> URAC/NCQA accreditation requires physician or advanced practice provider sign-off on every clinical determination regardless of the agent's confidence level or accuracy metric. This constraint is categorical — it is not a risk to be managed through higher classifier accuracy, and it is not provisional on engagement milestones.</li>
+      <li><strong>Clinical content definition:</strong> The definition of what constitutes "clinical content" does not currently exist in a formal, documented form. This definition must be produced as a design output — with CMO sign-off — before the clinical content classifier can be built or certified. The definition is the critical-path item for Wave 1.</li>
+      <li><strong>System integration availability:</strong> The eligibility system, prior authorisation system, fee schedule system, and clinical notes source system are not named in the current engagement documentation. All four integrations are assumed to be accessible as APIs. Wave 2 cannot proceed to build if the clinical notes source system does not have a programmatic API — that integration is a Wave 2 hard blocker.</li>
+    </ol>
+
+    <p><strong>Risks:</strong></p>
+    <div class="risk-callout">
+      <table>
+        <thead>
+          <tr><th>Risk</th><th style="width:110px">Likelihood</th><th>Mitigation already designed</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Clinical content classifier confidence threshold set too conservatively — increases physician queue size and reduces cost saving</td>
+            <td>Medium</td>
+            <td>Threshold is a configurable parameter, not hardcoded; calibrated in mock testing before go-live with Dr. Webb's team; recall ≥99.5% is the hard gate, not a specific threshold value</td>
+          </tr>
+          <tr>
+            <td>Wave 1 build cost overrun — at 2× build cost ($840K), payback extends from 6.9 months to approximately 14 months</td>
+            <td>Medium</td>
+            <td>Itemised build estimate with explicit scope; Wave 1 scope reduction keeps estimate at $400K; payback remains inside 12-month threshold at any build cost below $840K</td>
+          </tr>
+          <tr>
+            <td>Clinical notes source system does not have a programmatic API — Wave 2 becomes a manual integration project or cannot proceed as specified</td>
+            <td>High (unconfirmed)</td>
+            <td>Wave 2 is a conditional wave; Wave 1 generates full business case return independently; clinical notes integration feasibility validated before any Wave 2 commitment is made</td>
+          </tr>
+          <tr>
+            <td>HITL rate in production exceeds the 25% calibration target — primary quality signal that classifier is not production-ready</td>
+            <td>Medium</td>
+            <td>≤25% HITL rate is a production release gate, not a post-launch optimisation target; the financial impact of a 35% HITL rate is a $35K/year reduction in annual saving — not material; the compliance implication of a high HITL rate is the load-bearing concern</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Section 5: Business Case -->
+  <section id="business-case">
+    <h2><span class="section-num">5.</span> Business Case</h2>
+
+    <h3>5.1 Per-claim economics</h3>
+
+    <table>
+      <thead>
+        <tr><th>Metric</th><th>Current state</th><th>With agent</th><th>Change</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Cost per administrative claim</td>
+          <td>$18.23</td>
+          <td>$0.315</td>
+          <td style="color:#2d7d46; font-weight:600">−98.3%</td>
+        </tr>
+        <tr>
+          <td>Claims per day — administrative path</td>
+          <td>~274 processable (20 staff × 8 hr × 60 min ÷ 35 min)</td>
+          <td>1,300</td>
+          <td style="color:#2d7d46; font-weight:600">5.7× throughput increase</td>
+        </tr>
+        <tr>
+          <td>FTE equivalent for WS1 review</td>
+          <td>20 staff (all tasks)</td>
+          <td>7 retained + 1.4 HITL equivalent</td>
+          <td>12 staff displaced from WS1 manual processing</td>
+        </tr>
+        <tr>
+          <td>Cycle time — administrative path</td>
+          <td>8–9 days</td>
+          <td>≤5 days (target)</td>
+          <td>−3–4 days</td>
+        </tr>
+        <tr>
+          <td>Cycle time — clinical path</td>
+          <td>8–9 days</td>
+          <td>≤7 days (target)</td>
+          <td>−1–2 days</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>5.2 Annual economics — all waves</h3>
+
+    <p><strong>Wave 1 (INT + WS1 Administrative Adjudication):</strong></p>
+    <ul>
+      <li>Agent running cost: $113,000/year (token inference, tool call APIs, infrastructure, HITL labour at 25% rate × 2 minutes average)</li>
+      <li>Retained staff: 7 FTEs × $65,000 = $455,000/year</li>
+      <li>Total post-automation operating cost: $568,000/year</li>
+      <li>Current workforce: $1,300,000/year (20 FTEs × $65,000)</li>
+      <li>Annual cash saving: $732,000/year</li>
+      <li>Wave 1 build cost: $420,000</li>
+      <li>Payback period: 6.9 months from go-live</li>
+    </ul>
+
+    <p><strong>Wave 2 (WS2 Clinical Pre-Screening — incremental):</strong></p>
+    <ul>
+      <li><strong>Hard prerequisite:</strong> clinical notes source system API must be confirmed before Wave 2 build begins; if this integration is not technically feasible, Wave 2 cannot be delivered as specified</li>
+      <li>Incremental build cost: $108,000 (with $112,000 Wave 1 platform reuse)</li>
+      <li>Annual saving (incremental): $104,000/year net of $91,000 WS2 agent running cost</li>
+      <li>Payback: 12.5 months from Wave 2 go-live</li>
+    </ul>
+
+    <p><strong>Wave 3 (APP Denial Appeals Support — conditional):</strong></p>
+    <ul>
+      <li>Condition: Wave 1 must be in production for 90 days before Wave 3 is scoped</li>
+      <li>Estimated build cost: $150,000 (with Wave 1 and Wave 2 document extraction and claim record reuse)</li>
+      <li>Annual saving: dependent on residual appeal volume — not calculable before Wave 1 production data</li>
+    </ul>
+
+    <p><strong>3-year portfolio summary (Waves 1 and 2):</strong></p>
+    <table>
+      <thead><tr><th>Item</th><th>Amount</th></tr></thead>
+      <tbody>
+        <tr><td>Total investment (Waves 1+2)</td><td>$528,000</td></tr>
+        <tr><td>Total 3-year saving (Waves 1+2, phased from go-live)</td><td>$1,986,000</td></tr>
+        <tr><td>Net 3-year value</td><td style="color:#2d7d46; font-weight:600">$1,458,000</td></tr>
+        <tr><td>Portfolio ROI</td><td style="color:#2d7d46; font-weight:600">276%</td></tr>
+      </tbody>
+    </table>
+
+    <h3>5.3 Sensitivity</h3>
+
+    <table>
+      <thead>
+        <tr><th>Scenario</th><th>Annual saving</th><th>Payback from go-live</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>All adverse (35% HITL, 2× build cost at $840K, $55K FTE rate)</td>
+          <td>~$586,000</td>
+          <td>~17 months</td>
+        </tr>
+        <tr>
+          <td>Conservative — elevated HITL only (35% HITL, base build and FTE)</td>
+          <td>~$697,000</td>
+          <td>~7.2 months</td>
+        </tr>
+        <tr style="background:#eaf2fb; font-weight:600">
+          <td><strong>Base case (25% HITL, $420K build, $65K FTE rate)</strong></td>
+          <td><strong>$732,000</strong></td>
+          <td><strong>6.9 months</strong></td>
+        </tr>
+        <tr>
+          <td>All optimistic (15% HITL, 0.67× build at $281K, $75K FTE rate)</td>
+          <td>~$892,000</td>
+          <td>~3.8 months</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>The business case holds under all tested adverse scenarios; the primary financial risk is build cost overrun, not HITL rate fluctuation.</p>
+
+    <h3>5.4 Break-even timeline</h3>
+
+    <canvas id="breakEvenChart" width="860" height="400"
+            style="max-width:100%; display:block; margin:0 auto;"></canvas>
+
+    <script>
+    (function() {
+      const canvas = document.getElementById('breakEvenChart');
+      const ctx = canvas.getContext('2d');
+
+      // Data: [month, investment_$K, saving_$K]
+      const data = [
+        [0,0,0],[2,140,0],[4,280,0],[6,420,0],
+        [8,420,122],[10,420,244],[12,420,366],
+        [13,420,427],[14,420,488],[16,420,610],
+        [18,420,732],[20,420,854],[22,420,976],[24,420,1098]
+      ];
+
+      // Layout constants
+      const PAD = { top: 40, right: 60, bottom: 60, left: 80 };
+      const W = canvas.width - PAD.left - PAD.right;
+      const H = canvas.height - PAD.top - PAD.bottom;
+      const X_MAX = 24, Y_MAX = 1100;
+
+      function px(month) { return PAD.left + (month / X_MAX) * W; }
+      function py(val)   { return PAD.top  + H - (val   / Y_MAX) * H; }
+
+      // --- Shaded build phase (months 0–6) ---
+      ctx.fillStyle = 'rgba(160,92,0,0.07)';
+      ctx.fillRect(px(0), PAD.top, px(6) - px(0), H);
+
+      // --- Axes ---
+      ctx.strokeStyle = '#dde3ea';
+      ctx.lineWidth = 1;
+      // Y gridlines
+      [0, 200, 400, 600, 800, 1000].forEach(v => {
+        ctx.beginPath();
+        ctx.moveTo(PAD.left, py(v));
+        ctx.lineTo(PAD.left + W, py(v));
+        ctx.stroke();
+      });
+
+      ctx.strokeStyle = '#aab';
+      ctx.lineWidth = 1;
+      // X axis
+      ctx.beginPath(); ctx.moveTo(PAD.left, PAD.top + H); ctx.lineTo(PAD.left + W, PAD.top + H); ctx.stroke();
+      // Y axis
+      ctx.beginPath(); ctx.moveTo(PAD.left, PAD.top); ctx.lineTo(PAD.left, PAD.top + H); ctx.stroke();
+
+      // Axis labels
+      ctx.fillStyle = '#555';
+      ctx.font = '12px -apple-system, sans-serif';
+      ctx.textAlign = 'center';
+      [0,4,8,12,16,20,24].forEach(m => {
+        ctx.fillText(m, px(m), PAD.top + H + 20);
+      });
+      ctx.textAlign = 'right';
+      [0,200,400,600,800,1000].forEach(v => {
+        ctx.fillText('$' + v + 'K', PAD.left - 8, py(v) + 4);
+      });
+
+      // Axis titles
+      ctx.fillStyle = '#333';
+      ctx.font = 'bold 13px -apple-system, sans-serif';
+      ctx.textAlign = 'center';
+      ctx.fillText('Month from project start', PAD.left + W / 2, canvas.height - 6);
+      ctx.save();
+      ctx.translate(16, PAD.top + H / 2);
+      ctx.rotate(-Math.PI / 2);
+      ctx.fillText('Cumulative Amount ($K)', 0, 0);
+      ctx.restore();
+
+      // --- Investment line (amber) ---
+      ctx.strokeStyle = '#c07800';
+      ctx.lineWidth = 2.5;
+      ctx.setLineDash([]);
+      ctx.beginPath();
+      data.forEach(([m, inv], i) => {
+        i === 0 ? ctx.moveTo(px(m), py(inv)) : ctx.lineTo(px(m), py(inv));
+      });
+      ctx.stroke();
+
+      // --- Saving line (green) ---
+      ctx.strokeStyle = '#2d7d46';
+      ctx.lineWidth = 2.5;
+      ctx.beginPath();
+      data.forEach(([m,, sav], i) => {
+        i === 0 ? ctx.moveTo(px(m), py(sav)) : ctx.lineTo(px(m), py(sav));
+      });
+      ctx.stroke();
+
+      // --- Go-Live vertical line ---
+      ctx.strokeStyle = '#1a4a7a';
+      ctx.lineWidth = 1.5;
+      ctx.setLineDash([5, 4]);
+      ctx.beginPath();
+      ctx.moveTo(px(6), PAD.top);
+      ctx.lineTo(px(6), PAD.top + H);
+      ctx.stroke();
+      ctx.setLineDash([]);
+      ctx.fillStyle = '#1a4a7a';
+      ctx.font = '11px -apple-system, sans-serif';
+      ctx.textAlign = 'center';
+      ctx.fillText('Go-Live', px(6), PAD.top - 6);
+
+      // --- Break-even dot + label ---
+      const beX = px(13), beY = py(427);
+      ctx.fillStyle = '#c0392b';
+      ctx.beginPath();
+      ctx.arc(beX, beY, 7, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.fillStyle = '#c0392b';
+      ctx.font = 'bold 12px -apple-system, sans-serif';
+      ctx.textAlign = 'left';
+      ctx.fillText('Break-even (month 13)', beX + 10, beY + 4);
+
+      // --- Legend ---
+      const LX = PAD.left + W - 240, LY = PAD.top + 12;
+      [['#c07800', 'Cumulative Investment'],
+       ['#2d7d46', 'Cumulative Net Saving']].forEach(([color, label], i) => {
+        ctx.strokeStyle = color; ctx.lineWidth = 2.5;
+        ctx.beginPath(); ctx.moveTo(LX, LY + i*22 + 6); ctx.lineTo(LX + 30, LY + i*22 + 6); ctx.stroke();
+        ctx.fillStyle = '#333'; ctx.font = '12px -apple-system, sans-serif'; ctx.textAlign = 'left';
+        ctx.fillText(label, LX + 36, LY + i*22 + 10);
+      });
+
+      // --- Build phase label ---
+      ctx.fillStyle = 'rgba(160,92,0,0.6)';
+      ctx.font = '11px -apple-system, sans-serif';
+      ctx.textAlign = 'center';
+      ctx.fillText('Build phase', px(3), PAD.top + 16);
+
+    })();
+    </script>
+
+    <blockquote>
+      <strong>Reading this chart:</strong> The amber line (investment) rises during the 6-month build phase and flattens at $420K at go-live. The green line (net saving) begins at go-live and rises at $61K/month. The lines cross at approximately month 13 — the break-even point. Every month beyond month 13, the programme is in net positive territory. At month 24, cumulative net saving is $1,098K against a total investment of $420K.
+    </blockquote>
+  </section>
+
+  <!-- Section 6: Success Metrics -->
+  <section id="success-metrics">
+    <h2><span class="section-num">6.</span> Success Metrics</h2>
+
+    <table>
+      <thead>
+        <tr><th>Metric</th><th>Baseline</th><th>Target</th><th>Measured by</th><th>Stakeholder</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Auto-adjudication rate — administrative path</td>
+          <td>22% of all claims</td>
+          <td>≥80% of administrative-path claims resolved without human intervention</td>
+          <td>Monthly claims system report: claims resolved without HITL event ÷ total claims received</td>
+          <td>Sarah Chen</td>
+        </tr>
+        <tr>
+          <td>Cycle time — administrative path</td>
+          <td>8–9 days (blended average)</td>
+          <td>≤5 days (30-day rolling median)</td>
+          <td>Queue management system: submission date to adjudication decision date for WS1 claims</td>
+          <td>James Liu</td>
+        </tr>
+        <tr>
+          <td>Cycle time — clinical path</td>
+          <td>8–9 days (blended average)</td>
+          <td>≤7 days (30-day rolling median)</td>
+          <td>Queue management system: submission date to physician sign-off date for WS2 claims</td>
+          <td>James Liu</td>
+        </tr>
+        <tr>
+          <td>Physician review time per clinical claim</td>
+          <td>35 min/claim (overall average, blended; WS2-specific baseline not available)</td>
+          <td>≤3 min with agent pre-filled review packet (derived from Dr. Webb's 20 claims/hour estimate with pre-screening, Exchange 3)</td>
+          <td>Agent audit log: WS2 physician queue open-time to signed determination, 30-day rolling average</td>
+          <td>Dr. Marcus Webb</td>
+        </tr>
+        <tr>
+          <td>Denial appeal overturn rate</td>
+          <td>41% of filed appeals overturned</td>
+          <td>≤15% of filed appeals overturned (90-day rolling)</td>
+          <td>Appeals management system: overturned appeal decisions ÷ total appeals filed</td>
+          <td>All three stakeholders</td>
+        </tr>
+        <tr style="background:#fff5f5">
+          <td><strong>Clinical content classifier recall (true positive rate for clinical claims)</strong></td>
+          <td>Unmeasured — no current classifier exists</td>
+          <td><strong>≥99.5% in mock calibration testing before go-live</strong></td>
+          <td>Mock calibration against labelled historical claims before any production routing; CMO sign-off required</td>
+          <td><strong>Dr. Marcus Webb</strong></td>
+        </tr>
+        <tr>
+          <td>SLA penalty incurrence</td>
+          <td>Active — claims routinely exceeding 7-day threshold (Exchange 3)</td>
+          <td>Zero claims exceeding 7-day threshold</td>
+          <td>Legal/operations reporting: claims with adjudication decision date &gt; submission date + 7 calendar days</td>
+          <td>James Liu / Sarah Chen</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="compliance-gate">
+      <p><span class="gate-label">COMPLIANCE GATE:</span> The clinical classifier recall target — ≥99.5% before go-live — is not a performance aspiration; it is a hard release gate. At 99.5% recall, fewer than 1 in 200 clinical claims reaches the payment path without physician review. Below that threshold, a clinical claim can receive an auto-approved payment determination without any physician involvement, which constitutes a URAC/NCQA accreditation event. The consequence is not a metric miss — it is suspension of the agent pending investigation, regardless of the claim volume involved or the economic impact of the suspension. Mock calibration testing against labelled historical claims, with CMO sign-off on the results, must be completed and passed before the first live claim enters production routing. This gate applies to both Wave 1 (WS1 routing classification) and Wave 2 (WS2 routing verification), and to any future update to the clinical content definition that requires the classifier to be retrained.</p>
+    </div>
+
+  </section>
+
+</div><!-- /container -->
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({ startOnLoad: true, theme: 'neutral' });</script>
+
+</body>
+</html>

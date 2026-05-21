@@ -67,7 +67,7 @@ Below the table: identify the **hardest boundary** — the action that sits clos
 
 ### 5. Architecture Decision Records
 
-Include at least 2 ADRs. Each ADR must follow this exact structure:
+Include at least 3 ADRs. Each ADR must follow this exact structure:
 
 ---
 **ADR-[N]: [decision title — a noun phrase naming the decision, not the outcome]**
