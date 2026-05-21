@@ -211,15 +211,18 @@ BASELINE COST (CURRENT STATE)
 
 Current claims review staff related to administrative adjudication:
   Total claims review staff: 20 (from CFO email Exchange 1 and James Liu Exchange 3)
-  WS1 allocation: 20 × 65% = 13 FTEs assigned to administrative adjudication
-    [Assumption A-D2C-3: review staff time is allocated proportionally to claim routing split;
-    actual allocation may differ]
+  FTE displacement: 20 − 7 = 13 FTEs
+    (James Liu target: reduce to 7 post-automation, Exchange 3; all 20 staff currently
+    handle both admin and clinical claims — the 65%/35% routing split is claim volume,
+    not a staffing ratio; actual admin/clinical processing time split is unstated in scenario)
+    [Assumption A-D2C-3: the 13-FTE displacement is grounded in James Liu's post-automation
+    headcount target; it cannot be derived from the routing split alone]
 
   Fully loaded annual cost per reviewer: $65,000
     [Assumption A-D2C-4: standard US claims processor fully loaded cost (salary + benefits +
     management overhead); not stated in scenario; must be confirmed in discovery]
 
-  Annual WS1 labor baseline: 13 × $65,000 = $845,000/year
+  Annual labour baseline (displaced FTEs): 13 × $65,000 = $845,000/year
 
   Corroboration: time-based check
     Time per claim: 35 min/claim (scenario.md — blended average; administrative claims may differ)
@@ -322,8 +325,10 @@ ANNUAL SAVING
   Scenario-grounded saving using CFO's FTE model:
     CFO targets 8 FTE reduction overall at $65K fully loaded = $520,000/year (Exchange 1)
     This covers both WS1 and WS2 combined headcount reduction
-    WS1 share: 8 × 0.65 × $65K = $338,000/year [proportional assumption]
-    Combined (WS1+WS2 total headcount savings): $520,000/year
+    Combined WS1+WS2 headcount savings: $520,000/year (CFO model does not split by work stream)
+    [The 65%/35% routing split cannot allocate FTE savings between WS1 and WS2 — claims
+    on each path have different processing times. The $520K is the total programme saving;
+    no sub-allocation to WS1 alone is supportable without per-path processing time data.]
 
 BUILD COST AND PAYBACK
 
@@ -506,10 +511,10 @@ The integrations built in Wave 1 create a shared platform that directly reduces 
 
 ---
 
-> **Assumption [A-D2C-3]:** Review staff time is allocated proportionally to the 65%/35% routing split (13 of 20 WS1, 7 of 20 WS2). Actual time allocation may differ if clinical claims require disproportionately more review time.
-> **Why it matters:** Baseline labour cost split between WS1 ($845K) and WS2 ($455K) drives the TCO calculation. If WS2 takes a higher proportion of review time, WS1 savings are smaller than estimated.
-> **If wrong:** If clinical claims take 3× as long as administrative claims (plausible given the additional physician involvement), WS2 may consume 50–60% of review staff time, and WS1's baseline is closer to $520K/year. Payback extends accordingly.
-> **Confidence:** Low — time split not stated in scenario; the 35 min/claim average is undecomposed.
+> **Assumption [A-D2C-3]:** The 13-FTE displacement baseline is derived from James Liu's post-automation headcount target (20 → 7 staff, Exchange 3). All 20 staff currently handle both admin and clinical claims; no sub-allocation by work stream is possible from the routing split alone.
+> **Why it matters:** The $845K annual labour baseline (13 × $65K) is the primary economic input to the TCO. It represents what is recoverable from headcount reduction — not what is attributable to WS1 processing specifically.
+> **If wrong:** If James Liu's target of 7 remaining staff cannot be achieved (e.g., WS2 clinical coordination requires more than 7 FTEs, or HITL rate exceeds 25% requiring more reviewers), the displacement drops toward the CFO's more conservative 8-FTE target ($520K gross saving). Payback extends from 9.2 months (CFO model) — the 7-FTE target is the optimistic bound.
+> **Confidence:** Low — 35 min/claim average is undecomposed across admin and clinical paths; actual per-path processing time not stated in scenario.
 
 ---
 
