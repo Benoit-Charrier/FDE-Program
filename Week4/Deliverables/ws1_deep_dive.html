@@ -102,6 +102,7 @@
     tr:nth-child(even) td { background: #f7f9fb; }
     tr:nth-child(odd) td { background: #ffffff; }
     td:nth-child(2) { text-align: center; }
+    .step-table td:nth-child(3) { text-align: center; font-size: 13px; }
 
     /* ── Step table colour-coding (Section 3) ── */
     .step-table td.auto-code { background: #f0f0f0 !important; }
@@ -184,6 +185,21 @@
       margin-top: 8px;
     }
 
+    /* ── Model selection table ── */
+    .model-table td:nth-child(2) { text-align: left; font-weight: 600; }
+    .model-table tr.sonnet-row td { background: #eaf2fb !important; }
+    .model-table tr.sonnet-row td:nth-child(2) { color: #1a4a7a; }
+    .model-table tr.orch-row td { background: #f0f5fc !important; border-top: 2px solid #1a4a7a; }
+    .model-table tr.orch-row td:nth-child(1) { font-weight: 700; }
+    .model-note {
+      background: #f7f9fb;
+      border-left: 4px solid #6c757d;
+      padding: 12px 16px;
+      margin: 12px 0 0;
+      font-size: 13px;
+      color: #444;
+    }
+
     /* ── Print ── */
     @media print {
       nav { display: none; }
@@ -237,60 +253,71 @@
     <table class="step-table">
       <thead>
         <tr>
-          <th style="width:32%">Step</th>
-          <th style="width:24%; text-align:center">How it is handled</th>
-          <th style="width:44%">Why this approach</th>
+          <th style="width:26%">Step</th>
+          <th style="width:18%; text-align:center">How it is handled</th>
+          <th style="width:18%; text-align:center">Mechanism</th>
+          <th style="width:38%">Why this approach</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td>Format parsing and field extraction (EDI 837, PDF, portal)</td>
           <td class="auto-code">Automated (rule / code)</td>
+          <td style="text-align:center">Rule-based parser</td>
           <td>EDI 837 is a structured specification; the correct fields are enumerated — an LLM call adds latency and cost with zero quality benefit</td>
         </tr>
         <tr>
           <td>Member eligibility lookup</td>
           <td class="auto-api">Automated (API call)</td>
+          <td style="text-align:center">Structured API read</td>
           <td>The eligibility system returns a binary result (eligible / not eligible on service date); no reasoning required</td>
         </tr>
         <tr>
           <td>Eligibility discrepancy resolution</td>
           <td class="agent-j">Agent judgment</td>
+          <td style="text-align:center">LLM contextual inference<br><small>(Haiku 4.5)</small></td>
           <td>When the eligibility check returns an ambiguous result (e.g., termination date near service date), the agent distinguishes data-entry lag from a genuine coverage gap using contextual pattern recognition — a task no formal rule covers (~5% of claims)</td>
         </tr>
         <tr>
           <td>Code validity and pairing check</td>
           <td class="auto-code">Automated (rule / code)</td>
+          <td style="text-align:center">Structured table lookup</td>
           <td>ICD-10/CPT crosswalk rules are a structured lookup against a reference table; the standard path is a code-validity query, not LLM inference</td>
         </tr>
         <tr>
           <td>Coding plausibility assessment</td>
           <td class="agent-j">Agent judgment</td>
+          <td style="text-align:center">LLM semantic classification<br><small>(Haiku 4.5)</small></td>
           <td>The agent evaluates whether the code combination is clinically plausible given provider type and diagnosis — a judgment that varies by context and is not codifiable as a rule (~15% of claims trigger a flag)</td>
         </tr>
         <tr>
           <td>Prior authorisation lookup</td>
           <td class="auto-api">Automated (API call)</td>
+          <td style="text-align:center">Structured API read</td>
           <td>The prior auth system returns a record or its absence; deterministic binary check</td>
         </tr>
         <tr>
           <td>Prior authorisation partial-match resolution</td>
           <td class="agent-j">Agent judgment</td>
-          <td>When the auth on file differs from the claim (unit variance, code variant, date mismatch), the agent assesses whether the difference falls within a defensible tolerance — no documented threshold exists (~8% of claims)</td>
+          <td style="text-align:center">Arithmetic + LLM judgment<br><small>(Haiku 4.5)</small></td>
+          <td>When the auth on file differs from the claim (unit variance, code variant, date mismatch), the agent computes the variance and assesses whether it falls within a defensible tolerance — no documented threshold exists (~8% of claims)</td>
         </tr>
         <tr>
           <td>Clinical content routing classification</td>
           <td class="agent-md">Agent judgment → mandatory physician review</td>
-          <td>The agent classifies each claim as administrative or clinical using multi-factor pattern recognition across diagnosis codes, procedure codes, and provider specialty; any claim classified as clinical is sent to the physician queue without exception — this is a URAC/NCQA compliance requirement, not a design choice (~10% of claims escalated for confidence review before routing)</td>
+          <td style="text-align:center; font-weight:700">LLM multi-signal classification<br><small style="font-weight:400">(Sonnet 4.6)</small></td>
+          <td>The agent classifies each claim as administrative, clinical, or uncertain using multi-factor pattern recognition across diagnosis codes, procedure codes, and provider specialty; any claim classified as clinical is sent to the physician queue without exception — this is a URAC/NCQA compliance requirement, not a design choice (~10% of claims escalated for confidence review before routing)</td>
         </tr>
         <tr>
           <td>Payment calculation</td>
           <td class="auto-code">Automated (rule / code)</td>
+          <td style="text-align:center">Rate table lookup + arithmetic</td>
           <td>Fee schedule application is arithmetic against a rate table; the correct answer is computed by formula — an LLM call produces no quality improvement</td>
         </tr>
         <tr>
           <td>Contract exception handling</td>
           <td class="agent-j">Agent judgment</td>
+          <td style="text-align:center">LLM document reasoning<br><small>(Haiku 4.5)</small></td>
           <td>When a fee schedule exception flag is raised, the agent reviews the contract carve-out context and produces a rate recommendation for human confirmation (~2% of claims)</td>
         </tr>
       </tbody>
@@ -299,6 +326,54 @@
     <blockquote>
       <strong>The five automated steps (format parsing, eligibility lookup, code validity check, prior auth lookup, payment calculation) consume no LLM tokens.</strong> They run as in-process code or external API calls. This is the correct architecture: an LLM call on a binary eligibility lookup adds cost and latency for zero quality benefit. The five judgment steps (eligibility discrepancy resolution, coding plausibility, prior auth partial-match, clinical routing, contract exception) invoke the LLM only when no deterministic rule resolves the decision. Average LLM calls per claim: ~2.15 (routing classification and coding plausibility run on every claim; the other three run conditionally on ~15% of claims combined).
     </blockquote>
+
+    <h3>Model Selection for Each Judgment Step</h3>
+    <p>The WS1 pipeline runs as a single orchestrator agent (Haiku 4.5) that sequences all 10 steps, invokes tools, and routes on results. Sonnet 4.6 is invoked as a targeted sub-call for clinical content routing only — every other LLM call, including the orchestrator itself, runs on Haiku.</p>
+
+    <table class="model-table">
+      <thead>
+        <tr>
+          <th style="width:30%">Layer / step</th>
+          <th style="width:22%">Model</th>
+          <th style="width:48%">Rationale</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="orch-row">
+          <td>WS1 orchestrator — pipeline coordination</td>
+          <td>Claude Haiku 4.5</td>
+          <td>Sequences all 10 steps, invokes API and rule-based tools, routes on results, maintains claim state across the pipeline, emits final disposition (approved / rejected / escalated / routed to WS2). Sonnet is invoked as a targeted sub-call for step 8 only — the orchestrator itself never requires deep reasoning.</td>
+        </tr>
+        <tr>
+          <td>Eligibility discrepancy resolution</td>
+          <td>Claude Haiku 4.5</td>
+          <td>Bounded date-comparison task — the ambiguity is between a termination date and a service date; reasoning requirement is narrow and structured; runs conditionally on ~5% of claims</td>
+        </tr>
+        <tr>
+          <td>Coding plausibility assessment</td>
+          <td>Claude Haiku 4.5</td>
+          <td>Rule-adjacent evaluation against structured code tables; runs on every claim so token cost is material; the question is constrained (does this ICD-10/CPT pair fit this provider type?)</td>
+        </tr>
+        <tr>
+          <td>Prior auth partial-match resolution</td>
+          <td>Claude Haiku 4.5</td>
+          <td>Tolerance judgment against a known unit or date variance; context is fully structured; Haiku handles the calculation-plus-context judgment reliably at significantly lower cost than Sonnet</td>
+        </tr>
+        <tr class="sonnet-row">
+          <td><strong>Clinical content routing classification</strong></td>
+          <td>Claude Sonnet 4.6</td>
+          <td>The only step requiring calibrated confidence scoring across three simultaneous signals (diagnosis code + procedure code + provider specialty). Must produce a numeric confidence it actually means, with genuinely differentiated scores near the clinical/administrative boundary. Haiku over-calibrates toward high confidence on borderline cases — the threshold gate becomes meaningless. Output: <code>{classification: "admin"|"clinical"|"uncertain", confidence: 0.0–1.0, reasoning: str}</code></td>
+        </tr>
+        <tr>
+          <td>Contract exception handling</td>
+          <td>Claude Haiku 4.5</td>
+          <td>Rate determination against structured contract carve-out data; narrow bounded judgment (does this clause apply? at what rate?); no open-ended reasoning required; runs conditionally on ~2% of claims</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="model-note">
+      <strong>Token cost implication:</strong> Claude Sonnet 4.6 is approximately 5&times; more expensive per token than Claude Haiku 4.5. The clinical content routing classification (Sonnet) runs on every claim; the four Haiku judgment steps run conditionally on the ~15% of claims that trigger them. Sonnet therefore drives approximately 78% of per-claim LLM token spend despite being a single call.
+    </div>
   </section>
 
   <!-- ── Section 4 ── -->

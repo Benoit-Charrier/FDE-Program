@@ -24,8 +24,8 @@
 | Path | What fires | What it demonstrates |
 |---|---|---|
 | **Happy path** | All tool calls pass; LLM routes as `admin` with confidence ≥ threshold | Full state machine runs; claim exits auto-approved |
-| **Failure-mode escalation** | LLM returns `confidence < threshold` on a borderline claim | HITL escalation fires with structured reason, confidence score, and claim context |
-| **Edge case** | Prior auth returns partial match (10 units authorised, 12 claimed) | Configurable tolerance rule resolves within-tolerance automatically; outside-tolerance escalates |
+| **Failure-mode escalation** | LLM returns `clinical` with `confidence < threshold` on a borderline claim | HITL escalation fires with structured reason, confidence score, and claim context |
+| **Edge case** | LLM returns `uncertain` — procedure code appears in both admin and clinical contexts, provider type non-specialist | Third classification state fires; escalation object includes `classification: "uncertain"` and the contradictory signals; proves the classifier handles ambiguity explicitly rather than forcing a binary |
 
 ---
 
@@ -40,8 +40,8 @@ Each of the 10 steps in the WS1 pipeline is assigned one of three statuses: **Im
 | Eligibility discrepancy resolution | Agent judgment (~5% of claims) | **Out of scope** | Dropped to keep LLM call count focused on the higher-signal clinical routing decision; escalation pattern is demonstrated via clinical routing instead |
 | Code validity and pairing check | Automated (rule / code) | **Stub** | Tool returns `valid` for all mock claims; invalid-code path is not a required demo path |
 | Coding plausibility assessment | Agent judgment (~15% of claims) | **Out of scope** | Would require a second LLM call with its own confidence threshold; cut to keep the prototype to one real LLM call — the clinical content classifier is the demo's core |
-| Prior authorisation lookup | Automated (API call) | **Stub** | Tool returns `present_exact`, `present_partial`, or `absent` based on mock claim fixture |
-| Prior authorisation partial-match resolution | Agent judgment (~8% of claims) | **Implement** | Configurable tolerance rule (default: ≤15% unit variance auto-resolves; >15% escalates to HITL); this is the edge case path; tolerance threshold must be a named config parameter, not hardcoded |
+| Prior authorisation lookup | Automated (API call) | **Stub** | Tool returns `present_exact` for all demo fixtures; partial-match handling is out of scope |
+| Prior authorisation partial-match resolution | Agent judgment (~8% of claims) | **Out of scope** | Dropped in favour of the `uncertain` classifier state as the edge case path — demonstrates a more interesting failure mode and keeps the prototype to a single real LLM call |
 | Clinical content routing classification | Agent judgment — LLM call | **Implement** | The single real LLM call in the prototype; returns `{classification: "admin"\|"clinical"\|"uncertain", confidence: 0.0–1.0, reasoning: str}`; confidence below configurable threshold triggers HITL escalation; this is the primary agentic flow and the failure-mode escalation path |
 | Payment calculation | Automated (rule / code) | **Stub** | Tool accepts procedure code and member ID, returns a fee schedule rate from a mock rate table; arithmetic applied in code |
 | Contract exception handling | Agent judgment (~2% of claims) | **Out of scope** | No contract exception data to mock meaningfully; standard rate stub covers all demo claims |
@@ -50,8 +50,7 @@ Each of the 10 steps in the WS1 pipeline is assigned one of three statuses: **Im
 **LLM calls in prototype:** 1 (clinical content routing classification). All other judgment steps are either stubbed or out of scope.
 
 **Configurable parameters that must be named (not hardcoded):**
-- `CLINICAL_CONTENT_CONFIDENCE_THRESHOLD` — default 0.70; below this, clinical routing escalates to HITL
-- `PRIOR_AUTH_UNIT_TOLERANCE_PCT` — default 0.15 (15%); above this, partial match escalates to HITL
+- `CLINICAL_CONTENT_CONFIDENCE_THRESHOLD` — default 0.70; below this, or when classifier returns `uncertain`, routing escalates to HITL
 
 ---
 
@@ -59,6 +58,7 @@ Each of the 10 steps in the WS1 pipeline is assigned one of three statuses: **Im
 
 - PDF/portal parsing — claim arrives as structured JSON only
 - Coding plausibility LLM call (MT-WS1-5) — stubbed as rule pass-through; one LLM call is enough to demonstrate the classifier pattern
+- Prior auth partial-match resolution — tolerance rule arithmetic is not the interesting design problem; the `uncertain` classifier state is
 - Fee schedule contract exceptions — stub returns standard rate; no exception path
 - Intake anomaly detection — no duplicate detection in scope
 - WS2 context assembly — blocked by unknown integration anyway
@@ -97,8 +97,8 @@ Three test functions must be written as skeletons *before* the agent code, so th
 | Test | Fixture | Key assertions |
 |------|---------|----------------|
 | `test_happy_path` | Admin claim, all stubs pass, classifier returns `admin` with confidence ≥ threshold | Output status is `approved`; `payment_amount` is present and non-zero; no escalation object in response |
-| `test_hitl_escalation` | Borderline claim, classifier returns confidence < threshold | Output status is `escalated`; `reason` field is non-empty and names the ambiguous signal; `confidence` score is present; full claim context is included in the escalation object |
-| `test_prior_auth_edge_case` | Partial match fixture — 12 units claimed, 10 authorised (20% over, above the 15% default tolerance) | Output status is `escalated`; escalation object includes `partial_auth_flag: true` and the unit variance; pipeline does not exit early before reaching the routing step |
+| `test_hitl_escalation` | Borderline claim, classifier returns `clinical` with confidence < threshold | Output status is `escalated`; `reason` field is non-empty and names the ambiguous signal; `confidence` score is present; full claim context is included in the escalation object |
+| `test_uncertain_classification` | Ambiguous claim — procedure code appears in both admin and clinical contexts, non-specialist provider type; classifier returns `uncertain` | Output status is `escalated`; `classification` field is `"uncertain"`; `confidence` score is present; escalation reason names the contradictory signals; pipeline does not exit early |
 
 A fourth fixture (`CLAIM-ELIG-01`, eligibility discrepancy) is included in the mock data set to confirm the eligibility stub is wired correctly. This fixture is not a required demo path and does not need a dedicated test function — a simple assertion that the stub returns `discrepancy` for that claim ID is sufficient.
 
@@ -114,7 +114,7 @@ The prototype has no client data. All claim inputs are structured JSON fixtures 
 |------------|---------|-----------------|
 | `CLAIM-ADMIN-01` | Happy path | Procedure: 99213 (office visit), Diagnosis: Z00.00 (routine exam), Provider type: PCP — all signals unambiguously administrative |
 | `CLAIM-CLINICAL-01` | HITL escalation — boundary claim | Procedure: 27447 (knee replacement), Diagnosis: M17.11 (osteoarthritis), Provider type: Orthopaedic surgeon — near the clinical/administrative boundary; classifier confidence expected in the 0.55–0.70 range |
-| `CLAIM-PRIORAUTH-01` | Prior auth edge case | Same procedure/diagnosis as `CLAIM-ADMIN-01`; prior auth record authorises 10 units, claim requests 12 (20% variance — above the 15% tolerance threshold) |
+| `CLAIM-UNCERTAIN-01` | Edge case — `uncertain` classification | Procedure: 97110 (therapeutic exercise — used for both routine physio billing and post-surgical rehab), Diagnosis: M54.5 (low back pain), Provider type: General practitioner — procedure code is legitimately administrative in a primary care context but clinical in a rehabilitation context; classifier expected to return `uncertain` with confidence ~0.45–0.55 |
 | `CLAIM-ELIG-01` | Eligibility stub wiring check | Any claim; eligibility stub returns `discrepancy` for this ID |
 
 Fixtures are static JSON files committed to the repository. No dynamic data generation is required. The mock fee schedule rate table (used by the payment calculation stub) covers the procedure codes present in the fixture set only — no general-purpose rate table needed.
@@ -131,13 +131,12 @@ Fixtures are static JSON files committed to the repository. No dynamic data gene
 
 Open two panes: the project root in one, `config.py` in the other.
 
-Point to the two configurable parameters:
+Point to the configurable parameter:
 ```
 CLINICAL_CONTENT_CONFIDENCE_THRESHOLD = 0.70
-PRIOR_AUTH_UNIT_TOLERANCE_PCT = 0.15
 ```
 
-Say: *"These two numbers are the design parameters from the architecture. Everything the agent decides routes through them. We'll see both fire."*
+Say: *"This number is the design parameter from the architecture. Every routing decision the agent makes flows through it — below 0.70, or when the model returns uncertain, the claim escalates. We'll see it fire two different ways."*
 
 ---
 
@@ -206,23 +205,26 @@ Point to: the escalation is not a terminal state — a reviewer received it, rea
 **Path 3 — Edge case — 60 seconds**
 
 ```bash
-python run_claim.py --fixture CLAIM-PRIORAUTH-01
+python run_claim.py --fixture CLAIM-UNCERTAIN-01
 ```
 
 Expected output:
 ```json
 {
-  "claim_id": "CLAIM-PRIORAUTH-01",
+  "claim_id": "CLAIM-UNCERTAIN-01",
   "status": "escalated",
-  "escalation_reason": "Prior authorisation partial match: 12 units claimed, 10 units authorised (20.0% variance). Exceeds configured tolerance of 15.0%. Requires manual review before payment determination.",
-  "partial_auth_flag": true,
-  "authorised_units": 10,
-  "claimed_units": 12,
-  "variance_pct": 0.20
+  "classification": "uncertain",
+  "confidence": 0.48,
+  "escalation_reason": "Clinical content classifier returned uncertain — contradictory signals: procedure 97110 (therapeutic exercise) is administrative in primary care context but clinical in rehabilitation context. Provider type (GP) does not resolve ambiguity. Cannot confirm administrative path.",
+  "claim_context": {
+    "procedure_code": "97110",
+    "diagnosis_code": "M54.5",
+    "provider_type": "general_practitioner"
+  }
 }
 ```
 
-Point to: `partial_auth_flag: true`, the variance calculation, and the fact that the tolerance threshold from `config.py` appears in the reason string. Say: *"This escalation fired before the LLM call — the tolerance rule is deterministic. The configurable threshold means Ops can tune this without touching code."*
+Point to: `classification: "uncertain"` (not a binary fail — the model explicitly named what it couldn't resolve), `confidence: 0.48`, and the `escalation_reason` identifying the contradictory signals. Say: *"This is not low confidence on a clear case — this is the model correctly identifying that the same procedure code means different things in different contexts. The agent doesn't guess. It flags the specific ambiguity and hands off."*
 
 ---
 
@@ -233,7 +235,7 @@ Show the test run:
 pytest tests/ -v
 ```
 
-All three tests pass. Say: *"Three paths, one real LLM call, two configurable parameters. The clinical path, WS2 context assembly, and queue management are in the architecture but not in this prototype — the spec is buildable, and this is the proof."*
+All three tests pass. Say: *"Three paths, one real LLM call, one configurable threshold. The clinical path, WS2 context assembly, and queue management are in the architecture but not in this prototype — the spec is buildable, and this is the proof."*
 
 ---
 

@@ -195,7 +195,7 @@
 
     <p><strong>What the solution does:</strong></p>
     <ul>
-      <li>Builds a clinical content classifier to separate the administrative path (est. 65% of claims) from the clinical path (est. 35%) — Dr. Webb's estimate, to be validated in mock calibration</li>
+      <li>Builds a clinical content classifier to separate the administrative path (est. 65% of claims) from the clinical path (est. 35%) — Dr. Webb's estimate, to be validated in mock calibration; the classifier produces three outputs: <em>administrative</em> (proceed to auto-adjudication), <em>clinical</em> (route to physician review queue), and <em>uncertain</em> (escalate to exception reviewer with structured reason)</li>
       <li>Deploys an administrative adjudication agent to handle the administrative path end-to-end — eligibility, coding, prior auth, and payment determination — without physician involvement</li>
       <li>Deploys a clinical pre-screening agent (Wave 2, conditional) to pre-fill the physician review packet, reducing physician review time from 35 min to ~3 min per claim</li>
       <li>Retains physician sign-off on every clinical determination — required by URAC/NCQA accreditation, preserved by design</li>
@@ -348,9 +348,9 @@
 
     <h4>WS1 — Administrative Adjudication</h4>
     <ul>
-      <li>Runs every normalised claim through the complete administrative adjudication pipeline: eligibility verification, coding validation for ICD-10/CPT code validity and clinical plausibility, prior authorisation check and partial-match resolution, and clinical content routing classification to determine whether the claim proceeds on the administrative path or routes to the physician review queue.</li>
+      <li>Runs every normalised claim through the complete administrative adjudication pipeline: eligibility verification, coding validation for ICD-10/CPT code validity and clinical plausibility, prior authorisation check and partial-match resolution, and clinical content routing classification to determine whether the claim is <em>administrative</em> (auto-adjudication), <em>clinical</em> (physician review queue), or <em>uncertain</em> (exception reviewer queue with structured escalation reason).</li>
       <li>For the approximately 65% of claims classified as administrative (stakeholder estimate, not a validated baseline), applies the fee schedule and produces a final payment determination without physician involvement — the agent either approves the claim with a payment amount, rejects it with specific failure codes, or escalates a flagged exception to HITL review.</li>
-      <li>Escalates to a human reviewer when the clinical content classifier's confidence falls below the configured threshold, when eligibility shows a discrepancy requiring contextual judgment, when prior authorisation has a partial match without a clear rule resolution, or when a coding plausibility flag cannot be resolved deterministically.</li>
+      <li>Escalates to a human reviewer when the clinical content classifier returns <em>uncertain</em>, when classifier confidence falls below the configured threshold on a nominally-classified claim, when eligibility shows a discrepancy requiring contextual judgment, when prior authorisation has a partial match without a clear rule resolution, or when a coding plausibility flag cannot be resolved deterministically.</li>
       <li>Escalated claims appear in an <strong>exception review queue</strong> — a lightweight reviewer interface that presents the agent's structured escalation reason, the specific signal that triggered the flag, and the full claim context. The reviewer sees a pre-populated entry and records their decision (approve, reject, or escalate to physician) without needing to re-gather claim documents. The queue is the handoff boundary between the agent and the retained exception-review staff.</li>
     </ul>
 
@@ -396,8 +396,9 @@ flowchart TD
     W1B_PAR([MT-WS1-6 Prior auth requirement check and lookup])
     W1B_BP3{BP-WS1-3 Prior auth partial match?}
     W1B_PMR([MT-WS1-7 Partial match resolution])
-    W1B_BP4{BP-WS1-4 Clinical content present?}
+    W1B_BP4{BP-WS1-4 Clinical content classification}
     W1B_WS2([Route to WS2 clinical review queue])
+    W1B_ESC([Route to exception reviewer queue with structured escalation])
     W1B_FEE([MT-WS1-9 Fee schedule calculation and payment approval])
     W1B_END([Administrative claim adjudicated])
     W1B_IN --> W1B_PAR
@@ -405,19 +406,21 @@ flowchart TD
     W1B_BP3 -->|Complete match or not required| W1B_BP4
     W1B_BP3 -->|Partial match| W1B_PMR
     W1B_PMR --> W1B_BP4
-    W1B_BP4 -->|Clinical content detected| W1B_WS2
-    W1B_BP4 -->|Administrative only| W1B_FEE
+    W1B_BP4 -->|clinical| W1B_WS2
+    W1B_BP4 -->|uncertain / confidence below threshold| W1B_ESC
+    W1B_BP4 -->|admin| W1B_FEE
     W1B_FEE --> W1B_END
     style W1B_IN fill:#f8f9fa,color:#000000,stroke:#6c757d
     style W1B_PAR fill:#d4edda,color:#155724,stroke:#155724
     style W1B_PMR fill:#fff3cd,color:#856404,stroke:#856404
     style W1B_WS2 fill:#fff3cd,color:#856404,stroke:#856404
+    style W1B_ESC fill:#fff3cd,color:#856404,stroke:#856404
     style W1B_FEE fill:#d4edda,color:#155724,stroke:#155724
     style W1B_END fill:#f8f9fa,color:#000000,stroke:#6c757d
     style W1B_BP3 fill:#cce5ff,color:#004085,stroke:#004085
     style W1B_BP4 fill:#f8d7da,color:#721c24,stroke:#721c24
       </div>
-      <p class="diagram-caption">WS1 Phase 2 — Prior authorisation check, clinical content routing classification (compliance gate, red), and payment determination</p>
+      <p class="diagram-caption">WS1 Phase 2 — Prior authorisation check, clinical content routing classification (compliance gate, red; three outputs: admin → payment, clinical → WS2, uncertain → exception queue), and payment determination</p>
     </div>
 
     <hr>

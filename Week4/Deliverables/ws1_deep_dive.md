@@ -30,20 +30,35 @@ The Wave 1 administrative adjudication agent takes a normalised claim record —
 
 ## Section 3: Step-by-Step — What Happens to a Claim
 
-| Step | How it is handled | Why this approach |
-|------|:---:|-------------------|
-| Format parsing and field extraction (EDI 837, PDF, portal) | **Automated (rule / code)** | EDI 837 is a structured specification; the correct fields are enumerated — an LLM call adds latency and cost with zero quality benefit |
-| Member eligibility lookup | **Automated (API call)** | The eligibility system returns a binary result (eligible / not eligible on service date); no reasoning required |
-| Eligibility discrepancy resolution | **Agent judgment** | When the eligibility check returns an ambiguous result (e.g., termination date near service date), the agent distinguishes data-entry lag from a genuine coverage gap using contextual pattern recognition — a task no formal rule covers (~5% of claims) |
-| Code validity and pairing check | **Automated (rule / code)** | ICD-10/CPT crosswalk rules are a structured lookup against a reference table; the standard path is a code-validity query, not LLM inference |
-| Coding plausibility assessment | **Agent judgment** | The agent evaluates whether the code combination is clinically plausible given provider type and diagnosis — a judgment that varies by context and is not codifiable as a rule (~15% of claims trigger a flag) |
-| Prior authorisation lookup | **Automated (API call)** | The prior auth system returns a record or its absence; deterministic binary check |
-| Prior authorisation partial-match resolution | **Agent judgment** | When the auth on file differs from the claim (unit variance, code variant, date mismatch), the agent assesses whether the difference falls within a defensible tolerance — no documented threshold exists (~8% of claims) |
-| Clinical content routing classification | **Agent judgment → mandatory physician review** | The agent classifies each claim as administrative or clinical using multi-factor pattern recognition across diagnosis codes, procedure codes, and provider specialty; any claim classified as clinical is sent to the physician queue without exception — this is a URAC/NCQA compliance requirement, not a design choice (~10% of claims escalated for confidence review before routing) |
-| Payment calculation | **Automated (rule / code)** | Fee schedule application is arithmetic against a rate table; the correct answer is computed by formula — an LLM call produces no quality improvement |
-| Contract exception handling | **Agent judgment** | When a fee schedule exception flag is raised, the agent reviews the contract carve-out context and produces a rate recommendation for human confirmation (~2% of claims) |
+| Step | How it is handled | Mechanism | Why this approach |
+|------|:---:|:---:|-------------------|
+| Format parsing and field extraction (EDI 837, PDF, portal) | **Automated (rule / code)** | Rule-based parser | EDI 837 is a structured specification; the correct fields are enumerated — an LLM call adds latency and cost with zero quality benefit |
+| Member eligibility lookup | **Automated (API call)** | Structured API read | The eligibility system returns a binary result (eligible / not eligible on service date); no reasoning required |
+| Eligibility discrepancy resolution | **Agent judgment** | LLM contextual inference (Haiku 4.5) | When the eligibility check returns an ambiguous result (e.g., termination date near service date), the agent distinguishes data-entry lag from a genuine coverage gap using contextual pattern recognition — a task no formal rule covers (~5% of claims) |
+| Code validity and pairing check | **Automated (rule / code)** | Structured table lookup | ICD-10/CPT crosswalk rules are a structured lookup against a reference table; the standard path is a code-validity query, not LLM inference |
+| Coding plausibility assessment | **Agent judgment** | LLM semantic classification (Haiku 4.5) | The agent evaluates whether the code combination is clinically plausible given provider type and diagnosis — a judgment that varies by context and is not codifiable as a rule (~15% of claims trigger a flag) |
+| Prior authorisation lookup | **Automated (API call)** | Structured API read | The prior auth system returns a record or its absence; deterministic binary check |
+| Prior authorisation partial-match resolution | **Agent judgment** | Arithmetic + LLM judgment (Haiku 4.5) | When the auth on file differs from the claim (unit variance, code variant, date mismatch), the agent computes the variance and assesses whether it falls within a defensible tolerance — no documented threshold exists (~8% of claims) |
+| Clinical content routing classification | **Agent judgment → mandatory physician review** | LLM multi-signal classification (Sonnet 4.6) | The agent classifies each claim as administrative, clinical, or uncertain using multi-factor pattern recognition across diagnosis codes, procedure codes, and provider specialty; any claim classified as clinical is sent to the physician queue without exception — this is a URAC/NCQA compliance requirement, not a design choice (~10% of claims escalated for confidence review before routing) |
+| Payment calculation | **Automated (rule / code)** | Rate table lookup + arithmetic | Fee schedule application is arithmetic against a rate table; the correct answer is computed by formula — an LLM call produces no quality improvement |
+| Contract exception handling | **Agent judgment** | LLM document reasoning (Haiku 4.5) | When a fee schedule exception flag is raised, the agent reviews the contract carve-out context and produces a rate recommendation for human confirmation (~2% of claims) |
 
 > **The five automated steps (format parsing, eligibility lookup, code validity check, prior auth lookup, payment calculation) consume no LLM tokens.** They run as in-process code or external API calls. This is the correct architecture: an LLM call on a binary eligibility lookup adds cost and latency for zero quality benefit. The five judgment steps (eligibility discrepancy resolution, coding plausibility, prior auth partial-match, clinical routing, contract exception) invoke the LLM only when no deterministic rule resolves the decision. Average LLM calls per claim: ~2.15 (routing classification and coding plausibility run on every claim; the other three run conditionally on ~15% of claims combined).
+
+### Model Selection for Each Judgment Step
+
+The WS1 pipeline runs as a single orchestrator agent (Haiku 4.5) that sequences all 10 steps, invokes tools, and routes on results. Sonnet 4.6 is invoked as a targeted sub-call for clinical content routing only — every other LLM call, including the orchestrator itself, runs on Haiku.
+
+| Layer / step | Model | Rationale |
+|---|---|---|
+| **WS1 orchestrator — pipeline coordination** | **Claude Haiku 4.5** | Sequences all 10 steps, invokes API and rule-based tools, routes on results, maintains claim state across the pipeline, emits final disposition (approved / rejected / escalated / routed to WS2). Sonnet is invoked as a targeted sub-call for step 8 only — the orchestrator itself never requires deep reasoning. |
+| Eligibility discrepancy resolution | **Claude Haiku 4.5** | Bounded date-comparison task — the ambiguity is between a termination date and a service date; reasoning requirement is narrow and structured; runs conditionally on ~5% of claims |
+| Coding plausibility assessment | **Claude Haiku 4.5** | Rule-adjacent evaluation against structured code tables; runs on every claim so token cost is material; the question is constrained (does this ICD-10/CPT pair fit this provider type?) |
+| Prior auth partial-match resolution | **Claude Haiku 4.5** | Tolerance judgment against a known unit or date variance; context is fully structured; Haiku handles the calculation-plus-context judgment reliably at significantly lower cost than Sonnet |
+| **Clinical content routing classification** | **Claude Sonnet 4.6** | The only step requiring calibrated confidence scoring across three simultaneous signals (diagnosis code + procedure code + provider specialty). Must produce a numeric confidence it actually means, with genuinely differentiated scores near the clinical/administrative boundary. Haiku over-calibrates toward high confidence on borderline cases — the threshold gate becomes meaningless. Sonnet's deeper reasoning is required for the threshold to function as a real control point. Output: `{classification: "admin"|"clinical"|"uncertain", confidence: 0.0–1.0, reasoning: str}` |
+| Contract exception handling | **Claude Haiku 4.5** | Rate determination against structured contract carve-out data; narrow bounded judgment (does this clause apply? at what rate?); no open-ended reasoning required; runs conditionally on ~2% of claims |
+
+**Token cost implication:** Claude Sonnet 4.6 is approximately 5× more expensive per token than Claude Haiku 4.5. The clinical content routing classification (Sonnet) runs on every claim; the four Haiku judgment steps run conditionally on the ~15% of claims that trigger them. Sonnet therefore drives approximately 78% of per-claim LLM token spend despite being a single call.
 
 ---
 
