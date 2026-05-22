@@ -184,6 +184,8 @@ Three architecture options are evaluated. The key variable is HITL rate — a be
 | Claude Sonnet 4.6 | $3.00 | $15.00 | $0.30 |
 | Claude Opus 4.7 | $15.00 | $75.00 | $1.50 |
 
+*Source: Anthropic pricing page (anthropic.com/pricing), May 2026. Cross-checked against Artificial Analysis model pricing index (artificialanalysis.ai).*
+
 **Option A: Haiku-only (cost-minimised)**
 
 ```
@@ -268,6 +270,27 @@ At target volume (3,360,000 cases/year):
 - Haiku-only vs. Sonnet-only: $0.301/case × 3,360,000 = **$1,011,360/year additional saving** from upgrading to Sonnet-only
 
 **Recommended architecture: Option B (Haiku+Sonnet blended).** The blended approach captures 70% of the Sonnet-only HITL rate benefit at 40% of the token cost premium. It is more robust to model capability uncertainty than either extreme — if Haiku proves sufficient for ranking, cost decreases; if Sonnet proves insufficient, Opus can be introduced for edge cases without redesigning the pipeline.
+
+### 4d. Cross-provider alternatives
+
+**Decision criterion:** Because HITL cost accounts for 97–99% of per-case agent cost, the provider selection criterion is model quality on Step 4 (profile note classification and shortlist ranking) — the only step where model capability directly affects HITL rate. Token price differences across providers are economically immaterial at this volume.
+
+| Provider / model | Nearest equivalent | Input / Output per 1M | Assessment |
+|---|---|:-:|---|
+| **Anthropic Sonnet 4.6** | — (selected) | $3.00 / $15.00 | Strong NLP classification on unstructured clinical and operational text; prompt caching available for system prompt reuse |
+| **OpenAI GPT-4o** | Comparable capability tier | ~$2.50 / $10.00 | Similar classification quality; lower output pricing. Would not materially change economics — HITL rate, not token price, drives the decision |
+| **OpenAI GPT-4o mini** | Near-Haiku tier | ~$0.15 / $0.60 | Cost-minimised; acceptable for deterministic steps but lower quality on Step 4 NLP vs. Sonnet-tier models — expected to increase HITL rate, reducing savings |
+| **Google Gemini 1.5 Flash** | Near-Haiku tier | ~$0.075 / $0.30 | Lowest token cost option; same Step 4 quality concern as GPT-4o mini |
+
+**Rationale for Anthropic selection:**
+
+1. **Single-vendor blended architecture.** The recommended Option B uses Haiku for Steps 1–3, 5–6 and Sonnet for Step 4. Both models exist within the Anthropic family, so the blended routing requires no multi-vendor API management. GPT-4o mini + GPT-4o is the nearest equivalent — comparable economics, but adds OpenAI API integration alongside Anthropic.
+
+2. **Prompt caching pricing advantage.** The 1,500-token system prompt is re-read at 960 calls/day (current volume) and up to 13,440 calls/day at target volume. Anthropic's prompt caching read rate ($0.08/1M for Haiku, $0.30/1M for Sonnet) is well below standard input pricing, providing meaningful savings at high daily call rates. Not all providers offer equivalent caching architecture.
+
+3. **Token price trajectory does not change the recommendation.** If GPT-4o reaches price parity or undercuts Sonnet 4.6, the provider switch delivers ≤$20,000/year in token savings at target volume. This is not a decision-relevant amount relative to the $3.8M annual HITL saving — vendor lock-in, migration cost, and integration risk are all higher than the achievable token saving from switching.
+
+**Conclusion:** The provider choice is not load-bearing in this economics model. If MedFlex has an existing OpenAI relationship, migrating Steps 1–3, 5–6 to GPT-4o mini and Step 4 to GPT-4o produces similar economics. Anthropic is recommended because the single-vendor blended architecture reduces integration complexity and the Haiku → Sonnet → Opus tier progression gives a clear upgrade path if HITL rate targets are not met in calibration.
 
 ---
 

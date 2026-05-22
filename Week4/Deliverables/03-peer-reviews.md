@@ -413,7 +413,7 @@ The `EXPIRED` status appears in the status enum and has an exit transition defin
 
 **If built as-is:** Builder infers a GET to u_hospital filtered by `sys_id = location_id`, reusing the §7.1 ServiceNow read pattern. The fallback for null lat/lng is invented (likely 0.5 by analogy with geocoding failure fallback). The spec's stated proximity score neutralisation on geocoding failure (§7.4) does not cover the case where the hospital record exists but u_lat/u_lng is null — a builder can't tell if the neutral score should trigger or if it's a data error.
 
-**Fix:** Add §7.6 *"ServiceNow — Hospital Location Read"*: `GET /api/now/table/u_hospital?sysparm_query=sys_id={location_id}&sysparm_fields=u_lat,u_lng`; success: extract lat/lng; error handling: if HTTP 4xx or lat/lng is null → `proximity_score = 0.5` for all candidates; log warning `"hospital_geocode_unavailable for location_id={id}"`; same retry and auth pattern as §7.1. If null lat/lng persists for > 10 requests, fire ops alert.
+**Fix:** Add §7.7 *"ServiceNow — Hospital Location Read"*: `GET /api/now/table/u_hospital?sysparm_query=sys_id={location_id}&sysparm_fields=u_lat,u_lng`; success: extract lat/lng; error handling: if HTTP 4xx or lat/lng is null → `proximity_score = 0.5` for all candidates; log warning `"hospital_geocode_unavailable for location_id={id}"`; same retry and auth pattern as §7.1. If null lat/lng persists for > 10 requests, fire ops alert.
 
 ---
 
@@ -461,7 +461,7 @@ The `EXPIRED` status appears in the status enum and has an exit transition defin
 | B4 | EXPIRED status has no entry transition → dead code, abandoned shortlists unrecoverable | Low — add two state machine rows + config params |
 | C1 | DUPLICATE_IN_FLIGHT 4-hour window not in config → hardcoded, non-tunable | Trivial — add config parameter |
 | C2 | APPROVED action doesn't validate candidates[0] → silent A19 label corruption | Trivial — add one HTTP 400 validation case to §7.5 |
-| C3 | Hospital lat/lng retrieval has no integration contract → builder invents fallback logic | Low — add §7.6 ServiceNow hospital location read |
+| C3 | Hospital lat/lng retrieval has no integration contract → builder invents fallback logic | Low — add §7.7 ServiceNow hospital location read |
 
 ---
 

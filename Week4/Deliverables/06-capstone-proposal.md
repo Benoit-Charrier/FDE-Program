@@ -12,16 +12,16 @@
 |---------|---------|------|
 | 1 | Problem framing | 30 sec |
 | 2 | Success metrics | 20 sec |
-| 3 | Solution architecture | 40 sec |
+| 3 | Agentic Solution | 40 sec |
 | 4 | Volume × Value analysis | 20 sec |
 | 5 | Economics | 30 sec |
 | 6 | Delivery waves | 30 sec |
-| 7 | WS1 — how the agent works | 60 sec |
-| 8 | The prototype | 40 sec |
-| 9 | Why it's hard + what we expect to learn | 30 sec |
+| 7 | Solution assumptions, dependencies & risks | 20 sec |
+| 8 | WS1 — how the agent works | 60 sec |
+| 9 | The prototype | 40 sec |
+| 10 | Prototype assumptions, dependencies & risks | 20 sec |
+| 11 | Why it's hard + what we expect to learn | 30 sec |
 | **Total** | | **~5 min** |
-
-*Coach challenge response: pre-loaded at the end — ready to deliver if challenged.*
 
 ---
 
@@ -72,7 +72,7 @@ The design question is settled. The build question is whether the clinical conte
 
 ---
 
-## 3. Solution Architecture
+## 3. Agentic Solution
 
 Four agents, three waves.
 
@@ -142,7 +142,35 @@ Wave 1 is financially self-sufficient — generates $732K/year standing alone. T
 
 ---
 
-## 7. WS1 — How the Agent Works
+## 7. Solution Assumptions, Dependencies & Risks
+
+**Key assumptions:**
+
+| # | Assumption | If wrong |
+|---|-----------|---------|
+| A1 | 65%/35% admin/clinical split is Dr. Webb's estimate — not a validated baseline | Higher clinical share (e.g. 50%) grows the physician queue, changes headcount reduction targets, and weakens the economic model |
+| A2 | Eligibility, prior auth, fee schedule, and clinical notes systems are accessible as programmatic APIs — no system names confirmed | Any Wave 1 integration requiring batch file transfer increases build scope; clinical notes API infeasibility is a Wave 2 hard stop |
+| A3 | "Clinical content" has no formal definition — must be produced as a design output with CMO sign-off | Without it, the classifier cannot be built or certified; definition workshop is the Wave 1 critical-path item |
+
+**Key dependencies:**
+
+| # | Dependency | Owner | Deadline |
+|---|-----------|-------|---------|
+| D1 | Clinical content definition — CMO sign-off required before classifier build begins | Dr. Webb + FDE | Week 6 |
+| D2 | API access confirmation for eligibility, prior auth, and fee schedule | James Liu / IT | Week 2 |
+| D3 | Clinical notes API confirmation — Wave 2 hard prerequisite; Wave 2 build cannot begin without it | James Liu / IT | Week 8 |
+
+**Key risks:**
+
+| # | Risk | Likelihood | Mitigation |
+|---|-----|:----------:|-----------|
+| R1 | Clinical share materially higher than 35% — physician queue larger than modelled | Medium | Validate split against 90 days of historical claims data in design phase before finalising headcount model |
+| R2 | Wave 1 build cost $420K exceeds committed $400K budget | Low | Defer analytics dashboard and provider notice templating; scope holds at $400K; payback 6.6 months |
+| R3 | Clinical notes API not accessible as programmatic integration | High (unconfirmed) | Wave 1 financially self-sufficient without it; Wave 2 not committed until API access confirmed |
+
+---
+
+## 8. WS1 — How the Agent Works
 
 10-step pipeline. Orchestrator: **Haiku 4.5** (pipeline coordination, state management, tool sequencing). Sonnet 4.6 invoked as a targeted sub-call for clinical routing only.
 
@@ -167,7 +195,7 @@ Sonnet drives ~78% of per-claim LLM token cost despite being a single call, beca
 
 ---
 
-## 8. The Prototype
+## 9. The Prototype
 
 **Features built:**
 - Haiku 4.5 orchestrator sequencing all pipeline steps and maintaining claim state end-to-end
@@ -209,7 +237,35 @@ Three pytest tests written before the agent code. Demo runs `python run_claim.py
 
 ---
 
-## 9. Why It's Hard / What We Expect to Learn
+## 10. Prototype Assumptions, Dependencies & Risks
+
+**Key assumptions:**
+
+| # | Assumption | If wrong |
+|---|-----------|---------|
+| A1 | Sonnet 4.6 produces calibrated, differentiated confidence scores on healthcare coding patterns | If borderline fixtures return high confidence regardless of signal ambiguity, the threshold gate is meaningless — system prompt requires structural redesign |
+| A2 | System prompt constraints alone are sufficient to prevent over-confident outputs on near-boundary claims | May require iterative prompt engineering; the calibration instruction is a hypothesis, not a guarantee |
+| A3 | Three mock fixtures are representative enough of real borderline cases to pressure-test the classifier | If all fixtures are too easy, the prototype passes its own tests but doesn't prove production readiness |
+
+**Key dependencies:**
+
+| # | Dependency | Required before |
+|---|-----------|----------------|
+| D1 | Anthropic API access with Sonnet 4.6 and Haiku 4.5 | Any build work begins |
+| D2 | Four JSON fixtures committed to the repository | Agent code is written — fixtures are the definition of done |
+| D3 | Three pytest test skeletons written | Agent code is written — tests define the acceptance criteria for each path |
+
+**Key risks:**
+
+| # | Risk | Likelihood | Mitigation |
+|---|-----|:----------:|-----------|
+| R1 | Classifier returns high confidence for all claims including borderline cases — threshold gate becomes meaningless | Medium | System prompt must explicitly constrain confidence bands; test against at least two fixtures near the boundary before demo |
+| R2 | `uncertain` state doesn't fire reliably on CLAIM-UNCERTAIN-01 — model forces a binary classification despite contradictory signals | Medium | Prompt must name the `uncertain` state explicitly and define the contradictory-signal condition; iterate if needed |
+| R3 | Escalation object schema mismatch between agent output and reviewer CLI — HITL loop breaks at the integration point | Low | Define and document the escalation object schema before writing either the agent or the CLI; validate schema contract in a dedicated test |
+
+---
+
+## 11. Why It's Hard / What We Expect to Learn
 
 **The difficulty:** Getting the Sonnet classifier to produce *calibrated* confidence scores that genuinely differentiate near-boundary claims. If it returns `0.90` for everything, the threshold gate is meaningless. The system prompt must instruct the model to reserve high confidence for claims where all three signals agree — and return `0.55–0.70` when any signal is ambiguous or contradictory. Mock claims must sit near the boundary by design; if borderline fixtures return high confidence, the calibration instruction failed.
 
