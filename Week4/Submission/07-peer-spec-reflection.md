@@ -904,6 +904,25 @@ However, the build loop added *diagnostic specificity* the peer review could not
 
 ---
 
+### False positives in the original peer review — peer review findings the build loop did not reproduce
+
+**Zero false positives.** Every peer review finding was confirmed as real; none was shown by the build loop to be a misread or overclaim.
+
+| Peer review finding | Build loop verdict | Basis |
+|---------------------|--------------------|-------|
+| B1 — Duplicate detection omits specialty | Confirmed (S-1) | Build implemented the spec exactly; the data-loss path is reproducible |
+| B2 — MULTI_CLARIFICATION_CONFLICT has no state machine row | Confirmed (S-2) | Build could not implement step 5 without inventing a CRM status — hard blocker |
+| B3 — EMAIL_POLL_INTERVAL_SECONDS absent from config table | Confirmed (S-3) | Build had to choose hardcode-or-inject; ops lever is inoperable without the table entry |
+| B4 — MEDFLEX_OPERATING_STATES undefined | Confirmed (S-4) | Build cannot write the validation function without the list — implementation blocker |
+| B5 — Worked example dates in past | Confirmed (S-5) | Build produced a concrete test failure trace on Example 1's happy path |
+| C2 — Specialty vocabulary cache TTL undefined | Confirmed (S-6) | Build hardcoded 24h TTL; ops has no refresh lever without the config parameter |
+| C1 — No clarification round cap | Not surfaced by build loop — but not a false positive | The spec explicitly notes "no cap in v1." A correct implementation follows it and produces no build failure. The risk is real but accepted by the spec author; it only surfaces when a hospital games the loop or responds slowly. Not a false positive: the peer review correctly identified a design risk the spec author consciously accepted without naming the operational consequence. |
+| C3 — Portal → WS1 trigger path undefined | Not surfaced by build loop — but not a false positive | Portal intake is explicitly outside WS4's scope. A builder implementing WS4 never touches it and produces no error. But the cross-system gap (portal creates records without setting INTAKE_COMPLETE → WS1 never processes portal shifts) is real when read against the Shared Glossary. The build loop's scope boundary made it invisible; the peer review's cross-system read made it visible. Not a false positive: the gap exists, just outside any single-component build's reach. |
+
+The absence of false positives is itself a finding. The peer review was calibrated: it raised eight issues, all of which were either confirmed by implementation or confirmed as real by the spec itself. No finding was an overclaim. This suggests the peer review applied the right reading discipline — checking claims against specific spec text rather than pattern-matching against generic anti-patterns.
+
+---
+
 ### One-paragraph honest assessment
 
 The peer review is better for catching issues most likely to cause silent wrong behaviour in production. C1 (unbounded clarification loop) and C3 (portal WS1 trigger) are both production failures that produce no build errors, no test failures, and no implementation blockers — they only surface when real requests go unprocessed and a hospital reports an unfilled shift. The build loop is structurally incapable of catching these: C1 is an explicit design choice the spec acknowledges, so a correct implementation follows it; C3 is outside the build scope entirely. For the five blockers (B1–B5) and one concern (C2), both methods converge — but the peer review would have blocked the build before a single line of code was written, while the build loop surfaced the same issues only after the builder hit them in implementation. The build loop's advantage is specificity: it converts abstract peer review findings into concrete failure traces (tests that fail, functions that can't be written, params that have no values), which makes them easier to fix precisely. A complete spec-validation process uses both in sequence: peer review first as a pre-build gate (catches cross-system and design-choice risks that require no code), then a build loop as a confirmation step (produces concrete failure evidence and catches any gaps the reviewer missed by not simulating implementation). In this fixture, the peer review should have blocked the build — and would have, if the five blockers had been resolved before the build loop ran.

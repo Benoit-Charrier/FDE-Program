@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Greenfield HS — Capstone Defense</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0f172a;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;height:100vh;overflow:hidden;display:flex;flex-direction:column}
+
+/* ── Deck ── */
+#deck{flex:1;position:relative;overflow:hidden}
+.slide{display:none;position:absolute;inset:0;flex-direction:column;background:#fff;overflow:hidden}
+.slide.active{display:flex}
+
+/* ── Slide header ── */
+.sh{background:#1e3a5f;color:#fff;padding:14px 40px;flex-shrink:0;display:flex;align-items:baseline;gap:16px}
+.sh-num{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;opacity:.55;white-space:nowrap}
+.sh h2{font-size:20px;font-weight:600;line-height:1.2}
+.sh .sub{font-size:13px;font-weight:400;opacity:.7;margin-left:6px}
+
+/* ── Slide body ── */
+.sb{flex:1;padding:20px 40px 16px;overflow-y:auto;font-size:13.5px;line-height:1.55;color:#1a1a1a}
+.sb p{margin-bottom:10px}
+.sb ul{margin:6px 0 10px 18px}
+.sb li{margin-bottom:4px}
+.sb h3{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#1e3a5f;margin:14px 0 6px}
+.sb h3:first-child{margin-top:0}
+
+/* ── Title slide ── */
+.slide.title .sh{display:none}
+.slide.title .sb{background:#1e3a5f;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:0}
+.slide.title .eyebrow{font-size:11px;letter-spacing:.15em;text-transform:uppercase;opacity:.6;margin-bottom:14px}
+.slide.title .main-title{font-size:34px;font-weight:700;line-height:1.15;margin-bottom:10px}
+.slide.title .main-title span{display:block;font-size:20px;font-weight:400;opacity:.8;margin-top:6px}
+.slide.title .divider{width:60px;height:3px;background:#4ea8de;margin:20px auto}
+.slide.title .meta{font-size:13px;opacity:.65}
+
+/* ── Tables ── */
+table{width:100%;border-collapse:collapse;font-size:12.5px;margin:8px 0}
+th{background:#1e3a5f;color:#fff;padding:7px 11px;text-align:left;font-weight:600;font-size:11.5px;letter-spacing:.03em}
+td{padding:6px 11px;border-bottom:1px solid #e9ecef;vertical-align:top}
+tr:last-child td{border-bottom:none}
+tr:nth-child(even) td{background:#f8f9fa}
+.tc{text-align:center}
+
+/* ── Metric cards ── */
+.metric-row{display:flex;gap:12px;margin:10px 0}
+.metric-card{flex:1;border:1px solid #e2e8f0;border-radius:6px;padding:12px 14px;background:#f8fafc}
+.metric-card .val{font-size:24px;font-weight:700;color:#1e3a5f;line-height:1}
+.metric-card .lbl{font-size:11px;color:#64748b;margin-top:4px}
+.metric-card .arr{font-size:12px;color:#0d6efd;margin-top:4px;font-weight:600}
+
+/* ── Tags / badges ── */
+.tag{display:inline-block;padding:1px 8px;border-radius:10px;font-size:11px;font-weight:600;white-space:nowrap}
+.tag-green{background:#d4edda;color:#155724}
+.tag-amber{background:#fff3cd;color:#856404}
+.tag-red{background:#f8d7da;color:#721c24}
+.tag-blue{background:#cce5ff;color:#004085}
+.tag-gray{background:#e9ecef;color:#495057}
+.tag-impl{background:#d4edda;color:#155724}
+.tag-stub{background:#fff3cd;color:#856404}
+.tag-out{background:#e9ecef;color:#495057}
+
+/* ── Callout ── */
+.callout{border-left:3px solid #1e3a5f;background:#f0f4f8;padding:10px 14px;border-radius:0 4px 4px 0;font-size:13px;margin:10px 0}
+.callout.red{border-left-color:#dc3545;background:#fef2f2}
+.callout.green{border-left-color:#198754;background:#f0fdf4}
+.callout.amber{border-left-color:#ffc107;background:#fffbeb}
+
+/* ── Two-col ── */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.three-col{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+
+/* ── Agent cards ── */
+.agent-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:8px 0}
+.agent-card{border:1px solid #e2e8f0;border-radius:6px;padding:12px 14px}
+.agent-card .agent-name{font-weight:700;font-size:13px;color:#1e3a5f;margin-bottom:4px}
+.agent-card .agent-wave{font-size:10px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;margin-bottom:6px}
+.agent-card p{font-size:12px;color:#374151}
+
+/* ── Section label in body ── */
+.section-pair{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+
+/* ── Navigation bar ── */
+#nav{background:#0f172a;padding:10px 40px;display:flex;align-items:center;gap:16px;flex-shrink:0}
+#nav button{background:#1e3a5f;color:#fff;border:none;padding:6px 18px;border-radius:4px;font-size:13px;cursor:pointer;transition:background .15s}
+#nav button:hover{background:#2d5282}
+#nav button:disabled{opacity:.35;cursor:not-allowed}
+#counter{color:#94a3b8;font-size:12px;min-width:60px;text-align:center}
+#progress{flex:1;height:3px;background:#1e3a5f;border-radius:2px;overflow:hidden}
+#progress-bar{height:100%;background:#4ea8de;transition:width .2s ease}
+
+/* ── Quadrant chart ── */
+.quad-wrap{background:#fff;border:1px solid #e2e8f0;border-radius:6px;padding:12px 16px;flex:1;display:flex;flex-direction:column}
+.quad-title{text-align:center;font-size:12px;font-weight:700;color:#1e3a5f;margin-bottom:8px}
+.quad-outer{display:flex;align-items:center;gap:8px;flex:1}
+.quad-y-label{font-size:10px;color:#64748b;writing-mode:vertical-lr;transform:rotate(180deg);white-space:nowrap;flex-shrink:0}
+.quad-inner{flex:1;display:flex;flex-direction:column;height:100%}
+.quad-area{position:relative;flex:1;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;border:1px solid #cbd5e1;border-radius:4px;overflow:hidden}
+.quad{display:flex;align-items:flex-end;padding:6px 8px;border:1px solid #e2e8f0}
+.quad span{font-size:10px;font-weight:600;color:#94a3b8;line-height:1.4}
+.q2{background:#f0f9ff}.q1{background:#ecfdf5}.q3{background:#fafafa}.q4{background:#fffbeb}
+.quad-x-label{text-align:center;font-size:10px;color:#64748b;margin-top:4px;flex-shrink:0}
+.qpt{position:absolute;transform:translate(-50%,-50%);padding:3px 9px;border-radius:4px;font-size:11px;font-weight:700;white-space:nowrap;z-index:10;box-shadow:0 2px 5px rgba(0,0,0,.18)}
+.qpt-ws1{background:#0d9488;color:#fff}.qpt-ws2{background:#1e3a5f;color:#fff}
+.qpt-int{background:#0369a1;color:#fff}.qpt-app{background:#6b7280;color:#fff}
+
+/* ── Highlight row ── */
+tr.highlight td{background:#dbeafe !important;font-weight:600}
+tr.critical td{background:#fef2f2 !important;font-weight:600}
+</style>
+</head>
+<body>
+<div id="deck">
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 1 — TITLE
+════════════════════════════════════════════ -->
+<div class="slide title active" id="s1">
+  <div class="sb">
+    <div class="eyebrow">FDE Capstone Defense — Option A</div>
+    <div class="main-title">Greenfield Health Systems
+      <span>Medical Claims Adjudication Transformation</span>
+    </div>
+    <div class="divider"></div>
+    <div class="meta">Benoit Charrier, FDE &nbsp;·&nbsp; 2026-05-22 &nbsp;·&nbsp; ~5 min</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 2 — PROBLEM FRAMING
+════════════════════════════════════════════ -->
+<div class="slide" id="s2">
+  <div class="sh"><span class="sh-num">1 / 11</span><h2>Problem Framing <span class="sub">30 sec</span></h2></div>
+  <div class="sb">
+    <div class="metric-row">
+      <div class="metric-card">
+        <div class="val">8–9 days</div>
+        <div class="lbl">Avg cycle time</div>
+        <div class="arr">▲ SLA threshold: 7 days — penalties live</div>
+      </div>
+      <div class="metric-card">
+        <div class="val">22%</div>
+        <div class="lbl">Auto-adjudication rate</div>
+        <div class="arr">Industry benchmark: 85%</div>
+      </div>
+      <div class="metric-card">
+        <div class="val">41%</div>
+        <div class="lbl">Denial appeal overturn rate</div>
+        <div class="arr">Systematic errors, not edge cases</div>
+      </div>
+      <div class="metric-card">
+        <div class="val">35 min</div>
+        <div class="lbl">Avg processing time per claim</div>
+        <div class="arr">Most spent on rule-governed lookups</div>
+      </div>
+    </div>
+    <h3>Core problem — humans are doing deterministic work</h3>
+    <p>Every claim enters the same 35-minute full-manual workflow regardless of complexity. Eligibility checks, coding validation, prior auth completeness — rule-governed lookups with fixed correct answers — are treated identically to genuine clinical judgment. Result: deterministic work done at physician cost; clinical review crowded out; cycle time and error rate both suffer.</p>
+    <div class="callout green">
+      <strong>The negotiated resolution (already locked):</strong> 65% of claims → administrative agent path, no physician required. 35% with genuine clinical content → physician HITL, agent pre-screening cuts review from 35 min to ~3 min.
+      The design question is settled. The build question is whether the clinical content classifier reliably makes that split.
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 3 — STAKEHOLDER ALIGNMENT
+════════════════════════════════════════════ -->
+<div class="slide" id="s3">
+  <div class="sh"><span class="sh-num">1b / 11</span><h2>Stakeholder Alignment <span class="sub">already resolved</span></h2></div>
+  <div class="sb">
+    <table>
+      <tr><th>Stakeholder</th><th>Requirement</th><th class="tc">Non-negotiable?</th></tr>
+      <tr><td><strong>Sarah Chen</strong> — CFO</td><td>40% headcount reduction &nbsp;·&nbsp; $400K budget</td><td class="tc"><span class="tag tag-red">Yes</span></td></tr>
+      <tr><td><strong>Dr. Marcus Webb</strong> — CMO</td><td>Physician sign-off on every clinical claim — URAC/NCQA accreditation requirement</td><td class="tc"><span class="tag tag-red">Yes</span></td></tr>
+      <tr><td><strong>James Liu</strong> — VP Ops</td><td>Cycle time below 7-day SLA threshold — penalties are live</td><td class="tc"><span class="tag tag-red">Yes</span></td></tr>
+    </table>
+    <div style="margin-top:16px" class="two-col">
+      <div>
+        <h3>Administrative path (65%)</h3>
+        <div class="callout green">Agent adjudicates end-to-end. No physician required. Eligible for full auto-approval on standard path.</div>
+      </div>
+      <div>
+        <h3>Clinical path (35%)</h3>
+        <div class="callout amber">Physician review mandatory — URAC/NCQA hard stop. Agent assembles pre-filled packet only. Physician makes every determination.</div>
+      </div>
+    </div>
+    <div class="callout red" style="margin-top:12px"><strong>Hard compliance gate:</strong> Clinical content classifier must achieve ≥99.5% recall before go-live. Below this, clinical claims can reach the payment path without physician review — a URAC/NCQA compliance event. CMO sign-off required. Not a performance aspiration.</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 4 — SUCCESS METRICS
+════════════════════════════════════════════ -->
+<div class="slide" id="s4">
+  <div class="sh"><span class="sh-num">2 / 11</span><h2>Success Metrics <span class="sub">20 sec</span></h2></div>
+  <div class="sb">
+    <table>
+      <tr><th>Metric</th><th>Baseline</th><th>Target</th></tr>
+      <tr><td>Auto-adjudication rate</td><td>22%</td><td><strong>≥80%</strong> of administrative-path claims</td></tr>
+      <tr><td>Cycle time — admin path</td><td>8–9 days</td><td><strong>≤5 days</strong></td></tr>
+      <tr><td>Cycle time — clinical path</td><td>8–9 days</td><td><strong>≤7 days</strong></td></tr>
+      <tr><td>Admin exception review time (HITL)</td><td>35 min (full manual)</td><td><strong>2 min</strong> (focused exception packet)</td></tr>
+      <tr><td>Clinical physician review time</td><td>35 min (full manual)</td><td><strong>≤3 min</strong> with agent pre-filled packet (Wave 2)</td></tr>
+      <tr><td>Denial appeal overturn rate</td><td>41%</td><td><strong>≤15%</strong></td></tr>
+      <tr class="critical"><td>Clinical classifier recall</td><td>—</td><td><strong>≥99.5%</strong> — hard go-live gate, CMO sign-off required</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 5 — AGENTIC SOLUTION
+════════════════════════════════════════════ -->
+<div class="slide" id="s5">
+  <div class="sh"><span class="sh-num">3 / 11</span><h2>Agentic Solution <span class="sub">40 sec · 4 agents · 3 waves</span></h2></div>
+  <div class="sb">
+    <div class="agent-grid">
+      <div class="agent-card">
+        <div class="agent-name">INT — Intake &amp; Anomaly Detection</div>
+        <div class="agent-wave"><span class="tag tag-blue">Wave 1</span></div>
+        <p>Normalises EDI 837, PDF, and portal submissions into a single canonical record. Rejects malformed submissions with specific, actionable error codes — reducing the resubmission cycle that adds to queue volume.</p>
+      </div>
+      <div class="agent-card">
+        <div class="agent-name">WS1 — Administrative Adjudication</div>
+        <div class="agent-wave"><span class="tag tag-blue">Wave 1 — primary target</span></div>
+        <p>10-step pipeline: eligibility, coding, prior auth, clinical content classification, payment. For 65% of claims — agent approves, rejects, or escalates to HITL. No physician required.</p>
+      </div>
+      <div class="agent-card">
+        <div class="agent-name">WS2 — Clinical Pre-Screening</div>
+        <div class="agent-wave"><span class="tag tag-amber">Wave 2 — conditional</span></div>
+        <p>For 35% on the clinical path — assembles pre-filled physician review packet, cutting review from 35 min to ~3 min. <strong>Conditional:</strong> clinical notes API must be confirmed before Wave 2 build begins.</p>
+      </div>
+      <div class="agent-card">
+        <div class="agent-name">APP — Denial Appeals Support</div>
+        <div class="agent-wave"><span class="tag tag-gray">Wave 3 — conditional</span></div>
+        <p>Root cause classification and context assembly for denial appeals. <strong>Conditional:</strong> requires 90 days of Wave 1 production data before scoping begins.</p>
+      </div>
+    </div>
+    <div class="callout" style="margin-top:10px"><strong>AI-native moment:</strong> The clinical content classifier (WS1 step 8) does what no rules engine can — it evaluates diagnosis code + procedure code + provider specialty as a combined signal, handling novel combinations that no enumerated rule list covers. This is the structural cause of the 41% overturn rate: processors applying different heuristics to the same borderline claim make different decisions. The agent produces a consistent, auditable classification at every claim.</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 6 — VOLUME × VALUE
+════════════════════════════════════════════ -->
+<div class="slide" id="s6">
+  <div class="sh"><span class="sh-num">4 / 11</span><h2>Volume × Value Analysis <span class="sub">20 sec</span></h2></div>
+  <div class="sb" style="display:flex;flex-direction:column">
+    <div class="quad-wrap">
+      <div class="quad-title">Volume × Value — Greenfield Health Systems</div>
+      <div class="quad-outer">
+        <div class="quad-y-label">Low Volume · · · High Volume</div>
+        <div class="quad-inner">
+          <div class="quad-area">
+            <div class="quad q2"><span>Rules &amp;<br>automation</span></div>
+            <div class="quad q1"><span>Primary targets —<br>automate now</span></div>
+            <div class="quad q3"><span>Not worth<br>automating</span></div>
+            <div class="quad q4"><span>Selected<br>use cases</span></div>
+            <div class="qpt qpt-ws1" style="left:71%;top:12%">WS1 Admin Adj.</div>
+            <div class="qpt qpt-ws2" style="left:93%;top:7%">WS2 Clinical</div>
+            <div class="qpt qpt-int" style="left:25%;top:18%">INT Intake</div>
+            <div class="qpt qpt-app" style="left:79%;top:58%">APP Appeals</div>
+          </div>
+          <div class="quad-x-label">← Low Non-Determinism &nbsp;&nbsp;&nbsp; High Non-Determinism →</div>
+        </div>
+      </div>
+    </div>
+    <div class="callout" style="margin-top:8px">WS1 lands in Q1 — high volume, high judgment — which is why it is the Wave 1 primary target. WS2 scores highest on the judgment axis but URAC/NCQA limits the agent to context assembly only; the physician review step stays human regardless of classifier accuracy.</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 7 — ECONOMICS
+════════════════════════════════════════════ -->
+<div class="slide" id="s7">
+  <div class="sh"><span class="sh-num">5 / 11</span><h2>Economics <span class="sub">30 sec</span></h2></div>
+  <div class="sb">
+    <div class="two-col" style="margin-bottom:14px">
+      <div>
+        <h3>Wave 1 unit economics</h3>
+        <table>
+          <tr><th></th><th>Per claim</th><th>Annual</th></tr>
+          <tr><td>Current state</td><td>$18.23</td><td>$1,300K (20 FTEs)</td></tr>
+          <tr class="highlight"><td>With agent — Wave 1</td><td>$0.315</td><td>$568K (7 staff + $113K agent)</td></tr>
+          <tr><td><strong>Net saving</strong></td><td><strong>−98.3%</strong></td><td><strong>$732K/year</strong></td></tr>
+        </table>
+        <div class="callout green" style="margin-top:10px">Wave 1 build: $420K &nbsp;·&nbsp; <strong>Payback: 6.9 months</strong> from go-live</div>
+      </div>
+      <div>
+        <h3>Sensitivity — 4 scenarios</h3>
+        <table>
+          <tr><th>Scenario</th><th>Annual saving</th><th>Payback</th></tr>
+          <tr><td>All adverse (35% HITL, 2× build, lower FTE)</td><td>~$586K</td><td>~17 mo</td></tr>
+          <tr><td>Conservative (elevated HITL only)</td><td>~$697K</td><td>~7.2 mo</td></tr>
+          <tr class="highlight"><td><strong>Base case</strong></td><td><strong>$732K</strong></td><td><strong>6.9 mo</strong></td></tr>
+          <tr><td>All optimistic</td><td>~$892K</td><td>~3.8 mo</td></tr>
+        </table>
+        <div class="callout" style="margin-top:10px">Business case holds under <em>all</em> tested adverse scenarios. 3-year portfolio (Waves 1+2): $1,986K saving on $528K investment — 276% ROI.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 8 — DELIVERY WAVES
+════════════════════════════════════════════ -->
+<div class="slide" id="s8">
+  <div class="sh"><span class="sh-num">6 / 11</span><h2>Delivery Waves <span class="sub">30 sec</span></h2></div>
+  <div class="sb">
+    <table>
+      <tr><th>Wave</th><th>Scope</th><th>Timeline</th><th>Condition to proceed</th></tr>
+      <tr><td><strong>1</strong></td><td>INT + WS1 administrative adjudication</td><td>Months 1–6</td><td>Clinical content definition produced + classifier calibrated at ≥99.5% recall + CMO sign-off before go-live</td></tr>
+      <tr><td><strong>2</strong></td><td>WS2 clinical pre-screening</td><td>Months 7–12</td><td><strong>Hard prerequisite:</strong> clinical notes API confirmation required before any Wave 2 build begins</td></tr>
+      <tr><td><strong>3</strong></td><td>APP denial appeals support</td><td>Months 13+</td><td>90-day Wave 1 steady-state data required before scoping</td></tr>
+    </table>
+    <h3 style="margin-top:16px">Wave 1 compounding value</h3>
+    <p>Wave 1 is financially self-sufficient — $732K/year standing alone. The clinical content classifier built and CMO-certified in Wave 1 is the platform asset that makes Wave 2 feasible without a full rebuild. Wave 1 also validates the eligibility and prior auth API integrations, saving an estimated $112K in Wave 2 build cost and eliminating schema discovery from Wave 2's critical path.</p>
+    <h3 style="margin-top:14px">Critical path dependencies</h3>
+    <table>
+      <tr><th>#</th><th>Dependency</th><th>Owner</th><th>Deadline</th></tr>
+      <tr><td>D1</td><td>Clinical content definition — CMO sign-off required before classifier build begins</td><td>Dr. Webb + FDE</td><td>Week 6</td></tr>
+      <tr><td>D2</td><td>API access confirmation for eligibility, prior auth, and fee schedule</td><td>James Liu / IT</td><td>Week 2</td></tr>
+      <tr><td>D3</td><td>Clinical notes API confirmation — Wave 2 hard prerequisite</td><td>James Liu / IT</td><td>Week 8</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 9 — SOLUTION RISKS
+════════════════════════════════════════════ -->
+<div class="slide" id="s9">
+  <div class="sh"><span class="sh-num">7 / 11</span><h2>Solution Assumptions, Dependencies &amp; Risks <span class="sub">20 sec</span></h2></div>
+  <div class="sb">
+    <h3>Key assumptions</h3>
+    <table>
+      <tr><th>#</th><th>Assumption</th><th>If wrong</th></tr>
+      <tr><td>A1</td><td>65%/35% admin/clinical split is Dr. Webb's estimate — not a validated baseline</td><td>Higher clinical share (e.g. 50%) grows the physician queue, changes headcount targets, weakens the economic model</td></tr>
+      <tr><td>A2</td><td>Eligibility, prior auth, fee schedule, and clinical notes systems are accessible as programmatic APIs — no system names confirmed</td><td>Any Wave 1 integration requiring batch file transfer increases build scope; clinical notes API infeasibility is a Wave 2 hard stop</td></tr>
+      <tr><td>A3</td><td>"Clinical content" has no formal definition — must be produced as a design output with CMO sign-off</td><td>Without it, the classifier cannot be built or certified; definition workshop is the Wave 1 critical-path item</td></tr>
+    </table>
+    <h3 style="margin-top:14px">Key risks</h3>
+    <table>
+      <tr><th>#</th><th>Risk</th><th class="tc">Likelihood</th><th>Mitigation</th></tr>
+      <tr><td>R1</td><td>Clinical share materially higher than 35% — physician queue larger than modelled</td><td class="tc"><span class="tag tag-amber">Medium</span></td><td>Validate split against 90 days of historical claims data in design phase before finalising headcount model</td></tr>
+      <tr><td>R2</td><td>Wave 1 build cost $420K exceeds committed $400K budget</td><td class="tc"><span class="tag tag-green">Low</span></td><td>Defer analytics dashboard and provider notice templating; scope holds at $400K; payback 6.6 months</td></tr>
+      <tr><td>R3</td><td>Clinical notes API not accessible as programmatic integration</td><td class="tc"><span class="tag tag-red">High (unconfirmed)</span></td><td>Wave 1 financially self-sufficient without it; Wave 2 not committed until API access confirmed</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 10 — WS1 PIPELINE
+════════════════════════════════════════════ -->
+<div class="slide" id="s10">
+  <div class="sh"><span class="sh-num">8 / 11</span><h2>WS1 — How the Agent Works <span class="sub">60 sec · 10 steps</span></h2></div>
+  <div class="sb">
+    <p style="margin-bottom:8px;font-size:12.5px">Orchestrator: <strong>Haiku 4.5</strong> (pipeline coordination, state management, tool sequencing). Sonnet 4.6 invoked as a targeted sub-call for clinical routing only.</p>
+    <table>
+      <tr><th>#</th><th>Step</th><th>Mechanism</th><th>Model</th></tr>
+      <tr><td>1</td><td>Format parsing and field extraction</td><td>Rule-based parser</td><td>—</td></tr>
+      <tr><td>2</td><td>Member eligibility lookup</td><td>Structured API read</td><td>—</td></tr>
+      <tr><td>3</td><td>Eligibility discrepancy resolution</td><td>LLM contextual inference</td><td><span class="tag tag-blue">Haiku 4.5</span> (~5%)</td></tr>
+      <tr><td>4</td><td>Code validity and pairing check</td><td>Structured table lookup</td><td>—</td></tr>
+      <tr><td>5</td><td>Coding plausibility assessment</td><td>LLM semantic classification</td><td><span class="tag tag-blue">Haiku 4.5</span> (~15%)</td></tr>
+      <tr><td>6</td><td>Prior authorisation lookup</td><td>Structured API read</td><td>—</td></tr>
+      <tr><td>7</td><td>Prior auth partial-match resolution</td><td>Arithmetic + LLM judgment</td><td><span class="tag tag-blue">Haiku 4.5</span> (~8%)</td></tr>
+      <tr class="critical"><td><strong>8</strong></td><td><strong>Clinical content routing classification</strong></td><td><strong>LLM multi-signal classification</strong></td><td><span class="tag tag-red">Sonnet 4.6</span> (every claim)</td></tr>
+      <tr><td>9</td><td>Payment calculation</td><td>Rate table + arithmetic</td><td>—</td></tr>
+      <tr><td>10</td><td>Contract exception handling</td><td>LLM document reasoning</td><td><span class="tag tag-blue">Haiku 4.5</span> (~2%)</td></tr>
+    </table>
+    <div class="callout red" style="margin-top:10px"><strong>Step 8 is the only Sonnet call.</strong> It evaluates diagnosis code + procedure code + provider specialty simultaneously. Produces three states: <code>admin</code> / <code>clinical</code> / <code>uncertain</code>. Any <code>clinical</code> or <code>uncertain</code> result routes to the physician queue — enforced by queue architecture, not policy. No override path. Sonnet drives ~78% of per-claim token cost despite being a single call, because it runs on every claim at 5× Haiku's rate.</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 11 — THE PROTOTYPE SCOPE
+════════════════════════════════════════════ -->
+<div class="slide" id="s11">
+  <div class="sh"><span class="sh-num">9a / 11</span><h2>The Prototype — Scope <span class="sub">40 sec</span></h2></div>
+  <div class="sb">
+    <p style="margin-bottom:8px;font-size:12.5px">One real LLM call. All other judgment steps stubbed or deferred. Claim arrives as pre-structured JSON — no format parsing needed.</p>
+    <table>
+      <tr><th>#</th><th>Step</th><th class="tc">Status</th><th>Note</th></tr>
+      <tr><td>1</td><td>Format parsing and field extraction</td><td class="tc"><span class="tag tag-out">Out of scope</span></td><td>Claim arrives as pre-structured JSON</td></tr>
+      <tr><td>2</td><td>Member eligibility lookup</td><td class="tc"><span class="tag tag-stub">Stub</span></td><td>Returns <code>eligible</code>; returns <code>discrepancy</code> for fixture CLAIM-ELIG-01</td></tr>
+      <tr><td>3</td><td>Eligibility discrepancy resolution</td><td class="tc"><span class="tag tag-out">Out of scope</span></td><td>Dropped — escalation pattern demonstrated via clinical routing instead</td></tr>
+      <tr><td>4</td><td>Code validity and pairing check</td><td class="tc"><span class="tag tag-stub">Stub</span></td><td>Returns <code>valid</code> for all demo fixtures</td></tr>
+      <tr><td>5</td><td>Coding plausibility assessment</td><td class="tc"><span class="tag tag-out">Out of scope</span></td><td>Would require a second LLM call — one real call demonstrates the pattern</td></tr>
+      <tr><td>6</td><td>Prior authorisation lookup</td><td class="tc"><span class="tag tag-stub">Stub</span></td><td>Returns <code>present_exact</code> for all demo fixtures</td></tr>
+      <tr><td>7</td><td>Prior auth partial-match resolution</td><td class="tc"><span class="tag tag-out">Out of scope</span></td><td>Dropped — <code>uncertain</code> classifier state is the more interesting edge case</td></tr>
+      <tr class="critical"><td><strong>8</strong></td><td><strong>Clinical content routing classification</strong></td><td class="tc"><span class="tag tag-impl">Implement</span></td><td>The single real LLM call — returns <code>{classification, confidence, reasoning}</code></td></tr>
+      <tr><td>9</td><td>Payment calculation</td><td class="tc"><span class="tag tag-stub">Stub</span></td><td>Returns fee schedule rate from a mock rate table</td></tr>
+      <tr><td>10</td><td>Contract exception handling</td><td class="tc"><span class="tag tag-out">Out of scope</span></td><td>No contract exception data to mock meaningfully</td></tr>
+      <tr><td>—</td><td>Exception reviewer interface</td><td class="tc"><span class="tag tag-stub">Stub</span></td><td>CLI: <code>python review_claim.py --claim-id &lt;ID&gt; --decision &lt;…&gt;</code> — proves escalation is not terminal</td></tr>
+    </table>
+    <div style="margin-top:8px;font-size:12px;color:#64748b">Configurable parameters (must be named constants, not hardcoded): <code>CLINICAL_CONTENT_CONFIDENCE_THRESHOLD</code> (default 0.70) &nbsp;·&nbsp; <code>PRIOR_AUTH_UNIT_TOLERANCE_PCT</code> (default 0.15)</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 12 — THE THREE PATHS
+════════════════════════════════════════════ -->
+<div class="slide" id="s12">
+  <div class="sh"><span class="sh-num">9b / 11</span><h2>The Prototype — Three Required Paths</h2></div>
+  <div class="sb">
+    <table>
+      <tr><th>Path</th><th>Fixture</th><th>What it proves</th><th>Expected output</th></tr>
+      <tr><td><strong>Happy path</strong></td><td>CLAIM-ADMIN-01<br><small>99213 routine exam, PCP, Z00.00</small></td><td>Full pipeline runs end-to-end; compliance boundary holds — no physician involvement on admin path; audit trail produced</td><td><code>status: approved</code><br><code>confidence: 0.91</code><br>Full audit trail</td></tr>
+      <tr><td><strong>Failure-mode escalation</strong></td><td>CLAIM-CLINICAL-01<br><small>27447 knee replacement, ortho surgeon, M17.11</small></td><td>Threshold gate fires correctly; escalation is not terminal — HITL loop closes with structured packet the reviewer can act on</td><td><code>status: escalated</code><br><code>confidence: 0.62</code> below threshold<br>Escalation reason naming the ambiguous signal</td></tr>
+      <tr><td><strong>Edge case</strong></td><td>CLAIM-UNCERTAIN-01<br><small>97110 therapeutic exercise, GP, M54.5 low back pain</small></td><td>Third classification state fires explicitly; ambiguity doesn't collapse into silent auto-approval</td><td><code>status: escalated</code><br><code>classification: "uncertain"</code><br><code>confidence: 0.48</code><br>Contradictory signals named</td></tr>
+    </table>
+    <div class="callout" style="margin-top:12px">Three pytest tests written <em>before</em> the agent code. Demo runs <code>python run_claim.py --fixture &lt;ID&gt;</code>. HITL loop closed by <code>python review_claim.py --claim-id &lt;ID&gt; --decision &lt;approve|reject|escalate-to-physician&gt;</code>. All three paths in sequence in under 5 minutes.</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 13 — PROTOTYPE RISKS
+════════════════════════════════════════════ -->
+<div class="slide" id="s13">
+  <div class="sh"><span class="sh-num">10 / 11</span><h2>Prototype Assumptions, Dependencies &amp; Risks <span class="sub">20 sec</span></h2></div>
+  <div class="sb">
+    <h3>Key assumptions</h3>
+    <table>
+      <tr><th>#</th><th>Assumption</th><th>If wrong</th></tr>
+      <tr><td>A1</td><td>Sonnet 4.6 produces calibrated, differentiated confidence scores on healthcare coding patterns</td><td>If borderline fixtures return high confidence regardless of signal ambiguity, the threshold gate is meaningless — system prompt requires structural redesign</td></tr>
+      <tr><td>A2</td><td>System prompt constraints alone are sufficient to prevent over-confident outputs on near-boundary claims</td><td>May require iterative prompt engineering; the calibration instruction is a hypothesis, not a guarantee</td></tr>
+      <tr><td>A3</td><td>Three mock fixtures are representative enough of real borderline cases to pressure-test the classifier</td><td>If all fixtures are too easy, the prototype passes its own tests but doesn't prove production readiness</td></tr>
+    </table>
+    <h3 style="margin-top:14px">Key risks</h3>
+    <table>
+      <tr><th>#</th><th>Risk</th><th class="tc">Likelihood</th><th>Mitigation</th></tr>
+      <tr><td>R1</td><td>Classifier returns high confidence for all claims — threshold gate becomes meaningless</td><td class="tc"><span class="tag tag-amber">Medium</span></td><td>System prompt must explicitly constrain confidence bands; test against at least two fixtures near the boundary before demo</td></tr>
+      <tr><td>R2</td><td><code>uncertain</code> state doesn't fire reliably — model forces binary classification despite contradictory signals</td><td class="tc"><span class="tag tag-amber">Medium</span></td><td>Prompt must name the <code>uncertain</code> state explicitly and define the contradictory-signal condition; iterate if needed</td></tr>
+      <tr><td>R3</td><td>Escalation object schema mismatch between agent output and reviewer CLI — HITL loop breaks at the integration point</td><td class="tc"><span class="tag tag-green">Low</span></td><td>Define and document the escalation object schema before writing either the agent or the CLI; validate in a dedicated test</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 14 — WHY IT'S HARD
+════════════════════════════════════════════ -->
+<div class="slide" id="s14">
+  <div class="sh"><span class="sh-num">11 / 11</span><h2>Why It's Hard + What We Expect to Learn <span class="sub">30 sec</span></h2></div>
+  <div class="sb">
+    <h3>The difficulty</h3>
+    <p>Getting Sonnet to produce <em>calibrated</em> confidence scores that genuinely differentiate near-boundary claims. If it returns 0.90 for everything, the threshold gate is meaningless. The system prompt must instruct the model to reserve high confidence for claims where all three signals agree — and return 0.55–0.70 when any signal is ambiguous or contradictory. Mock claims must sit near the boundary by design; if borderline fixtures return high confidence, the calibration instruction failed.</p>
+    <div class="callout red" style="margin-top:12px">
+      <strong>The asymmetry:</strong> A false negative — clinical claim auto-approved without physician review — is a URAC/NCQA compliance event. Agent is suspended regardless of volume or economic impact. A false positive — admin claim routed to physician — floods the queue but is recoverable. The spec must err toward escalation, not toward straight-through processing.
+    </div>
+    <h3 style="margin-top:14px">Primary question this prototype answers</h3>
+    <div class="callout green">Does prompt engineering alone produce genuinely differentiated confidence scores near the clinical/administrative boundary — or do structural constraints in the system prompt need to force differentiation on borderline cases?</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 15 — COACH CHALLENGE
+════════════════════════════════════════════ -->
+<div class="slide" id="s15">
+  <div class="sh"><span class="sh-num">+</span><h2>Coach Challenge Response</h2></div>
+  <div class="sb">
+    <div class="callout amber"><strong>Challenge:</strong> "The CMO won't certify auto-approval for any claim. All 2,000 claims per day require physician sign-off."</div>
+    <h3 style="margin-top:14px">Response: The architecture survives. The value proposition shifts, but the build does not change.</h3>
+    <p>Without the agent: 2,000 claims × 35 minutes of physician time ≈ <strong>1,167 physician-hours per day.</strong> That is not operationally sustainable at any staffing level, regardless of the auto-approval question.</p>
+    <p>With WS1 screening and WS2 pre-filling — even if every claim ends in physician sign-off — physician review time drops from 35 minutes to ~3 minutes per claim. At 3 minutes across 2,000 daily claims: approximately <strong>100 physician-hours per day.</strong> That is a <strong>91% reduction in physician burden</strong> regardless of whether any claim is auto-approved.</p>
+    <div class="two-col" style="margin-top:12px">
+      <div class="callout">
+        <strong>Original value proposition:</strong><br>65% straight-through processing — headcount displacement from the admin path.
+      </div>
+      <div class="callout green">
+        <strong>Revised value proposition:</strong><br>12× physician throughput across 100% of claims. Clinical notes pre-filling (Wave 2) moves to Wave 1. Physician capacity freed = the measurable return.
+      </div>
+    </div>
+    <div class="callout" style="margin-top:10px"><strong>The answer to the CMO challenge: agree with the constraint, preserve the value on a different axis.</strong></div>
+  </div>
+</div>
+
+</div><!-- /deck -->
+
+<!-- ═══════════════════════════════════════════
+     NAVIGATION
+════════════════════════════════════════════ -->
+<div id="nav">
+  <button id="btn-prev" onclick="go(-1)" disabled>← Prev</button>
+  <div id="progress"><div id="progress-bar"></div></div>
+  <span id="counter">1 / 15</span>
+  <button id="btn-next" onclick="go(1)">Next →</button>
+</div>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  const total = slides.length;
+  let cur = 0;
+
+  function show(n) {
+    slides[cur].classList.remove('active');
+    cur = Math.max(0, Math.min(total - 1, n));
+    slides[cur].classList.add('active');
+    document.getElementById('counter').textContent = (cur + 1) + ' / ' + total;
+    document.getElementById('progress-bar').style.width = ((cur + 1) / total * 100) + '%';
+    document.getElementById('btn-prev').disabled = cur === 0;
+    document.getElementById('btn-next').disabled = cur === total - 1;
+  }
+
+  function go(dir) { show(cur + dir); }
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ') { e.preventDefault(); go(1); }
+    if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')                    { e.preventDefault(); go(-1); }
+  });
+
+  // click left/right half to navigate
+  document.getElementById('deck').addEventListener('click', e => {
+    const x = e.clientX / window.innerWidth;
+    if (x > 0.6) go(1); else if (x < 0.4) go(-1);
+  });
+
+  show(0);
+</script>
+</body>
+</html>

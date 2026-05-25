@@ -1,0 +1,13 @@
+{
+  "claim_id": "CLAIM-UNCERTAIN-01",
+  "member_id": "GHS-MBR-0067890",
+  "provider_id": "GHS-PRV-NPI-3312445",
+  "provider_specialty": "General Practitioner",
+  "date_of_service": "2026-04-18",
+  "diagnosis_codes": ["M54.5"],
+  "procedure_codes": ["97110"],
+  "procedure_quantities": [3],
+  "billed_amount": 180.00,
+  "plan_id": "GHS-PPO-2026",
+  "submission_format": "EDI_837"
+}

@@ -6,7 +6,7 @@ See `Scenario/scenario_context.md` for the full scenario, work streams, tooling,
 Read `Deliverables/D0C_discovery.md` before producing this deliverable.
 
 ## Your task
-Produce a problem framing and success metrics document. Output file: `Deliverables/C1_problem_framing.md`.
+Produce a problem framing and success metrics document. Output file: `Deliverables/D1_problem_framing.md`.
 
 Frame the claims processing transformation in terms of what each affected party experiences today and what they need the agent to change. Decode the operational targets (22% → 85% auto-adjudication, 8-day → 4–7 day cycle time, 41% denial overturn rate) into architectural requirements and measurable success metrics for Greenfield Health Systems, healthcare providers, and health plan members.
 

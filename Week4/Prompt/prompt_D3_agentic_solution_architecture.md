@@ -4,13 +4,13 @@
 - `Deliverables/D2A_cognitive_load_map.md` — micro-task breakdown, cognitive hotspots, breakpoints
 - `Deliverables/D2B_delegation_suitability_matrix.md` — archetype assignments and dimension scores per JtD
 - `Deliverables/D2C_volume_value_analysis.md` — prioritisation by volume × value
-- `Deliverables/C1_token_economics_model.md`
+- `Deliverables/D2D_token_economics_model.md`
 - `scenario/scenario_context.md` — systems, constraints, stakeholders, governance requirements
 
 Do not produce an architecture that is inconsistent with the delegation archetypes in D2B or the priority ordering in D2C. Every design decision must trace to one of these inputs or be flagged as an assumption.
 
 ## Your task
-Produce an agentic solution architecture document. Output file: `Deliverables/C3_agentic_solution_architecture.md`.
+Produce an agentic solution architecture document. Output file: `Deliverables/D3_agentic_solution_architecture.md`.
 
 This document answers two questions: **which parts of the workflow become agentic and at what delegation level**, and **why those design decisions were made over the alternatives**. It is not a technical specification — that is D4's job. It is an architectural design with justified trade-offs.
 

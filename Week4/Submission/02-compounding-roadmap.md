@@ -11,7 +11,7 @@
 - **Wave 2 ($475K, months 5–10) is the capacity-unlock engine** — the WS2 Matching Agent inherits Wave 1's ServiceNow connector, HITL queue, and NLP pipeline, deploying at $475K instead of $600K standalone; at target volume (14× = 3.36M decisions/year) it generates $6.17M/year in annual saving — a 6-week payback on the remaining investment.
 - **Wave 3 ($150K, months 18–24) converts the data MedFlex accumulates in Waves 1–2 into autonomous capability** — 12+ months of coordinator HITL selections in the matching queue build the facility preference profiles that are the single named blocker for WS2-JtD-3 (optimal candidate selection, currently Human Only [D0C: U-3]); Wave 3 upgrades that JtD from Human Only to Human-led + Agent Support, reducing the complex-fill HITL rate from 15% to ~8% and adding ~$620K/year in additional saving at target volume.
 
-**Total programme investment: $895K across 3 waves. 3-year net value (base case): $12.25M. Portfolio ROI (base): 1,369%.**
+**Total programme investment: $1,105K across 3 waves. 3-year net value (base case): $12.04M. Portfolio ROI (base): 1,090%.**
 
 ---
 
@@ -301,6 +301,39 @@ Wave 3 does not deploy new agents. It converts the operational data and trust ac
 **Wave 3 total build cost: $90,000 + $60,000 + $30,000 + $30,000 = $210,000**
 *[Rounded to $150K in D1 preview. The $60K difference reflects the integrated pipeline component not fully costed in D1. Use $210K as the Wave 3 build estimate. [Assumption A-CR-7]]*
 
+**Wave 3 build cost: standalone vs. actual**
+
+What Wave 3 would cost without Wave 2 platform assets (standalone estimate):
+
+| Component | Standalone cost |
+|-----------|---------------:|
+| Coordinator decision log analytics pipeline | $30,000 |
+| Facility preference profile store | $25,000 |
+| WS2 ranking step upgrade | $20,000 |
+| Wave 3a validation and calibration (A/B test) | $15,000 |
+| WS4 → WS2 event trigger integration — nurse DB query would need to be rebuilt standalone | $95,000 |
+| Background replacement query + emergency re-fill interface | $40,000 |
+| Model router | $30,000 |
+| Governance dashboard | $30,000 |
+| DNR exclusion, multi-submission state, credential re-check — rebuilt standalone | $65,000 |
+| Audit logging layer — rebuilt standalone | $30,000 |
+| Inference infrastructure (prompt templates, caching config) — calibrated from scratch | $20,000 |
+| **Wave 3 standalone total** | **$400,000** |
+
+Build cost reduction from Wave 2 platform asset reuse:
+
+| Wave 2 asset reused | Asset ID | Saving in Wave 3 build |
+|---------------------|----------|---------------------:|
+| Nurse database query API — re-fill pipeline reuses same connector | PA-09 | $75,000 |
+| DNR list lookup — emergency re-fill applies same exclusion gate | PA-10 | $20,000 |
+| Multi-submission state tracker — prevents duplicate re-fill queries | PA-11 | $30,000 |
+| Credential re-check tool — credential gate applies in emergency re-fill | PA-12 | $15,000 |
+| Audit + compliance logging layer — governance dashboard reads same records | PA-13 | $30,000 |
+| Inference infrastructure (prompt templates, caching baselines) — model router extends, not rebuilds | PA-14 | $20,000 |
+| **Total Wave 2 → Wave 3 reuse saving** | | **$190,000** |
+
+**Wave 3 actual build cost: $400,000 − $190,000 = $210,000** (consistent with §5c itemised build cost above)
+
 **Wave 3 annual saving:**
 - Facility preference profile upgrade: ~$741,000/year at target volume (HITL rate 15% → 8%)
 - Integrated re-fill pipeline: ~$120,000/year (emergency re-fill time reduction × coordinator saved hours × volume)
@@ -412,8 +445,8 @@ Year 1 net: $428,000 - $647,000 = -$219,000 (investment year, near-breakeven)
 | Wave 2 saving | $540,000 | $1,350,000 | $2,700,000 |
 | Wave 3 (H2 only, partial) | $0 | $215,000 | $430,000 |
 | **Year 2 total saving** | **$1,058,000** | **$2,601,000** | **$5,202,000** |
-| Year 2 investment (Wave 2 remainder + Wave 3 build) | $198,000 | $198,000 | $198,000 |
-| **Year 2 net** | **$860,000** | **$2,403,000** | **$5,004,000** |
+| Year 2 investment (Wave 2 remainder $198K + Wave 3 build $210K) | $408,000 | $408,000 | $408,000 |
+| **Year 2 net** | **$650,000** | **$2,193,000** | **$4,794,000** |
 
 **Year 3 (months 25–36, full platform operational):**
 
@@ -431,13 +464,13 @@ Year 1 net: $428,000 - $647,000 = -$219,000 (investment year, near-breakeven)
 
 | | Conservative | Base case | Target ($200M) |
 |---|:-:|:-:|:-:|
-| Total investment (3 years) | $895,000 | $895,000 | $895,000 |
+| Total investment (3 years) | $1,105,000 | $1,105,000 | $1,105,000 |
 | Total saving (3 years) | $4,008,000 | $13,145,686 | $19,795,040 |
-| **Net 3-year value** | **$3,113,000** | **$12,250,686** | **$18,900,040** |
-| **Portfolio ROI** | **348%** | **1,369%** | **2,112%** |
-| Fully invested payback | Month 10 | Month 8 | Month 7 |
+| **Net 3-year value** | **$2,903,000** | **$12,040,686** | **$18,690,040** |
+| **Portfolio ROI** | **263%** | **1,090%** | **1,692%** |
+| Fully invested payback | Month 20 | Month 15 | Month 14 |
 
-*[Note: investments are front-loaded (months 0–20); savings accelerate as volume grows. Even in the conservative scenario (3× volume, not 14×), the portfolio pays back by month 10 and delivers 377% 3-year ROI.]*
+*[Note: investments are spread across months 0–24 (Wave 3 build completes month 24); savings accelerate as volume grows. Even in the conservative scenario (3× volume, not 14×), the portfolio pays back by month 20 and delivers 263% 3-year ROI.]*
 
 ---
 

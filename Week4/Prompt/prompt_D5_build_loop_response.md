@@ -1,12 +1,12 @@
-# Prompt: Gate 4 D7 — Build-Loop Reflection
+# Prompt: Capstone C12 — Build-Loop Reflection
 
 ## What this deliverable is
 
-Gate 4 D7 is a build-loop reflection on a peer's spec. It has two parts:
+C12 build-loop reflection has two parts:
 
-1. **Signal classification** — apply the 5-category taxonomy to every signal the build loop produced against Dmytro's intake spec. Same rigour as a D5 diagnostic memo: every signal classified, every classification defended, every spec gap given revised text.
+1. **Signal classification** — apply the 5-category taxonomy to every signal the build loop produced against the D4a (WS1) and D4b (WS2) capability specs. Every signal classified, every classification defended, every spec gap given revised text.
 
-2. **Peer review vs. build loop comparison** — compare the signals the build loop surfaced against the findings in your D3 peer review of the same spec. What did the peer review catch that the build loop didn't? What did the build loop surface that the peer review missed? What does that tell you about the relative value of each method?
+2. **Gap register validation** — compare the signals the build loop surfaced against the pre-documented gaps in `Deliverables/D4_integration_preamble.md` (G-1 through G-6). Did the build loop confirm expected gaps, surface new gaps, or reveal that documented gaps behaved differently than anticipated?
 
 This is not a narrative of what went wrong. The classification is structured and evidenced; the comparison is honest and specific.
 
@@ -14,12 +14,15 @@ This is not a narrative of what went wrong. The classification is structured and
 
 ## Inputs (read all before writing)
 
-- `references/spec-ambiguity-vs-builder-mistakes.md` — the taxonomy, diagnostic decision tree, and response templates. The response templates define the exact format and tone for each category. Do not invent your own format.
-- Dmytro's intake spec (`Spec_review_input1/04a-capability-spec-intake-Dmytro.md`) — the spec the build loop ran against
-- The D7 build loop output (`Deliverables/Gate4_D7_build_loop_reflection.md`, section **Build Loop Output**) — what was built, questions raised, what could not be built; this is the raw material for the signal inventory in §1
-- Your D3 peer review of this spec (`Deliverables/Gate4_D3_peer_review_portfolio.md`, Spec 1 section) — the findings from the peer review that the build loop should be compared against
+- `References/spec-ambiguity-vs-builder-mistakes.md` — the taxonomy, diagnostic decision tree, and response templates. The response templates define the exact format and tone for each category. Do not invent your own format.
+- `Deliverables/D4_preamble_capability_spec.md` — shared entity definitions; ground truth for all shared type references (ClaimRecord, AuditLogEntry, CalibrationRecord, EscalationPacket, ResolutionRecord)
+- `Deliverables/D4a_capability_spec.md` — WS1 spec built against; primary reference for classifying WS1 signals
+- `Deliverables/D4b_capability_spec.md` — WS2 spec; reference for any WS2 signals if WS2 build was attempted
+- `Deliverables/D4_integration_preamble.md` — gap register (G-1 through G-6), risk register; the pre-documented known gaps against which the build loop is validated
+- `Deliverables/D4_integration_specs.md` — integration contracts for all 16 systems; reference for classifying integration-layer signals and confirming stub behaviour for SCOPE-OUT entries
+- `Deliverables/C12_build_loop_start.md` (section **Build Loop Output — Pass 1 (WS1)**) — what was built, questions raised, what could not be built; the raw material for the signal inventory in §1
 
-**Read the taxonomy end-to-end before classifying a single signal.** The most common failure is naming the surface signal ("the test is wrong") without reading the spec alongside the code to determine whether the test reflects a real gap in the spec's semantics.
+**Read the taxonomy end-to-end before classifying a single signal.** The most common failure is naming the surface signal ("the integration call failed") without reading the spec alongside the code to determine whether the failure reflects a real gap in the spec's semantics.
 
 ---
 
@@ -29,7 +32,7 @@ This is not a narrative of what went wrong. The classification is structured and
 |----------|---------------|-----------|---------------|
 | **Spec gap** | Build matches the spec as written but not as intended — two valid interpretations existed and the builder chose the wrong one | FDE owns | "I need to revise the spec because the original statement was ambiguous between interpretation A and interpretation B. The correct behaviour is..." |
 | **Builder misread** | Build contradicts an explicit, unambiguous statement in the spec | Builder owns | "The spec says [exact quote]. Your implementation does [what it does]. This is a direct contradiction. Please revise to [specific fix]." |
-| **Unjustified implementation choice** | Builder added something the spec did not request — not a contradiction, but an unauthorised addition | Collaborative | "This wasn't specified. Before deciding whether to keep it, we need to align: either remove it to stay within spec scope, or if there's a reason for it, let's discuss before committing." Never accusatory — you're not saying the builder was wrong, you're saying the scope boundary wasn't respected. |
+| **Unjustified implementation choice** | Builder added something the spec did not request — not a contradiction, but an unauthorised addition | Collaborative | "This wasn't specified. Before deciding whether to keep it, we need to align: either remove it to stay within spec scope, or if there's a reason for it, let's discuss before committing." Never accusatory. |
 | **Test/environment issue** | The build matches the spec; the test expectation is wrong or the environment is misconfigured | Test author owns | "The spec says [X]. The code correctly implements [X]. The test expects [Y], which contradicts the spec. Fix the test, not the code." |
 | **Legitimate unknown surfaced correctly** | The spec was silent on something that matters; the builder correctly identified the gap and surfaced it rather than guessing | Shared — acknowledge + revise + confirm | "You're right that the spec didn't address this. The correct behaviour is [X]. I'm adding this to the spec now. Please implement [specific instruction]." |
 
@@ -37,12 +40,13 @@ This is not a narrative of what went wrong. The classification is structured and
 - **Spec gap vs. builder misread:** Ask — was the builder's interpretation *defensible* under the spec as written? If yes, it is a spec gap (you own it). If no, it is a builder misread.
 - **Design gap vs. legitimate unknown surfaced:** Did the builder implement a guess, or did they surface the question? If they guessed, it is a design gap (spec gap). If they flagged it, it is a legitimate unknown.
 - **Unjustified addition vs. builder misread:** A misread contradicts what the spec says. An unjustified addition adds something the spec is silent about. Different tone, different ownership.
+- **FM-A-5 / FM-B-5 omission:** These are explicit, unambiguous hard-stop requirements in D4a §11 and D4b §11. A builder who omits them has misread the spec — this is a builder misread, not a spec gap.
 
 ---
 
 ## Required structure
 
-Output file: append to `Deliverables/Gate4_D7_build_loop_reflection.md` after the **Build Loop Output** section
+Output file: append to `Deliverables/C12_build_loop_start.md` after the **Build Loop Output — Pass 1 (WS1)** section
 
 ### 1. Signal inventory
 
@@ -55,7 +59,7 @@ Include everything — do not filter before classifying. Signals you initially m
 
 ### 2. Classified signal responses
 
-For each signal, produce a structured block. Use the response templates from `references/spec-ambiguity-vs-builder-mistakes.md` — do not paraphrase them into vague prose.
+For each signal, produce a structured block. Use the response templates from `References/spec-ambiguity-vs-builder-mistakes.md` — do not paraphrase them into vague prose.
 
 ```
 Signal [S-N]: [one-sentence description of the discrepancy]
@@ -63,7 +67,7 @@ Signal [S-N]: [one-sentence description of the discrepancy]
 Classification: [one of the 5 categories]
 
 Evidence:
-- Spec: [exact quote or section reference that makes this classification defensible]
+- Spec: [exact quote or section reference from D4a/D4b/D4_preamble/D4_integration_specs]
 - Build: [what the builder produced that triggered this signal]
 - Why this classification and not [the closest alternative]: [one sentence — this is the diagnostic work]
 
@@ -84,7 +88,7 @@ For every signal classified as **spec gap** or **legitimate unknown surfaced cor
 ```
 Revision [R-N] (for Signal [S-N]):
 
-Section revised: [which spec section]
+Section revised: [D4a / D4b / D4_preamble / D4_integration_specs + specific section number]
 Original text: "[exact original wording]"
 Revised text: "[exact revised wording]"
 What the revision prevents: [one sentence — name the specific build failure this wording would have avoided]
@@ -99,7 +103,7 @@ For every signal classified as **builder misread**, write the re-prompt as a dir
 Re-prompt for Signal [S-N]:
 
 The spec states:
-"[exact quote]"
+"[exact quote from D4a/D4b/D4_preamble/D4_integration_specs]"
 
 Your implementation [does / does not do X]. This directly contradicts the spec.
 
@@ -110,25 +114,25 @@ Please revise:
 
 Do not include re-prompts for spec gaps — re-prompting the builder for your own ambiguity is a graded failure mode.
 
-### 5. Peer review vs. build loop comparison (D7 deliverable)
+### 5. Gap register validation
 
-This is the core of D7. Compare the signals from the build loop against the findings from the D3 peer review of the same spec. Be specific — name each finding by its ID (B1–B5, C1–C3 from the peer review; S-N from the build loop).
+Compare the signals from this build loop against the pre-documented gaps in `Deliverables/D4_integration_preamble.md` (G-1 through G-6) and the SCOPE-OUT entries in `Deliverables/D4_integration_specs.md`.
 
-**What the build loop caught that the peer review also caught**
+**Gaps confirmed by the build loop**
 
-For each overlapping finding: name the peer review ID, the build loop signal, and one sentence on why both methods converge on this issue. Convergence signals high-confidence blockers.
+For each pre-documented gap (G-1 through G-6) or SCOPE-OUT entry that surfaced as a build signal: name the gap ID, the corresponding build loop signal ID, and one sentence on what the build loop revealed that the static gap analysis did not capture.
 
-**What the peer review caught that the build loop missed**
+**New gaps surfaced by the build loop**
 
-For each peer review finding (B1–B5, C1–C3) that did not surface as a build loop signal: state why the build loop would not surface it. Is it a logic error only visible at spec-reading level? A missing config parameter that a builder would hardcode silently? A cross-contract inconsistency only visible when reading the full spec rather than building one component?
+For each build loop signal not present in the gap register: state what it is, why it was not visible at spec-reading level, and whether it should be added to D4_integration_preamble.md as a new gap entry (G-7+) or classified as a spec gap owned by the FDE.
 
-**What the build loop surfaced that the peer review missed**
+**Pre-documented gaps NOT confirmed by the build loop**
 
-For each build loop signal not present in the peer review: state what it is and why the peer reviewer would have missed it. Is it an environment-specific issue? An implementation choice the spec leaves open that only becomes visible when you commit to code?
+For each G-N gap (G-1 through G-6) that did not surface as a build loop signal: state why. Is the gap in a SCOPE-OUT path the builder correctly stubbed? Is it a Wave 2 concern that does not affect the happy path? Is it a discovery gap the builder handled with a `DISCOVERY_REQUIRED` placeholder?
 
 **One-paragraph honest assessment**
 
-Answer directly: which method caught the issues most likely to cause silent wrong behaviour in production — the peer review or the build loop? What does this fixture tell you about the limits of each method, and what would a complete spec-validation process look like that uses both?
+Answer directly: which category of gap poses the higher production risk — gaps the build loop confirmed, or gaps the build loop missed entirely? What does the ratio of confirmed vs. missed gaps tell you about the completeness of the pre-build gap analysis, and what additional analysis step would reduce the residual risk most?
 
 ---
 
@@ -142,9 +146,9 @@ Answer directly: which method caught the issues most likely to cause silent wron
 - [ ] Every builder misread has a direct re-prompt in Section 4 — specific, citing the spec, stating the exact fix
 - [ ] No re-prompt written for a spec gap — the builder cannot fix your ambiguity
 - [ ] Signal inventory is exhaustive — signals are not pre-filtered before classification
-- [ ] Section 5 comparison references every D3 peer review finding by ID (B1–B5, C1–C3) — no finding unaccounted for
-- [ ] Section 5 comparison references every build loop signal — no signal left out of the comparison
-- [ ] The one-paragraph assessment takes a position: it names which method is better for which category of issue, not "both methods are complementary"
+- [ ] Section 5 references every pre-documented gap (G-1 through G-6) by ID — no gap unaccounted for
+- [ ] Section 5 accounts for every build loop signal — no signal left out of the gap register validation
+- [ ] The one-paragraph assessment takes a position: names which gap category (confirmed vs. missed) poses the higher production risk — not "all gaps matter equally"
 
 ## Fail signals — do not produce output that contains these
 
@@ -154,8 +158,9 @@ Answer directly: which method caught the issues most likely to cause silent wron
 - Spec revision that says "add more detail" or "be clearer about X" without providing the actual revised text
 - Treating every signal as a builder misread — a fixture with no spec gaps is not a realistic or honest diagnosis
 - Treating every signal as a spec gap — a fixture with no builder errors is also not realistic
-- Conflating unjustified addition with builder misread — different ownership and different tone; getting this wrong produces an accusatory response for something that may be a reasonable suggestion
-- Classifying a legitimate unknown as a spec gap — the distinction matters: spec gap means ambiguity existed; legitimate unknown means the spec was simply silent; the corrective response is different
+- Conflating unjustified addition with builder misread — different ownership and different tone
+- Classifying a legitimate unknown as a spec gap — spec gap means ambiguity existed; legitimate unknown means the spec was simply silent; the corrective response is different
 - Missing signals that are present in the build output — an incomplete signal inventory means some build failures would go uncorrected
-- Section 5 that lists peer review findings without explaining why each one did or did not surface in the build loop — the comparison requires a reason, not just a match/no-match
-- A one-paragraph assessment that concludes "both methods are complementary" without naming which is better for silent-failure detection — that is the specific question; answer it
+- Classifying FM-A-5 or FM-B-5 omission as a spec gap — both hard stops are explicit and unambiguous in D4a §11 and D4b §11; omission is a builder misread
+- Section 5 that lists pre-documented gaps without explaining why each one did or did not surface — the comparison requires a reason, not just a match/no-match
+- A one-paragraph assessment that concludes "confirmed and missed gaps are equally important" — the question asks which poses the higher production risk; answer it

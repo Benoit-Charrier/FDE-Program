@@ -1,0 +1,27 @@
+{
+  "claim_id": "CLAIM-ADMIN-01",
+  "status": "escalated",
+  "escalation_trigger_id": "ET-07",
+  "trigger_type": "GOVERNANCE_VIOLATION",
+  "routing_queue": "EXCEPTION_PROCESSOR",
+  "required_resolution": "Governance violation: [INVESTIGATE_STATE_MACHINE / REJECT_CLAIM / ESCALATE_TO_COMPLIANCE]",
+  "trigger_signal_values": {
+    "error": "GOVERNANCE_HARD_STOP_T09",
+    "actual_state": "ROUTING",
+    "expected_state": "ADMIN_CLEARED",
+    "claim_id": "CLAIM-ADMIN-01"
+  },
+  "claim_context": {
+    "procedure_code": "99213",
+    "diagnosis_code": "Z00.00",
+    "provider_specialty": "Primary Care Physician"
+  },
+  "audit_trail": [
+    "claim_intake_validated [COMMITTED]",
+    "eligibility_confirmed [COMMITTED]",
+    "code_validity_checked [COMMITTED]",
+    "prior_auth_confirmed [COMMITTED]",
+    "clinical_classification_completed [COMMITTED]"
+  ],
+  "claim_state_at_escalation": "ROUTING"
+}
