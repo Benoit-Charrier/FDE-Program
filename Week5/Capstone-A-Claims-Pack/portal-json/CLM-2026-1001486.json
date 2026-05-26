@@ -1,0 +1,104 @@
+{
+  "submission_id": "CLM-2026-1001486",
+  "submitted_at": "2026-04-27T13:16:00",
+  "submitter": {
+    "name": "Forest Hills Urgent Care",
+    "npi": "5521568181",
+    "tax_id": "36-7226148",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(245) 778-2145",
+    "address": {
+      "street": "3217 Jefferson Dr",
+      "city": "Buffalo",
+      "state": "NY",
+      "zip": "14255"
+    }
+  },
+  "patient": {
+    "first_name": "Wendy",
+    "last_name": "Vasquez",
+    "date_of_birth": "1952-10-16",
+    "gender": "F",
+    "address": {
+      "street": "600 Forest Dr",
+      "city": "Houston",
+      "state": "TX",
+      "zip": "77099"
+    },
+    "phone": "(975) 279-3524"
+  },
+  "insurance": {
+    "payer_id": "MCD-IL",
+    "payer_name": "Illinois Medicaid",
+    "plan": "Medicaid",
+    "member_id": "184107000",
+    "group_id": "GRP-49797"
+  },
+  "diagnoses": [
+    {
+      "code": "Z00.00",
+      "description": "Encounter for general adult medical examination"
+    },
+    {
+      "code": "Z23",
+      "description": "Encounter for immunization"
+    },
+    {
+      "code": "M79.7",
+      "description": "Fibromyalgia"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "71046",
+      "description": "Chest X-ray, 2 views",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 57.3,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-03-30"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "27447",
+      "description": "Total knee arthroplasty",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 2906.15,
+      "diagnosis_pointer": "2",
+      "place_of_service": "21",
+      "place_of_service_desc": "Inpatient Hospital",
+      "date_of_service": "2026-04-19"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99395",
+      "description": "Preventive established, 18-39",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 174.91,
+      "diagnosis_pointer": "3",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-08"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "64483",
+      "description": "Injection, transforaminal epidural",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 656.72,
+      "diagnosis_pointer": "1",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-04-09"
+    }
+  ],
+  "total_charge_amount": 3795.08,
+  "currency": "USD",
+  "prior_auth_number": null
+}

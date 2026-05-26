@@ -1,0 +1,96 @@
+{
+  "submission_id": "CLM-2026-1001239",
+  "submitted_at": "2026-04-27T12:10:00",
+  "submitter": {
+    "name": "Henry Martinez, DO",
+    "npi": "4214046922",
+    "tax_id": "97-2413794",
+    "specialty": "Internal Medicine",
+    "phone": "(234) 585-5656",
+    "address": {
+      "street": "3039 Forest Dr",
+      "city": "Chicago",
+      "state": "IL",
+      "zip": "60678"
+    }
+  },
+  "patient": {
+    "first_name": "Ingrid",
+    "last_name": "Johnson",
+    "date_of_birth": "2004-07-03",
+    "gender": "F",
+    "address": {
+      "street": "9383 Elm St",
+      "city": "Buffalo",
+      "state": "NY",
+      "zip": "14260"
+    },
+    "phone": "(728) 463-9052"
+  },
+  "insurance": {
+    "payer_id": "UHC-001",
+    "payer_name": "UnitedHealthcare Choice Plus",
+    "plan": "PPO",
+    "member_id": "452852023-09",
+    "group_id": "GRP-75915"
+  },
+  "diagnoses": [
+    {
+      "code": "H66.90",
+      "description": "Otitis media, unspecified, unspecified ear"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99213",
+      "description": "Office visit, established, low-mod",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 142.63,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-14"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99214",
+      "description": "Office visit, established, mod-high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 176.15,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-02"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "80053",
+      "description": "Comprehensive metabolic panel",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 21.82,
+      "diagnosis_pointer": "1",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-14"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "99204",
+      "description": "Office visit, new pt, high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 234.36,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-16"
+    }
+  ],
+  "total_charge_amount": 574.96,
+  "currency": "USD",
+  "prior_auth_number": null
+}

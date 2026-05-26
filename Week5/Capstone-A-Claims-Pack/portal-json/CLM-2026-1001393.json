@@ -1,0 +1,82 @@
+{
+  "submission_id": "CLM-2026-1001393",
+  "submitted_at": "2026-04-27T12:51:00",
+  "submitter": {
+    "name": "Xio Schmidt, MD",
+    "npi": "2840022963",
+    "tax_id": "44-7392596",
+    "specialty": "Internal Medicine",
+    "phone": "(437) 772-1397",
+    "address": {
+      "street": "6573 Forest Dr",
+      "city": "Kansas City",
+      "state": "MO",
+      "zip": "64150"
+    }
+  },
+  "patient": {
+    "first_name": "Iris",
+    "last_name": "Fischer",
+    "date_of_birth": "1965-01-09",
+    "gender": "F",
+    "address": {
+      "street": "3993 Washington Ave",
+      "city": "Albuquerque",
+      "state": "NM",
+      "zip": "87158"
+    },
+    "phone": "(327) 657-1275"
+  },
+  "insurance": {
+    "payer_id": "HUM-001",
+    "payer_name": "Humana Gold Plus",
+    "plan": "HMO",
+    "member_id": "H47592394",
+    "group_id": "GRP-67280"
+  },
+  "diagnoses": [
+    {
+      "code": "Z00.00",
+      "description": "Encounter for general adult medical examination"
+    },
+    {
+      "code": "M17.11",
+      "description": "Unilateral primary osteoarthritis, right knee"
+    },
+    {
+      "code": "R51.9",
+      "description": "Headache, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99395",
+      "description": "Preventive established, 18-39",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 211.21,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-22"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99422",
+      "description": "Online digital E/M, 11-20 min",
+      "modifiers": [
+        "95"
+      ],
+      "units": 1,
+      "charge_amount": 34.61,
+      "diagnosis_pointer": "2",
+      "place_of_service": "02",
+      "place_of_service_desc": "Telehealth",
+      "date_of_service": "2026-04-20"
+    }
+  ],
+  "total_charge_amount": 245.82,
+  "currency": "USD",
+  "prior_auth_number": null
+}

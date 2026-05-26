@@ -1,0 +1,88 @@
+{
+  "submission_id": "CLM-2026-1001444",
+  "submitted_at": "2026-04-27T13:06:00",
+  "submitter": {
+    "name": "Crestview Imaging Center",
+    "npi": "1206976247",
+    "tax_id": "97-2413794",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(350) 535-2489",
+    "address": {
+      "street": "3713 Main St",
+      "city": "Omaha",
+      "state": "NE",
+      "zip": "68195"
+    }
+  },
+  "patient": {
+    "first_name": "Roberto",
+    "last_name": "Harris",
+    "date_of_birth": "1934-04-07",
+    "gender": "M",
+    "address": {
+      "street": "1607 Pine Ln",
+      "city": "Kansas City",
+      "state": "MO",
+      "zip": "6412"
+    },
+    "phone": "(216) 545-6605"
+  },
+  "insurance": {
+    "payer_id": "UHC-001",
+    "payer_name": "UnitedHealthcare Choice Plus",
+    "plan": "PPO",
+    "member_id": "807463795-06",
+    "group_id": "GRP-97944"
+  },
+  "diagnoses": [
+    {
+      "code": "M17.11",
+      "description": "Unilateral primary osteoarthritis, right knee"
+    },
+    {
+      "code": "R51.9",
+      "description": "Headache, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "20610",
+      "description": "Major joint injection",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 225.52,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-03"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "97110",
+      "description": "Therapeutic exercises (15 min)",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 35.64,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-19"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "90471",
+      "description": "Immunization administration",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 14.57,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-11"
+    }
+  ],
+  "total_charge_amount": 275.73,
+  "currency": "USD",
+  "prior_auth_number": null
+}

@@ -1,0 +1,72 @@
+From: Brenda Cruz <brenda.cruz@tinachowdhuryd.example>
+To: claims-intake@payer.example
+Cc: office-mgr@tinachowdhuryd.example
+Date: Mon, 27 Apr 2026 17:31:58 +0000
+Message-ID: <177729813763.6.5922735909315486587@tinachowdhuryd.example>
+Subject: FW: claim for Zane Garcia =?utf-8?b?4oCU?= need help
+X-Submitter-NPI: 2530060499
+X-Submitter-TaxID: 47-1052444
+X-Originating-System: tinachowdhuryd.example MailRelay 4.2
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="===============5463349249169752784=="
+
+--===============5463349249169752784==
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hi team,
+
+Please process the following claim. Patient was seen at our office on 2026-03=
+-28.
+
+Patient: Garcia, Zane  (DOB 1953-04-02, M)
+Member ID: U13714382    Plan: Cigna Open Access Plus =E2=80=94 PPO
+Group: GRP-50059
+Address: 3642 Forest Dr, Philadelphia, PA 19168
+
+Provider: Tina Chowdhury, DO, NPI 2530060499, Tax ID 47-1052444
+Specialty: Internal Medicine
+
+Diagnoses:
+  - Z00.00  Encounter for general adult medical examination
+  - F41.1  Generalized anxiety disorder
+  - J20.9  Acute bronchitis, unspecified
+
+Services rendered:
+  - 2026-03-28: CPT 99281 (ED visit, low), 1 unit(s), $120.70
+
+Total: $120.70
+Claim reference: CLM-2026-1001929
+
+Let me know if anything is missing.
+
+Thanks,
+Brenda Cruz
+Tina Chowdhury, DO
+(728) 289-3166
+
+--===============5463349249169752784==
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: 8bit
+MIME-Version: 1.0
+
+<html><body style="font-family: Arial, sans-serif; font-size: 11pt;">
+<p>Hi team,</p>
+<p>Please process the following claim. Patient was seen at our office on
+<b>2026-03-28</b>.</p>
+<table cellpadding="3" style="border-collapse: collapse; font-size: 10pt;">
+<tr><td><b>Patient:</b></td><td>Garcia, Zane (DOB 1953-04-02, M)</td></tr>
+<tr><td><b>Member ID:</b></td><td>U13714382</td></tr>
+<tr><td><b>Plan:</b></td><td>Cigna Open Access Plus — PPO</td></tr>
+<tr><td><b>Group:</b></td><td>GRP-50059</td></tr>
+<tr><td><b>Provider:</b></td><td>Tina Chowdhury, DO (NPI 2530060499)</td></tr>
+<tr><td><b>Total charge:</b></td><td>$120.70</td></tr>
+<tr><td><b>Claim ref:</b></td><td>CLM-2026-1001929</td></tr>
+</table>
+<p>Diagnoses: Z00.00, F41.1, J20.9</p>
+<p>Procedures: 99281</p>
+<p>Thanks,<br>Brenda Cruz<br>Tina Chowdhury, DO<br>(728) 289-3166</p>
+</body></html>
+
+--===============5463349249169752784==--

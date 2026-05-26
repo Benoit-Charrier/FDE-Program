@@ -1,0 +1,82 @@
+{
+  "submission_id": "CLM-2026-1001534",
+  "submitted_at": "2026-04-27T13:24:00",
+  "submitter": {
+    "name": "Victor Park, MD",
+    "npi": "4918023658",
+    "tax_id": "92-3972137",
+    "specialty": "Cardiology",
+    "phone": "(972) 283-2000",
+    "address": {
+      "street": "4442 Cherry Ln",
+      "city": "Omaha",
+      "state": "NE",
+      "zip": "68175"
+    }
+  },
+  "patient": {
+    "first_name": "Adrian",
+    "last_name": "Walker",
+    "date_of_birth": "2012-08-14",
+    "gender": "M",
+    "address": {
+      "street": "6670 Cherry Ln",
+      "city": "Buffalo",
+      "state": "NY",
+      "zip": "1425"
+    },
+    "phone": "(694) 527-4784"
+  },
+  "insurance": {
+    "payer_id": "ANT-001",
+    "payer_name": "Anthem Blue Access",
+    "plan": "PPO",
+    "member_id": "YYL90660324",
+    "group_id": "GRP-97797"
+  },
+  "diagnoses": [
+    {
+      "code": "H66.90",
+      "description": "Otitis media, unspecified, unspecified ear"
+    },
+    {
+      "code": "S93.401A",
+      "description": "Sprain of unspecified ligament of right ankle, initial"
+    },
+    {
+      "code": "J45.909",
+      "description": "Unspecified asthma, uncomplicated"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99421",
+      "description": "Online digital E/M, 5-10 min",
+      "modifiers": [
+        "95"
+      ],
+      "units": 1,
+      "charge_amount": 24.52,
+      "diagnosis_pointer": "1",
+      "place_of_service": "02",
+      "place_of_service_desc": "Telehealth",
+      "date_of_service": "2026-03-30"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "47562",
+      "description": "Laparoscopic cholecystectomy",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 2896.0,
+      "diagnosis_pointer": "2",
+      "place_of_service": "21",
+      "place_of_service_desc": "Inpatient Hospital",
+      "date_of_service": "2026-04-01"
+    }
+  ],
+  "total_charge_amount": 2920.52,
+  "currency": "USD",
+  "prior_auth_number": null
+}

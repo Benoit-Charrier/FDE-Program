@@ -1,0 +1,104 @@
+{
+  "submission_id": "CLM-2026-1001447",
+  "submitted_at": "2026-04-27T13:01:00",
+  "submitter": {
+    "name": "Bright Family Practice",
+    "npi": "5409286105",
+    "tax_id": "18-1015267",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(212) 416-9830",
+    "address": {
+      "street": "4474 River Rd",
+      "city": "Cincinnati",
+      "state": "OH",
+      "zip": "45286"
+    }
+  },
+  "patient": {
+    "first_name": "Lina",
+    "last_name": "Young",
+    "date_of_birth": "1961-04-28",
+    "gender": "F",
+    "address": {
+      "street": "5661 Cedar Ct",
+      "city": "Phoenix",
+      "state": "AZ",
+      "zip": "85059"
+    },
+    "phone": "(870) 223-3129"
+  },
+  "insurance": {
+    "payer_id": "BCBS-IL",
+    "payer_name": "Blue Cross Blue Shield of Illinois",
+    "plan": "PPO Choice",
+    "member_id": "XOJ176317211",
+    "group_id": "GRP-29778"
+  },
+  "diagnoses": [
+    {
+      "code": "J20.9",
+      "description": "Acute bronchitis, unspecified"
+    },
+    {
+      "code": "J44.9",
+      "description": "Chronic obstructive pulmonary disease, unspecified"
+    },
+    {
+      "code": "R53.83",
+      "description": "Other fatigue"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "97110",
+      "description": "Therapeutic exercises (15 min)",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 45.19,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-19"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "80053",
+      "description": "Comprehensive metabolic panel",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 32.0,
+      "diagnosis_pointer": "2",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-13"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "83036",
+      "description": "Hemoglobin A1c",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 20.74,
+      "diagnosis_pointer": "3",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-16"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "71046",
+      "description": "Chest X-ray, 2 views",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 103.42,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-13"
+    }
+  ],
+  "total_charge_amount": 201.35,
+  "currency": "USD",
+  "prior_auth_number": null
+}

@@ -1,0 +1,72 @@
+{
+  "submission_id": "CLM-2026-1001440",
+  "submitted_at": "2026-04-27T13:03:00",
+  "submitter": {
+    "name": "Oscar Reyes, PA",
+    "npi": "5188732778",
+    "tax_id": "48-5266776",
+    "specialty": "Physician Assistant",
+    "phone": "(401) 447-7900",
+    "address": {
+      "street": "3236 Jefferson Dr",
+      "city": "Denver",
+      "state": "CO",
+      "zip": "80267"
+    }
+  },
+  "patient": {
+    "first_name": "Kiana",
+    "last_name": "Gonzalez",
+    "date_of_birth": "2006-07-25",
+    "gender": "F",
+    "address": {
+      "street": "8883 1st Ave",
+      "city": "Cleveland",
+      "state": "OH",
+      "zip": "44139"
+    },
+    "phone": "(440) 411-3903"
+  },
+  "insurance": {
+    "payer_id": "BCBS-IL",
+    "payer_name": "Blue Cross Blue Shield of Illinois",
+    "plan": "HMO Standard",
+    "member_id": "XOJ477387320",
+    "group_id": "GRP-27389"
+  },
+  "diagnoses": [
+    {
+      "code": "M17.11",
+      "description": "Unilateral primary osteoarthritis, right knee"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "97110",
+      "description": "Therapeutic exercises (15 min)",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 46.64,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-10"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "97110",
+      "description": "Therapeutic exercises (15 min)",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 39.19,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-16"
+    }
+  ],
+  "total_charge_amount": 85.83,
+  "currency": "USD",
+  "prior_auth_number": null
+}

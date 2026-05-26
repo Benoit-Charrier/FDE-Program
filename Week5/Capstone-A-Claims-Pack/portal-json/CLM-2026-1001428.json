@@ -1,0 +1,68 @@
+{
+  "submission_id": "CLM-2026-1001428",
+  "submitted_at": "2026-04-27T12:58:00",
+  "submitter": {
+    "name": "Sunrise Medical Group",
+    "npi": "4413358581",
+    "tax_id": "81-7841949",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(826) 494-3846",
+    "address": {
+      "street": "9072 Jefferson Dr",
+      "city": "St. Louis",
+      "state": "MO",
+      "zip": "63142"
+    }
+  },
+  "patient": {
+    "first_name": "Jerome",
+    "last_name": "Adams",
+    "date_of_birth": "1961-12-02",
+    "gender": "M",
+    "address": {
+      "street": "3493 Lincoln St",
+      "city": "Cincinnati",
+      "state": "OH",
+      "zip": "45218"
+    },
+    "phone": "(582) 231-2162"
+  },
+  "insurance": {
+    "payer_id": "CIG-001",
+    "payer_name": "Cigna Open Access Plus",
+    "plan": "PPO",
+    "member_id": "U66825961",
+    "group_id": "GRP-29955"
+  },
+  "diagnoses": [
+    {
+      "code": "N39.0",
+      "description": "Urinary tract infection, site not specified"
+    },
+    {
+      "code": "M25.561",
+      "description": "Pain in right knee"
+    },
+    {
+      "code": "M54.5",
+      "description": "Low back pain"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "80061",
+      "description": "Lipid panel",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 56.46,
+      "diagnosis_pointer": "1",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-24"
+    }
+  ],
+  "total_charge_amount": 56.46,
+  "currency": "USD",
+  "prior_auth_number": null
+}

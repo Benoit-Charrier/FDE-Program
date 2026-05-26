@@ -1,0 +1,94 @@
+{
+  "submission_id": "CLM-2026-1001267",
+  "submitted_at": "2026-04-27T12:20:00",
+  "submitter": {
+    "name": "Frank Anderson, DO",
+    "npi": "1505937011",
+    "tax_id": "10-3567542",
+    "specialty": "Family Medicine",
+    "phone": "(666) 300-7292",
+    "address": {
+      "street": "4653 Maple Dr",
+      "city": "Charlotte",
+      "state": "NC",
+      "zip": "28282"
+    }
+  },
+  "patient": {
+    "first_name": "Zane",
+    "last_name": "Park",
+    "date_of_birth": "1991-02-14",
+    "gender": "M",
+    "address": {
+      "street": "3730 Birch Ct",
+      "city": "Buffalo",
+      "state": "NY",
+      "zip": "14291"
+    },
+    "phone": "(760) 952-4997"
+  },
+  "insurance": {
+    "payer_id": "CIG-001",
+    "payer_name": "Cigna Open Access Plus",
+    "plan": "PPO",
+    "member_id": "U88791741",
+    "group_id": "GRP-28178"
+  },
+  "diagnoses": [
+    {
+      "code": "R10.9",
+      "description": "Unspecified abdominal pain"
+    },
+    {
+      "code": "F41.1",
+      "description": "Generalized anxiety disorder"
+    },
+    {
+      "code": "R07.9",
+      "description": "Chest pain, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99421",
+      "description": "Online digital E/M, 5-10 min",
+      "modifiers": [
+        "95"
+      ],
+      "units": 1,
+      "charge_amount": 24.53,
+      "diagnosis_pointer": "1",
+      "place_of_service": "02",
+      "place_of_service_desc": "Telehealth",
+      "date_of_service": "2026-04-17"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "80061",
+      "description": "Lipid panel",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 56.98,
+      "diagnosis_pointer": "2",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-24"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "64483",
+      "description": "Injection, transforaminal epidural",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 739.09,
+      "diagnosis_pointer": "3",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-04-19"
+    }
+  ],
+  "total_charge_amount": 820.6,
+  "currency": "USD",
+  "prior_auth_number": null
+}

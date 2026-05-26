@@ -1,0 +1,64 @@
+{
+  "submission_id": "CLM-2026-1001295",
+  "submitted_at": "2026-04-27T12:26:00",
+  "submitter": {
+    "name": "Aaron Hassan, MD",
+    "npi": "2575740640",
+    "tax_id": "33-6476889",
+    "specialty": "Cardiology",
+    "phone": "(982) 410-2385",
+    "address": {
+      "street": "5191 Walnut St",
+      "city": "Columbus",
+      "state": "OH",
+      "zip": "43232"
+    }
+  },
+  "patient": {
+    "first_name": "Gerald",
+    "last_name": "Brown",
+    "date_of_birth": "1998-12-02",
+    "gender": "M",
+    "address": {
+      "street": "8940 Main St",
+      "city": "Seattle",
+      "state": "WA",
+      "zip": "98115"
+    },
+    "phone": "(389) 283-6863"
+  },
+  "insurance": {
+    "payer_id": "HUM-001",
+    "payer_name": "Humana Gold Plus",
+    "plan": "HMO",
+    "member_id": "H38125482",
+    "group_id": "GRP-21995"
+  },
+  "diagnoses": [
+    {
+      "code": "S93.401A",
+      "description": "Sprain of unspecified ligament of right ankle, initial"
+    },
+    {
+      "code": "J02.9",
+      "description": "Acute pharyngitis, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99999",
+      "description": "Major joint injection",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 131.61,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-26"
+    }
+  ],
+  "total_charge_amount": 131.61,
+  "currency": "USD",
+  "prior_auth_number": null
+}

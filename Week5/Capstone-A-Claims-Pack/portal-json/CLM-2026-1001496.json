@@ -1,0 +1,72 @@
+{
+  "submission_id": "CLM-2026-1001496",
+  "submitted_at": "2026-04-27T13:15:00",
+  "submitter": {
+    "name": "Felix O'Connor, MD",
+    "npi": "1508421955",
+    "tax_id": "",
+    "specialty": "Orthopedic Surgery",
+    "phone": "(856) 767-9707",
+    "address": {
+      "street": "4047 River Rd",
+      "city": "Tucson",
+      "state": "AZ",
+      "zip": "85727"
+    }
+  },
+  "patient": {
+    "first_name": "Ingrid",
+    "last_name": "Hayes",
+    "date_of_birth": "1954-02-24",
+    "gender": "F",
+    "address": {
+      "street": "8606 Lake Rd",
+      "city": "Buffalo",
+      "state": "NY",
+      "zip": "14247"
+    },
+    "phone": "(964) 754-5895"
+  },
+  "insurance": {
+    "payer_id": "UHC-002",
+    "payer_name": "UnitedHealthcare Navigate",
+    "plan": "HMO",
+    "member_id": "167767443-07",
+    "group_id": "GRP-43613"
+  },
+  "diagnoses": [
+    {
+      "code": "M79.7",
+      "description": "Fibromyalgia"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99215",
+      "description": "Office visit, established, high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 289.69,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-03-28"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "90686",
+      "description": "Flu vaccine quadrivalent",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 24.29,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-07"
+    }
+  ],
+  "total_charge_amount": 313.98,
+  "currency": "USD",
+  "prior_auth_number": null
+}

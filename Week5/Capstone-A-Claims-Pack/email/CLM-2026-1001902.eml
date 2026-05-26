@@ -1,0 +1,47 @@
+From: Alex Patel <alex.patel@westwoodintern.example>
+To: claims-intake@payer.example
+Cc: office-mgr@westwoodintern.example
+Date: Mon, 27 Apr 2026 13:11:22 +0000
+Message-ID: <177729813741.6.2800288428614611004@westwoodintern.example>
+Subject: Resubmitting claim =?utf-8?b?4oCU?= patient Martinez (DOB 1975-06-15)
+X-Submitter-NPI: 1982063492
+X-Submitter-TaxID: 93-8611074
+X-Originating-System: westwoodintern.example MailRelay 4.2
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+Hi team,
+
+Please process the following claim. Patient was seen at our office on 2026-04=
+-01.
+
+Patient: Martinez, Wyatt  (DOB 1975-06-15, M)
+Member ID: H12215261    Plan: Humana Gold Plus =E2=80=94 HMO
+Group: GRP-12673
+Address: 1516 Forest Dr, Denver, CO 80256
+
+Provider: Westwood Internal Medicine, NPI 1982063492, Tax ID 93-8611074
+Specialty: Multi-specialty Clinic
+
+Diagnoses:
+  - L98.9  Disorder of the skin and subcutaneous tissue, unspecified
+
+Services rendered:
+  - 2026-04-01: CPT 12001 (Simple repair, superficial wound), 1 unit(s), $194=
+.15
+  - 2026-04-13: CPT 12001 (Simple repair, superficial wound), 2 unit(s), $395=
+.01
+  - 2026-04-10: CPT 73030 (Shoulder X-ray, complete), 1 unit(s), $66.86
+  - 2026-04-07: CPT 99215 (Office visit, established, high), 1 unit(s), $210.=
+54
+
+Total: $866.56
+Claim reference: CLM-2026-1001902
+
+Resubmitting from last week =E2=80=94 first one bounced. Pls confirm receipt.
+
+Thanks,
+Alex Patel
+Westwood Internal Medicine
+(902) 763-4254

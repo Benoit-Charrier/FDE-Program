@@ -1,0 +1,55 @@
+{
+  "submission_id": "CLM-2026-1001370",
+  "submitted_at": "2026-04-27T12:42:00",
+  "submitter": {
+    "name": "Gerald Vargas, NP",
+    "npi": "",
+    "tax_id": "11-7535324",
+    "specialty": "Nurse Practitioner",
+    "phone": "(347) 958-1456",
+    "address": {
+      "street": "4337 Lake Rd",
+      "city": "Columbus",
+      "state": "OH",
+      "zip": "43288"
+    }
+  },
+  "patient": {
+    "first_name": "OsCAR",
+    "last_name": "Garcia",
+    "date_of_birth": "1993-05-10",
+    "gender": "M",
+    "address": {
+      "street": "3227 1st Ave",
+      "city": "Minneapolis",
+      "state": "MN",
+      "zip": "55487"
+    },
+    "phone": "(729) 957-2039"
+  },
+  "insurance": {
+    "payer_id": "HUM-001",
+    "payer_name": "Humana Gold Plus",
+    "plan": "HMO",
+    "member_id": "H92444485",
+    "group_id": "GRP-85271"
+  },
+  "diagnoses": [],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "44970",
+      "description": "Laparoscopic appendectomy",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 1423.88,
+      "diagnosis_pointer": "1",
+      "place_of_service": "21",
+      "place_of_service_desc": "Inpatient Hospital",
+      "date_of_service": "2026-03-28"
+    }
+  ],
+  "total_charge_amount": 1423.88,
+  "currency": "USD",
+  "prior_auth_number": null
+}

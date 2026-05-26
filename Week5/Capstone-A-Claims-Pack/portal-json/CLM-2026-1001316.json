@@ -1,0 +1,76 @@
+{
+  "submission_id": "CLM-2026-1001316",
+  "submitted_at": "2026-04-27T12:29:00",
+  "submitter": {
+    "name": "Bayside Orthopedics",
+    "npi": "8620611510",
+    "tax_id": "47-1052444",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(438) 437-9729",
+    "address": {
+      "street": "9519 Birch Ct",
+      "city": "Cincinnati",
+      "state": "OH",
+      "zip": "45278"
+    }
+  },
+  "patient": {
+    "first_name": "Isaac",
+    "last_name": "Vasquez",
+    "date_of_birth": "1970-01-03",
+    "gender": "M",
+    "address": {
+      "street": "1656 Cherry Ln",
+      "city": "Indianapolis",
+      "state": "IN",
+      "zip": "46287"
+    },
+    "phone": "(903) 901-1462"
+  },
+  "insurance": {
+    "payer_id": "MCD-IL",
+    "payer_name": "Illinois Medicaid",
+    "plan": "Medicaid",
+    "member_id": "999288709",
+    "group_id": "GRP-71726"
+  },
+  "diagnoses": [
+    {
+      "code": "M54.5",
+      "description": "Low back pain"
+    },
+    {
+      "code": "E66.9",
+      "description": "Obesity, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "47562",
+      "description": "Laparoscopic cholecystectomy",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 3920.09,
+      "diagnosis_pointer": "1",
+      "place_of_service": "21",
+      "place_of_service_desc": "Inpatient Hospital",
+      "date_of_service": "2026-04-12"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99205",
+      "description": "Office visit, new pt, comprehensive",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 308.78,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-03-28"
+    }
+  ],
+  "total_charge_amount": 4228.87,
+  "currency": "USD",
+  "prior_auth_number": null
+}

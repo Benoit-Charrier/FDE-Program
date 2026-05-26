@@ -1,0 +1,64 @@
+{
+  "submission_id": "CLM-2026-1001402",
+  "submitted_at": "2026-04-27T12:53:00",
+  "submitter": {
+    "name": "Yusuf Wong, MD",
+    "npi": "8138011169",
+    "tax_id": "60-5120245",
+    "specialty": "Orthopedic Surgery",
+    "phone": "(503) 249-9201",
+    "address": {
+      "street": "6781 Forest Dr",
+      "city": "Kansas City",
+      "state": "MO",
+      "zip": "64139"
+    }
+  },
+  "patient": {
+    "first_name": "David",
+    "last_name": "Anderson",
+    "date_of_birth": "1989-09-25",
+    "gender": "M",
+    "address": {
+      "street": "6641 Oak Ave",
+      "city": "Cleveland",
+      "state": "OH",
+      "zip": "44145"
+    },
+    "phone": "(899) 786-4400"
+  },
+  "insurance": {
+    "payer_id": "UHC-002",
+    "payer_name": "UnitedHealthcare Navigate",
+    "plan": "HMO",
+    "member_id": "853240516-04",
+    "group_id": "GRP-32787"
+  },
+  "diagnoses": [
+    {
+      "code": "J06.9",
+      "description": "Acute upper respiratory infection, unspecified"
+    },
+    {
+      "code": "J20.9",
+      "description": "Acute bronchitis, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99395",
+      "description": "Preventive established, 18-39",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 213.85,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-12"
+    }
+  ],
+  "total_charge_amount": 213.85,
+  "currency": "USD",
+  "prior_auth_number": null
+}

@@ -1,0 +1,11 @@
+--- handwritten annotation transcribed by intake clerk ---
+
+claim CLM-2026-1001969
+Lopez K  528226281-07
+Sunrise Medical Group
+
+-- 2nd time this provider sent us this claim - first one went to wrong payer
+
+** HOLD **
+
+- init: tk

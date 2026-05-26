@@ -1,0 +1,30 @@
+============================
+   FAX COVER SHEET
+============================
+TO:    Medicare Part B Claims Intake
+FROM:  Crestview Imaging Center
+DATE:  04/27/2026
+PAGES: 1 of 4
+
+URGENT [_]   FOR REVIEW [X]   PLEASE COMMENT [_]   PLEASE REPLY [_]
+
+RE: Claim submission - patient Taylor, Travis
+
+Member ID:     8GW7ADA5UQ0
+DOB:           2018-02-14
+Plan:          Original Medicare
+Group:         GRP-50463
+DOS:           2026-04-08
+
+Diagnoses:     S93.401A, I25.10, R07.9
+Procedures:    70551
+Total charge:  $455.32
+
+Provider NPI:  1164198325
+Tax ID:        48-3278274
+
+NOTES:
+Patient was seen for emergency visit - records to follow.
+
+If problems with this fax, call (360) 361-2064
+============================

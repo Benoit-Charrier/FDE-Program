@@ -1,0 +1,79 @@
+{
+  "submission_id": "CLM-2026-1001216",
+  "submitted_at": "2026-04-27T12:09:00",
+  "submitter": {
+    "name": "Aaron Singh, DC",
+    "npi": "7082779369",
+    "tax_id": "13-3827856",
+    "specialty": "Chiropractic",
+    "phone": "(936) 885-7055",
+    "address": {
+      "street": "3372 Jefferson Dr",
+      "city": "Denver",
+      "state": "CO",
+      "zip": "80217"
+    }
+  },
+  "patient": {
+    "first_name": "SoPHIA",
+    "last_name": "Nguyen",
+    "date_of_birth": "1983-05-31",
+    "gender": "F",
+    "address": {
+      "street": "5111 Washington Ave",
+      "city": "Cleveland",
+      "state": "OH",
+      "zip": "44183"
+    },
+    "phone": "(959) 287-9701"
+  },
+  "insurance": {
+    "payer_id": "UHC-001",
+    "payer_name": "UnitedHealthcare Choice Plus",
+    "plan": "PPO",
+    "member_id": "106974773-02",
+    "group_id": "GRP-59002"
+  },
+  "diagnoses": [],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "97140",
+      "description": "Manual therapy (15 min)",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 32.62,
+      "diagnosis_pointer": "1",
+      "place_of_service": "31",
+      "place_of_service_desc": "Skilled Nursing Facility",
+      "date_of_service": "2026-04-02"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "12001",
+      "description": "Simple repair, superficial wound",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 159.23,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-03"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99215",
+      "description": "Office visit, established, high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 269.66,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-16"
+    }
+  ],
+  "total_charge_amount": 461.51,
+  "currency": "USD",
+  "prior_auth_number": null
+}

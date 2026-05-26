@@ -1,0 +1,91 @@
+{
+  "submission_id": "CLM-2026-1001468",
+  "submitted_at": "2026-04-27T13:07:00",
+  "submitter": {
+    "name": "Ivan Tanaka, MD",
+    "npi": "1244555837",
+    "tax_id": "16-2749174",
+    "specialty": "Orthopedic Surgery",
+    "phone": "(670) 354-1770",
+    "address": {
+      "street": "5839 Highland Ave",
+      "city": "Columbus",
+      "state": "OH",
+      "zip": "43262"
+    }
+  },
+  "patient": {
+    "first_name": "Kevin",
+    "last_name": "Kumar",
+    "date_of_birth": "2022-09-23",
+    "gender": "M",
+    "address": {
+      "street": "4418 Cherry Ln",
+      "city": "Raleigh",
+      "state": "NC",
+      "zip": "27643"
+    },
+    "phone": "(417) 807-2637"
+  },
+  "insurance": {
+    "payer_id": "MCR-001",
+    "payer_name": "Medicare Part B",
+    "plan": "Original Medicare",
+    "member_id": "3EA3MPY9TV3",
+    "group_id": "GRP-85946"
+  },
+  "diagnoses": [],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "90471",
+      "description": "Immunization administration",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 32.91,
+      "diagnosis_pointer": "1",
+      "place_of_service": "31",
+      "place_of_service_desc": "Skilled Nursing Facility",
+      "date_of_service": "2026-04-04"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "90686",
+      "description": "Flu vaccine quadrivalent",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 43.25,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-03"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "97110",
+      "description": "Therapeutic exercises (15 min)",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 97.32,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-10"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "47562",
+      "description": "Laparoscopic cholecystectomy",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 3197.82,
+      "diagnosis_pointer": "1",
+      "place_of_service": "21",
+      "place_of_service_desc": "Inpatient Hospital",
+      "date_of_service": "2026-03-31"
+    }
+  ],
+  "total_charge_amount": 3371.3,
+  "currency": "USD",
+  "prior_auth_number": null
+}

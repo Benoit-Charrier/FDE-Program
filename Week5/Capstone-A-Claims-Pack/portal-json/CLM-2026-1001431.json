@@ -1,0 +1,66 @@
+{
+  "submission_id": "CLM-2026-1001431",
+  "submitted_at": "2026-04-27T12:58:00",
+  "submitter": {
+    "name": "Marcus Chowdhury, MD",
+    "npi": "8504095180",
+    "tax_id": "92-3972137",
+    "specialty": "Family Medicine",
+    "phone": "(252) 330-2594",
+    "address": {
+      "street": "2942 Ridge Rd",
+      "city": "Tucson",
+      "state": "AZ",
+      "zip": "85762"
+    }
+  },
+  "patient": {
+    "first_name": "Hannah",
+    "last_name": "Taylor",
+    "date_of_birth": "1975-01-02",
+    "gender": "F",
+    "address": {
+      "street": "596 Cherry Ln",
+      "city": "Raleigh",
+      "state": "NC",
+      "zip": "27618"
+    },
+    "phone": "(797) 695-2108"
+  },
+  "insurance": {
+    "payer_id": "MCD-IL",
+    "payer_name": "Illinois Medicaid",
+    "plan": "Medicaid",
+    "member_id": "111765351",
+    "group_id": "GRP-96391"
+  },
+  "diagnoses": [
+    {
+      "code": "J02.9",
+      "description": "Acute pharyngitis, unspecified"
+    },
+    {
+      "code": "G47.33",
+      "description": "Obstructive sleep apnea (adult) (pediatric)"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99214",
+      "description": "Office visit, established, mod-high",
+      "modifiers": [
+        "22"
+      ],
+      "units": 1,
+      "charge_amount": 210.65,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-22"
+    }
+  ],
+  "total_charge_amount": 210.65,
+  "currency": "USD",
+  "prior_auth_number": null
+}

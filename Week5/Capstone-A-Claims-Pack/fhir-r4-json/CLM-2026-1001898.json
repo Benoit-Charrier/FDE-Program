@@ -1,0 +1,152 @@
+{
+  "resourceType": "Claim",
+  "id": "CLM-2026-1001898",
+  "status": "active",
+  "type": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+        "code": "professional"
+      }
+    ]
+  },
+  "use": "claim",
+  "patient": {
+    "reference": "Patient/424440663-00",
+    "display": "SaRA Adams"
+  },
+  "billablePeriod": {
+    "start": "2026-04-03",
+    "end": "2026-03-28"
+  },
+  "created": "2026-04-27T14:58:00",
+  "insurer": {
+    "reference": "Organization/UHC-001",
+    "display": "UnitedHealthcare Choice Plus"
+  },
+  "provider": {
+    "reference": "Practitioner/6835156789",
+    "display": "Grace Anderson, MD"
+  },
+  "priority": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/processpriority",
+        "code": "normal"
+      }
+    ]
+  },
+  "diagnosis": [
+    {
+      "sequence": 1,
+      "diagnosisCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/sid/icd-10-cm",
+            "code": "H66.90",
+            "display": "Otitis media, unspecified, unspecified ear"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 2,
+      "diagnosisCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/sid/icd-10-cm",
+            "code": "R51.9",
+            "display": "Headache, unspecified"
+          }
+        ]
+      }
+    }
+  ],
+  "insurance": [
+    {
+      "sequence": 1,
+      "focal": true,
+      "coverage": {
+        "display": "PPO via UnitedHealthcare Choice Plus"
+      }
+    }
+  ],
+  "item": [
+    {
+      "sequence": 1,
+      "diagnosisSequence": [
+        1
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "99396",
+            "display": "Preventive established, 40-64"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-04-03",
+      "quantity": {
+        "value": 1
+      },
+      "unitPrice": {
+        "value": 264.13,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 264.13,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "11"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 2,
+      "diagnosisSequence": [
+        2
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "47562",
+            "display": "Laparoscopic cholecystectomy"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-03-28",
+      "quantity": {
+        "value": 2
+      },
+      "unitPrice": {
+        "value": 1325.945,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 2651.89,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "21"
+          }
+        ]
+      }
+    }
+  ],
+  "total": {
+    "value": 2916.02,
+    "currency": "USD"
+  }
+}

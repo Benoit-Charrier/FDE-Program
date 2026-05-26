@@ -1,0 +1,47 @@
+From: Donna Schultz <donna.schultz@wyatttanakamd.example>
+To: claims-intake@payer.example
+Cc: None
+Date: Mon, 27 Apr 2026 14:13:18 +0000
+Message-ID: <177729813755.6.14396383143056397198@wyatttanakamd.example>
+Subject: Claim submission =?utf-8?b?4oCU?= patient Young (CLM-2026-1001919)
+X-Submitter-NPI: 3874528467
+X-Submitter-TaxID: 92-3972137
+X-Originating-System: wyatttanakamd.example MailRelay 4.2
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+Hi team,
+
+Please process the following claim. Patient was seen at our office on 2026-04=
+-16.
+
+Patient: Young, Ravi  (DOB 1965-05-25, M)
+Member ID: H76689231    Plan: Humana Gold Plus =E2=80=94 HMO
+Group: GRP-10397
+Address: 554 Washington Ave, Denver, CO 80249
+
+Provider: Wyatt Tanaka, MD, NPI 3874528467, Tax ID 92-3972137
+Specialty: Internal Medicine
+
+Diagnoses:
+  - E11.9  Type 2 diabetes mellitus without complications
+  - I25.10  Atherosclerotic heart disease without angina
+  - K21.9  Gastro-esophageal reflux disease without esophagitis
+
+Services rendered:
+  - 2026-04-16: CPT 80061 (Lipid panel), 2 unit(s), $51.69
+  - 2026-04-09: CPT 72148 (MRI lumbar spine without contrast), 1 unit(s), $30=
+3.74
+  - 2026-04-06: CPT 80053 (Comprehensive metabolic panel), 1 unit(s), $15.57
+  - 2026-04-18: CPT 99284 (ED visit, mod-high), 1 unit(s), $290.11
+
+Total: $661.11
+Claim reference: CLM-2026-1001919
+
+Resubmitting from last week =E2=80=94 first one bounced. Pls confirm receipt.
+
+Thanks,
+Donna Schultz
+Wyatt Tanaka, MD
+(271) 870-7896

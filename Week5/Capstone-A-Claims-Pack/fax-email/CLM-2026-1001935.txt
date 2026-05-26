@@ -1,0 +1,30 @@
+============================
+   FAX COVER SHEET
+============================
+TO:    Aetna Open Access Claims Intake
+FROM:  Crestview Imaging Center
+DATE:  04/27/2026
+PAGES: 1 of 3
+
+URGENT [_]   FOR REVIEW [X]   PLEASE COMMENT [_]   PLEASE REPLY [_]
+
+RE: Claim submission - patient Reyes, Donna
+
+Member ID:     W974987926
+DOB:           2012-02-13
+Plan:          PPO
+Group:         GRP-50812
+DOS:           2026-04-01
+
+Diagnoses:     J06.9
+Procedures:    44970, 99395
+Total charge:  $3069.35
+
+Provider NPI:  9852543646
+Tax ID:        90-8449136
+
+NOTES:
+Please prior-auth was on file - see attached.
+
+If problems with this fax, call (626) 317-6006
+============================

@@ -1,0 +1,34 @@
+From: billing@crestviewimagi.example
+To: claims-intake@payer.example
+Date: Mon, 27 Apr 2026 17:50:00 -0500
+Subject: Re: billing question / claim CLM-2026-1001943
+
+Hi team,
+
+Please process the following claim. Patient was seen at our office on 2026-04-19.
+
+Patient: Taylor, Ingrid (DOB 1948-12-22, F)
+Member ID: 3TV0XNW4DF1    Plan: Medicare Part B - Original Medicare
+Group: GRP-40118
+Address: 8614 Jefferson Dr, Indianapolis, IN 46249
+
+Provider: Crestview Imaging Center, NPI 6175242478, Tax ID 83-8246530
+Specialty: Multi-specialty Clinic
+
+Diagnoses:
+  - J20.9 Acute bronchitis, unspecified
+  - R07.9 Chest pain, unspecified
+  - E66.9 Obesity, unspecified
+
+Services rendered:
+  - 2026-04-19: CPT 99215 (Office visit, established, high), 1 unit(s), $200.21
+  - 2026-03-31: CPT 80061 (Lipid panel), 2 unit(s), $55.36
+  - 2026-04-11: CPT 99204 (Office visit, new pt, high), 1 unit(s), $189.62
+  - 2026-03-29: CPT 97110 (Therapeutic exercises (15 min)), 1 unit(s), $33.15
+
+Total: $478.34
+Claim reference: CLM-2026-1001943
+
+Please process at your earliest. Thanks!
+
+--Donna, Billing Office

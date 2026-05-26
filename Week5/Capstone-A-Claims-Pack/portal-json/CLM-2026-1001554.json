@@ -1,0 +1,76 @@
+{
+  "submission_id": "CLM-2026-1001554",
+  "submitted_at": "2026-04-27T13:28:00",
+  "submitter": {
+    "name": "Tina DuBois, MD",
+    "npi": "5893210121",
+    "tax_id": "33-6476889",
+    "specialty": "Pediatrics",
+    "phone": "(210) 680-4223",
+    "address": {
+      "street": "5417 Highland Ave",
+      "city": "Columbus",
+      "state": "OH",
+      "zip": "43221"
+    }
+  },
+  "patient": {
+    "first_name": "Pamela",
+    "last_name": "Iqbal",
+    "date_of_birth": "2017-03-15",
+    "gender": "F",
+    "address": {
+      "street": "4807 Lincoln St",
+      "city": "Indianapolis",
+      "state": "IN",
+      "zip": "46271"
+    },
+    "phone": "(709) 316-1941"
+  },
+  "insurance": {
+    "payer_id": "ANT-001",
+    "payer_name": "Anthem Blue Access",
+    "plan": "PPO",
+    "member_id": "YYL12376861",
+    "group_id": "GRP-19467"
+  },
+  "diagnoses": [
+    {
+      "code": "E78.5",
+      "description": "Hyperlipidemia, unspecified"
+    },
+    {
+      "code": "I25.10",
+      "description": "Atherosclerotic heart disease without angina"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "44970",
+      "description": "Laparoscopic appendectomy",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 1389.73,
+      "diagnosis_pointer": "1",
+      "place_of_service": "12",
+      "place_of_service_desc": "Home",
+      "date_of_service": "2026-04-20"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "80053",
+      "description": "Comprehensive metabolic panel",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 21.12,
+      "diagnosis_pointer": "2",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-23"
+    }
+  ],
+  "total_charge_amount": 1410.85,
+  "currency": "USD",
+  "prior_auth_number": null
+}

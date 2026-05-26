@@ -1,0 +1,68 @@
+{
+  "submission_id": "CLM-2026-1001263",
+  "submitted_at": "2026-04-27T12:20:00",
+  "submitter": {
+    "name": "Connor Jensen, MD",
+    "npi": "",
+    "tax_id": "70-5913848",
+    "specialty": "Emergency Medicine",
+    "phone": "(797) 949-4251",
+    "address": {
+      "street": "4557 Lincoln St",
+      "city": "Columbus",
+      "state": "OH",
+      "zip": "43289"
+    }
+  },
+  "patient": {
+    "first_name": "Zane",
+    "last_name": "Taylor",
+    "date_of_birth": "1934-06-06",
+    "gender": "M",
+    "address": {
+      "street": "5861 Oak Ave",
+      "city": "Buffalo",
+      "state": "NY",
+      "zip": "14288"
+    },
+    "phone": "(597) 255-1278"
+  },
+  "insurance": {
+    "payer_id": "BCBS-IL",
+    "payer_name": "Blue Cross Blue Shield of Illinois",
+    "plan": "PPO Choice",
+    "member_id": "161263706",
+    "group_id": "GRP-67157"
+  },
+  "diagnoses": [
+    {
+      "code": "M79.7",
+      "description": "Fibromyalgia"
+    },
+    {
+      "code": "M54.5",
+      "description": "Low back pain"
+    },
+    {
+      "code": "R51.9",
+      "description": "Headache, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "12001",
+      "description": "Simple repair, superficial wound",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 374.16,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-15"
+    }
+  ],
+  "total_charge_amount": 374.16,
+  "currency": "USD",
+  "prior_auth_number": null
+}

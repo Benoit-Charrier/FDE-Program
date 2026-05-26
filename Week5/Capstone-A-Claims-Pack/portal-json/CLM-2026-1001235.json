@@ -1,0 +1,76 @@
+{
+  "submission_id": "CLM-2026-1001235",
+  "submitted_at": "2026-04-27T12:12:00",
+  "submitter": {
+    "name": "Highland Pediatrics",
+    "npi": "",
+    "tax_id": "10-3567542",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(455) 216-7649",
+    "address": {
+      "street": "8655 Walnut St",
+      "city": "Omaha",
+      "state": "NE",
+      "zip": "68111"
+    }
+  },
+  "patient": {
+    "first_name": "TeRESA",
+    "last_name": "Yamamoto",
+    "date_of_birth": "2015-11-22",
+    "gender": "F",
+    "address": {
+      "street": "1573 Highland Ave",
+      "city": "Cincinnati",
+      "state": "OH",
+      "zip": "45293"
+    },
+    "phone": "(920) 798-2321"
+  },
+  "insurance": {
+    "payer_id": "UHC-001",
+    "payer_name": "UnitedHealthcare Choice Plus",
+    "plan": "PPO",
+    "member_id": "210558193-04",
+    "group_id": "GRP-67539"
+  },
+  "diagnoses": [
+    {
+      "code": "R53.83",
+      "description": "Other fatigue"
+    },
+    {
+      "code": "L30.9",
+      "description": "Dermatitis, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "70551",
+      "description": "MRI brain without contrast",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 874.57,
+      "diagnosis_pointer": "1",
+      "place_of_service": "31",
+      "place_of_service_desc": "Skilled Nursing Facility",
+      "date_of_service": "2026-04-06"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "27447",
+      "description": "Total knee arthroplasty",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 4280.37,
+      "diagnosis_pointer": "2",
+      "place_of_service": "21",
+      "place_of_service_desc": "Inpatient Hospital",
+      "date_of_service": "2026-04-13"
+    }
+  ],
+  "total_charge_amount": 5154.94,
+  "currency": "USD",
+  "prior_auth_number": null
+}

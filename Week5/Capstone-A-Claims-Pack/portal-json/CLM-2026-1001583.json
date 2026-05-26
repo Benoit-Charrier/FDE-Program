@@ -1,0 +1,84 @@
+{
+  "submission_id": "CLM-2026-1001583",
+  "submitted_at": "2026-04-27T13:37:00",
+  "submitter": {
+    "name": "Bayside Orthopedics",
+    "npi": "5198677441",
+    "tax_id": "11-5860495",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(663) 220-4093",
+    "address": {
+      "street": "4369 Spring St",
+      "city": "Houston",
+      "state": "TX",
+      "zip": "77028"
+    }
+  },
+  "patient": {
+    "first_name": "Vincent",
+    "last_name": "Xiong",
+    "date_of_birth": "1968-08-19",
+    "gender": "M",
+    "address": {
+      "street": "9278 1st Ave",
+      "city": "Cleveland",
+      "state": "OH",
+      "zip": "44143"
+    },
+    "phone": "(406) 348-7136"
+  },
+  "insurance": {
+    "payer_id": "UHC-001",
+    "payer_name": "UnitedHealthcare Choice Plus",
+    "plan": "PPO",
+    "member_id": "449776415-02",
+    "group_id": "GRP-40709"
+  },
+  "diagnoses": [
+    {
+      "code": "S93.401A",
+      "description": "Sprain of unspecified ligament of right ankle, initial"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "90686",
+      "description": "Flu vaccine quadrivalent",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 55.01,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-13"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "97110",
+      "description": "Therapeutic exercises (15 min)",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 39.42,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-12"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "80053",
+      "description": "Comprehensive metabolic panel",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 20.73,
+      "diagnosis_pointer": "1",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-21"
+    }
+  ],
+  "total_charge_amount": 115.16,
+  "currency": "USD",
+  "prior_auth_number": null
+}

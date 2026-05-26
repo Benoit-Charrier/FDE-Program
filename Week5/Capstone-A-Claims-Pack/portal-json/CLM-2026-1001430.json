@@ -1,0 +1,72 @@
+{
+  "submission_id": "CLM-2026-1001430",
+  "submitted_at": "2026-04-27T12:57:00",
+  "submitter": {
+    "name": "Rachel Park, MD",
+    "npi": "6325511755",
+    "tax_id": "92-3972137",
+    "specialty": "Family Medicine",
+    "phone": "(239) 614-9764",
+    "address": {
+      "street": "8595 Sunset Blvd",
+      "city": "Boston",
+      "state": "MA",
+      "zip": "02173"
+    }
+  },
+  "patient": {
+    "first_name": "Nadia",
+    "last_name": "Schultz",
+    "date_of_birth": "1980-04-10",
+    "gender": "F",
+    "address": {
+      "street": "7546 Park Blvd",
+      "city": "Tampa",
+      "state": "FL",
+      "zip": "33625"
+    },
+    "phone": "(825) 658-4720"
+  },
+  "insurance": {
+    "payer_id": "HUM-001",
+    "payer_name": "Humana Gold Plus",
+    "plan": "HMO",
+    "member_id": "H83278904",
+    "group_id": "GRP-41135"
+  },
+  "diagnoses": [
+    {
+      "code": "E78.5",
+      "description": "Hyperlipidemia, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "90471",
+      "description": "Immunization administration",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 15.13,
+      "diagnosis_pointer": "1",
+      "place_of_service": "12",
+      "place_of_service_desc": "Home",
+      "date_of_service": "2026-04-06"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "47562",
+      "description": "Laparoscopic cholecystectomy",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 2773.87,
+      "diagnosis_pointer": "1",
+      "place_of_service": "21",
+      "place_of_service_desc": "Inpatient Hospital",
+      "date_of_service": "2026-04-08"
+    }
+  ],
+  "total_charge_amount": 2789.0,
+  "currency": "USD",
+  "prior_auth_number": null
+}

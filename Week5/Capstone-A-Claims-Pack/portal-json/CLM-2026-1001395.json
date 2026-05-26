@@ -1,0 +1,81 @@
+{
+  "submission_id": "CLM-2026-1001395",
+  "submitted_at": "2026-04-27T12:48:00",
+  "submitter": {
+    "name": "Teresa Cohen, MD",
+    "npi": "",
+    "tax_id": "22-7303626",
+    "specialty": "Family Medicine",
+    "phone": "(576) 718-9140",
+    "address": {
+      "street": "7913 Walnut St",
+      "city": "Salt Lake City",
+      "state": "UT",
+      "zip": "84145"
+    }
+  },
+  "patient": {
+    "first_name": "Diana",
+    "last_name": "Zhang",
+    "date_of_birth": "1937-04-22",
+    "gender": "F",
+    "address": {
+      "street": "7393 Cherry Ln",
+      "city": "Salt Lake City",
+      "state": "UT",
+      "zip": "84143"
+    },
+    "phone": "(231) 654-7911"
+  },
+  "insurance": {
+    "payer_id": "BCBS-IL",
+    "payer_name": "Blue Cross Blue Shield of Illinois",
+    "plan": "HMO Standard",
+    "member_id": "XOJ805492195",
+    "group_id": "GRP-73833"
+  },
+  "diagnoses": [],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "64483",
+      "description": "Injection, transforaminal epidural",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 587.63,
+      "diagnosis_pointer": "1",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-04-06"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99422",
+      "description": "Online digital E/M, 11-20 min",
+      "modifiers": [
+        "95"
+      ],
+      "units": 1,
+      "charge_amount": 40.75,
+      "diagnosis_pointer": "1",
+      "place_of_service": "02",
+      "place_of_service_desc": "Telehealth",
+      "date_of_service": "2026-04-04"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "73030",
+      "description": "Shoulder X-ray, complete",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 70.33,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-10"
+    }
+  ],
+  "total_charge_amount": 698.71,
+  "currency": "USD",
+  "prior_auth_number": null
+}

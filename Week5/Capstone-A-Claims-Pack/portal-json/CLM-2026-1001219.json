@@ -1,0 +1,106 @@
+{
+  "submission_id": "CLM-2026-1001219",
+  "submitted_at": "2026-04-27T12:09:00",
+  "submitter": {
+    "name": "Aaliyah Schmidt, NP",
+    "npi": "6960716858",
+    "tax_id": "16-2749174",
+    "specialty": "Nurse Practitioner",
+    "phone": "(456) 951-6190",
+    "address": {
+      "street": "6740 1st Ave",
+      "city": "Buffalo",
+      "state": "NY",
+      "zip": "14272"
+    }
+  },
+  "patient": {
+    "first_name": "Diana",
+    "last_name": "Reyes",
+    "date_of_birth": "1995-06-10",
+    "gender": "F",
+    "address": {
+      "street": "4594 Hill St",
+      "city": "Raleigh",
+      "state": "NC",
+      "zip": "27615"
+    },
+    "phone": "(898) 530-4110"
+  },
+  "insurance": {
+    "payer_id": "MCD-IL",
+    "payer_name": "Illinois Medicaid",
+    "plan": "Medicaid",
+    "member_id": "275285171",
+    "group_id": "GRP-75762"
+  },
+  "diagnoses": [
+    {
+      "code": "R07.9",
+      "description": "Chest pain, unspecified"
+    },
+    {
+      "code": "E66.9",
+      "description": "Obesity, unspecified"
+    },
+    {
+      "code": "M17.11",
+      "description": "Unilateral primary osteoarthritis, right knee"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "64483",
+      "description": "Injection, transforaminal epidural",
+      "modifiers": [
+        "22"
+      ],
+      "units": 2,
+      "charge_amount": 750.19,
+      "diagnosis_pointer": "1",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-04-20"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "97140",
+      "description": "Manual therapy (15 min)",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 42.56,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-26"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "80053",
+      "description": "Comprehensive metabolic panel",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 40.15,
+      "diagnosis_pointer": "3",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-11"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "71046",
+      "description": "Chest X-ray, 2 views",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 63.27,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-16"
+    }
+  ],
+  "total_charge_amount": 896.17,
+  "currency": "USD",
+  "prior_auth_number": null
+}

@@ -1,0 +1,104 @@
+{
+  "submission_id": "CLM-2026-1001282",
+  "submitted_at": "2026-04-27T12:21:00",
+  "submitter": {
+    "name": "Kiana Reyes, DPT",
+    "npi": "3763533796",
+    "tax_id": "35-7465144",
+    "specialty": "Physical Therapy",
+    "phone": "(475) 497-4551",
+    "address": {
+      "street": "7291 Jefferson Dr",
+      "city": "Chicago",
+      "state": "IL",
+      "zip": "60642"
+    }
+  },
+  "patient": {
+    "first_name": "Yusuf",
+    "last_name": "Diaz",
+    "date_of_birth": "1997-07-16",
+    "gender": "M",
+    "address": {
+      "street": "2826 Spring St",
+      "city": "Denver",
+      "state": "CO",
+      "zip": "80260"
+    },
+    "phone": "(788) 519-5951"
+  },
+  "insurance": {
+    "payer_id": "MCD-IL",
+    "payer_name": "Illinois Medicaid",
+    "plan": "Medicaid",
+    "member_id": "193146296",
+    "group_id": "GRP-99188"
+  },
+  "diagnoses": [
+    {
+      "code": "J45.909",
+      "description": "Unspecified asthma, uncomplicated"
+    },
+    {
+      "code": "M79.7",
+      "description": "Fibromyalgia"
+    },
+    {
+      "code": "E66.9",
+      "description": "Obesity, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "97110",
+      "description": "Therapeutic exercises (15 min)",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 33.75,
+      "diagnosis_pointer": "1",
+      "place_of_service": "31",
+      "place_of_service_desc": "Skilled Nursing Facility",
+      "date_of_service": "2026-04-09"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99204",
+      "description": "Office visit, new pt, high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 201.71,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-19"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99204",
+      "description": "Office visit, new pt, high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 243.72,
+      "diagnosis_pointer": "3",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-02"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "90471",
+      "description": "Immunization administration",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 18.29,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-03-29"
+    }
+  ],
+  "total_charge_amount": 497.47,
+  "currency": "USD",
+  "prior_auth_number": null
+}

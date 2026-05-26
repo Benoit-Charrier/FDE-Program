@@ -1,0 +1,30 @@
+============================
+   FAX COVER SHEET
+============================
+TO:    Aetna Open Access Claims Intake
+FROM:  Vincent Vargas, DO
+DATE:  04/27/2026
+PAGES: 1 of 5
+
+URGENT [_]   FOR REVIEW [X]   PLEASE COMMENT [_]   PLEASE REPLY [_]
+
+RE: Claim submission - patient Foster, Mateo
+
+Member ID:     W247978516
+DOB:           1976-07-10
+Plan:          PPO
+Group:         GRP-81940
+DOS:           2026-04-19
+
+Diagnoses:     R07.9, G47.33, J44.9
+Procedures:    99396, 99203, 80053, 72148
+Total charge:  $737.06
+
+Provider NPI:  9685486376
+Tax ID:        11-1834690
+
+NOTES:
+Patient was seen for emergency visit - records to follow.
+
+If problems with this fax, call (295) 790-2428
+============================

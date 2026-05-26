@@ -1,0 +1,94 @@
+{
+  "submission_id": "CLM-2026-1001520",
+  "submitted_at": "2026-04-27T13:21:00",
+  "submitter": {
+    "name": "Westwood Internal Medicine",
+    "npi": "8613420206",
+    "tax_id": "25-3439747",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(522) 236-6350",
+    "address": {
+      "street": "1370 Sunset Blvd",
+      "city": "Minneapolis",
+      "state": "MN",
+      "zip": "55472"
+    }
+  },
+  "patient": {
+    "first_name": "Diana",
+    "last_name": "Rodriguez",
+    "date_of_birth": "2007-11-19",
+    "gender": "F",
+    "address": {
+      "street": "435 Sunset Blvd",
+      "city": "Minneapolis",
+      "state": "MN",
+      "zip": "55413"
+    },
+    "phone": "(809) 221-2228"
+  },
+  "insurance": {
+    "payer_id": "MCR-001",
+    "payer_name": "Medicare Part B",
+    "plan": "Original Medicare",
+    "member_id": "6XR2MAP3ND9",
+    "group_id": "GRP-46765"
+  },
+  "diagnoses": [
+    {
+      "code": "S93.401A",
+      "description": "Sprain of unspecified ligament of right ankle, initial"
+    },
+    {
+      "code": "N18.3",
+      "description": "Chronic kidney disease, stage 3"
+    },
+    {
+      "code": "J44.9",
+      "description": "Chronic obstructive pulmonary disease, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "12001",
+      "description": "Simple repair, superficial wound",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 217.89,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-25"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "90686",
+      "description": "Flu vaccine quadrivalent",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 38.92,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-11"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99422",
+      "description": "Online digital E/M, 11-20 min",
+      "modifiers": [
+        "95"
+      ],
+      "units": 1,
+      "charge_amount": 33.73,
+      "diagnosis_pointer": "3",
+      "place_of_service": "02",
+      "place_of_service_desc": "Telehealth",
+      "date_of_service": "2026-04-07"
+    }
+  ],
+  "total_charge_amount": 290.54,
+  "currency": "USD",
+  "prior_auth_number": null
+}

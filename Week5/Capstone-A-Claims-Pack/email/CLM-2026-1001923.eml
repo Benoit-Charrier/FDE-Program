@@ -1,0 +1,44 @@
+From: Alex Patel <alex.patel@gloriawongdc.example>
+To: claims-intake@payer.example
+Cc: None
+Date: Mon, 27 Apr 2026 16:13:27 +0000
+Message-ID: <177729813758.6.8753106713155926303@gloriawongdc.example>
+Subject: Outstanding claim =?utf-8?b?4oCU?= DOS 2026-04-25
+X-Submitter-NPI:
+X-Submitter-TaxID: 23-1130624
+X-Originating-System: gloriawongdc.example MailRelay 4.2
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+Hi team,
+
+Please process the following claim. Patient was seen at our office on 2026-04=
+-25.
+
+Patient: Taylor, Xio  (DOB 2002-04-09, F)
+Member ID: XOJ418101520    Plan: Blue Cross Blue Shield of Illinois =E2=80=94=
+ PPO Choice
+Group: GRP-84395
+Address: 4182 1st Ave, St. Louis, MO 63131
+
+Provider: Gloria Wong, DC, NPI (missing =E2=80=94 please call), Tax ID 23-113=
+0624
+Specialty: Chiropractic
+
+Diagnoses:
+  - Z00.00  Encounter for general adult medical examination
+
+Services rendered:
+  - 2026-04-25: CPT 99421 (Online digital E/M, 5-10 min) mod 95, 1 unit(s), $=
+17.18
+
+Total: $17.18
+Claim reference: CLM-2026-1001923
+
+Let me know if anything is missing.
+
+Thanks,
+Alex Patel
+Gloria Wong, DC
+(764) 791-1114

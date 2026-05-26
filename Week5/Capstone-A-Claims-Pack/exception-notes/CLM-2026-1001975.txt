@@ -1,0 +1,12 @@
+[Internal note - intake processor]
+
+Pt: Fischer, Quincy DOB 11/09/55
+Member: 4KA9RHN6JJ1
+Provider: Maya Schmidt (NPI 3255119488)
+DOS: 2026-04-09
+Total: $230.81
+
+Issue: Pt name on claim does not match enrollment. Need to verify ID.
+
+Routed to: Special handling
+- KAnderson 15:13

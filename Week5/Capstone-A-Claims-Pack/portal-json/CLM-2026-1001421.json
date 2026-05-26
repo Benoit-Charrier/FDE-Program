@@ -1,0 +1,84 @@
+{
+  "submission_id": "CLM-2026-1001421",
+  "submitted_at": "2026-04-27T13:00:00",
+  "submitter": {
+    "name": "Edwin Goldberg, DO",
+    "npi": "7488197396",
+    "tax_id": "44-7392596",
+    "specialty": "Family Medicine",
+    "phone": "(534) 564-7281",
+    "address": {
+      "street": "3240 Pine Ln",
+      "city": "Albuquerque",
+      "state": "NM",
+      "zip": "87193"
+    }
+  },
+  "patient": {
+    "first_name": "David",
+    "last_name": "Espinoza",
+    "date_of_birth": "2001-05-15",
+    "gender": "M",
+    "address": {
+      "street": "668 Pine Ln",
+      "city": "Portland",
+      "state": "OR",
+      "zip": "97257"
+    },
+    "phone": "(518) 935-2198"
+  },
+  "insurance": {
+    "payer_id": "MCD-IL",
+    "payer_name": "Illinois Medicaid",
+    "plan": "Medicaid",
+    "member_id": "206804351",
+    "group_id": "GRP-23380"
+  },
+  "diagnoses": [
+    {
+      "code": "Z00.00",
+      "description": "Encounter for general adult medical examination"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99213",
+      "description": "Office visit, established, low-mod",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 115.11,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-06"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99285",
+      "description": "ED visit, high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 418.69,
+      "diagnosis_pointer": "1",
+      "place_of_service": "23",
+      "place_of_service_desc": "Emergency Room \u2014 Hospital",
+      "date_of_service": "2026-03-30"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "44970",
+      "description": "Laparoscopic appendectomy",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 1272.3,
+      "diagnosis_pointer": "1",
+      "place_of_service": "21",
+      "place_of_service_desc": "Inpatient Hospital",
+      "date_of_service": "2026-04-15"
+    }
+  ],
+  "total_charge_amount": 1806.1,
+  "currency": "USD",
+  "prior_auth_number": null
+}

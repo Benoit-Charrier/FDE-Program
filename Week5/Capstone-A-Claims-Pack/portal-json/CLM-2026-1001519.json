@@ -1,0 +1,86 @@
+{
+  "submission_id": "CLM-2026-1001519",
+  "submitted_at": "2026-04-27T13:24:00",
+  "submitter": {
+    "name": "Maya Mehta, MD",
+    "npi": "8267068995",
+    "tax_id": "25-3439747",
+    "specialty": "Family Medicine",
+    "phone": "(707) 381-7440",
+    "address": {
+      "street": "5350 Birch Ct",
+      "city": "Portland",
+      "state": "OR",
+      "zip": "97235"
+    }
+  },
+  "patient": {
+    "first_name": "Whitney",
+    "last_name": "Khan",
+    "date_of_birth": "1948-04-25",
+    "gender": "F",
+    "address": {
+      "street": "1551 Spring St",
+      "city": "Kansas City",
+      "state": "MO",
+      "zip": "64110"
+    },
+    "phone": "(957) 763-2985"
+  },
+  "insurance": {
+    "payer_id": "BCBS-IL",
+    "payer_name": "Blue Cross Blue Shield of Illinois",
+    "plan": "PPO Choice",
+    "member_id": "XOJ284380654",
+    "group_id": "GRP-65981"
+  },
+  "diagnoses": [
+    {
+      "code": "N39.0",
+      "description": "Urinary tract infection, site not specified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "44970",
+      "description": "Laparoscopic appendectomy",
+      "modifiers": [
+        "22"
+      ],
+      "units": 1,
+      "charge_amount": 1376.94,
+      "diagnosis_pointer": "1",
+      "place_of_service": "21",
+      "place_of_service_desc": "Inpatient Hospital",
+      "date_of_service": "2026-04-04"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "44970",
+      "description": "Laparoscopic appendectomy",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 1642.41,
+      "diagnosis_pointer": "1",
+      "place_of_service": "21",
+      "place_of_service_desc": "Inpatient Hospital",
+      "date_of_service": "2026-03-29"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "83036",
+      "description": "Hemoglobin A1c",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 40.66,
+      "diagnosis_pointer": "1",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-11"
+    }
+  ],
+  "total_charge_amount": 3060.01,
+  "currency": "USD",
+  "prior_auth_number": null
+}

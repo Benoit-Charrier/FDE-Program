@@ -1,0 +1,76 @@
+{
+  "submission_id": "CLM-2026-1001398",
+  "submitted_at": "2026-04-27T12:54:00",
+  "submitter": {
+    "name": "Maple Family Health",
+    "npi": "3433182565",
+    "tax_id": "11-5860495",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(307) 702-6618",
+    "address": {
+      "street": "2869 Lake Rd",
+      "city": "Cleveland",
+      "state": "OH",
+      "zip": "44133"
+    }
+  },
+  "patient": {
+    "first_name": "Alice",
+    "last_name": "Wong",
+    "date_of_birth": "2012-03-12",
+    "gender": "F",
+    "address": {
+      "street": "9808 Ridge Rd",
+      "city": "Buffalo",
+      "state": "NY",
+      "zip": "14217"
+    },
+    "phone": "(492) 340-4095"
+  },
+  "insurance": {
+    "payer_id": "ANT-001",
+    "payer_name": "Anthem Blue Access",
+    "plan": "PPO",
+    "member_id": "79853086L",
+    "group_id": "GRP-67596"
+  },
+  "diagnoses": [
+    {
+      "code": "S93.401A",
+      "description": "Sprain of unspecified ligament of right ankle, initial"
+    },
+    {
+      "code": "Z00.00",
+      "description": "Encounter for general adult medical examination"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "80061",
+      "description": "Lipid panel",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 26.37,
+      "diagnosis_pointer": "1",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-24"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "73030",
+      "description": "Shoulder X-ray, complete",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 69.58,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-03-31"
+    }
+  ],
+  "total_charge_amount": 95.95,
+  "currency": "USD",
+  "prior_auth_number": null
+}

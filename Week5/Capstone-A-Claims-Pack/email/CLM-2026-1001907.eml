@@ -1,0 +1,75 @@
+From: Brenda Cruz <brenda.cruz@teresatanakapa.example>
+To: claims-intake@payer.example
+Cc: office-mgr@teresatanakapa.example
+Date: Mon, 27 Apr 2026 12:31:35 +0000
+Message-ID: <177729813746.6.5924624819698494428@teresatanakapa.example>
+Subject: Re: billing question / claim CLM-2026-1001907
+X-Submitter-NPI: 0053731649
+X-Submitter-TaxID: 81-7841949
+X-Originating-System: teresatanakapa.example MailRelay 4.2
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="===============6372956491910787275=="
+
+--===============6372956491910787275==
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hi team,
+
+Please process the following claim. Patient was seen at our office on 2026-03=
+-29.
+
+Patient: Zhang, Alice  (DOB 1971-12-07, F)
+Member ID: H85639945    Plan: Humana Gold Plus =E2=80=94 HMO
+Group: GRP-14307
+Address: 7696 Park Blvd, Tucson, AZ 85724
+
+Provider: Teresa Tanaka, PA, NPI 0053731649, Tax ID 81-7841949
+Specialty: Physician Assistant
+
+Diagnoses:
+  - M54.5  Low back pain
+  - E11.9  Type 2 diabetes mellitus without complications
+  - J02.9  Acute pharyngitis, unspecified
+
+Services rendered:
+  - 2026-03-29: CPT 90471 (Immunization administration), 2 unit(s), $41.54
+  - 2026-04-20: CPT 99395 (Preventive established, 18-39), 1 unit(s), $175.02
+  - 2026-04-08: CPT 64483 (Injection, transforaminal epidural), 1 unit(s), $3=
+51.62
+
+Total: $568.18
+Claim reference: CLM-2026-1001907
+
+Let me know if anything is missing.
+
+Thanks,
+Brenda Cruz
+Teresa Tanaka, PA
+(864) 766-1347
+
+--===============6372956491910787275==
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: 8bit
+MIME-Version: 1.0
+
+<html><body style="font-family: Arial, sans-serif; font-size: 11pt;">
+<p>Hi team,</p>
+<p>Please process the following claim. Patient was seen at our office on
+<b>2026-03-29</b>.</p>
+<table cellpadding="3" style="border-collapse: collapse; font-size: 10pt;">
+<tr><td><b>Patient:</b></td><td>Zhang, Alice (DOB 1971-12-07, F)</td></tr>
+<tr><td><b>Member ID:</b></td><td>H85639945</td></tr>
+<tr><td><b>Plan:</b></td><td>Humana Gold Plus — HMO</td></tr>
+<tr><td><b>Group:</b></td><td>GRP-14307</td></tr>
+<tr><td><b>Provider:</b></td><td>Teresa Tanaka, PA (NPI 0053731649)</td></tr>
+<tr><td><b>Total charge:</b></td><td>$568.18</td></tr>
+<tr><td><b>Claim ref:</b></td><td>CLM-2026-1001907</td></tr>
+</table>
+<p>Diagnoses: M54.5, E11.9, J02.9</p>
+<p>Procedures: 90471, 99395, 64483</p>
+<p>Thanks,<br>Brenda Cruz<br>Teresa Tanaka, PA<br>(864) 766-1347</p>
+</body></html>
+
+--===============6372956491910787275==--

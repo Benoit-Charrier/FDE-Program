@@ -1,0 +1,104 @@
+{
+  "submission_id": "CLM-2026-1001350",
+  "submitted_at": "2026-04-27T12:42:00",
+  "submitter": {
+    "name": "Zoe Anderson, MD",
+    "npi": "2477532875",
+    "tax_id": "17-9077104",
+    "specialty": "Pediatrics",
+    "phone": "(772) 830-5938",
+    "address": {
+      "street": "3753 Hill St",
+      "city": "Charlotte",
+      "state": "NC",
+      "zip": "28232"
+    }
+  },
+  "patient": {
+    "first_name": "Felicia",
+    "last_name": "Bauer",
+    "date_of_birth": "1986-04-27",
+    "gender": "F",
+    "address": {
+      "street": "1701 Lake Rd",
+      "city": "Buffalo",
+      "state": "NY",
+      "zip": "14234"
+    },
+    "phone": "(419) 543-6281"
+  },
+  "insurance": {
+    "payer_id": "BCBS-IL",
+    "payer_name": "Blue Cross Blue Shield of Illinois",
+    "plan": "HMO Standard",
+    "member_id": "XOJ146646726",
+    "group_id": "GRP-59619"
+  },
+  "diagnoses": [
+    {
+      "code": "Z23",
+      "description": "Encounter for immunization"
+    },
+    {
+      "code": "J20.9",
+      "description": "Acute bronchitis, unspecified"
+    },
+    {
+      "code": "K21.9",
+      "description": "Gastro-esophageal reflux disease without esophagitis"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "70551",
+      "description": "MRI brain without contrast",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 500.83,
+      "diagnosis_pointer": "1",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-04-20"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "71046",
+      "description": "Chest X-ray, 2 views",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 56.21,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-04"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99203",
+      "description": "Office visit, new pt, mod",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 171.14,
+      "diagnosis_pointer": "3",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-02"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "97110",
+      "description": "Therapeutic exercises (15 min)",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 67.82,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-03-29"
+    }
+  ],
+  "total_charge_amount": 796.0,
+  "currency": "USD",
+  "prior_auth_number": null
+}

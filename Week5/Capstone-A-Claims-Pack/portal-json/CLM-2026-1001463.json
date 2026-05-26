@@ -1,0 +1,80 @@
+{
+  "submission_id": "CLM-2026-1001463",
+  "submitted_at": "2026-04-27T13:10:00",
+  "submitter": {
+    "name": "Jerome Johansson, NP",
+    "npi": "8573771367",
+    "tax_id": "47-1052444",
+    "specialty": "Nurse Practitioner",
+    "phone": "(450) 957-2641",
+    "address": {
+      "street": "8476 Oak Ave",
+      "city": "Pittsburgh",
+      "state": "PA",
+      "zip": "15274"
+    }
+  },
+  "patient": {
+    "first_name": "EzRA",
+    "last_name": "Davis",
+    "date_of_birth": "1992-05-20",
+    "gender": "M",
+    "address": {
+      "street": "4170 Birch Ct",
+      "city": "Nashville",
+      "state": "TN",
+      "zip": "37220"
+    },
+    "phone": "(343) 769-6025"
+  },
+  "insurance": {
+    "payer_id": "BCBS-IL",
+    "payer_name": "Blue Cross Blue Shield of Illinois",
+    "plan": "HMO Standard",
+    "member_id": "XOJ605528031",
+    "group_id": "GRP-13368"
+  },
+  "diagnoses": [
+    {
+      "code": "J02.9",
+      "description": "Acute pharyngitis, unspecified"
+    },
+    {
+      "code": "R51.9",
+      "description": "Headache, unspecified"
+    },
+    {
+      "code": "Z23",
+      "description": "Encounter for immunization"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "90471",
+      "description": "Immunization administration",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 17.12,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-25"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "27447",
+      "description": "Total knee arthroplasty",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 2320.0,
+      "diagnosis_pointer": "2",
+      "place_of_service": "21",
+      "place_of_service_desc": "Inpatient Hospital",
+      "date_of_service": "2026-04-20"
+    }
+  ],
+  "total_charge_amount": 2337.12,
+  "currency": "USD",
+  "prior_auth_number": null
+}

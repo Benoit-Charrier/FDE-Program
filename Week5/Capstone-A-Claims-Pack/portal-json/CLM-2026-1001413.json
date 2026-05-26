@@ -1,0 +1,67 @@
+{
+  "submission_id": "CLM-2026-1001413",
+  "submitted_at": "2026-04-27T12:53:00",
+  "submitter": {
+    "name": "Grace Jensen, MD",
+    "npi": "8353560066",
+    "tax_id": "18-1015267",
+    "specialty": "Family Medicine",
+    "phone": "(818) 627-4798",
+    "address": {
+      "street": "5142 Main St",
+      "city": "Phoenix",
+      "state": "AZ",
+      "zip": "85069"
+    }
+  },
+  "patient": {
+    "first_name": "Carlos",
+    "last_name": "Mitchell",
+    "date_of_birth": "2006-06-25",
+    "gender": "M",
+    "address": {
+      "street": "4018 Park Blvd",
+      "city": "St. Louis",
+      "state": "MO",
+      "zip": "63134"
+    },
+    "phone": "(472) 523-8047"
+  },
+  "insurance": {
+    "payer_id": "HUM-001",
+    "payer_name": "Humana Gold Plus",
+    "plan": "HMO",
+    "member_id": "H79359325",
+    "group_id": "GRP-88645"
+  },
+  "diagnoses": [],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99213",
+      "description": "Office visit, established, low-mod",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 112.76,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-22"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99203",
+      "description": "Office visit, new pt, mod",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 137.52,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-05"
+    }
+  ],
+  "total_charge_amount": 250.28,
+  "currency": "USD",
+  "prior_auth_number": null
+}

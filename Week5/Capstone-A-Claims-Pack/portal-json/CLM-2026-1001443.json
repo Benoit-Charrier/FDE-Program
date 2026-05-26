@@ -1,0 +1,100 @@
+{
+  "submission_id": "CLM-2026-1001443",
+  "submitted_at": "2026-04-27T13:04:00",
+  "submitter": {
+    "name": "Sunrise Medical Group",
+    "npi": "0538412597",
+    "tax_id": "51-6875693",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(917) 919-2118",
+    "address": {
+      "street": "7101 Spring St",
+      "city": "Minneapolis",
+      "state": "MN",
+      "zip": "55478"
+    }
+  },
+  "patient": {
+    "first_name": "Edwin",
+    "last_name": "Brown",
+    "date_of_birth": "1934-11-18",
+    "gender": "M",
+    "address": {
+      "street": "3334 Jefferson Dr",
+      "city": "Tucson",
+      "state": "AZ",
+      "zip": "85789"
+    },
+    "phone": "(471) 704-4367"
+  },
+  "insurance": {
+    "payer_id": "BCBS-IL",
+    "payer_name": "Blue Cross Blue Shield of Illinois",
+    "plan": "HMO Standard",
+    "member_id": "XOJ873657729",
+    "group_id": "GRP-36792"
+  },
+  "diagnoses": [
+    {
+      "code": "K21.9",
+      "description": "Gastro-esophageal reflux disease without esophagitis"
+    },
+    {
+      "code": "R51.9",
+      "description": "Headache, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99396",
+      "description": "Preventive established, 40-64",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 214.19,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-17"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "80061",
+      "description": "Lipid panel",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 25.92,
+      "diagnosis_pointer": "2",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-13"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "97140",
+      "description": "Manual therapy (15 min)",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 31.81,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-03"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "20610",
+      "description": "Major joint injection",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 129.13,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-23"
+    }
+  ],
+  "total_charge_amount": 401.05,
+  "currency": "USD",
+  "prior_auth_number": null
+}

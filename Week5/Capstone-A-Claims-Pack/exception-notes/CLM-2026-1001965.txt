@@ -1,0 +1,12 @@
+[Internal note - intake processor]
+
+Pt: Petrov, Diana DOB 06/01/49
+Member: 254999253
+Provider: Peter Martinez (NPI 4097221397)
+DOS: 2026-04-21
+Total: $425.74
+
+Issue: Service date is after term date per eligibility lookup.
+
+Routed to: Auth team
+- MWong 15:15

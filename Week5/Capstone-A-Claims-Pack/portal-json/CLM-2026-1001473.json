@@ -1,0 +1,100 @@
+{
+  "submission_id": "CLM-2026-1001473",
+  "submitted_at": "2026-04-27T13:08:00",
+  "submitter": {
+    "name": "Bright Family Practice",
+    "npi": "9188830715",
+    "tax_id": "23-5462507",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(484) 737-7476",
+    "address": {
+      "street": "7052 Cedar Ct",
+      "city": "St. Louis",
+      "state": "MO",
+      "zip": "63199"
+    }
+  },
+  "patient": {
+    "first_name": "Monica",
+    "last_name": "Novak",
+    "date_of_birth": "1991-11-23",
+    "gender": "F",
+    "address": {
+      "street": "2240 Main St",
+      "city": "Boston",
+      "state": "MA",
+      "zip": "02177"
+    },
+    "phone": "(766) 838-4292"
+  },
+  "insurance": {
+    "payer_id": "UHC-002",
+    "payer_name": "UnitedHealthcare Navigate",
+    "plan": "HMO",
+    "member_id": "541617102-01",
+    "group_id": "GRP-69822"
+  },
+  "diagnoses": [
+    {
+      "code": "H66.90",
+      "description": "Otitis media, unspecified, unspecified ear"
+    },
+    {
+      "code": "E78.5",
+      "description": "Hyperlipidemia, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99213",
+      "description": "Office visit, established, low-mod",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 127.94,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-17"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "20610",
+      "description": "Major joint injection",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 111.22,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-17"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99204",
+      "description": "Office visit, new pt, high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 236.95,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-22"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "99281",
+      "description": "ED visit, low",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 102.61,
+      "diagnosis_pointer": "2",
+      "place_of_service": "23",
+      "place_of_service_desc": "Emergency Room \u2014 Hospital",
+      "date_of_service": "2026-04-19"
+    }
+  ],
+  "total_charge_amount": 578.72,
+  "currency": "USD",
+  "prior_auth_number": null
+}

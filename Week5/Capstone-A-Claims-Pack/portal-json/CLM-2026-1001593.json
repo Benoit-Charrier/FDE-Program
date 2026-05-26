@@ -1,0 +1,104 @@
+{
+  "submission_id": "CLM-2026-1001593",
+  "submitted_at": "2026-04-27T13:38:00",
+  "submitter": {
+    "name": "Diana Chowdhury, MD",
+    "npi": "4964374793",
+    "tax_id": "48-5266776",
+    "specialty": "Internal Medicine",
+    "phone": "(545) 989-5337",
+    "address": {
+      "street": "2713 Sunset Blvd",
+      "city": "Phoenix",
+      "state": "AZ",
+      "zip": "85034"
+    }
+  },
+  "patient": {
+    "first_name": "Yvonne",
+    "last_name": "Vasquez",
+    "date_of_birth": "1981-02-26",
+    "gender": "F",
+    "address": {
+      "street": "6907 Park Blvd",
+      "city": "Portland",
+      "state": "OR",
+      "zip": "97248"
+    },
+    "phone": "(801) 664-4941"
+  },
+  "insurance": {
+    "payer_id": "BCBS-IL",
+    "payer_name": "Blue Cross Blue Shield of Illinois",
+    "plan": "HMO Standard",
+    "member_id": "492717688",
+    "group_id": "GRP-92714"
+  },
+  "diagnoses": [
+    {
+      "code": "F41.1",
+      "description": "Generalized anxiety disorder"
+    },
+    {
+      "code": "R53.83",
+      "description": "Other fatigue"
+    },
+    {
+      "code": "K21.9",
+      "description": "Gastro-esophageal reflux disease without esophagitis"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99214",
+      "description": "Office visit, established, mod-high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 192.33,
+      "diagnosis_pointer": "1",
+      "place_of_service": "12",
+      "place_of_service_desc": "Home",
+      "date_of_service": "2026-04-15"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "97140",
+      "description": "Manual therapy (15 min)",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 42.89,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-25"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99285",
+      "description": "ED visit, high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 350.63,
+      "diagnosis_pointer": "3",
+      "place_of_service": "23",
+      "place_of_service_desc": "Emergency Room \u2014 Hospital",
+      "date_of_service": "2026-03-30"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "85025",
+      "description": "CBC w/ differential",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 26.9,
+      "diagnosis_pointer": "1",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-03-30"
+    }
+  ],
+  "total_charge_amount": 612.75,
+  "currency": "USD",
+  "prior_auth_number": null
+}

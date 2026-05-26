@@ -1,0 +1,64 @@
+{
+  "submission_id": "CLM-2026-1001387",
+  "submitted_at": "2026-04-27T12:51:00",
+  "submitter": {
+    "name": "Westwood Internal Medicine",
+    "npi": "2472012895",
+    "tax_id": "51-6875693",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(729) 725-4049",
+    "address": {
+      "street": "270 Pine Ln",
+      "city": "Denver",
+      "state": "CO",
+      "zip": "80283"
+    }
+  },
+  "patient": {
+    "first_name": "LiAM",
+    "last_name": "Wong",
+    "date_of_birth": "1950-10-12",
+    "gender": "M",
+    "address": {
+      "street": "5109 Park Blvd",
+      "city": "St. Louis",
+      "state": "MO",
+      "zip": "63125"
+    },
+    "phone": "(718) 486-3600"
+  },
+  "insurance": {
+    "payer_id": "UHC-001",
+    "payer_name": "UnitedHealthcare Choice Plus",
+    "plan": "PPO",
+    "member_id": "486728340-00",
+    "group_id": "GRP-19384"
+  },
+  "diagnoses": [
+    {
+      "code": "I10",
+      "description": "Essential (primary) hypertension"
+    },
+    {
+      "code": "M25.562",
+      "description": "Pain in left knee"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "64483",
+      "description": "Injection, transforaminal epidural",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 409.24,
+      "diagnosis_pointer": "1",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-04-22"
+    }
+  ],
+  "total_charge_amount": 409.24,
+  "currency": "USD",
+  "prior_auth_number": null
+}

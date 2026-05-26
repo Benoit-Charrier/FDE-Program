@@ -1,0 +1,72 @@
+{
+  "submission_id": "CLM-2026-1001373",
+  "submitted_at": "2026-04-27T12:46:00",
+  "submitter": {
+    "name": "Wendy Tanaka, DPT",
+    "npi": "1285901466",
+    "tax_id": "97-2413794",
+    "specialty": "Physical Therapy",
+    "phone": "(766) 909-4450",
+    "address": {
+      "street": "2468 Cherry Ln",
+      "city": "Omaha",
+      "state": "NE",
+      "zip": "68129"
+    }
+  },
+  "patient": {
+    "first_name": "Kara",
+    "last_name": "Reyes",
+    "date_of_birth": "1987-02-05",
+    "gender": "F",
+    "address": {
+      "street": "9113 1st Ave",
+      "city": "Salt Lake City",
+      "state": "UT",
+      "zip": "84194"
+    },
+    "phone": "(822) 902-3648"
+  },
+  "insurance": {
+    "payer_id": "BCBS-IL",
+    "payer_name": "Blue Cross Blue Shield of Illinois",
+    "plan": "PPO Choice",
+    "member_id": "XOJ496378448",
+    "group_id": "GRP-64985"
+  },
+  "diagnoses": [
+    {
+      "code": "R10.9",
+      "description": "Unspecified abdominal pain"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99205",
+      "description": "Office visit, new pt, comprehensive",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 250.57,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-04"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "27447",
+      "description": "Total knee arthroplasty",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 2688.78,
+      "diagnosis_pointer": "1",
+      "place_of_service": "21",
+      "place_of_service_desc": "Inpatient Hospital",
+      "date_of_service": "2026-04-18"
+    }
+  ],
+  "total_charge_amount": 2939.35,
+  "currency": "USD",
+  "prior_auth_number": null
+}

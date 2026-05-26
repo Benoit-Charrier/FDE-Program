@@ -1,0 +1,152 @@
+{
+  "resourceType": "Claim",
+  "id": "CLM-2026-1001872",
+  "status": "active",
+  "type": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+        "code": "professional"
+      }
+    ]
+  },
+  "use": "claim",
+  "patient": {
+    "reference": "Patient/XOJ238508610",
+    "display": "Zoe Ivanov"
+  },
+  "billablePeriod": {
+    "start": "2026-04-26",
+    "end": "2026-04-15"
+  },
+  "created": "2026-04-27T14:49:00",
+  "insurer": {
+    "reference": "Organization/BCBS-IL",
+    "display": "Blue Cross Blue Shield of Illinois"
+  },
+  "provider": {
+    "reference": "Practitioner/0419478159",
+    "display": "Kenji Martinez, MD"
+  },
+  "priority": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/processpriority",
+        "code": "normal"
+      }
+    ]
+  },
+  "diagnosis": [
+    {
+      "sequence": 1,
+      "diagnosisCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/sid/icd-10-cm",
+            "code": "R53.83",
+            "display": "Other fatigue"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 2,
+      "diagnosisCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/sid/icd-10-cm",
+            "code": "J20.9",
+            "display": "Acute bronchitis, unspecified"
+          }
+        ]
+      }
+    }
+  ],
+  "insurance": [
+    {
+      "sequence": 1,
+      "focal": true,
+      "coverage": {
+        "display": "HMO Standard via Blue Cross Blue Shield of Illinois"
+      }
+    }
+  ],
+  "item": [
+    {
+      "sequence": 1,
+      "diagnosisSequence": [
+        1
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "99999",
+            "display": "Preventive established, 18-39"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-04-26",
+      "quantity": {
+        "value": 1
+      },
+      "unitPrice": {
+        "value": 176.72,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 176.72,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "11"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 2,
+      "diagnosisSequence": [
+        2
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "99284",
+            "display": "ED visit, mod-high"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-04-15",
+      "quantity": {
+        "value": 1
+      },
+      "unitPrice": {
+        "value": 274.22,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 274.22,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "23"
+          }
+        ]
+      }
+    }
+  ],
+  "total": {
+    "value": 450.94,
+    "currency": "USD"
+  }
+}

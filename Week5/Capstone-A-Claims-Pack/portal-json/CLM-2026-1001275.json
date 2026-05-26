@@ -1,0 +1,76 @@
+{
+  "submission_id": "CLM-2026-1001275",
+  "submitted_at": "2026-04-27T12:23:00",
+  "submitter": {
+    "name": "Bright Family Practice",
+    "npi": "",
+    "tax_id": "34-3641125",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(276) 679-2391",
+    "address": {
+      "street": "5452 Elm St",
+      "city": "Cincinnati",
+      "state": "OH",
+      "zip": "45263"
+    }
+  },
+  "patient": {
+    "first_name": "Rosa",
+    "last_name": "Hayes",
+    "date_of_birth": "1995-09-22",
+    "gender": "F",
+    "address": {
+      "street": "8695 Oak Ave",
+      "city": "Tampa",
+      "state": "FL",
+      "zip": "33645"
+    },
+    "phone": "(628) 832-5680"
+  },
+  "insurance": {
+    "payer_id": "UHC-002",
+    "payer_name": "UnitedHealthcare Navigate",
+    "plan": "HMO",
+    "member_id": "529102788-00",
+    "group_id": "GRP-70438"
+  },
+  "diagnoses": [
+    {
+      "code": "L30.9",
+      "description": "Dermatitis, unspecified"
+    },
+    {
+      "code": "N39.0",
+      "description": "Urinary tract infection, site not specified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "44970",
+      "description": "Laparoscopic appendectomy",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 3695.66,
+      "diagnosis_pointer": "1",
+      "place_of_service": "12",
+      "place_of_service_desc": "Home",
+      "date_of_service": "2026-03-30"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99203",
+      "description": "Office visit, new pt, mod",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 169.59,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-14"
+    }
+  ],
+  "total_charge_amount": 3865.25,
+  "currency": "USD",
+  "prior_auth_number": null
+}

@@ -1,0 +1,100 @@
+{
+  "submission_id": "CLM-2026-1001514",
+  "submitted_at": "2026-04-27T13:23:00",
+  "submitter": {
+    "name": "Sunrise Medical Group",
+    "npi": "9669389932",
+    "tax_id": "71-1103322",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(797) 373-8121",
+    "address": {
+      "street": "7084 Cedar Ct",
+      "city": "Albuquerque",
+      "state": "NM",
+      "zip": "87128"
+    }
+  },
+  "patient": {
+    "first_name": "Xavier",
+    "last_name": "Lee",
+    "date_of_birth": "1985-09-25",
+    "gender": "M",
+    "address": {
+      "street": "8939 Lake Rd",
+      "city": "Albuquerque",
+      "state": "NM",
+      "zip": "87186"
+    },
+    "phone": "(383) 444-8618"
+  },
+  "insurance": {
+    "payer_id": "MCR-001",
+    "payer_name": "Medicare Part B",
+    "plan": "Original Medicare",
+    "member_id": "9AK0TTC7AR0",
+    "group_id": "GRP-96504"
+  },
+  "diagnoses": [
+    {
+      "code": "E11.9",
+      "description": "Type 2 diabetes mellitus without complications"
+    },
+    {
+      "code": "N18.3",
+      "description": "Chronic kidney disease, stage 3"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "90686",
+      "description": "Flu vaccine quadrivalent",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 56.91,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-14"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "47562",
+      "description": "Laparoscopic cholecystectomy",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 3122.54,
+      "diagnosis_pointer": "2",
+      "place_of_service": "21",
+      "place_of_service_desc": "Inpatient Hospital",
+      "date_of_service": "2026-04-19"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99215",
+      "description": "Office visit, established, high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 213.55,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-07"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "99214",
+      "description": "Office visit, established, mod-high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 205.37,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-02"
+    }
+  ],
+  "total_charge_amount": 3598.37,
+  "currency": "USD",
+  "prior_auth_number": null
+}

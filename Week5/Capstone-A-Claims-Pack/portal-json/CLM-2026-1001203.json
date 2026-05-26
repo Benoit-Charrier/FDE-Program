@@ -1,0 +1,84 @@
+{
+  "submission_id": "CLM-2026-1001203",
+  "submitted_at": "2026-04-27T12:01:00",
+  "submitter": {
+    "name": "Eastlake Wellness Clinic",
+    "npi": "7448174128",
+    "tax_id": "81-7841949",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(973) 855-6627",
+    "address": {
+      "street": "3133 Lake Rd",
+      "city": "Houston",
+      "state": "TX",
+      "zip": "77077"
+    }
+  },
+  "patient": {
+    "first_name": "Vincent",
+    "last_name": "Chen",
+    "date_of_birth": "1984-10-22",
+    "gender": "M",
+    "address": {
+      "street": "1635 River Rd",
+      "city": "Boston",
+      "state": "MA",
+      "zip": "02171"
+    },
+    "phone": "(799) 670-4490"
+  },
+  "insurance": {
+    "payer_id": "HUM-001",
+    "payer_name": "Humana Gold Plus",
+    "plan": "HMO",
+    "member_id": "H71263495",
+    "group_id": "GRP-47343"
+  },
+  "diagnoses": [
+    {
+      "code": "F32.9",
+      "description": "Major depressive disorder, single episode"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "90471",
+      "description": "Immunization administration",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 15.83,
+      "diagnosis_pointer": "1",
+      "place_of_service": "31",
+      "place_of_service_desc": "Skilled Nursing Facility",
+      "date_of_service": "2026-04-17"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99215",
+      "description": "Office visit, established, high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 256.98,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-04"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99284",
+      "description": "ED visit, mod-high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 293.25,
+      "diagnosis_pointer": "1",
+      "place_of_service": "23",
+      "place_of_service_desc": "Emergency Room \u2014 Hospital",
+      "date_of_service": "2026-04-06"
+    }
+  ],
+  "total_charge_amount": 566.06,
+  "currency": "USD",
+  "prior_auth_number": null
+}

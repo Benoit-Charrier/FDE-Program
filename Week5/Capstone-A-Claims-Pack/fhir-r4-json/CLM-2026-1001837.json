@@ -1,0 +1,91 @@
+{
+  "resourceType": "Claim",
+  "id": "CLM-2026-1001837",
+  "status": "active",
+  "type": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+        "code": "professional"
+      }
+    ]
+  },
+  "use": "claim",
+  "patient": {
+    "reference": "Patient/YYL41213173",
+    "display": "Noah Chen"
+  },
+  "billablePeriod": {
+    "start": "2026-04-02",
+    "end": "2026-04-02"
+  },
+  "created": "2026-04-27T14:44:00",
+  "insurer": {
+    "reference": "Organization/ANT-001",
+    "display": "Anthem Blue Access"
+  },
+  "provider": {
+    "reference": "Practitioner/1424757134",
+    "display": "Victor Johansson, MD"
+  },
+  "priority": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/processpriority",
+        "code": "normal"
+      }
+    ]
+  },
+  "diagnosis": [],
+  "insurance": [
+    {
+      "sequence": 1,
+      "focal": true,
+      "coverage": {
+        "display": "PPO via Anthem Blue Access"
+      }
+    }
+  ],
+  "item": [
+    {
+      "sequence": 1,
+      "diagnosisSequence": [
+        1
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "97110",
+            "display": "Therapeutic exercises (15 min)"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-04-02",
+      "quantity": {
+        "value": 1
+      },
+      "unitPrice": {
+        "value": 49.34,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 49.34,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "11"
+          }
+        ]
+      }
+    }
+  ],
+  "total": {
+    "value": 49.34,
+    "currency": "USD"
+  }
+}

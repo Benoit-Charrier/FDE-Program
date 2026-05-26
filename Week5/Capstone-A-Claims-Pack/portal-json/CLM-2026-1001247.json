@@ -1,0 +1,85 @@
+{
+  "submission_id": "CLM-2026-1001247",
+  "submitted_at": "2026-04-27T12:15:00",
+  "submitter": {
+    "name": "Felix Mehta, MD",
+    "npi": "4542243688",
+    "tax_id": "",
+    "specialty": "Cardiology",
+    "phone": "(935) 332-1118",
+    "address": {
+      "street": "883 Lincoln St",
+      "city": "Cleveland",
+      "state": "OH",
+      "zip": "44174"
+    }
+  },
+  "patient": {
+    "first_name": "Peter",
+    "last_name": "Fischer",
+    "date_of_birth": "1952-11-09",
+    "gender": "M",
+    "address": {
+      "street": "7799 Franklin Rd",
+      "city": "Columbus",
+      "state": "OH",
+      "zip": "43276"
+    },
+    "phone": "(839) 868-6763"
+  },
+  "insurance": {
+    "payer_id": "ANT-001",
+    "payer_name": "Anthem Blue Access",
+    "plan": "PPO",
+    "member_id": "YYL38957061",
+    "group_id": "GRP-58481"
+  },
+  "diagnoses": [
+    {
+      "code": "L30.9",
+      "description": "Dermatitis, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "97140",
+      "description": "Manual therapy (15 min)",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 31.44,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-13"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "12001",
+      "description": "Simple repair, superficial wound",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 431.97,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-15"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99284",
+      "description": "ED visit, mod-high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 298.72,
+      "diagnosis_pointer": "1",
+      "place_of_service": "23",
+      "place_of_service_desc": "Emergency Room \u2014 Hospital",
+      "date_of_service": "2026-04-10"
+    }
+  ],
+  "total_charge_amount": 762.13,
+  "currency": "USD",
+  "prior_auth_number": null,
+  "resubmission_of": "CLM-2026-5470161"
+}

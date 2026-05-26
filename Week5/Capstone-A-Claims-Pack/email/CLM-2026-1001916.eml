@@ -1,0 +1,75 @@
+From: Jasmine Lopez <jasmine.lopez@henryduboismd.example>
+To: claims-intake@payer.example
+Cc: None
+Date: Mon, 27 Apr 2026 13:12:25 +0000
+Message-ID: <177729813752.6.12843428041271129271@henryduboismd.example>
+Subject: Claim submission =?utf-8?b?4oCU?= patient Kumar (CLM-2026-1001916)
+X-Submitter-NPI: 4369493626
+X-Submitter-TaxID: 45-2175388
+X-Originating-System: henryduboismd.example MailRelay 4.2
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="===============5575182389665794805=="
+
+--===============5575182389665794805==
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hi team,
+
+Please process the following claim. Patient was seen at our office on 2026-03=
+-30.
+
+Patient: Kumar, Noah  (DOB 1954-06-14, M)
+Member ID: U97057549    Plan: Cigna Open Access Plus =E2=80=94 PPO
+Group: GRP-25390
+Address: 8437 Highland Ave, Omaha, NE 68113
+
+Provider: Henry DuBois, MD, NPI 4369493626, Tax ID 45-2175388
+Specialty: Pediatrics
+
+Diagnoses:
+  - Z23  Encounter for immunization
+  - J20.9  Acute bronchitis, unspecified
+  - J02.9  Acute pharyngitis, unspecified
+
+Services rendered:
+  - 2026-03-30: CPT 80053 (Comprehensive metabolic panel), 2 unit(s), $36.07
+  - 2026-04-19: CPT 72148 (MRI lumbar spine without contrast), 2 unit(s), $69=
+0.11
+  - 2026-04-19: CPT 71046 (Chest X-ray, 2 views), 2 unit(s), $107.31
+
+Total: $833.49
+Claim reference: CLM-2026-1001916
+
+This one got stuck =E2=80=94 appreciate the help!
+
+Thanks,
+Jasmine Lopez
+Henry DuBois, MD
+(673) 656-5259
+
+--===============5575182389665794805==
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: 8bit
+MIME-Version: 1.0
+
+<html><body style="font-family: Arial, sans-serif; font-size: 11pt;">
+<p>Hi team,</p>
+<p>Please process the following claim. Patient was seen at our office on
+<b>2026-03-30</b>.</p>
+<table cellpadding="3" style="border-collapse: collapse; font-size: 10pt;">
+<tr><td><b>Patient:</b></td><td>Kumar, Noah (DOB 1954-06-14, M)</td></tr>
+<tr><td><b>Member ID:</b></td><td>U97057549</td></tr>
+<tr><td><b>Plan:</b></td><td>Cigna Open Access Plus — PPO</td></tr>
+<tr><td><b>Group:</b></td><td>GRP-25390</td></tr>
+<tr><td><b>Provider:</b></td><td>Henry DuBois, MD (NPI 4369493626)</td></tr>
+<tr><td><b>Total charge:</b></td><td>$833.49</td></tr>
+<tr><td><b>Claim ref:</b></td><td>CLM-2026-1001916</td></tr>
+</table>
+<p>Diagnoses: Z23, J20.9, J02.9</p>
+<p>Procedures: 80053, 72148, 71046</p>
+<p>Thanks,<br>Jasmine Lopez<br>Henry DuBois, MD<br>(673) 656-5259</p>
+</body></html>
+
+--===============5575182389665794805==--

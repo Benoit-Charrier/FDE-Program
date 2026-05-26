@@ -1,0 +1,96 @@
+{
+  "submission_id": "CLM-2026-1001416",
+  "submitted_at": "2026-04-27T12:58:00",
+  "submitter": {
+    "name": "Gerald Anderson, DO",
+    "npi": "3277139642",
+    "tax_id": "13-3827856",
+    "specialty": "Internal Medicine",
+    "phone": "(620) 317-1320",
+    "address": {
+      "street": "2663 Oak Ave",
+      "city": "Denver",
+      "state": "CO",
+      "zip": "80236"
+    }
+  },
+  "patient": {
+    "first_name": "Wendy",
+    "last_name": "Nguyen",
+    "date_of_birth": "1970-11-15",
+    "gender": "F",
+    "address": {
+      "street": "9760 Park Blvd",
+      "city": "Tampa",
+      "state": "FL",
+      "zip": "33631"
+    },
+    "phone": "(813) 434-9414"
+  },
+  "insurance": {
+    "payer_id": "HUM-001",
+    "payer_name": "Humana Gold Plus",
+    "plan": "HMO",
+    "member_id": "H62818327",
+    "group_id": "GRP-52481"
+  },
+  "diagnoses": [
+    {
+      "code": "I10",
+      "description": "Essential (primary) hypertension"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99213",
+      "description": "Office visit, established, low-mod",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 131.34,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-25"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "85025",
+      "description": "CBC w/ differential",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 28.95,
+      "diagnosis_pointer": "1",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-03"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "47562",
+      "description": "Laparoscopic cholecystectomy",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 3233.53,
+      "diagnosis_pointer": "1",
+      "place_of_service": "21",
+      "place_of_service_desc": "Inpatient Hospital",
+      "date_of_service": "2026-04-26"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "27447",
+      "description": "Total knee arthroplasty",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 2254.08,
+      "diagnosis_pointer": "1",
+      "place_of_service": "21",
+      "place_of_service_desc": "Inpatient Hospital",
+      "date_of_service": "2026-04-09"
+    }
+  ],
+  "total_charge_amount": 5647.9,
+  "currency": "USD",
+  "prior_auth_number": null
+}

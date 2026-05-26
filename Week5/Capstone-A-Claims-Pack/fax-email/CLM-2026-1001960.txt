@@ -1,0 +1,33 @@
+From: billing@hectorjensendp.example
+To: claims-intake@payer.example
+Date: Mon, 27 Apr 2026 16:59:00 -0500
+Subject: submitting attached claim - patient Lee
+
+Hi team,
+
+Please process the following claim. Patient was seen at our office on 2026-04-04.
+
+Patient: Lee, Jose (DOB 1944-10-22, M)
+Member ID: H76586522    Plan: Humana Gold Plus - HMO
+Group: GRP-60509
+Address: 8305 Highland Ave, Raleigh, NC 27645
+
+Provider: Hector Jensen, DPT, NPI 3455891904, Tax ID 48-3278274
+Specialty: Physical Therapy
+
+Diagnoses:
+  - M79.7 Fibromyalgia
+  - M25.561 Pain in right knee
+
+Services rendered:
+  - 2026-04-04: CPT 99421 (Online digital E/M, 5-10 min) mod 95, 1 unit(s), $23.09
+  - 2026-03-30: CPT 71046 (Chest X-ray, 2 views), 2 unit(s), $132.85
+  - 2026-04-05: CPT 64483 (Injection, transforaminal epidural), 2 unit(s), $751.96
+
+Total: $907.90
+Claim reference: CLM-2026-1001960
+
+Let me know if anything is missing.
+
+Thanks,
+Alex (billing)

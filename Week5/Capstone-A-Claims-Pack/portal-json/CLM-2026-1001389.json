@@ -1,0 +1,85 @@
+{
+  "submission_id": "CLM-2026-1001389",
+  "submitted_at": "2026-04-27T12:50:00",
+  "submitter": {
+    "name": "Highland Pediatrics",
+    "npi": "3754895797",
+    "tax_id": "81-7841949",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(308) 386-5693",
+    "address": {
+      "street": "6293 Jefferson Dr",
+      "city": "Minneapolis",
+      "state": "MN",
+      "zip": "55483"
+    }
+  },
+  "patient": {
+    "first_name": "Tina",
+    "last_name": "Iqbal",
+    "date_of_birth": "1936-08-25",
+    "gender": "F",
+    "address": {
+      "street": "3282 Lake Rd",
+      "city": "Tampa",
+      "state": "FL",
+      "zip": "33671"
+    },
+    "phone": "(431) 473-8178"
+  },
+  "insurance": {
+    "payer_id": "MCD-IL",
+    "payer_name": "Illinois Medicaid",
+    "plan": "Medicaid",
+    "member_id": "608853474",
+    "group_id": "GRP-11969",
+    "coverage_termination_date": "2026-01-30"
+  },
+  "diagnoses": [
+    {
+      "code": "E11.9",
+      "description": "Type 2 diabetes mellitus without complications"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "12001",
+      "description": "Simple repair, superficial wound",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 415.36,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-10"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "47562",
+      "description": "Laparoscopic cholecystectomy",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 1699.94,
+      "diagnosis_pointer": "1",
+      "place_of_service": "21",
+      "place_of_service_desc": "Inpatient Hospital",
+      "date_of_service": "2026-04-06"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99396",
+      "description": "Preventive established, 40-64",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 182.52,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-03-29"
+    }
+  ],
+  "total_charge_amount": 2297.82,
+  "currency": "USD",
+  "prior_auth_number": null
+}

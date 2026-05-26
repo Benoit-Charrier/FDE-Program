@@ -1,0 +1,84 @@
+{
+  "submission_id": "CLM-2026-1001283",
+  "submitted_at": "2026-04-27T12:23:00",
+  "submitter": {
+    "name": "Travis Goldberg, DO",
+    "npi": "6838113651",
+    "tax_id": "23-5462507",
+    "specialty": "Family Medicine",
+    "phone": "(455) 841-8868",
+    "address": {
+      "street": "9147 Lincoln St",
+      "city": "Minneapolis",
+      "state": "MN",
+      "zip": "55466"
+    }
+  },
+  "patient": {
+    "first_name": "Wendy",
+    "last_name": "Smith",
+    "date_of_birth": "2008-04-03",
+    "gender": "F",
+    "address": {
+      "street": "2167 1st Ave",
+      "city": "Pittsburgh",
+      "state": "PA",
+      "zip": "15216"
+    },
+    "phone": "(703) 806-1459"
+  },
+  "insurance": {
+    "payer_id": "UHC-001",
+    "payer_name": "UnitedHealthcare Choice Plus",
+    "plan": "PPO",
+    "member_id": "606982705-04",
+    "group_id": "GRP-41855"
+  },
+  "diagnoses": [
+    {
+      "code": "Z00.00",
+      "description": "Encounter for general adult medical examination"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "71046",
+      "description": "Chest X-ray, 2 views",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 128.69,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-03-30"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "44970",
+      "description": "Laparoscopic appendectomy",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 1323.56,
+      "diagnosis_pointer": "1",
+      "place_of_service": "21",
+      "place_of_service_desc": "Inpatient Hospital",
+      "date_of_service": "2026-03-31"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "72148",
+      "description": "MRI lumbar spine without contrast",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 412.0,
+      "diagnosis_pointer": "1",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-03-30"
+    }
+  ],
+  "total_charge_amount": 1864.25,
+  "currency": "USD",
+  "prior_auth_number": ""
+}

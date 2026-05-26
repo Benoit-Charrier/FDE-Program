@@ -1,0 +1,30 @@
+============================
+   FAX COVER SHEET
+============================
+TO:    Medicare Part B Claims Intake
+FROM:  Eastlake Wellness Clinic
+DATE:  04/27/2026
+PAGES: 1 of 2
+
+URGENT [_]   FOR REVIEW [X]   PLEASE COMMENT [_]   PLEASE REPLY [_]
+
+RE: Claim submission - patient Rodriguez, Walter
+
+Member ID:     1NM3ETV7UC8
+DOB:           2025-03-11
+Plan:          Original Medicare
+Group:         GRP-93298
+DOS:           2026-04-10
+
+Diagnoses:     I25.10
+Procedures:    80061, 99213
+Total charge:  $182.90
+
+Provider NPI:  4985698076
+Tax ID:        73-2932455
+
+NOTES:
+Patient was seen for emergency visit - records to follow.
+
+If problems with this fax, call (457) 514-4485
+============================

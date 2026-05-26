@@ -1,0 +1,92 @@
+{
+  "submission_id": "CLM-2026-1001550",
+  "submitted_at": "2026-04-27T13:31:00",
+  "submitter": {
+    "name": "Olivia Vargas, MD",
+    "npi": "3425627335",
+    "tax_id": "21-7122446",
+    "specialty": "Emergency Medicine",
+    "phone": "(781) 897-8205",
+    "address": {
+      "street": "7637 Lincoln St",
+      "city": "Cincinnati",
+      "state": "OH",
+      "zip": "45248"
+    }
+  },
+  "patient": {
+    "first_name": "Whitney",
+    "last_name": "Foster",
+    "date_of_birth": "1961-08-11",
+    "gender": "F",
+    "address": {
+      "street": "401 Highland Ave",
+      "city": "Omaha",
+      "state": "NE",
+      "zip": "68147"
+    },
+    "phone": "(374) 590-5274"
+  },
+  "insurance": {
+    "payer_id": "MCR-001",
+    "payer_name": "Medicare Part B",
+    "plan": "Original Medicare",
+    "member_id": "2WR9UXM9EP7",
+    "group_id": "GRP-26199"
+  },
+  "diagnoses": [
+    {
+      "code": "Z00.00",
+      "description": "Encounter for general adult medical examination"
+    },
+    {
+      "code": "J44.9",
+      "description": "Chronic obstructive pulmonary disease, unspecified"
+    },
+    {
+      "code": "L30.9",
+      "description": "Dermatitis, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99204",
+      "description": "Office visit, new pt, high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 245.11,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-26"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "64483",
+      "description": "Injection, transforaminal epidural",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 376.04,
+      "diagnosis_pointer": "2",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-04-08"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "97140",
+      "description": "Manual therapy (15 min)",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 30.75,
+      "diagnosis_pointer": "3",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-19"
+    }
+  ],
+  "total_charge_amount": 651.9,
+  "currency": "USD",
+  "prior_auth_number": null
+}

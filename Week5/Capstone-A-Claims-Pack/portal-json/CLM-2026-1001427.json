@@ -1,0 +1,96 @@
+{
+  "submission_id": "CLM-2026-1001427",
+  "submitted_at": "2026-04-27T13:01:00",
+  "submitter": {
+    "name": "Uma Goldberg, MD",
+    "npi": "0576197713",
+    "tax_id": "17-9077104",
+    "specialty": "Family Medicine",
+    "phone": "(859) 811-3622",
+    "address": {
+      "street": "762 Walnut St",
+      "city": "Indianapolis",
+      "state": "IN",
+      "zip": "46286"
+    }
+  },
+  "patient": {
+    "first_name": "Rachel",
+    "last_name": "Edwards",
+    "date_of_birth": "2009-01-11",
+    "gender": "F",
+    "address": {
+      "street": "6481 Main St",
+      "city": "Philadelphia",
+      "state": "PA",
+      "zip": "19126"
+    },
+    "phone": "(707) 639-9037"
+  },
+  "insurance": {
+    "payer_id": "UHC-002",
+    "payer_name": "UnitedHealthcare Navigate",
+    "plan": "HMO",
+    "member_id": "779697256-09",
+    "group_id": "GRP-62696"
+  },
+  "diagnoses": [
+    {
+      "code": "F41.1",
+      "description": "Generalized anxiety disorder"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "97110",
+      "description": "Therapeutic exercises (15 min)",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 43.93,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-22"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "90471",
+      "description": "Immunization administration",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 20.65,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-06"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "47562",
+      "description": "Laparoscopic cholecystectomy",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 1572.14,
+      "diagnosis_pointer": "1",
+      "place_of_service": "21",
+      "place_of_service_desc": "Inpatient Hospital",
+      "date_of_service": "2026-04-17"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "90686",
+      "description": "Flu vaccine quadrivalent",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 42.91,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-03"
+    }
+  ],
+  "total_charge_amount": 1679.63,
+  "currency": "USD",
+  "prior_auth_number": null
+}

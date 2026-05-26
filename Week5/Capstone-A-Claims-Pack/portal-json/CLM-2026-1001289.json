@@ -1,0 +1,60 @@
+{
+  "submission_id": "CLM-2026-1001289",
+  "submitted_at": "2026-04-27T12:22:00",
+  "submitter": {
+    "name": "Felix Cohen, MD",
+    "npi": "5282020481",
+    "tax_id": "35-7465144",
+    "specialty": "Radiology",
+    "phone": "(801) 956-7926",
+    "address": {
+      "street": "1582 Main St",
+      "city": "Denver",
+      "state": "CO",
+      "zip": "80274"
+    }
+  },
+  "patient": {
+    "first_name": "Kara",
+    "last_name": "Clark",
+    "date_of_birth": "1943-04-01",
+    "gender": "F",
+    "address": {
+      "street": "7789 Cedar Ct",
+      "city": "Denver",
+      "state": "CO",
+      "zip": "80268"
+    },
+    "phone": "(297) 291-9251"
+  },
+  "insurance": {
+    "payer_id": "MCR-001",
+    "payer_name": "Medicare Part B",
+    "plan": "Original Medicare",
+    "member_id": "1HE1CYT7HD9",
+    "group_id": "GRP-85643"
+  },
+  "diagnoses": [
+    {
+      "code": "F41.1",
+      "description": "Generalized anxiety disorder"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "64483",
+      "description": "Injection, transforaminal epidural",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 634.93,
+      "diagnosis_pointer": "1",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-04-23"
+    }
+  ],
+  "total_charge_amount": 634.93,
+  "currency": "USD",
+  "prior_auth_number": null
+}

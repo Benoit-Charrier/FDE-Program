@@ -1,0 +1,30 @@
+============================
+   FAX COVER SHEET
+============================
+TO:    Illinois Medicaid Claims Intake
+FROM:  Crestview Imaging Center
+DATE:  04/27/2026
+PAGES: 1 of 2
+
+URGENT [_]   FOR REVIEW [X]   PLEASE COMMENT [_]   PLEASE REPLY [_]
+
+RE: Claim submission - patient Chen, Victor
+
+Member ID:     826220020
+DOB:           1954-12-30
+Plan:          Medicaid
+Group:         GRP-94524
+DOS:           2026-04-25
+
+Diagnoses:     Z00.00
+Procedures:    99396, 64483
+Total charge:  $909.86
+
+Provider NPI:  9811895742
+Tax ID:        22-7478137
+
+NOTES:
+Resubmission - prior denial coded incorrect dx, now corrected.
+
+If problems with this fax, call (201) 509-8370
+============================

@@ -1,0 +1,76 @@
+{
+  "submission_id": "CLM-2026-1001355",
+  "submitted_at": "2026-04-27T12:39:00",
+  "submitter": {
+    "name": "Owen DuBois, MD",
+    "npi": "6796172660",
+    "tax_id": "99-8279635",
+    "specialty": "Internal Medicine",
+    "phone": "(323) 380-3996",
+    "address": {
+      "street": "5413 Franklin Rd",
+      "city": "Boston",
+      "state": "MA",
+      "zip": "02123"
+    }
+  },
+  "patient": {
+    "first_name": "Brian",
+    "last_name": "Anderson",
+    "date_of_birth": "2010-08-03",
+    "gender": "M",
+    "address": {
+      "street": "2957 Cherry Ln",
+      "city": "Buffalo",
+      "state": "NY",
+      "zip": "14298"
+    },
+    "phone": "(524) 534-8015"
+  },
+  "insurance": {
+    "payer_id": "ANT-001",
+    "payer_name": "Anthem Blue Access",
+    "plan": "PPO",
+    "member_id": "YYL16177491",
+    "group_id": "GRP-36325"
+  },
+  "diagnoses": [
+    {
+      "code": "F41.1",
+      "description": "Generalized anxiety disorder"
+    },
+    {
+      "code": "R10.9",
+      "description": "Unspecified abdominal pain"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "97110",
+      "description": "Therapeutic exercises (15 min)",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 70.09,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-03-29"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "47562",
+      "description": "Laparoscopic cholecystectomy",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 1394.91,
+      "diagnosis_pointer": "2",
+      "place_of_service": "21",
+      "place_of_service_desc": "Inpatient Hospital",
+      "date_of_service": "2026-04-06"
+    }
+  ],
+  "total_charge_amount": 1465.0,
+  "currency": "USD",
+  "prior_auth_number": null
+}

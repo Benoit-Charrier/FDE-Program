@@ -1,0 +1,79 @@
+{
+  "submission_id": "CLM-2026-1001292",
+  "submitted_at": "2026-04-27T12:23:00",
+  "submitter": {
+    "name": "Valerie Wong, DC",
+    "npi": "7499798788",
+    "tax_id": "91-5070314",
+    "specialty": "Chiropractic",
+    "phone": "(641) 304-9619",
+    "address": {
+      "street": "2458 1st Ave",
+      "city": "Denver",
+      "state": "CO",
+      "zip": "80224"
+    }
+  },
+  "patient": {
+    "first_name": "Aaliyah",
+    "last_name": "Quintana",
+    "date_of_birth": "2015-10-31",
+    "gender": "F",
+    "address": {
+      "street": "4331 Lincoln St",
+      "city": "Omaha",
+      "state": "NE",
+      "zip": "68131"
+    },
+    "phone": "(514) 756-5151"
+  },
+  "insurance": {
+    "payer_id": "AET-001",
+    "payer_name": "Aetna Open Access",
+    "plan": "PPO",
+    "member_id": "W597928628",
+    "group_id": "GRP-84170"
+  },
+  "diagnoses": [],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "90471",
+      "description": "Immunization administration",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 29.45,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-15"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "80061",
+      "description": "Lipid panel",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 54.77,
+      "diagnosis_pointer": "2",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-02"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "85025",
+      "description": "CBC w/ differential",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 28.49,
+      "diagnosis_pointer": "1",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-23"
+    }
+  ],
+  "total_charge_amount": 112.71,
+  "currency": "USD",
+  "prior_auth_number": null
+}

@@ -1,0 +1,164 @@
+{
+  "resourceType": "Claim",
+  "id": "CLM-2026-1001862",
+  "status": "active",
+  "type": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+        "code": "professional"
+      }
+    ]
+  },
+  "use": "claim",
+  "patient": {
+    "reference": "Patient/783341662",
+    "display": "David Clark"
+  },
+  "billablePeriod": {
+    "start": "2026-04-18",
+    "end": "2026-04-18"
+  },
+  "created": "2026-04-27T14:47:00",
+  "insurer": {
+    "reference": "Organization/BCBS-IL",
+    "display": "Blue Cross Blue Shield of Illinois"
+  },
+  "provider": {
+    "reference": "Practitioner/0213297318",
+    "display": "Xio Hassan, MD"
+  },
+  "priority": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/processpriority",
+        "code": "normal"
+      }
+    ]
+  },
+  "diagnosis": [
+    {
+      "sequence": 1,
+      "diagnosisCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/sid/icd-10-cm",
+            "code": "S93.401A",
+            "display": "Sprain of unspecified ligament of right ankle, initial"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 2,
+      "diagnosisCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/sid/icd-10-cm",
+            "code": "M54.5",
+            "display": "Low back pain"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 3,
+      "diagnosisCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/sid/icd-10-cm",
+            "code": "R51.9",
+            "display": "Headache, unspecified"
+          }
+        ]
+      }
+    }
+  ],
+  "insurance": [
+    {
+      "sequence": 1,
+      "focal": true,
+      "coverage": {
+        "display": "HMO Standard via Blue Cross Blue Shield of Illinois"
+      }
+    }
+  ],
+  "item": [
+    {
+      "sequence": 1,
+      "diagnosisSequence": [
+        1
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "99422",
+            "display": "Online digital E/M, 11-20 min"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-04-18",
+      "quantity": {
+        "value": 1
+      },
+      "unitPrice": {
+        "value": 36.22,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 36.22,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "02"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 2,
+      "diagnosisSequence": [
+        2
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "99205",
+            "display": "Office visit, new pt, comprehensive"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-04-18",
+      "quantity": {
+        "value": 1
+      },
+      "unitPrice": {
+        "value": 334.42,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 334.42,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "11"
+          }
+        ]
+      }
+    }
+  ],
+  "total": {
+    "value": 370.64,
+    "currency": "USD"
+  }
+}

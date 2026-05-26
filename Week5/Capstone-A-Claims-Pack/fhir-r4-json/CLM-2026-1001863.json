@@ -1,0 +1,140 @@
+{
+  "resourceType": "Claim",
+  "id": "CLM-2026-1001863",
+  "status": "active",
+  "type": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+        "code": "professional"
+      }
+    ]
+  },
+  "use": "claim",
+  "patient": {
+    "reference": "Patient/YYL65898155",
+    "display": "GlORIA Khan"
+  },
+  "billablePeriod": {
+    "start": "2026-04-10",
+    "end": "2026-04-19"
+  },
+  "created": "2026-04-27T14:49:00",
+  "insurer": {
+    "reference": "Organization/ANT-001",
+    "display": "Anthem Blue Access"
+  },
+  "provider": {
+    "reference": "Practitioner/2833034744",
+    "display": "Marcus Mehta, PA"
+  },
+  "priority": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/processpriority",
+        "code": "normal"
+      }
+    ]
+  },
+  "diagnosis": [
+    {
+      "sequence": 1,
+      "diagnosisCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/sid/icd-10-cm",
+            "code": "R53.83",
+            "display": "Other fatigue"
+          }
+        ]
+      }
+    }
+  ],
+  "insurance": [
+    {
+      "sequence": 1,
+      "focal": true,
+      "coverage": {
+        "display": "PPO via Anthem Blue Access"
+      }
+    }
+  ],
+  "item": [
+    {
+      "sequence": 1,
+      "diagnosisSequence": [
+        1
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "99214",
+            "display": "Office visit, established, mod-high"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-04-10",
+      "quantity": {
+        "value": 1
+      },
+      "unitPrice": {
+        "value": 167.65,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 167.65,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "11"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 2,
+      "diagnosisSequence": [
+        1
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "99204",
+            "display": "Office visit, new pt, high"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-04-19",
+      "quantity": {
+        "value": 1
+      },
+      "unitPrice": {
+        "value": 272.86,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 272.86,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "11"
+          }
+        ]
+      }
+    }
+  ],
+  "total": {
+    "value": 440.51,
+    "currency": "USD"
+  }
+}

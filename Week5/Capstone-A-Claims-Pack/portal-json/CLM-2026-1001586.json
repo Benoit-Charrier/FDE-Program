@@ -1,0 +1,60 @@
+{
+  "submission_id": "CLM-2026-1001586",
+  "submitted_at": "2026-04-27T13:38:00",
+  "submitter": {
+    "name": "Highland Pediatrics",
+    "npi": "7242004032",
+    "tax_id": "56-7822842",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(422) 939-9147",
+    "address": {
+      "street": "3166 Walnut St",
+      "city": "Portland",
+      "state": "OR",
+      "zip": "97216"
+    }
+  },
+  "patient": {
+    "first_name": "Vincent",
+    "last_name": "Gonzalez",
+    "date_of_birth": "2020-06-05",
+    "gender": "M",
+    "address": {
+      "street": "6143 Main St",
+      "city": "Denver",
+      "state": "CO",
+      "zip": "80267"
+    },
+    "phone": "(232) 382-1895"
+  },
+  "insurance": {
+    "payer_id": "UHC-002",
+    "payer_name": "UnitedHealthcare Navigate",
+    "plan": "HMO",
+    "member_id": "429522023-03",
+    "group_id": "GRP-18933"
+  },
+  "diagnoses": [
+    {
+      "code": "J02.9",
+      "description": "Acute pharyngitis, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99999",
+      "description": "Manual therapy (15 min)",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 32.34,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-05"
+    }
+  ],
+  "total_charge_amount": 32.34,
+  "currency": "USD",
+  "prior_auth_number": null
+}

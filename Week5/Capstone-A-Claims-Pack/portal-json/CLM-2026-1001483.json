@@ -1,0 +1,91 @@
+{
+  "submission_id": "CLM-2026-1001483",
+  "submitted_at": "2026-04-27T13:12:00",
+  "submitter": {
+    "name": "Crestview Imaging Center",
+    "npi": "1585289592",
+    "tax_id": "68-7373123",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(835) 681-6712",
+    "address": {
+      "street": "3884 Highland Ave",
+      "city": "Nashville",
+      "state": "TN",
+      "zip": "37291"
+    }
+  },
+  "patient": {
+    "first_name": "Felix",
+    "last_name": "Bauer",
+    "date_of_birth": "1975-05-26",
+    "gender": "M",
+    "address": {
+      "street": "5085 Washington Ave",
+      "city": "Charlotte",
+      "state": "NC",
+      "zip": "28242"
+    },
+    "phone": "(604) 364-1849"
+  },
+  "insurance": {
+    "payer_id": "UHC-001",
+    "payer_name": "UnitedHealthcare Choice Plus",
+    "plan": "PPO",
+    "member_id": "303542704-00",
+    "group_id": "GRP-72945"
+  },
+  "diagnoses": [],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99284",
+      "description": "ED visit, mod-high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 220.74,
+      "diagnosis_pointer": "1",
+      "place_of_service": "23",
+      "place_of_service_desc": "Emergency Room \u2014 Hospital",
+      "date_of_service": "2026-04-11"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "64483",
+      "description": "Injection, transforaminal epidural",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 398.43,
+      "diagnosis_pointer": "2",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-03-28"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99203",
+      "description": "Office visit, new pt, mod",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 166.55,
+      "diagnosis_pointer": "3",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-15"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "80053",
+      "description": "Comprehensive metabolic panel",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 39.0,
+      "diagnosis_pointer": "1",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-03-28"
+    }
+  ],
+  "total_charge_amount": 824.72,
+  "currency": "USD",
+  "prior_auth_number": null
+}

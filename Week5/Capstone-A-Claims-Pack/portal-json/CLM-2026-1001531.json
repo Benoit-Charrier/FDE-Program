@@ -1,0 +1,94 @@
+{
+  "submission_id": "CLM-2026-1001531",
+  "submitted_at": "2026-04-27T13:23:00",
+  "submitter": {
+    "name": "Oak Tree Pediatric Associates",
+    "npi": "5906402051",
+    "tax_id": "",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(947) 756-2144",
+    "address": {
+      "street": "3278 River Rd",
+      "city": "Indianapolis",
+      "state": "IN",
+      "zip": "46286"
+    }
+  },
+  "patient": {
+    "first_name": "Peter",
+    "last_name": "Reyes",
+    "date_of_birth": "2004-01-13",
+    "gender": "M",
+    "address": {
+      "street": "6657 Elm St",
+      "city": "Pittsburgh",
+      "state": "PA",
+      "zip": "15231"
+    },
+    "phone": "(969) 338-5197"
+  },
+  "insurance": {
+    "payer_id": "UHC-002",
+    "payer_name": "UnitedHealthcare Navigate",
+    "plan": "HMO",
+    "member_id": "194965153-04",
+    "group_id": "GRP-66593"
+  },
+  "diagnoses": [
+    {
+      "code": "L30.9",
+      "description": "Dermatitis, unspecified"
+    },
+    {
+      "code": "J45.909",
+      "description": "Unspecified asthma, uncomplicated"
+    },
+    {
+      "code": "F32.9",
+      "description": "Major depressive disorder, single episode"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99281",
+      "description": "ED visit, low",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 118.93,
+      "diagnosis_pointer": "1",
+      "place_of_service": "23",
+      "place_of_service_desc": "Emergency Room \u2014 Hospital",
+      "date_of_service": "2026-04-04"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99215",
+      "description": "Office visit, established, high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 271.91,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-20"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99421",
+      "description": "Online digital E/M, 5-10 min",
+      "modifiers": [
+        "95"
+      ],
+      "units": 1,
+      "charge_amount": 18.7,
+      "diagnosis_pointer": "3",
+      "place_of_service": "02",
+      "place_of_service_desc": "Telehealth",
+      "date_of_service": "2026-04-11"
+    }
+  ],
+  "total_charge_amount": 409.54,
+  "currency": "USD",
+  "prior_auth_number": null
+}

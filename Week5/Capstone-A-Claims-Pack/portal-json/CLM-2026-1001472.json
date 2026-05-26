@@ -1,0 +1,84 @@
+{
+  "submission_id": "CLM-2026-1001472",
+  "submitted_at": "2026-04-27T13:10:00",
+  "submitter": {
+    "name": "Zoe Chowdhury, MD",
+    "npi": "2996951663",
+    "tax_id": "11-7535324",
+    "specialty": "Cardiology",
+    "phone": "(958) 481-1446",
+    "address": {
+      "street": "9879 Cedar Ct",
+      "city": "Cincinnati",
+      "state": "OH",
+      "zip": "45211"
+    }
+  },
+  "patient": {
+    "first_name": "Oscar",
+    "last_name": "Zimmerman",
+    "date_of_birth": "1977-02-13",
+    "gender": "M",
+    "address": {
+      "street": "4399 Ridge Rd",
+      "city": "Omaha",
+      "state": "NE",
+      "zip": "68196"
+    },
+    "phone": "(809) 421-1705"
+  },
+  "insurance": {
+    "payer_id": "CIG-001",
+    "payer_name": "Cigna Open Access Plus",
+    "plan": "PPO",
+    "member_id": "U90313863",
+    "group_id": "GRP-68391"
+  },
+  "diagnoses": [
+    {
+      "code": "J06.9",
+      "description": "Acute upper respiratory infection, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99204",
+      "description": "Office visit, new pt, high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 202.26,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-19"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99214",
+      "description": "Office visit, established, mod-high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 143.26,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-26"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99284",
+      "description": "ED visit, mod-high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 213.72,
+      "diagnosis_pointer": "1",
+      "place_of_service": "23",
+      "place_of_service_desc": "Emergency Room \u2014 Hospital",
+      "date_of_service": "2026-04-05"
+    }
+  ],
+  "total_charge_amount": 559.24,
+  "currency": "USD",
+  "prior_auth_number": null
+}

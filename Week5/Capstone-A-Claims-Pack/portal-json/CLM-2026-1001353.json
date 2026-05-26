@@ -1,0 +1,80 @@
+{
+  "submission_id": "CLM-2026-1001353",
+  "submitted_at": "2026-04-27T12:38:00",
+  "submitter": {
+    "name": "George Hassan, MD",
+    "npi": "4394954918",
+    "tax_id": "92-3972137",
+    "specialty": "Cardiology",
+    "phone": "(432) 829-3558",
+    "address": {
+      "street": "9177 1st Ave",
+      "city": "Denver",
+      "state": "CO",
+      "zip": "80240"
+    }
+  },
+  "patient": {
+    "first_name": "Liam",
+    "last_name": "Kumar",
+    "date_of_birth": "1948-12-19",
+    "gender": "M",
+    "address": {
+      "street": "1839 Cedar Ct",
+      "city": "Pittsburgh",
+      "state": "PA",
+      "zip": "15255"
+    },
+    "phone": "(391) 357-4318"
+  },
+  "insurance": {
+    "payer_id": "HUM-001",
+    "payer_name": "Humana Gold Plus",
+    "plan": "HMO",
+    "member_id": "H60304782",
+    "group_id": "GRP-38981"
+  },
+  "diagnoses": [
+    {
+      "code": "K21.9",
+      "description": "Gastro-esophageal reflux disease without esophagitis"
+    },
+    {
+      "code": "E66.9",
+      "description": "Obesity, unspecified"
+    },
+    {
+      "code": "R10.9",
+      "description": "Unspecified abdominal pain"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "70551",
+      "description": "MRI brain without contrast",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 380.93,
+      "diagnosis_pointer": "1",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-04-24"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99422",
+      "description": "Online digital E/M, 11-20 min",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 34.2,
+      "diagnosis_pointer": "2",
+      "place_of_service": "02",
+      "place_of_service_desc": "Telehealth",
+      "date_of_service": "2026-04-24"
+    }
+  ],
+  "total_charge_amount": 415.13,
+  "currency": "USD",
+  "prior_auth_number": null
+}

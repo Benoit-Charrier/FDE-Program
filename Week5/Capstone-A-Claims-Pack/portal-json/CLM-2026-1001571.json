@@ -1,0 +1,60 @@
+{
+  "submission_id": "CLM-2026-1001571",
+  "submitted_at": "2026-04-27T13:37:00",
+  "submitter": {
+    "name": "Donna Wong, MD",
+    "npi": "0248589534",
+    "tax_id": "23-1130624",
+    "specialty": "Family Medicine",
+    "phone": "(419) 823-3605",
+    "address": {
+      "street": "7862 Sunset Blvd",
+      "city": "Chicago",
+      "state": "IL",
+      "zip": "60674"
+    }
+  },
+  "patient": {
+    "first_name": "Yusuf",
+    "last_name": "Espinoza",
+    "date_of_birth": "1936-06-03",
+    "gender": "M",
+    "address": {
+      "street": "4751 Walnut St",
+      "city": "Buffalo",
+      "state": "NY",
+      "zip": "14242"
+    },
+    "phone": "(426) 711-7799"
+  },
+  "insurance": {
+    "payer_id": "MCD-IL",
+    "payer_name": "Illinois Medicaid",
+    "plan": "Medicaid",
+    "member_id": "794433681",
+    "group_id": "GRP-99857"
+  },
+  "diagnoses": [
+    {
+      "code": "R10.9",
+      "description": "Unspecified abdominal pain"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99214",
+      "description": "Office visit, established, mod-high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 181.13,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-07"
+    }
+  ],
+  "total_charge_amount": 181.13,
+  "currency": "USD",
+  "prior_auth_number": null
+}

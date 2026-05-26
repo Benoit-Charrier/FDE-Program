@@ -1,0 +1,68 @@
+{
+  "submission_id": "CLM-2026-1001592",
+  "submitted_at": "2026-04-27T13:42:00",
+  "submitter": {
+    "name": "Rachel Cohen, MD",
+    "npi": "",
+    "tax_id": "55-5300800",
+    "specialty": "Radiology",
+    "phone": "(834) 219-3413",
+    "address": {
+      "street": "1540 Walnut St",
+      "city": "Denver",
+      "state": "CO",
+      "zip": "80296"
+    }
+  },
+  "patient": {
+    "first_name": "Ravi",
+    "last_name": "Hayes",
+    "date_of_birth": "2000-07-17",
+    "gender": "M",
+    "address": {
+      "street": "2399 Highland Ave",
+      "city": "Phoenix",
+      "state": "AZ",
+      "zip": "85019"
+    },
+    "phone": "(564) 735-3491"
+  },
+  "insurance": {
+    "payer_id": "BCBS-IL",
+    "payer_name": "Blue Cross Blue Shield of Illinois",
+    "plan": "PPO Choice",
+    "member_id": "XOJ207541870",
+    "group_id": "GRP-35633"
+  },
+  "diagnoses": [
+    {
+      "code": "I10",
+      "description": "Essential (primary) hypertension"
+    },
+    {
+      "code": "G47.33",
+      "description": "Obstructive sleep apnea (adult) (pediatric)"
+    },
+    {
+      "code": "H66.90",
+      "description": "Otitis media, unspecified, unspecified ear"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "70551",
+      "description": "MRI brain without contrast",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 787.49,
+      "diagnosis_pointer": "1",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-03-28"
+    }
+  ],
+  "total_charge_amount": 787.49,
+  "currency": "USD",
+  "prior_auth_number": null
+}

@@ -1,0 +1,76 @@
+{
+  "submission_id": "CLM-2026-1001537",
+  "submitted_at": "2026-04-27T13:25:00",
+  "submitter": {
+    "name": "Maple Family Health",
+    "npi": "7658271668",
+    "tax_id": "33-6476889",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(709) 852-8940",
+    "address": {
+      "street": "8742 Highland Ave",
+      "city": "Philadelphia",
+      "state": "PA",
+      "zip": "19155"
+    }
+  },
+  "patient": {
+    "first_name": "AlICE",
+    "last_name": "Davis",
+    "date_of_birth": "2023-05-13",
+    "gender": "F",
+    "address": {
+      "street": "6048 Cedar Ct",
+      "city": "Phoenix",
+      "state": "AZ",
+      "zip": "85020"
+    },
+    "phone": "(290) 204-3657"
+  },
+  "insurance": {
+    "payer_id": "UHC-001",
+    "payer_name": "UnitedHealthcare Choice Plus",
+    "plan": "PPO",
+    "member_id": "958830563-02",
+    "group_id": "GRP-48206"
+  },
+  "diagnoses": [
+    {
+      "code": "E78.5",
+      "description": "Hyperlipidemia, unspecified"
+    },
+    {
+      "code": "J44.9",
+      "description": "Chronic obstructive pulmonary disease, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99204",
+      "description": "Office visit, new pt, high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 254.52,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-20"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "80053",
+      "description": "Comprehensive metabolic panel",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 19.9,
+      "diagnosis_pointer": "2",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-03-31"
+    }
+  ],
+  "total_charge_amount": 274.42,
+  "currency": "USD",
+  "prior_auth_number": null
+}

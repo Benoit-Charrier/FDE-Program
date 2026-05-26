@@ -1,0 +1,76 @@
+{
+  "submission_id": "CLM-2026-1001368",
+  "submitted_at": "2026-04-27T12:43:00",
+  "submitter": {
+    "name": "Uma Cohen, DO",
+    "npi": "8000785558",
+    "tax_id": "11-7535324",
+    "specialty": "Internal Medicine",
+    "phone": "(461) 605-7586",
+    "address": {
+      "street": "9642 Birch Ct",
+      "city": "Houston",
+      "state": "TX",
+      "zip": "77052"
+    }
+  },
+  "patient": {
+    "first_name": "Teresa",
+    "last_name": "Clark",
+    "date_of_birth": "1988-03-04",
+    "gender": "F",
+    "address": {
+      "street": "2152 Ridge Rd",
+      "city": "Chicago",
+      "state": "IL",
+      "zip": "60638"
+    },
+    "phone": "(225) 794-9608"
+  },
+  "insurance": {
+    "payer_id": "ANT-001",
+    "payer_name": "Anthem Blue Access",
+    "plan": "PPO",
+    "member_id": "YYL58402328",
+    "group_id": "GRP-37472"
+  },
+  "diagnoses": [
+    {
+      "code": "J45.909",
+      "description": "Unspecified asthma, uncomplicated"
+    },
+    {
+      "code": "E11.9",
+      "description": "Type 2 diabetes mellitus without complications"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99214",
+      "description": "Office visit, established, mod-high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 146.21,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-01"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99285",
+      "description": "ED visit, high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 450.37,
+      "diagnosis_pointer": "2",
+      "place_of_service": "23",
+      "place_of_service_desc": "Emergency Room \u2014 Hospital",
+      "date_of_service": "2026-04-13"
+    }
+  ],
+  "total_charge_amount": 596.58,
+  "currency": "USD",
+  "prior_auth_number": null
+}

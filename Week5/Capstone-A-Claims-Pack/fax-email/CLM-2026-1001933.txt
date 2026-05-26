@@ -1,0 +1,30 @@
+============================
+   FAX COVER SHEET
+============================
+TO:    UnitedHealthcare Navigate Claims Intake
+FROM:  Oak Tree Pediatric Associates
+DATE:  04/27/2026
+PAGES: 1 of 5
+
+URGENT [_]   FOR REVIEW [X]   PLEASE COMMENT [_]   PLEASE REPLY [_]
+
+RE: Claim submission - patient Brown, Felix
+
+Member ID:     472130417-00
+DOB:           1946-01-27
+Plan:          HMO
+Group:         GRP-77827
+DOS:           2026-04-25
+
+Diagnoses:     R07.9
+Procedures:    12001, 73030, 12001
+Total charge:  $530.07
+
+Provider NPI:  6567216508
+Tax ID:        48-3278274
+
+NOTES:
+Member confirmed coverage active during DOS - please reprocess.
+
+If problems with this fax, call (309) 329-3887
+============================

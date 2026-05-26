@@ -1,0 +1,11 @@
+PHONE LOG - PROVIDER OUTREACH
+
+Date/Time: 04/27/2026 15:17
+Caller: Practice admin from Bayside Orthopedics
+Re: Patient Pamela Kim (member YYL81574585)
+
+Caller states: this claim was denied for prior auth but auth was approved - have ref number
+
+Resolution: Pulled claim CLM-2026-1001984. Confirmed received - in queue for adjudication, ETA 2 days.
+
+Closed: 15:17  Agent: D.Kahn

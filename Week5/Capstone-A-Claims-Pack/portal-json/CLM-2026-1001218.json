@@ -1,0 +1,106 @@
+{
+  "submission_id": "CLM-2026-1001218",
+  "submitted_at": "2026-04-27T12:09:00",
+  "submitter": {
+    "name": "Gloria Reyes, DO",
+    "npi": "4822848219",
+    "tax_id": "34-3641125",
+    "specialty": "Family Medicine",
+    "phone": "(728) 576-2453",
+    "address": {
+      "street": "7959 Cedar Ct",
+      "city": "Philadelphia",
+      "state": "PA",
+      "zip": "19160"
+    }
+  },
+  "patient": {
+    "first_name": "Owen",
+    "last_name": "Diaz",
+    "date_of_birth": "2008-08-17",
+    "gender": "M",
+    "address": {
+      "street": "6601 Ridge Rd",
+      "city": "Boston",
+      "state": "MA",
+      "zip": "02117"
+    },
+    "phone": "(357) 278-4369"
+  },
+  "insurance": {
+    "payer_id": "UHC-001",
+    "payer_name": "UnitedHealthcare Choice Plus",
+    "plan": "PPO",
+    "member_id": "20-987237",
+    "group_id": "GRP-66762"
+  },
+  "diagnoses": [
+    {
+      "code": "H66.90",
+      "description": "Otitis media, unspecified, unspecified ear"
+    },
+    {
+      "code": "E11.9",
+      "description": "Type 2 diabetes mellitus without complications"
+    },
+    {
+      "code": "I10",
+      "description": "Essential (primary) hypertension"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99422",
+      "description": "Online digital E/M, 11-20 min",
+      "modifiers": [
+        "95"
+      ],
+      "units": 1,
+      "charge_amount": 44.78,
+      "diagnosis_pointer": "1",
+      "place_of_service": "02",
+      "place_of_service_desc": "Telehealth",
+      "date_of_service": "2026-03-30"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "90686",
+      "description": "Flu vaccine quadrivalent",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 21.57,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-12"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99205",
+      "description": "Office visit, new pt, comprehensive",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 337.04,
+      "diagnosis_pointer": "3",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-03-28"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "99203",
+      "description": "Office visit, new pt, mod",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 150.89,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-09"
+    }
+  ],
+  "total_charge_amount": 554.28,
+  "currency": "USD",
+  "prior_auth_number": null
+}

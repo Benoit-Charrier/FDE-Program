@@ -1,0 +1,75 @@
+From: Mike Iqbal <mike.iqbal@sunrisemedical.example>
+To: claims-intake@payer.example
+Cc: office-mgr@sunrisemedical.example
+Date: Mon, 27 Apr 2026 07:44:04 +0000
+Message-ID: <177729813757.6.2630343700120208347@sunrisemedical.example>
+Subject: Resubmitting claim =?utf-8?b?4oCU?= patient Petrov (DOB 2024-07-25)
+X-Submitter-NPI: 6106294996
+X-Submitter-TaxID: 17-9077104
+X-Originating-System: sunrisemedical.example MailRelay 4.2
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="===============4463445220616287731=="
+
+--===============4463445220616287731==
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hi team,
+
+Please process the following claim. Patient was seen at our office on 2026-04=
+-07.
+
+Patient: Petrov, Jose  (DOB 2024-07-25, M)
+Member ID: U38647756    Plan: Cigna Open Access Plus =E2=80=94 PPO
+Group: GRP-85259
+Address: 2955 Jefferson Dr, Philadelphia, PA 19134
+
+Provider: Sunrise Medical Group, NPI 6106294996, Tax ID 17-9077104
+Specialty: Multi-specialty Clinic
+
+Diagnoses:
+  - M54.5  Low back pain
+
+Services rendered:
+  - 2026-04-07: CPT 99204 (Office visit, new pt, high), 1 unit(s), $248.67
+  - 2026-04-16: CPT 12001 (Simple repair, superficial wound), 2 unit(s), $416=
+.79
+  - 2026-04-07: CPT 80061 (Lipid panel), 2 unit(s), $53.84
+
+Total: $719.30
+Claim reference: CLM-2026-1001922
+
+Please process at your earliest. Thanks!
+
+Thanks,
+Mike Iqbal
+Sunrise Medical Group
+(343) 353-4328
+
+--===============4463445220616287731==
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+<html><body style=3D"font-family: Arial, sans-serif; font-size: 11pt;">
+<p>Hi team,</p>
+<p>Please process the following claim. Patient was seen at our office on
+<b>2026-04-07</b>.</p>
+<table cellpadding=3D"3" style=3D"border-collapse: collapse; font-size: 10pt;=
+">
+<tr><td><b>Patient:</b></td><td>Petrov, Jose (DOB 2024-07-25, M)</td></tr>
+<tr><td><b>Member ID:</b></td><td>U38647756</td></tr>
+<tr><td><b>Plan:</b></td><td>Cigna Open Access Plus =E2=80=94 PPO</td></tr>
+<tr><td><b>Group:</b></td><td>GRP-85259</td></tr>
+<tr><td><b>Provider:</b></td><td>Sunrise Medical Group (NPI 6106294996)</td><=
+/tr>
+<tr><td><b>Total charge:</b></td><td>$719.30</td></tr>
+<tr><td><b>Claim ref:</b></td><td>CLM-2026-1001922</td></tr>
+</table>
+<p>Diagnoses: M54.5</p>
+<p>Procedures: 99204, 12001, 80061</p>
+<p>Thanks,<br>Mike Iqbal<br>Sunrise Medical Group<br>(343) 353-4328</p>
+</body></html>
+
+--===============4463445220616287731==--

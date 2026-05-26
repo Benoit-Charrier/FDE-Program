@@ -1,0 +1,85 @@
+{
+  "submission_id": "CLM-2026-1001379",
+  "submitted_at": "2026-04-27T12:49:00",
+  "submitter": {
+    "name": "Oak Tree Pediatric Associates",
+    "npi": "2044872355",
+    "tax_id": "11-5860495",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(939) 340-4970",
+    "address": {
+      "street": "7568 Lake Rd",
+      "city": "Minneapolis",
+      "state": "MN",
+      "zip": "55461"
+    }
+  },
+  "patient": {
+    "first_name": "Ingrid",
+    "last_name": "Diaz",
+    "date_of_birth": "1979-08-07",
+    "gender": "F",
+    "address": {
+      "street": "2609 Lake Rd",
+      "city": "Charlotte",
+      "state": "NC",
+      "zip": "28212"
+    },
+    "phone": "(626) 633-5464"
+  },
+  "insurance": {
+    "payer_id": "AET-001",
+    "payer_name": "Aetna Open Access",
+    "plan": "PPO",
+    "member_id": "W770779594",
+    "group_id": "GRP-50650",
+    "coverage_termination_date": "2026-02-10"
+  },
+  "diagnoses": [
+    {
+      "code": "Z00.00",
+      "description": "Encounter for general adult medical examination"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "64483",
+      "description": "Injection, transforaminal epidural",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 304.92,
+      "diagnosis_pointer": "1",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-04-19"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "97140",
+      "description": "Manual therapy (15 min)",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 84.38,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-11"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "83036",
+      "description": "Hemoglobin A1c",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 18.74,
+      "diagnosis_pointer": "1",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-03-28"
+    }
+  ],
+  "total_charge_amount": 408.04,
+  "currency": "USD",
+  "prior_auth_number": null
+}

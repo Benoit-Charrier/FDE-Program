@@ -1,0 +1,81 @@
+{
+  "submission_id": "CLM-2026-1001345",
+  "submitted_at": "2026-04-27T12:40:00",
+  "submitter": {
+    "name": "Yvonne Singh, MD",
+    "npi": "1668184004",
+    "tax_id": "93-8611074",
+    "specialty": "Emergency Medicine",
+    "phone": "(825) 685-6845",
+    "address": {
+      "street": "5192 Elm St",
+      "city": "Seattle",
+      "state": "WA",
+      "zip": "98150"
+    }
+  },
+  "patient": {
+    "first_name": "Yusuf",
+    "last_name": "Owens",
+    "date_of_birth": "1934-04-07",
+    "gender": "M",
+    "address": {
+      "street": "9062 Ridge Rd",
+      "city": "St. Louis",
+      "state": "MO",
+      "zip": "63185"
+    },
+    "phone": "(728) 263-3253"
+  },
+  "insurance": {
+    "payer_id": "MCD-IL",
+    "payer_name": "Illinois Medicaid",
+    "plan": "Medicaid",
+    "member_id": "371298346",
+    "group_id": "GRP-60165"
+  },
+  "diagnoses": [
+    {
+      "code": "S93.401A",
+      "description": "Sprain of unspecified ligament of right ankle, initial"
+    },
+    {
+      "code": "J20.9",
+      "description": "Acute bronchitis, unspecified"
+    },
+    {
+      "code": "J45.909",
+      "description": "Unspecified asthma, uncomplicated"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "72148",
+      "description": "MRI lumbar spine without contrast",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 345.41,
+      "diagnosis_pointer": "1",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-04-11"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99213",
+      "description": "Office visit, established, low-mod",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 97.11,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-03-31"
+    }
+  ],
+  "total_charge_amount": 442.52,
+  "currency": "USD",
+  "prior_auth_number": null,
+  "resubmission_of": "CLM-2026-9164166"
+}

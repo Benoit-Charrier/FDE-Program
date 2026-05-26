@@ -1,0 +1,79 @@
+{
+  "submission_id": "CLM-2026-1001262",
+  "submitted_at": "2026-04-27T12:17:00",
+  "submitter": {
+    "name": "Peter Schmidt, MD",
+    "npi": "",
+    "tax_id": "81-7841949",
+    "specialty": "Emergency Medicine",
+    "phone": "(377) 436-3607",
+    "address": {
+      "street": "3044 Main St",
+      "city": "Kansas City",
+      "state": "MO",
+      "zip": "64140"
+    }
+  },
+  "patient": {
+    "first_name": "Gloria",
+    "last_name": "Lopez",
+    "date_of_birth": "1944-11-16",
+    "gender": "F",
+    "address": {
+      "street": "3364 Maple Dr",
+      "city": "Cincinnati",
+      "state": "OH",
+      "zip": "45211"
+    },
+    "phone": "(473) 274-2350"
+  },
+  "insurance": {
+    "payer_id": "MCR-001",
+    "payer_name": "Medicare Part B",
+    "plan": "Original Medicare",
+    "member_id": "6PD1EGX4Q",
+    "group_id": "GRP-80494"
+  },
+  "diagnoses": [],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "44970",
+      "description": "Laparoscopic appendectomy",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 1842.85,
+      "diagnosis_pointer": "1",
+      "place_of_service": "21",
+      "place_of_service_desc": "Inpatient Hospital",
+      "date_of_service": "2026-04-22"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "73030",
+      "description": "Shoulder X-ray, complete",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 159.36,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-13"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99281",
+      "description": "ED visit, low",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 128.23,
+      "diagnosis_pointer": "1",
+      "place_of_service": "23",
+      "place_of_service_desc": "Emergency Room \u2014 Hospital",
+      "date_of_service": "2026-04-25"
+    }
+  ],
+  "total_charge_amount": 2130.44,
+  "currency": "USD",
+  "prior_auth_number": null
+}

@@ -1,0 +1,94 @@
+{
+  "submission_id": "CLM-2026-1001277",
+  "submitted_at": "2026-04-27T12:24:00",
+  "submitter": {
+    "name": "Kara Schmidt, MD",
+    "npi": "8270302226",
+    "tax_id": "",
+    "specialty": "Radiology",
+    "phone": "(215) 477-6841",
+    "address": {
+      "street": "371 Cedar Ct",
+      "city": "Raleigh",
+      "state": "NC",
+      "zip": "27618"
+    }
+  },
+  "patient": {
+    "first_name": "Jerome",
+    "last_name": "Rodriguez",
+    "date_of_birth": "1980-02-16",
+    "gender": "M",
+    "address": {
+      "street": "6404 Madison Ave",
+      "city": "Albuquerque",
+      "state": "NM",
+      "zip": "8711"
+    },
+    "phone": "(872) 916-4933"
+  },
+  "insurance": {
+    "payer_id": "HUM-001",
+    "payer_name": "Humana Gold Plus",
+    "plan": "HMO",
+    "member_id": "H30672163",
+    "group_id": "GRP-74081"
+  },
+  "diagnoses": [
+    {
+      "code": "H66.90",
+      "description": "Otitis media, unspecified, unspecified ear"
+    },
+    {
+      "code": "M25.562",
+      "description": "Pain in left knee"
+    },
+    {
+      "code": "M79.7",
+      "description": "Fibromyalgia"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "70551",
+      "description": "MRI brain without contrast",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 431.28,
+      "diagnosis_pointer": "1",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-04-11"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99421",
+      "description": "Online digital E/M, 5-10 min",
+      "modifiers": [
+        "95"
+      ],
+      "units": 1,
+      "charge_amount": 23.2,
+      "diagnosis_pointer": "2",
+      "place_of_service": "02",
+      "place_of_service_desc": "Telehealth",
+      "date_of_service": "2026-04-22"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99214",
+      "description": "Office visit, established, mod-high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 159.74,
+      "diagnosis_pointer": "3",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-25"
+    }
+  ],
+  "total_charge_amount": 614.22,
+  "currency": "USD",
+  "prior_auth_number": null
+}

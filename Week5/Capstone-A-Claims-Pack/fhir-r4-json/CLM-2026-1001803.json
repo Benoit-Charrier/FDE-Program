@@ -1,0 +1,200 @@
+{
+  "resourceType": "Claim",
+  "id": "CLM-2026-1001803",
+  "status": "active",
+  "type": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+        "code": "professional"
+      }
+    ]
+  },
+  "use": "claim",
+  "patient": {
+    "reference": "Patient/106009962",
+    "display": "Brett Vargas"
+  },
+  "billablePeriod": {
+    "start": "2026-04-01",
+    "end": "2026-04-25"
+  },
+  "created": "2026-04-27T14:31:00",
+  "insurer": {
+    "reference": "Organization/BCBS-IL",
+    "display": "Blue Cross Blue Shield of Illinois"
+  },
+  "provider": {
+    "reference": "Practitioner/3352041514",
+    "display": "Forest Hills Urgent Care"
+  },
+  "priority": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/processpriority",
+        "code": "normal"
+      }
+    ]
+  },
+  "diagnosis": [
+    {
+      "sequence": 1,
+      "diagnosisCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/sid/icd-10-cm",
+            "code": "K21.9",
+            "display": "Gastro-esophageal reflux disease without esophagitis"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 2,
+      "diagnosisCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/sid/icd-10-cm",
+            "code": "J02.9",
+            "display": "Acute pharyngitis, unspecified"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 3,
+      "diagnosisCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/sid/icd-10-cm",
+            "code": "L30.9",
+            "display": "Dermatitis, unspecified"
+          }
+        ]
+      }
+    }
+  ],
+  "insurance": [
+    {
+      "sequence": 1,
+      "focal": true,
+      "coverage": {
+        "display": "PPO Choice via Blue Cross Blue Shield of Illinois"
+      }
+    }
+  ],
+  "item": [
+    {
+      "sequence": 1,
+      "diagnosisSequence": [
+        1
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "72148",
+            "display": "MRI lumbar spine without contrast"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-04-01",
+      "quantity": {
+        "value": 2
+      },
+      "unitPrice": {
+        "value": 353.295,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 706.59,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "22"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 2,
+      "diagnosisSequence": [
+        2
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "12001",
+            "display": "Simple repair, superficial wound"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-04-10",
+      "quantity": {
+        "value": 2
+      },
+      "unitPrice": {
+        "value": 208.125,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 416.25,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "11"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 3,
+      "diagnosisSequence": [
+        3
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "64483",
+            "display": "Injection, transforaminal epidural"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-04-25",
+      "quantity": {
+        "value": 1
+      },
+      "unitPrice": {
+        "value": 355.86,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 355.86,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "22"
+          }
+        ]
+      }
+    }
+  ],
+  "total": {
+    "value": 1478.7,
+    "currency": "USD"
+  }
+}

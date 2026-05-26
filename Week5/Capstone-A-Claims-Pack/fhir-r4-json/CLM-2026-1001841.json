@@ -1,0 +1,164 @@
+{
+  "resourceType": "Claim",
+  "id": "CLM-2026-1001841",
+  "status": "active",
+  "type": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+        "code": "professional"
+      }
+    ]
+  },
+  "use": "claim",
+  "patient": {
+    "reference": "Patient/217839025",
+    "display": "Jose Zhang"
+  },
+  "billablePeriod": {
+    "start": "2026-03-31",
+    "end": "2026-04-25"
+  },
+  "created": "2026-04-27T14:42:00",
+  "insurer": {
+    "reference": "Organization/MCD-IL",
+    "display": "Illinois Medicaid"
+  },
+  "provider": {
+    "reference": "Practitioner/2860449104",
+    "display": "Iris Goldberg, MD"
+  },
+  "priority": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/processpriority",
+        "code": "normal"
+      }
+    ]
+  },
+  "diagnosis": [
+    {
+      "sequence": 1,
+      "diagnosisCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/sid/icd-10-cm",
+            "code": "R07.9",
+            "display": "Chest pain, unspecified"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 2,
+      "diagnosisCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/sid/icd-10-cm",
+            "code": "R10.9",
+            "display": "Unspecified abdominal pain"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 3,
+      "diagnosisCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/sid/icd-10-cm",
+            "code": "E78.5",
+            "display": "Hyperlipidemia, unspecified"
+          }
+        ]
+      }
+    }
+  ],
+  "insurance": [
+    {
+      "sequence": 1,
+      "focal": true,
+      "coverage": {
+        "display": "Medicaid via Illinois Medicaid"
+      }
+    }
+  ],
+  "item": [
+    {
+      "sequence": 1,
+      "diagnosisSequence": [
+        1
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "97110",
+            "display": "Therapeutic exercises (15 min)"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-03-31",
+      "quantity": {
+        "value": 2
+      },
+      "unitPrice": {
+        "value": 46.415,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 92.83,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "11"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 2,
+      "diagnosisSequence": [
+        2
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "97140",
+            "display": "Manual therapy (15 min)"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-04-25",
+      "quantity": {
+        "value": 2
+      },
+      "unitPrice": {
+        "value": 31.4,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 62.8,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "11"
+          }
+        ]
+      }
+    }
+  ],
+  "total": {
+    "value": 155.63,
+    "currency": "USD"
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "submission_id": "CLM-2026-1001204",
+  "submitted_at": "2026-04-27T12:05:00",
+  "submitter": {
+    "name": "Maple Family Health",
+    "npi": "7324860033",
+    "tax_id": "51-6875693",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(657) 724-9734",
+    "address": {
+      "street": "9876 Main St",
+      "city": "Cincinnati",
+      "state": "OH",
+      "zip": "45279"
+    }
+  },
+  "patient": {
+    "first_name": "Edwin",
+    "last_name": "Owens",
+    "date_of_birth": "1999-01-27",
+    "gender": "M",
+    "address": {
+      "street": "306 Cherry Ln",
+      "city": "Houston",
+      "state": "TX",
+      "zip": "77091"
+    },
+    "phone": "(425) 591-4866"
+  },
+  "insurance": {
+    "payer_id": "ANT-001",
+    "payer_name": "Anthem Blue Access",
+    "plan": "PPO",
+    "member_id": "YYL73845362",
+    "group_id": "GRP-43179"
+  },
+  "diagnoses": [
+    {
+      "code": "E66.9",
+      "description": "Obesity, unspecified"
+    },
+    {
+      "code": "N18.3",
+      "description": "Chronic kidney disease, stage 3"
+    },
+    {
+      "code": "G47.33",
+      "description": "Obstructive sleep apnea (adult) (pediatric)"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "90686",
+      "description": "Flu vaccine quadrivalent",
+      "modifiers": [
+        "22"
+      ],
+      "units": 1,
+      "charge_amount": 26.93,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-02"
+    }
+  ],
+  "total_charge_amount": 26.93,
+  "currency": "USD",
+  "prior_auth_number": null
+}

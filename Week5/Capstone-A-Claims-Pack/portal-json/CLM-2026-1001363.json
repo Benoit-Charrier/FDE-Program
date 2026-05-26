@@ -1,0 +1,92 @@
+{
+  "submission_id": "CLM-2026-1001363",
+  "submitted_at": "2026-04-27T12:40:00",
+  "submitter": {
+    "name": "Oscar O'Connor, DO",
+    "npi": "6152734749",
+    "tax_id": "99-8279635",
+    "specialty": "Internal Medicine",
+    "phone": "(413) 237-3233",
+    "address": {
+      "street": "5180 Park Blvd",
+      "city": "Pittsburgh",
+      "state": "PA",
+      "zip": "15254"
+    }
+  },
+  "patient": {
+    "first_name": "Zoe",
+    "last_name": "Petrov",
+    "date_of_birth": "1966-01-24",
+    "gender": "F",
+    "address": {
+      "street": "8184 Lake Rd",
+      "city": "Sacramento",
+      "state": "CA",
+      "zip": "95886"
+    },
+    "phone": "(965) 619-2448"
+  },
+  "insurance": {
+    "payer_id": "MCR-001",
+    "payer_name": "Medicare Part B",
+    "plan": "Original Medicare",
+    "member_id": "8YM6YUG4AT9",
+    "group_id": "GRP-94368"
+  },
+  "diagnoses": [
+    {
+      "code": "E11.9",
+      "description": "Type 2 diabetes mellitus without complications"
+    },
+    {
+      "code": "Z00.00",
+      "description": "Encounter for general adult medical examination"
+    },
+    {
+      "code": "N39.0",
+      "description": "Urinary tract infection, site not specified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "80053",
+      "description": "Comprehensive metabolic panel",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 22.18,
+      "diagnosis_pointer": "1",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-09"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "90471",
+      "description": "Immunization administration",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 17.08,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-19"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99284",
+      "description": "ED visit, mod-high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 213.68,
+      "diagnosis_pointer": "3",
+      "place_of_service": "23",
+      "place_of_service_desc": "Emergency Room \u2014 Hospital",
+      "date_of_service": "2026-04-10"
+    }
+  ],
+  "total_charge_amount": 252.94,
+  "currency": "USD",
+  "prior_auth_number": null
+}

@@ -1,0 +1,96 @@
+{
+  "submission_id": "CLM-2026-1001294",
+  "submitted_at": "2026-04-27T12:23:00",
+  "submitter": {
+    "name": "Sophia Jensen, MD",
+    "npi": "2497656313",
+    "tax_id": "39-8572682",
+    "specialty": "Pediatrics",
+    "phone": "(768) 670-2187",
+    "address": {
+      "street": "5326 Madison Ave",
+      "city": "Nashville",
+      "state": "TN",
+      "zip": "37215"
+    }
+  },
+  "patient": {
+    "first_name": "David",
+    "last_name": "Lee",
+    "date_of_birth": "1975-04-22",
+    "gender": "M",
+    "address": {
+      "street": "1771 Walnut St",
+      "city": "Raleigh",
+      "state": "NC",
+      "zip": "27638"
+    },
+    "phone": "(514) 235-7543"
+  },
+  "insurance": {
+    "payer_id": "AET-001",
+    "payer_name": "Aetna Open Access",
+    "plan": "PPO",
+    "member_id": "W465751966",
+    "group_id": "GRP-56239"
+  },
+  "diagnoses": [
+    {
+      "code": "I10",
+      "description": "Essential (primary) hypertension"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "71046",
+      "description": "Chest X-ray, 2 views",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 150.99,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-16"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "27447",
+      "description": "Total knee arthroplasty",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 4270.06,
+      "diagnosis_pointer": "1",
+      "place_of_service": "21",
+      "place_of_service_desc": "Inpatient Hospital",
+      "date_of_service": "2026-04-26"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "12001",
+      "description": "Simple repair, superficial wound",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 215.1,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-22"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "72148",
+      "description": "MRI lumbar spine without contrast",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 412.0,
+      "diagnosis_pointer": "1",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-04-16"
+    }
+  ],
+  "total_charge_amount": 5048.15,
+  "currency": "USD",
+  "prior_auth_number": ""
+}

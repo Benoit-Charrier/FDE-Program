@@ -1,0 +1,30 @@
+============================
+   FAX COVER SHEET
+============================
+TO:    Medicare Part B Claims Intake
+FROM:  Sunrise Medical Group
+DATE:  04/27/2026
+PAGES: 1 of 4
+
+URGENT [_]   FOR REVIEW [X]   PLEASE COMMENT [_]   PLEASE REPLY [_]
+
+RE: Claim submission - patient Owens, Brett
+
+Member ID:     2FN7WKF1VU2
+DOB:           1975-01-22
+Plan:          Original Medicare
+Group:         GRP-53401
+DOS:           2026-04-26
+
+Diagnoses:     L30.9, M25.561
+Procedures:    27447, 99395
+Total charge:  $5222.03
+
+Provider NPI:  6434339901
+Tax ID:        90-8449136
+
+NOTES:
+Resubmission - prior denial coded incorrect dx, now corrected.
+
+If problems with this fax, call (804) 320-8491
+============================

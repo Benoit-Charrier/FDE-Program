@@ -1,0 +1,104 @@
+{
+  "submission_id": "CLM-2026-1001434",
+  "submitted_at": "2026-04-27T13:00:00",
+  "submitter": {
+    "name": "Liam Park, PA",
+    "npi": "6085918041",
+    "tax_id": "17-9077104",
+    "specialty": "Physician Assistant",
+    "phone": "(265) 658-3941",
+    "address": {
+      "street": "8002 Washington Ave",
+      "city": "Cleveland",
+      "state": "OH",
+      "zip": "44147"
+    }
+  },
+  "patient": {
+    "first_name": "Diana",
+    "last_name": "Yamamoto",
+    "date_of_birth": "2013-06-05",
+    "gender": "F",
+    "address": {
+      "street": "5777 Washington Ave",
+      "city": "Salt Lake City",
+      "state": "UT",
+      "zip": "84130"
+    },
+    "phone": "(450) 271-6908"
+  },
+  "insurance": {
+    "payer_id": "UHC-001",
+    "payer_name": "UnitedHealthcare Choice Plus",
+    "plan": "PPO",
+    "member_id": "528537034-01",
+    "group_id": "GRP-95175"
+  },
+  "diagnoses": [
+    {
+      "code": "K21.9",
+      "description": "Gastro-esophageal reflux disease without esophagitis"
+    },
+    {
+      "code": "E78.5",
+      "description": "Hyperlipidemia, unspecified"
+    },
+    {
+      "code": "R10.9",
+      "description": "Unspecified abdominal pain"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "83036",
+      "description": "Hemoglobin A1c",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 14.08,
+      "diagnosis_pointer": "1",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-02"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "85025",
+      "description": "CBC w/ differential",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 11.39,
+      "diagnosis_pointer": "2",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-19"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "80053",
+      "description": "Comprehensive metabolic panel",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 17.77,
+      "diagnosis_pointer": "3",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-07"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "99396",
+      "description": "Preventive established, 40-64",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 249.13,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-19"
+    }
+  ],
+  "total_charge_amount": 292.37,
+  "currency": "USD",
+  "prior_auth_number": null
+}

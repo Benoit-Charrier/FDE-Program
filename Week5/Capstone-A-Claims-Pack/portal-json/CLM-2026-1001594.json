@@ -1,0 +1,88 @@
+{
+  "submission_id": "CLM-2026-1001594",
+  "submitted_at": "2026-04-27T13:38:00",
+  "submitter": {
+    "name": "Oak Tree Pediatric Associates",
+    "npi": "1721196692",
+    "tax_id": "33-6476889",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(299) 396-9982",
+    "address": {
+      "street": "1888 Franklin Rd",
+      "city": "Tampa",
+      "state": "FL",
+      "zip": "33643"
+    }
+  },
+  "patient": {
+    "first_name": "David",
+    "last_name": "Young",
+    "date_of_birth": "1985-03-02",
+    "gender": "M",
+    "address": {
+      "street": "5521 River Rd",
+      "city": "Buffalo",
+      "state": "NY",
+      "zip": "14225"
+    },
+    "phone": "(320) 300-4504"
+  },
+  "insurance": {
+    "payer_id": "HUM-001",
+    "payer_name": "Humana Gold Plus",
+    "plan": "HMO",
+    "member_id": "H21881538",
+    "group_id": "GRP-98865"
+  },
+  "diagnoses": [
+    {
+      "code": "M54.5",
+      "description": "Low back pain"
+    },
+    {
+      "code": "R51.9",
+      "description": "Headache, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99285",
+      "description": "ED visit, high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 419.12,
+      "diagnosis_pointer": "1",
+      "place_of_service": "23",
+      "place_of_service_desc": "Emergency Room \u2014 Hospital",
+      "date_of_service": "2026-04-16"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99205",
+      "description": "Office visit, new pt, comprehensive",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 310.3,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-11"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "83036",
+      "description": "Hemoglobin A1c",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 28.76,
+      "diagnosis_pointer": "1",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-23"
+    }
+  ],
+  "total_charge_amount": 758.18,
+  "currency": "USD",
+  "prior_auth_number": null
+}

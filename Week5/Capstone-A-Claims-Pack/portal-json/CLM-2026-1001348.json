@@ -1,0 +1,92 @@
+{
+  "submission_id": "CLM-2026-1001348",
+  "submitted_at": "2026-04-27T12:40:00",
+  "submitter": {
+    "name": "Stefan DuBois, PA",
+    "npi": "9669975236",
+    "tax_id": "17-9077104",
+    "specialty": "Physician Assistant",
+    "phone": "(269) 316-4958",
+    "address": {
+      "street": "4748 Walnut St",
+      "city": "Charlotte",
+      "state": "NC",
+      "zip": "28291"
+    }
+  },
+  "patient": {
+    "first_name": "Edwin",
+    "last_name": "Young",
+    "date_of_birth": "2015-03-11",
+    "gender": "M",
+    "address": {
+      "street": "6530 Maple Dr",
+      "city": "Charlotte",
+      "state": "NC",
+      "zip": "28226"
+    },
+    "phone": "(543) 954-7181"
+  },
+  "insurance": {
+    "payer_id": "AET-001",
+    "payer_name": "Aetna Open Access",
+    "plan": "PPO",
+    "member_id": "W669600715",
+    "group_id": "GRP-93417"
+  },
+  "diagnoses": [
+    {
+      "code": "M17.11",
+      "description": "Unilateral primary osteoarthritis, right knee"
+    },
+    {
+      "code": "K21.9",
+      "description": "Gastro-esophageal reflux disease without esophagitis"
+    },
+    {
+      "code": "G47.33",
+      "description": "Obstructive sleep apnea (adult) (pediatric)"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "85025",
+      "description": "CBC w/ differential",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 15.37,
+      "diagnosis_pointer": "1",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-07"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "71046",
+      "description": "Chest X-ray, 2 views",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 114.58,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-18"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "80053",
+      "description": "Comprehensive metabolic panel",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 21.67,
+      "diagnosis_pointer": "3",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-11"
+    }
+  ],
+  "total_charge_amount": 151.62,
+  "currency": "USD",
+  "prior_auth_number": null
+}

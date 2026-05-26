@@ -1,0 +1,92 @@
+{
+  "submission_id": "CLM-2026-1001582",
+  "submitted_at": "2026-04-27T13:39:00",
+  "submitter": {
+    "name": "Aaron Vargas, MD",
+    "npi": "2487148992",
+    "tax_id": "33-6476889",
+    "specialty": "Internal Medicine",
+    "phone": "(460) 752-7705",
+    "address": {
+      "street": "345 Main St",
+      "city": "Portland",
+      "state": "OR",
+      "zip": "97222"
+    }
+  },
+  "patient": {
+    "first_name": "Iris",
+    "last_name": "Bauer",
+    "date_of_birth": "1978-11-15",
+    "gender": "F",
+    "address": {
+      "street": "6538 Maple Dr",
+      "city": "Tampa",
+      "state": "FL",
+      "zip": "33699"
+    },
+    "phone": "(786) 849-7183"
+  },
+  "insurance": {
+    "payer_id": "HUM-001",
+    "payer_name": "Humana Gold Plus",
+    "plan": "HMO",
+    "member_id": "H99388572",
+    "group_id": "GRP-35485"
+  },
+  "diagnoses": [
+    {
+      "code": "J44.9",
+      "description": "Chronic obstructive pulmonary disease, unspecified"
+    },
+    {
+      "code": "M79.7",
+      "description": "Fibromyalgia"
+    },
+    {
+      "code": "I25.10",
+      "description": "Atherosclerotic heart disease without angina"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "12001",
+      "description": "Simple repair, superficial wound",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 147.44,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-03-30"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "20610",
+      "description": "Major joint injection",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 134.06,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-17"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "47562",
+      "description": "Laparoscopic cholecystectomy",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 2673.31,
+      "diagnosis_pointer": "3",
+      "place_of_service": "21",
+      "place_of_service_desc": "Inpatient Hospital",
+      "date_of_service": "2026-03-29"
+    }
+  ],
+  "total_charge_amount": 2954.81,
+  "currency": "USD",
+  "prior_auth_number": null
+}

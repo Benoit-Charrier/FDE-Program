@@ -1,0 +1,35 @@
+From: billing@sunrisemedical.example
+To: claims-intake@payer.example
+Date: Mon, 27 Apr 2026 07:58:00 -0500
+Subject: submitting attached claim - patient Vasquez
+
+Hi team,
+
+Please process the following claim. Patient was seen at our office on 2026-04-09.
+
+Patient: Vasquez, Gerald (DOB 2015-07-13, M)
+Member ID: 607968761-09    Plan: UnitedHealthcare Navigate - HMO
+Group: GRP-75619
+Address: 4406 Washington Ave, Cincinnati, OH 45291
+
+Provider: Sunrise Medical Group, NPI 9557524399, Tax ID 78-3382094
+Specialty: Multi-specialty Clinic
+
+Diagnoses:
+  - M79.7 Fibromyalgia
+  - Z00.00 Encounter for general adult medical examination
+  - R51.9 Headache, unspecified
+
+Services rendered:
+  - 2026-04-09: CPT 99215 (Office visit, established, high), 1 unit(s), $195.88
+  - 2026-04-17: CPT 99281 (ED visit, low), 1 unit(s), $101.55
+  - 2026-04-01: CPT 99284 (ED visit, mod-high), 1 unit(s), $283.84
+  - 2026-04-10: CPT 99422 (Online digital E/M, 11-20 min) mod 95, 1 unit(s), $47.14
+
+Total: $628.41
+Claim reference: CLM-2026-1001950
+
+This one got stuck — appreciate the help!
+
+Karen
+Front Office

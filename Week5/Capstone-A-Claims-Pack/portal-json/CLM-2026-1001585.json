@@ -1,0 +1,61 @@
+{
+  "submission_id": "CLM-2026-1001585",
+  "submitted_at": "2026-04-27T13:38:00",
+  "submitter": {
+    "name": "Westwood Internal Medicine",
+    "npi": "9949833375",
+    "tax_id": "10-3567542",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(463) 204-8983",
+    "address": {
+      "street": "6592 Jefferson Dr",
+      "city": "Omaha",
+      "state": "NE",
+      "zip": "68172"
+    }
+  },
+  "patient": {
+    "first_name": "Brian",
+    "last_name": "Edwards",
+    "date_of_birth": "1981-12-24",
+    "gender": "M",
+    "address": {
+      "street": "4937 Oak Ave",
+      "city": "Chicago",
+      "state": "IL",
+      "zip": "60684"
+    },
+    "phone": "(802) 509-4385"
+  },
+  "insurance": {
+    "payer_id": "BCBS-IL",
+    "payer_name": "Blue Cross Blue Shield of Illinois",
+    "plan": "HMO Standard",
+    "member_id": "XOJ537570373",
+    "group_id": "GRP-60783"
+  },
+  "diagnoses": [
+    {
+      "code": "N39.0",
+      "description": "Urinary tract infection, site not specified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "72148",
+      "description": "MRI lumbar spine without contrast",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 819.98,
+      "diagnosis_pointer": "1",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-04-17"
+    }
+  ],
+  "total_charge_amount": 819.98,
+  "currency": "USD",
+  "prior_auth_number": null,
+  "resubmission_of": "CLM-2026-3600351"
+}

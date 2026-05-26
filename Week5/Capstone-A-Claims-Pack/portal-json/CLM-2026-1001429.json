@@ -1,0 +1,100 @@
+{
+  "submission_id": "CLM-2026-1001429",
+  "submitted_at": "2026-04-27T13:00:00",
+  "submitter": {
+    "name": "Carlos Schmidt, MD",
+    "npi": "0717201356",
+    "tax_id": "34-3641125",
+    "specialty": "Pediatrics",
+    "phone": "(338) 728-7678",
+    "address": {
+      "street": "956 Park Blvd",
+      "city": "Houston",
+      "state": "TX",
+      "zip": "77087"
+    }
+  },
+  "patient": {
+    "first_name": "Grace",
+    "last_name": "Fischer",
+    "date_of_birth": "1938-04-07",
+    "gender": "F",
+    "address": {
+      "street": "4211 Spring St",
+      "city": "Tucson",
+      "state": "AZ",
+      "zip": "85762"
+    },
+    "phone": "(281) 852-4223"
+  },
+  "insurance": {
+    "payer_id": "MCR-001",
+    "payer_name": "Medicare Part B",
+    "plan": "Original Medicare",
+    "member_id": "9WQ8WWV8DF8",
+    "group_id": "GRP-23747"
+  },
+  "diagnoses": [
+    {
+      "code": "M25.561",
+      "description": "Pain in right knee"
+    },
+    {
+      "code": "M25.562",
+      "description": "Pain in left knee"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "47562",
+      "description": "Laparoscopic cholecystectomy",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 3747.51,
+      "diagnosis_pointer": "1",
+      "place_of_service": "21",
+      "place_of_service_desc": "Inpatient Hospital",
+      "date_of_service": "2026-04-07"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99203",
+      "description": "Office visit, new pt, mod",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 128.73,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-05"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "27447",
+      "description": "Total knee arthroplasty",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 5930.32,
+      "diagnosis_pointer": "1",
+      "place_of_service": "21",
+      "place_of_service_desc": "Inpatient Hospital",
+      "date_of_service": "2026-04-04"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "99204",
+      "description": "Office visit, new pt, high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 273.75,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-07"
+    }
+  ],
+  "total_charge_amount": 10080.31,
+  "currency": "USD",
+  "prior_auth_number": null
+}

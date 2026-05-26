@@ -1,0 +1,105 @@
+{
+  "submission_id": "CLM-2026-1001210",
+  "submitted_at": "2026-04-27T12:07:00",
+  "submitter": {
+    "name": "Sara Jensen, MD",
+    "npi": "6945814760",
+    "tax_id": "68-7373123",
+    "specialty": "Pediatrics",
+    "phone": "(803) 909-7344",
+    "address": {
+      "street": "8344 Park Blvd",
+      "city": "Portland",
+      "state": "OR",
+      "zip": "97281"
+    }
+  },
+  "patient": {
+    "first_name": "Peter",
+    "last_name": "Xiong",
+    "date_of_birth": "1948-01-28",
+    "gender": "M",
+    "address": {
+      "street": "4808 Cedar Ct",
+      "city": "St. Louis",
+      "state": "MO",
+      "zip": "63152"
+    },
+    "phone": "(711) 281-5120"
+  },
+  "insurance": {
+    "payer_id": "BCBS-IL",
+    "payer_name": "Blue Cross Blue Shield of Illinois",
+    "plan": "PPO Choice",
+    "member_id": "XOJ584095877",
+    "group_id": "GRP-51836"
+  },
+  "diagnoses": [
+    {
+      "code": "M79.7",
+      "description": "Fibromyalgia"
+    },
+    {
+      "code": "J06.9",
+      "description": "Acute upper respiratory infection, unspecified"
+    },
+    {
+      "code": "N18.3",
+      "description": "Chronic kidney disease, stage 3"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "97140",
+      "description": "Manual therapy (15 min)",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 70.5,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-09"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "85025",
+      "description": "CBC w/ differential",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 24.07,
+      "diagnosis_pointer": "2",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-03-31"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "97140",
+      "description": "Manual therapy (15 min)",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 43.07,
+      "diagnosis_pointer": "3",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-08"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "99395",
+      "description": "Preventive established, 18-39",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 232.51,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-20"
+    }
+  ],
+  "total_charge_amount": 370.15,
+  "currency": "USD",
+  "prior_auth_number": null,
+  "resubmission_of": "CLM-2026-5725206"
+}

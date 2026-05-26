@@ -1,0 +1,104 @@
+{
+  "submission_id": "CLM-2026-1001300",
+  "submitted_at": "2026-04-27T12:30:00",
+  "submitter": {
+    "name": "George Jensen, PA",
+    "npi": "7068295412",
+    "tax_id": "95-9044704",
+    "specialty": "Physician Assistant",
+    "phone": "(209) 758-7584",
+    "address": {
+      "street": "4373 Birch Ct",
+      "city": "Cincinnati",
+      "state": "OH",
+      "zip": "45220"
+    }
+  },
+  "patient": {
+    "first_name": "Edwin",
+    "last_name": "Owens",
+    "date_of_birth": "2007-07-27",
+    "gender": "M",
+    "address": {
+      "street": "8520 Madison Ave",
+      "city": "Minneapolis",
+      "state": "MN",
+      "zip": "55438"
+    },
+    "phone": "(543) 839-7118"
+  },
+  "insurance": {
+    "payer_id": "BCBS-IL",
+    "payer_name": "Blue Cross Blue Shield of Illinois",
+    "plan": "HMO Standard",
+    "member_id": "XOJ442995173",
+    "group_id": "GRP-45508"
+  },
+  "diagnoses": [
+    {
+      "code": "M54.5",
+      "description": "Low back pain"
+    },
+    {
+      "code": "J44.9",
+      "description": "Chronic obstructive pulmonary disease, unspecified"
+    },
+    {
+      "code": "J20.9",
+      "description": "Acute bronchitis, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "80053",
+      "description": "Comprehensive metabolic panel",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 38.69,
+      "diagnosis_pointer": "1",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-24"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99214",
+      "description": "Office visit, established, mod-high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 199.18,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-24"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99284",
+      "description": "ED visit, mod-high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 271.54,
+      "diagnosis_pointer": "3",
+      "place_of_service": "23",
+      "place_of_service_desc": "Emergency Room \u2014 Hospital",
+      "date_of_service": "2026-04-04"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "71046",
+      "description": "Chest X-ray, 2 views",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 71.31,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-08"
+    }
+  ],
+  "total_charge_amount": 580.72,
+  "currency": "USD",
+  "prior_auth_number": null
+}

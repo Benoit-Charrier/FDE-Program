@@ -1,0 +1,84 @@
+{
+  "submission_id": "CLM-2026-1001574",
+  "submitted_at": "2026-04-27T13:36:00",
+  "submitter": {
+    "name": "Kiana Cohen, MD",
+    "npi": "8379481819",
+    "tax_id": "34-3641125",
+    "specialty": "Pediatrics",
+    "phone": "(771) 691-6099",
+    "address": {
+      "street": "7823 1st Ave",
+      "city": "Cincinnati",
+      "state": "OH",
+      "zip": "45219"
+    }
+  },
+  "patient": {
+    "first_name": "Logan",
+    "last_name": "Thompson",
+    "date_of_birth": "2025-02-27",
+    "gender": "M",
+    "address": {
+      "street": "5870 Jefferson Dr",
+      "city": "Cincinnati",
+      "state": "OH",
+      "zip": "45261"
+    },
+    "phone": "(941) 291-1428"
+  },
+  "insurance": {
+    "payer_id": "MCR-001",
+    "payer_name": "Medicare Part B",
+    "plan": "Original Medicare",
+    "member_id": "2ND5PGE6HE8",
+    "group_id": "GRP-50523"
+  },
+  "diagnoses": [
+    {
+      "code": "L30.9",
+      "description": "Dermatitis, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "47562",
+      "description": "Laparoscopic cholecystectomy",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 3754.05,
+      "diagnosis_pointer": "1",
+      "place_of_service": "21",
+      "place_of_service_desc": "Inpatient Hospital",
+      "date_of_service": "2026-04-23"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99285",
+      "description": "ED visit, high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 387.49,
+      "diagnosis_pointer": "1",
+      "place_of_service": "23",
+      "place_of_service_desc": "Emergency Room \u2014 Hospital",
+      "date_of_service": "2026-03-29"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "12001",
+      "description": "Simple repair, superficial wound",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 197.35,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-14"
+    }
+  ],
+  "total_charge_amount": 4338.89,
+  "currency": "USD",
+  "prior_auth_number": null
+}

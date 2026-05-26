@@ -1,0 +1,11 @@
+PHONE LOG - PROVIDER OUTREACH
+
+Date/Time: 04/27/2026 15:19
+Caller: Office mgr from Sunrise Medical Group
+Re: Patient Wyatt Harris (member U87163294)
+
+Caller states: we billed a 99214 but it processed as 99213 - want to appeal
+
+Resolution: Pulled claim CLM-2026-1001996. Confirmed received - in queue for adjudication, ETA 2 days.
+
+Closed: 15:19  Agent: S.Iqbal

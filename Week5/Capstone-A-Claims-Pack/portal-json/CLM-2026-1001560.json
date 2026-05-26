@@ -1,0 +1,100 @@
+{
+  "submission_id": "CLM-2026-1001560",
+  "submitted_at": "2026-04-27T13:31:00",
+  "submitter": {
+    "name": "Beatrice Vargas, MD",
+    "npi": "7904143569",
+    "tax_id": "60-5120245",
+    "specialty": "Emergency Medicine",
+    "phone": "(542) 594-5351",
+    "address": {
+      "street": "1168 Spring St",
+      "city": "Columbus",
+      "state": "OH",
+      "zip": "43240"
+    }
+  },
+  "patient": {
+    "first_name": "Rachel",
+    "last_name": "Clark",
+    "date_of_birth": "2004-01-08",
+    "gender": "F",
+    "address": {
+      "street": "9605 Jefferson Dr",
+      "city": "Cincinnati",
+      "state": "OH",
+      "zip": "45220"
+    },
+    "phone": "(446) 848-3285"
+  },
+  "insurance": {
+    "payer_id": "BCBS-IL",
+    "payer_name": "Blue Cross Blue Shield of Illinois",
+    "plan": "PPO Choice",
+    "member_id": "XOJ742324066",
+    "group_id": "GRP-46655"
+  },
+  "diagnoses": [
+    {
+      "code": "E11.9",
+      "description": "Type 2 diabetes mellitus without complications"
+    },
+    {
+      "code": "I25.10",
+      "description": "Atherosclerotic heart disease without angina"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "70551",
+      "description": "MRI brain without contrast",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 471.32,
+      "diagnosis_pointer": "1",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-03-28"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99213",
+      "description": "Office visit, established, low-mod",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 118.84,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-02"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "27447",
+      "description": "Total knee arthroplasty",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 4353.9,
+      "diagnosis_pointer": "1",
+      "place_of_service": "21",
+      "place_of_service_desc": "Inpatient Hospital",
+      "date_of_service": "2026-04-22"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "99214",
+      "description": "Office visit, established, mod-high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 160.81,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-03"
+    }
+  ],
+  "total_charge_amount": 5104.87,
+  "currency": "USD",
+  "prior_auth_number": null
+}

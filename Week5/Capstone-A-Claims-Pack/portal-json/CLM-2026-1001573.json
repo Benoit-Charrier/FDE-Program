@@ -1,0 +1,76 @@
+{
+  "submission_id": "CLM-2026-1001573",
+  "submitted_at": "2026-04-27T13:37:00",
+  "submitter": {
+    "name": "Sunrise Medical Group",
+    "npi": "8827452882",
+    "tax_id": "85-2693146",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(658) 536-5335",
+    "address": {
+      "street": "3376 River Rd",
+      "city": "Cincinnati",
+      "state": "OH",
+      "zip": "45253"
+    }
+  },
+  "patient": {
+    "first_name": "Marcus",
+    "last_name": "Garcia",
+    "date_of_birth": "1981-06-12",
+    "gender": "M",
+    "address": {
+      "street": "1272 Hill St",
+      "city": "Philadelphia",
+      "state": "PA",
+      "zip": "1914"
+    },
+    "phone": "(480) 917-2064"
+  },
+  "insurance": {
+    "payer_id": "MCD-IL",
+    "payer_name": "Illinois Medicaid",
+    "plan": "Medicaid",
+    "member_id": "750684914",
+    "group_id": "GRP-61896"
+  },
+  "diagnoses": [
+    {
+      "code": "S93.401A",
+      "description": "Sprain of unspecified ligament of right ankle, initial"
+    },
+    {
+      "code": "J20.9",
+      "description": "Acute bronchitis, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "44970",
+      "description": "Laparoscopic appendectomy",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 2862.16,
+      "diagnosis_pointer": "1",
+      "place_of_service": "21",
+      "place_of_service_desc": "Inpatient Hospital",
+      "date_of_service": "2026-04-07"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99285",
+      "description": "ED visit, high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 371.23,
+      "diagnosis_pointer": "2",
+      "place_of_service": "23",
+      "place_of_service_desc": "Emergency Room \u2014 Hospital",
+      "date_of_service": "2026-04-21"
+    }
+  ],
+  "total_charge_amount": 3233.39,
+  "currency": "USD",
+  "prior_auth_number": null
+}

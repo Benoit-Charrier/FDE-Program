@@ -1,0 +1,32 @@
+From: billing@sarareyesdc.example
+To: claims-intake@payer.example
+Date: Mon, 27 Apr 2026 15:42:00 -0500
+Subject: FW: claim submission - Patel
+
+Hi team,
+
+Please process the following claim. Patient was seen at our office on 2026-04-23.
+
+Patient: Patel, Mateo (DOB 1994-01-18, M)
+Member ID: U28772945    Plan: Cigna Open Access Plus - PPO
+Group: GRP-27649
+Address: 8001 Lake Rd, St. Louis, MO 63197
+
+Provider: Sara Reyes, DC, NPI 9922206404, Tax ID (missing - please call)
+Specialty: Chiropractic
+
+Diagnoses:
+  - F32.9 Major depressive disorder, single episode
+  - R51.9 Headache, unspecified
+
+Services rendered:
+  - 2026-04-23: CPT 64483 (Injection, transforaminal epidural), 1 unit(s), $387.68
+  - 2026-04-03: CPT 71046 (Chest X-ray, 2 views), 2 unit(s), $126.99
+  - 2026-03-28: CPT 12001 (Simple repair, superficial wound), 1 unit(s), $180.99
+
+Total: $695.66
+Claim reference: CLM-2026-1001947
+
+Resubmitting from last week — first one bounced. Pls confirm receipt.
+
+-Mike

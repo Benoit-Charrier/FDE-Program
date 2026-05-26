@@ -1,0 +1,29 @@
+From: billing@stefanreyesmd.example
+To: claims-intake@payer.example
+Date: Mon, 27 Apr 2026 11:33:00 -0500
+Subject: submitting attached claim - patient Johnson
+
+Hi team,
+
+Please process the following claim. Patient was seen at our office on 2026-04-03.
+
+Patient: Johnson, Vincent (DOB 1996-04-01, M)
+Member ID: 456484534-06    Plan: UnitedHealthcare Choice Plus - PPO
+Group: GRP-15195
+Address: 5875 Oak Ave, Houston, TX 7701
+
+Provider: Stefan Reyes, MD, NPI 8291604213, Tax ID 30-1377895
+Specialty: Orthopedic Surgery
+
+Diagnoses:
+  - M17.11 Unilateral primary osteoarthritis, right knee
+
+Services rendered:
+  - 2026-04-03: CPT 73030 (Shoulder X-ray, complete), 1 unit(s), $80.13
+
+Total: $80.13
+Claim reference: CLM-2026-1001956
+
+Please process at your earliest. Thanks!
+
+--Donna, Billing Office

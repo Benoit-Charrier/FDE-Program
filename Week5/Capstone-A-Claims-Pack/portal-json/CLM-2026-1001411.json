@@ -1,0 +1,97 @@
+{
+  "submission_id": "CLM-2026-1001411",
+  "submitted_at": "2026-04-27T12:57:00",
+  "submitter": {
+    "name": "Ravi O'Connor, DC",
+    "npi": "4675828123",
+    "tax_id": "11-5860495",
+    "specialty": "Chiropractic",
+    "phone": "(751) 694-8014",
+    "address": {
+      "street": "3097 Main St",
+      "city": "Tucson",
+      "state": "AZ",
+      "zip": "85735"
+    }
+  },
+  "patient": {
+    "first_name": "Patrick",
+    "last_name": "Iqbal",
+    "date_of_birth": "1970-03-12",
+    "gender": "M",
+    "address": {
+      "street": "7646 Spring St",
+      "city": "Boston",
+      "state": "MA",
+      "zip": "0214"
+    },
+    "phone": "(357) 384-2898"
+  },
+  "insurance": {
+    "payer_id": "UHC-001",
+    "payer_name": "UnitedHealthcare Choice Plus",
+    "plan": "PPO",
+    "member_id": "943736932-02",
+    "group_id": "GRP-69153"
+  },
+  "diagnoses": [
+    {
+      "code": "N39.0",
+      "description": "Urinary tract infection, site not specified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99203",
+      "description": "Office visit, new pt, mod",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 162.47,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-01"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "80053",
+      "description": "Comprehensive metabolic panel",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 20.13,
+      "diagnosis_pointer": "1",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-14"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99285",
+      "description": "ED visit, high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 349.16,
+      "diagnosis_pointer": "1",
+      "place_of_service": "23",
+      "place_of_service_desc": "Emergency Room \u2014 Hospital",
+      "date_of_service": "2026-04-14"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "85025",
+      "description": "CBC w/ differential",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 23.07,
+      "diagnosis_pointer": "1",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-08"
+    }
+  ],
+  "total_charge_amount": 554.83,
+  "currency": "USD",
+  "prior_auth_number": null,
+  "resubmission_of": "CLM-2026-8462343"
+}

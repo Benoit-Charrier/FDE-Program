@@ -1,0 +1,92 @@
+{
+  "submission_id": "CLM-2026-1001423",
+  "submitted_at": "2026-04-27T12:55:00",
+  "submitter": {
+    "name": "Summit Cardiology Group",
+    "npi": "7730515480",
+    "tax_id": "25-3439747",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(643) 250-4756",
+    "address": {
+      "street": "6147 1st Ave",
+      "city": "St. Louis",
+      "state": "MO",
+      "zip": "63190"
+    }
+  },
+  "patient": {
+    "first_name": "Sara",
+    "last_name": "Iqbal",
+    "date_of_birth": "1975-03-31",
+    "gender": "F",
+    "address": {
+      "street": "4917 Madison Ave",
+      "city": "Pittsburgh",
+      "state": "PA",
+      "zip": "15234"
+    },
+    "phone": "(360) 909-4795"
+  },
+  "insurance": {
+    "payer_id": "BCBS-IL",
+    "payer_name": "Blue Cross Blue Shield of Illinois",
+    "plan": "PPO Choice",
+    "member_id": "XOJ774176271",
+    "group_id": "GRP-49603"
+  },
+  "diagnoses": [
+    {
+      "code": "J20.9",
+      "description": "Acute bronchitis, unspecified"
+    },
+    {
+      "code": "F41.1",
+      "description": "Generalized anxiety disorder"
+    },
+    {
+      "code": "G47.33",
+      "description": "Obstructive sleep apnea (adult) (pediatric)"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99214",
+      "description": "Office visit, established, mod-high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 209.49,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-17"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "72148",
+      "description": "MRI lumbar spine without contrast",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 723.71,
+      "diagnosis_pointer": "2",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-04-24"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "47562",
+      "description": "Laparoscopic cholecystectomy",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 1463.49,
+      "diagnosis_pointer": "3",
+      "place_of_service": "21",
+      "place_of_service_desc": "Inpatient Hospital",
+      "date_of_service": "2026-04-04"
+    }
+  ],
+  "total_charge_amount": 2396.69,
+  "currency": "USD",
+  "prior_auth_number": null
+}

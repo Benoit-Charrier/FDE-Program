@@ -1,0 +1,100 @@
+{
+  "submission_id": "CLM-2026-1001343",
+  "submitted_at": "2026-04-27T12:37:00",
+  "submitter": {
+    "name": "Bright Family Practice",
+    "npi": "5307787928",
+    "tax_id": "33-6476889",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(563) 298-7313",
+    "address": {
+      "street": "3401 River Rd",
+      "city": "Tucson",
+      "state": "AZ",
+      "zip": "85719"
+    }
+  },
+  "patient": {
+    "first_name": "Sara",
+    "last_name": "Wong",
+    "date_of_birth": "2003-12-07",
+    "gender": "F",
+    "address": {
+      "street": "5780 Ridge Rd",
+      "city": "Denver",
+      "state": "CO",
+      "zip": "80211"
+    },
+    "phone": "(246) 462-2933"
+  },
+  "insurance": {
+    "payer_id": "BCBS-IL",
+    "payer_name": "Blue Cross Blue Shield of Illinois",
+    "plan": "HMO Standard",
+    "member_id": "XOJ449776597",
+    "group_id": "GRP-35448"
+  },
+  "diagnoses": [
+    {
+      "code": "M25.561",
+      "description": "Pain in right knee"
+    },
+    {
+      "code": "N18.3",
+      "description": "Chronic kidney disease, stage 3"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99205",
+      "description": "Office visit, new pt, comprehensive",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 355.09,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-18"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "70551",
+      "description": "MRI brain without contrast",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 1067.3,
+      "diagnosis_pointer": "2",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-04-11"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99396",
+      "description": "Preventive established, 40-64",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 261.25,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-18"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "80053",
+      "description": "Comprehensive metabolic panel",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 18.52,
+      "diagnosis_pointer": "2",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-14"
+    }
+  ],
+  "total_charge_amount": 1702.16,
+  "currency": "USD",
+  "prior_auth_number": null
+}

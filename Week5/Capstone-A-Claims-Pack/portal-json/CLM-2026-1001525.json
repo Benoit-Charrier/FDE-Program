@@ -1,0 +1,72 @@
+{
+  "submission_id": "CLM-2026-1001525",
+  "submitted_at": "2026-04-27T13:23:00",
+  "submitter": {
+    "name": "Valerie Patel, NP",
+    "npi": "0054024612",
+    "tax_id": "85-2693146",
+    "specialty": "Nurse Practitioner",
+    "phone": "(629) 494-4225",
+    "address": {
+      "street": "2339 Ridge Rd",
+      "city": "Pittsburgh",
+      "state": "PA",
+      "zip": "15284"
+    }
+  },
+  "patient": {
+    "first_name": "Zoe",
+    "last_name": "Brown",
+    "date_of_birth": "1962-07-29",
+    "gender": "F",
+    "address": {
+      "street": "8039 Pine Ln",
+      "city": "Charlotte",
+      "state": "NC",
+      "zip": "28254"
+    },
+    "phone": "(964) 277-3411"
+  },
+  "insurance": {
+    "payer_id": "ANT-001",
+    "payer_name": "Anthem Blue Access",
+    "plan": "PPO",
+    "member_id": "YYL21540354",
+    "group_id": "GRP-64870"
+  },
+  "diagnoses": [
+    {
+      "code": "Z00.00",
+      "description": "Encounter for general adult medical examination"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99215",
+      "description": "Office visit, established, high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 293.47,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-19"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "73030",
+      "description": "Shoulder X-ray, complete",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 73.43,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-20"
+    }
+  ],
+  "total_charge_amount": 366.9,
+  "currency": "USD",
+  "prior_auth_number": null
+}

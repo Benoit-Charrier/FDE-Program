@@ -1,0 +1,92 @@
+{
+  "submission_id": "CLM-2026-1001337",
+  "submitted_at": "2026-04-27T12:35:00",
+  "submitter": {
+    "name": "Diana Vargas, DO",
+    "npi": "1899872521",
+    "tax_id": "81-7841949",
+    "specialty": "Family Medicine",
+    "phone": "(246) 512-2938",
+    "address": {
+      "street": "8021 Madison Ave",
+      "city": "Cincinnati",
+      "state": "OH",
+      "zip": "45254"
+    }
+  },
+  "patient": {
+    "first_name": "Camila",
+    "last_name": "Iqbal",
+    "date_of_birth": "1934-04-12",
+    "gender": "F",
+    "address": {
+      "street": "1639 Madison Ave",
+      "city": "Seattle",
+      "state": "WA",
+      "zip": "98137"
+    },
+    "phone": "(368) 286-6758"
+  },
+  "insurance": {
+    "payer_id": "BCBS-IL",
+    "payer_name": "Blue Cross Blue Shield of Illinois",
+    "plan": "HMO Standard",
+    "member_id": "XOJ346736791",
+    "group_id": "GRP-82225"
+  },
+  "diagnoses": [
+    {
+      "code": "R53.83",
+      "description": "Other fatigue"
+    },
+    {
+      "code": "L30.9",
+      "description": "Dermatitis, unspecified"
+    },
+    {
+      "code": "R51.9",
+      "description": "Headache, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99203",
+      "description": "Office visit, new pt, mod",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 155.57,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-26"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "71046",
+      "description": "Chest X-ray, 2 views",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 121.25,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-16"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "80061",
+      "description": "Lipid panel",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 22.16,
+      "diagnosis_pointer": "3",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-01"
+    }
+  ],
+  "total_charge_amount": 298.98,
+  "currency": "USD",
+  "prior_auth_number": null
+}

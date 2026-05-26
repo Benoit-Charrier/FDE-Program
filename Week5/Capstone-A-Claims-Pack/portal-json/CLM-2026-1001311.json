@@ -1,0 +1,97 @@
+{
+  "submission_id": "CLM-2026-1001311",
+  "submitted_at": "2026-04-27T12:27:00",
+  "submitter": {
+    "name": "Fatima Reyes, DPT",
+    "npi": "1730976801",
+    "tax_id": "34-4053329",
+    "specialty": "Physical Therapy",
+    "phone": "(324) 502-7933",
+    "address": {
+      "street": "6224 Main St",
+      "city": "Portland",
+      "state": "OR",
+      "zip": "97241"
+    }
+  },
+  "patient": {
+    "first_name": "NaTHAN",
+    "last_name": "Quintana",
+    "date_of_birth": "2014-05-03",
+    "gender": "M",
+    "address": {
+      "street": "2272 Maple Dr",
+      "city": "Denver",
+      "state": "CO",
+      "zip": "80298"
+    },
+    "phone": "(319) 895-9555"
+  },
+  "insurance": {
+    "payer_id": "ANT-001",
+    "payer_name": "Anthem Blue Access",
+    "plan": "PPO",
+    "member_id": "YYL60323952",
+    "group_id": "GRP-50862"
+  },
+  "diagnoses": [
+    {
+      "code": "H66.90",
+      "description": "Otitis media, unspecified, unspecified ear"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99215",
+      "description": "Office visit, established, high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 217.92,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-16"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "47562",
+      "description": "Laparoscopic cholecystectomy",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 1624.71,
+      "diagnosis_pointer": "1",
+      "place_of_service": "21",
+      "place_of_service_desc": "Inpatient Hospital",
+      "date_of_service": "2026-04-11"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "73030",
+      "description": "Shoulder X-ray, complete",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 74.69,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-15"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "90686",
+      "description": "Flu vaccine quadrivalent",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 23.78,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-24"
+    }
+  ],
+  "total_charge_amount": 1941.1,
+  "currency": "USD",
+  "prior_auth_number": null,
+  "resubmission_of": "CLM-2026-8253068"
+}

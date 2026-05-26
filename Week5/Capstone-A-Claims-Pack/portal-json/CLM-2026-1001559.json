@@ -1,0 +1,84 @@
+{
+  "submission_id": "CLM-2026-1001559",
+  "submitted_at": "2026-04-27T13:31:00",
+  "submitter": {
+    "name": "Yusuf O'Connor, DO",
+    "npi": "0908986516",
+    "tax_id": "25-3439747",
+    "specialty": "Internal Medicine",
+    "phone": "(585) 554-7392",
+    "address": {
+      "street": "4057 Highland Ave",
+      "city": "Columbus",
+      "state": "OH",
+      "zip": "43240"
+    }
+  },
+  "patient": {
+    "first_name": "Noah",
+    "last_name": "Ivanov",
+    "date_of_birth": "1952-03-03",
+    "gender": "M",
+    "address": {
+      "street": "9262 River Rd",
+      "city": "Philadelphia",
+      "state": "PA",
+      "zip": "19187"
+    },
+    "phone": "(616) 980-2763"
+  },
+  "insurance": {
+    "payer_id": "BCBS-IL",
+    "payer_name": "Blue Cross Blue Shield of Illinois",
+    "plan": "HMO Standard",
+    "member_id": "XOJ504727608",
+    "group_id": "GRP-49523"
+  },
+  "diagnoses": [
+    {
+      "code": "J02.9",
+      "description": "Acute pharyngitis, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99205",
+      "description": "Office visit, new pt, comprehensive",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 254.86,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-24"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "20610",
+      "description": "Major joint injection",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 284.7,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-07"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "80061",
+      "description": "Lipid panel",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 47.53,
+      "diagnosis_pointer": "1",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-23"
+    }
+  ],
+  "total_charge_amount": 587.09,
+  "currency": "USD",
+  "prior_auth_number": null
+}

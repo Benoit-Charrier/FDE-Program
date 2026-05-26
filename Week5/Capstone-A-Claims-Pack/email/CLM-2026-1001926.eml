@@ -1,0 +1,73 @@
+From: Mike Iqbal <mike.iqbal@sophiamartinez.example>
+To: claims-intake@payer.example
+Cc: None
+Date: Mon, 27 Apr 2026 08:14:56 +0000
+Message-ID: <177729813760.6.18240285516137519115@sophiamartinez.example>
+Subject: Re: billing question / claim CLM-2026-1001926
+X-Submitter-NPI: 3305361821
+X-Submitter-TaxID: 39-8572682
+X-Originating-System: sophiamartinez.example MailRelay 4.2
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="===============0860554196118198588=="
+
+--===============0860554196118198588==
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hi team,
+
+Please process the following claim. Patient was seen at our office on 2026-04=
+-01.
+
+Patient: Gonzalez, Aaron  (DOB 1970-11-07, M)
+Member ID: 390147605-06    Plan: UnitedHealthcare Navigate =E2=80=94 HMO
+Group: GRP-79849
+Address: 6822 Sunset Blvd, Omaha, NE 68132
+
+Provider: Sophia Martinez, DC, NPI 3305361821, Tax ID 39-8572682
+Specialty: Chiropractic
+
+Diagnoses:
+  - Z00.00  Encounter for general adult medical examination
+  - I25.10  Atherosclerotic heart disease without angina
+
+Services rendered:
+  - 2026-04-01: CPT 99285 (ED visit, high), 1 unit(s), $425.32
+
+Total: $425.32
+Claim reference: CLM-2026-1001926
+
+Please process at your earliest. Thanks!
+
+Thanks,
+Mike Iqbal
+Sophia Martinez, DC
+(914) 617-7034
+
+--===============0860554196118198588==
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+<html><body style=3D"font-family: Arial, sans-serif; font-size: 11pt;">
+<p>Hi team,</p>
+<p>Please process the following claim. Patient was seen at our office on
+<b>2026-04-01</b>.</p>
+<table cellpadding=3D"3" style=3D"border-collapse: collapse; font-size: 10pt;=
+">
+<tr><td><b>Patient:</b></td><td>Gonzalez, Aaron (DOB 1970-11-07, M)</td></tr>
+<tr><td><b>Member ID:</b></td><td>390147605-06</td></tr>
+<tr><td><b>Plan:</b></td><td>UnitedHealthcare Navigate =E2=80=94 HMO</td></tr>
+<tr><td><b>Group:</b></td><td>GRP-79849</td></tr>
+<tr><td><b>Provider:</b></td><td>Sophia Martinez, DC (NPI 3305361821)</td></t=
+r>
+<tr><td><b>Total charge:</b></td><td>$425.32</td></tr>
+<tr><td><b>Claim ref:</b></td><td>CLM-2026-1001926</td></tr>
+</table>
+<p>Diagnoses: Z00.00, I25.10</p>
+<p>Procedures: 99285</p>
+<p>Thanks,<br>Mike Iqbal<br>Sophia Martinez, DC<br>(914) 617-7034</p>
+</body></html>
+
+--===============0860554196118198588==--

@@ -1,0 +1,73 @@
+From: Alex Patel <alex.patel@zoeschmidtmd.example>
+To: claims-intake@payer.example
+Cc: billing-dept@zoeschmidtmd.example
+Date: Mon, 27 Apr 2026 10:12:08 +0000
+Message-ID: <177729813752.6.13404154490111078227@zoeschmidtmd.example>
+Subject: Resubmitting claim =?utf-8?b?4oCU?= patient Anderson (DOB 1998-07-08)
+X-Submitter-NPI: 5468207642
+X-Submitter-TaxID: 44-7392596
+X-Originating-System: zoeschmidtmd.example MailRelay 4.2
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="===============2885005419698877322=="
+
+--===============2885005419698877322==
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hi team,
+
+Please process the following claim. Patient was seen at our office on 2026-04=
+-06.
+
+Patient: Anderson, Helena  (DOB 1998-07-08, F)
+Member ID: YYL19723022    Plan: Anthem Blue Access =E2=80=94 PPO
+Group: GRP-90254
+Address: 1378 Park Blvd, Charlotte, NC 28293
+
+Provider: Zoe Schmidt, MD, NPI 5468207642, Tax ID 44-7392596
+Specialty: Pediatrics
+
+Diagnoses:
+  - R51.9  Headache, unspecified
+
+Services rendered:
+  - 2026-04-06: CPT 99285 (ED visit, high), 1 unit(s), $382.38
+  - 2026-04-01: CPT 99285 (ED visit, high), 1 unit(s), $326.75
+  - 2026-04-24: CPT 99214 (Office visit, established, mod-high), 1 unit(s), $=
+172.93
+
+Total: $882.06
+Claim reference: CLM-2026-1001915
+
+This one got stuck =E2=80=94 appreciate the help!
+
+Thanks,
+Alex Patel
+Zoe Schmidt, MD
+(286) 846-8596
+
+--===============2885005419698877322==
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: 8bit
+MIME-Version: 1.0
+
+<html><body style="font-family: Arial, sans-serif; font-size: 11pt;">
+<p>Hi team,</p>
+<p>Please process the following claim. Patient was seen at our office on
+<b>2026-04-06</b>.</p>
+<table cellpadding="3" style="border-collapse: collapse; font-size: 10pt;">
+<tr><td><b>Patient:</b></td><td>Anderson, Helena (DOB 1998-07-08, F)</td></tr>
+<tr><td><b>Member ID:</b></td><td>YYL19723022</td></tr>
+<tr><td><b>Plan:</b></td><td>Anthem Blue Access — PPO</td></tr>
+<tr><td><b>Group:</b></td><td>GRP-90254</td></tr>
+<tr><td><b>Provider:</b></td><td>Zoe Schmidt, MD (NPI 5468207642)</td></tr>
+<tr><td><b>Total charge:</b></td><td>$882.06</td></tr>
+<tr><td><b>Claim ref:</b></td><td>CLM-2026-1001915</td></tr>
+</table>
+<p>Diagnoses: R51.9</p>
+<p>Procedures: 99285, 99285, 99214</p>
+<p>Thanks,<br>Alex Patel<br>Zoe Schmidt, MD<br>(286) 846-8596</p>
+</body></html>
+
+--===============2885005419698877322==--

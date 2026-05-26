@@ -1,0 +1,64 @@
+{
+  "submission_id": "CLM-2026-1001380",
+  "submitted_at": "2026-04-27T12:47:00",
+  "submitter": {
+    "name": "Wendy Vargas, MD",
+    "npi": "8501744841",
+    "tax_id": "93-8611074",
+    "specialty": "Orthopedic Surgery",
+    "phone": "(333) 705-1933",
+    "address": {
+      "street": "3169 Lincoln St",
+      "city": "Buffalo",
+      "state": "NY",
+      "zip": "14275"
+    }
+  },
+  "patient": {
+    "first_name": "Sara",
+    "last_name": "Young",
+    "date_of_birth": "1960-10-20",
+    "gender": "F",
+    "address": {
+      "street": "7497 Main St",
+      "city": "Minneapolis",
+      "state": "MN",
+      "zip": "55448"
+    },
+    "phone": "(811) 680-8530"
+  },
+  "insurance": {
+    "payer_id": "AET-001",
+    "payer_name": "Aetna Open Access",
+    "plan": "PPO",
+    "member_id": "W910973033",
+    "group_id": "GRP-45968"
+  },
+  "diagnoses": [
+    {
+      "code": "Z00.00",
+      "description": "Encounter for general adult medical examination"
+    },
+    {
+      "code": "R53.83",
+      "description": "Other fatigue"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "71046",
+      "description": "Chest X-ray, 2 views",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 59.34,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-23"
+    }
+  ],
+  "total_charge_amount": 59.34,
+  "currency": "USD",
+  "prior_auth_number": null
+}

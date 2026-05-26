@@ -1,0 +1,95 @@
+{
+  "submission_id": "CLM-2026-1001424",
+  "submitted_at": "2026-04-27T12:57:00",
+  "submitter": {
+    "name": "Summit Cardiology Group",
+    "npi": "6149881221",
+    "tax_id": "23-1130624",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(528) 366-9611",
+    "address": {
+      "street": "2442 Spring St",
+      "city": "Kansas City",
+      "state": "MO",
+      "zip": "64163"
+    }
+  },
+  "patient": {
+    "first_name": "Roberto",
+    "last_name": "Vasquez",
+    "date_of_birth": "1962-07-31",
+    "gender": "M",
+    "address": {
+      "street": "4393 Spring St",
+      "city": "Indianapolis",
+      "state": "IN",
+      "zip": "46279"
+    },
+    "phone": "(272) 622-7089"
+  },
+  "insurance": {
+    "payer_id": "UHC-001",
+    "payer_name": "UnitedHealthcare Choice Plus",
+    "plan": "PPO",
+    "member_id": "663853703-01",
+    "group_id": "GRP-62011"
+  },
+  "diagnoses": [],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "80061",
+      "description": "Lipid panel",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 24.1,
+      "diagnosis_pointer": "1",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-03-31"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99422",
+      "description": "Online digital E/M, 11-20 min",
+      "modifiers": [
+        "95"
+      ],
+      "units": 1,
+      "charge_amount": 33.64,
+      "diagnosis_pointer": "2",
+      "place_of_service": "02",
+      "place_of_service_desc": "Telehealth",
+      "date_of_service": "2026-04-03"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99422",
+      "description": "Online digital E/M, 11-20 min",
+      "modifiers": [
+        "95"
+      ],
+      "units": 1,
+      "charge_amount": 34.82,
+      "diagnosis_pointer": "3",
+      "place_of_service": "02",
+      "place_of_service_desc": "Telehealth",
+      "date_of_service": "2026-04-24"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "99395",
+      "description": "Preventive established, 18-39",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 246.95,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-03-31"
+    }
+  ],
+  "total_charge_amount": 339.51,
+  "currency": "USD",
+  "prior_auth_number": null
+}

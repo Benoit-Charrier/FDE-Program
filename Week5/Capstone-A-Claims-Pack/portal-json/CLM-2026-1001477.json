@@ -1,0 +1,64 @@
+{
+  "submission_id": "CLM-2026-1001477",
+  "submitted_at": "2026-04-27T13:13:00",
+  "submitter": {
+    "name": "Kenji Tanaka, DO",
+    "npi": "0201983632",
+    "tax_id": "60-5120245",
+    "specialty": "Internal Medicine",
+    "phone": "(594) 983-6941",
+    "address": {
+      "street": "8270 Highland Ave",
+      "city": "Phoenix",
+      "state": "AZ",
+      "zip": "85088"
+    }
+  },
+  "patient": {
+    "first_name": "Gloria",
+    "last_name": "Vargas",
+    "date_of_birth": "1982-04-05",
+    "gender": "F",
+    "address": {
+      "street": "2340 Spring St",
+      "city": "Indianapolis",
+      "state": "IN",
+      "zip": "46244"
+    },
+    "phone": "(560) 583-8023"
+  },
+  "insurance": {
+    "payer_id": "CIG-001",
+    "payer_name": "Cigna Open Access Plus",
+    "plan": "PPO",
+    "member_id": "U31282706",
+    "group_id": "GRP-76149"
+  },
+  "diagnoses": [
+    {
+      "code": "R51.9",
+      "description": "Headache, unspecified"
+    },
+    {
+      "code": "F32.9",
+      "description": "Major depressive disorder, single episode"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99285",
+      "description": "ED visit, high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 312.28,
+      "diagnosis_pointer": "1",
+      "place_of_service": "23",
+      "place_of_service_desc": "Emergency Room \u2014 Hospital",
+      "date_of_service": "2026-04-19"
+    }
+  ],
+  "total_charge_amount": 312.28,
+  "currency": "USD",
+  "prior_auth_number": null
+}

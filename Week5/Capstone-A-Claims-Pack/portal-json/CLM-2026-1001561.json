@@ -1,0 +1,55 @@
+{
+  "submission_id": "CLM-2026-1001561",
+  "submitted_at": "2026-04-27T13:35:00",
+  "submitter": {
+    "name": "Ingrid Park, MD",
+    "npi": "7556784473",
+    "tax_id": "11-7535324",
+    "specialty": "Family Medicine",
+    "phone": "(662) 500-3833",
+    "address": {
+      "street": "8897 Hill St",
+      "city": "Phoenix",
+      "state": "AZ",
+      "zip": "85054"
+    }
+  },
+  "patient": {
+    "first_name": "Wendy",
+    "last_name": "Espinoza",
+    "date_of_birth": "1981-12-16",
+    "gender": "F",
+    "address": {
+      "street": "3612 Birch Ct",
+      "city": "Philadelphia",
+      "state": "PA",
+      "zip": "19126"
+    },
+    "phone": "(632) 663-8315"
+  },
+  "insurance": {
+    "payer_id": "BCBS-IL",
+    "payer_name": "Blue Cross Blue Shield of Illinois",
+    "plan": "HMO Standard",
+    "member_id": "XOJ377039103",
+    "group_id": "GRP-32397"
+  },
+  "diagnoses": [],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "71046",
+      "description": "Chest X-ray, 2 views",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 117.71,
+      "diagnosis_pointer": "1",
+      "place_of_service": "12",
+      "place_of_service_desc": "Home",
+      "date_of_service": "2026-04-13"
+    }
+  ],
+  "total_charge_amount": 117.71,
+  "currency": "USD",
+  "prior_auth_number": null
+}

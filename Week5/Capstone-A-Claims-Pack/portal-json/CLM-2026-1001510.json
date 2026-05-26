@@ -1,0 +1,98 @@
+{
+  "submission_id": "CLM-2026-1001510",
+  "submitted_at": "2026-04-27T13:17:00",
+  "submitter": {
+    "name": "Teresa O'Connor, DC",
+    "npi": "2463196168",
+    "tax_id": "56-7822842",
+    "specialty": "Chiropractic",
+    "phone": "(860) 451-9023",
+    "address": {
+      "street": "1501 Pine Ln",
+      "city": "Nashville",
+      "state": "TN",
+      "zip": "37244"
+    }
+  },
+  "patient": {
+    "first_name": "Jose",
+    "last_name": "Park",
+    "date_of_birth": "2013-12-14",
+    "gender": "M",
+    "address": {
+      "street": "5817 Cherry Ln",
+      "city": "Kansas City",
+      "state": "MO",
+      "zip": "64162"
+    },
+    "phone": "(647) 221-4166"
+  },
+  "insurance": {
+    "payer_id": "CIG-001",
+    "payer_name": "Cigna Open Access Plus",
+    "plan": "PPO",
+    "member_id": "U88463483",
+    "group_id": "GRP-39632"
+  },
+  "diagnoses": [
+    {
+      "code": "E11.9",
+      "description": "Type 2 diabetes mellitus without complications"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "12001",
+      "description": "Simple repair, superficial wound",
+      "modifiers": [
+        "22"
+      ],
+      "units": 2,
+      "charge_amount": 288.62,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-04"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "47562",
+      "description": "Laparoscopic cholecystectomy",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 1530.42,
+      "diagnosis_pointer": "1",
+      "place_of_service": "21",
+      "place_of_service_desc": "Inpatient Hospital",
+      "date_of_service": "2026-03-29"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "85025",
+      "description": "CBC w/ differential",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 30.84,
+      "diagnosis_pointer": "1",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-21"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "80053",
+      "description": "Comprehensive metabolic panel",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 19.95,
+      "diagnosis_pointer": "1",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-03-31"
+    }
+  ],
+  "total_charge_amount": 1869.83,
+  "currency": "USD",
+  "prior_auth_number": null
+}

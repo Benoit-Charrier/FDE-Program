@@ -1,0 +1,31 @@
+From: billing@xavierchowdhur.example
+To: claims-intake@payer.example
+Date: Mon, 27 Apr 2026 14:33:00 -0500
+Subject: Re: billing question / claim CLM-2026-1001912
+
+Hi team,
+
+Please process the following claim. Patient was seen at our office on 2026-04-09.
+
+Patient: Anderson, Diana (DOB 1973-06-05, F)
+Member ID: H84082979    Plan: Humana Gold Plus - HMO
+Group: GRP-46171
+Address: 6344 Elm St, Chicago, IL 60689
+
+Provider: Xavier Chowdhury, DC, NPI 4493716734, Tax ID 73-2932455
+Specialty: Chiropractic
+
+Diagnoses:
+  - J20.9 Acute bronchitis, unspecified
+
+Services rendered:
+  - 2026-04-09: CPT 99396 (Preventive established, 40-64), 1 unit(s), $188.42
+  - 2026-04-16: CPT 97140 (Manual therapy (15 min)), 2 unit(s), $74.15
+
+Total: $262.57
+Claim reference: CLM-2026-1001912
+
+Let me know if anything is missing.
+
+Thanks,
+Alex (billing)

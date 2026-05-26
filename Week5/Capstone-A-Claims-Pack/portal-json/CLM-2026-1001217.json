@@ -1,0 +1,96 @@
+{
+  "submission_id": "CLM-2026-1001217",
+  "submitted_at": "2026-04-27T12:09:00",
+  "submitter": {
+    "name": "Vera O'Connor, DPT",
+    "npi": "6091645540",
+    "tax_id": "92-3972137",
+    "specialty": "Physical Therapy",
+    "phone": "(354) 328-3236",
+    "address": {
+      "street": "5006 Main St",
+      "city": "Nashville",
+      "state": "TN",
+      "zip": "37245"
+    }
+  },
+  "patient": {
+    "first_name": "AaRON",
+    "last_name": "Espinoza",
+    "date_of_birth": "1971-04-25",
+    "gender": "M",
+    "address": {
+      "street": "5677 Pine Ln",
+      "city": "Tampa",
+      "state": "FL",
+      "zip": "33650"
+    },
+    "phone": "(681) 374-1662"
+  },
+  "insurance": {
+    "payer_id": "MCR-001",
+    "payer_name": "Medicare Part B",
+    "plan": "Original Medicare",
+    "member_id": "0JQ8GYK1WD1",
+    "group_id": "GRP-34573"
+  },
+  "diagnoses": [
+    {
+      "code": "M17.11",
+      "description": "Unilateral primary osteoarthritis, right knee"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99213",
+      "description": "Office visit, established, low-mod",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 125.33,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-26"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "12001",
+      "description": "Simple repair, superficial wound",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 216.51,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-08"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99204",
+      "description": "Office visit, new pt, high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 198.14,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-13"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "20610",
+      "description": "Major joint injection",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 281.25,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-05"
+    }
+  ],
+  "total_charge_amount": 821.23,
+  "currency": "USD",
+  "prior_auth_number": null
+}

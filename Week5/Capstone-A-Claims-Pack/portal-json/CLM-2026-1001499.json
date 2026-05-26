@@ -1,0 +1,72 @@
+{
+  "submission_id": "CLM-2026-1001499",
+  "submitted_at": "2026-04-27T13:14:00",
+  "submitter": {
+    "name": "Priya Park, DO",
+    "npi": "7545101193",
+    "tax_id": "47-1052444",
+    "specialty": "Internal Medicine",
+    "phone": "(423) 957-1338",
+    "address": {
+      "street": "378 Sunset Blvd",
+      "city": "Houston",
+      "state": "TX",
+      "zip": "77096"
+    }
+  },
+  "patient": {
+    "first_name": "HeCTOR",
+    "last_name": "Lee",
+    "date_of_birth": "2002-04-18",
+    "gender": "M",
+    "address": {
+      "street": "7691 1st Ave",
+      "city": "Sacramento",
+      "state": "CA",
+      "zip": "95834"
+    },
+    "phone": "(504) 289-4138"
+  },
+  "insurance": {
+    "payer_id": "BCBS-IL",
+    "payer_name": "Blue Cross Blue Shield of Illinois",
+    "plan": "PPO Choice",
+    "member_id": "XOJ775410158",
+    "group_id": "GRP-67276"
+  },
+  "diagnoses": [
+    {
+      "code": "J06.9",
+      "description": "Acute upper respiratory infection, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99396",
+      "description": "Preventive established, 40-64",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 263.78,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-11"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99203",
+      "description": "Office visit, new pt, mod",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 138.07,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-03"
+    }
+  ],
+  "total_charge_amount": 401.85,
+  "currency": "USD",
+  "prior_auth_number": null
+}

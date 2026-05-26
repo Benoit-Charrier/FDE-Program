@@ -1,0 +1,80 @@
+{
+  "submission_id": "CLM-2026-1001236",
+  "submitted_at": "2026-04-27T12:12:00",
+  "submitter": {
+    "name": "Gerald Park, MD",
+    "npi": "9258907932",
+    "tax_id": "93-8611074",
+    "specialty": "Radiology",
+    "phone": "(619) 471-6290",
+    "address": {
+      "street": "449 Cedar Ct",
+      "city": "Phoenix",
+      "state": "AZ",
+      "zip": "85078"
+    }
+  },
+  "patient": {
+    "first_name": "Alice",
+    "last_name": "Espinoza",
+    "date_of_birth": "1937-02-25",
+    "gender": "F",
+    "address": {
+      "street": "536 Cedar Ct",
+      "city": "Charlotte",
+      "state": "NC",
+      "zip": "28240"
+    },
+    "phone": "(935) 444-7638"
+  },
+  "insurance": {
+    "payer_id": "MCD-IL",
+    "payer_name": "Illinois Medicaid",
+    "plan": "Medicaid",
+    "member_id": "685359548",
+    "group_id": "GRP-31740"
+  },
+  "diagnoses": [
+    {
+      "code": "Z00.00",
+      "description": "Encounter for general adult medical examination"
+    },
+    {
+      "code": "M25.561",
+      "description": "Pain in right knee"
+    },
+    {
+      "code": "E11.9",
+      "description": "Type 2 diabetes mellitus without complications"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "71046",
+      "description": "Chest X-ray, 2 views",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 117.29,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-20"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "73030",
+      "description": "Shoulder X-ray, complete",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 148.11,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-03-28"
+    }
+  ],
+  "total_charge_amount": 265.4,
+  "currency": "USD",
+  "prior_auth_number": null
+}

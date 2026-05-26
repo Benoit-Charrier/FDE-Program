@@ -1,0 +1,30 @@
+============================
+   FAX COVER SHEET
+============================
+TO:    Medicare Part B Claims Intake
+FROM:  Westwood Internal Medicine
+DATE:  04/27/2026
+PAGES: 1 of 5
+
+URGENT [_]   FOR REVIEW [X]   PLEASE COMMENT [_]   PLEASE REPLY [_]
+
+RE: Claim submission - patient Vargas, Carla
+
+Member ID:     8NJ6TTJ1XP7
+DOB:           1977-04-04
+Plan:          Original Medicare
+Group:         GRP-55826
+DOS:           2026-04-26
+
+Diagnoses:     I10, E66.9, J02.9
+Procedures:    99213, 99281
+Total charge:  $259.96
+
+Provider NPI:  9704879307
+Tax ID:        73-2932455
+
+NOTES:
+Patient was seen for emergency visit - records to follow.
+
+If problems with this fax, call (829) 758-2093
+============================

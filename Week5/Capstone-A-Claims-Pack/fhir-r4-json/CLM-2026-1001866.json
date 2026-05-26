@@ -1,0 +1,188 @@
+{
+  "resourceType": "Claim",
+  "id": "CLM-2026-1001866",
+  "status": "active",
+  "type": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+        "code": "professional"
+      }
+    ]
+  },
+  "use": "claim",
+  "patient": {
+    "reference": "Patient/YYL50479621",
+    "display": "Nora Underwood"
+  },
+  "billablePeriod": {
+    "start": "2026-04-10",
+    "end": "2026-04-18"
+  },
+  "created": "2026-04-27T14:47:00",
+  "insurer": {
+    "reference": "Organization/ANT-001",
+    "display": "Anthem Blue Access"
+  },
+  "provider": {
+    "reference": "Practitioner/5762972097",
+    "display": "Vera Reyes, MD"
+  },
+  "priority": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/processpriority",
+        "code": "normal"
+      }
+    ]
+  },
+  "diagnosis": [
+    {
+      "sequence": 1,
+      "diagnosisCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/sid/icd-10-cm",
+            "code": "J45.909",
+            "display": "Unspecified asthma, uncomplicated"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 2,
+      "diagnosisCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/sid/icd-10-cm",
+            "code": "R51.9",
+            "display": "Headache, unspecified"
+          }
+        ]
+      }
+    }
+  ],
+  "insurance": [
+    {
+      "sequence": 1,
+      "focal": true,
+      "coverage": {
+        "display": "PPO via Anthem Blue Access"
+      }
+    }
+  ],
+  "item": [
+    {
+      "sequence": 1,
+      "diagnosisSequence": [
+        1
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "99285",
+            "display": "ED visit, high"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-04-10",
+      "quantity": {
+        "value": 1
+      },
+      "unitPrice": {
+        "value": 439.22,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 439.22,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "23"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 2,
+      "diagnosisSequence": [
+        2
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "12001",
+            "display": "Simple repair, superficial wound"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-04-23",
+      "quantity": {
+        "value": 1
+      },
+      "unitPrice": {
+        "value": 161.59,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 161.59,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "11"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 3,
+      "diagnosisSequence": [
+        1
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "90686",
+            "display": "Flu vaccine quadrivalent"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-04-18",
+      "quantity": {
+        "value": 2
+      },
+      "unitPrice": {
+        "value": 22.44,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 44.88,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "11"
+          }
+        ]
+      }
+    }
+  ],
+  "total": {
+    "value": 645.69,
+    "currency": "USD"
+  }
+}

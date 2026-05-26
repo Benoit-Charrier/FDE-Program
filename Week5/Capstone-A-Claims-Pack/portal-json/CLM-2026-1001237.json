@@ -1,0 +1,102 @@
+{
+  "submission_id": "CLM-2026-1001237",
+  "submitted_at": "2026-04-27T12:09:00",
+  "submitter": {
+    "name": "Donna Hassan, MD",
+    "npi": "1984165622",
+    "tax_id": "81-7841949",
+    "specialty": "Radiology",
+    "phone": "(292) 975-2496",
+    "address": {
+      "street": "4062 Park Blvd",
+      "city": "Tampa",
+      "state": "FL",
+      "zip": "33690"
+    }
+  },
+  "patient": {
+    "first_name": "Lily",
+    "last_name": "Thompson",
+    "date_of_birth": "1984-04-19",
+    "gender": "F",
+    "address": {
+      "street": "3404 Ridge Rd",
+      "city": "St. Louis",
+      "state": "MO",
+      "zip": "63178"
+    },
+    "phone": "(424) 338-2127"
+  },
+  "insurance": {
+    "payer_id": "CIG-001",
+    "payer_name": "Cigna Open Access Plus",
+    "plan": "PPO",
+    "member_id": "U81265691",
+    "group_id": "GRP-73369"
+  },
+  "diagnoses": [
+    {
+      "code": "J06.9",
+      "description": "Acute upper respiratory infection, unspecified"
+    },
+    {
+      "code": "M25.561",
+      "description": "Pain in right knee"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99999",
+      "description": "Chest X-ray, 2 views",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 115.72,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-08"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "70551",
+      "description": "MRI brain without contrast",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 885.66,
+      "diagnosis_pointer": "2",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-04-04"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99205",
+      "description": "Office visit, new pt, comprehensive",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 251.63,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-15"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "99421",
+      "description": "Online digital E/M, 5-10 min",
+      "modifiers": [
+        "95"
+      ],
+      "units": 1,
+      "charge_amount": 20.37,
+      "diagnosis_pointer": "2",
+      "place_of_service": "02",
+      "place_of_service_desc": "Telehealth",
+      "date_of_service": "2026-03-29"
+    }
+  ],
+  "total_charge_amount": 1273.38,
+  "currency": "USD",
+  "prior_auth_number": null
+}

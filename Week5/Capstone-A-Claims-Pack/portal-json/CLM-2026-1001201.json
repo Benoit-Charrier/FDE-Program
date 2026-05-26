@@ -1,0 +1,64 @@
+{
+  "submission_id": "CLM-2026-1001201",
+  "submitted_at": "2026-04-27T12:01:00",
+  "submitter": {
+    "name": "Summit Cardiology Group",
+    "npi": "4227019308",
+    "tax_id": "25-3439747",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(547) 460-8898",
+    "address": {
+      "street": "8987 Cedar Ct",
+      "city": "Portland",
+      "state": "OR",
+      "zip": "97265"
+    }
+  },
+  "patient": {
+    "first_name": "Roberto",
+    "last_name": "Kim",
+    "date_of_birth": "1941-12-20",
+    "gender": "M",
+    "address": {
+      "street": "7096 Spring St",
+      "city": "St. Louis",
+      "state": "MO",
+      "zip": "6319"
+    },
+    "phone": "(838) 598-4297"
+  },
+  "insurance": {
+    "payer_id": "ANT-001",
+    "payer_name": "Anthem Blue Access",
+    "plan": "PPO",
+    "member_id": "YYL39541245",
+    "group_id": "GRP-58186"
+  },
+  "diagnoses": [
+    {
+      "code": "J20.9",
+      "description": "Acute bronchitis, unspecified"
+    },
+    {
+      "code": "R51.9",
+      "description": "Headache, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "97110",
+      "description": "Therapeutic exercises (15 min)",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 48.57,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-26"
+    }
+  ],
+  "total_charge_amount": 48.57,
+  "currency": "USD",
+  "prior_auth_number": null
+}

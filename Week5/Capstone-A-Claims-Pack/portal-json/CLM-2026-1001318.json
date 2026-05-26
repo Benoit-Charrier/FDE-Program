@@ -1,0 +1,88 @@
+{
+  "submission_id": "CLM-2026-1001318",
+  "submitted_at": "2026-04-27T12:32:00",
+  "submitter": {
+    "name": "Forest Hills Urgent Care",
+    "npi": "6671021946",
+    "tax_id": "10-3567542",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(434) 687-8204",
+    "address": {
+      "street": "9305 Lake Rd",
+      "city": "Charlotte",
+      "state": "NC",
+      "zip": "28241"
+    }
+  },
+  "patient": {
+    "first_name": "Sophia",
+    "last_name": "Adams",
+    "date_of_birth": "2001-08-19",
+    "gender": "F",
+    "address": {
+      "street": "1187 Jefferson Dr",
+      "city": "Minneapolis",
+      "state": "MN",
+      "zip": "55495"
+    },
+    "phone": "(906) 861-1685"
+  },
+  "insurance": {
+    "payer_id": "BCBS-IL",
+    "payer_name": "Blue Cross Blue Shield of Illinois",
+    "plan": "HMO Standard",
+    "member_id": "592117854",
+    "group_id": "GRP-40828"
+  },
+  "diagnoses": [
+    {
+      "code": "E11.9",
+      "description": "Type 2 diabetes mellitus without complications"
+    },
+    {
+      "code": "R51.9",
+      "description": "Headache, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "90686",
+      "description": "Flu vaccine quadrivalent",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 51.04,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-02"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99281",
+      "description": "ED visit, low",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 115.93,
+      "diagnosis_pointer": "2",
+      "place_of_service": "23",
+      "place_of_service_desc": "Emergency Room \u2014 Hospital",
+      "date_of_service": "2026-04-26"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99205",
+      "description": "Office visit, new pt, comprehensive",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 306.65,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-05"
+    }
+  ],
+  "total_charge_amount": 473.62,
+  "currency": "USD",
+  "prior_auth_number": null
+}

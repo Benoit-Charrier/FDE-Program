@@ -1,0 +1,30 @@
+============================
+   FAX COVER SHEET
+============================
+TO:    UnitedHealthcare Choice Plus Claims Intake
+FROM:  Logan Martinez, MD
+DATE:  04/27/2026
+PAGES: 1 of 2
+
+URGENT [_]   FOR REVIEW [X]   PLEASE COMMENT [_]   PLEASE REPLY [_]
+
+RE: Claim submission - patient Foster, Brenda
+
+Member ID:     917177941-03
+DOB:           1978-11-05
+Plan:          PPO
+Group:         GRP-89117
+DOS:           2026-04-25
+
+Diagnoses:     J02.9, M54.5, M25.562
+Procedures:    99396, 97110, 90471
+Total charge:  $299.40
+
+Provider NPI:  4828828224
+Tax ID:        48-4220226
+
+NOTES:
+Member confirmed coverage active during DOS - please reprocess.
+
+If problems with this fax, call (813) 825-1002
+============================

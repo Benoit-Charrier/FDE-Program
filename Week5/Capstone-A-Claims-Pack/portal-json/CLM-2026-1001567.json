@@ -1,0 +1,112 @@
+{
+  "submission_id": "CLM-2026-1001567",
+  "submitted_at": "2026-04-27T13:31:00",
+  "submitter": {
+    "name": "Derrick Jensen, DC",
+    "npi": "8539815751",
+    "tax_id": "97-2413794",
+    "specialty": "Chiropractic",
+    "phone": "(580) 364-5280",
+    "address": {
+      "street": "7544 Madison Ave",
+      "city": "Raleigh",
+      "state": "NC",
+      "zip": "27662"
+    }
+  },
+  "patient": {
+    "first_name": "Ivan",
+    "last_name": "Patel",
+    "date_of_birth": "1982-06-20",
+    "gender": "M",
+    "address": {
+      "street": "8696 Hill St",
+      "city": "Denver",
+      "state": "CO",
+      "zip": "80264"
+    },
+    "phone": "(378) 490-3931"
+  },
+  "insurance": {
+    "payer_id": "MCD-IL",
+    "payer_name": "Illinois Medicaid",
+    "plan": "Medicaid",
+    "member_id": "193556545",
+    "group_id": "GRP-66178"
+  },
+  "diagnoses": [
+    {
+      "code": "M25.561",
+      "description": "Pain in right knee"
+    },
+    {
+      "code": "K21.9",
+      "description": "Gastro-esophageal reflux disease without esophagitis"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99214",
+      "description": "Office visit, established, mod-high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 191.85,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-11"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99395",
+      "description": "Preventive established, 18-39",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 171.95,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-03"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "20610",
+      "description": "Major joint injection",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 226.89,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-03-29"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "64483",
+      "description": "Injection, transforaminal epidural",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 388.79,
+      "diagnosis_pointer": "2",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-04-07"
+    },
+    {
+      "line_number": 5,
+      "cpt_code": "72148",
+      "description": "MRI lumbar spine without contrast",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 412.0,
+      "diagnosis_pointer": "1",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-04-11"
+    }
+  ],
+  "total_charge_amount": 1391.48,
+  "currency": "USD",
+  "prior_auth_number": ""
+}

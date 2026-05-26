@@ -1,0 +1,188 @@
+{
+  "resourceType": "Claim",
+  "id": "CLM-2026-1001884",
+  "status": "active",
+  "type": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+        "code": "professional"
+      }
+    ]
+  },
+  "use": "claim",
+  "patient": {
+    "reference": "Patient/397382461-01",
+    "display": "Donna Baker"
+  },
+  "billablePeriod": {
+    "start": "2026-04-17",
+    "end": "2026-04-05"
+  },
+  "created": "2026-04-27T14:55:00",
+  "insurer": {
+    "reference": "Organization/UHC-001",
+    "display": "UnitedHealthcare Choice Plus"
+  },
+  "provider": {
+    "reference": "Practitioner/6457509220",
+    "display": "Quinn Schmidt, PA"
+  },
+  "priority": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/processpriority",
+        "code": "normal"
+      }
+    ]
+  },
+  "diagnosis": [
+    {
+      "sequence": 1,
+      "diagnosisCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/sid/icd-10-cm",
+            "code": "K21.9",
+            "display": "Gastro-esophageal reflux disease without esophagitis"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 2,
+      "diagnosisCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/sid/icd-10-cm",
+            "code": "I25.10",
+            "display": "Atherosclerotic heart disease without angina"
+          }
+        ]
+      }
+    }
+  ],
+  "insurance": [
+    {
+      "sequence": 1,
+      "focal": true,
+      "coverage": {
+        "display": "PPO via UnitedHealthcare Choice Plus"
+      }
+    }
+  ],
+  "item": [
+    {
+      "sequence": 1,
+      "diagnosisSequence": [
+        1
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "80061",
+            "display": "Lipid panel"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-04-17",
+      "quantity": {
+        "value": 1
+      },
+      "unitPrice": {
+        "value": 21.86,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 21.86,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "81"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 2,
+      "diagnosisSequence": [
+        2
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "99213",
+            "display": "Office visit, established, low-mod"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-04-21",
+      "quantity": {
+        "value": 1
+      },
+      "unitPrice": {
+        "value": 117.46,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 117.46,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "11"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 3,
+      "diagnosisSequence": [
+        1
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "70551",
+            "display": "MRI brain without contrast"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-04-05",
+      "quantity": {
+        "value": 2
+      },
+      "unitPrice": {
+        "value": 426.125,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 852.25,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "22"
+          }
+        ]
+      }
+    }
+  ],
+  "total": {
+    "value": 991.57,
+    "currency": "USD"
+  }
+}

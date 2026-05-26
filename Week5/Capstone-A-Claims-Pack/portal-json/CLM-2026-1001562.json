@@ -1,0 +1,72 @@
+{
+  "submission_id": "CLM-2026-1001562",
+  "submitted_at": "2026-04-27T13:32:00",
+  "submitter": {
+    "name": "Hannah O'Connor, MD",
+    "npi": "2793333998",
+    "tax_id": "32-5826449",
+    "specialty": "Orthopedic Surgery",
+    "phone": "(618) 694-5458",
+    "address": {
+      "street": "5440 Lincoln St",
+      "city": "Kansas City",
+      "state": "MO",
+      "zip": "64156"
+    }
+  },
+  "patient": {
+    "first_name": "Jasmine",
+    "last_name": "Diaz",
+    "date_of_birth": "1969-04-08",
+    "gender": "F",
+    "address": {
+      "street": "5599 Highland Ave",
+      "city": "Sacramento",
+      "state": "CA",
+      "zip": "95817"
+    },
+    "phone": "(517) 538-1426"
+  },
+  "insurance": {
+    "payer_id": "BCBS-IL",
+    "payer_name": "Blue Cross Blue Shield of Illinois",
+    "plan": "HMO Standard",
+    "member_id": "XOJ863317530",
+    "group_id": "GRP-68310"
+  },
+  "diagnoses": [
+    {
+      "code": "R07.9",
+      "description": "Chest pain, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99213",
+      "description": "Office visit, established, low-mod",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 113.7,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-22"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "64483",
+      "description": "Injection, transforaminal epidural",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 691.22,
+      "diagnosis_pointer": "1",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-04-18"
+    }
+  ],
+  "total_charge_amount": 804.92,
+  "currency": "USD",
+  "prior_auth_number": null
+}

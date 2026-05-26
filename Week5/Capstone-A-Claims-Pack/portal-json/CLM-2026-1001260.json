@@ -1,0 +1,64 @@
+{
+  "submission_id": "CLM-2026-1001260",
+  "submitted_at": "2026-04-27T12:19:00",
+  "submitter": {
+    "name": "Olivia Martinez, MD",
+    "npi": "6044053552",
+    "tax_id": "21-7122446",
+    "specialty": "Family Medicine",
+    "phone": "(578) 823-8989",
+    "address": {
+      "street": "9634 Cedar Ct",
+      "city": "Cincinnati",
+      "state": "OH",
+      "zip": "45226"
+    }
+  },
+  "patient": {
+    "first_name": "Valerie",
+    "last_name": "Novak",
+    "date_of_birth": "1990-05-16",
+    "gender": "F",
+    "address": {
+      "street": "397 Lincoln St",
+      "city": "Omaha",
+      "state": "NE",
+      "zip": "68179"
+    },
+    "phone": "(509) 973-9351"
+  },
+  "insurance": {
+    "payer_id": "MCR-001",
+    "payer_name": "Medicare Part B",
+    "plan": "Original Medicare",
+    "member_id": "0DY6YAR6RC9",
+    "group_id": "GRP-52972"
+  },
+  "diagnoses": [
+    {
+      "code": "M17.11",
+      "description": "Unilateral primary osteoarthritis, right knee"
+    },
+    {
+      "code": "E78.5",
+      "description": "Hyperlipidemia, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99281",
+      "description": "ED visit, low",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 92.82,
+      "diagnosis_pointer": "1",
+      "place_of_service": "23",
+      "place_of_service_desc": "Emergency Room \u2014 Hospital",
+      "date_of_service": "2026-04-19"
+    }
+  ],
+  "total_charge_amount": 92.82,
+  "currency": "USD",
+  "prior_auth_number": null
+}

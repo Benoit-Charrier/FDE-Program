@@ -1,0 +1,76 @@
+{
+  "submission_id": "CLM-2026-1001461",
+  "submitted_at": "2026-04-27T13:09:00",
+  "submitter": {
+    "name": "Sara Martinez, MD",
+    "npi": "0345834805",
+    "tax_id": "68-9136954",
+    "specialty": "Cardiology",
+    "phone": "(448) 803-3587",
+    "address": {
+      "street": "5507 Park Blvd",
+      "city": "Phoenix",
+      "state": "AZ",
+      "zip": "85033"
+    }
+  },
+  "patient": {
+    "first_name": "Liam",
+    "last_name": "Young",
+    "date_of_birth": "1996-12-21",
+    "gender": "M",
+    "address": {
+      "street": "6091 Maple Dr",
+      "city": "Charlotte",
+      "state": "NC",
+      "zip": "28222"
+    },
+    "phone": "(736) 732-7357"
+  },
+  "insurance": {
+    "payer_id": "MCR-001",
+    "payer_name": "Medicare Part B",
+    "plan": "Original Medicare",
+    "member_id": "6TV4YAV5HW2",
+    "group_id": "GRP-76918"
+  },
+  "diagnoses": [
+    {
+      "code": "L30.9",
+      "description": "Dermatitis, unspecified"
+    },
+    {
+      "code": "M54.5",
+      "description": "Low back pain"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99204",
+      "description": "Office visit, new pt, high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 275.87,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-22"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99204",
+      "description": "Office visit, new pt, high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 250.74,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-03-31"
+    }
+  ],
+  "total_charge_amount": 526.61,
+  "currency": "USD",
+  "prior_auth_number": null
+}

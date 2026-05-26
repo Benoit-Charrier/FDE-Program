@@ -1,0 +1,72 @@
+{
+  "submission_id": "CLM-2026-1001280",
+  "submitted_at": "2026-04-27T12:20:00",
+  "submitter": {
+    "name": "Xio Hassan, DO",
+    "npi": "1374304428",
+    "tax_id": "32-5826449",
+    "specialty": "Family Medicine",
+    "phone": "(773) 531-1528",
+    "address": {
+      "street": "5989 Franklin Rd",
+      "city": "Albuquerque",
+      "state": "NM",
+      "zip": "87168"
+    }
+  },
+  "patient": {
+    "first_name": "Helena",
+    "last_name": "Hayes",
+    "date_of_birth": "1961-09-28",
+    "gender": "F",
+    "address": {
+      "street": "9618 Franklin Rd",
+      "city": "Raleigh",
+      "state": "NC",
+      "zip": "27670"
+    },
+    "phone": "(201) 313-7054"
+  },
+  "insurance": {
+    "payer_id": "UHC-001",
+    "payer_name": "UnitedHealthcare Choice Plus",
+    "plan": "PPO",
+    "member_id": "677124655-00",
+    "group_id": "GRP-41130"
+  },
+  "diagnoses": [
+    {
+      "code": "H66.90",
+      "description": "Otitis media, unspecified, unspecified ear"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "97140",
+      "description": "Manual therapy (15 min)",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 42.6,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-22"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "20610",
+      "description": "Major joint injection",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 140.03,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-03-31"
+    }
+  ],
+  "total_charge_amount": 182.63,
+  "currency": "USD",
+  "prior_auth_number": null
+}

@@ -1,0 +1,76 @@
+{
+  "submission_id": "CLM-2026-1001442",
+  "submitted_at": "2026-04-27T13:02:00",
+  "submitter": {
+    "name": "Sophia Vargas, MD",
+    "npi": "0884170301",
+    "tax_id": "45-2175388",
+    "specialty": "Pediatrics",
+    "phone": "(251) 215-3225",
+    "address": {
+      "street": "4447 Maple Dr",
+      "city": "Salt Lake City",
+      "state": "UT",
+      "zip": "84167"
+    }
+  },
+  "patient": {
+    "first_name": "Alice",
+    "last_name": "Xiong",
+    "date_of_birth": "1950-07-19",
+    "gender": "F",
+    "address": {
+      "street": "6926 Franklin Rd",
+      "city": "Raleigh",
+      "state": "NC",
+      "zip": "27693"
+    },
+    "phone": "(327) 633-8805"
+  },
+  "insurance": {
+    "payer_id": "AET-001",
+    "payer_name": "Aetna Open Access",
+    "plan": "PPO",
+    "member_id": "W692535577",
+    "group_id": "GRP-12126"
+  },
+  "diagnoses": [
+    {
+      "code": "J02.9",
+      "description": "Acute pharyngitis, unspecified"
+    },
+    {
+      "code": "R51.9",
+      "description": "Headache, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "70551",
+      "description": "MRI brain without contrast",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 1007.11,
+      "diagnosis_pointer": "1",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-04-17"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "80061",
+      "description": "Lipid panel",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 24.37,
+      "diagnosis_pointer": "2",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-18"
+    }
+  ],
+  "total_charge_amount": 1031.48,
+  "currency": "USD",
+  "prior_auth_number": null
+}

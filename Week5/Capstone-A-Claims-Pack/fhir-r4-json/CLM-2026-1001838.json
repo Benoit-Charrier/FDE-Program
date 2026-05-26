@@ -1,0 +1,171 @@
+{
+  "resourceType": "Claim",
+  "id": "CLM-2026-1001838",
+  "status": "active",
+  "type": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+        "code": "professional"
+      }
+    ]
+  },
+  "use": "claim",
+  "patient": {
+    "reference": "Patient/XOJ345365206",
+    "display": "Henry Underwood"
+  },
+  "billablePeriod": {
+    "start": "2026-03-30",
+    "end": "2026-04-22"
+  },
+  "created": "2026-04-27T14:43:00",
+  "insurer": {
+    "reference": "Organization/BCBS-IL",
+    "display": "Blue Cross Blue Shield of Illinois"
+  },
+  "provider": {
+    "reference": "Practitioner/2314705732",
+    "display": "Tomas Goldberg, MD"
+  },
+  "priority": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/processpriority",
+        "code": "normal"
+      }
+    ]
+  },
+  "diagnosis": [],
+  "insurance": [
+    {
+      "sequence": 1,
+      "focal": true,
+      "coverage": {
+        "display": "PPO Choice via Blue Cross Blue Shield of Illinois"
+      }
+    }
+  ],
+  "item": [
+    {
+      "sequence": 1,
+      "diagnosisSequence": [
+        1
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "70551",
+            "display": "MRI brain without contrast"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-03-30",
+      "quantity": {
+        "value": 1
+      },
+      "unitPrice": {
+        "value": 389.65,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 389.65,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "22"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 2,
+      "diagnosisSequence": [
+        2
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "99421",
+            "display": "Online digital E/M, 5-10 min"
+          }
+        ]
+      },
+      "modifier": [
+        {
+          "coding": [
+            {
+              "code": "95"
+            }
+          ]
+        }
+      ],
+      "servicedDate": "2026-04-14",
+      "quantity": {
+        "value": 1
+      },
+      "unitPrice": {
+        "value": 20.0,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 20.0,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "02"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 3,
+      "diagnosisSequence": [
+        1
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "99285",
+            "display": "ED visit, high"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-04-22",
+      "quantity": {
+        "value": 1
+      },
+      "unitPrice": {
+        "value": 366.64,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 366.64,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "23"
+          }
+        ]
+      }
+    }
+  ],
+  "total": {
+    "value": 776.29,
+    "currency": "USD"
+  }
+}

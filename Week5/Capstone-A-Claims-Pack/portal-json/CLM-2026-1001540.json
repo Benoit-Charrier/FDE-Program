@@ -1,0 +1,80 @@
+{
+  "submission_id": "CLM-2026-1001540",
+  "submitted_at": "2026-04-27T13:28:00",
+  "submitter": {
+    "name": "Kevin Mehta, DC",
+    "npi": "1572158076",
+    "tax_id": "34-3641125",
+    "specialty": "Chiropractic",
+    "phone": "(613) 812-9771",
+    "address": {
+      "street": "5742 Walnut St",
+      "city": "Indianapolis",
+      "state": "IN",
+      "zip": "46248"
+    }
+  },
+  "patient": {
+    "first_name": "Wyatt",
+    "last_name": "Ivanov",
+    "date_of_birth": "1958-12-01",
+    "gender": "M",
+    "address": {
+      "street": "3343 Lincoln St",
+      "city": "Philadelphia",
+      "state": "PA",
+      "zip": "19127"
+    },
+    "phone": "(268) 677-2652"
+  },
+  "insurance": {
+    "payer_id": "BCBS-IL",
+    "payer_name": "Blue Cross Blue Shield of Illinois",
+    "plan": "PPO Choice",
+    "member_id": "XOJ888397732",
+    "group_id": "GRP-91076"
+  },
+  "diagnoses": [
+    {
+      "code": "J06.9",
+      "description": "Acute upper respiratory infection, unspecified"
+    },
+    {
+      "code": "E11.9",
+      "description": "Type 2 diabetes mellitus without complications"
+    },
+    {
+      "code": "J44.9",
+      "description": "Chronic obstructive pulmonary disease, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "97110",
+      "description": "Therapeutic exercises (15 min)",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 83.1,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-24"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "47562",
+      "description": "Laparoscopic cholecystectomy",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 3863.38,
+      "diagnosis_pointer": "2",
+      "place_of_service": "21",
+      "place_of_service_desc": "Inpatient Hospital",
+      "date_of_service": "2026-04-07"
+    }
+  ],
+  "total_charge_amount": 3946.48,
+  "currency": "USD",
+  "prior_auth_number": null
+}

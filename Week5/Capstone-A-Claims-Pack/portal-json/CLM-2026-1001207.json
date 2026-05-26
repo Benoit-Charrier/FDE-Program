@@ -1,0 +1,90 @@
+{
+  "submission_id": "CLM-2026-1001207",
+  "submitted_at": "2026-04-27T12:02:00",
+  "submitter": {
+    "name": "Wyatt Reyes, MD",
+    "npi": "6037251172",
+    "tax_id": "60-5120245",
+    "specialty": "Emergency Medicine",
+    "phone": "(371) 280-7777",
+    "address": {
+      "street": "5411 Washington Ave",
+      "city": "Seattle",
+      "state": "WA",
+      "zip": "98177"
+    }
+  },
+  "patient": {
+    "first_name": "Frank",
+    "last_name": "Zimmerman",
+    "date_of_birth": "1999-05-11",
+    "gender": "M",
+    "address": {
+      "street": "5145 Lake Rd",
+      "city": "Tampa",
+      "state": "FL",
+      "zip": "33654"
+    },
+    "phone": "(895) 682-1398"
+  },
+  "insurance": {
+    "payer_id": "ANT-001",
+    "payer_name": "Anthem Blue Access",
+    "plan": "PPO",
+    "member_id": "YYL12459454",
+    "group_id": "GRP-75757"
+  },
+  "diagnoses": [
+    {
+      "code": "F41.1",
+      "description": "Generalized anxiety disorder"
+    },
+    {
+      "code": "J06.9",
+      "description": "Acute upper respiratory infection, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "72148",
+      "description": "MRI lumbar spine without contrast",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 702.56,
+      "diagnosis_pointer": "1",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-04-14"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99285",
+      "description": "ED visit, high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 470.7,
+      "diagnosis_pointer": "2",
+      "place_of_service": "23",
+      "place_of_service_desc": "Emergency Room \u2014 Hospital",
+      "date_of_service": "2026-04-04"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99421",
+      "description": "Online digital E/M, 5-10 min",
+      "modifiers": [
+        "95"
+      ],
+      "units": 1,
+      "charge_amount": 24.56,
+      "diagnosis_pointer": "1",
+      "place_of_service": "02",
+      "place_of_service_desc": "Telehealth",
+      "date_of_service": "2026-04-08"
+    }
+  ],
+  "total_charge_amount": 1197.82,
+  "currency": "USD",
+  "prior_auth_number": null
+}

@@ -1,0 +1,84 @@
+{
+  "submission_id": "CLM-2026-1001308",
+  "submitted_at": "2026-04-27T12:30:00",
+  "submitter": {
+    "name": "Forest Hills Urgent Care",
+    "npi": "9988355669",
+    "tax_id": "25-3439747",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(231) 708-9139",
+    "address": {
+      "street": "2975 Franklin Rd",
+      "city": "Denver",
+      "state": "CO",
+      "zip": "80275"
+    }
+  },
+  "patient": {
+    "first_name": "Marcus",
+    "last_name": "Kumar",
+    "date_of_birth": "1990-02-21",
+    "gender": "M",
+    "address": {
+      "street": "7211 Walnut St",
+      "city": "Tampa",
+      "state": "FL",
+      "zip": "33627"
+    },
+    "phone": "(631) 802-6540"
+  },
+  "insurance": {
+    "payer_id": "ANT-001",
+    "payer_name": "Anthem Blue Access",
+    "plan": "PPO",
+    "member_id": "YYL28790465",
+    "group_id": "GRP-49204"
+  },
+  "diagnoses": [
+    {
+      "code": "Z23",
+      "description": "Encounter for immunization"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "97110",
+      "description": "Therapeutic exercises (15 min)",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 48.74,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-22"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "90471",
+      "description": "Immunization administration",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 34.86,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-03-29"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99203",
+      "description": "Office visit, new pt, mod",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 186.86,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-08"
+    }
+  ],
+  "total_charge_amount": 270.46,
+  "currency": "USD",
+  "prior_auth_number": null
+}

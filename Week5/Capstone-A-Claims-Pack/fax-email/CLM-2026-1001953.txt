@@ -1,0 +1,30 @@
+============================
+   FAX COVER SHEET
+============================
+TO:    UnitedHealthcare Choice Plus Claims Intake
+FROM:  Victor Chowdhury, DC
+DATE:  04/27/2026
+PAGES: 1 of 4
+
+URGENT [_]   FOR REVIEW [X]   PLEASE COMMENT [_]   PLEASE REPLY [_]
+
+RE: Claim submission - patient Harris, Zane
+
+Member ID:     325520414-07
+DOB:           1970-03-09
+Plan:          PPO
+Group:         GRP-17295
+DOS:           2026-04-19
+
+Diagnoses:     M25.562
+Procedures:    99281, 99281
+Total charge:  $223.40
+
+Provider NPI:  1058746281
+Tax ID:        11-1834690
+
+NOTES:
+This is a corrected claim. Please disregard previous submission.
+
+If problems with this fax, call (294) 656-7882
+============================

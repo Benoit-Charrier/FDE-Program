@@ -1,0 +1,76 @@
+{
+  "submission_id": "CLM-2026-1001250",
+  "submitted_at": "2026-04-27T12:12:00",
+  "submitter": {
+    "name": "Fatima Johansson, MD",
+    "npi": "2202066604",
+    "tax_id": "68-7373123",
+    "specialty": "Family Medicine",
+    "phone": "(541) 428-9320",
+    "address": {
+      "street": "6777 Franklin Rd",
+      "city": "Columbus",
+      "state": "OH",
+      "zip": "43230"
+    }
+  },
+  "patient": {
+    "first_name": "Kiana",
+    "last_name": "Quintana",
+    "date_of_birth": "1956-06-27",
+    "gender": "F",
+    "address": {
+      "street": "4200 Lake Rd",
+      "city": "Columbus",
+      "state": "OH",
+      "zip": "43267"
+    },
+    "phone": "(494) 298-7533"
+  },
+  "insurance": {
+    "payer_id": "CIG-001",
+    "payer_name": "Cigna Open Access Plus",
+    "plan": "PPO",
+    "member_id": "U72800034",
+    "group_id": "GRP-50609"
+  },
+  "diagnoses": [
+    {
+      "code": "I25.10",
+      "description": "Atherosclerotic heart disease without angina"
+    },
+    {
+      "code": "N18.3",
+      "description": "Chronic kidney disease, stage 3"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "97140",
+      "description": "Manual therapy (15 min)",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 81.43,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-10"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "72148",
+      "description": "MRI lumbar spine without contrast",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 761.41,
+      "diagnosis_pointer": "2",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-04-12"
+    }
+  ],
+  "total_charge_amount": 842.84,
+  "currency": "USD",
+  "prior_auth_number": null
+}

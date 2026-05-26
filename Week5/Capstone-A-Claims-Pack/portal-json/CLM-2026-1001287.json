@@ -1,0 +1,84 @@
+{
+  "submission_id": "CLM-2026-1001287",
+  "submitted_at": "2026-04-27T12:22:00",
+  "submitter": {
+    "name": "Ivan Vargas, MD",
+    "npi": "6255426268",
+    "tax_id": "47-1052444",
+    "specialty": "Pediatrics",
+    "phone": "(781) 628-5765",
+    "address": {
+      "street": "1044 Elm St",
+      "city": "Raleigh",
+      "state": "NC",
+      "zip": "27671"
+    }
+  },
+  "patient": {
+    "first_name": "Brett",
+    "last_name": "Patel",
+    "date_of_birth": "1997-09-29",
+    "gender": "M",
+    "address": {
+      "street": "789 Forest Dr",
+      "city": "Raleigh",
+      "state": "NC",
+      "zip": "27695"
+    },
+    "phone": "(472) 600-4970"
+  },
+  "insurance": {
+    "payer_id": "ANT-001",
+    "payer_name": "Anthem Blue Access",
+    "plan": "PPO",
+    "member_id": "YYL80330371",
+    "group_id": "GRP-17711"
+  },
+  "diagnoses": [
+    {
+      "code": "J44.9",
+      "description": "Chronic obstructive pulmonary disease, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "97110",
+      "description": "Therapeutic exercises (15 min)",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 40.79,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-20"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "64483",
+      "description": "Injection, transforaminal epidural",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 367.38,
+      "diagnosis_pointer": "1",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-04-09"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "97110",
+      "description": "Therapeutic exercises (15 min)",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 71.6,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-19"
+    }
+  ],
+  "total_charge_amount": 479.77,
+  "currency": "USD",
+  "prior_auth_number": null
+}

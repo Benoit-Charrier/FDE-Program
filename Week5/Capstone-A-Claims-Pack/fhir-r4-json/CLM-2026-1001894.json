@@ -1,0 +1,128 @@
+{
+  "resourceType": "Claim",
+  "id": "CLM-2026-1001894",
+  "status": "active",
+  "type": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+        "code": "professional"
+      }
+    ]
+  },
+  "use": "claim",
+  "patient": {
+    "reference": "Patient/316087906",
+    "display": "Carla Edwards"
+  },
+  "billablePeriod": {
+    "start": "2026-03-31",
+    "end": "2026-03-31"
+  },
+  "created": "2026-04-27T14:58:00",
+  "insurer": {
+    "reference": "Organization/MCD-IL",
+    "display": "Illinois Medicaid"
+  },
+  "provider": {
+    "reference": "Practitioner/4163339201",
+    "display": "Owen Mehta, DO"
+  },
+  "priority": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/processpriority",
+        "code": "normal"
+      }
+    ]
+  },
+  "diagnosis": [
+    {
+      "sequence": 1,
+      "diagnosisCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/sid/icd-10-cm",
+            "code": "M54.5",
+            "display": "Low back pain"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 2,
+      "diagnosisCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/sid/icd-10-cm",
+            "code": "F32.9",
+            "display": "Major depressive disorder, single episode"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 3,
+      "diagnosisCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/sid/icd-10-cm",
+            "code": "R51.9",
+            "display": "Headache, unspecified"
+          }
+        ]
+      }
+    }
+  ],
+  "insurance": [
+    {
+      "sequence": 1,
+      "focal": true,
+      "coverage": {
+        "display": "Medicaid via Illinois Medicaid"
+      }
+    }
+  ],
+  "item": [
+    {
+      "sequence": 1,
+      "diagnosisSequence": [
+        1
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "99203",
+            "display": "Office visit, new pt, mod"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-03-31",
+      "quantity": {
+        "value": 1
+      },
+      "unitPrice": {
+        "value": 148.07,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 148.07,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "11"
+          }
+        ]
+      }
+    }
+  ],
+  "total": {
+    "value": 148.07,
+    "currency": "USD"
+  }
+}

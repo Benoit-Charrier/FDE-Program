@@ -1,0 +1,30 @@
+============================
+   FAX COVER SHEET
+============================
+TO:    Cigna Open Access Plus Claims Intake
+FROM:  Travis Vargas, MD
+DATE:  04/27/2026
+PAGES: 1 of 2
+
+URGENT [_]   FOR REVIEW [X]   PLEASE COMMENT [_]   PLEASE REPLY [_]
+
+RE: Claim submission - patient Hayes, Brenda
+
+Member ID:     17098385U
+DOB:           2005-10-18
+Plan:          PPO
+Group:         GRP-70987
+DOS:           2026-04-10
+
+Diagnoses:     (see attached page 2)
+Procedures:    99284, 47562, 99422, 99421
+Total charge:  $2034.62
+
+Provider NPI:  3925029178
+Tax ID:        16-5578305
+
+NOTES:
+Resubmission - prior denial coded incorrect dx, now corrected.
+
+If problems with this fax, call (626) 230-8270
+============================

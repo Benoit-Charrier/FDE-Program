@@ -1,0 +1,61 @@
+{
+  "submission_id": "CLM-2026-1001298",
+  "submitted_at": "2026-04-27T12:24:00",
+  "submitter": {
+    "name": "Eastlake Wellness Clinic",
+    "npi": "5748579780",
+    "tax_id": "47-1052444",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(919) 298-1437",
+    "address": {
+      "street": "1764 Birch Ct",
+      "city": "Cincinnati",
+      "state": "OH",
+      "zip": "45263"
+    }
+  },
+  "patient": {
+    "first_name": "Ulysses",
+    "last_name": "Harris",
+    "date_of_birth": "1992-12-20",
+    "gender": "M",
+    "address": {
+      "street": "606 Main St",
+      "city": "Philadelphia",
+      "state": "PA",
+      "zip": "19182"
+    },
+    "phone": "(945) 291-5982"
+  },
+  "insurance": {
+    "payer_id": "UHC-002",
+    "payer_name": "UnitedHealthcare Navigate",
+    "plan": "HMO",
+    "member_id": "106834425-00",
+    "group_id": "GRP-36027",
+    "coverage_termination_date": "2026-02-23"
+  },
+  "diagnoses": [
+    {
+      "code": "M79.7",
+      "description": "Fibromyalgia"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "90471",
+      "description": "Immunization administration",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 33.66,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-10"
+    }
+  ],
+  "total_charge_amount": 33.66,
+  "currency": "USD",
+  "prior_auth_number": null
+}

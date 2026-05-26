@@ -1,0 +1,100 @@
+{
+  "submission_id": "CLM-2026-1001555",
+  "submitted_at": "2026-04-27T13:33:00",
+  "submitter": {
+    "name": "Maple Family Health",
+    "npi": "1825861449",
+    "tax_id": "92-3972137",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(829) 495-6399",
+    "address": {
+      "street": "4831 Walnut St",
+      "city": "Columbus",
+      "state": "OH",
+      "zip": "43266"
+    }
+  },
+  "patient": {
+    "first_name": "Kenji",
+    "last_name": "O'Brien",
+    "date_of_birth": "1939-10-22",
+    "gender": "M",
+    "address": {
+      "street": "3765 Lake Rd",
+      "city": "Cincinnati",
+      "state": "OH",
+      "zip": "45248"
+    },
+    "phone": "(538) 450-1121"
+  },
+  "insurance": {
+    "payer_id": "ANT-001",
+    "payer_name": "Anthem Blue Access",
+    "plan": "PPO",
+    "member_id": "YYL13138290",
+    "group_id": "GRP-33265"
+  },
+  "diagnoses": [
+    {
+      "code": "M25.562",
+      "description": "Pain in left knee"
+    },
+    {
+      "code": "J44.9",
+      "description": "Chronic obstructive pulmonary disease, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "70551",
+      "description": "MRI brain without contrast",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 523.85,
+      "diagnosis_pointer": "1",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-04-19"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "73030",
+      "description": "Shoulder X-ray, complete",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 164.56,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-06"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99215",
+      "description": "Office visit, established, high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 278.01,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-22"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "99213",
+      "description": "Office visit, established, low-mod",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 142.04,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-26"
+    }
+  ],
+  "total_charge_amount": 1108.46,
+  "currency": "USD",
+  "prior_auth_number": null
+}

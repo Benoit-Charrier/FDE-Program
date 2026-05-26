@@ -1,0 +1,100 @@
+{
+  "submission_id": "CLM-2026-1001344",
+  "submitted_at": "2026-04-27T12:38:00",
+  "submitter": {
+    "name": "Carla Patel, DO",
+    "npi": "8999793004",
+    "tax_id": "17-9077104",
+    "specialty": "Internal Medicine",
+    "phone": "(888) 662-5582",
+    "address": {
+      "street": "3726 Cedar Ct",
+      "city": "Sacramento",
+      "state": "CA",
+      "zip": "95893"
+    }
+  },
+  "patient": {
+    "first_name": "Roberto",
+    "last_name": "Petrov",
+    "date_of_birth": "2011-11-09",
+    "gender": "M",
+    "address": {
+      "street": "9528 Sunset Blvd",
+      "city": "Charlotte",
+      "state": "NC",
+      "zip": "28222"
+    },
+    "phone": "(519) 374-7330"
+  },
+  "insurance": {
+    "payer_id": "HUM-001",
+    "payer_name": "Humana Gold Plus",
+    "plan": "HMO",
+    "member_id": "H63520480",
+    "group_id": "GRP-84689"
+  },
+  "diagnoses": [
+    {
+      "code": "J45.909",
+      "description": "Unspecified asthma, uncomplicated"
+    },
+    {
+      "code": "N39.0",
+      "description": "Urinary tract infection, site not specified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99395",
+      "description": "Preventive established, 18-39",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 205.25,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-03-29"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99395",
+      "description": "Preventive established, 18-39",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 185.28,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-03-29"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99203",
+      "description": "Office visit, new pt, mod",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 172.29,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-26"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "72148",
+      "description": "MRI lumbar spine without contrast",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 412.0,
+      "diagnosis_pointer": "1",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-03-29"
+    }
+  ],
+  "total_charge_amount": 974.82,
+  "currency": "USD",
+  "prior_auth_number": ""
+}

@@ -1,0 +1,64 @@
+{
+  "submission_id": "CLM-2026-1001588",
+  "submitted_at": "2026-04-27T13:37:00",
+  "submitter": {
+    "name": "Henry DuBois, MD",
+    "npi": "5800426207",
+    "tax_id": "21-7122446",
+    "specialty": "Cardiology",
+    "phone": "(490) 846-5042",
+    "address": {
+      "street": "5256 Hill St",
+      "city": "Charlotte",
+      "state": "NC",
+      "zip": "28262"
+    }
+  },
+  "patient": {
+    "first_name": "Helena",
+    "last_name": "Gonzalez",
+    "date_of_birth": "1988-06-06",
+    "gender": "F",
+    "address": {
+      "street": "3314 Spring St",
+      "city": "Boston",
+      "state": "MA",
+      "zip": "02179"
+    },
+    "phone": "(886) 662-4515"
+  },
+  "insurance": {
+    "payer_id": "ANT-001",
+    "payer_name": "Anthem Blue Access",
+    "plan": "PPO",
+    "member_id": "YYL58999661",
+    "group_id": "GRP-74089"
+  },
+  "diagnoses": [
+    {
+      "code": "J45.909",
+      "description": "Unspecified asthma, uncomplicated"
+    },
+    {
+      "code": "J06.9",
+      "description": "Acute upper respiratory infection, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99396",
+      "description": "Preventive established, 40-64",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 216.27,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-03-30"
+    }
+  ],
+  "total_charge_amount": 216.27,
+  "currency": "USD",
+  "prior_auth_number": null
+}

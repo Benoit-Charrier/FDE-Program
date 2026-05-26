@@ -1,0 +1,92 @@
+{
+  "submission_id": "CLM-2026-1001290",
+  "submitted_at": "2026-04-27T12:22:00",
+  "submitter": {
+    "name": "Crestview Imaging Center",
+    "npi": "0153803998",
+    "tax_id": "23-5462507",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(490) 460-5725",
+    "address": {
+      "street": "8849 Lake Rd",
+      "city": "Phoenix",
+      "state": "AZ",
+      "zip": "85023"
+    }
+  },
+  "patient": {
+    "first_name": "Quinn",
+    "last_name": "Wong",
+    "date_of_birth": "1970-01-01",
+    "gender": "F",
+    "address": {
+      "street": "2329 1st Ave",
+      "city": "Albuquerque",
+      "state": "NM",
+      "zip": "87166"
+    },
+    "phone": "(503) 419-4628"
+  },
+  "insurance": {
+    "payer_id": "ANT-001",
+    "payer_name": "Anthem Blue Access",
+    "plan": "PPO",
+    "member_id": "YYL28601952",
+    "group_id": "GRP-14760"
+  },
+  "diagnoses": [
+    {
+      "code": "I10",
+      "description": "Essential (primary) hypertension"
+    },
+    {
+      "code": "J45.909",
+      "description": "Unspecified asthma, uncomplicated"
+    },
+    {
+      "code": "F32.9",
+      "description": "Major depressive disorder, single episode"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99999",
+      "description": "Simple repair, superficial wound",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 190.98,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-22"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "71046",
+      "description": "Chest X-ray, 2 views",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 51.81,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-03-30"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99395",
+      "description": "Preventive established, 18-39",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 218.63,
+      "diagnosis_pointer": "3",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-16"
+    }
+  ],
+  "total_charge_amount": 461.42,
+  "currency": "USD",
+  "prior_auth_number": null
+}

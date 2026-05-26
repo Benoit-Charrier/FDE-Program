@@ -1,0 +1,102 @@
+{
+  "submission_id": "CLM-2026-1001369",
+  "submitted_at": "2026-04-27T12:45:00",
+  "submitter": {
+    "name": "Peter O'Connor, DPT",
+    "npi": "3389586901",
+    "tax_id": "92-3972137",
+    "specialty": "Physical Therapy",
+    "phone": "(397) 538-3765",
+    "address": {
+      "street": "4768 Main St",
+      "city": "Denver",
+      "state": "CO",
+      "zip": "80241"
+    }
+  },
+  "patient": {
+    "first_name": "Hannah",
+    "last_name": "Yamamoto",
+    "date_of_birth": "1956-04-24",
+    "gender": "F",
+    "address": {
+      "street": "938 Park Blvd",
+      "city": "Omaha",
+      "state": "NE",
+      "zip": "68138"
+    },
+    "phone": "(483) 372-2249"
+  },
+  "insurance": {
+    "payer_id": "HUM-001",
+    "payer_name": "Humana Gold Plus",
+    "plan": "HMO",
+    "member_id": "H86844719",
+    "group_id": "GRP-10612"
+  },
+  "diagnoses": [
+    {
+      "code": "R07.9",
+      "description": "Chest pain, unspecified"
+    },
+    {
+      "code": "J20.9",
+      "description": "Acute bronchitis, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99396",
+      "description": "Preventive established, 40-64",
+      "modifiers": [
+        "22"
+      ],
+      "units": 1,
+      "charge_amount": 239.67,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-21"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "20610",
+      "description": "Major joint injection",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 125.14,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-14"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "80053",
+      "description": "Comprehensive metabolic panel",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 20.49,
+      "diagnosis_pointer": "1",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-20"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "44970",
+      "description": "Laparoscopic appendectomy",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 1392.31,
+      "diagnosis_pointer": "2",
+      "place_of_service": "21",
+      "place_of_service_desc": "Inpatient Hospital",
+      "date_of_service": "2026-03-30"
+    }
+  ],
+  "total_charge_amount": 1777.61,
+  "currency": "USD",
+  "prior_auth_number": null
+}

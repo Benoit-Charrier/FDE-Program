@@ -1,0 +1,84 @@
+{
+  "submission_id": "CLM-2026-1001303",
+  "submitted_at": "2026-04-27T12:29:00",
+  "submitter": {
+    "name": "Tomas Hassan, DO",
+    "npi": "7121442843",
+    "tax_id": "",
+    "specialty": "Family Medicine",
+    "phone": "(981) 407-1234",
+    "address": {
+      "street": "4463 River Rd",
+      "city": "Albuquerque",
+      "state": "NM",
+      "zip": "87194"
+    }
+  },
+  "patient": {
+    "first_name": "Donna",
+    "last_name": "Wong",
+    "date_of_birth": "2024-03-08",
+    "gender": "F",
+    "address": {
+      "street": "3914 Lake Rd",
+      "city": "Tampa",
+      "state": "FL",
+      "zip": "33648"
+    },
+    "phone": "(396) 388-2744"
+  },
+  "insurance": {
+    "payer_id": "UHC-002",
+    "payer_name": "UnitedHealthcare Navigate",
+    "plan": "HMO",
+    "member_id": "953175448-04",
+    "group_id": "GRP-25733"
+  },
+  "diagnoses": [
+    {
+      "code": "I10",
+      "description": "Essential (primary) hypertension"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "80053",
+      "description": "Comprehensive metabolic panel",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 16.39,
+      "diagnosis_pointer": "1",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-23"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99205",
+      "description": "Office visit, new pt, comprehensive",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 285.62,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-21"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99281",
+      "description": "ED visit, low",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 93.47,
+      "diagnosis_pointer": "1",
+      "place_of_service": "23",
+      "place_of_service_desc": "Emergency Room \u2014 Hospital",
+      "date_of_service": "2026-04-24"
+    }
+  ],
+  "total_charge_amount": 395.48,
+  "currency": "USD",
+  "prior_auth_number": null
+}

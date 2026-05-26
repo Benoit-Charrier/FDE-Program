@@ -1,0 +1,93 @@
+{
+  "submission_id": "CLM-2026-1001526",
+  "submitted_at": "2026-04-27T13:25:00",
+  "submitter": {
+    "name": "Zoe Goldberg, DO",
+    "npi": "5991280510",
+    "tax_id": "45-2175388",
+    "specialty": "Family Medicine",
+    "phone": "(539) 988-2704",
+    "address": {
+      "street": "9535 Forest Dr",
+      "city": "St. Louis",
+      "state": "MO",
+      "zip": "63142"
+    }
+  },
+  "patient": {
+    "first_name": "Jerome",
+    "last_name": "Smith",
+    "date_of_birth": "1988-11-26",
+    "gender": "M",
+    "address": {
+      "street": "8995 Main St",
+      "city": "Charlotte",
+      "state": "NC",
+      "zip": "28293"
+    },
+    "phone": "(806) 523-1333"
+  },
+  "insurance": {
+    "payer_id": "MCD-IL",
+    "payer_name": "Illinois Medicaid",
+    "plan": "Medicaid",
+    "member_id": "983288176",
+    "group_id": "GRP-11050",
+    "coverage_termination_date": "2026-01-27"
+  },
+  "diagnoses": [
+    {
+      "code": "M17.11",
+      "description": "Unilateral primary osteoarthritis, right knee"
+    },
+    {
+      "code": "F32.9",
+      "description": "Major depressive disorder, single episode"
+    },
+    {
+      "code": "I25.10",
+      "description": "Atherosclerotic heart disease without angina"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99205",
+      "description": "Office visit, new pt, comprehensive",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 289.06,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-26"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99213",
+      "description": "Office visit, established, low-mod",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 121.71,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-02"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99204",
+      "description": "Office visit, new pt, high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 267.7,
+      "diagnosis_pointer": "3",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-23"
+    }
+  ],
+  "total_charge_amount": 678.47,
+  "currency": "USD",
+  "prior_auth_number": null
+}

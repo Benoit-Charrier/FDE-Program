@@ -1,0 +1,106 @@
+{
+  "submission_id": "CLM-2026-1001425",
+  "submitted_at": "2026-04-27T12:59:00",
+  "submitter": {
+    "name": "Westwood Internal Medicine",
+    "npi": "5084740211",
+    "tax_id": "11-7535324",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(907) 894-3907",
+    "address": {
+      "street": "2188 Sunset Blvd",
+      "city": "Charlotte",
+      "state": "NC",
+      "zip": "28227"
+    }
+  },
+  "patient": {
+    "first_name": "Liam",
+    "last_name": "Clark",
+    "date_of_birth": "2009-07-31",
+    "gender": "M",
+    "address": {
+      "street": "8098 Forest Dr",
+      "city": "Kansas City",
+      "state": "MO",
+      "zip": "64174"
+    },
+    "phone": "(345) 400-6817"
+  },
+  "insurance": {
+    "payer_id": "BCBS-IL",
+    "payer_name": "Blue Cross Blue Shield of Illinois",
+    "plan": "PPO Choice",
+    "member_id": "XOJ726406816",
+    "group_id": "GRP-58626"
+  },
+  "diagnoses": [
+    {
+      "code": "J02.9",
+      "description": "Acute pharyngitis, unspecified"
+    },
+    {
+      "code": "K21.9",
+      "description": "Gastro-esophageal reflux disease without esophagitis"
+    },
+    {
+      "code": "M25.561",
+      "description": "Pain in right knee"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "90686",
+      "description": "Flu vaccine quadrivalent",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 25.94,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-25"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "20610",
+      "description": "Major joint injection",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 120.23,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-03"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "70551",
+      "description": "MRI brain without contrast",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 531.15,
+      "diagnosis_pointer": "3",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-04-09"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "99421",
+      "description": "Online digital E/M, 5-10 min",
+      "modifiers": [
+        "95"
+      ],
+      "units": 1,
+      "charge_amount": 17.92,
+      "diagnosis_pointer": "1",
+      "place_of_service": "02",
+      "place_of_service_desc": "Telehealth",
+      "date_of_service": "2026-04-09"
+    }
+  ],
+  "total_charge_amount": 695.24,
+  "currency": "USD",
+  "prior_auth_number": ""
+}

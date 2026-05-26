@@ -1,0 +1,96 @@
+{
+  "submission_id": "CLM-2026-1001489",
+  "submitted_at": "2026-04-27T13:17:00",
+  "submitter": {
+    "name": "Bayside Orthopedics",
+    "npi": "8206604725",
+    "tax_id": "32-5826449",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(571) 257-4517",
+    "address": {
+      "street": "7052 Madison Ave",
+      "city": "Tucson",
+      "state": "AZ",
+      "zip": "85715"
+    }
+  },
+  "patient": {
+    "first_name": "Xavier",
+    "last_name": "Thompson",
+    "date_of_birth": "1970-01-08",
+    "gender": "M",
+    "address": {
+      "street": "5759 Main St",
+      "city": "Tucson",
+      "state": "AZ",
+      "zip": "85756"
+    },
+    "phone": "(949) 239-6389"
+  },
+  "insurance": {
+    "payer_id": "BCBS-IL",
+    "payer_name": "Blue Cross Blue Shield of Illinois",
+    "plan": "HMO Standard",
+    "member_id": "XOJ689592669",
+    "group_id": "GRP-39830"
+  },
+  "diagnoses": [
+    {
+      "code": "N18.3",
+      "description": "Chronic kidney disease, stage 3"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "83036",
+      "description": "Hemoglobin A1c",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 42.42,
+      "diagnosis_pointer": "1",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-18"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99213",
+      "description": "Office visit, established, low-mod",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 113.4,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-26"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99214",
+      "description": "Office visit, established, mod-high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 181.32,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-17"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "97110",
+      "description": "Therapeutic exercises (15 min)",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 95.58,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-11"
+    }
+  ],
+  "total_charge_amount": 432.72,
+  "currency": "USD",
+  "prior_auth_number": null
+}

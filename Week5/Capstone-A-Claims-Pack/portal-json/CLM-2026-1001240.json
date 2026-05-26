@@ -1,0 +1,80 @@
+{
+  "submission_id": "CLM-2026-1001240",
+  "submitted_at": "2026-04-27T12:14:00",
+  "submitter": {
+    "name": "Helena Singh, DPT",
+    "npi": "4906006881",
+    "tax_id": "23-5462507",
+    "specialty": "Physical Therapy",
+    "phone": "(851) 597-6317",
+    "address": {
+      "street": "248 Maple Dr",
+      "city": "Pittsburgh",
+      "state": "PA",
+      "zip": "15265"
+    }
+  },
+  "patient": {
+    "first_name": "Walter",
+    "last_name": "Owens",
+    "date_of_birth": "1938-01-06",
+    "gender": "M",
+    "address": {
+      "street": "1057 Sunset Blvd",
+      "city": "Salt Lake City",
+      "state": "UT",
+      "zip": "84115"
+    },
+    "phone": "(856) 644-3467"
+  },
+  "insurance": {
+    "payer_id": "BCBS-IL",
+    "payer_name": "Blue Cross Blue Shield of Illinois",
+    "plan": "HMO Standard",
+    "member_id": "XOJ402804747",
+    "group_id": "GRP-92628"
+  },
+  "diagnoses": [
+    {
+      "code": "E11.9",
+      "description": "Type 2 diabetes mellitus without complications"
+    },
+    {
+      "code": "Z00.00",
+      "description": "Encounter for general adult medical examination"
+    },
+    {
+      "code": "M25.561",
+      "description": "Pain in right knee"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "73030",
+      "description": "Shoulder X-ray, complete",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 127.72,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-03-28"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99395",
+      "description": "Preventive established, 18-39",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 226.57,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-14"
+    }
+  ],
+  "total_charge_amount": 354.29,
+  "currency": "USD",
+  "prior_auth_number": null
+}

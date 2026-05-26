@@ -1,0 +1,88 @@
+{
+  "submission_id": "CLM-2026-1001597",
+  "submitted_at": "2026-04-27T13:44:00",
+  "submitter": {
+    "name": "Crestview Imaging Center",
+    "npi": "1430134220",
+    "tax_id": "70-5913848",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(710) 662-9850",
+    "address": {
+      "street": "9313 Cedar Ct",
+      "city": "Salt Lake City",
+      "state": "UT",
+      "zip": "84187"
+    }
+  },
+  "patient": {
+    "first_name": "Frank",
+    "last_name": "Fischer",
+    "date_of_birth": "1966-12-04",
+    "gender": "M",
+    "address": {
+      "street": "2010 Franklin Rd",
+      "city": "Chicago",
+      "state": "IL",
+      "zip": "60670"
+    },
+    "phone": "(667) 799-6052"
+  },
+  "insurance": {
+    "payer_id": "MCD-IL",
+    "payer_name": "Illinois Medicaid",
+    "plan": "Medicaid",
+    "member_id": "222521441",
+    "group_id": "GRP-13621"
+  },
+  "diagnoses": [
+    {
+      "code": "M17.11",
+      "description": "Unilateral primary osteoarthritis, right knee"
+    },
+    {
+      "code": "F41.1",
+      "description": "Generalized anxiety disorder"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "97110",
+      "description": "Therapeutic exercises (15 min)",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 38.79,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-18"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99281",
+      "description": "ED visit, low",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 98.64,
+      "diagnosis_pointer": "2",
+      "place_of_service": "23",
+      "place_of_service_desc": "Emergency Room \u2014 Hospital",
+      "date_of_service": "2026-04-01"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "90686",
+      "description": "Flu vaccine quadrivalent",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 40.21,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-03-28"
+    }
+  ],
+  "total_charge_amount": 177.64,
+  "currency": "USD",
+  "prior_auth_number": null
+}

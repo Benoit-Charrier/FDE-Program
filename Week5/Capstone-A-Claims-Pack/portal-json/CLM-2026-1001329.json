@@ -1,0 +1,64 @@
+{
+  "submission_id": "CLM-2026-1001329",
+  "submitted_at": "2026-04-27T12:37:00",
+  "submitter": {
+    "name": "Kevin Tanaka, PA",
+    "npi": "0948977981",
+    "tax_id": "35-7465144",
+    "specialty": "Physician Assistant",
+    "phone": "(517) 265-8730",
+    "address": {
+      "street": "4317 Main St",
+      "city": "Chicago",
+      "state": "IL",
+      "zip": "60662"
+    }
+  },
+  "patient": {
+    "first_name": "Samuel",
+    "last_name": "Anderson",
+    "date_of_birth": "1979-02-21",
+    "gender": "M",
+    "address": {
+      "street": "5403 Birch Ct",
+      "city": "Kansas City",
+      "state": "MO",
+      "zip": "64183"
+    },
+    "phone": "(576) 709-2495"
+  },
+  "insurance": {
+    "payer_id": "UHC-001",
+    "payer_name": "UnitedHealthcare Choice Plus",
+    "plan": "PPO",
+    "member_id": "371533811-05",
+    "group_id": "GRP-80208"
+  },
+  "diagnoses": [
+    {
+      "code": "L30.9",
+      "description": "Dermatitis, unspecified"
+    },
+    {
+      "code": "I10",
+      "description": "Essential (primary) hypertension"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "70551",
+      "description": "MRI brain without contrast",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 543.67,
+      "diagnosis_pointer": "1",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-04-09"
+    }
+  ],
+  "total_charge_amount": 543.67,
+  "currency": "USD",
+  "prior_auth_number": null
+}

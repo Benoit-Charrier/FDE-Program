@@ -1,0 +1,31 @@
+From: billing@brightfamilypr.example
+To: claims-intake@payer.example
+Date: Mon, 27 Apr 2026 10:46:00 -0500
+Subject: FW: claim submission - Foster
+
+Hi team,
+
+Please process the following claim. Patient was seen at our office on 2026-04-05.
+
+Patient: Foster, Patrick (DOB 2006-04-27, M)
+Member ID: 4XM6CFK3WA6    Plan: Medicare Part B - Original Medicare
+Group: GRP-62443
+Address: 1205 Walnut St, St. Louis, MO 6319
+
+Provider: Bright Family Practice, NPI 9975307572, Tax ID 54-7633636
+Specialty: Multi-specialty Clinic
+
+Diagnoses:
+  - R07.9 Chest pain, unspecified
+  - E66.9 Obesity, unspecified
+
+Services rendered:
+  - 2026-04-05: CPT 99395 (Preventive established, 18-39), 1 unit(s), $242.74
+  - 2026-04-12: CPT 97140 (Manual therapy (15 min)), 2 unit(s), $75.72
+
+Total: $318.46
+Claim reference: CLM-2026-1001942
+
+Resubmitting from last week — first one bounced. Pls confirm receipt.
+
+-Mike

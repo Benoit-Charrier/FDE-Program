@@ -1,0 +1,164 @@
+{
+  "resourceType": "Claim",
+  "id": "CLM-2026-1001805",
+  "status": "active",
+  "type": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+        "code": "professional"
+      }
+    ]
+  },
+  "use": "claim",
+  "patient": {
+    "reference": "Patient/YYL46660607",
+    "display": "Rosa Adams"
+  },
+  "billablePeriod": {
+    "start": "2026-04-20",
+    "end": "2026-04-06"
+  },
+  "created": "2026-04-27T14:35:00",
+  "insurer": {
+    "reference": "Organization/ANT-001",
+    "display": "Anthem Blue Access"
+  },
+  "provider": {
+    "reference": "Practitioner/7636158095",
+    "display": "Sophia Reyes, MD"
+  },
+  "priority": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/processpriority",
+        "code": "normal"
+      }
+    ]
+  },
+  "diagnosis": [
+    {
+      "sequence": 1,
+      "diagnosisCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/sid/icd-10-cm",
+            "code": "Z23",
+            "display": "Encounter for immunization"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 2,
+      "diagnosisCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/sid/icd-10-cm",
+            "code": "E11.9",
+            "display": "Type 2 diabetes mellitus without complications"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 3,
+      "diagnosisCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/sid/icd-10-cm",
+            "code": "J20.9",
+            "display": "Acute bronchitis, unspecified"
+          }
+        ]
+      }
+    }
+  ],
+  "insurance": [
+    {
+      "sequence": 1,
+      "focal": true,
+      "coverage": {
+        "display": "PPO via Anthem Blue Access"
+      }
+    }
+  ],
+  "item": [
+    {
+      "sequence": 1,
+      "diagnosisSequence": [
+        1
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "97140",
+            "display": "Manual therapy (15 min)"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-04-20",
+      "quantity": {
+        "value": 1
+      },
+      "unitPrice": {
+        "value": 33.69,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 33.69,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "11"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 2,
+      "diagnosisSequence": [
+        2
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "83036",
+            "display": "Hemoglobin A1c"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-04-06",
+      "quantity": {
+        "value": 2
+      },
+      "unitPrice": {
+        "value": 20.29,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 40.58,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "81"
+          }
+        ]
+      }
+    }
+  ],
+  "total": {
+    "value": 74.27,
+    "currency": "USD"
+  }
+}

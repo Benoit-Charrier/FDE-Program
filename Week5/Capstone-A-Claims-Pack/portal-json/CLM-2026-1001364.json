@@ -1,0 +1,97 @@
+{
+  "submission_id": "CLM-2026-1001364",
+  "submitted_at": "2026-04-27T12:45:00",
+  "submitter": {
+    "name": "Lily Cohen, MD",
+    "npi": "0630486478",
+    "tax_id": "56-7822842",
+    "specialty": "Orthopedic Surgery",
+    "phone": "(625) 557-3959",
+    "address": {
+      "street": "9810 Sunset Blvd",
+      "city": "Kansas City",
+      "state": "MO",
+      "zip": "64111"
+    }
+  },
+  "patient": {
+    "first_name": "SaRA",
+    "last_name": "Ivanov",
+    "date_of_birth": "1969-10-30",
+    "gender": "F",
+    "address": {
+      "street": "1466 Highland Ave",
+      "city": "Albuquerque",
+      "state": "NM",
+      "zip": "87142"
+    },
+    "phone": "(904) 859-4562"
+  },
+  "insurance": {
+    "payer_id": "BCBS-IL",
+    "payer_name": "Blue Cross Blue Shield of Illinois",
+    "plan": "HMO Standard",
+    "member_id": "XOJ630611642",
+    "group_id": "GRP-72599"
+  },
+  "diagnoses": [
+    {
+      "code": "J44.9",
+      "description": "Chronic obstructive pulmonary disease, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99205",
+      "description": "Office visit, new pt, comprehensive",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 350.54,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-25"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "47562",
+      "description": "Laparoscopic cholecystectomy",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 2629.17,
+      "diagnosis_pointer": "1",
+      "place_of_service": "21",
+      "place_of_service_desc": "Inpatient Hospital",
+      "date_of_service": "2026-04-26"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99204",
+      "description": "Office visit, new pt, high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 190.31,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-17"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "97140",
+      "description": "Manual therapy (15 min)",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 82.27,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-14"
+    }
+  ],
+  "total_charge_amount": 3252.29,
+  "currency": "USD",
+  "prior_auth_number": null,
+  "resubmission_of": "CLM-2026-6522905"
+}

@@ -1,0 +1,200 @@
+{
+  "resourceType": "Claim",
+  "id": "CLM-2026-1001848",
+  "status": "active",
+  "type": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+        "code": "professional"
+      }
+    ]
+  },
+  "use": "claim",
+  "patient": {
+    "reference": "Patient/XOJ214642402",
+    "display": "Tina Singh"
+  },
+  "billablePeriod": {
+    "start": "2026-04-04",
+    "end": "2026-04-20"
+  },
+  "created": "2026-04-27T14:42:00",
+  "insurer": {
+    "reference": "Organization/BCBS-IL",
+    "display": "Blue Cross Blue Shield of Illinois"
+  },
+  "provider": {
+    "reference": "Practitioner/7526166485",
+    "display": "Crestview Imaging Center"
+  },
+  "priority": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/processpriority",
+        "code": "normal"
+      }
+    ]
+  },
+  "diagnosis": [
+    {
+      "sequence": 1,
+      "diagnosisCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/sid/icd-10-cm",
+            "code": "I10",
+            "display": "Essential (primary) hypertension"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 2,
+      "diagnosisCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/sid/icd-10-cm",
+            "code": "M79.7",
+            "display": "Fibromyalgia"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 3,
+      "diagnosisCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/sid/icd-10-cm",
+            "code": "J06.9",
+            "display": "Acute upper respiratory infection, unspecified"
+          }
+        ]
+      }
+    }
+  ],
+  "insurance": [
+    {
+      "sequence": 1,
+      "focal": true,
+      "coverage": {
+        "display": "HMO Standard via Blue Cross Blue Shield of Illinois"
+      }
+    }
+  ],
+  "item": [
+    {
+      "sequence": 1,
+      "diagnosisSequence": [
+        1
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "73030",
+            "display": "Shoulder X-ray, complete"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-04-04",
+      "quantity": {
+        "value": 2
+      },
+      "unitPrice": {
+        "value": 79.875,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 159.75,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "11"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 2,
+      "diagnosisSequence": [
+        2
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "44970",
+            "display": "Laparoscopic appendectomy"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-04-16",
+      "quantity": {
+        "value": 2
+      },
+      "unitPrice": {
+        "value": 1869.51,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 3739.02,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "21"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 3,
+      "diagnosisSequence": [
+        3
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "64483",
+            "display": "Injection, transforaminal epidural"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-04-20",
+      "quantity": {
+        "value": 2
+      },
+      "unitPrice": {
+        "value": 308.235,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 616.47,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "22"
+          }
+        ]
+      }
+    }
+  ],
+  "total": {
+    "value": 4515.24,
+    "currency": "USD"
+  }
+}

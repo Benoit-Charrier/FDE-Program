@@ -1,0 +1,35 @@
+From: billing@sophiajohansso.example
+To: claims-intake@payer.example
+Date: Mon, 27 Apr 2026 17:01:00 -0500
+Subject: Claim for Fatima Diaz - need help
+
+Hi team,
+
+Please process the following claim. Patient was seen at our office on 2026-04-19.
+
+Patient: Diaz, Fatima (DOB 1997-11-01, F)
+Member ID: U72400444    Plan: Cigna Open Access Plus - PPO
+Group: GRP-77563
+Address: 1460 1st Ave, Raleigh, NC 27619
+
+Provider: Sophia Johansson, PA, NPI 5669596714, Tax ID 53-3466510
+Specialty: Physician Assistant
+
+Diagnoses:
+  - E78.5 Hyperlipidemia, unspecified
+  - N39.0 Urinary tract infection, site not specified
+  - J06.9 Acute upper respiratory infection, unspecified
+
+Services rendered:
+  - 2026-04-19: CPT 27447 (Total knee arthroplasty), 2 unit(s), $5498.36
+  - 2026-04-14: CPT 73030 (Shoulder X-ray, complete), 2 unit(s), $147.95
+  - 2026-04-04: CPT 80061 (Lipid panel), 1 unit(s), $23.85
+  - 2026-04-15: CPT 90686 (Flu vaccine quadrivalent), 1 unit(s), $20.54
+  - 2026-04-19: CPT 72148 (MRI lumbar spine without contrast), 1 unit(s), $412.00
+
+Total: $6102.70
+Claim reference: CLM-2026-1001927
+
+Please process at your earliest. Thanks!
+
+--Donna, Billing Office

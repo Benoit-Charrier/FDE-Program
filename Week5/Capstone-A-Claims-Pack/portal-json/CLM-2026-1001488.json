@@ -1,0 +1,88 @@
+{
+  "submission_id": "CLM-2026-1001488",
+  "submitted_at": "2026-04-27T13:17:00",
+  "submitter": {
+    "name": "Jerome O'Connor, MD",
+    "npi": "6272474574",
+    "tax_id": "91-5070314",
+    "specialty": "Pediatrics",
+    "phone": "(445) 857-8491",
+    "address": {
+      "street": "4607 Jefferson Dr",
+      "city": "Chicago",
+      "state": "IL",
+      "zip": "60626"
+    }
+  },
+  "patient": {
+    "first_name": "Priya",
+    "last_name": "Martinez",
+    "date_of_birth": "1997-02-24",
+    "gender": "F",
+    "address": {
+      "street": "3293 Cherry Ln",
+      "city": "Albuquerque",
+      "state": "NM",
+      "zip": "87192"
+    },
+    "phone": "(282) 926-8605"
+  },
+  "insurance": {
+    "payer_id": "HUM-001",
+    "payer_name": "Humana Gold Plus",
+    "plan": "HMO",
+    "member_id": "H19491724",
+    "group_id": "GRP-46745"
+  },
+  "diagnoses": [
+    {
+      "code": "N18.3",
+      "description": "Chronic kidney disease, stage 3"
+    },
+    {
+      "code": "N39.0",
+      "description": "Urinary tract infection, site not specified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99395",
+      "description": "Preventive established, 18-39",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 230.67,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-23"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "85025",
+      "description": "CBC w/ differential",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 33.57,
+      "diagnosis_pointer": "2",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-01"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99395",
+      "description": "Preventive established, 18-39",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 223.41,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-26"
+    }
+  ],
+  "total_charge_amount": 487.65,
+  "currency": "USD",
+  "prior_auth_number": null
+}

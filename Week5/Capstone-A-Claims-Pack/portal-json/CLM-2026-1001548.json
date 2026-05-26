@@ -1,0 +1,64 @@
+{
+  "submission_id": "CLM-2026-1001548",
+  "submitted_at": "2026-04-27T13:32:00",
+  "submitter": {
+    "name": "Forest Hills Urgent Care",
+    "npi": "1956713530",
+    "tax_id": "47-1052444",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(569) 587-9935",
+    "address": {
+      "street": "9622 Highland Ave",
+      "city": "Albuquerque",
+      "state": "NM",
+      "zip": "87157"
+    }
+  },
+  "patient": {
+    "first_name": "Hannah",
+    "last_name": "Reyes",
+    "date_of_birth": "1942-11-01",
+    "gender": "F",
+    "address": {
+      "street": "9038 1st Ave",
+      "city": "Chicago",
+      "state": "IL",
+      "zip": "60687"
+    },
+    "phone": "(337) 888-1270"
+  },
+  "insurance": {
+    "payer_id": "AET-001",
+    "payer_name": "Aetna Open Access",
+    "plan": "PPO",
+    "member_id": "W380172579",
+    "group_id": "GRP-84542"
+  },
+  "diagnoses": [
+    {
+      "code": "J44.9",
+      "description": "Chronic obstructive pulmonary disease, unspecified"
+    },
+    {
+      "code": "R10.9",
+      "description": "Unspecified abdominal pain"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99214",
+      "description": "Office visit, established, mod-high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 187.01,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-01"
+    }
+  ],
+  "total_charge_amount": 187.01,
+  "currency": "USD",
+  "prior_auth_number": null
+}

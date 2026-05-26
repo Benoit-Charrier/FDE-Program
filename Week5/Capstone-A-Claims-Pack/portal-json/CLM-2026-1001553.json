@@ -1,0 +1,72 @@
+{
+  "submission_id": "CLM-2026-1001553",
+  "submitted_at": "2026-04-27T13:29:00",
+  "submitter": {
+    "name": "Logan Vargas, MD",
+    "npi": "",
+    "tax_id": "45-2175388",
+    "specialty": "Pediatrics",
+    "phone": "(598) 668-9566",
+    "address": {
+      "street": "8646 River Rd",
+      "city": "Cincinnati",
+      "state": "OH",
+      "zip": "45298"
+    }
+  },
+  "patient": {
+    "first_name": "Xio",
+    "last_name": "Foster",
+    "date_of_birth": "2010-11-30",
+    "gender": "F",
+    "address": {
+      "street": "692 Maple Dr",
+      "city": "Tampa",
+      "state": "FL",
+      "zip": "33631"
+    },
+    "phone": "(774) 736-4488"
+  },
+  "insurance": {
+    "payer_id": "AET-001",
+    "payer_name": "Aetna Open Access",
+    "plan": "PPO",
+    "member_id": "W343569936",
+    "group_id": "GRP-51932"
+  },
+  "diagnoses": [
+    {
+      "code": "N39.0",
+      "description": "Urinary tract infection, site not specified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99395",
+      "description": "Preventive established, 18-39",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 175.08,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-04"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "73030",
+      "description": "Shoulder X-ray, complete",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 62.52,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-03-29"
+    }
+  ],
+  "total_charge_amount": 237.6,
+  "currency": "USD",
+  "prior_auth_number": null
+}

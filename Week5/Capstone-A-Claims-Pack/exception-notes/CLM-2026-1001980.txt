@@ -1,0 +1,12 @@
+[Internal note - intake processor]
+
+Pt: Novak, Maya DOB 11/02/67
+Member: 723177784-09
+Provider: Zane Park (NPI 7323597657)
+DOS: 2026-04-25
+Total: $68.78
+
+Issue: Provider not in network per latest network file. Possible OON.
+
+Routed to: Auth team
+- JSmith 15:18

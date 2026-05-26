@@ -1,0 +1,32 @@
+From: billing@brightfamilypr.example
+To: claims-intake@payer.example
+Date: Mon, 27 Apr 2026 11:34:00 -0500
+Subject: submitting attached claim - patient Johnson
+
+Hi team,
+
+Please process the following claim. Patient was seen at our office on 2026-04-25.
+
+Patient: Johnson, KeNJI (DOB 1979-09-29, M)
+Member ID: U36852934    Plan: Cigna Open Access Plus - PPO
+Group: GRP-91887
+Address: 4402 Highland Ave, Denver, CO 80285
+
+Provider: Bright Family Practice, NPI , Tax ID 16-5876470
+Specialty: Multi-specialty Clinic
+
+Diagnoses:
+  - E11.9 Type 2 diabetes mellitus without complications
+  - S93.401A Sprain of unspecified ligament of right ankle, initial
+  - N18.3 Chronic kidney disease, stage 3
+
+Services rendered:
+  - 2026-04-25: CPT 12001 (Simple repair, superficial wound), 2 unit(s), $412.25
+  - 2026-04-10: CPT 97110 (Therapeutic exercises (15 min)), 2 unit(s), $83.78
+
+Total: $496.03
+Claim reference: CLM-2026-1001915
+
+Please process at your earliest. Thanks!
+
+--Donna, Billing Office

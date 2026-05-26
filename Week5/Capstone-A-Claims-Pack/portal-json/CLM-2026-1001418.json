@@ -1,0 +1,88 @@
+{
+  "submission_id": "CLM-2026-1001418",
+  "submitted_at": "2026-04-27T12:54:00",
+  "submitter": {
+    "name": "Jerome Cohen, MD",
+    "npi": "2285737521",
+    "tax_id": "34-4053329",
+    "specialty": "Emergency Medicine",
+    "phone": "(404) 767-9057",
+    "address": {
+      "street": "8596 1st Ave",
+      "city": "Cleveland",
+      "state": "OH",
+      "zip": "44167"
+    }
+  },
+  "patient": {
+    "first_name": "Stefan",
+    "last_name": "Anderson",
+    "date_of_birth": "2010-05-26",
+    "gender": "M",
+    "address": {
+      "street": "2322 Walnut St",
+      "city": "St. Louis",
+      "state": "MO",
+      "zip": "63117"
+    },
+    "phone": "(937) 436-4764"
+  },
+  "insurance": {
+    "payer_id": "ANT-001",
+    "payer_name": "Anthem Blue Access",
+    "plan": "PPO",
+    "member_id": "YYL59738434",
+    "group_id": "GRP-68662"
+  },
+  "diagnoses": [
+    {
+      "code": "N18.3",
+      "description": "Chronic kidney disease, stage 3"
+    },
+    {
+      "code": "J44.9",
+      "description": "Chronic obstructive pulmonary disease, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99285",
+      "description": "ED visit, high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 447.65,
+      "diagnosis_pointer": "1",
+      "place_of_service": "23",
+      "place_of_service_desc": "Emergency Room \u2014 Hospital",
+      "date_of_service": "2026-04-05"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99205",
+      "description": "Office visit, new pt, comprehensive",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 336.48,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-18"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99214",
+      "description": "Office visit, established, mod-high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 176.31,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-03-31"
+    }
+  ],
+  "total_charge_amount": 960.44,
+  "currency": "USD",
+  "prior_auth_number": null
+}

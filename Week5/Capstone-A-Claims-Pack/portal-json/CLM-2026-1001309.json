@@ -1,0 +1,82 @@
+{
+  "submission_id": "CLM-2026-1001309",
+  "submitted_at": "2026-04-27T12:30:00",
+  "submitter": {
+    "name": "Maple Family Health",
+    "npi": "0876494222",
+    "tax_id": "93-8611074",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(203) 748-3500",
+    "address": {
+      "street": "6663 Lincoln St",
+      "city": "Cleveland",
+      "state": "OH",
+      "zip": "44163"
+    }
+  },
+  "patient": {
+    "first_name": "Liam",
+    "last_name": "Mitchell",
+    "date_of_birth": "1954-09-26",
+    "gender": "M",
+    "address": {
+      "street": "7098 Walnut St",
+      "city": "Omaha",
+      "state": "NE",
+      "zip": "68124"
+    },
+    "phone": "(771) 656-7696"
+  },
+  "insurance": {
+    "payer_id": "UHC-002",
+    "payer_name": "UnitedHealthcare Navigate",
+    "plan": "HMO",
+    "member_id": "561659414-06",
+    "group_id": "GRP-24922"
+  },
+  "diagnoses": [
+    {
+      "code": "J20.9",
+      "description": "Acute bronchitis, unspecified"
+    },
+    {
+      "code": "J44.9",
+      "description": "Chronic obstructive pulmonary disease, unspecified"
+    },
+    {
+      "code": "Z00.00",
+      "description": "Encounter for general adult medical examination"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "47562",
+      "description": "Laparoscopic cholecystectomy",
+      "modifiers": [
+        "22"
+      ],
+      "units": 2,
+      "charge_amount": 3255.71,
+      "diagnosis_pointer": "1",
+      "place_of_service": "21",
+      "place_of_service_desc": "Inpatient Hospital",
+      "date_of_service": "2026-04-11"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "85025",
+      "description": "CBC w/ differential",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 31.47,
+      "diagnosis_pointer": "2",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-01"
+    }
+  ],
+  "total_charge_amount": 3287.18,
+  "currency": "USD",
+  "prior_auth_number": null
+}

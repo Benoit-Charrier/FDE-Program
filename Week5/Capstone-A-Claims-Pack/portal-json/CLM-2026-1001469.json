@@ -1,0 +1,100 @@
+{
+  "submission_id": "CLM-2026-1001469",
+  "submitted_at": "2026-04-27T13:10:00",
+  "submitter": {
+    "name": "Elena Anderson, NP",
+    "npi": "1020741285",
+    "tax_id": "53-3302645",
+    "specialty": "Nurse Practitioner",
+    "phone": "(961) 923-3987",
+    "address": {
+      "street": "8970 Maple Dr",
+      "city": "Buffalo",
+      "state": "NY",
+      "zip": "14211"
+    }
+  },
+  "patient": {
+    "first_name": "Wendy",
+    "last_name": "Novak",
+    "date_of_birth": "1989-07-09",
+    "gender": "F",
+    "address": {
+      "street": "9413 Jefferson Dr",
+      "city": "Columbus",
+      "state": "OH",
+      "zip": "43245"
+    },
+    "phone": "(904) 805-4305"
+  },
+  "insurance": {
+    "payer_id": "BCBS-IL",
+    "payer_name": "Blue Cross Blue Shield of Illinois",
+    "plan": "PPO Choice",
+    "member_id": "XOJ926830074",
+    "group_id": "GRP-52000"
+  },
+  "diagnoses": [
+    {
+      "code": "I10",
+      "description": "Essential (primary) hypertension"
+    },
+    {
+      "code": "R53.83",
+      "description": "Other fatigue"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "12001",
+      "description": "Simple repair, superficial wound",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 312.93,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-19"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "80061",
+      "description": "Lipid panel",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 26.8,
+      "diagnosis_pointer": "2",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-21"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "44970",
+      "description": "Laparoscopic appendectomy",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 3218.37,
+      "diagnosis_pointer": "1",
+      "place_of_service": "21",
+      "place_of_service_desc": "Inpatient Hospital",
+      "date_of_service": "2026-04-02"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "80061",
+      "description": "Lipid panel",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 21.6,
+      "diagnosis_pointer": "2",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-08"
+    }
+  ],
+  "total_charge_amount": 3579.7,
+  "currency": "USD",
+  "prior_auth_number": null
+}

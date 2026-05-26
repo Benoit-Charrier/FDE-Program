@@ -1,0 +1,60 @@
+{
+  "submission_id": "CLM-2026-1001575",
+  "submitted_at": "2026-04-27T13:36:00",
+  "submitter": {
+    "name": "Nathan Nakamura, MD",
+    "npi": "2689780976",
+    "tax_id": "48-5266776",
+    "specialty": "Emergency Medicine",
+    "phone": "(537) 827-5117",
+    "address": {
+      "street": "5062 Highland Ave",
+      "city": "Minneapolis",
+      "state": "MN",
+      "zip": "55447"
+    }
+  },
+  "patient": {
+    "first_name": "Carlos",
+    "last_name": "Singh",
+    "date_of_birth": "1948-04-07",
+    "gender": "M",
+    "address": {
+      "street": "5016 Cedar Ct",
+      "city": "Philadelphia",
+      "state": "PA",
+      "zip": "19124"
+    },
+    "phone": "(481) 213-3370"
+  },
+  "insurance": {
+    "payer_id": "ANT-001",
+    "payer_name": "Anthem Blue Access",
+    "plan": "PPO",
+    "member_id": "YYL49477739",
+    "group_id": "GRP-26313"
+  },
+  "diagnoses": [
+    {
+      "code": "Z00.00",
+      "description": "Encounter for general adult medical examination"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99214",
+      "description": "Office visit, established, mod-high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 152.51,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-08"
+    }
+  ],
+  "total_charge_amount": 152.51,
+  "currency": "USD",
+  "prior_auth_number": null
+}

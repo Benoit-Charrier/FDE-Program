@@ -1,0 +1,88 @@
+{
+  "submission_id": "CLM-2026-1001409",
+  "submitted_at": "2026-04-27T12:57:00",
+  "submitter": {
+    "name": "Aaliyah Mehta, PA",
+    "npi": "8481974090",
+    "tax_id": "11-5860495",
+    "specialty": "Physician Assistant",
+    "phone": "(209) 644-5725",
+    "address": {
+      "street": "1855 River Rd",
+      "city": "Tampa",
+      "state": "FL",
+      "zip": "33660"
+    }
+  },
+  "patient": {
+    "first_name": "Edwin",
+    "last_name": "Bauer",
+    "date_of_birth": "1965-09-04",
+    "gender": "M",
+    "address": {
+      "street": "3533 Sunset Blvd",
+      "city": "Philadelphia",
+      "state": "PA",
+      "zip": "19183"
+    },
+    "phone": "(280) 371-7023"
+  },
+  "insurance": {
+    "payer_id": "UHC-001",
+    "payer_name": "UnitedHealthcare Choice Plus",
+    "plan": "PPO",
+    "member_id": "676241155-06",
+    "group_id": "GRP-94732"
+  },
+  "diagnoses": [
+    {
+      "code": "Z00.00",
+      "description": "Encounter for general adult medical examination"
+    },
+    {
+      "code": "I25.10",
+      "description": "Atherosclerotic heart disease without angina"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "85025",
+      "description": "CBC w/ differential",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 11.34,
+      "diagnosis_pointer": "1",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-03-30"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99396",
+      "description": "Preventive established, 40-64",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 203.82,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-03-30"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "20610",
+      "description": "Major joint injection",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 190.42,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-22"
+    }
+  ],
+  "total_charge_amount": 405.58,
+  "currency": "USD",
+  "prior_auth_number": null
+}

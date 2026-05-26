@@ -1,0 +1,84 @@
+{
+  "submission_id": "CLM-2026-1001281",
+  "submitted_at": "2026-04-27T12:22:00",
+  "submitter": {
+    "name": "Maple Family Health",
+    "npi": "7596547980",
+    "tax_id": "95-9044704",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(280) 876-8577",
+    "address": {
+      "street": "4056 Spring St",
+      "city": "Salt Lake City",
+      "state": "UT",
+      "zip": "84164"
+    }
+  },
+  "patient": {
+    "first_name": "Quinn",
+    "last_name": "Quintana",
+    "date_of_birth": "1989-02-24",
+    "gender": "F",
+    "address": {
+      "street": "6937 Hill St",
+      "city": "Buffalo",
+      "state": "NY",
+      "zip": "14212"
+    },
+    "phone": "(372) 223-5608"
+  },
+  "insurance": {
+    "payer_id": "AET-001",
+    "payer_name": "Aetna Open Access",
+    "plan": "PPO",
+    "member_id": "W533355457",
+    "group_id": "GRP-35548"
+  },
+  "diagnoses": [
+    {
+      "code": "H66.90",
+      "description": "Otitis media, unspecified, unspecified ear"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99396",
+      "description": "Preventive established, 40-64",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 214.85,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-18"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99284",
+      "description": "ED visit, mod-high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 275.18,
+      "diagnosis_pointer": "1",
+      "place_of_service": "23",
+      "place_of_service_desc": "Emergency Room \u2014 Hospital",
+      "date_of_service": "2026-04-01"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99422",
+      "description": "Online digital E/M, 11-20 min",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 47.85,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-19"
+    }
+  ],
+  "total_charge_amount": 537.88,
+  "currency": "USD",
+  "prior_auth_number": null
+}

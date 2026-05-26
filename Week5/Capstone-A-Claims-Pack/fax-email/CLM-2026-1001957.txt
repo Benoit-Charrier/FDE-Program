@@ -1,0 +1,33 @@
+From: billing@rosao'connorpa.example
+To: claims-intake@payer.example
+Date: Mon, 27 Apr 2026 12:10:00 -0500
+Subject: FW: claim submission - Rodriguez
+
+Hi team,
+
+Please process the following claim. Patient was seen at our office on 2026-04-22.
+
+Patient: Rodriguez, Camila (DOB 2009-05-30, F)
+Member ID: 321611829    Plan: Illinois Medicaid - Medicaid
+Group: GRP-59823
+Address: 9489 Hill St, Denver, CO 80288
+
+Provider: Rosa O'Connor, PA, NPI , Tax ID 48-4220226
+Specialty: Physician Assistant
+
+Diagnoses:
+  - G47.33 Obstructive sleep apnea (adult) (pediatric)
+  - M79.7 Fibromyalgia
+
+Services rendered:
+  - 2026-04-22: CPT 20610 (Major joint injection), 1 unit(s), $131.03
+  - 2026-04-01: CPT 70551 (MRI brain without contrast), 1 unit(s), $557.21
+  - 2026-04-03: CPT 90471 (Immunization administration), 1 unit(s), $14.45
+  - 2026-04-10: CPT 99204 (Office visit, new pt, high), 1 unit(s), $222.05
+
+Total: $924.74
+Claim reference: CLM-2026-1001957
+
+Please process at your earliest. Thanks!
+
+--Donna, Billing Office

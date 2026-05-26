@@ -1,0 +1,98 @@
+{
+  "submission_id": "CLM-2026-1001400",
+  "submitted_at": "2026-04-27T12:55:00",
+  "submitter": {
+    "name": "Crestview Imaging Center",
+    "npi": "5495351732",
+    "tax_id": "35-7465144",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(801) 750-5887",
+    "address": {
+      "street": "8943 Forest Dr",
+      "city": "Indianapolis",
+      "state": "IN",
+      "zip": "46250"
+    }
+  },
+  "patient": {
+    "first_name": "Vera",
+    "last_name": "Chen",
+    "date_of_birth": "1993-03-05",
+    "gender": "F",
+    "address": {
+      "street": "5206 Hill St",
+      "city": "Denver",
+      "state": "CO",
+      "zip": "80222"
+    },
+    "phone": "(268) 786-4701"
+  },
+  "insurance": {
+    "payer_id": "ANT-001",
+    "payer_name": "Anthem Blue Access",
+    "plan": "PPO",
+    "member_id": "YYL25585942",
+    "group_id": "GRP-58247"
+  },
+  "diagnoses": [
+    {
+      "code": "M79.7",
+      "description": "Fibromyalgia"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "12001",
+      "description": "Simple repair, superficial wound",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 172.26,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-04"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99281",
+      "description": "ED visit, low",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 92.25,
+      "diagnosis_pointer": "1",
+      "place_of_service": "23",
+      "place_of_service_desc": "Emergency Room \u2014 Hospital",
+      "date_of_service": "2026-04-09"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99281",
+      "description": "ED visit, low",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 94.7,
+      "diagnosis_pointer": "1",
+      "place_of_service": "23",
+      "place_of_service_desc": "Emergency Room \u2014 Hospital",
+      "date_of_service": "2026-03-28"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "99422",
+      "description": "Online digital E/M, 11-20 min",
+      "modifiers": [
+        "95"
+      ],
+      "units": 1,
+      "charge_amount": 46.24,
+      "diagnosis_pointer": "1",
+      "place_of_service": "02",
+      "place_of_service_desc": "Telehealth",
+      "date_of_service": "2026-04-15"
+    }
+  ],
+  "total_charge_amount": 405.45,
+  "currency": "USD",
+  "prior_auth_number": null
+}

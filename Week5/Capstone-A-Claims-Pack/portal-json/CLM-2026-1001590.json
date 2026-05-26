@@ -1,0 +1,60 @@
+{
+  "submission_id": "CLM-2026-1001590",
+  "submitted_at": "2026-04-27T13:38:00",
+  "submitter": {
+    "name": "Wendy Cohen, MD",
+    "npi": "3499105461",
+    "tax_id": "23-1130624",
+    "specialty": "Cardiology",
+    "phone": "(423) 517-8893",
+    "address": {
+      "street": "6210 Jefferson Dr",
+      "city": "Salt Lake City",
+      "state": "UT",
+      "zip": "84182"
+    }
+  },
+  "patient": {
+    "first_name": "Lina",
+    "last_name": "Chen",
+    "date_of_birth": "1970-06-27",
+    "gender": "F",
+    "address": {
+      "street": "3787 Cherry Ln",
+      "city": "Cleveland",
+      "state": "OH",
+      "zip": "44163"
+    },
+    "phone": "(841) 842-1995"
+  },
+  "insurance": {
+    "payer_id": "UHC-002",
+    "payer_name": "UnitedHealthcare Navigate",
+    "plan": "HMO",
+    "member_id": "322827562-03",
+    "group_id": "GRP-61368"
+  },
+  "diagnoses": [
+    {
+      "code": "L98.9",
+      "description": "Disorder of the skin and subcutaneous tissue, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "90471",
+      "description": "Immunization administration",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 37.09,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-21"
+    }
+  ],
+  "total_charge_amount": 37.09,
+  "currency": "USD",
+  "prior_auth_number": null
+}

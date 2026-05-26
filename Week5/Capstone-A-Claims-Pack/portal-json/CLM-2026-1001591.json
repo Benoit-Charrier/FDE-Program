@@ -1,0 +1,72 @@
+{
+  "submission_id": "CLM-2026-1001591",
+  "submitted_at": "2026-04-27T13:42:00",
+  "submitter": {
+    "name": "Hector Anderson, MD",
+    "npi": "3466716812",
+    "tax_id": "",
+    "specialty": "Internal Medicine",
+    "phone": "(854) 811-3064",
+    "address": {
+      "street": "8406 Washington Ave",
+      "city": "Minneapolis",
+      "state": "MN",
+      "zip": "55431"
+    }
+  },
+  "patient": {
+    "first_name": "Julia",
+    "last_name": "Young",
+    "date_of_birth": "1955-07-12",
+    "gender": "F",
+    "address": {
+      "street": "5893 Pine Ln",
+      "city": "Boston",
+      "state": "MA",
+      "zip": "02115"
+    },
+    "phone": "(858) 666-7620"
+  },
+  "insurance": {
+    "payer_id": "BCBS-IL",
+    "payer_name": "Blue Cross Blue Shield of Illinois",
+    "plan": "PPO Choice",
+    "member_id": "XOJ104327332",
+    "group_id": "GRP-94698"
+  },
+  "diagnoses": [
+    {
+      "code": "G47.33",
+      "description": "Obstructive sleep apnea (adult) (pediatric)"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "44970",
+      "description": "Laparoscopic appendectomy",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 3576.45,
+      "diagnosis_pointer": "1",
+      "place_of_service": "21",
+      "place_of_service_desc": "Inpatient Hospital",
+      "date_of_service": "2026-04-03"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99285",
+      "description": "ED visit, high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 375.43,
+      "diagnosis_pointer": "1",
+      "place_of_service": "23",
+      "place_of_service_desc": "Emergency Room \u2014 Hospital",
+      "date_of_service": "2026-04-02"
+    }
+  ],
+  "total_charge_amount": 3951.88,
+  "currency": "USD",
+  "prior_auth_number": null
+}

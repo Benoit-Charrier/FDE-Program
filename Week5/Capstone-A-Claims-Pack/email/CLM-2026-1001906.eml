@@ -1,0 +1,47 @@
+From: Karen Anderson <karen.anderson@foresthillsurg.example>
+To: claims-intake@payer.example
+Cc: billing-dept@foresthillsurg.example
+Date: Mon, 27 Apr 2026 16:06:48 +0000
+Message-ID: <177729813745.6.17344433117803166181@foresthillsurg.example>
+Subject: FW: claim for Camila Edwards =?utf-8?b?4oCU?= need help
+X-Submitter-NPI: 1644074804
+X-Submitter-TaxID:
+X-Originating-System: foresthillsurg.example MailRelay 4.2
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+Hi team,
+
+Please process the following claim. Patient was seen at our office on 2026-04=
+-24.
+
+Patient: Edwards, Camila  (DOB 1942-06-22, F)
+Member ID: 734235209    Plan: Illinois Medicaid =E2=80=94 Medicaid
+Group: GRP-25882
+Address: 1644 River Rd, Nashville, TN 37288
+
+Provider: Forest Hills Urgent Care, NPI 1644074804, Tax ID (missing =E2=80=94=
+ please call)
+Specialty: Multi-specialty Clinic
+
+Diagnoses:
+  - R10.9  Unspecified abdominal pain
+  - N39.0  Urinary tract infection, site not specified
+  - R07.9  Chest pain, unspecified
+
+Services rendered:
+  - 2026-04-24: CPT 99203 (Office visit, new pt, mod), 1 unit(s), $183.75
+  - 2026-04-06: CPT 71046 (Chest X-ray, 2 views), 2 unit(s), $151.98
+  - 2026-04-15: CPT 80053 (Comprehensive metabolic panel), 2 unit(s), $40.13
+  - 2026-04-04: CPT 99204 (Office visit, new pt, high), 1 unit(s), $214.92
+
+Total: $590.78
+Claim reference: CLM-2026-1001906
+
+Let me know if anything is missing.
+
+Thanks,
+Karen Anderson
+Forest Hills Urgent Care
+(740) 378-6260

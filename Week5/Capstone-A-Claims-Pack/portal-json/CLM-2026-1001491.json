@@ -1,0 +1,72 @@
+{
+  "submission_id": "CLM-2026-1001491",
+  "submitted_at": "2026-04-27T13:13:00",
+  "submitter": {
+    "name": "Oak Tree Pediatric Associates",
+    "npi": "4218419054",
+    "tax_id": "47-1052444",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(218) 298-1888",
+    "address": {
+      "street": "4588 Maple Dr",
+      "city": "Nashville",
+      "state": "TN",
+      "zip": "37239"
+    }
+  },
+  "patient": {
+    "first_name": "Yara",
+    "last_name": "Smith",
+    "date_of_birth": "2008-05-31",
+    "gender": "F",
+    "address": {
+      "street": "302 Jefferson Dr",
+      "city": "Seattle",
+      "state": "WA",
+      "zip": "98111"
+    },
+    "phone": "(347) 787-3168"
+  },
+  "insurance": {
+    "payer_id": "ANT-001",
+    "payer_name": "Anthem Blue Access",
+    "plan": "PPO",
+    "member_id": "73195158L",
+    "group_id": "GRP-70644"
+  },
+  "diagnoses": [
+    {
+      "code": "E11.9",
+      "description": "Type 2 diabetes mellitus without complications"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99203",
+      "description": "Office visit, new pt, mod",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 150.58,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-09"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99395",
+      "description": "Preventive established, 18-39",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 203.97,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-03-31"
+    }
+  ],
+  "total_charge_amount": 354.55,
+  "currency": "USD",
+  "prior_auth_number": null
+}

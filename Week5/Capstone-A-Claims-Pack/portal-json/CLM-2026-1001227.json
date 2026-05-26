@@ -1,0 +1,72 @@
+{
+  "submission_id": "CLM-2026-1001227",
+  "submitted_at": "2026-04-27T12:10:00",
+  "submitter": {
+    "name": "Alice Schmidt, MD",
+    "npi": "5647186096",
+    "tax_id": "45-2175388",
+    "specialty": "Internal Medicine",
+    "phone": "(715) 675-2177",
+    "address": {
+      "street": "8565 Birch Ct",
+      "city": "Seattle",
+      "state": "WA",
+      "zip": "98144"
+    }
+  },
+  "patient": {
+    "first_name": "Quincy",
+    "last_name": "Kim",
+    "date_of_birth": "2018-03-06",
+    "gender": "M",
+    "address": {
+      "street": "1661 Sunset Blvd",
+      "city": "Tucson",
+      "state": "AZ",
+      "zip": "85754"
+    },
+    "phone": "(595) 888-5053"
+  },
+  "insurance": {
+    "payer_id": "HUM-001",
+    "payer_name": "Humana Gold Plus",
+    "plan": "HMO",
+    "member_id": "H43033725",
+    "group_id": "GRP-47867"
+  },
+  "diagnoses": [
+    {
+      "code": "L30.9",
+      "description": "Dermatitis, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99396",
+      "description": "Preventive established, 40-64",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 235.23,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-09"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "12001",
+      "description": "Simple repair, superficial wound",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 391.26,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-16"
+    }
+  ],
+  "total_charge_amount": 626.49,
+  "currency": "USD",
+  "prior_auth_number": null
+}

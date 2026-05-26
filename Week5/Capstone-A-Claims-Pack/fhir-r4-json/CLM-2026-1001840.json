@@ -1,0 +1,152 @@
+{
+  "resourceType": "Claim",
+  "id": "CLM-2026-1001840",
+  "status": "active",
+  "type": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+        "code": "professional"
+      }
+    ]
+  },
+  "use": "claim",
+  "patient": {
+    "reference": "Patient/XOJ729856641",
+    "display": "Brian Patel"
+  },
+  "billablePeriod": {
+    "start": "2026-04-09",
+    "end": "2026-04-16"
+  },
+  "created": "2026-04-27T14:42:00",
+  "insurer": {
+    "reference": "Organization/BCBS-IL",
+    "display": "Blue Cross Blue Shield of Illinois"
+  },
+  "provider": {
+    "reference": "Practitioner/",
+    "display": "Jerome O'Connor, MD"
+  },
+  "priority": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/processpriority",
+        "code": "normal"
+      }
+    ]
+  },
+  "diagnosis": [
+    {
+      "sequence": 1,
+      "diagnosisCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/sid/icd-10-cm",
+            "code": "M25.562",
+            "display": "Pain in left knee"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 2,
+      "diagnosisCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/sid/icd-10-cm",
+            "code": "K21.9",
+            "display": "Gastro-esophageal reflux disease without esophagitis"
+          }
+        ]
+      }
+    }
+  ],
+  "insurance": [
+    {
+      "sequence": 1,
+      "focal": true,
+      "coverage": {
+        "display": "PPO Choice via Blue Cross Blue Shield of Illinois"
+      }
+    }
+  ],
+  "item": [
+    {
+      "sequence": 1,
+      "diagnosisSequence": [
+        1
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "72148",
+            "display": "MRI lumbar spine without contrast"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-04-09",
+      "quantity": {
+        "value": 1
+      },
+      "unitPrice": {
+        "value": 349.9,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 349.9,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "22"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 2,
+      "diagnosisSequence": [
+        2
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "80061",
+            "display": "Lipid panel"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-04-16",
+      "quantity": {
+        "value": 2
+      },
+      "unitPrice": {
+        "value": 27.06,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 54.12,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "81"
+          }
+        ]
+      }
+    }
+  ],
+  "total": {
+    "value": 404.02,
+    "currency": "USD"
+  }
+}

@@ -1,0 +1,140 @@
+{
+  "resourceType": "Claim",
+  "id": "CLM-2026-1001860",
+  "status": "active",
+  "type": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+        "code": "professional"
+      }
+    ]
+  },
+  "use": "claim",
+  "patient": {
+    "reference": "Patient/451692673-07",
+    "display": "Brian Patel"
+  },
+  "billablePeriod": {
+    "start": "2026-04-22",
+    "end": "2026-04-20"
+  },
+  "created": "2026-04-27T14:46:00",
+  "insurer": {
+    "reference": "Organization/UHC-001",
+    "display": "UnitedHealthcare Choice Plus"
+  },
+  "provider": {
+    "reference": "Practitioner/6986360985",
+    "display": "Tomas Cohen, DC"
+  },
+  "priority": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/processpriority",
+        "code": "normal"
+      }
+    ]
+  },
+  "diagnosis": [
+    {
+      "sequence": 1,
+      "diagnosisCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/sid/icd-10-cm",
+            "code": "R07.9",
+            "display": "Chest pain, unspecified"
+          }
+        ]
+      }
+    }
+  ],
+  "insurance": [
+    {
+      "sequence": 1,
+      "focal": true,
+      "coverage": {
+        "display": "PPO via UnitedHealthcare Choice Plus"
+      }
+    }
+  ],
+  "item": [
+    {
+      "sequence": 1,
+      "diagnosisSequence": [
+        1
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "97110",
+            "display": "Therapeutic exercises (15 min)"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-04-22",
+      "quantity": {
+        "value": 2
+      },
+      "unitPrice": {
+        "value": 40.19,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 80.38,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "11"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 2,
+      "diagnosisSequence": [
+        1
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "99281",
+            "display": "ED visit, low"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-04-20",
+      "quantity": {
+        "value": 1
+      },
+      "unitPrice": {
+        "value": 125.61,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 125.61,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "23"
+          }
+        ]
+      }
+    }
+  ],
+  "total": {
+    "value": 205.99,
+    "currency": "USD"
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "submission_id": "CLM-2026-1001330",
+  "submitted_at": "2026-04-27T12:33:00",
+  "submitter": {
+    "name": "Rosa Patel, PA",
+    "npi": "",
+    "tax_id": "13-3827856",
+    "specialty": "Physician Assistant",
+    "phone": "(668) 519-8042",
+    "address": {
+      "street": "532 Lake Rd",
+      "city": "Albuquerque",
+      "state": "NM",
+      "zip": "87126"
+    }
+  },
+  "patient": {
+    "first_name": "PaTRICK",
+    "last_name": "Petrov",
+    "date_of_birth": "1946-10-09",
+    "gender": "M",
+    "address": {
+      "street": "7120 Main St",
+      "city": "Indianapolis",
+      "state": "IN",
+      "zip": "46280"
+    },
+    "phone": "(729) 346-3383"
+  },
+  "insurance": {
+    "payer_id": "BCBS-IL",
+    "payer_name": "Blue Cross Blue Shield of Illinois",
+    "plan": "PPO Choice",
+    "member_id": "XOJ935456831",
+    "group_id": "GRP-32143"
+  },
+  "diagnoses": [
+    {
+      "code": "R07.9",
+      "description": "Chest pain, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "90471",
+      "description": "Immunization administration",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 17.99,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-20"
+    }
+  ],
+  "total_charge_amount": 17.99,
+  "currency": "USD",
+  "prior_auth_number": null
+}

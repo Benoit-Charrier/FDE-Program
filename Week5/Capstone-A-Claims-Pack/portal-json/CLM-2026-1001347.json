@@ -1,0 +1,72 @@
+{
+  "submission_id": "CLM-2026-1001347",
+  "submitted_at": "2026-04-27T12:40:00",
+  "submitter": {
+    "name": "Bayside Orthopedics",
+    "npi": "",
+    "tax_id": "36-7226148",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(872) 287-7592",
+    "address": {
+      "street": "987 Sunset Blvd",
+      "city": "Kansas City",
+      "state": "MO",
+      "zip": "64145"
+    }
+  },
+  "patient": {
+    "first_name": "Valerie",
+    "last_name": "Thompson",
+    "date_of_birth": "1953-04-30",
+    "gender": "F",
+    "address": {
+      "street": "9709 Main St",
+      "city": "Buffalo",
+      "state": "NY",
+      "zip": "14257"
+    },
+    "phone": "(947) 965-3763"
+  },
+  "insurance": {
+    "payer_id": "BCBS-IL",
+    "payer_name": "Blue Cross Blue Shield of Illinois",
+    "plan": "HMO Standard",
+    "member_id": "XOJ390333380",
+    "group_id": "GRP-50529"
+  },
+  "diagnoses": [
+    {
+      "code": "J20.9",
+      "description": "Acute bronchitis, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99204",
+      "description": "Office visit, new pt, high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 271.59,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-16"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "80053",
+      "description": "Comprehensive metabolic panel",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 36.02,
+      "diagnosis_pointer": "1",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-03-28"
+    }
+  ],
+  "total_charge_amount": 307.61,
+  "currency": "USD",
+  "prior_auth_number": null
+}

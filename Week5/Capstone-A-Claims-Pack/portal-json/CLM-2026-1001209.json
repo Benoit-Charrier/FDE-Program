@@ -1,0 +1,72 @@
+{
+  "submission_id": "CLM-2026-1001209",
+  "submitted_at": "2026-04-27T12:06:00",
+  "submitter": {
+    "name": "Jasmine DuBois, MD",
+    "npi": "3684443912",
+    "tax_id": "16-2749174",
+    "specialty": "Cardiology",
+    "phone": "(232) 927-3502",
+    "address": {
+      "street": "802 Park Blvd",
+      "city": "Salt Lake City",
+      "state": "UT",
+      "zip": "84180"
+    }
+  },
+  "patient": {
+    "first_name": "Nora",
+    "last_name": "Walker",
+    "date_of_birth": "2025-01-19",
+    "gender": "F",
+    "address": {
+      "street": "301 Ridge Rd",
+      "city": "Salt Lake City",
+      "state": "UT",
+      "zip": "84116"
+    },
+    "phone": "(385) 689-1638"
+  },
+  "insurance": {
+    "payer_id": "BCBS-IL",
+    "payer_name": "Blue Cross Blue Shield of Illinois",
+    "plan": "PPO Choice",
+    "member_id": "XOJ327133469",
+    "group_id": "GRP-20446"
+  },
+  "diagnoses": [
+    {
+      "code": "J44.9",
+      "description": "Chronic obstructive pulmonary disease, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "90686",
+      "description": "Flu vaccine quadrivalent",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 46.18,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-03"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "27447",
+      "description": "Total knee arthroplasty",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 4898.06,
+      "diagnosis_pointer": "1",
+      "place_of_service": "21",
+      "place_of_service_desc": "Inpatient Hospital",
+      "date_of_service": "2026-04-09"
+    }
+  ],
+  "total_charge_amount": 4944.24,
+  "currency": "USD",
+  "prior_auth_number": null
+}

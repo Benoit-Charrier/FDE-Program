@@ -1,0 +1,68 @@
+{
+  "submission_id": "CLM-2026-1001527",
+  "submitted_at": "2026-04-27T13:21:00",
+  "submitter": {
+    "name": "Oak Tree Pediatric Associates",
+    "npi": "9068682537",
+    "tax_id": "16-2749174",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(639) 860-1412",
+    "address": {
+      "street": "3917 Washington Ave",
+      "city": "Seattle",
+      "state": "WA",
+      "zip": "98155"
+    }
+  },
+  "patient": {
+    "first_name": "Vincent",
+    "last_name": "Kumar",
+    "date_of_birth": "1972-01-29",
+    "gender": "M",
+    "address": {
+      "street": "1398 Walnut St",
+      "city": "Salt Lake City",
+      "state": "UT",
+      "zip": "84155"
+    },
+    "phone": "(877) 766-6124"
+  },
+  "insurance": {
+    "payer_id": "BCBS-IL",
+    "payer_name": "Blue Cross Blue Shield of Illinois",
+    "plan": "HMO Standard",
+    "member_id": "XOJ866473110",
+    "group_id": "GRP-92883"
+  },
+  "diagnoses": [
+    {
+      "code": "R10.9",
+      "description": "Unspecified abdominal pain"
+    },
+    {
+      "code": "L30.9",
+      "description": "Dermatitis, unspecified"
+    },
+    {
+      "code": "E11.9",
+      "description": "Type 2 diabetes mellitus without complications"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99396",
+      "description": "Preventive established, 40-64",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 217.89,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-10"
+    }
+  ],
+  "total_charge_amount": 217.89,
+  "currency": "USD",
+  "prior_auth_number": null
+}

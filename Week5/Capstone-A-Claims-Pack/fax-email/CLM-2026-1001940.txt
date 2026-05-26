@@ -1,0 +1,33 @@
+From: billing@oliviareyespa.example
+To: claims-intake@payer.example
+Date: Mon, 27 Apr 2026 15:40:00 -0500
+Subject: submitting attached claim - patient Harris
+
+Hi team,
+
+Please process the following claim. Patient was seen at our office on 2026-04-24.
+
+Patient: Harris, Felix (DOB 1940-08-16, M)
+Member ID: XOJ949410905    Plan: Blue Cross Blue Shield of Illinois - HMO Standard
+Group: GRP-34431
+Address: 8563 Elm St, Tucson, AZ 85719
+
+Provider: Olivia Reyes, PA, NPI 1177485733, Tax ID 83-8246530
+Specialty: Physician Assistant
+
+Diagnoses:
+  - F41.1 Generalized anxiety disorder
+  - J20.9 Acute bronchitis, unspecified
+
+Services rendered:
+  - 2026-04-24: CPT 99203 (Office visit, new pt, mod), 1 unit(s), $194.32
+  - 2026-04-19: CPT 90686 (Flu vaccine quadrivalent), 2 unit(s), $51.47
+  - 2026-04-03: CPT 27447 (Total knee arthroplasty), 1 unit(s), $2646.88
+  - 2026-04-11: CPT 99396 (Preventive established, 40-64), 1 unit(s), $222.89
+
+Total: $3115.56
+Claim reference: CLM-2026-1001940
+
+Please process at your earliest. Thanks!
+
+--Donna, Billing Office

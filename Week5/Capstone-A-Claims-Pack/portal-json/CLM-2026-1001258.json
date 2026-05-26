@@ -1,0 +1,84 @@
+{
+  "submission_id": "CLM-2026-1001258",
+  "submitted_at": "2026-04-27T12:17:00",
+  "submitter": {
+    "name": "Uma Tanaka, MD",
+    "npi": "7554282564",
+    "tax_id": "35-7465144",
+    "specialty": "Cardiology",
+    "phone": "(629) 951-8544",
+    "address": {
+      "street": "4138 Birch Ct",
+      "city": "Portland",
+      "state": "OR",
+      "zip": "97295"
+    }
+  },
+  "patient": {
+    "first_name": "Nadia",
+    "last_name": "Gonzalez",
+    "date_of_birth": "1943-03-01",
+    "gender": "F",
+    "address": {
+      "street": "3538 Pine Ln",
+      "city": "Nashville",
+      "state": "TN",
+      "zip": "37287"
+    },
+    "phone": "(633) 464-9218"
+  },
+  "insurance": {
+    "payer_id": "CIG-001",
+    "payer_name": "Cigna Open Access Plus",
+    "plan": "PPO",
+    "member_id": "U32621513",
+    "group_id": "GRP-40219"
+  },
+  "diagnoses": [
+    {
+      "code": "Z00.00",
+      "description": "Encounter for general adult medical examination"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99214",
+      "description": "Office visit, established, mod-high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 151.46,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-20"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "47562",
+      "description": "Laparoscopic cholecystectomy",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 1788.23,
+      "diagnosis_pointer": "1",
+      "place_of_service": "21",
+      "place_of_service_desc": "Inpatient Hospital",
+      "date_of_service": "2026-04-04"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99215",
+      "description": "Office visit, established, high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 204.97,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-06"
+    }
+  ],
+  "total_charge_amount": 2144.66,
+  "currency": "USD",
+  "prior_auth_number": null
+}

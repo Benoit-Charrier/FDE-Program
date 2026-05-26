@@ -1,0 +1,104 @@
+{
+  "submission_id": "CLM-2026-1001299",
+  "submitted_at": "2026-04-27T12:25:00",
+  "submitter": {
+    "name": "Alice Reyes, NP",
+    "npi": "1927379356",
+    "tax_id": "35-7465144",
+    "specialty": "Nurse Practitioner",
+    "phone": "(819) 807-7612",
+    "address": {
+      "street": "7152 Birch Ct",
+      "city": "Tampa",
+      "state": "FL",
+      "zip": "33684"
+    }
+  },
+  "patient": {
+    "first_name": "Patrick",
+    "last_name": "Ivanov",
+    "date_of_birth": "1944-02-03",
+    "gender": "M",
+    "address": {
+      "street": "5915 Jefferson Dr",
+      "city": "Charlotte",
+      "state": "NC",
+      "zip": "28253"
+    },
+    "phone": "(578) 488-4879"
+  },
+  "insurance": {
+    "payer_id": "UHC-002",
+    "payer_name": "UnitedHealthcare Navigate",
+    "plan": "HMO",
+    "member_id": "598946914-05",
+    "group_id": "GRP-21432"
+  },
+  "diagnoses": [
+    {
+      "code": "M54.5",
+      "description": "Low back pain"
+    },
+    {
+      "code": "M17.11",
+      "description": "Unilateral primary osteoarthritis, right knee"
+    },
+    {
+      "code": "M79.7",
+      "description": "Fibromyalgia"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99396",
+      "description": "Preventive established, 40-64",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 263.62,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-11"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99205",
+      "description": "Office visit, new pt, comprehensive",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 340.32,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-03-31"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "47562",
+      "description": "Laparoscopic cholecystectomy",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 1508.53,
+      "diagnosis_pointer": "3",
+      "place_of_service": "21",
+      "place_of_service_desc": "Inpatient Hospital",
+      "date_of_service": "2026-04-08"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "70551",
+      "description": "MRI brain without contrast",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 561.23,
+      "diagnosis_pointer": "1",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-04-05"
+    }
+  ],
+  "total_charge_amount": 2673.7,
+  "currency": "USD",
+  "prior_auth_number": null
+}

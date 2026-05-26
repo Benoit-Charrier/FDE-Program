@@ -1,0 +1,76 @@
+{
+  "submission_id": "CLM-2026-1001238",
+  "submitted_at": "2026-04-27T12:12:00",
+  "submitter": {
+    "name": "Vera Nakamura, MD",
+    "npi": "8656985816",
+    "tax_id": "33-6476889",
+    "specialty": "Internal Medicine",
+    "phone": "(544) 895-6461",
+    "address": {
+      "street": "4597 Elm St",
+      "city": "Sacramento",
+      "state": "CA",
+      "zip": "95874"
+    }
+  },
+  "patient": {
+    "first_name": "Elise",
+    "last_name": "Walker",
+    "date_of_birth": "2015-12-24",
+    "gender": "F",
+    "address": {
+      "street": "7600 Birch Ct",
+      "city": "Philadelphia",
+      "state": "PA",
+      "zip": "1915"
+    },
+    "phone": "(803) 826-7482"
+  },
+  "insurance": {
+    "payer_id": "MCD-IL",
+    "payer_name": "Illinois Medicaid",
+    "plan": "Medicaid",
+    "member_id": "427129204",
+    "group_id": "GRP-62011"
+  },
+  "diagnoses": [
+    {
+      "code": "J02.9",
+      "description": "Acute pharyngitis, unspecified"
+    },
+    {
+      "code": "E66.9",
+      "description": "Obesity, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "20610",
+      "description": "Major joint injection",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 215.42,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-19"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "71046",
+      "description": "Chest X-ray, 2 views",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 144.77,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-09"
+    }
+  ],
+  "total_charge_amount": 360.19,
+  "currency": "USD",
+  "prior_auth_number": null
+}

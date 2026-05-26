@@ -1,0 +1,60 @@
+{
+  "submission_id": "CLM-2026-1001415",
+  "submitted_at": "2026-04-27T12:58:00",
+  "submitter": {
+    "name": "Felix Reyes, MD",
+    "npi": "1273591143",
+    "tax_id": "99-8279635",
+    "specialty": "Radiology",
+    "phone": "(367) 620-5655",
+    "address": {
+      "street": "4468 1st Ave",
+      "city": "Cincinnati",
+      "state": "OH",
+      "zip": "45274"
+    }
+  },
+  "patient": {
+    "first_name": "Elena",
+    "last_name": "Wong",
+    "date_of_birth": "1951-05-17",
+    "gender": "F",
+    "address": {
+      "street": "9785 Forest Dr",
+      "city": "Tampa",
+      "state": "FL",
+      "zip": "33615"
+    },
+    "phone": "(847) 648-4905"
+  },
+  "insurance": {
+    "payer_id": "ANT-001",
+    "payer_name": "Anthem Blue Access",
+    "plan": "PPO",
+    "member_id": "YYL90613147",
+    "group_id": "GRP-27222"
+  },
+  "diagnoses": [
+    {
+      "code": "L98.9",
+      "description": "Disorder of the skin and subcutaneous tissue, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "27447",
+      "description": "Total knee arthroplasty",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 2633.21,
+      "diagnosis_pointer": "1",
+      "place_of_service": "21",
+      "place_of_service_desc": "Inpatient Hospital",
+      "date_of_service": "2026-04-03"
+    }
+  ],
+  "total_charge_amount": 2633.21,
+  "currency": "USD",
+  "prior_auth_number": null
+}

@@ -1,0 +1,64 @@
+{
+  "submission_id": "CLM-2026-1001414",
+  "submitted_at": "2026-04-27T12:54:00",
+  "submitter": {
+    "name": "Wyatt O'Connor, MD",
+    "npi": "4024116862",
+    "tax_id": "60-5120245",
+    "specialty": "Family Medicine",
+    "phone": "(964) 291-9299",
+    "address": {
+      "street": "8462 Park Blvd",
+      "city": "Raleigh",
+      "state": "NC",
+      "zip": "27641"
+    }
+  },
+  "patient": {
+    "first_name": "Quinn",
+    "last_name": "Foster",
+    "date_of_birth": "1963-11-27",
+    "gender": "F",
+    "address": {
+      "street": "5170 Lake Rd",
+      "city": "Charlotte",
+      "state": "NC",
+      "zip": "28242"
+    },
+    "phone": "(810) 853-1576"
+  },
+  "insurance": {
+    "payer_id": "UHC-001",
+    "payer_name": "UnitedHealthcare Choice Plus",
+    "plan": "PPO",
+    "member_id": "167175749-01",
+    "group_id": "GRP-20820"
+  },
+  "diagnoses": [
+    {
+      "code": "M54.5",
+      "description": "Low back pain"
+    },
+    {
+      "code": "M79.7",
+      "description": "Fibromyalgia"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "83036",
+      "description": "Hemoglobin A1c",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 38.78,
+      "diagnosis_pointer": "1",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-02"
+    }
+  ],
+  "total_charge_amount": 38.78,
+  "currency": "USD",
+  "prior_auth_number": null
+}

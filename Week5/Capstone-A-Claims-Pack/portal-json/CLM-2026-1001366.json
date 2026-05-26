@@ -1,0 +1,60 @@
+{
+  "submission_id": "CLM-2026-1001366",
+  "submitted_at": "2026-04-27T12:43:00",
+  "submitter": {
+    "name": "Rosa Nakamura, MD",
+    "npi": "9511573472",
+    "tax_id": "11-5860495",
+    "specialty": "Orthopedic Surgery",
+    "phone": "(454) 292-1524",
+    "address": {
+      "street": "1807 Oak Ave",
+      "city": "Houston",
+      "state": "TX",
+      "zip": "77028"
+    }
+  },
+  "patient": {
+    "first_name": "Grace",
+    "last_name": "Rodriguez",
+    "date_of_birth": "1941-05-23",
+    "gender": "F",
+    "address": {
+      "street": "5352 Elm St",
+      "city": "Chicago",
+      "state": "IL",
+      "zip": "60621"
+    },
+    "phone": "(606) 594-8289"
+  },
+  "insurance": {
+    "payer_id": "ANT-001",
+    "payer_name": "Anthem Blue Access",
+    "plan": "PPO",
+    "member_id": "YYL74877771",
+    "group_id": "GRP-97482"
+  },
+  "diagnoses": [
+    {
+      "code": "E78.5",
+      "description": "Hyperlipidemia, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99422",
+      "description": "Online digital E/M, 11-20 min",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 46.9,
+      "diagnosis_pointer": "1",
+      "place_of_service": "02",
+      "place_of_service_desc": "Telehealth",
+      "date_of_service": "2026-03-28"
+    }
+  ],
+  "total_charge_amount": 46.9,
+  "currency": "USD",
+  "prior_auth_number": null
+}

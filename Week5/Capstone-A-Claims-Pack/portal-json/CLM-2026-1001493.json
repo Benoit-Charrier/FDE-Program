@@ -1,0 +1,60 @@
+{
+  "submission_id": "CLM-2026-1001493",
+  "submitted_at": "2026-04-27T13:17:00",
+  "submitter": {
+    "name": "Oak Tree Pediatric Associates",
+    "npi": "9675388994",
+    "tax_id": "21-7122446",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(706) 475-3792",
+    "address": {
+      "street": "9953 Maple Dr",
+      "city": "Indianapolis",
+      "state": "IN",
+      "zip": "46246"
+    }
+  },
+  "patient": {
+    "first_name": "Pamela",
+    "last_name": "Zimmerman",
+    "date_of_birth": "1958-05-16",
+    "gender": "F",
+    "address": {
+      "street": "7825 Madison Ave",
+      "city": "Nashville",
+      "state": "TN",
+      "zip": "37241"
+    },
+    "phone": "(955) 233-9861"
+  },
+  "insurance": {
+    "payer_id": "BCBS-IL",
+    "payer_name": "Blue Cross Blue Shield of Illinois",
+    "plan": "PPO Choice",
+    "member_id": "XOJ216947879",
+    "group_id": "GRP-60677"
+  },
+  "diagnoses": [
+    {
+      "code": "J44.9",
+      "description": "Chronic obstructive pulmonary disease, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "97110",
+      "description": "Therapeutic exercises (15 min)",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 39.41,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-19"
+    }
+  ],
+  "total_charge_amount": 39.41,
+  "currency": "USD",
+  "prior_auth_number": null
+}

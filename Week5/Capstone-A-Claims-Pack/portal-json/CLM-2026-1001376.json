@@ -1,0 +1,80 @@
+{
+  "submission_id": "CLM-2026-1001376",
+  "submitted_at": "2026-04-27T12:47:00",
+  "submitter": {
+    "name": "Walter Goldberg, DO",
+    "npi": "6278107685",
+    "tax_id": "23-1130624",
+    "specialty": "Internal Medicine",
+    "phone": "(938) 790-1558",
+    "address": {
+      "street": "3337 Washington Ave",
+      "city": "Portland",
+      "state": "OR",
+      "zip": "97250"
+    }
+  },
+  "patient": {
+    "first_name": "Carlos",
+    "last_name": "Walker",
+    "date_of_birth": "1979-07-10",
+    "gender": "M",
+    "address": {
+      "street": "9473 Cedar Ct",
+      "city": "Albuquerque",
+      "state": "NM",
+      "zip": "8717"
+    },
+    "phone": "(647) 462-9661"
+  },
+  "insurance": {
+    "payer_id": "BCBS-IL",
+    "payer_name": "Blue Cross Blue Shield of Illinois",
+    "plan": "HMO Standard",
+    "member_id": "XOJ354309754",
+    "group_id": "GRP-96407"
+  },
+  "diagnoses": [
+    {
+      "code": "M54.5",
+      "description": "Low back pain"
+    },
+    {
+      "code": "H66.90",
+      "description": "Otitis media, unspecified, unspecified ear"
+    },
+    {
+      "code": "N39.0",
+      "description": "Urinary tract infection, site not specified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "20610",
+      "description": "Major joint injection",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 129.9,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-11"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "27447",
+      "description": "Total knee arthroplasty",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 4398.5,
+      "diagnosis_pointer": "2",
+      "place_of_service": "21",
+      "place_of_service_desc": "Inpatient Hospital",
+      "date_of_service": "2026-04-14"
+    }
+  ],
+  "total_charge_amount": 4528.4,
+  "currency": "USD",
+  "prior_auth_number": null
+}

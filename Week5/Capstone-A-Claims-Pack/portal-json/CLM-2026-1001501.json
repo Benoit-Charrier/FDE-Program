@@ -1,0 +1,106 @@
+{
+  "submission_id": "CLM-2026-1001501",
+  "submitted_at": "2026-04-27T13:16:00",
+  "submitter": {
+    "name": "Oak Tree Pediatric Associates",
+    "npi": "0351103283",
+    "tax_id": "97-2413794",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(474) 773-1621",
+    "address": {
+      "street": "362 Lincoln St",
+      "city": "Cleveland",
+      "state": "OH",
+      "zip": "44134"
+    }
+  },
+  "patient": {
+    "first_name": "Peter",
+    "last_name": "Diaz",
+    "date_of_birth": "1988-10-21",
+    "gender": "M",
+    "address": {
+      "street": "2997 Spring St",
+      "city": "Pittsburgh",
+      "state": "PA",
+      "zip": "15217"
+    },
+    "phone": "(666) 251-3131"
+  },
+  "insurance": {
+    "payer_id": "UHC-002",
+    "payer_name": "UnitedHealthcare Navigate",
+    "plan": "HMO",
+    "member_id": "669797305-09",
+    "group_id": "GRP-66105"
+  },
+  "diagnoses": [
+    {
+      "code": "R10.9",
+      "description": "Unspecified abdominal pain"
+    },
+    {
+      "code": "J02.9",
+      "description": "Acute pharyngitis, unspecified"
+    },
+    {
+      "code": "M79.7",
+      "description": "Fibromyalgia"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99422",
+      "description": "Online digital E/M, 11-20 min",
+      "modifiers": [
+        "95"
+      ],
+      "units": 1,
+      "charge_amount": 43.67,
+      "diagnosis_pointer": "1",
+      "place_of_service": "02",
+      "place_of_service_desc": "Telehealth",
+      "date_of_service": "2026-04-05"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "83036",
+      "description": "Hemoglobin A1c",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 17.88,
+      "diagnosis_pointer": "2",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-16"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "85025",
+      "description": "CBC w/ differential",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 29.22,
+      "diagnosis_pointer": "3",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-03-30"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "99214",
+      "description": "Office visit, established, mod-high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 148.65,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-07"
+    }
+  ],
+  "total_charge_amount": 239.42,
+  "currency": "USD",
+  "prior_auth_number": null
+}

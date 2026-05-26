@@ -1,0 +1,116 @@
+{
+  "resourceType": "Claim",
+  "id": "CLM-2026-1001825",
+  "status": "active",
+  "type": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+        "code": "professional"
+      }
+    ]
+  },
+  "use": "claim",
+  "patient": {
+    "reference": "Patient/80-775888",
+    "display": "Xio Lee"
+  },
+  "billablePeriod": {
+    "start": "2026-04-14",
+    "end": "2026-04-14"
+  },
+  "created": "2026-04-27T14:36:00",
+  "insurer": {
+    "reference": "Organization/UHC-001",
+    "display": "UnitedHealthcare Choice Plus"
+  },
+  "provider": {
+    "reference": "Practitioner/2114898238",
+    "display": "Carla Patel, DC"
+  },
+  "priority": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/processpriority",
+        "code": "normal"
+      }
+    ]
+  },
+  "diagnosis": [
+    {
+      "sequence": 1,
+      "diagnosisCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/sid/icd-10-cm",
+            "code": "E66.9",
+            "display": "Obesity, unspecified"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 2,
+      "diagnosisCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/sid/icd-10-cm",
+            "code": "Z23",
+            "display": "Encounter for immunization"
+          }
+        ]
+      }
+    }
+  ],
+  "insurance": [
+    {
+      "sequence": 1,
+      "focal": true,
+      "coverage": {
+        "display": "PPO via UnitedHealthcare Choice Plus"
+      }
+    }
+  ],
+  "item": [
+    {
+      "sequence": 1,
+      "diagnosisSequence": [
+        1
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "99281",
+            "display": "ED visit, low"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-04-14",
+      "quantity": {
+        "value": 1
+      },
+      "unitPrice": {
+        "value": 87.9,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 87.9,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "23"
+          }
+        ]
+      }
+    }
+  ],
+  "total": {
+    "value": 87.9,
+    "currency": "USD"
+  }
+}

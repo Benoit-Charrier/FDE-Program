@@ -1,0 +1,76 @@
+{
+  "submission_id": "CLM-2026-1001511",
+  "submitted_at": "2026-04-27T13:17:00",
+  "submitter": {
+    "name": "Jose Goldberg, DO",
+    "npi": "4291779010",
+    "tax_id": "32-5826449",
+    "specialty": "Internal Medicine",
+    "phone": "(319) 254-1974",
+    "address": {
+      "street": "8258 Main St",
+      "city": "Phoenix",
+      "state": "AZ",
+      "zip": "85031"
+    }
+  },
+  "patient": {
+    "first_name": "Alice",
+    "last_name": "Petrov",
+    "date_of_birth": "2022-12-14",
+    "gender": "F",
+    "address": {
+      "street": "3086 Washington Ave",
+      "city": "Charlotte",
+      "state": "NC",
+      "zip": "28292"
+    },
+    "phone": "(479) 272-3802"
+  },
+  "insurance": {
+    "payer_id": "MCR-001",
+    "payer_name": "Medicare Part B",
+    "plan": "Original Medicare",
+    "member_id": "7MM4WVK9EV2",
+    "group_id": "GRP-66403"
+  },
+  "diagnoses": [
+    {
+      "code": "I10",
+      "description": "Essential (primary) hypertension"
+    },
+    {
+      "code": "J44.9",
+      "description": "Chronic obstructive pulmonary disease, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "85025",
+      "description": "CBC w/ differential",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 30.96,
+      "diagnosis_pointer": "1",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-05"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "47562",
+      "description": "Laparoscopic cholecystectomy",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 2761.23,
+      "diagnosis_pointer": "2",
+      "place_of_service": "21",
+      "place_of_service_desc": "Inpatient Hospital",
+      "date_of_service": "2026-04-09"
+    }
+  ],
+  "total_charge_amount": 2792.19,
+  "currency": "USD",
+  "prior_auth_number": null
+}

@@ -1,0 +1,72 @@
+{
+  "submission_id": "CLM-2026-1001365",
+  "submitted_at": "2026-04-27T12:45:00",
+  "submitter": {
+    "name": "Forest Hills Urgent Care",
+    "npi": "1639789766",
+    "tax_id": "70-5913848",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(573) 690-3846",
+    "address": {
+      "street": "6330 Walnut St",
+      "city": "Nashville",
+      "state": "TN",
+      "zip": "37282"
+    }
+  },
+  "patient": {
+    "first_name": "Wendy",
+    "last_name": "Zhang",
+    "date_of_birth": "1992-06-13",
+    "gender": "F",
+    "address": {
+      "street": "6342 Lincoln St",
+      "city": "Portland",
+      "state": "OR",
+      "zip": "97247"
+    },
+    "phone": "(907) 604-6383"
+  },
+  "insurance": {
+    "payer_id": "ANT-001",
+    "payer_name": "Anthem Blue Access",
+    "plan": "PPO",
+    "member_id": "YYL75869262",
+    "group_id": "GRP-91697"
+  },
+  "diagnoses": [
+    {
+      "code": "J44.9",
+      "description": "Chronic obstructive pulmonary disease, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99281",
+      "description": "ED visit, low",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 108.31,
+      "diagnosis_pointer": "1",
+      "place_of_service": "23",
+      "place_of_service_desc": "Emergency Room \u2014 Hospital",
+      "date_of_service": "2026-03-28"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "47562",
+      "description": "Laparoscopic cholecystectomy",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 2779.86,
+      "diagnosis_pointer": "1",
+      "place_of_service": "21",
+      "place_of_service_desc": "Inpatient Hospital",
+      "date_of_service": "2026-03-30"
+    }
+  ],
+  "total_charge_amount": 2888.17,
+  "currency": "USD",
+  "prior_auth_number": null
+}

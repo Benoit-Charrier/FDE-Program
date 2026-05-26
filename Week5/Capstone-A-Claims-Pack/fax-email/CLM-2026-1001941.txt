@@ -1,0 +1,30 @@
+============================
+   FAX COVER SHEET
+============================
+TO:    UnitedHealthcare Navigate Claims Intake
+FROM:  Lily Mehta, MD
+DATE:  04/27/2026
+PAGES: 1 of 2
+
+URGENT [_]   FOR REVIEW [X]   PLEASE COMMENT [_]   PLEASE REPLY [_]
+
+RE: Claim submission - patient Novak, Priya
+
+Member ID:     173195234-06
+DOB:           1956-11-16
+Plan:          HMO
+Group:         GRP-46433
+DOS:           2026-04-16
+
+Diagnoses:     M25.561, F41.1
+Procedures:    27447, 20610, 99204, 97140
+Total charge:  $2590.48
+
+Provider NPI:  5013412174
+Tax ID:        93-2169083
+
+NOTES:
+Member confirmed coverage active during DOS - please reprocess.
+
+If problems with this fax, call (204) 740-7342
+============================

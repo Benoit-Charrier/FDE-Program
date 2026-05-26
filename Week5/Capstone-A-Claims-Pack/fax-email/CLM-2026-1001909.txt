@@ -1,0 +1,30 @@
+From: billing@highlandpediat.example
+To: claims-intake@payer.example
+Date: Mon, 27 Apr 2026 12:59:00 -0500
+Subject: FW: claim submission - Mitchell
+
+Hi team,
+
+Please process the following claim. Patient was seen at our office on 2026-04-17.
+
+Patient: Mitchell, Patrick (DOB 1937-11-20, M)
+Member ID: 043506928    Plan: Illinois Medicaid - Medicaid
+Group: GRP-30966
+Address: 9430 Main St, Minneapolis, MN 5544
+
+Provider: Highland Pediatrics, NPI 6686552277, Tax ID 85-7603195
+Specialty: Multi-specialty Clinic
+
+Diagnoses:
+  - H66.90 Otitis media, unspecified, unspecified ear
+
+Services rendered:
+  - 2026-04-17: CPT 97110 (Therapeutic exercises (15 min)), 1 unit(s), $47.93
+
+Total: $47.93
+Claim reference: CLM-2026-1001909
+
+Let me know if anything is missing.
+
+Thanks,
+Alex (billing)

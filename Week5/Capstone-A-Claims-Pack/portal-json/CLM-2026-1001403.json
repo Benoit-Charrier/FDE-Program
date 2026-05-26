@@ -1,0 +1,80 @@
+{
+  "submission_id": "CLM-2026-1001403",
+  "submitted_at": "2026-04-27T12:52:00",
+  "submitter": {
+    "name": "Aaron Jensen, MD",
+    "npi": "1135190404",
+    "tax_id": "55-5300800",
+    "specialty": "Emergency Medicine",
+    "phone": "(384) 289-4058",
+    "address": {
+      "street": "1939 Jefferson Dr",
+      "city": "Raleigh",
+      "state": "NC",
+      "zip": "27651"
+    }
+  },
+  "patient": {
+    "first_name": "Aaliyah",
+    "last_name": "Walker",
+    "date_of_birth": "1983-12-08",
+    "gender": "F",
+    "address": {
+      "street": "4612 Washington Ave",
+      "city": "Buffalo",
+      "state": "NY",
+      "zip": "14218"
+    },
+    "phone": "(373) 616-7913"
+  },
+  "insurance": {
+    "payer_id": "BCBS-IL",
+    "payer_name": "Blue Cross Blue Shield of Illinois",
+    "plan": "HMO Standard",
+    "member_id": "XOJ639284113",
+    "group_id": "GRP-31639"
+  },
+  "diagnoses": [
+    {
+      "code": "R53.83",
+      "description": "Other fatigue"
+    },
+    {
+      "code": "R10.9",
+      "description": "Unspecified abdominal pain"
+    },
+    {
+      "code": "M79.7",
+      "description": "Fibromyalgia"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99203",
+      "description": "Office visit, new pt, mod",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 164.71,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-14"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99214",
+      "description": "Office visit, established, mod-high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 185.41,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-01"
+    }
+  ],
+  "total_charge_amount": 350.12,
+  "currency": "USD",
+  "prior_auth_number": null
+}

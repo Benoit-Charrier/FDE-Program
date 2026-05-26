@@ -1,0 +1,60 @@
+{
+  "submission_id": "CLM-2026-1001451",
+  "submitted_at": "2026-04-27T13:03:00",
+  "submitter": {
+    "name": "Adrian Martinez, MD",
+    "npi": "2616138018",
+    "tax_id": "85-2693146",
+    "specialty": "Family Medicine",
+    "phone": "(754) 835-2646",
+    "address": {
+      "street": "9314 Pine Ln",
+      "city": "Boston",
+      "state": "MA",
+      "zip": "02172"
+    }
+  },
+  "patient": {
+    "first_name": "Carlos",
+    "last_name": "Lopez",
+    "date_of_birth": "2022-10-16",
+    "gender": "M",
+    "address": {
+      "street": "7715 Main St",
+      "city": "Nashville",
+      "state": "TN",
+      "zip": "37253"
+    },
+    "phone": "(936) 305-2349"
+  },
+  "insurance": {
+    "payer_id": "MCD-IL",
+    "payer_name": "Illinois Medicaid",
+    "plan": "Medicaid",
+    "member_id": "869791030",
+    "group_id": "GRP-52723"
+  },
+  "diagnoses": [
+    {
+      "code": "L98.9",
+      "description": "Disorder of the skin and subcutaneous tissue, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "90471",
+      "description": "Immunization administration",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 35.43,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-03-30"
+    }
+  ],
+  "total_charge_amount": 35.43,
+  "currency": "USD",
+  "prior_auth_number": null
+}

@@ -1,0 +1,64 @@
+{
+  "submission_id": "CLM-2026-1001532",
+  "submitted_at": "2026-04-27T13:25:00",
+  "submitter": {
+    "name": "Patrick Schmidt, MD",
+    "npi": "",
+    "tax_id": "92-3972137",
+    "specialty": "Radiology",
+    "phone": "(905) 462-8116",
+    "address": {
+      "street": "9368 Sunset Blvd",
+      "city": "Raleigh",
+      "state": "NC",
+      "zip": "27637"
+    }
+  },
+  "patient": {
+    "first_name": "Donna",
+    "last_name": "Patel",
+    "date_of_birth": "1975-04-13",
+    "gender": "F",
+    "address": {
+      "street": "2435 Birch Ct",
+      "city": "Pittsburgh",
+      "state": "PA",
+      "zip": "15235"
+    },
+    "phone": "(754) 958-3787"
+  },
+  "insurance": {
+    "payer_id": "MCD-IL",
+    "payer_name": "Illinois Medicaid",
+    "plan": "Medicaid",
+    "member_id": "940823002",
+    "group_id": "GRP-81263"
+  },
+  "diagnoses": [
+    {
+      "code": "F32.9",
+      "description": "Major depressive disorder, single episode"
+    },
+    {
+      "code": "E78.5",
+      "description": "Hyperlipidemia, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "83036",
+      "description": "Hemoglobin A1c",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 15.96,
+      "diagnosis_pointer": "1",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-15"
+    }
+  ],
+  "total_charge_amount": 15.96,
+  "currency": "USD",
+  "prior_auth_number": null
+}

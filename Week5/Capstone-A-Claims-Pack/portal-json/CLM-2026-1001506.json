@@ -1,0 +1,97 @@
+{
+  "submission_id": "CLM-2026-1001506",
+  "submitted_at": "2026-04-27T13:20:00",
+  "submitter": {
+    "name": "Maple Family Health",
+    "npi": "1836633437",
+    "tax_id": "23-5462507",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(480) 656-8686",
+    "address": {
+      "street": "5455 Jefferson Dr",
+      "city": "Phoenix",
+      "state": "AZ",
+      "zip": "85088"
+    }
+  },
+  "patient": {
+    "first_name": "Nora",
+    "last_name": "Quintana",
+    "date_of_birth": "2022-07-01",
+    "gender": "F",
+    "address": {
+      "street": "4328 Ridge Rd",
+      "city": "Portland",
+      "state": "OR",
+      "zip": "97210"
+    },
+    "phone": "(299) 378-4814"
+  },
+  "insurance": {
+    "payer_id": "BCBS-IL",
+    "payer_name": "Blue Cross Blue Shield of Illinois",
+    "plan": "PPO Choice",
+    "member_id": "XOJ699643047",
+    "group_id": "GRP-10846",
+    "coverage_termination_date": "2026-02-25"
+  },
+  "diagnoses": [
+    {
+      "code": "J02.9",
+      "description": "Acute pharyngitis, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "73030",
+      "description": "Shoulder X-ray, complete",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 150.73,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-22"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99203",
+      "description": "Office visit, new pt, mod",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 142.02,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-04"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "47562",
+      "description": "Laparoscopic cholecystectomy",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 3542.98,
+      "diagnosis_pointer": "1",
+      "place_of_service": "21",
+      "place_of_service_desc": "Inpatient Hospital",
+      "date_of_service": "2026-04-09"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "83036",
+      "description": "Hemoglobin A1c",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 14.0,
+      "diagnosis_pointer": "1",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-19"
+    }
+  ],
+  "total_charge_amount": 3849.73,
+  "currency": "USD",
+  "prior_auth_number": null
+}

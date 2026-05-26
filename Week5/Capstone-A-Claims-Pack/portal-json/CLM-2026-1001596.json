@@ -1,0 +1,80 @@
+{
+  "submission_id": "CLM-2026-1001596",
+  "submitted_at": "2026-04-27T13:39:00",
+  "submitter": {
+    "name": "Oak Tree Pediatric Associates",
+    "npi": "7891891889",
+    "tax_id": "10-3567542",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(686) 798-9713",
+    "address": {
+      "street": "2589 Maple Dr",
+      "city": "Cleveland",
+      "state": "OH",
+      "zip": "44188"
+    }
+  },
+  "patient": {
+    "first_name": "Teresa",
+    "last_name": "Walker",
+    "date_of_birth": "1989-01-09",
+    "gender": "F",
+    "address": {
+      "street": "3755 Franklin Rd",
+      "city": "Minneapolis",
+      "state": "MN",
+      "zip": "55467"
+    },
+    "phone": "(774) 723-2166"
+  },
+  "insurance": {
+    "payer_id": "UHC-001",
+    "payer_name": "UnitedHealthcare Choice Plus",
+    "plan": "PPO",
+    "member_id": "637745768-07",
+    "group_id": "GRP-91666"
+  },
+  "diagnoses": [
+    {
+      "code": "Z23",
+      "description": "Encounter for immunization"
+    },
+    {
+      "code": "F41.1",
+      "description": "Generalized anxiety disorder"
+    },
+    {
+      "code": "R10.9",
+      "description": "Unspecified abdominal pain"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99281",
+      "description": "ED visit, low",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 85.35,
+      "diagnosis_pointer": "1",
+      "place_of_service": "23",
+      "place_of_service_desc": "Emergency Room \u2014 Hospital",
+      "date_of_service": "2026-04-09"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "72148",
+      "description": "MRI lumbar spine without contrast",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 412.0,
+      "diagnosis_pointer": "1",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-04-09"
+    }
+  ],
+  "total_charge_amount": 497.35,
+  "currency": "USD",
+  "prior_auth_number": ""
+}

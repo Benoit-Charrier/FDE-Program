@@ -1,0 +1,106 @@
+{
+  "submission_id": "CLM-2026-1001333",
+  "submitted_at": "2026-04-27T12:37:00",
+  "submitter": {
+    "name": "Mateo Jensen, MD",
+    "npi": "4701435510",
+    "tax_id": "32-5826449",
+    "specialty": "Emergency Medicine",
+    "phone": "(846) 765-4671",
+    "address": {
+      "street": "3059 Maple Dr",
+      "city": "Charlotte",
+      "state": "NC",
+      "zip": "28220"
+    }
+  },
+  "patient": {
+    "first_name": "Pamela",
+    "last_name": "Brown",
+    "date_of_birth": "1973-10-13",
+    "gender": "F",
+    "address": {
+      "street": "3213 Walnut St",
+      "city": "Buffalo",
+      "state": "NY",
+      "zip": "14229"
+    },
+    "phone": "(330) 731-4864"
+  },
+  "insurance": {
+    "payer_id": "BCBS-IL",
+    "payer_name": "Blue Cross Blue Shield of Illinois",
+    "plan": "PPO Choice",
+    "member_id": "XOJ658433169",
+    "group_id": "GRP-41354"
+  },
+  "diagnoses": [
+    {
+      "code": "F32.9",
+      "description": "Major depressive disorder, single episode"
+    },
+    {
+      "code": "J45.909",
+      "description": "Unspecified asthma, uncomplicated"
+    },
+    {
+      "code": "R51.9",
+      "description": "Headache, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "90686",
+      "description": "Flu vaccine quadrivalent",
+      "modifiers": [
+        "22"
+      ],
+      "units": 1,
+      "charge_amount": 26.23,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-19"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99213",
+      "description": "Office visit, established, low-mod",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 146.29,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-18"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "85025",
+      "description": "CBC w/ differential",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 14.09,
+      "diagnosis_pointer": "3",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-23"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "73030",
+      "description": "Shoulder X-ray, complete",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 141.35,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-12"
+    }
+  ],
+  "total_charge_amount": 327.96,
+  "currency": "USD",
+  "prior_auth_number": null
+}

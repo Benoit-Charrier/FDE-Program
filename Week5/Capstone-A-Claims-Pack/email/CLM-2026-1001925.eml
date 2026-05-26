@@ -1,0 +1,46 @@
+From: Donna Schultz <donna.schultz@kenjiandersonn.example>
+To: claims-intake@payer.example
+Cc: billing-dept@kenjiandersonn.example
+Date: Mon, 27 Apr 2026 17:00:32 +0000
+Message-ID: <177729813760.6.1509127400397674531@kenjiandersonn.example>
+Subject: Resubmitting claim =?utf-8?b?4oCU?= patient Thompson (DOB 1972-07-26)
+X-Submitter-NPI: 2553906347
+X-Submitter-TaxID: 44-7392596
+X-Originating-System: kenjiandersonn.example MailRelay 4.2
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+Hi team,
+
+Please process the following claim. Patient was seen at our office on 2026-04=
+-09.
+
+Patient: Thompson, Zoe  (DOB 1972-07-26, F)
+Member ID: U19603884    Plan: Cigna Open Access Plus =E2=80=94 PPO
+Group: GRP-74793
+Address: 784 Forest Dr, Columbus, OH 43275
+
+Provider: Kenji Anderson, NP, NPI 2553906347, Tax ID 44-7392596
+Specialty: Nurse Practitioner
+
+Diagnoses:
+  - M25.562  Pain in left knee
+  - J44.9  Chronic obstructive pulmonary disease, unspecified
+  - M54.5  Low back pain
+
+Services rendered:
+  - 2026-04-09: CPT 64483 (Injection, transforaminal epidural), 2 unit(s), $6=
+53.93
+  - 2026-04-16: CPT 70551 (MRI brain without contrast), 2 unit(s), $924.03
+  - 2026-04-09: CPT 47562 (Laparoscopic cholecystectomy), 2 unit(s), $3364.21
+
+Total: $4942.17
+Claim reference: CLM-2026-1001925
+
+This one got stuck =E2=80=94 appreciate the help!
+
+Thanks,
+Donna Schultz
+Kenji Anderson, NP
+(619) 774-5284

@@ -1,0 +1,77 @@
+From: Karen Anderson <karen.anderson@brightfamilypr.example>
+To: claims-intake@payer.example
+Cc: billing-dept@brightfamilypr.example
+Date: Mon, 27 Apr 2026 14:33:58 +0000
+Message-ID: <177729813754.6.727851422950847551@brightfamilypr.example>
+Subject: Outstanding claim =?utf-8?b?4oCU?= DOS 2026-04-13
+X-Submitter-NPI: 5534669930
+X-Submitter-TaxID: 92-3972137
+X-Originating-System: brightfamilypr.example MailRelay 4.2
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="===============0924565775297787525=="
+
+--===============0924565775297787525==
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hi team,
+
+Please process the following claim. Patient was seen at our office on 2026-04=
+-13.
+
+Patient: Taylor, Nadia  (DOB 1970-07-03, F)
+Member ID: H24423070    Plan: Humana Gold Plus =E2=80=94 HMO
+Group: GRP-70006
+Address: 2315 Lake Rd, Columbus, OH 43277
+
+Provider: Bright Family Practice, NPI 5534669930, Tax ID 92-3972137
+Specialty: Multi-specialty Clinic
+
+Diagnoses:
+  - I10  Essential (primary) hypertension
+  - E78.5  Hyperlipidemia, unspecified
+  - R07.9  Chest pain, unspecified
+
+Services rendered:
+  - 2026-04-13: CPT 99214 (Office visit, established, mod-high), 1 unit(s), $=
+192.17
+  - 2026-04-16: CPT 99215 (Office visit, established, high), 1 unit(s), $263.=
+02
+
+Total: $455.19
+Claim reference: CLM-2026-1001918
+
+Let me know if anything is missing.
+
+Thanks,
+Karen Anderson
+Bright Family Practice
+(620) 596-8871
+
+--===============0924565775297787525==
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+<html><body style=3D"font-family: Arial, sans-serif; font-size: 11pt;">
+<p>Hi team,</p>
+<p>Please process the following claim. Patient was seen at our office on
+<b>2026-04-13</b>.</p>
+<table cellpadding=3D"3" style=3D"border-collapse: collapse; font-size: 10pt;=
+">
+<tr><td><b>Patient:</b></td><td>Taylor, Nadia (DOB 1970-07-03, F)</td></tr>
+<tr><td><b>Member ID:</b></td><td>H24423070</td></tr>
+<tr><td><b>Plan:</b></td><td>Humana Gold Plus =E2=80=94 HMO</td></tr>
+<tr><td><b>Group:</b></td><td>GRP-70006</td></tr>
+<tr><td><b>Provider:</b></td><td>Bright Family Practice (NPI 5534669930)</td>=
+</tr>
+<tr><td><b>Total charge:</b></td><td>$455.19</td></tr>
+<tr><td><b>Claim ref:</b></td><td>CLM-2026-1001918</td></tr>
+</table>
+<p>Diagnoses: I10, E78.5, R07.9</p>
+<p>Procedures: 99214, 99215</p>
+<p>Thanks,<br>Karen Anderson<br>Bright Family Practice<br>(620) 596-8871</p>
+</body></html>
+
+--===============0924565775297787525==--

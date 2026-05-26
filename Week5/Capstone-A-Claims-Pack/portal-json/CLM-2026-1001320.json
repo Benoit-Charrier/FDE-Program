@@ -1,0 +1,80 @@
+{
+  "submission_id": "CLM-2026-1001320",
+  "submitted_at": "2026-04-27T12:34:00",
+  "submitter": {
+    "name": "Bright Family Practice",
+    "npi": "9767018974",
+    "tax_id": "71-1103322",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(805) 245-9187",
+    "address": {
+      "street": "2414 Walnut St",
+      "city": "Phoenix",
+      "state": "AZ",
+      "zip": "85021"
+    }
+  },
+  "patient": {
+    "first_name": "Fatima",
+    "last_name": "Yamamoto",
+    "date_of_birth": "2006-09-12",
+    "gender": "F",
+    "address": {
+      "street": "665 Jefferson Dr",
+      "city": "Charlotte",
+      "state": "NC",
+      "zip": "28260"
+    },
+    "phone": "(478) 236-8427"
+  },
+  "insurance": {
+    "payer_id": "BCBS-IL",
+    "payer_name": "Blue Cross Blue Shield of Illinois",
+    "plan": "HMO Standard",
+    "member_id": "XOJ772319652",
+    "group_id": "GRP-39210"
+  },
+  "diagnoses": [
+    {
+      "code": "J20.9",
+      "description": "Acute bronchitis, unspecified"
+    },
+    {
+      "code": "L30.9",
+      "description": "Dermatitis, unspecified"
+    },
+    {
+      "code": "R51.9",
+      "description": "Headache, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "85025",
+      "description": "CBC w/ differential",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 14.42,
+      "diagnosis_pointer": "1",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-12"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99284",
+      "description": "ED visit, mod-high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 207.48,
+      "diagnosis_pointer": "2",
+      "place_of_service": "23",
+      "place_of_service_desc": "Emergency Room \u2014 Hospital",
+      "date_of_service": "2026-04-23"
+    }
+  ],
+  "total_charge_amount": 221.9,
+  "currency": "USD",
+  "prior_auth_number": null
+}

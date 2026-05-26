@@ -1,0 +1,61 @@
+{
+  "submission_id": "CLM-2026-1001487",
+  "submitted_at": "2026-04-27T13:12:00",
+  "submitter": {
+    "name": "Carla Cohen, NP",
+    "npi": "0723692571",
+    "tax_id": "11-5860495",
+    "specialty": "Nurse Practitioner",
+    "phone": "(615) 575-5025",
+    "address": {
+      "street": "9942 Lake Rd",
+      "city": "Nashville",
+      "state": "TN",
+      "zip": "37212"
+    }
+  },
+  "patient": {
+    "first_name": "Brenda",
+    "last_name": "Brown",
+    "date_of_birth": "2008-12-01",
+    "gender": "F",
+    "address": {
+      "street": "1932 Maple Dr",
+      "city": "Columbus",
+      "state": "OH",
+      "zip": "43249"
+    },
+    "phone": "(303) 826-9969"
+  },
+  "insurance": {
+    "payer_id": "BCBS-IL",
+    "payer_name": "Blue Cross Blue Shield of Illinois",
+    "plan": "HMO Standard",
+    "member_id": "XOJ352872113",
+    "group_id": "GRP-28064"
+  },
+  "diagnoses": [
+    {
+      "code": "K21.9",
+      "description": "Gastro-esophageal reflux disease without esophagitis"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "47562",
+      "description": "Laparoscopic cholecystectomy",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 3125.46,
+      "diagnosis_pointer": "1",
+      "place_of_service": "21",
+      "place_of_service_desc": "Inpatient Hospital",
+      "date_of_service": "2026-04-18"
+    }
+  ],
+  "total_charge_amount": 3125.46,
+  "currency": "USD",
+  "prior_auth_number": null,
+  "resubmission_of": "CLM-2026-6713093"
+}

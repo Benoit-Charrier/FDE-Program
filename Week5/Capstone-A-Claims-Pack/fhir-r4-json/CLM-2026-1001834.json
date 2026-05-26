@@ -1,0 +1,104 @@
+{
+  "resourceType": "Claim",
+  "id": "CLM-2026-1001834",
+  "status": "active",
+  "type": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+        "code": "professional"
+      }
+    ]
+  },
+  "use": "claim",
+  "patient": {
+    "reference": "Patient/530056211-08",
+    "display": "Kara Thompson"
+  },
+  "billablePeriod": {
+    "start": "2026-04-20",
+    "end": "2026-04-20"
+  },
+  "created": "2026-04-27T14:39:00",
+  "insurer": {
+    "reference": "Organization/UHC-002",
+    "display": "UnitedHealthcare Navigate"
+  },
+  "provider": {
+    "reference": "Practitioner/7247941633",
+    "display": "Yvonne Patel, DO"
+  },
+  "priority": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/processpriority",
+        "code": "normal"
+      }
+    ]
+  },
+  "diagnosis": [
+    {
+      "sequence": 1,
+      "diagnosisCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/sid/icd-10-cm",
+            "code": "M17.11",
+            "display": "Unilateral primary osteoarthritis, right knee"
+          }
+        ]
+      }
+    }
+  ],
+  "insurance": [
+    {
+      "sequence": 1,
+      "focal": true,
+      "coverage": {
+        "display": "HMO via UnitedHealthcare Navigate"
+      }
+    }
+  ],
+  "item": [
+    {
+      "sequence": 1,
+      "diagnosisSequence": [
+        1
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "90471",
+            "display": "Immunization administration"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-04-20",
+      "quantity": {
+        "value": 2
+      },
+      "unitPrice": {
+        "value": 17.205,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 34.41,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "12"
+          }
+        ]
+      }
+    }
+  ],
+  "total": {
+    "value": 34.41,
+    "currency": "USD"
+  }
+}

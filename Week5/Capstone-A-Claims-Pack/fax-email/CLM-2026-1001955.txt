@@ -1,0 +1,30 @@
+============================
+   FAX COVER SHEET
+============================
+TO:    UnitedHealthcare Choice Plus Claims Intake
+FROM:  Westwood Internal Medicine
+DATE:  04/27/2026
+PAGES: 1 of 5
+
+URGENT [_]   FOR REVIEW [X]   PLEASE COMMENT [_]   PLEASE REPLY [_]
+
+RE: Claim submission - patient Brown, Kiana
+
+Member ID:     429054533-06
+DOB:           1996-09-07
+Plan:          PPO
+Group:         GRP-54050
+DOS:           2026-04-22
+
+Diagnoses:     Z23
+Procedures:    99213
+Total charge:  $128.00
+
+Provider NPI:  0172720571
+Tax ID:        16-5578305
+
+NOTES:
+Please prior-auth was on file - see attached.
+
+If problems with this fax, call (845) 795-7181
+============================

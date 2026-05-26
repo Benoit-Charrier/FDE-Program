@@ -1,0 +1,30 @@
+============================
+   FAX COVER SHEET
+============================
+TO:    Aetna Open Access Claims Intake
+FROM:  Diana Park, MD
+DATE:  04/27/2026
+PAGES: 1 of 4
+
+URGENT [_]   FOR REVIEW [X]   PLEASE COMMENT [_]   PLEASE REPLY [_]
+
+RE: Claim submission - patient Petrov, Beatrice
+
+Member ID:     W170190734
+DOB:           1967-12-19
+Plan:          PPO
+Group:         GRP-93421
+DOS:           2026-04-22
+
+Diagnoses:     K21.9
+Procedures:    44970
+Total charge:  $1327.98
+
+Provider NPI:  5532987278
+Tax ID:        90-8449136
+
+NOTES:
+Resubmission - prior denial coded incorrect dx, now corrected.
+
+If problems with this fax, call (478) 392-6998
+============================

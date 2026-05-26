@@ -1,0 +1,152 @@
+{
+  "resourceType": "Claim",
+  "id": "CLM-2026-1001807",
+  "status": "active",
+  "type": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+        "code": "professional"
+      }
+    ]
+  },
+  "use": "claim",
+  "patient": {
+    "reference": "Patient/239157542-00",
+    "display": "Quincy Jackson"
+  },
+  "billablePeriod": {
+    "start": "2026-04-10",
+    "end": "2026-04-19"
+  },
+  "created": "2026-04-27T14:32:00",
+  "insurer": {
+    "reference": "Organization/UHC-002",
+    "display": "UnitedHealthcare Navigate"
+  },
+  "provider": {
+    "reference": "Practitioner/5274649603",
+    "display": "Carla Cohen, MD"
+  },
+  "priority": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/processpriority",
+        "code": "normal"
+      }
+    ]
+  },
+  "diagnosis": [
+    {
+      "sequence": 1,
+      "diagnosisCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/sid/icd-10-cm",
+            "code": "N39.0",
+            "display": "Urinary tract infection, site not specified"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 2,
+      "diagnosisCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/sid/icd-10-cm",
+            "code": "J02.9",
+            "display": "Acute pharyngitis, unspecified"
+          }
+        ]
+      }
+    }
+  ],
+  "insurance": [
+    {
+      "sequence": 1,
+      "focal": true,
+      "coverage": {
+        "display": "HMO via UnitedHealthcare Navigate"
+      }
+    }
+  ],
+  "item": [
+    {
+      "sequence": 1,
+      "diagnosisSequence": [
+        1
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "97140",
+            "display": "Manual therapy (15 min)"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-04-10",
+      "quantity": {
+        "value": 2
+      },
+      "unitPrice": {
+        "value": 34.015,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 68.03,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "11"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 2,
+      "diagnosisSequence": [
+        2
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "44970",
+            "display": "Laparoscopic appendectomy"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-04-19",
+      "quantity": {
+        "value": 1
+      },
+      "unitPrice": {
+        "value": 1678.36,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 1678.36,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "21"
+          }
+        ]
+      }
+    }
+  ],
+  "total": {
+    "value": 1746.39,
+    "currency": "USD"
+  }
+}

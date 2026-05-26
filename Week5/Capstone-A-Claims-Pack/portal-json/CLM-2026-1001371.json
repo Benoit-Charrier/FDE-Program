@@ -1,0 +1,76 @@
+{
+  "submission_id": "CLM-2026-1001371",
+  "submitted_at": "2026-04-27T12:46:00",
+  "submitter": {
+    "name": "Olivia Reyes, DPT",
+    "npi": "8614526260",
+    "tax_id": "10-3567542",
+    "specialty": "Physical Therapy",
+    "phone": "(861) 700-3641",
+    "address": {
+      "street": "5223 River Rd",
+      "city": "Albuquerque",
+      "state": "NM",
+      "zip": "87110"
+    }
+  },
+  "patient": {
+    "first_name": "Derrick",
+    "last_name": "Park",
+    "date_of_birth": "1961-07-17",
+    "gender": "M",
+    "address": {
+      "street": "1398 Pine Ln",
+      "city": "Omaha",
+      "state": "NE",
+      "zip": "68116"
+    },
+    "phone": "(762) 760-3340"
+  },
+  "insurance": {
+    "payer_id": "BCBS-IL",
+    "payer_name": "Blue Cross Blue Shield of Illinois",
+    "plan": "PPO Choice",
+    "member_id": "XOJ473653159",
+    "group_id": "GRP-91338"
+  },
+  "diagnoses": [
+    {
+      "code": "I25.10",
+      "description": "Atherosclerotic heart disease without angina"
+    },
+    {
+      "code": "E78.5",
+      "description": "Hyperlipidemia, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99213",
+      "description": "Office visit, established, low-mod",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 121.95,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-17"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99396",
+      "description": "Preventive established, 40-64",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 181.83,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-11"
+    }
+  ],
+  "total_charge_amount": 303.78,
+  "currency": "USD",
+  "prior_auth_number": null
+}

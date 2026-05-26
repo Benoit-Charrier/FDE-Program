@@ -1,0 +1,44 @@
+From: Karen Anderson <karen.anderson@nadiaduboisnp.example>
+To: claims-intake@payer.example
+Cc: billing-dept@nadiaduboisnp.example
+Date: Mon, 27 Apr 2026 08:37:26 +0000
+Message-ID: <177729813749.6.14344287730621340007@nadiaduboisnp.example>
+Subject: Outstanding claim =?utf-8?b?4oCU?= DOS 2026-04-01
+X-Submitter-NPI: 5280758522
+X-Submitter-TaxID: 16-2749174
+X-Originating-System: nadiaduboisnp.example MailRelay 4.2
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+Hi team,
+
+Please process the following claim. Patient was seen at our office on 2026-04=
+-01.
+
+Patient: Chen, Felicia  (DOB 2006-09-29, F)
+Member ID: 127621145-00    Plan: UnitedHealthcare Choice Plus =E2=80=94 PPO
+Group: GRP-50632
+Address: 2547 Cedar Ct, Pittsburgh, PA 15286
+
+Provider: Nadia DuBois, NP, NPI 5280758522, Tax ID 16-2749174
+Specialty: Nurse Practitioner
+
+Diagnoses:
+  - Z23  Encounter for immunization
+  - J06.9  Acute upper respiratory infection, unspecified
+  - N39.0  Urinary tract infection, site not specified
+
+Services rendered:
+  - 2026-04-01: CPT 99205 (Office visit, new pt, comprehensive), 1 unit(s), $=
+286.63
+
+Total: $286.63
+Claim reference: CLM-2026-1001911
+
+Resubmitting from last week =E2=80=94 first one bounced. Pls confirm receipt.
+
+Thanks,
+Karen Anderson
+Nadia DuBois, NP
+(233) 366-2972

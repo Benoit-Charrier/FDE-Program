@@ -1,0 +1,76 @@
+{
+  "submission_id": "CLM-2026-1001273",
+  "submitted_at": "2026-04-27T12:23:00",
+  "submitter": {
+    "name": "Travis O'Connor, MD",
+    "npi": "8676023923",
+    "tax_id": "18-1015267",
+    "specialty": "Pediatrics",
+    "phone": "(973) 473-2693",
+    "address": {
+      "street": "2509 Washington Ave",
+      "city": "Boston",
+      "state": "MA",
+      "zip": "02177"
+    }
+  },
+  "patient": {
+    "first_name": "KiANA",
+    "last_name": "Kim",
+    "date_of_birth": "1961-03-28",
+    "gender": "F",
+    "address": {
+      "street": "7050 Highland Ave",
+      "city": "Pittsburgh",
+      "state": "PA",
+      "zip": "1526"
+    },
+    "phone": "(557) 789-8332"
+  },
+  "insurance": {
+    "payer_id": "BCBS-IL",
+    "payer_name": "Blue Cross Blue Shield of Illinois",
+    "plan": "PPO Choice",
+    "member_id": "714610214",
+    "group_id": "GRP-73701"
+  },
+  "diagnoses": [
+    {
+      "code": "N18.3",
+      "description": "Chronic kidney disease, stage 3"
+    },
+    {
+      "code": "M17.11",
+      "description": "Unilateral primary osteoarthritis, right knee"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99281",
+      "description": "ED visit, low",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 88.18,
+      "diagnosis_pointer": "1",
+      "place_of_service": "23",
+      "place_of_service_desc": "Emergency Room \u2014 Hospital",
+      "date_of_service": "2026-04-02"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99205",
+      "description": "Office visit, new pt, comprehensive",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 257.57,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-09"
+    }
+  ],
+  "total_charge_amount": 345.75,
+  "currency": "USD",
+  "prior_auth_number": null
+}

@@ -1,0 +1,96 @@
+{
+  "submission_id": "CLM-2026-1001497",
+  "submitted_at": "2026-04-27T13:15:00",
+  "submitter": {
+    "name": "Forest Hills Urgent Care",
+    "npi": "0104851403",
+    "tax_id": "44-7392596",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(707) 341-7187",
+    "address": {
+      "street": "2913 Highland Ave",
+      "city": "Nashville",
+      "state": "TN",
+      "zip": "37297"
+    }
+  },
+  "patient": {
+    "first_name": "Victor",
+    "last_name": "Baker",
+    "date_of_birth": "1965-10-18",
+    "gender": "M",
+    "address": {
+      "street": "6207 Ridge Rd",
+      "city": "Charlotte",
+      "state": "NC",
+      "zip": "28254"
+    },
+    "phone": "(821) 241-5335"
+  },
+  "insurance": {
+    "payer_id": "UHC-002",
+    "payer_name": "UnitedHealthcare Navigate",
+    "plan": "HMO",
+    "member_id": "968130910-08",
+    "group_id": "GRP-98903"
+  },
+  "diagnoses": [
+    {
+      "code": "G47.33",
+      "description": "Obstructive sleep apnea (adult) (pediatric)"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "90471",
+      "description": "Immunization administration",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 37.46,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-22"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "71046",
+      "description": "Chest X-ray, 2 views",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 76.23,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-04"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "83036",
+      "description": "Hemoglobin A1c",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 32.05,
+      "diagnosis_pointer": "1",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-16"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "99396",
+      "description": "Preventive established, 40-64",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 220.02,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-14"
+    }
+  ],
+  "total_charge_amount": 365.76,
+  "currency": "USD",
+  "prior_auth_number": null
+}

@@ -1,0 +1,104 @@
+{
+  "submission_id": "CLM-2026-1001324",
+  "submitted_at": "2026-04-27T12:31:00",
+  "submitter": {
+    "name": "Ravi Anderson, MD",
+    "npi": "8817504700",
+    "tax_id": "23-5462507",
+    "specialty": "Internal Medicine",
+    "phone": "(227) 712-5135",
+    "address": {
+      "street": "6240 Park Blvd",
+      "city": "St. Louis",
+      "state": "MO",
+      "zip": "63142"
+    }
+  },
+  "patient": {
+    "first_name": "Grace",
+    "last_name": "Nguyen",
+    "date_of_birth": "1952-10-31",
+    "gender": "F",
+    "address": {
+      "street": "2772 Franklin Rd",
+      "city": "Omaha",
+      "state": "NE",
+      "zip": "68135"
+    },
+    "phone": "(426) 680-5080"
+  },
+  "insurance": {
+    "payer_id": "UHC-002",
+    "payer_name": "UnitedHealthcare Navigate",
+    "plan": "HMO",
+    "member_id": "180526929-01",
+    "group_id": "GRP-58741"
+  },
+  "diagnoses": [
+    {
+      "code": "M79.7",
+      "description": "Fibromyalgia"
+    },
+    {
+      "code": "E66.9",
+      "description": "Obesity, unspecified"
+    },
+    {
+      "code": "N39.0",
+      "description": "Urinary tract infection, site not specified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99284",
+      "description": "ED visit, mod-high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 229.58,
+      "diagnosis_pointer": "1",
+      "place_of_service": "23",
+      "place_of_service_desc": "Emergency Room \u2014 Hospital",
+      "date_of_service": "2026-03-28"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "71046",
+      "description": "Chest X-ray, 2 views",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 143.15,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-03-28"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "71046",
+      "description": "Chest X-ray, 2 views",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 144.89,
+      "diagnosis_pointer": "3",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-10"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "80053",
+      "description": "Comprehensive metabolic panel",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 15.64,
+      "diagnosis_pointer": "1",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-20"
+    }
+  ],
+  "total_charge_amount": 533.26,
+  "currency": "USD",
+  "prior_auth_number": null
+}

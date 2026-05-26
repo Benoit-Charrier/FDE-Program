@@ -1,0 +1,44 @@
+From: Mike Iqbal <mike.iqbal@westwoodintern.example>
+To: claims-intake@payer.example
+Cc: office-mgr@westwoodintern.example
+Date: Mon, 27 Apr 2026 11:04:41 +0000
+Message-ID: <177729813747.6.11641013063832304977@westwoodintern.example>
+Subject: FW: claim for Liam Petrov =?utf-8?b?4oCU?= need help
+X-Submitter-NPI: 3516466472
+X-Submitter-TaxID: 10-3567542
+X-Originating-System: westwoodintern.example MailRelay 4.2
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+Hi team,
+
+Please process the following claim. Patient was seen at our office on 2026-03=
+-29.
+
+Patient: Petrov, Liam  (DOB 1994-07-01, M)
+Member ID: 204928887    Plan: Illinois Medicaid =E2=80=94 Medicaid
+Group: GRP-56109
+Address: 270 Highland Ave, Seattle, WA 98171
+
+Provider: Westwood Internal Medicine, NPI 3516466472, Tax ID 10-3567542
+Specialty: Multi-specialty Clinic
+
+Diagnoses:
+  - R07.9  Chest pain, unspecified
+
+Services rendered:
+  - 2026-03-29: CPT 47562 (Laparoscopic cholecystectomy), 1 unit(s), $1303.33
+  - 2026-04-02: CPT 99285 (ED visit, high), 1 unit(s), $409.01
+  - 2026-04-07: CPT 99422 (Online digital E/M, 11-20 min) mod 95, 1 unit(s), =
+$48.32
+
+Total: $1760.66
+Claim reference: CLM-2026-1001908
+
+This one got stuck =E2=80=94 appreciate the help!
+
+Thanks,
+Mike Iqbal
+Westwood Internal Medicine
+(892) 217-3922

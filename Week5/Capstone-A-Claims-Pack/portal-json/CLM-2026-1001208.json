@@ -1,0 +1,88 @@
+{
+  "submission_id": "CLM-2026-1001208",
+  "submitted_at": "2026-04-27T12:05:00",
+  "submitter": {
+    "name": "Crestview Imaging Center",
+    "npi": "0461173282",
+    "tax_id": "56-7822842",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(550) 422-2232",
+    "address": {
+      "street": "776 Elm St",
+      "city": "Raleigh",
+      "state": "NC",
+      "zip": "27661"
+    }
+  },
+  "patient": {
+    "first_name": "Ingrid",
+    "last_name": "Singh",
+    "date_of_birth": "2003-01-27",
+    "gender": "F",
+    "address": {
+      "street": "7939 Lincoln St",
+      "city": "Nashville",
+      "state": "TN",
+      "zip": "37261"
+    },
+    "phone": "(465) 300-4683"
+  },
+  "insurance": {
+    "payer_id": "UHC-002",
+    "payer_name": "UnitedHealthcare Navigate",
+    "plan": "HMO",
+    "member_id": "722831032-01",
+    "group_id": "GRP-45392"
+  },
+  "diagnoses": [
+    {
+      "code": "R07.9",
+      "description": "Chest pain, unspecified"
+    },
+    {
+      "code": "F32.9",
+      "description": "Major depressive disorder, single episode"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "73030",
+      "description": "Shoulder X-ray, complete",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 159.07,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-04"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99281",
+      "description": "ED visit, low",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 104.78,
+      "diagnosis_pointer": "2",
+      "place_of_service": "23",
+      "place_of_service_desc": "Emergency Room \u2014 Hospital",
+      "date_of_service": "2026-04-05"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "47562",
+      "description": "Laparoscopic cholecystectomy",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 1861.06,
+      "diagnosis_pointer": "1",
+      "place_of_service": "21",
+      "place_of_service_desc": "Inpatient Hospital",
+      "date_of_service": "2026-04-15"
+    }
+  ],
+  "total_charge_amount": 2124.91,
+  "currency": "USD",
+  "prior_auth_number": null
+}

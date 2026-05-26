@@ -1,0 +1,106 @@
+{
+  "submission_id": "CLM-2026-1001248",
+  "submitted_at": "2026-04-27T12:15:00",
+  "submitter": {
+    "name": "Bright Family Practice",
+    "npi": "2150629623",
+    "tax_id": "",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(789) 457-5821",
+    "address": {
+      "street": "2427 Main St",
+      "city": "Houston",
+      "state": "TX",
+      "zip": "77081"
+    }
+  },
+  "patient": {
+    "first_name": "Logan",
+    "last_name": "Rodriguez",
+    "date_of_birth": "2015-10-04",
+    "gender": "M",
+    "address": {
+      "street": "3661 Maple Dr",
+      "city": "Salt Lake City",
+      "state": "UT",
+      "zip": "84146"
+    },
+    "phone": "(418) 720-6165"
+  },
+  "insurance": {
+    "payer_id": "CIG-001",
+    "payer_name": "Cigna Open Access Plus",
+    "plan": "PPO",
+    "member_id": "U91660054",
+    "group_id": "GRP-28621"
+  },
+  "diagnoses": [
+    {
+      "code": "S93.401A",
+      "description": "Sprain of unspecified ligament of right ankle, initial"
+    },
+    {
+      "code": "M25.562",
+      "description": "Pain in left knee"
+    },
+    {
+      "code": "J44.9",
+      "description": "Chronic obstructive pulmonary disease, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "73030",
+      "description": "Shoulder X-ray, complete",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 142.44,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-23"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99396",
+      "description": "Preventive established, 40-64",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 260.56,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-24"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99421",
+      "description": "Online digital E/M, 5-10 min",
+      "modifiers": [
+        "95"
+      ],
+      "units": 1,
+      "charge_amount": 22.04,
+      "diagnosis_pointer": "3",
+      "place_of_service": "02",
+      "place_of_service_desc": "Telehealth",
+      "date_of_service": "2026-04-16"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "72148",
+      "description": "MRI lumbar spine without contrast",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 368.42,
+      "diagnosis_pointer": "1",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-03-30"
+    }
+  ],
+  "total_charge_amount": 793.46,
+  "currency": "USD",
+  "prior_auth_number": null
+}

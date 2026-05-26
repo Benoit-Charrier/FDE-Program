@@ -1,0 +1,64 @@
+{
+  "submission_id": "CLM-2026-1001455",
+  "submitted_at": "2026-04-27T13:06:00",
+  "submitter": {
+    "name": "Henry Tanaka, MD",
+    "npi": "6695323093",
+    "tax_id": "56-7822842",
+    "specialty": "Internal Medicine",
+    "phone": "(360) 882-4751",
+    "address": {
+      "street": "6393 Main St",
+      "city": "Omaha",
+      "state": "NE",
+      "zip": "68176"
+    }
+  },
+  "patient": {
+    "first_name": "Nadia",
+    "last_name": "Ivanov",
+    "date_of_birth": "2023-11-25",
+    "gender": "F",
+    "address": {
+      "street": "1563 Main St",
+      "city": "Tucson",
+      "state": "AZ",
+      "zip": "85788"
+    },
+    "phone": "(651) 324-4942"
+  },
+  "insurance": {
+    "payer_id": "BCBS-IL",
+    "payer_name": "Blue Cross Blue Shield of Illinois",
+    "plan": "PPO Choice",
+    "member_id": "XOJ466567964",
+    "group_id": "GRP-74935"
+  },
+  "diagnoses": [
+    {
+      "code": "M79.7",
+      "description": "Fibromyalgia"
+    },
+    {
+      "code": "N39.0",
+      "description": "Urinary tract infection, site not specified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "90686",
+      "description": "Flu vaccine quadrivalent",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 24.9,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-18"
+    }
+  ],
+  "total_charge_amount": 24.9,
+  "currency": "USD",
+  "prior_auth_number": null
+}

@@ -1,0 +1,104 @@
+{
+  "submission_id": "CLM-2026-1001266",
+  "submitted_at": "2026-04-27T12:20:00",
+  "submitter": {
+    "name": "Donna Martinez, MD",
+    "npi": "1151115443",
+    "tax_id": "81-7841949",
+    "specialty": "Orthopedic Surgery",
+    "phone": "(565) 915-7032",
+    "address": {
+      "street": "6891 Birch Ct",
+      "city": "Denver",
+      "state": "CO",
+      "zip": "80276"
+    }
+  },
+  "patient": {
+    "first_name": "TeRESA",
+    "last_name": "Singh",
+    "date_of_birth": "1966-05-08",
+    "gender": "F",
+    "address": {
+      "street": "6043 Elm St",
+      "city": "Nashville",
+      "state": "TN",
+      "zip": "37210"
+    },
+    "phone": "(619) 723-8676"
+  },
+  "insurance": {
+    "payer_id": "UHC-002",
+    "payer_name": "UnitedHealthcare Navigate",
+    "plan": "HMO",
+    "member_id": "815490062-06",
+    "group_id": "GRP-13948"
+  },
+  "diagnoses": [
+    {
+      "code": "J06.9",
+      "description": "Acute upper respiratory infection, unspecified"
+    },
+    {
+      "code": "J02.9",
+      "description": "Acute pharyngitis, unspecified"
+    },
+    {
+      "code": "I10",
+      "description": "Essential (primary) hypertension"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99213",
+      "description": "Office visit, established, low-mod",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 129.84,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-05"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "44970",
+      "description": "Laparoscopic appendectomy",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 3162.0,
+      "diagnosis_pointer": "2",
+      "place_of_service": "21",
+      "place_of_service_desc": "Inpatient Hospital",
+      "date_of_service": "2026-04-17"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "72148",
+      "description": "MRI lumbar spine without contrast",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 287.62,
+      "diagnosis_pointer": "3",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-04-26"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "70551",
+      "description": "MRI brain without contrast",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 401.92,
+      "diagnosis_pointer": "1",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-04-05"
+    }
+  ],
+  "total_charge_amount": 3981.38,
+  "currency": "USD",
+  "prior_auth_number": null
+}

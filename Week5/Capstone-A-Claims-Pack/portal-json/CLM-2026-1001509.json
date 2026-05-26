@@ -1,0 +1,104 @@
+{
+  "submission_id": "CLM-2026-1001509",
+  "submitted_at": "2026-04-27T13:22:00",
+  "submitter": {
+    "name": "Felix Johansson, MD",
+    "npi": "3519820693",
+    "tax_id": "36-7226148",
+    "specialty": "Radiology",
+    "phone": "(841) 556-7040",
+    "address": {
+      "street": "7184 Cedar Ct",
+      "city": "Minneapolis",
+      "state": "MN",
+      "zip": "55453"
+    }
+  },
+  "patient": {
+    "first_name": "Liam",
+    "last_name": "Taylor",
+    "date_of_birth": "2020-08-16",
+    "gender": "M",
+    "address": {
+      "street": "7060 Sunset Blvd",
+      "city": "Cleveland",
+      "state": "OH",
+      "zip": "44188"
+    },
+    "phone": "(925) 399-9815"
+  },
+  "insurance": {
+    "payer_id": "BCBS-IL",
+    "payer_name": "Blue Cross Blue Shield of Illinois",
+    "plan": "PPO Choice",
+    "member_id": "XOJ500878971",
+    "group_id": "GRP-24464"
+  },
+  "diagnoses": [
+    {
+      "code": "M17.11",
+      "description": "Unilateral primary osteoarthritis, right knee"
+    },
+    {
+      "code": "S93.401A",
+      "description": "Sprain of unspecified ligament of right ankle, initial"
+    },
+    {
+      "code": "I25.10",
+      "description": "Atherosclerotic heart disease without angina"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "85025",
+      "description": "CBC w/ differential",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 15.84,
+      "diagnosis_pointer": "1",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-22"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99395",
+      "description": "Preventive established, 18-39",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 242.69,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-03-30"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "85025",
+      "description": "CBC w/ differential",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 31.5,
+      "diagnosis_pointer": "3",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-09"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "99205",
+      "description": "Office visit, new pt, comprehensive",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 251.74,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-24"
+    }
+  ],
+  "total_charge_amount": 541.77,
+  "currency": "USD",
+  "prior_auth_number": null
+}

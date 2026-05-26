@@ -1,0 +1,104 @@
+{
+  "submission_id": "CLM-2026-1001587",
+  "submitted_at": "2026-04-27T13:37:00",
+  "submitter": {
+    "name": "Highland Pediatrics",
+    "npi": "1074086859",
+    "tax_id": "92-3972137",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(747) 727-9985",
+    "address": {
+      "street": "9373 Oak Ave",
+      "city": "Seattle",
+      "state": "WA",
+      "zip": "98116"
+    }
+  },
+  "patient": {
+    "first_name": "Roberto",
+    "last_name": "Zhang",
+    "date_of_birth": "2013-12-29",
+    "gender": "M",
+    "address": {
+      "street": "7157 Walnut St",
+      "city": "Cleveland",
+      "state": "OH",
+      "zip": "44191"
+    },
+    "phone": "(631) 911-4511"
+  },
+  "insurance": {
+    "payer_id": "CIG-001",
+    "payer_name": "Cigna Open Access Plus",
+    "plan": "PPO",
+    "member_id": "U55285462",
+    "group_id": "GRP-78967"
+  },
+  "diagnoses": [
+    {
+      "code": "E66.9",
+      "description": "Obesity, unspecified"
+    },
+    {
+      "code": "N18.3",
+      "description": "Chronic kidney disease, stage 3"
+    },
+    {
+      "code": "E11.9",
+      "description": "Type 2 diabetes mellitus without complications"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "20610",
+      "description": "Major joint injection",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 94.33,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-04"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "90686",
+      "description": "Flu vaccine quadrivalent",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 26.43,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-21"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "27447",
+      "description": "Total knee arthroplasty",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 2359.74,
+      "diagnosis_pointer": "3",
+      "place_of_service": "21",
+      "place_of_service_desc": "Inpatient Hospital",
+      "date_of_service": "2026-04-24"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "97140",
+      "description": "Manual therapy (15 min)",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 34.4,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-14"
+    }
+  ],
+  "total_charge_amount": 2514.9,
+  "currency": "USD",
+  "prior_auth_number": null
+}

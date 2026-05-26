@@ -1,0 +1,102 @@
+{
+  "submission_id": "CLM-2026-1001576",
+  "submitted_at": "2026-04-27T13:37:00",
+  "submitter": {
+    "name": "Forest Hills Urgent Care",
+    "npi": "2594027908",
+    "tax_id": "39-8572682",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(563) 380-3671",
+    "address": {
+      "street": "8642 Highland Ave",
+      "city": "Cincinnati",
+      "state": "OH",
+      "zip": "45261"
+    }
+  },
+  "patient": {
+    "first_name": "Samuel",
+    "last_name": "Edwards",
+    "date_of_birth": "1996-01-10",
+    "gender": "M",
+    "address": {
+      "street": "4806 Jefferson Dr",
+      "city": "Omaha",
+      "state": "NE",
+      "zip": "68113"
+    },
+    "phone": "(504) 978-7651"
+  },
+  "insurance": {
+    "payer_id": "CIG-001",
+    "payer_name": "Cigna Open Access Plus",
+    "plan": "PPO",
+    "member_id": "U64037985",
+    "group_id": "GRP-22699"
+  },
+  "diagnoses": [
+    {
+      "code": "E11.9",
+      "description": "Type 2 diabetes mellitus without complications"
+    },
+    {
+      "code": "K21.9",
+      "description": "Gastro-esophageal reflux disease without esophagitis"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99285",
+      "description": "ED visit, high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 446.34,
+      "diagnosis_pointer": "1",
+      "place_of_service": "23",
+      "place_of_service_desc": "Emergency Room \u2014 Hospital",
+      "date_of_service": "2026-04-18"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99214",
+      "description": "Office visit, established, mod-high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 199.78,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-03-30"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99281",
+      "description": "ED visit, low",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 119.48,
+      "diagnosis_pointer": "1",
+      "place_of_service": "23",
+      "place_of_service_desc": "Emergency Room \u2014 Hospital",
+      "date_of_service": "2026-04-23"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "99422",
+      "description": "Online digital E/M, 11-20 min",
+      "modifiers": [
+        "95"
+      ],
+      "units": 1,
+      "charge_amount": 45.26,
+      "diagnosis_pointer": "2",
+      "place_of_service": "02",
+      "place_of_service_desc": "Telehealth",
+      "date_of_service": "2026-04-21"
+    }
+  ],
+  "total_charge_amount": 810.86,
+  "currency": "USD",
+  "prior_auth_number": null
+}

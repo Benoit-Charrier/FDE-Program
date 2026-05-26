@@ -1,0 +1,73 @@
+{
+  "submission_id": "CLM-2026-1001460",
+  "submitted_at": "2026-04-27T13:10:00",
+  "submitter": {
+    "name": "Maya Patel, DPT",
+    "npi": "5248568907",
+    "tax_id": "16-2749174",
+    "specialty": "Physical Therapy",
+    "phone": "(892) 613-7296",
+    "address": {
+      "street": "1659 Birch Ct",
+      "city": "Philadelphia",
+      "state": "PA",
+      "zip": "19120"
+    }
+  },
+  "patient": {
+    "first_name": "Patrick",
+    "last_name": "Rodriguez",
+    "date_of_birth": "1966-04-26",
+    "gender": "M",
+    "address": {
+      "street": "528 Ridge Rd",
+      "city": "Omaha",
+      "state": "NE",
+      "zip": "68178"
+    },
+    "phone": "(949) 621-4496"
+  },
+  "insurance": {
+    "payer_id": "BCBS-IL",
+    "payer_name": "Blue Cross Blue Shield of Illinois",
+    "plan": "PPO Choice",
+    "member_id": "XOJ917508734",
+    "group_id": "GRP-10716",
+    "coverage_effective_date": "2026-06-14"
+  },
+  "diagnoses": [
+    {
+      "code": "E78.5",
+      "description": "Hyperlipidemia, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "44970",
+      "description": "Laparoscopic appendectomy",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 2882.44,
+      "diagnosis_pointer": "1",
+      "place_of_service": "21",
+      "place_of_service_desc": "Inpatient Hospital",
+      "date_of_service": "2026-04-12"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "85025",
+      "description": "CBC w/ differential",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 16.3,
+      "diagnosis_pointer": "1",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-03-30"
+    }
+  ],
+  "total_charge_amount": 2898.74,
+  "currency": "USD",
+  "prior_auth_number": null
+}

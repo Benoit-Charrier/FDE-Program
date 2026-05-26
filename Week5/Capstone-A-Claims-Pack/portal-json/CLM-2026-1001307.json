@@ -1,0 +1,80 @@
+{
+  "submission_id": "CLM-2026-1001307",
+  "submitted_at": "2026-04-27T12:26:00",
+  "submitter": {
+    "name": "Stefan Anderson, DO",
+    "npi": "0979699650",
+    "tax_id": "",
+    "specialty": "Family Medicine",
+    "phone": "(598) 741-9934",
+    "address": {
+      "street": "7003 Franklin Rd",
+      "city": "Portland",
+      "state": "OR",
+      "zip": "97229"
+    }
+  },
+  "patient": {
+    "first_name": "Brian",
+    "last_name": "Brown",
+    "date_of_birth": "1939-09-27",
+    "gender": "M",
+    "address": {
+      "street": "2166 Highland Ave",
+      "city": "Tampa",
+      "state": "FL",
+      "zip": "33692"
+    },
+    "phone": "(876) 971-2486"
+  },
+  "insurance": {
+    "payer_id": "MCR-001",
+    "payer_name": "Medicare Part B",
+    "plan": "Original Medicare",
+    "member_id": "4VY6JXT9FT0",
+    "group_id": "GRP-50295"
+  },
+  "diagnoses": [
+    {
+      "code": "I25.10",
+      "description": "Atherosclerotic heart disease without angina"
+    },
+    {
+      "code": "E11.9",
+      "description": "Type 2 diabetes mellitus without complications"
+    },
+    {
+      "code": "J02.9",
+      "description": "Acute pharyngitis, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "72148",
+      "description": "MRI lumbar spine without contrast",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 645.46,
+      "diagnosis_pointer": "1",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-03-28"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99213",
+      "description": "Office visit, established, low-mod",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 138.31,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-14"
+    }
+  ],
+  "total_charge_amount": 783.77,
+  "currency": "USD",
+  "prior_auth_number": null
+}

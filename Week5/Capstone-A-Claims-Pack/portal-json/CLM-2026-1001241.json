@@ -1,0 +1,67 @@
+{
+  "submission_id": "CLM-2026-1001241",
+  "submitted_at": "2026-04-27T12:13:00",
+  "submitter": {
+    "name": "Priya Singh, NP",
+    "npi": "9906049096",
+    "tax_id": "68-9136954",
+    "specialty": "Nurse Practitioner",
+    "phone": "(320) 674-1268",
+    "address": {
+      "street": "4118 Oak Ave",
+      "city": "Charlotte",
+      "state": "NC",
+      "zip": "28298"
+    }
+  },
+  "patient": {
+    "first_name": "Travis",
+    "last_name": "Taylor",
+    "date_of_birth": "1942-10-10",
+    "gender": "M",
+    "address": {
+      "street": "4575 Cedar Ct",
+      "city": "Omaha",
+      "state": "NE",
+      "zip": "68129"
+    },
+    "phone": "(517) 798-7292"
+  },
+  "insurance": {
+    "payer_id": "MCR-001",
+    "payer_name": "Medicare Part B",
+    "plan": "Original Medicare",
+    "member_id": "2QQ5QWE2RW5",
+    "group_id": "GRP-38668"
+  },
+  "diagnoses": [],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99396",
+      "description": "Preventive established, 40-64",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 185.42,
+      "diagnosis_pointer": "1",
+      "place_of_service": "31",
+      "place_of_service_desc": "Skilled Nursing Facility",
+      "date_of_service": "2026-04-16"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99213",
+      "description": "Office visit, established, low-mod",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 129.56,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-22"
+    }
+  ],
+  "total_charge_amount": 314.98,
+  "currency": "USD",
+  "prior_auth_number": null
+}

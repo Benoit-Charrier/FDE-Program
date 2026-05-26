@@ -1,0 +1,61 @@
+{
+  "submission_id": "CLM-2026-1001394",
+  "submitted_at": "2026-04-27T12:49:00",
+  "submitter": {
+    "name": "Whitney Cohen, MD",
+    "npi": "5904707901",
+    "tax_id": "13-3827856",
+    "specialty": "Cardiology",
+    "phone": "(397) 704-1374",
+    "address": {
+      "street": "507 Park Blvd",
+      "city": "Salt Lake City",
+      "state": "UT",
+      "zip": "84193"
+    }
+  },
+  "patient": {
+    "first_name": "Quinn",
+    "last_name": "Foster",
+    "date_of_birth": "1936-10-15",
+    "gender": "F",
+    "address": {
+      "street": "2515 Forest Dr",
+      "city": "Raleigh",
+      "state": "NC",
+      "zip": "27631"
+    },
+    "phone": "(602) 744-4013"
+  },
+  "insurance": {
+    "payer_id": "UHC-001",
+    "payer_name": "UnitedHealthcare Choice Plus",
+    "plan": "PPO",
+    "member_id": "449818827-04",
+    "group_id": "GRP-69916",
+    "coverage_termination_date": "2026-01-28"
+  },
+  "diagnoses": [
+    {
+      "code": "Z23",
+      "description": "Encounter for immunization"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "27447",
+      "description": "Total knee arthroplasty",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 5651.9,
+      "diagnosis_pointer": "1",
+      "place_of_service": "21",
+      "place_of_service_desc": "Inpatient Hospital",
+      "date_of_service": "2026-04-05"
+    }
+  ],
+  "total_charge_amount": 5651.9,
+  "currency": "USD",
+  "prior_auth_number": null
+}

@@ -1,0 +1,91 @@
+{
+  "submission_id": "CLM-2026-1001361",
+  "submitted_at": "2026-04-27T12:44:00",
+  "submitter": {
+    "name": "Summit Cardiology Group",
+    "npi": "5948614704",
+    "tax_id": "21-7122446",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(280) 745-5029",
+    "address": {
+      "street": "7585 Lake Rd",
+      "city": "Cleveland",
+      "state": "OH",
+      "zip": "44139"
+    }
+  },
+  "patient": {
+    "first_name": "Zane",
+    "last_name": "Vargas",
+    "date_of_birth": "1939-10-21",
+    "gender": "M",
+    "address": {
+      "street": "5950 Lincoln St",
+      "city": "Indianapolis",
+      "state": "IN",
+      "zip": "46235"
+    },
+    "phone": "(661) 916-7605"
+  },
+  "insurance": {
+    "payer_id": "ANT-001",
+    "payer_name": "Anthem Blue Access",
+    "plan": "PPO",
+    "member_id": "YYL37747128",
+    "group_id": "GRP-52766"
+  },
+  "diagnoses": [],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "97140",
+      "description": "Manual therapy (15 min)",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 41.6,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-13"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "83036",
+      "description": "Hemoglobin A1c",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 31.73,
+      "diagnosis_pointer": "2",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-10"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99213",
+      "description": "Office visit, established, low-mod",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 97.85,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-21"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "44970",
+      "description": "Laparoscopic appendectomy",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 1729.96,
+      "diagnosis_pointer": "2",
+      "place_of_service": "21",
+      "place_of_service_desc": "Inpatient Hospital",
+      "date_of_service": "2026-04-14"
+    }
+  ],
+  "total_charge_amount": 1901.14,
+  "currency": "USD",
+  "prior_auth_number": null
+}

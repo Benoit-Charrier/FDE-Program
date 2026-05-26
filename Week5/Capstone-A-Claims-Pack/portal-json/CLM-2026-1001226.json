@@ -1,0 +1,68 @@
+{
+  "submission_id": "CLM-2026-1001226",
+  "submitted_at": "2026-04-27T12:06:00",
+  "submitter": {
+    "name": "Jerome Singh, PA",
+    "npi": "5541175468",
+    "tax_id": "39-8572682",
+    "specialty": "Physician Assistant",
+    "phone": "(928) 622-2144",
+    "address": {
+      "street": "8350 Park Blvd",
+      "city": "Indianapolis",
+      "state": "IN",
+      "zip": "46260"
+    }
+  },
+  "patient": {
+    "first_name": "Stefan",
+    "last_name": "Jackson",
+    "date_of_birth": "2010-09-29",
+    "gender": "M",
+    "address": {
+      "street": "3665 Hill St",
+      "city": "Nashville",
+      "state": "TN",
+      "zip": "37298"
+    },
+    "phone": "(452) 826-2539"
+  },
+  "insurance": {
+    "payer_id": "HUM-001",
+    "payer_name": "Humana Gold Plus",
+    "plan": "HMO",
+    "member_id": "H66609416",
+    "group_id": "GRP-16340"
+  },
+  "diagnoses": [
+    {
+      "code": "J06.9",
+      "description": "Acute upper respiratory infection, unspecified"
+    },
+    {
+      "code": "E66.9",
+      "description": "Obesity, unspecified"
+    },
+    {
+      "code": "M17.11",
+      "description": "Unilateral primary osteoarthritis, right knee"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99285",
+      "description": "ED visit, high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 440.83,
+      "diagnosis_pointer": "1",
+      "place_of_service": "23",
+      "place_of_service_desc": "Emergency Room \u2014 Hospital",
+      "date_of_service": "2026-03-29"
+    }
+  ],
+  "total_charge_amount": 440.83,
+  "currency": "USD",
+  "prior_auth_number": null
+}

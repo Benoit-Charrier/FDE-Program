@@ -1,0 +1,34 @@
+From: billing@crestviewimagi.example
+To: claims-intake@payer.example
+Date: Mon, 27 Apr 2026 09:03:00 -0500
+Subject: Outstanding claim - DOS 2026-04-20
+
+Hi team,
+
+Please process the following claim. Patient was seen at our office on 2026-04-20.
+
+Patient: Young, Stefan (DOB 1944-11-07, M)
+Member ID: YYL21110186    Plan: Anthem Blue Access - PPO
+Group: GRP-97133
+Address: 3399 Park Blvd, Columbus, OH 43254
+
+Provider: Crestview Imaging Center, NPI 1007644260, Tax ID 22-7064332
+Specialty: Multi-specialty Clinic
+
+Diagnoses:
+  - K21.9 Gastro-esophageal reflux disease without esophagitis
+  - J44.9 Chronic obstructive pulmonary disease, unspecified
+  - R07.9 Chest pain, unspecified
+
+Services rendered:
+  - 2026-04-20: CPT 99999 (Chest X-ray, 2 views), 2 unit(s), $115.15
+  - 2026-04-26: CPT 99205 (Office visit, new pt, comprehensive), 1 unit(s), $304.79
+  - 2026-03-31: CPT 99422 (Online digital E/M, 11-20 min) mod 95, 1 unit(s), $39.91
+
+Total: $459.85
+Claim reference: CLM-2026-1001936
+
+This one got stuck — appreciate the help!
+
+Karen
+Front Office

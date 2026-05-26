@@ -1,0 +1,140 @@
+{
+  "resourceType": "Claim",
+  "id": "CLM-2026-1001804",
+  "status": "active",
+  "type": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+        "code": "professional"
+      }
+    ]
+  },
+  "use": "claim",
+  "patient": {
+    "reference": "Patient/YYL29702985",
+    "display": "Whitney Garcia"
+  },
+  "billablePeriod": {
+    "start": "2026-04-07",
+    "end": "2026-03-29"
+  },
+  "created": "2026-04-27T14:31:00",
+  "insurer": {
+    "reference": "Organization/ANT-001",
+    "display": "Anthem Blue Access"
+  },
+  "provider": {
+    "reference": "Practitioner/0143625900",
+    "display": "Wyatt Chowdhury, MD"
+  },
+  "priority": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/processpriority",
+        "code": "normal"
+      }
+    ]
+  },
+  "diagnosis": [
+    {
+      "sequence": 1,
+      "diagnosisCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/sid/icd-10-cm",
+            "code": "J06.9",
+            "display": "Acute upper respiratory infection, unspecified"
+          }
+        ]
+      }
+    }
+  ],
+  "insurance": [
+    {
+      "sequence": 1,
+      "focal": true,
+      "coverage": {
+        "display": "PPO via Anthem Blue Access"
+      }
+    }
+  ],
+  "item": [
+    {
+      "sequence": 1,
+      "diagnosisSequence": [
+        1
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "99999",
+            "display": "Preventive established, 18-39"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-04-07",
+      "quantity": {
+        "value": 1
+      },
+      "unitPrice": {
+        "value": 178.85,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 178.85,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "11"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 2,
+      "diagnosisSequence": [
+        1
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "99285",
+            "display": "ED visit, high"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-03-29",
+      "quantity": {
+        "value": 1
+      },
+      "unitPrice": {
+        "value": 320.7,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 320.7,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "23"
+          }
+        ]
+      }
+    }
+  ],
+  "total": {
+    "value": 499.55,
+    "currency": "USD"
+  }
+}

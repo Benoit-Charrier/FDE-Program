@@ -1,0 +1,92 @@
+{
+  "submission_id": "CLM-2026-1001482",
+  "submitted_at": "2026-04-27T13:15:00",
+  "submitter": {
+    "name": "Oak Tree Pediatric Associates",
+    "npi": "4188152289",
+    "tax_id": "47-1052444",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(676) 637-4013",
+    "address": {
+      "street": "5061 Forest Dr",
+      "city": "Sacramento",
+      "state": "CA",
+      "zip": "95816"
+    }
+  },
+  "patient": {
+    "first_name": "Rosa",
+    "last_name": "Johnson",
+    "date_of_birth": "1951-04-25",
+    "gender": "F",
+    "address": {
+      "street": "1974 Spring St",
+      "city": "Sacramento",
+      "state": "CA",
+      "zip": "95864"
+    },
+    "phone": "(260) 945-7850"
+  },
+  "insurance": {
+    "payer_id": "ANT-001",
+    "payer_name": "Anthem Blue Access",
+    "plan": "PPO",
+    "member_id": "YYL53697451",
+    "group_id": "GRP-66279"
+  },
+  "diagnoses": [
+    {
+      "code": "J45.909",
+      "description": "Unspecified asthma, uncomplicated"
+    },
+    {
+      "code": "M25.562",
+      "description": "Pain in left knee"
+    },
+    {
+      "code": "Z00.00",
+      "description": "Encounter for general adult medical examination"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "20610",
+      "description": "Major joint injection",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 207.55,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-25"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99205",
+      "description": "Office visit, new pt, comprehensive",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 295.43,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-20"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "47562",
+      "description": "Laparoscopic cholecystectomy",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 1746.49,
+      "diagnosis_pointer": "3",
+      "place_of_service": "21",
+      "place_of_service_desc": "Inpatient Hospital",
+      "date_of_service": "2026-03-31"
+    }
+  ],
+  "total_charge_amount": 2249.47,
+  "currency": "USD",
+  "prior_auth_number": null
+}

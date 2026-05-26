@@ -1,0 +1,84 @@
+{
+  "submission_id": "CLM-2026-1001245",
+  "submitted_at": "2026-04-27T12:14:00",
+  "submitter": {
+    "name": "Nora Singh, MD",
+    "npi": "7394700987",
+    "tax_id": "92-3972137",
+    "specialty": "Radiology",
+    "phone": "(836) 801-9451",
+    "address": {
+      "street": "1731 Main St",
+      "city": "Charlotte",
+      "state": "NC",
+      "zip": "28277"
+    }
+  },
+  "patient": {
+    "first_name": "Yusuf",
+    "last_name": "Singh",
+    "date_of_birth": "1961-07-05",
+    "gender": "M",
+    "address": {
+      "street": "3289 Spring St",
+      "city": "Indianapolis",
+      "state": "IN",
+      "zip": "46254"
+    },
+    "phone": "(306) 313-7822"
+  },
+  "insurance": {
+    "payer_id": "MCR-001",
+    "payer_name": "Medicare Part B",
+    "plan": "Original Medicare",
+    "member_id": "7WX9HRT2FR0",
+    "group_id": "GRP-49622"
+  },
+  "diagnoses": [
+    {
+      "code": "R10.9",
+      "description": "Unspecified abdominal pain"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99285",
+      "description": "ED visit, high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 315.04,
+      "diagnosis_pointer": "1",
+      "place_of_service": "23",
+      "place_of_service_desc": "Emergency Room \u2014 Hospital",
+      "date_of_service": "2026-04-01"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99215",
+      "description": "Office visit, established, high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 263.5,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-12"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99214",
+      "description": "Office visit, established, mod-high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 209.36,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-07"
+    }
+  ],
+  "total_charge_amount": 787.9,
+  "currency": "USD",
+  "prior_auth_number": null
+}

@@ -1,0 +1,34 @@
+From: billing@feliciaanderso.example
+To: claims-intake@payer.example
+Date: Mon, 27 Apr 2026 10:14:00 -0500
+Subject: submitting attached claim - patient Chen
+
+Hi team,
+
+Please process the following claim. Patient was seen at our office on 2026-04-09.
+
+Patient: Chen, Quinn (DOB 2021-01-14, F)
+Member ID: 902066228    Plan: Blue Cross Blue Shield of Illinois - HMO Standard
+Group: GRP-66192
+Address: 434 Park Blvd, Seattle, WA 9812
+
+Provider: Felicia Anderson, DPT, NPI 3287336787, Tax ID 21-6727461
+Specialty: Physical Therapy
+
+Diagnoses:
+  - M25.561 Pain in right knee
+  - J45.909 Unspecified asthma, uncomplicated
+  - M17.11 Unilateral primary osteoarthritis, right knee
+
+Services rendered:
+  - 2026-04-09: CPT 64483 (Injection, transforaminal epidural), 2 unit(s), $820.02
+  - 2026-04-05: CPT 99204 (Office visit, new pt, high), 1 unit(s), $269.63
+  - 2026-04-21: CPT 64483 (Injection, transforaminal epidural), 2 unit(s), $691.67
+  - 2026-04-02: CPT 64483 (Injection, transforaminal epidural), 1 unit(s), $317.70
+
+Total: $2099.02
+Claim reference: CLM-2026-1001908
+
+Please process at your earliest. Thanks!
+
+--Donna, Billing Office

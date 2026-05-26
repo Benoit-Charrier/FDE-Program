@@ -1,0 +1,30 @@
+============================
+   FAX COVER SHEET
+============================
+TO:    Blue Cross Blue Shield of Illinois Claims Intake
+FROM:  Highland Pediatrics
+DATE:  04/27/2026
+PAGES: 1 of 5
+
+URGENT [_]   FOR REVIEW [X]   PLEASE COMMENT [_]   PLEASE REPLY [_]
+
+RE: Claim submission - patient Johnson, Carlos
+
+Member ID:     XOJ493111067
+DOB:           1967-10-29
+Plan:          HMO Standard
+Group:         GRP-17939
+DOS:           2026-04-13
+
+Diagnoses:     E66.9
+Procedures:    71046
+Total charge:  $55.20
+
+Provider NPI:  5963928350
+Tax ID:        25-6701662
+
+NOTES:
+Resubmission - prior denial coded incorrect dx, now corrected.
+
+If problems with this fax, call (267) 934-1095
+============================

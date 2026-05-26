@@ -1,0 +1,101 @@
+{
+  "submission_id": "CLM-2026-1001261",
+  "submitted_at": "2026-04-27T12:19:00",
+  "submitter": {
+    "name": "Bright Family Practice",
+    "npi": "4209261453",
+    "tax_id": "10-3567542",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(943) 465-3426",
+    "address": {
+      "street": "7109 Hill St",
+      "city": "Cincinnati",
+      "state": "OH",
+      "zip": "45288"
+    }
+  },
+  "patient": {
+    "first_name": "Aaliyah",
+    "last_name": "Vargas",
+    "date_of_birth": "2006-07-11",
+    "gender": "F",
+    "address": {
+      "street": "9536 Washington Ave",
+      "city": "Boston",
+      "state": "MA",
+      "zip": "02155"
+    },
+    "phone": "(337) 790-7915"
+  },
+  "insurance": {
+    "payer_id": "MCD-IL",
+    "payer_name": "Illinois Medicaid",
+    "plan": "Medicaid",
+    "member_id": "378147172",
+    "group_id": "GRP-29766"
+  },
+  "diagnoses": [
+    {
+      "code": "J45.909",
+      "description": "Unspecified asthma, uncomplicated"
+    },
+    {
+      "code": "F32.9",
+      "description": "Major depressive disorder, single episode"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "83036",
+      "description": "Hemoglobin A1c",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 39.34,
+      "diagnosis_pointer": "1",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-26"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "73030",
+      "description": "Shoulder X-ray, complete",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 83.37,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-18"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99203",
+      "description": "Office visit, new pt, mod",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 131.24,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-05"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "99395",
+      "description": "Preventive established, 18-39",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 174.94,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-19"
+    }
+  ],
+  "total_charge_amount": 428.89,
+  "currency": "USD",
+  "prior_auth_number": null,
+  "resubmission_of": "CLM-2026-1773399"
+}

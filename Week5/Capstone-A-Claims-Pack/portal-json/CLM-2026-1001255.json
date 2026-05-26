@@ -1,0 +1,68 @@
+{
+  "submission_id": "CLM-2026-1001255",
+  "submitted_at": "2026-04-27T12:13:00",
+  "submitter": {
+    "name": "Tina Martinez, NP",
+    "npi": "",
+    "tax_id": "23-5462507",
+    "specialty": "Nurse Practitioner",
+    "phone": "(926) 438-5525",
+    "address": {
+      "street": "3886 Walnut St",
+      "city": "Cincinnati",
+      "state": "OH",
+      "zip": "45273"
+    }
+  },
+  "patient": {
+    "first_name": "Felix",
+    "last_name": "Mitchell",
+    "date_of_birth": "1985-01-25",
+    "gender": "M",
+    "address": {
+      "street": "1983 Washington Ave",
+      "city": "Indianapolis",
+      "state": "IN",
+      "zip": "46210"
+    },
+    "phone": "(523) 303-2592"
+  },
+  "insurance": {
+    "payer_id": "MCR-001",
+    "payer_name": "Medicare Part B",
+    "plan": "Original Medicare",
+    "member_id": "9WE6DQM5XF8",
+    "group_id": "GRP-17933"
+  },
+  "diagnoses": [
+    {
+      "code": "R10.9",
+      "description": "Unspecified abdominal pain"
+    },
+    {
+      "code": "I10",
+      "description": "Essential (primary) hypertension"
+    },
+    {
+      "code": "N18.3",
+      "description": "Chronic kidney disease, stage 3"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "64483",
+      "description": "Injection, transforaminal epidural",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 603.9,
+      "diagnosis_pointer": "1",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-03-30"
+    }
+  ],
+  "total_charge_amount": 603.9,
+  "currency": "USD",
+  "prior_auth_number": null
+}

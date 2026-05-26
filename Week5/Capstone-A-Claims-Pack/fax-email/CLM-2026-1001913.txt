@@ -1,0 +1,30 @@
+============================
+   FAX COVER SHEET
+============================
+TO:    Anthem Blue Access Claims Intake
+FROM:  Crestview Imaging Center
+DATE:  04/27/2026
+PAGES: 1 of 4
+
+URGENT [_]   FOR REVIEW [X]   PLEASE COMMENT [_]   PLEASE REPLY [_]
+
+RE: Claim submission - patient Foster, Nathan
+
+Member ID:     YYL10157418
+DOB:           1990-03-05
+Plan:          PPO
+Group:         GRP-26240
+DOS:           2026-03-28
+
+Diagnoses:     E11.9
+Procedures:    83036, 20610, 20610, 99285
+Total charge:  $965.29
+
+Provider NPI:  5559782472
+Tax ID:        78-3382094
+
+NOTES:
+Resubmission - prior denial coded incorrect dx, now corrected.
+
+If problems with this fax, call (488) 257-7873
+============================

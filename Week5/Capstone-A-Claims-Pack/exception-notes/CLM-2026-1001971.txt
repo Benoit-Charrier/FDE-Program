@@ -1,0 +1,11 @@
+PHONE LOG - PROVIDER OUTREACH
+
+Date/Time: 04/27/2026 15:15
+Caller: Office mgr from Carla Vargas, MD
+Re: Patient Xavier Khan (member 911485624-06)
+
+Caller states: amount paid is less than expected - need explanation of payment
+
+Resolution: Pulled claim CLM-2026-1001971. Found - claim missing modifier 25 - faxed correction request.
+
+Closed: 15:15  Agent: S.Iqbal

@@ -1,0 +1,236 @@
+{
+  "resourceType": "Claim",
+  "id": "CLM-2026-1001882",
+  "status": "active",
+  "type": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+        "code": "professional"
+      }
+    ]
+  },
+  "use": "claim",
+  "patient": {
+    "reference": "Patient/201941047-04",
+    "display": "LiLY Gonzalez"
+  },
+  "billablePeriod": {
+    "start": "2026-04-17",
+    "end": "2026-04-04"
+  },
+  "created": "2026-04-27T14:52:00",
+  "insurer": {
+    "reference": "Organization/UHC-001",
+    "display": "UnitedHealthcare Choice Plus"
+  },
+  "provider": {
+    "reference": "Practitioner/9485403878",
+    "display": "Bayside Orthopedics"
+  },
+  "priority": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/processpriority",
+        "code": "normal"
+      }
+    ]
+  },
+  "diagnosis": [
+    {
+      "sequence": 1,
+      "diagnosisCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/sid/icd-10-cm",
+            "code": "S93.401A",
+            "display": "Sprain of unspecified ligament of right ankle, initial"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 2,
+      "diagnosisCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/sid/icd-10-cm",
+            "code": "G47.33",
+            "display": "Obstructive sleep apnea (adult) (pediatric)"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 3,
+      "diagnosisCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/sid/icd-10-cm",
+            "code": "K21.9",
+            "display": "Gastro-esophageal reflux disease without esophagitis"
+          }
+        ]
+      }
+    }
+  ],
+  "insurance": [
+    {
+      "sequence": 1,
+      "focal": true,
+      "coverage": {
+        "display": "PPO via UnitedHealthcare Choice Plus"
+      }
+    }
+  ],
+  "item": [
+    {
+      "sequence": 1,
+      "diagnosisSequence": [
+        1
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "20610",
+            "display": "Major joint injection"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-04-17",
+      "quantity": {
+        "value": 2
+      },
+      "unitPrice": {
+        "value": 105.33,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 210.66,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "12"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 2,
+      "diagnosisSequence": [
+        2
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "27447",
+            "display": "Total knee arthroplasty"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-04-26",
+      "quantity": {
+        "value": 1
+      },
+      "unitPrice": {
+        "value": 2473.24,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 2473.24,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "21"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 3,
+      "diagnosisSequence": [
+        3
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "99214",
+            "display": "Office visit, established, mod-high"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-04-18",
+      "quantity": {
+        "value": 1
+      },
+      "unitPrice": {
+        "value": 160.88,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 160.88,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "11"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 4,
+      "diagnosisSequence": [
+        1
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "99284",
+            "display": "ED visit, mod-high"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-04-04",
+      "quantity": {
+        "value": 1
+      },
+      "unitPrice": {
+        "value": 278.71,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 278.71,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "23"
+          }
+        ]
+      }
+    }
+  ],
+  "total": {
+    "value": 3123.49,
+    "currency": "USD"
+  }
+}

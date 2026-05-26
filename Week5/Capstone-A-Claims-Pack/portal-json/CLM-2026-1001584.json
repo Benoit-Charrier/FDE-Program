@@ -1,0 +1,72 @@
+{
+  "submission_id": "CLM-2026-1001584",
+  "submitted_at": "2026-04-27T13:41:00",
+  "submitter": {
+    "name": "Highland Pediatrics",
+    "npi": "0157586002",
+    "tax_id": "11-5860495",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(530) 509-8086",
+    "address": {
+      "street": "1624 Main St",
+      "city": "Albuquerque",
+      "state": "NM",
+      "zip": "87182"
+    }
+  },
+  "patient": {
+    "first_name": "Donna",
+    "last_name": "Reyes",
+    "date_of_birth": "1989-12-04",
+    "gender": "F",
+    "address": {
+      "street": "2802 Jefferson Dr",
+      "city": "St. Louis",
+      "state": "MO",
+      "zip": "63114"
+    },
+    "phone": "(845) 607-2905"
+  },
+  "insurance": {
+    "payer_id": "MCD-IL",
+    "payer_name": "Illinois Medicaid",
+    "plan": "Medicaid",
+    "member_id": "737133452",
+    "group_id": "GRP-30127"
+  },
+  "diagnoses": [
+    {
+      "code": "L98.9",
+      "description": "Disorder of the skin and subcutaneous tissue, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "12001",
+      "description": "Simple repair, superficial wound",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 194.6,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-18"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "73030",
+      "description": "Shoulder X-ray, complete",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 65.52,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-22"
+    }
+  ],
+  "total_charge_amount": 260.12,
+  "currency": "USD",
+  "prior_auth_number": null
+}

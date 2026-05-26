@@ -1,0 +1,92 @@
+{
+  "submission_id": "CLM-2026-1001422",
+  "submitted_at": "2026-04-27T12:58:00",
+  "submitter": {
+    "name": "Eastlake Wellness Clinic",
+    "npi": "7456286266",
+    "tax_id": "81-7841949",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(989) 653-1949",
+    "address": {
+      "street": "4709 Cherry Ln",
+      "city": "Denver",
+      "state": "CO",
+      "zip": "80230"
+    }
+  },
+  "patient": {
+    "first_name": "Ivan",
+    "last_name": "Vasquez",
+    "date_of_birth": "1977-10-18",
+    "gender": "M",
+    "address": {
+      "street": "2384 Lake Rd",
+      "city": "Indianapolis",
+      "state": "IN",
+      "zip": "46254"
+    },
+    "phone": "(651) 286-5083"
+  },
+  "insurance": {
+    "payer_id": "BCBS-IL",
+    "payer_name": "Blue Cross Blue Shield of Illinois",
+    "plan": "HMO Standard",
+    "member_id": "XOJ801441727",
+    "group_id": "GRP-10645"
+  },
+  "diagnoses": [
+    {
+      "code": "I10",
+      "description": "Essential (primary) hypertension"
+    },
+    {
+      "code": "N18.3",
+      "description": "Chronic kidney disease, stage 3"
+    },
+    {
+      "code": "R51.9",
+      "description": "Headache, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99285",
+      "description": "ED visit, high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 427.55,
+      "diagnosis_pointer": "1",
+      "place_of_service": "23",
+      "place_of_service_desc": "Emergency Room \u2014 Hospital",
+      "date_of_service": "2026-04-03"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "70551",
+      "description": "MRI brain without contrast",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 435.91,
+      "diagnosis_pointer": "2",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-04-20"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "44970",
+      "description": "Laparoscopic appendectomy",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 1320.74,
+      "diagnosis_pointer": "3",
+      "place_of_service": "21",
+      "place_of_service_desc": "Inpatient Hospital",
+      "date_of_service": "2026-04-05"
+    }
+  ],
+  "total_charge_amount": 2184.2,
+  "currency": "USD",
+  "prior_auth_number": null
+}

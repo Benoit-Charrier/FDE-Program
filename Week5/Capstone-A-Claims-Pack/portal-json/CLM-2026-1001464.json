@@ -1,0 +1,80 @@
+{
+  "submission_id": "CLM-2026-1001464",
+  "submitted_at": "2026-04-27T13:07:00",
+  "submitter": {
+    "name": "Gerald Tanaka, MD",
+    "npi": "9210213301",
+    "tax_id": "85-2693146",
+    "specialty": "Family Medicine",
+    "phone": "(398) 693-4199",
+    "address": {
+      "street": "4102 Main St",
+      "city": "Seattle",
+      "state": "WA",
+      "zip": "98147"
+    }
+  },
+  "patient": {
+    "first_name": "Kenji",
+    "last_name": "Vasquez",
+    "date_of_birth": "1989-04-02",
+    "gender": "M",
+    "address": {
+      "street": "9261 Franklin Rd",
+      "city": "Tampa",
+      "state": "FL",
+      "zip": "33667"
+    },
+    "phone": "(740) 500-3685"
+  },
+  "insurance": {
+    "payer_id": "UHC-001",
+    "payer_name": "UnitedHealthcare Choice Plus",
+    "plan": "PPO",
+    "member_id": "139524364-05",
+    "group_id": "GRP-52614"
+  },
+  "diagnoses": [
+    {
+      "code": "J02.9",
+      "description": "Acute pharyngitis, unspecified"
+    },
+    {
+      "code": "J06.9",
+      "description": "Acute upper respiratory infection, unspecified"
+    },
+    {
+      "code": "K21.9",
+      "description": "Gastro-esophageal reflux disease without esophagitis"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "90686",
+      "description": "Flu vaccine quadrivalent",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 57.78,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-09"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99205",
+      "description": "Office visit, new pt, comprehensive",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 289.0,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-22"
+    }
+  ],
+  "total_charge_amount": 346.78,
+  "currency": "USD",
+  "prior_auth_number": null
+}

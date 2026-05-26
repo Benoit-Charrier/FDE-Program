@@ -1,0 +1,64 @@
+{
+  "submission_id": "CLM-2026-1001536",
+  "submitted_at": "2026-04-27T13:26:00",
+  "submitter": {
+    "name": "Frank Martinez, MD",
+    "npi": "6918845247",
+    "tax_id": "68-7373123",
+    "specialty": "Emergency Medicine",
+    "phone": "(514) 742-9462",
+    "address": {
+      "street": "740 Sunset Blvd",
+      "city": "Omaha",
+      "state": "NE",
+      "zip": "68174"
+    }
+  },
+  "patient": {
+    "first_name": "Connor",
+    "last_name": "Foster",
+    "date_of_birth": "1968-12-27",
+    "gender": "M",
+    "address": {
+      "street": "7967 Birch Ct",
+      "city": "Boston",
+      "state": "MA",
+      "zip": "02124"
+    },
+    "phone": "(806) 247-4071"
+  },
+  "insurance": {
+    "payer_id": "BCBS-IL",
+    "payer_name": "Blue Cross Blue Shield of Illinois",
+    "plan": "HMO Standard",
+    "member_id": "XOJ683014568",
+    "group_id": "GRP-15014"
+  },
+  "diagnoses": [
+    {
+      "code": "Z23",
+      "description": "Encounter for immunization"
+    },
+    {
+      "code": "M54.5",
+      "description": "Low back pain"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99204",
+      "description": "Office visit, new pt, high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 252.87,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-25"
+    }
+  ],
+  "total_charge_amount": 252.87,
+  "currency": "USD",
+  "prior_auth_number": null
+}

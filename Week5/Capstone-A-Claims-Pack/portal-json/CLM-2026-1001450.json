@@ -1,0 +1,96 @@
+{
+  "submission_id": "CLM-2026-1001450",
+  "submitted_at": "2026-04-27T13:06:00",
+  "submitter": {
+    "name": "Elise DuBois, MD",
+    "npi": "7250220929",
+    "tax_id": "",
+    "specialty": "Radiology",
+    "phone": "(405) 413-7707",
+    "address": {
+      "street": "7077 Oak Ave",
+      "city": "Columbus",
+      "state": "OH",
+      "zip": "43257"
+    }
+  },
+  "patient": {
+    "first_name": "Felix",
+    "last_name": "Novak",
+    "date_of_birth": "2018-02-22",
+    "gender": "M",
+    "address": {
+      "street": "5380 Oak Ave",
+      "city": "Denver",
+      "state": "CO",
+      "zip": "80259"
+    },
+    "phone": "(241) 714-1925"
+  },
+  "insurance": {
+    "payer_id": "MCD-IL",
+    "payer_name": "Illinois Medicaid",
+    "plan": "Medicaid",
+    "member_id": "558105588",
+    "group_id": "GRP-80675"
+  },
+  "diagnoses": [
+    {
+      "code": "H66.90",
+      "description": "Otitis media, unspecified, unspecified ear"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99396",
+      "description": "Preventive established, 40-64",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 231.91,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-26"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99285",
+      "description": "ED visit, high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 418.34,
+      "diagnosis_pointer": "1",
+      "place_of_service": "23",
+      "place_of_service_desc": "Emergency Room \u2014 Hospital",
+      "date_of_service": "2026-04-22"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99396",
+      "description": "Preventive established, 40-64",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 232.14,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-10"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "99281",
+      "description": "ED visit, low",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 95.19,
+      "diagnosis_pointer": "1",
+      "place_of_service": "23",
+      "place_of_service_desc": "Emergency Room \u2014 Hospital",
+      "date_of_service": "2026-04-16"
+    }
+  ],
+  "total_charge_amount": 977.58,
+  "currency": "USD",
+  "prior_auth_number": null
+}

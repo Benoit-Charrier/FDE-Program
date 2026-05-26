@@ -1,0 +1,12 @@
+[Internal note - intake processor]
+
+Pt: Johnson, Logan DOB 03/24/81
+Member: 58823518U
+Provider: Summit Cardiology Group (NPI 0926936184)
+DOS: 2026-04-20
+Total: $4427.28
+
+Issue: Pt name on claim does not match enrollment. Need to verify ID.
+
+Routed to: Tier-2 review
+- MWong 15:18

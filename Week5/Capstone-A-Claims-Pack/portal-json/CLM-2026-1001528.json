@@ -1,0 +1,98 @@
+{
+  "submission_id": "CLM-2026-1001528",
+  "submitted_at": "2026-04-27T13:27:00",
+  "submitter": {
+    "name": "Aaliyah Anderson, MD",
+    "npi": "3198720864",
+    "tax_id": "23-1130624",
+    "specialty": "Orthopedic Surgery",
+    "phone": "(391) 398-7690",
+    "address": {
+      "street": "200 Highland Ave",
+      "city": "Kansas City",
+      "state": "MO",
+      "zip": "64152"
+    }
+  },
+  "patient": {
+    "first_name": "Xavier",
+    "last_name": "Gonzalez",
+    "date_of_birth": "2016-12-22",
+    "gender": "M",
+    "address": {
+      "street": "8172 Birch Ct",
+      "city": "Salt Lake City",
+      "state": "UT",
+      "zip": "8419"
+    },
+    "phone": "(533) 826-4643"
+  },
+  "insurance": {
+    "payer_id": "MCR-001",
+    "payer_name": "Medicare Part B",
+    "plan": "Original Medicare",
+    "member_id": "6XH6CFY0ET9",
+    "group_id": "GRP-30843"
+  },
+  "diagnoses": [
+    {
+      "code": "J45.909",
+      "description": "Unspecified asthma, uncomplicated"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "64483",
+      "description": "Injection, transforaminal epidural",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 772.79,
+      "diagnosis_pointer": "1",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-04-07"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "90471",
+      "description": "Immunization administration",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 19.12,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-16"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99421",
+      "description": "Online digital E/M, 5-10 min",
+      "modifiers": [
+        "95"
+      ],
+      "units": 1,
+      "charge_amount": 20.02,
+      "diagnosis_pointer": "1",
+      "place_of_service": "02",
+      "place_of_service_desc": "Telehealth",
+      "date_of_service": "2026-04-11"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "12001",
+      "description": "Simple repair, superficial wound",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 155.26,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-03-29"
+    }
+  ],
+  "total_charge_amount": 967.19,
+  "currency": "USD",
+  "prior_auth_number": null
+}

@@ -1,0 +1,46 @@
+From: Mike Iqbal <mike.iqbal@noahsinghdo.example>
+To: claims-intake@payer.example
+Cc: billing-dept@noahsinghdo.example
+Date: Mon, 27 Apr 2026 09:32:10 +0000
+Message-ID: <177729813757.6.7898275396392997054@noahsinghdo.example>
+Subject: FW: claim for Oscar Zimmerman =?utf-8?b?4oCU?= need help
+X-Submitter-NPI: 5129642076
+X-Submitter-TaxID: 92-3972137
+X-Originating-System: noahsinghdo.example MailRelay 4.2
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+Hi team,
+
+Please process the following claim. Patient was seen at our office on 2026-04=
+-15.
+
+Patient: Zimmerman, Oscar  (DOB 1973-09-29, M)
+Member ID: H55154081    Plan: Humana Gold Plus =E2=80=94 HMO
+Group: GRP-72318
+Address: 6523 Pine Ln, Philadelphia, PA 19165
+
+Provider: Noah Singh, DO, NPI 5129642076, Tax ID 92-3972137
+Specialty: Family Medicine
+
+Diagnoses:
+  - Z00.00  Encounter for general adult medical examination
+  - M79.7  Fibromyalgia
+  - R53.83  Other fatigue
+
+Services rendered:
+  - 2026-04-15: CPT 80053 (Comprehensive metabolic panel), 1 unit(s), $15.82
+  - 2026-04-04: CPT 80053 (Comprehensive metabolic panel), 1 unit(s), $17.24
+  - 2026-04-15: CPT 99215 (Office visit, established, high), 1 unit(s), $237.=
+47
+
+Total: $270.53
+Claim reference: CLM-2026-1001921
+
+Let me know if anything is missing.
+
+Thanks,
+Mike Iqbal
+Noah Singh, DO
+(935) 707-7794

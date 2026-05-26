@@ -1,0 +1,70 @@
+{
+  "submission_id": "CLM-2026-1001556",
+  "submitted_at": "2026-04-27T13:34:00",
+  "submitter": {
+    "name": "Priya Nakamura, DPT",
+    "npi": "5342739025",
+    "tax_id": "95-9044704",
+    "specialty": "Physical Therapy",
+    "phone": "(792) 938-4556",
+    "address": {
+      "street": "739 Jefferson Dr",
+      "city": "Tucson",
+      "state": "AZ",
+      "zip": "85773"
+    }
+  },
+  "patient": {
+    "first_name": "Noah",
+    "last_name": "Baker",
+    "date_of_birth": "1992-10-04",
+    "gender": "M",
+    "address": {
+      "street": "222 Oak Ave",
+      "city": "Buffalo",
+      "state": "NY",
+      "zip": "14247"
+    },
+    "phone": "(354) 835-6360"
+  },
+  "insurance": {
+    "payer_id": "MCD-IL",
+    "payer_name": "Illinois Medicaid",
+    "plan": "Medicaid",
+    "member_id": "402900705",
+    "group_id": "GRP-30781"
+  },
+  "diagnoses": [
+    {
+      "code": "Z00.00",
+      "description": "Encounter for general adult medical examination"
+    },
+    {
+      "code": "M79.7",
+      "description": "Fibromyalgia"
+    },
+    {
+      "code": "I10",
+      "description": "Essential (primary) hypertension"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99285",
+      "description": "ED visit, high",
+      "modifiers": [
+        "22"
+      ],
+      "units": 1,
+      "charge_amount": 415.61,
+      "diagnosis_pointer": "1",
+      "place_of_service": "23",
+      "place_of_service_desc": "Emergency Room \u2014 Hospital",
+      "date_of_service": "2026-04-24"
+    }
+  ],
+  "total_charge_amount": 415.61,
+  "currency": "USD",
+  "prior_auth_number": null
+}

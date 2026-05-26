@@ -1,0 +1,12 @@
+[Internal note - intake processor]
+
+Pt: Hayes, Nadia DOB 02/24/43
+Member: 9HF6CCN2WD0
+Provider: Westwood Internal Medicine (NPI 5496463524)
+DOS: 2026-03-30
+Total: $1821.42
+
+Issue: No prior auth on file for high-cost imaging.
+
+Routed to: Tier-2 review
+- RPatel 15:18

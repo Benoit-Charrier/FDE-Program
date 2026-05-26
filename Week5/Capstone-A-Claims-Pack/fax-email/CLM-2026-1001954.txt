@@ -1,0 +1,32 @@
+From: billing@saragoldbergmd.example
+To: claims-intake@payer.example
+Date: Mon, 27 Apr 2026 09:26:00 -0500
+Subject: Outstanding claim - DOS 2026-04-04
+
+Hi team,
+
+Please process the following claim. Patient was seen at our office on 2026-04-04.
+
+Patient: Gonzalez, Hannah (DOB 2018-10-16, F)
+Member ID: 434244562-07    Plan: UnitedHealthcare Navigate - HMO
+Group: GRP-85911
+Address: 4559 River Rd, Cincinnati, OH 45246
+
+Provider: Sara Goldberg, MD, NPI 6879206233, Tax ID 54-7633636
+Specialty: Emergency Medicine
+
+Diagnoses:
+  - Z00.00 Encounter for general adult medical examination
+
+Services rendered:
+  - 2026-04-04: CPT 99396 (Preventive established, 40-64), 1 unit(s), $217.63
+  - 2026-04-20: CPT 97110 (Therapeutic exercises (15 min)), 2 unit(s), $90.35
+  - 2026-04-08: CPT 64483 (Injection, transforaminal epidural), 1 unit(s), $393.76
+
+Total: $701.74
+Claim reference: CLM-2026-1001954
+
+This one got stuck — appreciate the help!
+
+Karen
+Front Office

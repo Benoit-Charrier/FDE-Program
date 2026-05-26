@@ -1,0 +1,109 @@
+{
+  "submission_id": "CLM-2026-1001377",
+  "submitted_at": "2026-04-27T12:45:00",
+  "submitter": {
+    "name": "Beatrice Anderson, DPT",
+    "npi": "6320834893",
+    "tax_id": "44-7392596",
+    "specialty": "Physical Therapy",
+    "phone": "(608) 838-5486",
+    "address": {
+      "street": "5595 Cherry Ln",
+      "city": "Houston",
+      "state": "TX",
+      "zip": "77058"
+    }
+  },
+  "patient": {
+    "first_name": "Brett",
+    "last_name": "Adams",
+    "date_of_birth": "1997-02-14",
+    "gender": "M",
+    "address": {
+      "street": "7246 Forest Dr",
+      "city": "Charlotte",
+      "state": "NC",
+      "zip": "28292"
+    },
+    "phone": "(603) 727-6372"
+  },
+  "insurance": {
+    "payer_id": "CIG-001",
+    "payer_name": "Cigna Open Access Plus",
+    "plan": "PPO",
+    "member_id": "U11990469",
+    "group_id": "GRP-23125",
+    "coverage_termination_date": "2026-02-04"
+  },
+  "diagnoses": [
+    {
+      "code": "M17.11",
+      "description": "Unilateral primary osteoarthritis, right knee"
+    },
+    {
+      "code": "R51.9",
+      "description": "Headache, unspecified"
+    },
+    {
+      "code": "M25.561",
+      "description": "Pain in right knee"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "71046",
+      "description": "Chest X-ray, 2 views",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 60.3,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-05"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99422",
+      "description": "Online digital E/M, 11-20 min",
+      "modifiers": [
+        "95"
+      ],
+      "units": 1,
+      "charge_amount": 41.49,
+      "diagnosis_pointer": "2",
+      "place_of_service": "02",
+      "place_of_service_desc": "Telehealth",
+      "date_of_service": "2026-03-28"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "90686",
+      "description": "Flu vaccine quadrivalent",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 24.17,
+      "diagnosis_pointer": "3",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-03-29"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "99421",
+      "description": "Online digital E/M, 5-10 min",
+      "modifiers": [
+        "95"
+      ],
+      "units": 1,
+      "charge_amount": 17.06,
+      "diagnosis_pointer": "1",
+      "place_of_service": "02",
+      "place_of_service_desc": "Telehealth",
+      "date_of_service": "2026-04-15"
+    }
+  ],
+  "total_charge_amount": 143.02,
+  "currency": "USD",
+  "prior_auth_number": null
+}

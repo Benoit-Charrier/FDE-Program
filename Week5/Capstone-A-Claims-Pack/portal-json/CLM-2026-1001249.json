@@ -1,0 +1,100 @@
+{
+  "submission_id": "CLM-2026-1001249",
+  "submitted_at": "2026-04-27T12:15:00",
+  "submitter": {
+    "name": "Olivia Patel, MD",
+    "npi": "",
+    "tax_id": "",
+    "specialty": "Pediatrics",
+    "phone": "(780) 778-5310",
+    "address": {
+      "street": "8847 Spring St",
+      "city": "Salt Lake City",
+      "state": "UT",
+      "zip": "84162"
+    }
+  },
+  "patient": {
+    "first_name": "Xavier",
+    "last_name": "Quintana",
+    "date_of_birth": "1950-10-08",
+    "gender": "M",
+    "address": {
+      "street": "8325 Sunset Blvd",
+      "city": "Cincinnati",
+      "state": "OH",
+      "zip": "45293"
+    },
+    "phone": "(489) 385-3612"
+  },
+  "insurance": {
+    "payer_id": "UHC-002",
+    "payer_name": "UnitedHealthcare Navigate",
+    "plan": "HMO",
+    "member_id": "555657093-00",
+    "group_id": "GRP-59173"
+  },
+  "diagnoses": [
+    {
+      "code": "J45.909",
+      "description": "Unspecified asthma, uncomplicated"
+    },
+    {
+      "code": "E66.9",
+      "description": "Obesity, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "72148",
+      "description": "MRI lumbar spine without contrast",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 306.2,
+      "diagnosis_pointer": "1",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-03-31"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "47562",
+      "description": "Laparoscopic cholecystectomy",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 1559.06,
+      "diagnosis_pointer": "2",
+      "place_of_service": "21",
+      "place_of_service_desc": "Inpatient Hospital",
+      "date_of_service": "2026-04-05"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99215",
+      "description": "Office visit, established, high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 282.53,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-24"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "72148",
+      "description": "MRI lumbar spine without contrast",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 715.94,
+      "diagnosis_pointer": "2",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-04-14"
+    }
+  ],
+  "total_charge_amount": 2863.73,
+  "currency": "USD",
+  "prior_auth_number": null
+}

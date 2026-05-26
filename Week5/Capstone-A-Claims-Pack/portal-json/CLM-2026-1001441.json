@@ -1,0 +1,64 @@
+{
+  "submission_id": "CLM-2026-1001441",
+  "submitted_at": "2026-04-27T13:03:00",
+  "submitter": {
+    "name": "Mateo Tanaka, MD",
+    "npi": "8073750066",
+    "tax_id": "18-1015267",
+    "specialty": "Radiology",
+    "phone": "(531) 408-9798",
+    "address": {
+      "street": "5178 Cedar Ct",
+      "city": "Philadelphia",
+      "state": "PA",
+      "zip": "19118"
+    }
+  },
+  "patient": {
+    "first_name": "Uma",
+    "last_name": "Kumar",
+    "date_of_birth": "1942-12-30",
+    "gender": "F",
+    "address": {
+      "street": "9974 Lincoln St",
+      "city": "Denver",
+      "state": "CO",
+      "zip": "80267"
+    },
+    "phone": "(444) 878-8474"
+  },
+  "insurance": {
+    "payer_id": "UHC-002",
+    "payer_name": "UnitedHealthcare Navigate",
+    "plan": "HMO",
+    "member_id": "80-485611",
+    "group_id": "GRP-10370"
+  },
+  "diagnoses": [
+    {
+      "code": "I25.10",
+      "description": "Atherosclerotic heart disease without angina"
+    },
+    {
+      "code": "R51.9",
+      "description": "Headache, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99284",
+      "description": "ED visit, mod-high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 264.46,
+      "diagnosis_pointer": "1",
+      "place_of_service": "23",
+      "place_of_service_desc": "Emergency Room \u2014 Hospital",
+      "date_of_service": "2026-04-19"
+    }
+  ],
+  "total_charge_amount": 264.46,
+  "currency": "USD",
+  "prior_auth_number": null
+}

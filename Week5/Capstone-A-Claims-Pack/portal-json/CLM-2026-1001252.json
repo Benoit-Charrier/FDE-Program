@@ -1,0 +1,88 @@
+{
+  "submission_id": "CLM-2026-1001252",
+  "submitted_at": "2026-04-27T12:16:00",
+  "submitter": {
+    "name": "Vincent Hassan, NP",
+    "npi": "1114034756",
+    "tax_id": "18-1015267",
+    "specialty": "Nurse Practitioner",
+    "phone": "(902) 712-5995",
+    "address": {
+      "street": "7143 River Rd",
+      "city": "Nashville",
+      "state": "TN",
+      "zip": "37234"
+    }
+  },
+  "patient": {
+    "first_name": "Whitney",
+    "last_name": "Owens",
+    "date_of_birth": "1966-12-31",
+    "gender": "F",
+    "address": {
+      "street": "6213 River Rd",
+      "city": "Boston",
+      "state": "MA",
+      "zip": "02142"
+    },
+    "phone": "(625) 881-2433"
+  },
+  "insurance": {
+    "payer_id": "UHC-002",
+    "payer_name": "UnitedHealthcare Navigate",
+    "plan": "HMO",
+    "member_id": "598587996-09",
+    "group_id": "GRP-90114"
+  },
+  "diagnoses": [
+    {
+      "code": "L30.9",
+      "description": "Dermatitis, unspecified"
+    },
+    {
+      "code": "Z00.00",
+      "description": "Encounter for general adult medical examination"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "71046",
+      "description": "Chest X-ray, 2 views",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 145.78,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-22"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99214",
+      "description": "Office visit, established, mod-high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 170.83,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-19"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "64483",
+      "description": "Injection, transforaminal epidural",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 324.99,
+      "diagnosis_pointer": "1",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-04-25"
+    }
+  ],
+  "total_charge_amount": 641.6,
+  "currency": "USD",
+  "prior_auth_number": null
+}

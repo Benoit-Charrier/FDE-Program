@@ -1,0 +1,74 @@
+From: Mike Iqbal <mike.iqbal@jasminereyesmd.example>
+To: claims-intake@payer.example
+Cc: office-mgr@jasminereyesmd.example
+Date: Mon, 27 Apr 2026 08:39:17 +0000
+Message-ID: <177729813751.6.4522015862340556306@jasminereyesmd.example>
+Subject: FW: claim for Pamela Nguyen =?utf-8?b?4oCU?= need help
+X-Submitter-NPI: 5834699475
+X-Submitter-TaxID: 11-7535324
+X-Originating-System: jasminereyesmd.example MailRelay 4.2
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="===============4246017620275694822=="
+
+--===============4246017620275694822==
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hi team,
+
+Please process the following claim. Patient was seen at our office on 2026-04=
+-06.
+
+Patient: Nguyen, Pamela  (DOB 1982-04-06, F)
+Member ID: 06387602H    Plan: Humana Gold Plus =E2=80=94 HMO
+Group: GRP-26133
+Address: 1761 Ridge Rd, Columbus, OH 43243
+
+Provider: Jasmine Reyes, MD, NPI 5834699475, Tax ID 11-7535324
+Specialty: Emergency Medicine
+
+Diagnoses:
+  - E78.5  Hyperlipidemia, unspecified
+  - M79.7  Fibromyalgia
+  - E66.9  Obesity, unspecified
+
+Services rendered:
+  - 2026-04-06: CPT 85025 (CBC w/ differential), 1 unit(s), $12.60
+  - 2026-03-30: CPT 90686 (Flu vaccine quadrivalent), 2 unit(s), $49.79
+  - 2026-03-30: CPT 80053 (Comprehensive metabolic panel), 1 unit(s), $20.46
+
+Total: $82.85
+Claim reference: CLM-2026-1001914
+
+Let me know if anything is missing.
+
+Thanks,
+Mike Iqbal
+Jasmine Reyes, MD
+(976) 977-7684
+
+--===============4246017620275694822==
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: 8bit
+MIME-Version: 1.0
+
+<html><body style="font-family: Arial, sans-serif; font-size: 11pt;">
+<p>Hi team,</p>
+<p>Please process the following claim. Patient was seen at our office on
+<b>2026-04-06</b>.</p>
+<table cellpadding="3" style="border-collapse: collapse; font-size: 10pt;">
+<tr><td><b>Patient:</b></td><td>Nguyen, Pamela (DOB 1982-04-06, F)</td></tr>
+<tr><td><b>Member ID:</b></td><td>06387602H</td></tr>
+<tr><td><b>Plan:</b></td><td>Humana Gold Plus — HMO</td></tr>
+<tr><td><b>Group:</b></td><td>GRP-26133</td></tr>
+<tr><td><b>Provider:</b></td><td>Jasmine Reyes, MD (NPI 5834699475)</td></tr>
+<tr><td><b>Total charge:</b></td><td>$82.85</td></tr>
+<tr><td><b>Claim ref:</b></td><td>CLM-2026-1001914</td></tr>
+</table>
+<p>Diagnoses: E78.5, M79.7, E66.9</p>
+<p>Procedures: 85025, 90686, 80053</p>
+<p>Thanks,<br>Mike Iqbal<br>Jasmine Reyes, MD<br>(976) 977-7684</p>
+</body></html>
+
+--===============4246017620275694822==--

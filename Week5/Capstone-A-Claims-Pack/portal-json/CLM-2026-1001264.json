@@ -1,0 +1,68 @@
+{
+  "submission_id": "CLM-2026-1001264",
+  "submitted_at": "2026-04-27T12:17:00",
+  "submitter": {
+    "name": "Sunrise Medical Group",
+    "npi": "1407068792",
+    "tax_id": "56-7822842",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(983) 638-5168",
+    "address": {
+      "street": "1320 Cedar Ct",
+      "city": "Cleveland",
+      "state": "OH",
+      "zip": "44194"
+    }
+  },
+  "patient": {
+    "first_name": "Aaliyah",
+    "last_name": "Lee",
+    "date_of_birth": "1961-11-11",
+    "gender": "F",
+    "address": {
+      "street": "1037 Elm St",
+      "city": "Omaha",
+      "state": "NE",
+      "zip": "6819"
+    },
+    "phone": "(986) 681-4144"
+  },
+  "insurance": {
+    "payer_id": "MCD-IL",
+    "payer_name": "Illinois Medicaid",
+    "plan": "Medicaid",
+    "member_id": "582993005",
+    "group_id": "GRP-90948"
+  },
+  "diagnoses": [
+    {
+      "code": "R10.9",
+      "description": "Unspecified abdominal pain"
+    },
+    {
+      "code": "K21.9",
+      "description": "Gastro-esophageal reflux disease without esophagitis"
+    },
+    {
+      "code": "R51.9",
+      "description": "Headache, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "70551",
+      "description": "MRI brain without contrast",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 409.34,
+      "diagnosis_pointer": "1",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-04-10"
+    }
+  ],
+  "total_charge_amount": 409.34,
+  "currency": "USD",
+  "prior_auth_number": null
+}

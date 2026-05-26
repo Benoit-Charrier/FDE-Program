@@ -1,0 +1,12 @@
+[Internal note - intake processor]
+
+Pt: Jackson, Valerie DOB 04/14/49
+Member: U82563209
+Provider: Westwood Internal Medicine (NPI )
+DOS: 2026-03-31
+Total: $69.14
+
+Issue: Modifier 22 added but documentation not attached.
+
+Routed to: Auth team
+- MWong 15:16

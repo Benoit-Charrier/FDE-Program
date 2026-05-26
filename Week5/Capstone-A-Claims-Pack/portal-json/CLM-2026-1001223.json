@@ -1,0 +1,91 @@
+{
+  "submission_id": "CLM-2026-1001223",
+  "submitted_at": "2026-04-27T12:06:00",
+  "submitter": {
+    "name": "Bayside Orthopedics",
+    "npi": "4498203123",
+    "tax_id": "33-6476889",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(816) 561-8578",
+    "address": {
+      "street": "5125 Birch Ct",
+      "city": "Kansas City",
+      "state": "MO",
+      "zip": "64198"
+    }
+  },
+  "patient": {
+    "first_name": "Helena",
+    "last_name": "Ivanov",
+    "date_of_birth": "1963-06-12",
+    "gender": "F",
+    "address": {
+      "street": "7093 Oak Ave",
+      "city": "Salt Lake City",
+      "state": "UT",
+      "zip": "84163"
+    },
+    "phone": "(885) 246-2763"
+  },
+  "insurance": {
+    "payer_id": "UHC-001",
+    "payer_name": "UnitedHealthcare Choice Plus",
+    "plan": "PPO",
+    "member_id": "593670929-06",
+    "group_id": "GRP-49111"
+  },
+  "diagnoses": [],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "20610",
+      "description": "Major joint injection",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 224.87,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-18"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "90686",
+      "description": "Flu vaccine quadrivalent",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 41.37,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-17"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99285",
+      "description": "ED visit, high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 338.29,
+      "diagnosis_pointer": "1",
+      "place_of_service": "23",
+      "place_of_service_desc": "Emergency Room \u2014 Hospital",
+      "date_of_service": "2026-04-03"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "99214",
+      "description": "Office visit, established, mod-high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 141.36,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-03-30"
+    }
+  ],
+  "total_charge_amount": 745.89,
+  "currency": "USD",
+  "prior_auth_number": null
+}

@@ -1,0 +1,100 @@
+{
+  "submission_id": "CLM-2026-1001399",
+  "submitted_at": "2026-04-27T12:49:00",
+  "submitter": {
+    "name": "Sunrise Medical Group",
+    "npi": "1030740498",
+    "tax_id": "",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(856) 913-9889",
+    "address": {
+      "street": "8621 Cherry Ln",
+      "city": "Salt Lake City",
+      "state": "UT",
+      "zip": "84155"
+    }
+  },
+  "patient": {
+    "first_name": "Priya",
+    "last_name": "Foster",
+    "date_of_birth": "2018-08-23",
+    "gender": "F",
+    "address": {
+      "street": "2317 Forest Dr",
+      "city": "Raleigh",
+      "state": "NC",
+      "zip": "27646"
+    },
+    "phone": "(791) 799-8452"
+  },
+  "insurance": {
+    "payer_id": "ANT-001",
+    "payer_name": "Anthem Blue Access",
+    "plan": "PPO",
+    "member_id": "YYL82569964",
+    "group_id": "GRP-22358"
+  },
+  "diagnoses": [
+    {
+      "code": "Z23",
+      "description": "Encounter for immunization"
+    },
+    {
+      "code": "F32.9",
+      "description": "Major depressive disorder, single episode"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "97110",
+      "description": "Therapeutic exercises (15 min)",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 33.37,
+      "diagnosis_pointer": "1",
+      "place_of_service": "31",
+      "place_of_service_desc": "Skilled Nursing Facility",
+      "date_of_service": "2026-04-22"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99284",
+      "description": "ED visit, mod-high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 244.3,
+      "diagnosis_pointer": "2",
+      "place_of_service": "23",
+      "place_of_service_desc": "Emergency Room \u2014 Hospital",
+      "date_of_service": "2026-04-25"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99205",
+      "description": "Office visit, new pt, comprehensive",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 282.48,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-10"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "99281",
+      "description": "ED visit, low",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 109.2,
+      "diagnosis_pointer": "2",
+      "place_of_service": "23",
+      "place_of_service_desc": "Emergency Room \u2014 Hospital",
+      "date_of_service": "2026-04-01"
+    }
+  ],
+  "total_charge_amount": 669.35,
+  "currency": "USD",
+  "prior_auth_number": null
+}

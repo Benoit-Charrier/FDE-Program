@@ -1,0 +1,93 @@
+{
+  "submission_id": "CLM-2026-1001581",
+  "submitted_at": "2026-04-27T13:37:00",
+  "submitter": {
+    "name": "Gloria Vargas, MD",
+    "npi": "6679547789",
+    "tax_id": "91-5070314",
+    "specialty": "Pediatrics",
+    "phone": "(866) 392-4428",
+    "address": {
+      "street": "2099 Jefferson Dr",
+      "city": "Salt Lake City",
+      "state": "UT",
+      "zip": "84146"
+    }
+  },
+  "patient": {
+    "first_name": "Jasmine",
+    "last_name": "Chen",
+    "date_of_birth": "2024-11-21",
+    "gender": "F",
+    "address": {
+      "street": "8561 Madison Ave",
+      "city": "Nashville",
+      "state": "TN",
+      "zip": "37261"
+    },
+    "phone": "(640) 939-5530"
+  },
+  "insurance": {
+    "payer_id": "HUM-001",
+    "payer_name": "Humana Gold Plus",
+    "plan": "HMO",
+    "member_id": "H84612486",
+    "group_id": "GRP-81536",
+    "coverage_termination_date": "2026-02-25"
+  },
+  "diagnoses": [
+    {
+      "code": "Z00.00",
+      "description": "Encounter for general adult medical examination"
+    },
+    {
+      "code": "J45.909",
+      "description": "Unspecified asthma, uncomplicated"
+    },
+    {
+      "code": "R07.9",
+      "description": "Chest pain, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99205",
+      "description": "Office visit, new pt, comprehensive",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 291.59,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-03-28"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "85025",
+      "description": "CBC w/ differential",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 16.37,
+      "diagnosis_pointer": "2",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-18"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99281",
+      "description": "ED visit, low",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 128.81,
+      "diagnosis_pointer": "3",
+      "place_of_service": "23",
+      "place_of_service_desc": "Emergency Room \u2014 Hospital",
+      "date_of_service": "2026-04-15"
+    }
+  ],
+  "total_charge_amount": 436.77,
+  "currency": "USD",
+  "prior_auth_number": null
+}

@@ -1,0 +1,35 @@
+From: billing@sunrisemedical.example
+To: claims-intake@payer.example
+Date: Mon, 27 Apr 2026 07:39:00 -0500
+Subject: submitting attached claim - patient Rodriguez
+
+Hi team,
+
+Please process the following claim. Patient was seen at our office on 2026-04-23.
+
+Patient: Rodriguez, Liam (DOB 1949-09-12, M)
+Member ID: W371657439    Plan: Aetna Open Access - PPO
+Group: GRP-46998
+Address: 6732 Madison Ave, Boston, MA 02192
+
+Provider: Sunrise Medical Group, NPI 8816932670, Tax ID 85-7603195
+Specialty: Multi-specialty Clinic
+
+Diagnoses:
+  - N39.0 Urinary tract infection, site not specified
+  - J45.909 Unspecified asthma, uncomplicated
+  - J20.9 Acute bronchitis, unspecified
+
+Services rendered:
+  - 2026-04-23: CPT 90471 (Immunization administration), 2 unit(s), $38.71
+  - 2026-04-15: CPT 99395 (Preventive established, 18-39), 1 unit(s), $242.00
+  - 2026-04-16: CPT 99422 (Online digital E/M, 11-20 min) mod 95, 1 unit(s), $33.86
+  - 2026-04-19: CPT 44970 (Laparoscopic appendectomy), 2 unit(s), $3189.68
+
+Total: $3504.25
+Claim reference: CLM-2026-1001926
+
+This one got stuck — appreciate the help!
+
+Karen
+Front Office

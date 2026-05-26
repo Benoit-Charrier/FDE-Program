@@ -1,0 +1,76 @@
+{
+  "submission_id": "CLM-2026-1001256",
+  "submitted_at": "2026-04-27T12:18:00",
+  "submitter": {
+    "name": "Brett Cohen, NP",
+    "npi": "2861138818",
+    "tax_id": "93-8611074",
+    "specialty": "Nurse Practitioner",
+    "phone": "(722) 600-7345",
+    "address": {
+      "street": "3148 Spring St",
+      "city": "Chicago",
+      "state": "IL",
+      "zip": "60639"
+    }
+  },
+  "patient": {
+    "first_name": "Yvonne",
+    "last_name": "Anderson",
+    "date_of_birth": "2014-11-30",
+    "gender": "F",
+    "address": {
+      "street": "6821 Sunset Blvd",
+      "city": "Seattle",
+      "state": "WA",
+      "zip": "98196"
+    },
+    "phone": "(213) 519-7711"
+  },
+  "insurance": {
+    "payer_id": "BCBS-IL",
+    "payer_name": "Blue Cross Blue Shield of Illinois",
+    "plan": "PPO Choice",
+    "member_id": "XOJ329032988",
+    "group_id": "GRP-24334"
+  },
+  "diagnoses": [
+    {
+      "code": "J06.9",
+      "description": "Acute upper respiratory infection, unspecified"
+    },
+    {
+      "code": "M54.5",
+      "description": "Low back pain"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "73030",
+      "description": "Shoulder X-ray, complete",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 136.03,
+      "diagnosis_pointer": "1",
+      "place_of_service": "12",
+      "place_of_service_desc": "Home",
+      "date_of_service": "2026-04-10"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "12001",
+      "description": "Simple repair, superficial wound",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 154.82,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-17"
+    }
+  ],
+  "total_charge_amount": 290.85,
+  "currency": "USD",
+  "prior_auth_number": null
+}

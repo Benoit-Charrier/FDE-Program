@@ -1,0 +1,29 @@
+From: billing@dianawongmd.example
+To: claims-intake@payer.example
+Date: Mon, 27 Apr 2026 10:36:00 -0500
+Subject: submitting attached claim - patient Quintana
+
+Hi team,
+
+Please process the following claim. Patient was seen at our office on 2026-04-09.
+
+Patient: Quintana, Adrian (DOB 1967-10-31, M)
+Member ID: U83015882    Plan: Cigna Open Access Plus - PPO
+Group: GRP-12306
+Address: 2591 Ridge Rd, Philadelphia, PA 19134
+
+Provider: Diana Wong, MD, NPI 5336755600, Tax ID 78-3382094
+Specialty: Radiology
+
+Diagnoses:
+  - F41.1 Generalized anxiety disorder
+
+Services rendered:
+  - 2026-04-09: CPT 90471 (Immunization administration), 1 unit(s), $15.00
+
+Total: $15.00
+Claim reference: CLM-2026-1001938
+
+Please process at your earliest. Thanks!
+
+--Donna, Billing Office

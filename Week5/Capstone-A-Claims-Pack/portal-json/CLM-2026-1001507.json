@@ -1,0 +1,88 @@
+{
+  "submission_id": "CLM-2026-1001507",
+  "submitted_at": "2026-04-27T13:16:00",
+  "submitter": {
+    "name": "Owen Schmidt, MD",
+    "npi": "1737962667",
+    "tax_id": "92-3972137",
+    "specialty": "Family Medicine",
+    "phone": "(969) 635-3319",
+    "address": {
+      "street": "9096 Main St",
+      "city": "Cincinnati",
+      "state": "OH",
+      "zip": "45276"
+    }
+  },
+  "patient": {
+    "first_name": "Jerome",
+    "last_name": "Zimmerman",
+    "date_of_birth": "1948-03-08",
+    "gender": "M",
+    "address": {
+      "street": "9301 Birch Ct",
+      "city": "Albuquerque",
+      "state": "NM",
+      "zip": "87146"
+    },
+    "phone": "(462) 469-7917"
+  },
+  "insurance": {
+    "payer_id": "MCR-001",
+    "payer_name": "Medicare Part B",
+    "plan": "Original Medicare",
+    "member_id": "8AE3MFF2JU6",
+    "group_id": "GRP-37856"
+  },
+  "diagnoses": [
+    {
+      "code": "R53.83",
+      "description": "Other fatigue"
+    },
+    {
+      "code": "J45.909",
+      "description": "Unspecified asthma, uncomplicated"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "90471",
+      "description": "Immunization administration",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 20.34,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-24"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "47562",
+      "description": "Laparoscopic cholecystectomy",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 1875.47,
+      "diagnosis_pointer": "2",
+      "place_of_service": "21",
+      "place_of_service_desc": "Inpatient Hospital",
+      "date_of_service": "2026-04-25"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "80053",
+      "description": "Comprehensive metabolic panel",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 36.99,
+      "diagnosis_pointer": "1",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-16"
+    }
+  ],
+  "total_charge_amount": 1932.8,
+  "currency": "USD",
+  "prior_auth_number": null
+}

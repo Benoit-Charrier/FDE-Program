@@ -1,0 +1,12 @@
+[Internal note - intake processor]
+
+Pt: Ivanov, Victor DOB 02/15/25
+Member: XOJ385469036
+Provider: Nora Park (NPI 5563836837)
+DOS: 2026-04-16
+Total: $3234.68
+
+Issue: Pt name on claim does not match enrollment. Need to verify ID.
+
+Routed to: Tier-2 review
+- RPatel 15:19

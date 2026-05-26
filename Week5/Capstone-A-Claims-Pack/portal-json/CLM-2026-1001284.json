@@ -1,0 +1,84 @@
+{
+  "submission_id": "CLM-2026-1001284",
+  "submitted_at": "2026-04-27T12:25:00",
+  "submitter": {
+    "name": "Peter Johansson, PA",
+    "npi": "1655568758",
+    "tax_id": "36-7226148",
+    "specialty": "Physician Assistant",
+    "phone": "(636) 917-1670",
+    "address": {
+      "street": "397 Ridge Rd",
+      "city": "Kansas City",
+      "state": "MO",
+      "zip": "64129"
+    }
+  },
+  "patient": {
+    "first_name": "Nathan",
+    "last_name": "Harris",
+    "date_of_birth": "1956-12-09",
+    "gender": "M",
+    "address": {
+      "street": "9591 Cedar Ct",
+      "city": "Cincinnati",
+      "state": "OH",
+      "zip": "45235"
+    },
+    "phone": "(438) 607-9681"
+  },
+  "insurance": {
+    "payer_id": "ANT-001",
+    "payer_name": "Anthem Blue Access",
+    "plan": "PPO",
+    "member_id": "YYL47960166",
+    "group_id": "GRP-95419"
+  },
+  "diagnoses": [
+    {
+      "code": "N18.3",
+      "description": "Chronic kidney disease, stage 3"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "90686",
+      "description": "Flu vaccine quadrivalent",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 42.5,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-13"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99215",
+      "description": "Office visit, established, high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 277.8,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-09"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99214",
+      "description": "Office visit, established, mod-high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 171.92,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-14"
+    }
+  ],
+  "total_charge_amount": 492.22,
+  "currency": "USD",
+  "prior_auth_number": null
+}

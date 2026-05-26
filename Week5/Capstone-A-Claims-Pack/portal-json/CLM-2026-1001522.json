@@ -1,0 +1,80 @@
+{
+  "submission_id": "CLM-2026-1001522",
+  "submitted_at": "2026-04-27T13:24:00",
+  "submitter": {
+    "name": "Summit Cardiology Group",
+    "npi": "9135040653",
+    "tax_id": "",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(699) 727-7262",
+    "address": {
+      "street": "1942 Highland Ave",
+      "city": "Portland",
+      "state": "OR",
+      "zip": "97265"
+    }
+  },
+  "patient": {
+    "first_name": "Olivia",
+    "last_name": "Adams",
+    "date_of_birth": "1986-08-21",
+    "gender": "F",
+    "address": {
+      "street": "6018 Highland Ave",
+      "city": "Phoenix",
+      "state": "AZ",
+      "zip": "85088"
+    },
+    "phone": "(986) 419-8307"
+  },
+  "insurance": {
+    "payer_id": "ANT-001",
+    "payer_name": "Anthem Blue Access",
+    "plan": "PPO",
+    "member_id": "52063346L",
+    "group_id": "GRP-20365"
+  },
+  "diagnoses": [
+    {
+      "code": "J02.9",
+      "description": "Acute pharyngitis, unspecified"
+    },
+    {
+      "code": "M79.7",
+      "description": "Fibromyalgia"
+    },
+    {
+      "code": "H66.90",
+      "description": "Otitis media, unspecified, unspecified ear"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "72148",
+      "description": "MRI lumbar spine without contrast",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 323.35,
+      "diagnosis_pointer": "1",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-03-28"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99203",
+      "description": "Office visit, new pt, mod",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 171.65,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-03-30"
+    }
+  ],
+  "total_charge_amount": 495.0,
+  "currency": "USD",
+  "prior_auth_number": null
+}

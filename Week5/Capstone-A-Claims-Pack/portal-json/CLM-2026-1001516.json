@@ -1,0 +1,68 @@
+{
+  "submission_id": "CLM-2026-1001516",
+  "submitted_at": "2026-04-27T13:19:00",
+  "submitter": {
+    "name": "Xio Hassan, DC",
+    "npi": "6188737820",
+    "tax_id": "34-3641125",
+    "specialty": "Chiropractic",
+    "phone": "(539) 364-4391",
+    "address": {
+      "street": "5999 Forest Dr",
+      "city": "Denver",
+      "state": "CO",
+      "zip": "80292"
+    }
+  },
+  "patient": {
+    "first_name": "Maya",
+    "last_name": "Fischer",
+    "date_of_birth": "2023-02-04",
+    "gender": "F",
+    "address": {
+      "street": "4899 Washington Ave",
+      "city": "Columbus",
+      "state": "OH",
+      "zip": "43286"
+    },
+    "phone": "(304) 410-7860"
+  },
+  "insurance": {
+    "payer_id": "UHC-002",
+    "payer_name": "UnitedHealthcare Navigate",
+    "plan": "HMO",
+    "member_id": "550913508-03",
+    "group_id": "GRP-27182"
+  },
+  "diagnoses": [
+    {
+      "code": "Z00.00",
+      "description": "Encounter for general adult medical examination"
+    },
+    {
+      "code": "R10.9",
+      "description": "Unspecified abdominal pain"
+    },
+    {
+      "code": "M25.562",
+      "description": "Pain in left knee"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99281",
+      "description": "ED visit, low",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 117.72,
+      "diagnosis_pointer": "1",
+      "place_of_service": "23",
+      "place_of_service_desc": "Emergency Room \u2014 Hospital",
+      "date_of_service": "2026-04-03"
+    }
+  ],
+  "total_charge_amount": 117.72,
+  "currency": "USD",
+  "prior_auth_number": null
+}

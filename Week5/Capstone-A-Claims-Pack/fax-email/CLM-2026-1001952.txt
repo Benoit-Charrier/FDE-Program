@@ -1,0 +1,30 @@
+============================
+   FAX COVER SHEET
+============================
+TO:    UnitedHealthcare Navigate Claims Intake
+FROM:  Wendy Johansson, MD
+DATE:  04/27/2026
+PAGES: 1 of 5
+
+URGENT [_]   FOR REVIEW [X]   PLEASE COMMENT [_]   PLEASE REPLY [_]
+
+RE: Claim submission - patient Johnson, Isaac
+
+Member ID:     10-062115
+DOB:           1937-11-11
+Plan:          HMO
+Group:         GRP-19917
+DOS:           2026-04-21
+
+Diagnoses:     L30.9, E66.9, F41.1
+Procedures:    97140, 99213, 97110, 80061
+Total charge:  $264.72
+
+Provider NPI:  6249455128
+Tax ID:        53-3466510
+
+NOTES:
+Please prior-auth was on file - see attached.
+
+If problems with this fax, call (398) 844-8335
+============================

@@ -1,0 +1,92 @@
+{
+  "submission_id": "CLM-2026-1001396",
+  "submitted_at": "2026-04-27T12:54:00",
+  "submitter": {
+    "name": "Quincy Singh, DC",
+    "npi": "6027769063",
+    "tax_id": "68-7373123",
+    "specialty": "Chiropractic",
+    "phone": "(537) 610-8037",
+    "address": {
+      "street": "2471 Ridge Rd",
+      "city": "Seattle",
+      "state": "WA",
+      "zip": "98185"
+    }
+  },
+  "patient": {
+    "first_name": "Aaliyah",
+    "last_name": "Johnson",
+    "date_of_birth": "2013-06-20",
+    "gender": "F",
+    "address": {
+      "street": "5071 Lake Rd",
+      "city": "Chicago",
+      "state": "IL",
+      "zip": "60664"
+    },
+    "phone": "(208) 931-2337"
+  },
+  "insurance": {
+    "payer_id": "ANT-001",
+    "payer_name": "Anthem Blue Access",
+    "plan": "PPO",
+    "member_id": "YYL47683986",
+    "group_id": "GRP-66789"
+  },
+  "diagnoses": [
+    {
+      "code": "S93.401A",
+      "description": "Sprain of unspecified ligament of right ankle, initial"
+    },
+    {
+      "code": "M79.7",
+      "description": "Fibromyalgia"
+    },
+    {
+      "code": "N18.3",
+      "description": "Chronic kidney disease, stage 3"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99999",
+      "description": "Office visit, established, mod-high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 194.33,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-10"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "44970",
+      "description": "Laparoscopic appendectomy",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 1756.74,
+      "diagnosis_pointer": "2",
+      "place_of_service": "21",
+      "place_of_service_desc": "Inpatient Hospital",
+      "date_of_service": "2026-04-23"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "90471",
+      "description": "Immunization administration",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 38.08,
+      "diagnosis_pointer": "3",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-15"
+    }
+  ],
+  "total_charge_amount": 1989.15,
+  "currency": "USD",
+  "prior_auth_number": null
+}

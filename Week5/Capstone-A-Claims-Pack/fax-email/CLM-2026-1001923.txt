@@ -1,0 +1,33 @@
+From: billing@priyacohendo.example
+To: claims-intake@payer.example
+Date: Mon, 27 Apr 2026 09:14:00 -0500
+Subject: Claim for Kara Underwood - need help
+
+Hi team,
+
+Please process the following claim. Patient was seen at our office on 2026-04-07.
+
+Patient: Underwood, Kara (DOB 1935-01-21, F)
+Member ID: XOJ377749527    Plan: Blue Cross Blue Shield of Illinois - HMO Standard
+Group: GRP-67628
+Address: 1108 Ridge Rd, Nashville, TN 37291
+
+Provider: Priya Cohen, DO, NPI 1282817368, Tax ID (missing - please call)
+Specialty: Internal Medicine
+
+Diagnoses:
+  - R10.9 Unspecified abdominal pain
+  - E78.5 Hyperlipidemia, unspecified
+
+Services rendered:
+  - 2026-04-07: CPT 99215 (Office visit, established, high), 1 unit(s), $293.19
+  - 2026-04-15: CPT 99422 (Online digital E/M, 11-20 min) mod 95, 1 unit(s), $41.73
+  - 2026-04-10: CPT 97110 (Therapeutic exercises (15 min)), 1 unit(s), $36.07
+
+Total: $370.99
+Claim reference: CLM-2026-1001923
+
+This one got stuck — appreciate the help!
+
+Karen
+Front Office

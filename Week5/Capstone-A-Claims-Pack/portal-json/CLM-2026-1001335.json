@@ -1,0 +1,84 @@
+{
+  "submission_id": "CLM-2026-1001335",
+  "submitted_at": "2026-04-27T12:33:00",
+  "submitter": {
+    "name": "Beatrice Jensen, DO",
+    "npi": "8163021843",
+    "tax_id": "34-3641125",
+    "specialty": "Internal Medicine",
+    "phone": "(642) 426-9606",
+    "address": {
+      "street": "5030 Ridge Rd",
+      "city": "Houston",
+      "state": "TX",
+      "zip": "77042"
+    }
+  },
+  "patient": {
+    "first_name": "Rachel",
+    "last_name": "Zhang",
+    "date_of_birth": "1977-08-28",
+    "gender": "F",
+    "address": {
+      "street": "8109 Main St",
+      "city": "Charlotte",
+      "state": "NC",
+      "zip": "28267"
+    },
+    "phone": "(890) 608-6641"
+  },
+  "insurance": {
+    "payer_id": "MCR-001",
+    "payer_name": "Medicare Part B",
+    "plan": "Original Medicare",
+    "member_id": "1NJ8HRE7VG3",
+    "group_id": "GRP-39509"
+  },
+  "diagnoses": [
+    {
+      "code": "E11.9",
+      "description": "Type 2 diabetes mellitus without complications"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99205",
+      "description": "Office visit, new pt, comprehensive",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 311.91,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-19"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "80053",
+      "description": "Comprehensive metabolic panel",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 41.24,
+      "diagnosis_pointer": "1",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-24"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "27447",
+      "description": "Total knee arthroplasty",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 2472.74,
+      "diagnosis_pointer": "1",
+      "place_of_service": "21",
+      "place_of_service_desc": "Inpatient Hospital",
+      "date_of_service": "2026-04-24"
+    }
+  ],
+  "total_charge_amount": 2825.89,
+  "currency": "USD",
+  "prior_auth_number": null
+}

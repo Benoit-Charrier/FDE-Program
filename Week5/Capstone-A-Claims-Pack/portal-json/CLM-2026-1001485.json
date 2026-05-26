@@ -1,0 +1,71 @@
+{
+  "submission_id": "CLM-2026-1001485",
+  "submitted_at": "2026-04-27T13:15:00",
+  "submitter": {
+    "name": "Donna DuBois, DO",
+    "npi": "5036484448",
+    "tax_id": "56-7822842",
+    "specialty": "Internal Medicine",
+    "phone": "(796) 915-8665",
+    "address": {
+      "street": "9772 Spring St",
+      "city": "Boston",
+      "state": "MA",
+      "zip": "02175"
+    }
+  },
+  "patient": {
+    "first_name": "Derrick",
+    "last_name": "Thompson",
+    "date_of_birth": "1988-11-26",
+    "gender": "M",
+    "address": {
+      "street": "9225 River Rd",
+      "city": "Charlotte",
+      "state": "NC",
+      "zip": "28271"
+    },
+    "phone": "(982) 383-7780"
+  },
+  "insurance": {
+    "payer_id": "HUM-001",
+    "payer_name": "Humana Gold Plus",
+    "plan": "HMO",
+    "member_id": "H28784011",
+    "group_id": "GRP-83900"
+  },
+  "diagnoses": [
+    {
+      "code": "H66.90",
+      "description": "Otitis media, unspecified, unspecified ear"
+    },
+    {
+      "code": "J06.9",
+      "description": "Acute upper respiratory infection, unspecified"
+    },
+    {
+      "code": "R10.9",
+      "description": "Unspecified abdominal pain"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99422",
+      "description": "Online digital E/M, 11-20 min",
+      "modifiers": [
+        "95",
+        "22"
+      ],
+      "units": 1,
+      "charge_amount": 47.16,
+      "diagnosis_pointer": "1",
+      "place_of_service": "02",
+      "place_of_service_desc": "Telehealth",
+      "date_of_service": "2026-04-18"
+    }
+  ],
+  "total_charge_amount": 47.16,
+  "currency": "USD",
+  "prior_auth_number": null
+}

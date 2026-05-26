@@ -1,0 +1,76 @@
+From: Jasmine Lopez <jasmine.lopez@highlandpediat.example>
+To: claims-intake@payer.example
+Cc: billing-dept@highlandpediat.example
+Date: Mon, 27 Apr 2026 16:38:48 +0000
+Message-ID: <177729813753.6.13914502967798997073@highlandpediat.example>
+Subject: Re: billing question / claim CLM-2026-1001917
+X-Submitter-NPI: 6751795257
+X-Submitter-TaxID: 10-3567542
+X-Originating-System: highlandpediat.example MailRelay 4.2
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="===============4636483377624813832=="
+
+--===============4636483377624813832==
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hi team,
+
+Please process the following claim. Patient was seen at our office on 2026-04=
+-06.
+
+Patient: Vasquez, Vincent  (DOB 2019-10-16, M)
+Member ID: 517299714-06    Plan: UnitedHealthcare Navigate =E2=80=94 HMO
+Group: GRP-71909
+Address: 9717 Park Blvd, Buffalo, NY 14236
+
+Provider: Highland Pediatrics, NPI 6751795257, Tax ID 10-3567542
+Specialty: Multi-specialty Clinic
+
+Diagnoses:
+  - N18.3  Chronic kidney disease, stage 3
+  - M25.561  Pain in right knee
+  - L30.9  Dermatitis, unspecified
+
+Services rendered:
+  - 2026-04-06: CPT 99284 (ED visit, mod-high), 1 unit(s), $288.78
+  - 2026-04-19: CPT 70551 (MRI brain without contrast), 1 unit(s), $560.70
+  - 2026-04-17: CPT 47562 (Laparoscopic cholecystectomy), 1 unit(s), $1565.61
+
+Total: $2415.09
+Claim reference: CLM-2026-1001917
+
+Resubmitting from last week =E2=80=94 first one bounced. Pls confirm receipt.
+
+Thanks,
+Jasmine Lopez
+Highland Pediatrics
+(519) 737-2623
+
+--===============4636483377624813832==
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+<html><body style=3D"font-family: Arial, sans-serif; font-size: 11pt;">
+<p>Hi team,</p>
+<p>Please process the following claim. Patient was seen at our office on
+<b>2026-04-06</b>.</p>
+<table cellpadding=3D"3" style=3D"border-collapse: collapse; font-size: 10pt;=
+">
+<tr><td><b>Patient:</b></td><td>Vasquez, Vincent (DOB 2019-10-16, M)</td></tr>
+<tr><td><b>Member ID:</b></td><td>517299714-06</td></tr>
+<tr><td><b>Plan:</b></td><td>UnitedHealthcare Navigate =E2=80=94 HMO</td></tr>
+<tr><td><b>Group:</b></td><td>GRP-71909</td></tr>
+<tr><td><b>Provider:</b></td><td>Highland Pediatrics (NPI 6751795257)</td></t=
+r>
+<tr><td><b>Total charge:</b></td><td>$2,415.09</td></tr>
+<tr><td><b>Claim ref:</b></td><td>CLM-2026-1001917</td></tr>
+</table>
+<p>Diagnoses: N18.3, M25.561, L30.9</p>
+<p>Procedures: 99284, 70551, 47562</p>
+<p>Thanks,<br>Jasmine Lopez<br>Highland Pediatrics<br>(519) 737-2623</p>
+</body></html>
+
+--===============4636483377624813832==--

@@ -1,0 +1,12 @@
+[Internal note - intake processor]
+
+Pt: Diaz, Noah DOB 06/13/68
+Member: XOJ294232008
+Provider: Teresa Park (NPI 8155206917)
+DOS: 2026-03-29
+Total: $170.65
+
+Issue: Duplicate of claim received yesterday - need dedup check.
+
+Routed to: Special handling
+- MWong 15:18

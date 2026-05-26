@@ -1,0 +1,81 @@
+{
+  "submission_id": "CLM-2026-1001435",
+  "submitted_at": "2026-04-27T13:01:00",
+  "submitter": {
+    "name": "Jasmine Martinez, DC",
+    "npi": "2662747228",
+    "tax_id": "48-5266776",
+    "specialty": "Chiropractic",
+    "phone": "(299) 322-1262",
+    "address": {
+      "street": "1507 Lincoln St",
+      "city": "Tampa",
+      "state": "FL",
+      "zip": "33671"
+    }
+  },
+  "patient": {
+    "first_name": "Kenji",
+    "last_name": "Lee",
+    "date_of_birth": "2006-07-14",
+    "gender": "M",
+    "address": {
+      "street": "527 Jefferson Dr",
+      "city": "Columbus",
+      "state": "OH",
+      "zip": "43215"
+    },
+    "phone": "(398) 272-4056"
+  },
+  "insurance": {
+    "payer_id": "AET-001",
+    "payer_name": "Aetna Open Access",
+    "plan": "PPO",
+    "member_id": "W816950034",
+    "group_id": "GRP-89470"
+  },
+  "diagnoses": [],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99421",
+      "description": "Online digital E/M, 5-10 min",
+      "modifiers": [
+        "95"
+      ],
+      "units": 1,
+      "charge_amount": 22.57,
+      "diagnosis_pointer": "1",
+      "place_of_service": "02",
+      "place_of_service_desc": "Telehealth",
+      "date_of_service": "2026-04-24"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99203",
+      "description": "Office visit, new pt, mod",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 187.36,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-26"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99205",
+      "description": "Office visit, new pt, comprehensive",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 307.49,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-19"
+    }
+  ],
+  "total_charge_amount": 517.42,
+  "currency": "USD",
+  "prior_auth_number": null
+}

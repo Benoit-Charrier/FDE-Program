@@ -1,0 +1,188 @@
+{
+  "resourceType": "Claim",
+  "id": "CLM-2026-1001900",
+  "status": "active",
+  "type": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+        "code": "professional"
+      }
+    ]
+  },
+  "use": "claim",
+  "patient": {
+    "reference": "Patient/39611803H",
+    "display": "Julia Harris"
+  },
+  "billablePeriod": {
+    "start": "2026-04-20",
+    "end": "2026-04-21"
+  },
+  "created": "2026-04-27T14:57:00",
+  "insurer": {
+    "reference": "Organization/HUM-001",
+    "display": "Humana Gold Plus"
+  },
+  "provider": {
+    "reference": "Practitioner/8892285620",
+    "display": "Victor Anderson, MD"
+  },
+  "priority": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/processpriority",
+        "code": "normal"
+      }
+    ]
+  },
+  "diagnosis": [
+    {
+      "sequence": 1,
+      "diagnosisCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/sid/icd-10-cm",
+            "code": "Z23",
+            "display": "Encounter for immunization"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 2,
+      "diagnosisCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/sid/icd-10-cm",
+            "code": "J20.9",
+            "display": "Acute bronchitis, unspecified"
+          }
+        ]
+      }
+    }
+  ],
+  "insurance": [
+    {
+      "sequence": 1,
+      "focal": true,
+      "coverage": {
+        "display": "HMO via Humana Gold Plus"
+      }
+    }
+  ],
+  "item": [
+    {
+      "sequence": 1,
+      "diagnosisSequence": [
+        1
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "20610",
+            "display": "Major joint injection"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-04-20",
+      "quantity": {
+        "value": 2
+      },
+      "unitPrice": {
+        "value": 94.585,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 189.17,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "11"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 2,
+      "diagnosisSequence": [
+        2
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "20610",
+            "display": "Major joint injection"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-04-12",
+      "quantity": {
+        "value": 1
+      },
+      "unitPrice": {
+        "value": 97.3,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 97.3,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "11"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 3,
+      "diagnosisSequence": [
+        1
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "47562",
+            "display": "Laparoscopic cholecystectomy"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-04-21",
+      "quantity": {
+        "value": 1
+      },
+      "unitPrice": {
+        "value": 1393.83,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 1393.83,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "21"
+          }
+        ]
+      }
+    }
+  ],
+  "total": {
+    "value": 1680.3,
+    "currency": "USD"
+  }
+}

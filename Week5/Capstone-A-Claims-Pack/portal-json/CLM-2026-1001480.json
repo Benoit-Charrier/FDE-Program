@@ -1,0 +1,84 @@
+{
+  "submission_id": "CLM-2026-1001480",
+  "submitted_at": "2026-04-27T13:12:00",
+  "submitter": {
+    "name": "Bright Family Practice",
+    "npi": "7471835768",
+    "tax_id": "97-2413794",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(356) 380-4663",
+    "address": {
+      "street": "1184 Highland Ave",
+      "city": "Albuquerque",
+      "state": "NM",
+      "zip": "87155"
+    }
+  },
+  "patient": {
+    "first_name": "Elise",
+    "last_name": "Quintana",
+    "date_of_birth": "1986-04-12",
+    "gender": "F",
+    "address": {
+      "street": "6292 Madison Ave",
+      "city": "Indianapolis",
+      "state": "IN",
+      "zip": "46220"
+    },
+    "phone": "(371) 379-3307"
+  },
+  "insurance": {
+    "payer_id": "MCD-IL",
+    "payer_name": "Illinois Medicaid",
+    "plan": "Medicaid",
+    "member_id": "853399514",
+    "group_id": "GRP-47231"
+  },
+  "diagnoses": [
+    {
+      "code": "M79.7",
+      "description": "Fibromyalgia"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "12001",
+      "description": "Simple repair, superficial wound",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 319.62,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-19"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "20610",
+      "description": "Major joint injection",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 280.85,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-03-30"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99213",
+      "description": "Office visit, established, low-mod",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 122.8,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-26"
+    }
+  ],
+  "total_charge_amount": 723.27,
+  "currency": "USD",
+  "prior_auth_number": null
+}

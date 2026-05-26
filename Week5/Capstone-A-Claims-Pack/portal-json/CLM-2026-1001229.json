@@ -1,0 +1,96 @@
+{
+  "submission_id": "CLM-2026-1001229",
+  "submitted_at": "2026-04-27T12:07:00",
+  "submitter": {
+    "name": "Julia Nakamura, DPT",
+    "npi": "0213370950",
+    "tax_id": "91-5070314",
+    "specialty": "Physical Therapy",
+    "phone": "(236) 543-1173",
+    "address": {
+      "street": "6250 Hill St",
+      "city": "Portland",
+      "state": "OR",
+      "zip": "97275"
+    }
+  },
+  "patient": {
+    "first_name": "Monica",
+    "last_name": "Rodriguez",
+    "date_of_birth": "1957-07-06",
+    "gender": "F",
+    "address": {
+      "street": "899 Park Blvd",
+      "city": "Salt Lake City",
+      "state": "UT",
+      "zip": "84148"
+    },
+    "phone": "(781) 310-6496"
+  },
+  "insurance": {
+    "payer_id": "MCD-IL",
+    "payer_name": "Illinois Medicaid",
+    "plan": "Medicaid",
+    "member_id": "771919208",
+    "group_id": "GRP-51634"
+  },
+  "diagnoses": [
+    {
+      "code": "R51.9",
+      "description": "Headache, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "83036",
+      "description": "Hemoglobin A1c",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 19.27,
+      "diagnosis_pointer": "1",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-02"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "97140",
+      "description": "Manual therapy (15 min)",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 89.19,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-19"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "27447",
+      "description": "Total knee arthroplasty",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 2015.0,
+      "diagnosis_pointer": "1",
+      "place_of_service": "21",
+      "place_of_service_desc": "Inpatient Hospital",
+      "date_of_service": "2026-04-13"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "90471",
+      "description": "Immunization administration",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 36.01,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-03"
+    }
+  ],
+  "total_charge_amount": 2159.47,
+  "currency": "USD",
+  "prior_auth_number": null
+}

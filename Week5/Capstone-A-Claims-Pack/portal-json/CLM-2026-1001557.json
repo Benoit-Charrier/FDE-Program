@@ -1,0 +1,80 @@
+{
+  "submission_id": "CLM-2026-1001557",
+  "submitted_at": "2026-04-27T13:34:00",
+  "submitter": {
+    "name": "Ravi Cohen, MD",
+    "npi": "9354802988",
+    "tax_id": "",
+    "specialty": "Emergency Medicine",
+    "phone": "(715) 516-7215",
+    "address": {
+      "street": "5046 River Rd",
+      "city": "Chicago",
+      "state": "IL",
+      "zip": "60669"
+    }
+  },
+  "patient": {
+    "first_name": "Ingrid",
+    "last_name": "Nguyen",
+    "date_of_birth": "1992-10-18",
+    "gender": "F",
+    "address": {
+      "street": "7542 Jefferson Dr",
+      "city": "St. Louis",
+      "state": "MO",
+      "zip": "63180"
+    },
+    "phone": "(395) 626-5348"
+  },
+  "insurance": {
+    "payer_id": "MCD-IL",
+    "payer_name": "Illinois Medicaid",
+    "plan": "Medicaid",
+    "member_id": "020715928",
+    "group_id": "GRP-55431"
+  },
+  "diagnoses": [
+    {
+      "code": "N39.0",
+      "description": "Urinary tract infection, site not specified"
+    },
+    {
+      "code": "K21.9",
+      "description": "Gastro-esophageal reflux disease without esophagitis"
+    },
+    {
+      "code": "H66.90",
+      "description": "Otitis media, unspecified, unspecified ear"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "27447",
+      "description": "Total knee arthroplasty",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 5268.86,
+      "diagnosis_pointer": "1",
+      "place_of_service": "12",
+      "place_of_service_desc": "Home",
+      "date_of_service": "2026-04-16"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99281",
+      "description": "ED visit, low",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 111.19,
+      "diagnosis_pointer": "2",
+      "place_of_service": "23",
+      "place_of_service_desc": "Emergency Room \u2014 Hospital",
+      "date_of_service": "2026-04-11"
+    }
+  ],
+  "total_charge_amount": 5380.05,
+  "currency": "USD",
+  "prior_auth_number": null
+}

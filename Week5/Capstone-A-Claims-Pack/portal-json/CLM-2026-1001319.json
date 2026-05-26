@@ -1,0 +1,91 @@
+{
+  "submission_id": "CLM-2026-1001319",
+  "submitted_at": "2026-04-27T12:32:00",
+  "submitter": {
+    "name": "Carla DuBois, MD",
+    "npi": "0868514327",
+    "tax_id": "68-9136954",
+    "specialty": "Radiology",
+    "phone": "(922) 348-4235",
+    "address": {
+      "street": "8825 Maple Dr",
+      "city": "Tampa",
+      "state": "FL",
+      "zip": "33636"
+    }
+  },
+  "patient": {
+    "first_name": "AdRIAN",
+    "last_name": "Quintana",
+    "date_of_birth": "1957-05-05",
+    "gender": "M",
+    "address": {
+      "street": "2652 Hill St",
+      "city": "Sacramento",
+      "state": "CA",
+      "zip": "95819"
+    },
+    "phone": "(234) 874-9217"
+  },
+  "insurance": {
+    "payer_id": "BCBS-IL",
+    "payer_name": "Blue Cross Blue Shield of Illinois",
+    "plan": "HMO Standard",
+    "member_id": "XOJ405562467",
+    "group_id": "GRP-23683"
+  },
+  "diagnoses": [],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99213",
+      "description": "Office visit, established, low-mod",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 109.49,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-24"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99396",
+      "description": "Preventive established, 40-64",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 231.14,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-26"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "64483",
+      "description": "Injection, transforaminal epidural",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 305.53,
+      "diagnosis_pointer": "1",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-04-18"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "71046",
+      "description": "Chest X-ray, 2 views",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 132.57,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-05"
+    }
+  ],
+  "total_charge_amount": 778.73,
+  "currency": "USD",
+  "prior_auth_number": null
+}

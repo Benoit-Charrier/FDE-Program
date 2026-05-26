@@ -1,0 +1,188 @@
+{
+  "resourceType": "Claim",
+  "id": "CLM-2026-1001847",
+  "status": "active",
+  "type": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+        "code": "professional"
+      }
+    ]
+  },
+  "use": "claim",
+  "patient": {
+    "reference": "Patient/50-127352",
+    "display": "FeLICIA Clark"
+  },
+  "billablePeriod": {
+    "start": "2026-04-14",
+    "end": "2026-04-13"
+  },
+  "created": "2026-04-27T14:42:00",
+  "insurer": {
+    "reference": "Organization/UHC-002",
+    "display": "UnitedHealthcare Navigate"
+  },
+  "provider": {
+    "reference": "Practitioner/4696326646",
+    "display": "Sunrise Medical Group"
+  },
+  "priority": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/processpriority",
+        "code": "normal"
+      }
+    ]
+  },
+  "diagnosis": [
+    {
+      "sequence": 1,
+      "diagnosisCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/sid/icd-10-cm",
+            "code": "N39.0",
+            "display": "Urinary tract infection, site not specified"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 2,
+      "diagnosisCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/sid/icd-10-cm",
+            "code": "J44.9",
+            "display": "Chronic obstructive pulmonary disease, unspecified"
+          }
+        ]
+      }
+    }
+  ],
+  "insurance": [
+    {
+      "sequence": 1,
+      "focal": true,
+      "coverage": {
+        "display": "HMO via UnitedHealthcare Navigate"
+      }
+    }
+  ],
+  "item": [
+    {
+      "sequence": 1,
+      "diagnosisSequence": [
+        1
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "80053",
+            "display": "Comprehensive metabolic panel"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-04-14",
+      "quantity": {
+        "value": 2
+      },
+      "unitPrice": {
+        "value": 21.825,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 43.65,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "81"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 2,
+      "diagnosisSequence": [
+        2
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "70551",
+            "display": "MRI brain without contrast"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-04-19",
+      "quantity": {
+        "value": 1
+      },
+      "unitPrice": {
+        "value": 418.36,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 418.36,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "22"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 3,
+      "diagnosisSequence": [
+        1
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "80053",
+            "display": "Comprehensive metabolic panel"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-04-13",
+      "quantity": {
+        "value": 2
+      },
+      "unitPrice": {
+        "value": 20.595,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 41.19,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "81"
+          }
+        ]
+      }
+    }
+  ],
+  "total": {
+    "value": 503.2,
+    "currency": "USD"
+  }
+}

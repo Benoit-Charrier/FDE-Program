@@ -1,0 +1,84 @@
+{
+  "submission_id": "CLM-2026-1001349",
+  "submitted_at": "2026-04-27T12:42:00",
+  "submitter": {
+    "name": "Oak Tree Pediatric Associates",
+    "npi": "7011916443",
+    "tax_id": "48-5266776",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(565) 231-2065",
+    "address": {
+      "street": "1265 Main St",
+      "city": "Buffalo",
+      "state": "NY",
+      "zip": "14230"
+    }
+  },
+  "patient": {
+    "first_name": "Lina",
+    "last_name": "Jackson",
+    "date_of_birth": "1956-07-18",
+    "gender": "F",
+    "address": {
+      "street": "9174 River Rd",
+      "city": "Tampa",
+      "state": "FL",
+      "zip": "33669"
+    },
+    "phone": "(583) 806-5491"
+  },
+  "insurance": {
+    "payer_id": "MCD-IL",
+    "payer_name": "Illinois Medicaid",
+    "plan": "Medicaid",
+    "member_id": "663713962",
+    "group_id": "GRP-69094"
+  },
+  "diagnoses": [
+    {
+      "code": "L98.9",
+      "description": "Disorder of the skin and subcutaneous tissue, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99215",
+      "description": "Office visit, established, high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 228.48,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-16"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "72148",
+      "description": "MRI lumbar spine without contrast",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 383.5,
+      "diagnosis_pointer": "2",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-04-23"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99205",
+      "description": "Office visit, new pt, comprehensive",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 350.52,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-16"
+    }
+  ],
+  "total_charge_amount": 962.5,
+  "currency": "USD",
+  "prior_auth_number": null
+}

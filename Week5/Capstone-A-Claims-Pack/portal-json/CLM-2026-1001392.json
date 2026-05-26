@@ -1,0 +1,76 @@
+{
+  "submission_id": "CLM-2026-1001392",
+  "submitted_at": "2026-04-27T12:53:00",
+  "submitter": {
+    "name": "Mateo Chowdhury, DO",
+    "npi": "6362873915",
+    "tax_id": "93-8611074",
+    "specialty": "Internal Medicine",
+    "phone": "(692) 511-3793",
+    "address": {
+      "street": "9814 Cedar Ct",
+      "city": "Salt Lake City",
+      "state": "UT",
+      "zip": "84172"
+    }
+  },
+  "patient": {
+    "first_name": "Elena",
+    "last_name": "Diaz",
+    "date_of_birth": "1978-05-09",
+    "gender": "F",
+    "address": {
+      "street": "4719 Lake Rd",
+      "city": "Tucson",
+      "state": "AZ",
+      "zip": "85773"
+    },
+    "phone": "(453) 445-4497"
+  },
+  "insurance": {
+    "payer_id": "MCR-001",
+    "payer_name": "Medicare Part B",
+    "plan": "Original Medicare",
+    "member_id": "0XG4WKA6KY9",
+    "group_id": "GRP-62271"
+  },
+  "diagnoses": [
+    {
+      "code": "I25.10",
+      "description": "Atherosclerotic heart disease without angina"
+    },
+    {
+      "code": "M25.561",
+      "description": "Pain in right knee"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "12001",
+      "description": "Simple repair, superficial wound",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 146.96,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-13"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99284",
+      "description": "ED visit, mod-high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 266.67,
+      "diagnosis_pointer": "2",
+      "place_of_service": "23",
+      "place_of_service_desc": "Emergency Room \u2014 Hospital",
+      "date_of_service": "2026-04-09"
+    }
+  ],
+  "total_charge_amount": 413.63,
+  "currency": "USD",
+  "prior_auth_number": null
+}

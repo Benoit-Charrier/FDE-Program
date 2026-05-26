@@ -1,0 +1,93 @@
+{
+  "submission_id": "CLM-2026-1001438",
+  "submitted_at": "2026-04-27T13:01:00",
+  "submitter": {
+    "name": "Bright Family Practice",
+    "npi": "7799024604",
+    "tax_id": "91-5070314",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(768) 618-4101",
+    "address": {
+      "street": "139 Franklin Rd",
+      "city": "Kansas City",
+      "state": "MO",
+      "zip": "64163"
+    }
+  },
+  "patient": {
+    "first_name": "Isaac",
+    "last_name": "Zhang",
+    "date_of_birth": "2020-05-01",
+    "gender": "M",
+    "address": {
+      "street": "6128 Highland Ave",
+      "city": "Cleveland",
+      "state": "OH",
+      "zip": "44120"
+    },
+    "phone": "(383) 486-8398"
+  },
+  "insurance": {
+    "payer_id": "UHC-002",
+    "payer_name": "UnitedHealthcare Navigate",
+    "plan": "HMO",
+    "member_id": "260714463-01",
+    "group_id": "GRP-19700",
+    "coverage_termination_date": "2026-02-16"
+  },
+  "diagnoses": [
+    {
+      "code": "L30.9",
+      "description": "Dermatitis, unspecified"
+    },
+    {
+      "code": "Z23",
+      "description": "Encounter for immunization"
+    },
+    {
+      "code": "H66.90",
+      "description": "Otitis media, unspecified, unspecified ear"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "85025",
+      "description": "CBC w/ differential",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 11.69,
+      "diagnosis_pointer": "1",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-20"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "72148",
+      "description": "MRI lumbar spine without contrast",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 679.92,
+      "diagnosis_pointer": "2",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-04-13"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99396",
+      "description": "Preventive established, 40-64",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 234.3,
+      "diagnosis_pointer": "3",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-17"
+    }
+  ],
+  "total_charge_amount": 925.91,
+  "currency": "USD",
+  "prior_auth_number": null
+}

@@ -1,0 +1,100 @@
+{
+  "submission_id": "CLM-2026-1001407",
+  "submitted_at": "2026-04-27T12:51:00",
+  "submitter": {
+    "name": "Felix Jensen, NP",
+    "npi": "0149705455",
+    "tax_id": "68-9136954",
+    "specialty": "Nurse Practitioner",
+    "phone": "(275) 285-8510",
+    "address": {
+      "street": "8450 River Rd",
+      "city": "Sacramento",
+      "state": "CA",
+      "zip": "95849"
+    }
+  },
+  "patient": {
+    "first_name": "Nathan",
+    "last_name": "Adams",
+    "date_of_birth": "1953-05-24",
+    "gender": "M",
+    "address": {
+      "street": "2832 Lake Rd",
+      "city": "Charlotte",
+      "state": "NC",
+      "zip": "28231"
+    },
+    "phone": "(748) 410-4130"
+  },
+  "insurance": {
+    "payer_id": "BCBS-IL",
+    "payer_name": "Blue Cross Blue Shield of Illinois",
+    "plan": "HMO Standard",
+    "member_id": "XOJ667064530",
+    "group_id": "GRP-23678"
+  },
+  "diagnoses": [
+    {
+      "code": "J06.9",
+      "description": "Acute upper respiratory infection, unspecified"
+    },
+    {
+      "code": "F32.9",
+      "description": "Major depressive disorder, single episode"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99396",
+      "description": "Preventive established, 40-64",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 206.26,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-07"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "80061",
+      "description": "Lipid panel",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 55.88,
+      "diagnosis_pointer": "2",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-03"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "90471",
+      "description": "Immunization administration",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 17.1,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-14"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "99214",
+      "description": "Office visit, established, mod-high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 160.91,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-03-28"
+    }
+  ],
+  "total_charge_amount": 440.15,
+  "currency": "USD",
+  "prior_auth_number": null
+}

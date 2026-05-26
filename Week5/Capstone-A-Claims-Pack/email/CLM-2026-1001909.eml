@@ -1,0 +1,42 @@
+From: Mike Iqbal <mike.iqbal@highlandpediat.example>
+To: claims-intake@payer.example
+Cc: None
+Date: Mon, 27 Apr 2026 15:33:59 +0000
+Message-ID: <177729813747.6.7872415950482040481@highlandpediat.example>
+Subject: Claim submission =?utf-8?b?4oCU?= patient Edwards (CLM-2026-1001909)
+X-Submitter-NPI: 8407146314
+X-Submitter-TaxID: 25-3439747
+X-Originating-System: highlandpediat.example MailRelay 4.2
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+Hi team,
+
+Please process the following claim. Patient was seen at our office on 2026-03=
+-31.
+
+Patient: Edwards, Logan  (DOB 1945-09-03, M)
+Member ID: 936623177-04    Plan: UnitedHealthcare Choice Plus =E2=80=94 PPO
+Group: GRP-87635
+Address: 8017 Spring St, Albuquerque, NM 87189
+
+Provider: Highland Pediatrics, NPI 8407146314, Tax ID 25-3439747
+Specialty: Multi-specialty Clinic
+
+Diagnoses:
+  - Z00.00  Encounter for general adult medical examination
+  - J44.9  Chronic obstructive pulmonary disease, unspecified
+
+Services rendered:
+  - 2026-03-31: CPT 90686 (Flu vaccine quadrivalent), 1 unit(s), $26.01
+
+Total: $26.01
+Claim reference: CLM-2026-1001909
+
+Resubmitting from last week =E2=80=94 first one bounced. Pls confirm receipt.
+
+Thanks,
+Mike Iqbal
+Highland Pediatrics
+(716) 281-6674

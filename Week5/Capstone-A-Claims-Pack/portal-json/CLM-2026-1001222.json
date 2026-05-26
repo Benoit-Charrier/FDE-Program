@@ -1,0 +1,104 @@
+{
+  "submission_id": "CLM-2026-1001222",
+  "submitted_at": "2026-04-27T12:08:00",
+  "submitter": {
+    "name": "Highland Pediatrics",
+    "npi": "3469433495",
+    "tax_id": "92-3972137",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(743) 977-6500",
+    "address": {
+      "street": "5386 Sunset Blvd",
+      "city": "Salt Lake City",
+      "state": "UT",
+      "zip": "84190"
+    }
+  },
+  "patient": {
+    "first_name": "Olivia",
+    "last_name": "Adams",
+    "date_of_birth": "2010-03-11",
+    "gender": "F",
+    "address": {
+      "street": "889 Walnut St",
+      "city": "Boston",
+      "state": "MA",
+      "zip": "02176"
+    },
+    "phone": "(772) 361-3422"
+  },
+  "insurance": {
+    "payer_id": "BCBS-IL",
+    "payer_name": "Blue Cross Blue Shield of Illinois",
+    "plan": "HMO Standard",
+    "member_id": "XOJ411407001",
+    "group_id": "GRP-65470"
+  },
+  "diagnoses": [
+    {
+      "code": "N39.0",
+      "description": "Urinary tract infection, site not specified"
+    },
+    {
+      "code": "R07.9",
+      "description": "Chest pain, unspecified"
+    },
+    {
+      "code": "J44.9",
+      "description": "Chronic obstructive pulmonary disease, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "70551",
+      "description": "MRI brain without contrast",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 1109.57,
+      "diagnosis_pointer": "1",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-04-20"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "97140",
+      "description": "Manual therapy (15 min)",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 69.85,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-14"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "97140",
+      "description": "Manual therapy (15 min)",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 37.59,
+      "diagnosis_pointer": "3",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-03-28"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "80061",
+      "description": "Lipid panel",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 47.22,
+      "diagnosis_pointer": "1",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-14"
+    }
+  ],
+  "total_charge_amount": 1264.23,
+  "currency": "USD",
+  "prior_auth_number": ""
+}

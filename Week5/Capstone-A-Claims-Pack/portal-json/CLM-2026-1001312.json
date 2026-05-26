@@ -1,0 +1,64 @@
+{
+  "submission_id": "CLM-2026-1001312",
+  "submitted_at": "2026-04-27T12:28:00",
+  "submitter": {
+    "name": "Maple Family Health",
+    "npi": "4726173718",
+    "tax_id": "34-3641125",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(455) 313-4049",
+    "address": {
+      "street": "2275 Walnut St",
+      "city": "Raleigh",
+      "state": "NC",
+      "zip": "27678"
+    }
+  },
+  "patient": {
+    "first_name": "Hannah",
+    "last_name": "Fischer",
+    "date_of_birth": "1972-01-10",
+    "gender": "F",
+    "address": {
+      "street": "8296 Main St",
+      "city": "Salt Lake City",
+      "state": "UT",
+      "zip": "84195"
+    },
+    "phone": "(305) 837-7274"
+  },
+  "insurance": {
+    "payer_id": "MCR-001",
+    "payer_name": "Medicare Part B",
+    "plan": "Original Medicare",
+    "member_id": "2QQ2QCQ3NT9",
+    "group_id": "GRP-64149"
+  },
+  "diagnoses": [
+    {
+      "code": "E78.5",
+      "description": "Hyperlipidemia, unspecified"
+    },
+    {
+      "code": "K21.9",
+      "description": "Gastro-esophageal reflux disease without esophagitis"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "80053",
+      "description": "Comprehensive metabolic panel",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 33.36,
+      "diagnosis_pointer": "1",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-01"
+    }
+  ],
+  "total_charge_amount": 33.36,
+  "currency": "USD",
+  "prior_auth_number": null
+}

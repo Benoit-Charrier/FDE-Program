@@ -1,0 +1,30 @@
+============================
+   FAX COVER SHEET
+============================
+TO:    Illinois Medicaid Claims Intake
+FROM:  Elise Reyes, DO
+DATE:  04/27/2026
+PAGES: 1 of 3
+
+URGENT [_]   FOR REVIEW [X]   PLEASE COMMENT [_]   PLEASE REPLY [_]
+
+RE: Claim submission - patient Foster, Ezra
+
+Member ID:     370976381
+DOB:           1934-12-24
+Plan:          Medicaid
+Group:         GRP-45831
+DOS:           2026-04-22
+
+Diagnoses:     J44.9, K21.9
+Procedures:    99395, 12001, 97140, 80061
+Total charge:  $727.12
+
+Provider NPI:  5048340307
+Tax ID:        22-7064332
+
+NOTES:
+Member confirmed coverage active during DOS - please reprocess.
+
+If problems with this fax, call (477) 271-7813
+============================

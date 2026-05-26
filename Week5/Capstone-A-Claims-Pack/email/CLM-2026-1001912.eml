@@ -1,0 +1,73 @@
+From: Alex Patel <alex.patel@owenhassannp.example>
+To: claims-intake@payer.example
+Cc: office-mgr@owenhassannp.example
+Date: Mon, 27 Apr 2026 09:08:20 +0000
+Message-ID: <177729813749.6.10270842734445320077@owenhassannp.example>
+Subject: Resubmitting claim =?utf-8?b?4oCU?= patient Foster (DOB 2002-09-07)
+X-Submitter-NPI: 9998775790
+X-Submitter-TaxID: 48-5266776
+X-Originating-System: owenhassannp.example MailRelay 4.2
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="===============8497672967821129975=="
+
+--===============8497672967821129975==
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hi team,
+
+Please process the following claim. Patient was seen at our office on 2026-04=
+-14.
+
+Patient: Foster, Iris  (DOB 2002-09-07, F)
+Member ID: 37991575U    Plan: Cigna Open Access Plus =E2=80=94 PPO
+Group: GRP-56861
+Address: 3018 Birch Ct, Chicago, IL 60634
+
+Provider: Owen Hassan, NP, NPI 9998775790, Tax ID 48-5266776
+Specialty: Nurse Practitioner
+
+Diagnoses:
+  - E66.9  Obesity, unspecified
+  - N39.0  Urinary tract infection, site not specified
+
+Services rendered:
+  - 2026-04-14: CPT 99281 (ED visit, low), 1 unit(s), $114.01
+  - 2026-04-23: CPT 99205 (Office visit, new pt, comprehensive), 1 unit(s), $=
+273.41
+
+Total: $387.42
+Claim reference: CLM-2026-1001912
+
+Resubmitting from last week =E2=80=94 first one bounced. Pls confirm receipt.
+
+Thanks,
+Alex Patel
+Owen Hassan, NP
+(648) 414-2496
+
+--===============8497672967821129975==
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: 8bit
+MIME-Version: 1.0
+
+<html><body style="font-family: Arial, sans-serif; font-size: 11pt;">
+<p>Hi team,</p>
+<p>Please process the following claim. Patient was seen at our office on
+<b>2026-04-14</b>.</p>
+<table cellpadding="3" style="border-collapse: collapse; font-size: 10pt;">
+<tr><td><b>Patient:</b></td><td>Foster, Iris (DOB 2002-09-07, F)</td></tr>
+<tr><td><b>Member ID:</b></td><td>37991575U</td></tr>
+<tr><td><b>Plan:</b></td><td>Cigna Open Access Plus — PPO</td></tr>
+<tr><td><b>Group:</b></td><td>GRP-56861</td></tr>
+<tr><td><b>Provider:</b></td><td>Owen Hassan, NP (NPI 9998775790)</td></tr>
+<tr><td><b>Total charge:</b></td><td>$387.42</td></tr>
+<tr><td><b>Claim ref:</b></td><td>CLM-2026-1001912</td></tr>
+</table>
+<p>Diagnoses: E66.9, N39.0</p>
+<p>Procedures: 99281, 99205</p>
+<p>Thanks,<br>Alex Patel<br>Owen Hassan, NP<br>(648) 414-2496</p>
+</body></html>
+
+--===============8497672967821129975==--

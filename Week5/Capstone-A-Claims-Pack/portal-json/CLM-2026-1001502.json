@@ -1,0 +1,68 @@
+{
+  "submission_id": "CLM-2026-1001502",
+  "submitted_at": "2026-04-27T13:20:00",
+  "submitter": {
+    "name": "Kenji Johansson, MD",
+    "npi": "1118888094",
+    "tax_id": "",
+    "specialty": "Family Medicine",
+    "phone": "(474) 724-6184",
+    "address": {
+      "street": "1250 Main St",
+      "city": "Indianapolis",
+      "state": "IN",
+      "zip": "46284"
+    }
+  },
+  "patient": {
+    "first_name": "Roberto",
+    "last_name": "Novak",
+    "date_of_birth": "1941-12-05",
+    "gender": "M",
+    "address": {
+      "street": "5186 Spring St",
+      "city": "Phoenix",
+      "state": "AZ",
+      "zip": "85015"
+    },
+    "phone": "(635) 331-4776"
+  },
+  "insurance": {
+    "payer_id": "BCBS-IL",
+    "payer_name": "Blue Cross Blue Shield of Illinois",
+    "plan": "PPO Choice",
+    "member_id": "XOJ751548602",
+    "group_id": "GRP-68559"
+  },
+  "diagnoses": [
+    {
+      "code": "M79.7",
+      "description": "Fibromyalgia"
+    },
+    {
+      "code": "R10.9",
+      "description": "Unspecified abdominal pain"
+    },
+    {
+      "code": "K21.9",
+      "description": "Gastro-esophageal reflux disease without esophagitis"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "27447",
+      "description": "Total knee arthroplasty",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 2918.66,
+      "diagnosis_pointer": "1",
+      "place_of_service": "21",
+      "place_of_service_desc": "Inpatient Hospital",
+      "date_of_service": "2026-04-04"
+    }
+  ],
+  "total_charge_amount": 2918.66,
+  "currency": "USD",
+  "prior_auth_number": null
+}

@@ -1,0 +1,47 @@
+From: Karen Anderson <karen.anderson@crestviewimagi.example>
+To: claims-intake@payer.example
+Cc: None
+Date: Mon, 27 Apr 2026 17:14:32 +0000
+Message-ID: <177729813748.6.3536924155204916778@crestviewimagi.example>
+Subject: Outstanding claim =?utf-8?b?4oCU?= DOS 2026-04-19
+X-Submitter-NPI: 4228188047
+X-Submitter-TaxID:
+X-Originating-System: crestviewimagi.example MailRelay 4.2
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+Hi team,
+
+Please process the following claim. Patient was seen at our office on 2026-04=
+-19.
+
+Patient: Underwood, Kevin  (DOB 2004-12-09, M)
+Member ID: 446937197    Plan: Illinois Medicaid =E2=80=94 Medicaid
+Group: GRP-54902
+Address: 4292 Jefferson Dr, Seattle, WA 98150
+
+Provider: Crestview Imaging Center, NPI 4228188047, Tax ID (missing =E2=80=94=
+ please call)
+Specialty: Multi-specialty Clinic
+
+Diagnoses:
+  - R07.9  Chest pain, unspecified
+  - J44.9  Chronic obstructive pulmonary disease, unspecified
+  - R10.9  Unspecified abdominal pain
+
+Services rendered:
+  - 2026-04-19: CPT 99395 (Preventive established, 18-39), 1 unit(s), $231.67
+  - 2026-04-10: CPT 44970 (Laparoscopic appendectomy), 1 unit(s), $1498.26
+  - 2026-04-19: CPT 99284 (ED visit, mod-high), 1 unit(s), $269.36
+  - 2026-04-13: CPT 90471 (Immunization administration), 1 unit(s), $16.01
+
+Total: $2015.30
+Claim reference: CLM-2026-1001910
+
+Resubmitting from last week =E2=80=94 first one bounced. Pls confirm receipt.
+
+Thanks,
+Karen Anderson
+Crestview Imaging Center
+(896) 725-8669

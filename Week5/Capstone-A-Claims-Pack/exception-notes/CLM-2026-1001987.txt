@@ -1,0 +1,11 @@
+PHONE LOG - PROVIDER OUTREACH
+
+Date/Time: 04/27/2026 15:21
+Caller: Front desk from Bayside Orthopedics
+Re: Patient Sophia Xiong (member 636899036-03)
+
+Caller states: amount paid is less than expected - need explanation of payment
+
+Resolution: Pulled claim CLM-2026-1001987. Found - claim missing modifier 25 - faxed correction request.
+
+Closed: 15:21  Agent: B.Ali

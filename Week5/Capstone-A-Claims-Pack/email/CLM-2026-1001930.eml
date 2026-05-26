@@ -1,0 +1,46 @@
+From: Karen Anderson <karen.anderson@crestviewimagi.example>
+To: claims-intake@payer.example
+Cc: None
+Date: Mon, 27 Apr 2026 12:21:00 +0000
+Message-ID: <177729813763.6.4606239129912807353@crestviewimagi.example>
+Subject: Resubmitting claim =?utf-8?b?4oCU?= patient Park (DOB 1995-05-17)
+X-Submitter-NPI:
+X-Submitter-TaxID: 13-3827856
+X-Originating-System: crestviewimagi.example MailRelay 4.2
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+Hi team,
+
+Please process the following claim. Patient was seen at our office on 2026-04=
+-01.
+
+Patient: Park, Nadia  (DOB 1995-05-17, F)
+Member ID: U65745275    Plan: Cigna Open Access Plus =E2=80=94 PPO
+Group: GRP-54507
+Address: 965 Jefferson Dr, Kansas City, MO 6418
+
+Provider: Crestview Imaging Center, NPI (missing =E2=80=94 please call), Tax =
+ID 13-3827856
+Specialty: Multi-specialty Clinic
+
+Diagnoses:
+  - E11.9  Type 2 diabetes mellitus without complications
+
+Services rendered:
+  - 2026-04-01: CPT 73030 (Shoulder X-ray, complete), 2 unit(s), $124.50
+  - 2026-04-10: CPT 99213 (Office visit, established, low-mod), 1 unit(s), $1=
+22.37
+  - 2026-04-06: CPT 20610 (Major joint injection), 2 unit(s), $283.85
+  - 2026-03-31: CPT 97110 (Therapeutic exercises (15 min)), 2 unit(s), $96.93
+
+Total: $627.65
+Claim reference: CLM-2026-1001930
+
+Let me know if anything is missing.
+
+Thanks,
+Karen Anderson
+Crestview Imaging Center
+(981) 423-6987

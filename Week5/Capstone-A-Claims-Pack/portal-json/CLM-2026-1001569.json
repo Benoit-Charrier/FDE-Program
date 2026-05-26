@@ -1,0 +1,77 @@
+{
+  "submission_id": "CLM-2026-1001569",
+  "submitted_at": "2026-04-27T13:34:00",
+  "submitter": {
+    "name": "Eastlake Wellness Clinic",
+    "npi": "9811505931",
+    "tax_id": "45-2175388",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(977) 445-9358",
+    "address": {
+      "street": "8177 Ridge Rd",
+      "city": "Kansas City",
+      "state": "MO",
+      "zip": "64181"
+    }
+  },
+  "patient": {
+    "first_name": "Connor",
+    "last_name": "Vargas",
+    "date_of_birth": "1969-11-30",
+    "gender": "M",
+    "address": {
+      "street": "4146 Lincoln St",
+      "city": "Omaha",
+      "state": "NE",
+      "zip": "68133"
+    },
+    "phone": "(371) 426-7029"
+  },
+  "insurance": {
+    "payer_id": "MCR-001",
+    "payer_name": "Medicare Part B",
+    "plan": "Original Medicare",
+    "member_id": "7NY1TKQ6CY7",
+    "group_id": "GRP-17408"
+  },
+  "diagnoses": [
+    {
+      "code": "I25.10",
+      "description": "Atherosclerotic heart disease without angina"
+    },
+    {
+      "code": "F41.1",
+      "description": "Generalized anxiety disorder"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "83036",
+      "description": "Hemoglobin A1c",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 17.53,
+      "diagnosis_pointer": "1",
+      "place_of_service": "31",
+      "place_of_service_desc": "Skilled Nursing Facility",
+      "date_of_service": "2026-04-12"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "72148",
+      "description": "MRI lumbar spine without contrast",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 752.01,
+      "diagnosis_pointer": "2",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-04-24"
+    }
+  ],
+  "total_charge_amount": 769.54,
+  "currency": "USD",
+  "prior_auth_number": null,
+  "resubmission_of": "CLM-2026-7596630"
+}

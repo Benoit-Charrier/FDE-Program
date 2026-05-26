@@ -1,0 +1,85 @@
+{
+  "submission_id": "CLM-2026-1001233",
+  "submitted_at": "2026-04-27T12:09:00",
+  "submitter": {
+    "name": "Ivan Reyes, MD",
+    "npi": "4715312676",
+    "tax_id": "11-5860495",
+    "specialty": "Emergency Medicine",
+    "phone": "(702) 832-8119",
+    "address": {
+      "street": "2329 Pine Ln",
+      "city": "Phoenix",
+      "state": "AZ",
+      "zip": "85010"
+    }
+  },
+  "patient": {
+    "first_name": "Felix",
+    "last_name": "Taylor",
+    "date_of_birth": "1945-10-15",
+    "gender": "M",
+    "address": {
+      "street": "8000 Madison Ave",
+      "city": "Portland",
+      "state": "OR",
+      "zip": "97245"
+    },
+    "phone": "(664) 639-8976"
+  },
+  "insurance": {
+    "payer_id": "AET-001",
+    "payer_name": "Aetna Open Access",
+    "plan": "PPO",
+    "member_id": "W534304958",
+    "group_id": "GRP-73659"
+  },
+  "diagnoses": [
+    {
+      "code": "M79.7",
+      "description": "Fibromyalgia"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "80053",
+      "description": "Comprehensive metabolic panel",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 18.27,
+      "diagnosis_pointer": "1",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-01"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99215",
+      "description": "Office visit, established, high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 284.85,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-08"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99285",
+      "description": "ED visit, high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 467.23,
+      "diagnosis_pointer": "1",
+      "place_of_service": "23",
+      "place_of_service_desc": "Emergency Room \u2014 Hospital",
+      "date_of_service": "2026-04-12"
+    }
+  ],
+  "total_charge_amount": 770.35,
+  "currency": "USD",
+  "prior_auth_number": null,
+  "resubmission_of": "CLM-2026-5369716"
+}

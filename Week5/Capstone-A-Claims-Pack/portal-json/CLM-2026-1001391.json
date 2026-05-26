@@ -1,0 +1,84 @@
+{
+  "submission_id": "CLM-2026-1001391",
+  "submitted_at": "2026-04-27T12:49:00",
+  "submitter": {
+    "name": "Isaac Nakamura, DPT",
+    "npi": "6469221000",
+    "tax_id": "60-5120245",
+    "specialty": "Physical Therapy",
+    "phone": "(979) 287-6490",
+    "address": {
+      "street": "7390 Sunset Blvd",
+      "city": "Portland",
+      "state": "OR",
+      "zip": "97233"
+    }
+  },
+  "patient": {
+    "first_name": "Mateo",
+    "last_name": "Adams",
+    "date_of_birth": "2006-12-31",
+    "gender": "M",
+    "address": {
+      "street": "1911 Lake Rd",
+      "city": "St. Louis",
+      "state": "MO",
+      "zip": "63135"
+    },
+    "phone": "(308) 506-2605"
+  },
+  "insurance": {
+    "payer_id": "MCR-001",
+    "payer_name": "Medicare Part B",
+    "plan": "Original Medicare",
+    "member_id": "9RV2ATX8JQ1",
+    "group_id": "GRP-34646"
+  },
+  "diagnoses": [
+    {
+      "code": "M79.7",
+      "description": "Fibromyalgia"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99215",
+      "description": "Office visit, established, high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 211.34,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-14"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "80053",
+      "description": "Comprehensive metabolic panel",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 20.08,
+      "diagnosis_pointer": "1",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-13"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99284",
+      "description": "ED visit, mod-high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 236.69,
+      "diagnosis_pointer": "1",
+      "place_of_service": "23",
+      "place_of_service_desc": "Emergency Room \u2014 Hospital",
+      "date_of_service": "2026-04-17"
+    }
+  ],
+  "total_charge_amount": 468.11,
+  "currency": "USD",
+  "prior_auth_number": null
+}

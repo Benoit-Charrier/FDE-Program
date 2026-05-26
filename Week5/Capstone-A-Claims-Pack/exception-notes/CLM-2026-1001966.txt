@@ -1,0 +1,12 @@
+[Internal note - intake processor]
+
+Pt: Park, Roberto DOB 12/14/37
+Member: 234807357-08
+Provider: Westwood Internal Medicine (NPI 0685950508)
+DOS: 2026-04-21
+Total: $156.66
+
+Issue: No prior auth on file for high-cost imaging.
+
+Routed to: Member services
+- JSmith 15:11

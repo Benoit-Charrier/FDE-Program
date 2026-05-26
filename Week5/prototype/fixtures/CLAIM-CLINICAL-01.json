@@ -1,0 +1,13 @@
+{
+  "claim_id": "CLAIM-CLINICAL-01",
+  "member_id": "GHS-MBR-0051234",
+  "provider_id": "GHS-PRV-NPI-8837291",
+  "provider_specialty": "Orthopaedic Surgeon",
+  "date_of_service": "2026-04-20",
+  "diagnosis_codes": ["M17.11"],
+  "procedure_codes": ["27447"],
+  "procedure_quantities": [1],
+  "billed_amount": 15000.00,
+  "plan_id": "GHS-PPO-2026",
+  "submission_format": "EDI_837"
+}

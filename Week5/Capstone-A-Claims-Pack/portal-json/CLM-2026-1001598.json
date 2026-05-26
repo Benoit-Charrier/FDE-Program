@@ -1,0 +1,84 @@
+{
+  "submission_id": "CLM-2026-1001598",
+  "submitted_at": "2026-04-27T13:44:00",
+  "submitter": {
+    "name": "Crestview Imaging Center",
+    "npi": "0961063825",
+    "tax_id": "91-5070314",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(513) 588-1551",
+    "address": {
+      "street": "5328 Highland Ave",
+      "city": "Houston",
+      "state": "TX",
+      "zip": "77044"
+    }
+  },
+  "patient": {
+    "first_name": "Sara",
+    "last_name": "Johnson",
+    "date_of_birth": "1954-05-26",
+    "gender": "F",
+    "address": {
+      "street": "9333 Jefferson Dr",
+      "city": "Omaha",
+      "state": "NE",
+      "zip": "68127"
+    },
+    "phone": "(405) 216-8242"
+  },
+  "insurance": {
+    "payer_id": "HUM-001",
+    "payer_name": "Humana Gold Plus",
+    "plan": "HMO",
+    "member_id": "H71598151",
+    "group_id": "GRP-88861"
+  },
+  "diagnoses": [
+    {
+      "code": "M79.7",
+      "description": "Fibromyalgia"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "71046",
+      "description": "Chest X-ray, 2 views",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 52.62,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-03-28"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "90686",
+      "description": "Flu vaccine quadrivalent",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 56.32,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-06"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99205",
+      "description": "Office visit, new pt, comprehensive",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 352.57,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-20"
+    }
+  ],
+  "total_charge_amount": 461.51,
+  "currency": "USD",
+  "prior_auth_number": null
+}

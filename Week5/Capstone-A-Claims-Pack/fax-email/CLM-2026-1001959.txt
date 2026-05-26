@@ -1,0 +1,30 @@
+============================
+   FAX COVER SHEET
+============================
+TO:    UnitedHealthcare Navigate Claims Intake
+FROM:  Westwood Internal Medicine
+DATE:  04/27/2026
+PAGES: 1 of 2
+
+URGENT [_]   FOR REVIEW [X]   PLEASE COMMENT [_]   PLEASE REPLY [_]
+
+RE: Claim submission - patient Underwood, Quincy
+
+Member ID:     841153143-05
+DOB:           1996-05-08
+Plan:          HMO
+Group:         GRP-22448
+DOS:           2026-04-18
+
+Diagnoses:     L98.9
+Procedures:    80053, 90686, 99285
+Total charge:  $489.03
+
+Provider NPI:  3261830025
+Tax ID:        22-7478137
+
+NOTES:
+Resubmission - prior denial coded incorrect dx, now corrected.
+
+If problems with this fax, call (973) 881-4346
+============================

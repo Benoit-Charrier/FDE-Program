@@ -1,0 +1,104 @@
+{
+  "submission_id": "CLM-2026-1001359",
+  "submitted_at": "2026-04-27T12:44:00",
+  "submitter": {
+    "name": "Fatima Mehta, DPT",
+    "npi": "3833632200",
+    "tax_id": "56-7822842",
+    "specialty": "Physical Therapy",
+    "phone": "(785) 432-3340",
+    "address": {
+      "street": "4379 Elm St",
+      "city": "Tucson",
+      "state": "AZ",
+      "zip": "85784"
+    }
+  },
+  "patient": {
+    "first_name": "Samuel",
+    "last_name": "Kim",
+    "date_of_birth": "2004-08-07",
+    "gender": "M",
+    "address": {
+      "street": "2152 Madison Ave",
+      "city": "Raleigh",
+      "state": "NC",
+      "zip": "27692"
+    },
+    "phone": "(874) 417-7658"
+  },
+  "insurance": {
+    "payer_id": "MCD-IL",
+    "payer_name": "Illinois Medicaid",
+    "plan": "Medicaid",
+    "member_id": "441102669",
+    "group_id": "GRP-92609"
+  },
+  "diagnoses": [
+    {
+      "code": "K21.9",
+      "description": "Gastro-esophageal reflux disease without esophagitis"
+    },
+    {
+      "code": "Z23",
+      "description": "Encounter for immunization"
+    },
+    {
+      "code": "M79.7",
+      "description": "Fibromyalgia"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "80053",
+      "description": "Comprehensive metabolic panel",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 32.64,
+      "diagnosis_pointer": "1",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-03-30"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "83036",
+      "description": "Hemoglobin A1c",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 17.66,
+      "diagnosis_pointer": "2",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-07"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "85025",
+      "description": "CBC w/ differential",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 16.73,
+      "diagnosis_pointer": "3",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-03-28"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "12001",
+      "description": "Simple repair, superficial wound",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 331.15,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-15"
+    }
+  ],
+  "total_charge_amount": 398.18,
+  "currency": "USD",
+  "prior_auth_number": null
+}

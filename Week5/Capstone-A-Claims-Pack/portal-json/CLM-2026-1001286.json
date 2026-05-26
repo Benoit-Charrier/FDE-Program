@@ -1,0 +1,92 @@
+{
+  "submission_id": "CLM-2026-1001286",
+  "submitted_at": "2026-04-27T12:22:00",
+  "submitter": {
+    "name": "Zane Schmidt, PA",
+    "npi": "0173535622",
+    "tax_id": "18-1015267",
+    "specialty": "Physician Assistant",
+    "phone": "(898) 640-3611",
+    "address": {
+      "street": "3695 Jefferson Dr",
+      "city": "Raleigh",
+      "state": "NC",
+      "zip": "27670"
+    }
+  },
+  "patient": {
+    "first_name": "Henry",
+    "last_name": "Schultz",
+    "date_of_birth": "1935-05-10",
+    "gender": "M",
+    "address": {
+      "street": "2732 Oak Ave",
+      "city": "Phoenix",
+      "state": "AZ",
+      "zip": "85069"
+    },
+    "phone": "(704) 367-5587"
+  },
+  "insurance": {
+    "payer_id": "UHC-002",
+    "payer_name": "UnitedHealthcare Navigate",
+    "plan": "HMO",
+    "member_id": "812171970-09",
+    "group_id": "GRP-80252"
+  },
+  "diagnoses": [
+    {
+      "code": "E78.5",
+      "description": "Hyperlipidemia, unspecified"
+    },
+    {
+      "code": "I25.10",
+      "description": "Atherosclerotic heart disease without angina"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99204",
+      "description": "Office visit, new pt, high",
+      "modifiers": [
+        "22"
+      ],
+      "units": 1,
+      "charge_amount": 258.14,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-24"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "83036",
+      "description": "Hemoglobin A1c",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 29.79,
+      "diagnosis_pointer": "2",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-20"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99422",
+      "description": "Online digital E/M, 11-20 min",
+      "modifiers": [
+        "95"
+      ],
+      "units": 1,
+      "charge_amount": 49.47,
+      "diagnosis_pointer": "1",
+      "place_of_service": "02",
+      "place_of_service_desc": "Telehealth",
+      "date_of_service": "2026-04-21"
+    }
+  ],
+  "total_charge_amount": 337.4,
+  "currency": "USD",
+  "prior_auth_number": null
+}

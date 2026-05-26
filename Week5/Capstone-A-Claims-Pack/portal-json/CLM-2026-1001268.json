@@ -1,0 +1,88 @@
+{
+  "submission_id": "CLM-2026-1001268",
+  "submitted_at": "2026-04-27T12:22:00",
+  "submitter": {
+    "name": "Summit Cardiology Group",
+    "npi": "",
+    "tax_id": "48-5266776",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(738) 880-3919",
+    "address": {
+      "street": "1510 Sunset Blvd",
+      "city": "St. Louis",
+      "state": "MO",
+      "zip": "63131"
+    }
+  },
+  "patient": {
+    "first_name": "Donna",
+    "last_name": "Rodriguez",
+    "date_of_birth": "2010-10-04",
+    "gender": "F",
+    "address": {
+      "street": "5845 Cherry Ln",
+      "city": "Tampa",
+      "state": "FL",
+      "zip": "33682"
+    },
+    "phone": "(537) 541-3495"
+  },
+  "insurance": {
+    "payer_id": "UHC-001",
+    "payer_name": "UnitedHealthcare Choice Plus",
+    "plan": "PPO",
+    "member_id": "736850622-06",
+    "group_id": "GRP-69667"
+  },
+  "diagnoses": [
+    {
+      "code": "L30.9",
+      "description": "Dermatitis, unspecified"
+    },
+    {
+      "code": "J06.9",
+      "description": "Acute upper respiratory infection, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "64483",
+      "description": "Injection, transforaminal epidural",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 286.9,
+      "diagnosis_pointer": "1",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-03-30"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99285",
+      "description": "ED visit, high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 454.68,
+      "diagnosis_pointer": "2",
+      "place_of_service": "23",
+      "place_of_service_desc": "Emergency Room \u2014 Hospital",
+      "date_of_service": "2026-04-09"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "64483",
+      "description": "Injection, transforaminal epidural",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 594.11,
+      "diagnosis_pointer": "1",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-04-08"
+    }
+  ],
+  "total_charge_amount": 1335.69,
+  "currency": "USD",
+  "prior_auth_number": null
+}

@@ -1,0 +1,79 @@
+From: Donna Schultz <donna.schultz@brianpatelmd.example>
+To: claims-intake@payer.example
+Cc: billing-dept@brianpatelmd.example
+Date: Mon, 27 Apr 2026 07:28:10 +0000
+Message-ID: <177729813743.6.1912802442457565870@brianpatelmd.example>
+Subject: Resubmitting claim =?utf-8?b?4oCU?= patient Underwood (DOB
+ 1939-09-28)
+X-Submitter-NPI: 2783260547
+X-Submitter-TaxID: 53-3302645
+X-Originating-System: brianpatelmd.example MailRelay 4.2
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="===============1881594500182752657=="
+
+--===============1881594500182752657==
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hi team,
+
+Please process the following claim. Patient was seen at our office on 2026-04=
+-13.
+
+Patient: Underwood, Ivan  (DOB 1939-09-28, M)
+Member ID: XOJ729724690    Plan: Blue Cross Blue Shield of Illinois =E2=80=94=
+ HMO Standard
+Group: GRP-29836
+Address: 5230 Sunset Blvd, Sacramento, CA 9589
+
+Provider: Brian Patel, MD, NPI 2783260547, Tax ID 53-3302645
+Specialty: Emergency Medicine
+
+Diagnoses:
+  - J44.9  Chronic obstructive pulmonary disease, unspecified
+  - H66.90  Otitis media, unspecified, unspecified ear
+  - I10  Essential (primary) hypertension
+
+Services rendered:
+  - 2026-04-13: CPT 97140 (Manual therapy (15 min)), 1 unit(s), $32.82
+  - 2026-03-28: CPT 44970 (Laparoscopic appendectomy), 1 unit(s), $1581.70
+  - 2026-04-16: CPT 99285 (ED visit, high), 1 unit(s), $463.95
+  - 2026-04-01: CPT 90686 (Flu vaccine quadrivalent), 1 unit(s), $21.88
+
+Total: $2100.35
+Claim reference: CLM-2026-1001904
+
+This one got stuck =E2=80=94 appreciate the help!
+
+Thanks,
+Donna Schultz
+Brian Patel, MD
+(760) 736-6436
+
+--===============1881594500182752657==
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+<html><body style=3D"font-family: Arial, sans-serif; font-size: 11pt;">
+<p>Hi team,</p>
+<p>Please process the following claim. Patient was seen at our office on
+<b>2026-04-13</b>.</p>
+<table cellpadding=3D"3" style=3D"border-collapse: collapse; font-size: 10pt;=
+">
+<tr><td><b>Patient:</b></td><td>Underwood, Ivan (DOB 1939-09-28, M)</td></tr>
+<tr><td><b>Member ID:</b></td><td>XOJ729724690</td></tr>
+<tr><td><b>Plan:</b></td><td>Blue Cross Blue Shield of Illinois =E2=80=94 HMO=
+ Standard</td></tr>
+<tr><td><b>Group:</b></td><td>GRP-29836</td></tr>
+<tr><td><b>Provider:</b></td><td>Brian Patel, MD (NPI 2783260547)</td></tr>
+<tr><td><b>Total charge:</b></td><td>$2,100.35</td></tr>
+<tr><td><b>Claim ref:</b></td><td>CLM-2026-1001904</td></tr>
+</table>
+<p>Diagnoses: J44.9, H66.90, I10</p>
+<p>Procedures: 97140, 44970, 99285, 90686</p>
+<p>Thanks,<br>Donna Schultz<br>Brian Patel, MD<br>(760) 736-6436</p>
+</body></html>
+
+--===============1881594500182752657==--

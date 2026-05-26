@@ -1,0 +1,80 @@
+{
+  "submission_id": "CLM-2026-1001558",
+  "submitted_at": "2026-04-27T13:34:00",
+  "submitter": {
+    "name": "Carlos Patel, MD",
+    "npi": "3070370583",
+    "tax_id": "25-3439747",
+    "specialty": "Radiology",
+    "phone": "(439) 390-5497",
+    "address": {
+      "street": "9139 Maple Dr",
+      "city": "Columbus",
+      "state": "OH",
+      "zip": "43277"
+    }
+  },
+  "patient": {
+    "first_name": "Kevin",
+    "last_name": "Wong",
+    "date_of_birth": "1942-09-15",
+    "gender": "M",
+    "address": {
+      "street": "5104 Park Blvd",
+      "city": "Seattle",
+      "state": "WA",
+      "zip": "98111"
+    },
+    "phone": "(273) 795-7209"
+  },
+  "insurance": {
+    "payer_id": "AET-001",
+    "payer_name": "Aetna Open Access",
+    "plan": "PPO",
+    "member_id": "907878025",
+    "group_id": "GRP-10542"
+  },
+  "diagnoses": [
+    {
+      "code": "M25.561",
+      "description": "Pain in right knee"
+    },
+    {
+      "code": "F32.9",
+      "description": "Major depressive disorder, single episode"
+    },
+    {
+      "code": "J20.9",
+      "description": "Acute bronchitis, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "70551",
+      "description": "MRI brain without contrast",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 1052.48,
+      "diagnosis_pointer": "1",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-04-11"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "80053",
+      "description": "Comprehensive metabolic panel",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 16.71,
+      "diagnosis_pointer": "2",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-24"
+    }
+  ],
+  "total_charge_amount": 1069.19,
+  "currency": "USD",
+  "prior_auth_number": null
+}

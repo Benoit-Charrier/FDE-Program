@@ -1,0 +1,78 @@
+{
+  "submission_id": "CLM-2026-1001362",
+  "submitted_at": "2026-04-27T12:41:00",
+  "submitter": {
+    "name": "Oscar DuBois, MD",
+    "npi": "4137095212",
+    "tax_id": "92-3972137",
+    "specialty": "Radiology",
+    "phone": "(745) 648-4124",
+    "address": {
+      "street": "1645 1st Ave",
+      "city": "Nashville",
+      "state": "TN",
+      "zip": "37249"
+    }
+  },
+  "patient": {
+    "first_name": "Jose",
+    "last_name": "Johnson",
+    "date_of_birth": "1962-01-31",
+    "gender": "M",
+    "address": {
+      "street": "4131 Birch Ct",
+      "city": "Cincinnati",
+      "state": "OH",
+      "zip": "45271"
+    },
+    "phone": "(454) 871-2466"
+  },
+  "insurance": {
+    "payer_id": "MCR-001",
+    "payer_name": "Medicare Part B",
+    "plan": "Original Medicare",
+    "member_id": "7PW9XMM1ER8",
+    "group_id": "GRP-47056"
+  },
+  "diagnoses": [
+    {
+      "code": "K21.9",
+      "description": "Gastro-esophageal reflux disease without esophagitis"
+    },
+    {
+      "code": "M25.562",
+      "description": "Pain in left knee"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "20610",
+      "description": "Major joint injection",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 123.68,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-18"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99422",
+      "description": "Online digital E/M, 11-20 min",
+      "modifiers": [
+        "95"
+      ],
+      "units": 1,
+      "charge_amount": 39.16,
+      "diagnosis_pointer": "2",
+      "place_of_service": "02",
+      "place_of_service_desc": "Telehealth",
+      "date_of_service": "2026-04-13"
+    }
+  ],
+  "total_charge_amount": 162.84,
+  "currency": "USD",
+  "prior_auth_number": null
+}

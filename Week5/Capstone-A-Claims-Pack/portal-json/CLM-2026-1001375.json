@@ -1,0 +1,60 @@
+{
+  "submission_id": "CLM-2026-1001375",
+  "submitted_at": "2026-04-27T12:46:00",
+  "submitter": {
+    "name": "Alice Singh, MD",
+    "npi": "8403391693",
+    "tax_id": "93-8611074",
+    "specialty": "Family Medicine",
+    "phone": "(500) 503-1047",
+    "address": {
+      "street": "6278 Elm St",
+      "city": "Portland",
+      "state": "OR",
+      "zip": "97277"
+    }
+  },
+  "patient": {
+    "first_name": "Jerome",
+    "last_name": "Baker",
+    "date_of_birth": "1981-01-07",
+    "gender": "M",
+    "address": {
+      "street": "1357 1st Ave",
+      "city": "Nashville",
+      "state": "TN",
+      "zip": "37266"
+    },
+    "phone": "(925) 421-3188"
+  },
+  "insurance": {
+    "payer_id": "BCBS-IL",
+    "payer_name": "Blue Cross Blue Shield of Illinois",
+    "plan": "HMO Standard",
+    "member_id": "XOJ669363646",
+    "group_id": "GRP-30582"
+  },
+  "diagnoses": [
+    {
+      "code": "M25.562",
+      "description": "Pain in left knee"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99396",
+      "description": "Preventive established, 40-64",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 251.99,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-12"
+    }
+  ],
+  "total_charge_amount": 251.99,
+  "currency": "USD",
+  "prior_auth_number": null
+}

@@ -1,0 +1,30 @@
+============================
+   FAX COVER SHEET
+============================
+TO:    Cigna Open Access Plus Claims Intake
+FROM:  Maple Family Health
+DATE:  04/27/2026
+PAGES: 1 of 5
+
+URGENT [_]   FOR REVIEW [X]   PLEASE COMMENT [_]   PLEASE REPLY [_]
+
+RE: Claim submission - patient Zhang, George
+
+Member ID:     U59805286
+DOB:           1945-08-19
+Plan:          PPO
+Group:         GRP-64522
+DOS:           2026-04-17
+
+Diagnoses:     J02.9, M54.5, M25.561
+Procedures:    80061, 97140, 73030, 85025
+Total charge:  $282.76
+
+Provider NPI:  4882316642
+Tax ID:        54-7633636
+
+NOTES:
+Please prior-auth was on file - see attached.
+
+If problems with this fax, call (975) 474-1249
+============================

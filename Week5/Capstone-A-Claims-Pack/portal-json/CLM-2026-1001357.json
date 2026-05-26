@@ -1,0 +1,64 @@
+{
+  "submission_id": "CLM-2026-1001357",
+  "submitted_at": "2026-04-27T12:40:00",
+  "submitter": {
+    "name": "Connor Cohen, MD",
+    "npi": "7603849007",
+    "tax_id": "70-5913848",
+    "specialty": "Pediatrics",
+    "phone": "(947) 882-1781",
+    "address": {
+      "street": "9991 Maple Dr",
+      "city": "Phoenix",
+      "state": "AZ",
+      "zip": "85017"
+    }
+  },
+  "patient": {
+    "first_name": "Rachel",
+    "last_name": "O'Brien",
+    "date_of_birth": "1982-01-02",
+    "gender": "F",
+    "address": {
+      "street": "7959 Park Blvd",
+      "city": "Raleigh",
+      "state": "NC",
+      "zip": "27618"
+    },
+    "phone": "(441) 270-9702"
+  },
+  "insurance": {
+    "payer_id": "AET-001",
+    "payer_name": "Aetna Open Access",
+    "plan": "PPO",
+    "member_id": "W490616240",
+    "group_id": "GRP-21759"
+  },
+  "diagnoses": [
+    {
+      "code": "S93.401A",
+      "description": "Sprain of unspecified ligament of right ankle, initial"
+    },
+    {
+      "code": "E66.9",
+      "description": "Obesity, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "72148",
+      "description": "MRI lumbar spine without contrast",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 841.97,
+      "diagnosis_pointer": "1",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-04-08"
+    }
+  ],
+  "total_charge_amount": 841.97,
+  "currency": "USD",
+  "prior_auth_number": null
+}

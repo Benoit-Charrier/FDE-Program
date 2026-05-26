@@ -1,0 +1,72 @@
+{
+  "submission_id": "CLM-2026-1001533",
+  "submitted_at": "2026-04-27T13:24:00",
+  "submitter": {
+    "name": "Pamela Singh, NP",
+    "npi": "6200226660",
+    "tax_id": "11-5860495",
+    "specialty": "Nurse Practitioner",
+    "phone": "(534) 367-4365",
+    "address": {
+      "street": "7271 River Rd",
+      "city": "Kansas City",
+      "state": "MO",
+      "zip": "64147"
+    }
+  },
+  "patient": {
+    "first_name": "Walter",
+    "last_name": "Garcia",
+    "date_of_birth": "1976-05-19",
+    "gender": "M",
+    "address": {
+      "street": "4741 Elm St",
+      "city": "Houston",
+      "state": "TX",
+      "zip": "77067"
+    },
+    "phone": "(686) 719-9451"
+  },
+  "insurance": {
+    "payer_id": "MCD-IL",
+    "payer_name": "Illinois Medicaid",
+    "plan": "Medicaid",
+    "member_id": "258126325",
+    "group_id": "GRP-23251"
+  },
+  "diagnoses": [
+    {
+      "code": "F32.9",
+      "description": "Major depressive disorder, single episode"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "90471",
+      "description": "Immunization administration",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 34.81,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-22"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99205",
+      "description": "Office visit, new pt, comprehensive",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 292.46,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-26"
+    }
+  ],
+  "total_charge_amount": 327.27,
+  "currency": "USD",
+  "prior_auth_number": null
+}

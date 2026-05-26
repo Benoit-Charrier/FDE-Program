@@ -1,0 +1,73 @@
+{
+  "submission_id": "CLM-2026-1001454",
+  "submitted_at": "2026-04-27T13:08:00",
+  "submitter": {
+    "name": "Ingrid Singh, MD",
+    "npi": "4903164120",
+    "tax_id": "91-5070314",
+    "specialty": "Radiology",
+    "phone": "(935) 722-6600",
+    "address": {
+      "street": "157 Cherry Ln",
+      "city": "Pittsburgh",
+      "state": "PA",
+      "zip": "15286"
+    }
+  },
+  "patient": {
+    "first_name": "Carla",
+    "last_name": "Davis",
+    "date_of_birth": "2017-08-20",
+    "gender": "F",
+    "address": {
+      "street": "3757 Cherry Ln",
+      "city": "Chicago",
+      "state": "IL",
+      "zip": "6066"
+    },
+    "phone": "(378) 849-6738"
+  },
+  "insurance": {
+    "payer_id": "UHC-001",
+    "payer_name": "UnitedHealthcare Choice Plus",
+    "plan": "PPO",
+    "member_id": "428817667-08",
+    "group_id": "GRP-81106"
+  },
+  "diagnoses": [
+    {
+      "code": "F32.9",
+      "description": "Major depressive disorder, single episode"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "80061",
+      "description": "Lipid panel",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 26.59,
+      "diagnosis_pointer": "1",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-05"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "80053",
+      "description": "Comprehensive metabolic panel",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 33.9,
+      "diagnosis_pointer": "1",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-18"
+    }
+  ],
+  "total_charge_amount": 60.49,
+  "currency": "USD",
+  "prior_auth_number": null,
+  "resubmission_of": "CLM-2026-3595985"
+}

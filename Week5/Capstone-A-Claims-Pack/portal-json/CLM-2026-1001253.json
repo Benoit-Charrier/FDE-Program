@@ -1,0 +1,93 @@
+{
+  "submission_id": "CLM-2026-1001253",
+  "submitted_at": "2026-04-27T12:14:00",
+  "submitter": {
+    "name": "Vera Anderson, MD",
+    "npi": "6628584447",
+    "tax_id": "68-9136954",
+    "specialty": "Family Medicine",
+    "phone": "(401) 539-4821",
+    "address": {
+      "street": "5838 Forest Dr",
+      "city": "Tampa",
+      "state": "FL",
+      "zip": "33683"
+    }
+  },
+  "patient": {
+    "first_name": "Grace",
+    "last_name": "Chen",
+    "date_of_birth": "1998-10-15",
+    "gender": "F",
+    "address": {
+      "street": "1538 Cedar Ct",
+      "city": "Phoenix",
+      "state": "AZ",
+      "zip": "85038"
+    },
+    "phone": "(442) 494-9499"
+  },
+  "insurance": {
+    "payer_id": "UHC-002",
+    "payer_name": "UnitedHealthcare Navigate",
+    "plan": "HMO",
+    "member_id": "387493698-09",
+    "group_id": "GRP-63417",
+    "coverage_effective_date": "2026-06-15"
+  },
+  "diagnoses": [
+    {
+      "code": "Z23",
+      "description": "Encounter for immunization"
+    },
+    {
+      "code": "F41.1",
+      "description": "Generalized anxiety disorder"
+    },
+    {
+      "code": "I25.10",
+      "description": "Atherosclerotic heart disease without angina"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "80061",
+      "description": "Lipid panel",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 26.49,
+      "diagnosis_pointer": "1",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-18"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "97140",
+      "description": "Manual therapy (15 min)",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 34.81,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-19"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99396",
+      "description": "Preventive established, 40-64",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 251.68,
+      "diagnosis_pointer": "3",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-11"
+    }
+  ],
+  "total_charge_amount": 312.98,
+  "currency": "USD",
+  "prior_auth_number": null
+}

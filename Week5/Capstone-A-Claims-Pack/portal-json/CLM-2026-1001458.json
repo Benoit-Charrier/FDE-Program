@@ -1,0 +1,104 @@
+{
+  "submission_id": "CLM-2026-1001458",
+  "submitted_at": "2026-04-27T13:07:00",
+  "submitter": {
+    "name": "Quinn Patel, DC",
+    "npi": "2733600113",
+    "tax_id": "",
+    "specialty": "Chiropractic",
+    "phone": "(765) 447-1275",
+    "address": {
+      "street": "6862 Madison Ave",
+      "city": "Cleveland",
+      "state": "OH",
+      "zip": "44181"
+    }
+  },
+  "patient": {
+    "first_name": "Victor",
+    "last_name": "Adams",
+    "date_of_birth": "1995-02-27",
+    "gender": "M",
+    "address": {
+      "street": "7210 Walnut St",
+      "city": "Charlotte",
+      "state": "NC",
+      "zip": "28282"
+    },
+    "phone": "(364) 953-2951"
+  },
+  "insurance": {
+    "payer_id": "CIG-001",
+    "payer_name": "Cigna Open Access Plus",
+    "plan": "PPO",
+    "member_id": "48783855U",
+    "group_id": "GRP-24147"
+  },
+  "diagnoses": [
+    {
+      "code": "H66.90",
+      "description": "Otitis media, unspecified, unspecified ear"
+    },
+    {
+      "code": "F41.1",
+      "description": "Generalized anxiety disorder"
+    },
+    {
+      "code": "M25.562",
+      "description": "Pain in left knee"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99214",
+      "description": "Office visit, established, mod-high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 168.21,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-26"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99395",
+      "description": "Preventive established, 18-39",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 179.58,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-20"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "80061",
+      "description": "Lipid panel",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 26.35,
+      "diagnosis_pointer": "3",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-22"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "99204",
+      "description": "Office visit, new pt, high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 202.27,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-21"
+    }
+  ],
+  "total_charge_amount": 576.41,
+  "currency": "USD",
+  "prior_auth_number": null
+}

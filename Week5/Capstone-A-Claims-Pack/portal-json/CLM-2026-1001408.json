@@ -1,0 +1,78 @@
+{
+  "submission_id": "CLM-2026-1001408",
+  "submitted_at": "2026-04-27T12:52:00",
+  "submitter": {
+    "name": "Lily O'Connor, DO",
+    "npi": "9041520348",
+    "tax_id": "10-3567542",
+    "specialty": "Internal Medicine",
+    "phone": "(470) 298-4845",
+    "address": {
+      "street": "6069 Elm St",
+      "city": "Omaha",
+      "state": "NE",
+      "zip": "68165"
+    }
+  },
+  "patient": {
+    "first_name": "Yvonne",
+    "last_name": "Vasquez",
+    "date_of_birth": "1952-09-22",
+    "gender": "F",
+    "address": {
+      "street": "1093 Main St",
+      "city": "Phoenix",
+      "state": "AZ",
+      "zip": "85071"
+    },
+    "phone": "(852) 960-7852"
+  },
+  "insurance": {
+    "payer_id": "BCBS-IL",
+    "payer_name": "Blue Cross Blue Shield of Illinois",
+    "plan": "PPO Choice",
+    "member_id": "XOJ323331289",
+    "group_id": "GRP-68125"
+  },
+  "diagnoses": [
+    {
+      "code": "J20.9",
+      "description": "Acute bronchitis, unspecified"
+    },
+    {
+      "code": "N18.3",
+      "description": "Chronic kidney disease, stage 3"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99215",
+      "description": "Office visit, established, high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 220.15,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-13"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99422",
+      "description": "Online digital E/M, 11-20 min",
+      "modifiers": [
+        "95"
+      ],
+      "units": 1,
+      "charge_amount": 48.32,
+      "diagnosis_pointer": "2",
+      "place_of_service": "02",
+      "place_of_service_desc": "Telehealth",
+      "date_of_service": "2026-04-15"
+    }
+  ],
+  "total_charge_amount": 268.47,
+  "currency": "USD",
+  "prior_auth_number": null
+}

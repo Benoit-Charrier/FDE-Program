@@ -1,0 +1,84 @@
+{
+  "submission_id": "CLM-2026-1001566",
+  "submitted_at": "2026-04-27T13:33:00",
+  "submitter": {
+    "name": "Maple Family Health",
+    "npi": "",
+    "tax_id": "21-7122446",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(549) 882-5917",
+    "address": {
+      "street": "6946 Cherry Ln",
+      "city": "Tampa",
+      "state": "FL",
+      "zip": "33641"
+    }
+  },
+  "patient": {
+    "first_name": "Zoe",
+    "last_name": "Zimmerman",
+    "date_of_birth": "1956-04-11",
+    "gender": "F",
+    "address": {
+      "street": "2769 Pine Ln",
+      "city": "Columbus",
+      "state": "OH",
+      "zip": "43225"
+    },
+    "phone": "(879) 268-7436"
+  },
+  "insurance": {
+    "payer_id": "BCBS-IL",
+    "payer_name": "Blue Cross Blue Shield of Illinois",
+    "plan": "PPO Choice",
+    "member_id": "XOJ193476046",
+    "group_id": "GRP-47530"
+  },
+  "diagnoses": [
+    {
+      "code": "R53.83",
+      "description": "Other fatigue"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99205",
+      "description": "Office visit, new pt, comprehensive",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 264.09,
+      "diagnosis_pointer": "1",
+      "place_of_service": "12",
+      "place_of_service_desc": "Home",
+      "date_of_service": "2026-04-10"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "80061",
+      "description": "Lipid panel",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 40.72,
+      "diagnosis_pointer": "1",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-22"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99214",
+      "description": "Office visit, established, mod-high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 143.6,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-26"
+    }
+  ],
+  "total_charge_amount": 448.41,
+  "currency": "USD",
+  "prior_auth_number": null
+}

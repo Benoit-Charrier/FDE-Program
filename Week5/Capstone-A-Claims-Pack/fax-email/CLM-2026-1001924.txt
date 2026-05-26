@@ -1,0 +1,34 @@
+From: billing@yusufschmidtmd.example
+To: claims-intake@payer.example
+Date: Mon, 27 Apr 2026 10:57:00 -0500
+Subject: Claim for Nadia Xiong - need help
+
+Hi team,
+
+Please process the following claim. Patient was seen at our office on 2026-04-24.
+
+Patient: Xiong, Nadia (DOB 1951-08-09, F)
+Member ID: U33661585    Plan: Cigna Open Access Plus - PPO
+Group: GRP-30610
+Address: 2774 Madison Ave, Nashville, TN 37292
+
+Provider: Yusuf Schmidt, MD, NPI 9395670773, Tax ID (missing - please call)
+Specialty: Orthopedic Surgery
+
+Diagnoses:
+  - Z23 Encounter for immunization
+  - I10 Essential (primary) hypertension
+  - L30.9 Dermatitis, unspecified
+
+Services rendered:
+  - 2026-04-24: CPT 47562 (Laparoscopic cholecystectomy), 2 unit(s), $3018.96
+  - 2026-04-16: CPT 73030 (Shoulder X-ray, complete), 2 unit(s), $126.62
+  - 2026-04-08: CPT 20610 (Major joint injection), 1 unit(s), $126.00
+
+Total: $3271.58
+Claim reference: CLM-2026-1001924
+
+This one got stuck — appreciate the help!
+
+Karen
+Front Office

@@ -1,0 +1,60 @@
+{
+  "submission_id": "CLM-2026-1001577",
+  "submitted_at": "2026-04-27T13:35:00",
+  "submitter": {
+    "name": "Valerie Jensen, MD",
+    "npi": "0006569185",
+    "tax_id": "70-5913848",
+    "specialty": "Internal Medicine",
+    "phone": "(755) 535-4122",
+    "address": {
+      "street": "6276 Cherry Ln",
+      "city": "Cleveland",
+      "state": "OH",
+      "zip": "44160"
+    }
+  },
+  "patient": {
+    "first_name": "Zoe",
+    "last_name": "Walker",
+    "date_of_birth": "2009-01-01",
+    "gender": "F",
+    "address": {
+      "street": "1815 Madison Ave",
+      "city": "Cincinnati",
+      "state": "OH",
+      "zip": "45249"
+    },
+    "phone": "(950) 635-7056"
+  },
+  "insurance": {
+    "payer_id": "UHC-002",
+    "payer_name": "UnitedHealthcare Navigate",
+    "plan": "HMO",
+    "member_id": "554683303-08",
+    "group_id": "GRP-21838"
+  },
+  "diagnoses": [
+    {
+      "code": "N39.0",
+      "description": "Urinary tract infection, site not specified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99285",
+      "description": "ED visit, high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 407.44,
+      "diagnosis_pointer": "1",
+      "place_of_service": "23",
+      "place_of_service_desc": "Emergency Room \u2014 Hospital",
+      "date_of_service": "2026-04-23"
+    }
+  ],
+  "total_charge_amount": 407.44,
+  "currency": "USD",
+  "prior_auth_number": null
+}

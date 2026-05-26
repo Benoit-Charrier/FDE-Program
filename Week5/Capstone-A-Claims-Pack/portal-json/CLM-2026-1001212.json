@@ -1,0 +1,64 @@
+{
+  "submission_id": "CLM-2026-1001212",
+  "submitted_at": "2026-04-27T12:04:00",
+  "submitter": {
+    "name": "Tina Jensen, MD",
+    "npi": "6236599617",
+    "tax_id": "32-5826449",
+    "specialty": "Emergency Medicine",
+    "phone": "(524) 258-1666",
+    "address": {
+      "street": "2367 Spring St",
+      "city": "Kansas City",
+      "state": "MO",
+      "zip": "64193"
+    }
+  },
+  "patient": {
+    "first_name": "Mateo",
+    "last_name": "Schultz",
+    "date_of_birth": "2006-11-21",
+    "gender": "M",
+    "address": {
+      "street": "3157 Franklin Rd",
+      "city": "Cleveland",
+      "state": "OH",
+      "zip": "44161"
+    },
+    "phone": "(226) 855-2546"
+  },
+  "insurance": {
+    "payer_id": "ANT-001",
+    "payer_name": "Anthem Blue Access",
+    "plan": "PPO",
+    "member_id": "YYL84738763",
+    "group_id": "GRP-33306"
+  },
+  "diagnoses": [
+    {
+      "code": "Z00.00",
+      "description": "Encounter for general adult medical examination"
+    },
+    {
+      "code": "J02.9",
+      "description": "Acute pharyngitis, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99205",
+      "description": "Office visit, new pt, comprehensive",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 307.41,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-03-28"
+    }
+  ],
+  "total_charge_amount": 307.41,
+  "currency": "USD",
+  "prior_auth_number": null
+}

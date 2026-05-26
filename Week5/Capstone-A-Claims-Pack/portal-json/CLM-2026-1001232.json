@@ -1,0 +1,88 @@
+{
+  "submission_id": "CLM-2026-1001232",
+  "submitted_at": "2026-04-27T12:08:00",
+  "submitter": {
+    "name": "Priya DuBois, MD",
+    "npi": "0378028626",
+    "tax_id": "71-1103322",
+    "specialty": "Radiology",
+    "phone": "(629) 868-1475",
+    "address": {
+      "street": "1600 Forest Dr",
+      "city": "Philadelphia",
+      "state": "PA",
+      "zip": "19153"
+    }
+  },
+  "patient": {
+    "first_name": "Tomas",
+    "last_name": "Mitchell",
+    "date_of_birth": "2007-02-26",
+    "gender": "M",
+    "address": {
+      "street": "7011 Lincoln St",
+      "city": "Denver",
+      "state": "CO",
+      "zip": "80257"
+    },
+    "phone": "(254) 847-8603"
+  },
+  "insurance": {
+    "payer_id": "MCR-001",
+    "payer_name": "Medicare Part B",
+    "plan": "Original Medicare",
+    "member_id": "6NJ1THK8QW9",
+    "group_id": "GRP-28704"
+  },
+  "diagnoses": [
+    {
+      "code": "E78.5",
+      "description": "Hyperlipidemia, unspecified"
+    },
+    {
+      "code": "R07.9",
+      "description": "Chest pain, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99284",
+      "description": "ED visit, mod-high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 211.57,
+      "diagnosis_pointer": "1",
+      "place_of_service": "23",
+      "place_of_service_desc": "Emergency Room \u2014 Hospital",
+      "date_of_service": "2026-03-29"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99205",
+      "description": "Office visit, new pt, comprehensive",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 326.8,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-01"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "90471",
+      "description": "Immunization administration",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 18.31,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-03-28"
+    }
+  ],
+  "total_charge_amount": 556.68,
+  "currency": "USD",
+  "prior_auth_number": null
+}

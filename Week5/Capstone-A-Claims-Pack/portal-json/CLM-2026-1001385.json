@@ -1,0 +1,60 @@
+{
+  "submission_id": "CLM-2026-1001385",
+  "submitted_at": "2026-04-27T12:46:00",
+  "submitter": {
+    "name": "Crestview Imaging Center",
+    "npi": "2912694474",
+    "tax_id": "97-2413794",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(408) 518-8251",
+    "address": {
+      "street": "418 Madison Ave",
+      "city": "Chicago",
+      "state": "IL",
+      "zip": "60627"
+    }
+  },
+  "patient": {
+    "first_name": "Victor",
+    "last_name": "Zimmerman",
+    "date_of_birth": "2005-11-24",
+    "gender": "M",
+    "address": {
+      "street": "1095 Washington Ave",
+      "city": "St. Louis",
+      "state": "MO",
+      "zip": "63111"
+    },
+    "phone": "(595) 663-7453"
+  },
+  "insurance": {
+    "payer_id": "HUM-001",
+    "payer_name": "Humana Gold Plus",
+    "plan": "HMO",
+    "member_id": "H82247732",
+    "group_id": "GRP-82409"
+  },
+  "diagnoses": [
+    {
+      "code": "Z00.00",
+      "description": "Encounter for general adult medical examination"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "20610",
+      "description": "Major joint injection",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 112.05,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-26"
+    }
+  ],
+  "total_charge_amount": 112.05,
+  "currency": "USD",
+  "prior_auth_number": null
+}

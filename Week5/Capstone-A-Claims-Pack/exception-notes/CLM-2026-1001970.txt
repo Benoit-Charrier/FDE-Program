@@ -1,0 +1,11 @@
+PHONE LOG - PROVIDER OUTREACH
+
+Date/Time: 04/27/2026 15:12
+Caller: Office mgr from Highland Pediatrics
+Re: Patient Owen Martinez (member 157966258)
+
+Caller states: we billed a 99214 but it processed as 99213 - want to appeal
+
+Resolution: Pulled claim CLM-2026-1001970. Found - claim missing modifier 25 - faxed correction request.
+
+Closed: 15:12  Agent: D.Kahn

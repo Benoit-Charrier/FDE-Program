@@ -1,0 +1,84 @@
+{
+  "submission_id": "CLM-2026-1001328",
+  "submitted_at": "2026-04-27T12:33:00",
+  "submitter": {
+    "name": "Highland Pediatrics",
+    "npi": "6913537891",
+    "tax_id": "85-2693146",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(870) 927-5995",
+    "address": {
+      "street": "3375 Lincoln St",
+      "city": "Cincinnati",
+      "state": "OH",
+      "zip": "45218"
+    }
+  },
+  "patient": {
+    "first_name": "Rachel",
+    "last_name": "Park",
+    "date_of_birth": "2022-05-07",
+    "gender": "F",
+    "address": {
+      "street": "7819 Cedar Ct",
+      "city": "Albuquerque",
+      "state": "NM",
+      "zip": "87124"
+    },
+    "phone": "(913) 776-8154"
+  },
+  "insurance": {
+    "payer_id": "CIG-001",
+    "payer_name": "Cigna Open Access Plus",
+    "plan": "PPO",
+    "member_id": "U37691774",
+    "group_id": "GRP-79662"
+  },
+  "diagnoses": [
+    {
+      "code": "F32.9",
+      "description": "Major depressive disorder, single episode"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "71046",
+      "description": "Chest X-ray, 2 views",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 61.95,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-18"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "80053",
+      "description": "Comprehensive metabolic panel",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 16.62,
+      "diagnosis_pointer": "1",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-25"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "44970",
+      "description": "Laparoscopic appendectomy",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 1820.95,
+      "diagnosis_pointer": "1",
+      "place_of_service": "21",
+      "place_of_service_desc": "Inpatient Hospital",
+      "date_of_service": "2026-04-04"
+    }
+  ],
+  "total_charge_amount": 1899.52,
+  "currency": "USD",
+  "prior_auth_number": null
+}

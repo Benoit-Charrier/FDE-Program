@@ -1,0 +1,78 @@
+{
+  "submission_id": "CLM-2026-1001432",
+  "submitted_at": "2026-04-27T12:58:00",
+  "submitter": {
+    "name": "Sunrise Medical Group",
+    "npi": "1403589774",
+    "tax_id": "36-7226148",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(813) 264-8630",
+    "address": {
+      "street": "2853 Oak Ave",
+      "city": "Denver",
+      "state": "CO",
+      "zip": "80277"
+    }
+  },
+  "patient": {
+    "first_name": "Victor",
+    "last_name": "Smith",
+    "date_of_birth": "1977-04-16",
+    "gender": "M",
+    "address": {
+      "street": "8036 Elm St",
+      "city": "St. Louis",
+      "state": "MO",
+      "zip": "63171"
+    },
+    "phone": "(303) 828-1168"
+  },
+  "insurance": {
+    "payer_id": "AET-001",
+    "payer_name": "Aetna Open Access",
+    "plan": "PPO",
+    "member_id": "W163942670",
+    "group_id": "GRP-50549"
+  },
+  "diagnoses": [
+    {
+      "code": "I10",
+      "description": "Essential (primary) hypertension"
+    },
+    {
+      "code": "N39.0",
+      "description": "Urinary tract infection, site not specified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99421",
+      "description": "Online digital E/M, 5-10 min",
+      "modifiers": [
+        "95"
+      ],
+      "units": 1,
+      "charge_amount": 22.06,
+      "diagnosis_pointer": "1",
+      "place_of_service": "02",
+      "place_of_service_desc": "Telehealth",
+      "date_of_service": "2026-04-08"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "12001",
+      "description": "Simple repair, superficial wound",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 181.47,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-03-30"
+    }
+  ],
+  "total_charge_amount": 203.53,
+  "currency": "USD",
+  "prior_auth_number": null
+}

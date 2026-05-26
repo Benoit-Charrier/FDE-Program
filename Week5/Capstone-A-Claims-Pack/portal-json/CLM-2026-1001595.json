@@ -1,0 +1,68 @@
+{
+  "submission_id": "CLM-2026-1001595",
+  "submitted_at": "2026-04-27T13:38:00",
+  "submitter": {
+    "name": "Sunrise Medical Group",
+    "npi": "1107674455",
+    "tax_id": "99-8279635",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(714) 802-4341",
+    "address": {
+      "street": "6039 Jefferson Dr",
+      "city": "Houston",
+      "state": "TX",
+      "zip": "77028"
+    }
+  },
+  "patient": {
+    "first_name": "Brett",
+    "last_name": "Lee",
+    "date_of_birth": "2006-06-23",
+    "gender": "M",
+    "address": {
+      "street": "5570 Park Blvd",
+      "city": "Portland",
+      "state": "OR",
+      "zip": "97288"
+    },
+    "phone": "(408) 671-5399"
+  },
+  "insurance": {
+    "payer_id": "HUM-001",
+    "payer_name": "Humana Gold Plus",
+    "plan": "HMO",
+    "member_id": "H58028468",
+    "group_id": "GRP-91470"
+  },
+  "diagnoses": [
+    {
+      "code": "E78.5",
+      "description": "Hyperlipidemia, unspecified"
+    },
+    {
+      "code": "N18.3",
+      "description": "Chronic kidney disease, stage 3"
+    },
+    {
+      "code": "M25.562",
+      "description": "Pain in left knee"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99999",
+      "description": "Office visit, established, mod-high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 179.2,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-03-28"
+    }
+  ],
+  "total_charge_amount": 179.2,
+  "currency": "USD",
+  "prior_auth_number": null
+}

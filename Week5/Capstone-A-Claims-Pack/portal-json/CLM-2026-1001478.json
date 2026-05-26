@@ -1,0 +1,78 @@
+{
+  "submission_id": "CLM-2026-1001478",
+  "submitted_at": "2026-04-27T13:09:00",
+  "submitter": {
+    "name": "Fatima Jensen, MD",
+    "npi": "0226580979",
+    "tax_id": "33-6476889",
+    "specialty": "Pediatrics",
+    "phone": "(957) 888-1739",
+    "address": {
+      "street": "7173 Washington Ave",
+      "city": "Chicago",
+      "state": "IL",
+      "zip": "60664"
+    }
+  },
+  "patient": {
+    "first_name": "Gloria",
+    "last_name": "Adams",
+    "date_of_birth": "2010-09-08",
+    "gender": "F",
+    "address": {
+      "street": "9543 1st Ave",
+      "city": "Cincinnati",
+      "state": "OH",
+      "zip": "45271"
+    },
+    "phone": "(796) 440-3599"
+  },
+  "insurance": {
+    "payer_id": "BCBS-IL",
+    "payer_name": "Blue Cross Blue Shield of Illinois",
+    "plan": "PPO Choice",
+    "member_id": "XOJ969209512",
+    "group_id": "GRP-33604"
+  },
+  "diagnoses": [
+    {
+      "code": "J06.9",
+      "description": "Acute upper respiratory infection, unspecified"
+    },
+    {
+      "code": "N18.3",
+      "description": "Chronic kidney disease, stage 3"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99421",
+      "description": "Online digital E/M, 5-10 min",
+      "modifiers": [
+        "95"
+      ],
+      "units": 1,
+      "charge_amount": 23.15,
+      "diagnosis_pointer": "1",
+      "place_of_service": "02",
+      "place_of_service_desc": "Telehealth",
+      "date_of_service": "2026-04-17"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99214",
+      "description": "Office visit, established, mod-high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 152.39,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-26"
+    }
+  ],
+  "total_charge_amount": 175.54,
+  "currency": "USD",
+  "prior_auth_number": null
+}

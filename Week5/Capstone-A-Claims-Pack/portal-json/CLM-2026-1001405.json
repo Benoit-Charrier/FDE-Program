@@ -1,0 +1,67 @@
+{
+  "submission_id": "CLM-2026-1001405",
+  "submitted_at": "2026-04-27T12:55:00",
+  "submitter": {
+    "name": "Adrian DuBois, NP",
+    "npi": "1341522132",
+    "tax_id": "95-9044704",
+    "specialty": "Nurse Practitioner",
+    "phone": "(887) 324-5967",
+    "address": {
+      "street": "3710 Cherry Ln",
+      "city": "Kansas City",
+      "state": "MO",
+      "zip": "64146"
+    }
+  },
+  "patient": {
+    "first_name": "Sara",
+    "last_name": "Johnson",
+    "date_of_birth": "1976-05-17",
+    "gender": "F",
+    "address": {
+      "street": "6673 Cedar Ct",
+      "city": "Salt Lake City",
+      "state": "UT",
+      "zip": "84141"
+    },
+    "phone": "(234) 358-8262"
+  },
+  "insurance": {
+    "payer_id": "BCBS-IL",
+    "payer_name": "Blue Cross Blue Shield of Illinois",
+    "plan": "PPO Choice",
+    "member_id": "XOJ440921632",
+    "group_id": "GRP-21474"
+  },
+  "diagnoses": [],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99215",
+      "description": "Office visit, established, high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 273.9,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-25"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99215",
+      "description": "Office visit, established, high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 224.64,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-12"
+    }
+  ],
+  "total_charge_amount": 498.54,
+  "currency": "USD",
+  "prior_auth_number": null
+}

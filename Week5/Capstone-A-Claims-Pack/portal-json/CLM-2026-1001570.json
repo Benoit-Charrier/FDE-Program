@@ -1,0 +1,60 @@
+{
+  "submission_id": "CLM-2026-1001570",
+  "submitted_at": "2026-04-27T13:37:00",
+  "submitter": {
+    "name": "Sunrise Medical Group",
+    "npi": "7124945035",
+    "tax_id": "60-5120245",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(695) 302-2113",
+    "address": {
+      "street": "5763 Madison Ave",
+      "city": "Omaha",
+      "state": "NE",
+      "zip": "68168"
+    }
+  },
+  "patient": {
+    "first_name": "Quinn",
+    "last_name": "Quintana",
+    "date_of_birth": "1937-08-01",
+    "gender": "F",
+    "address": {
+      "street": "5120 Maple Dr",
+      "city": "Kansas City",
+      "state": "MO",
+      "zip": "6411"
+    },
+    "phone": "(304) 931-5253"
+  },
+  "insurance": {
+    "payer_id": "MCR-001",
+    "payer_name": "Medicare Part B",
+    "plan": "Original Medicare",
+    "member_id": "1DF9TQA6RU6",
+    "group_id": "GRP-78399"
+  },
+  "diagnoses": [
+    {
+      "code": "M17.11",
+      "description": "Unilateral primary osteoarthritis, right knee"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "97110",
+      "description": "Therapeutic exercises (15 min)",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 65.69,
+      "diagnosis_pointer": "1",
+      "place_of_service": "31",
+      "place_of_service_desc": "Skilled Nursing Facility",
+      "date_of_service": "2026-04-13"
+    }
+  ],
+  "total_charge_amount": 65.69,
+  "currency": "USD",
+  "prior_auth_number": null
+}

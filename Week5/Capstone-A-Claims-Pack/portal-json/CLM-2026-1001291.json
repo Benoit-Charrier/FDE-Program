@@ -1,0 +1,72 @@
+{
+  "submission_id": "CLM-2026-1001291",
+  "submitted_at": "2026-04-27T12:22:00",
+  "submitter": {
+    "name": "Sunrise Medical Group",
+    "npi": "5993561020",
+    "tax_id": "",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(539) 553-2850",
+    "address": {
+      "street": "825 Hill St",
+      "city": "Indianapolis",
+      "state": "IN",
+      "zip": "46258"
+    }
+  },
+  "patient": {
+    "first_name": "Ulysses",
+    "last_name": "Brown",
+    "date_of_birth": "1988-10-15",
+    "gender": "M",
+    "address": {
+      "street": "4361 Sunset Blvd",
+      "city": "Omaha",
+      "state": "NE",
+      "zip": "68124"
+    },
+    "phone": "(448) 773-8716"
+  },
+  "insurance": {
+    "payer_id": "UHC-002",
+    "payer_name": "UnitedHealthcare Navigate",
+    "plan": "HMO",
+    "member_id": "70-079491",
+    "group_id": "GRP-74161"
+  },
+  "diagnoses": [
+    {
+      "code": "F32.9",
+      "description": "Major depressive disorder, single episode"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99213",
+      "description": "Office visit, established, low-mod",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 100.64,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-03-28"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99284",
+      "description": "ED visit, mod-high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 299.14,
+      "diagnosis_pointer": "1",
+      "place_of_service": "23",
+      "place_of_service_desc": "Emergency Room \u2014 Hospital",
+      "date_of_service": "2026-04-04"
+    }
+  ],
+  "total_charge_amount": 399.78,
+  "currency": "USD",
+  "prior_auth_number": null
+}

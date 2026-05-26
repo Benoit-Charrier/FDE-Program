@@ -1,0 +1,88 @@
+{
+  "submission_id": "CLM-2026-1001234",
+  "submitted_at": "2026-04-27T12:13:00",
+  "submitter": {
+    "name": "Summit Cardiology Group",
+    "npi": "",
+    "tax_id": "39-8572682",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(766) 697-7100",
+    "address": {
+      "street": "7188 Ridge Rd",
+      "city": "Seattle",
+      "state": "WA",
+      "zip": "98168"
+    }
+  },
+  "patient": {
+    "first_name": "BrETT",
+    "last_name": "Walker",
+    "date_of_birth": "1933-11-14",
+    "gender": "M",
+    "address": {
+      "street": "9491 Oak Ave",
+      "city": "Boston",
+      "state": "MA",
+      "zip": "0214"
+    },
+    "phone": "(316) 516-4071"
+  },
+  "insurance": {
+    "payer_id": "ANT-001",
+    "payer_name": "Anthem Blue Access",
+    "plan": "PPO",
+    "member_id": "YYL53478935",
+    "group_id": "GRP-91894"
+  },
+  "diagnoses": [
+    {
+      "code": "I25.10",
+      "description": "Atherosclerotic heart disease without angina"
+    },
+    {
+      "code": "M25.562",
+      "description": "Pain in left knee"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "97110",
+      "description": "Therapeutic exercises (15 min)",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 83.53,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-18"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "73030",
+      "description": "Shoulder X-ray, complete",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 64.91,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-11"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "73030",
+      "description": "Shoulder X-ray, complete",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 157.96,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-03"
+    }
+  ],
+  "total_charge_amount": 306.4,
+  "currency": "USD",
+  "prior_auth_number": null
+}

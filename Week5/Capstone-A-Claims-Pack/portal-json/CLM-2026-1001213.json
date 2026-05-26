@@ -1,0 +1,64 @@
+{
+  "submission_id": "CLM-2026-1001213",
+  "submitted_at": "2026-04-27T12:04:00",
+  "submitter": {
+    "name": "Hannah Martinez, MD",
+    "npi": "7130516283",
+    "tax_id": "70-5913848",
+    "specialty": "Pediatrics",
+    "phone": "(506) 533-7581",
+    "address": {
+      "street": "6022 Main St",
+      "city": "Denver",
+      "state": "CO",
+      "zip": "80269"
+    }
+  },
+  "patient": {
+    "first_name": "Patrick",
+    "last_name": "Johnson",
+    "date_of_birth": "1975-04-25",
+    "gender": "M",
+    "address": {
+      "street": "6458 Pine Ln",
+      "city": "Chicago",
+      "state": "IL",
+      "zip": "6066"
+    },
+    "phone": "(565) 260-3355"
+  },
+  "insurance": {
+    "payer_id": "BCBS-IL",
+    "payer_name": "Blue Cross Blue Shield of Illinois",
+    "plan": "PPO Choice",
+    "member_id": "XOJ694512961",
+    "group_id": "GRP-53613"
+  },
+  "diagnoses": [
+    {
+      "code": "E66.9",
+      "description": "Obesity, unspecified"
+    },
+    {
+      "code": "J44.9",
+      "description": "Chronic obstructive pulmonary disease, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "80061",
+      "description": "Lipid panel",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 27.29,
+      "diagnosis_pointer": "1",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-26"
+    }
+  ],
+  "total_charge_amount": 27.29,
+  "currency": "USD",
+  "prior_auth_number": null
+}

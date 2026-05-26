@@ -1,0 +1,85 @@
+{
+  "submission_id": "CLM-2026-1001221",
+  "submitted_at": "2026-04-27T12:10:00",
+  "submitter": {
+    "name": "Westwood Internal Medicine",
+    "npi": "4722080115",
+    "tax_id": "93-8611074",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(501) 497-9872",
+    "address": {
+      "street": "5011 Birch Ct",
+      "city": "Charlotte",
+      "state": "NC",
+      "zip": "28245"
+    }
+  },
+  "patient": {
+    "first_name": "Kiana",
+    "last_name": "Johnson",
+    "date_of_birth": "1939-06-21",
+    "gender": "F",
+    "address": {
+      "street": "6683 Cedar Ct",
+      "city": "Kansas City",
+      "state": "MO",
+      "zip": "64147"
+    },
+    "phone": "(723) 306-6668"
+  },
+  "insurance": {
+    "payer_id": "BCBS-IL",
+    "payer_name": "Blue Cross Blue Shield of Illinois",
+    "plan": "HMO Standard",
+    "member_id": "XOJ205438089",
+    "group_id": "GRP-82767",
+    "coverage_effective_date": "2026-05-26"
+  },
+  "diagnoses": [
+    {
+      "code": "J06.9",
+      "description": "Acute upper respiratory infection, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99395",
+      "description": "Preventive established, 18-39",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 240.62,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-17"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "20610",
+      "description": "Major joint injection",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 123.88,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-25"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99396",
+      "description": "Preventive established, 40-64",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 197.94,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-03-31"
+    }
+  ],
+  "total_charge_amount": 562.44,
+  "currency": "USD",
+  "prior_auth_number": null
+}

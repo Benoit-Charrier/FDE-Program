@@ -1,0 +1,127 @@
+{
+  "resourceType": "Claim",
+  "id": "CLM-2026-1001843",
+  "status": "active",
+  "type": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+        "code": "professional"
+      }
+    ]
+  },
+  "use": "claim",
+  "patient": {
+    "reference": "Patient/417784180-03",
+    "display": "Camila Foster"
+  },
+  "billablePeriod": {
+    "start": "2026-04-09",
+    "end": "2026-04-08"
+  },
+  "created": "2026-04-27T14:43:00",
+  "insurer": {
+    "reference": "Organization/UHC-002",
+    "display": "UnitedHealthcare Navigate"
+  },
+  "provider": {
+    "reference": "Practitioner/9386463672",
+    "display": "Oscar Singh, DO"
+  },
+  "priority": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/processpriority",
+        "code": "normal"
+      }
+    ]
+  },
+  "diagnosis": [],
+  "insurance": [
+    {
+      "sequence": 1,
+      "focal": true,
+      "coverage": {
+        "display": "HMO via UnitedHealthcare Navigate"
+      }
+    }
+  ],
+  "item": [
+    {
+      "sequence": 1,
+      "diagnosisSequence": [
+        1
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "64483",
+            "display": "Injection, transforaminal epidural"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-04-09",
+      "quantity": {
+        "value": 1
+      },
+      "unitPrice": {
+        "value": 376.86,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 376.86,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "22"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 2,
+      "diagnosisSequence": [
+        2
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "97140",
+            "display": "Manual therapy (15 min)"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-04-08",
+      "quantity": {
+        "value": 2
+      },
+      "unitPrice": {
+        "value": 33.785,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 67.57,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "11"
+          }
+        ]
+      }
+    }
+  ],
+  "total": {
+    "value": 444.43,
+    "currency": "USD"
+  }
+}

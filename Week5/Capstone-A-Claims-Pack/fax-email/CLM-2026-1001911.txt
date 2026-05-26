@@ -1,0 +1,30 @@
+============================
+   FAX COVER SHEET
+============================
+TO:    UnitedHealthcare Navigate Claims Intake
+FROM:  Maple Family Health
+DATE:  04/27/2026
+PAGES: 1 of 4
+
+URGENT [_]   FOR REVIEW [X]   PLEASE COMMENT [_]   PLEASE REPLY [_]
+
+RE: Claim submission - patient Khan, Logan
+
+Member ID:     960711851-00
+DOB:           1993-11-28
+Plan:          HMO
+Group:         GRP-14229
+DOS:           2026-04-19
+
+Diagnoses:     J44.9, F41.1
+Procedures:    97110, 83036, 27447, 99421
+Total charge:  $2803.26
+
+Provider NPI:  8751368198
+Tax ID:        12-7720445
+
+NOTES:
+Patient was seen for emergency visit - records to follow.
+
+If problems with this fax, call (359) 833-7914
+============================

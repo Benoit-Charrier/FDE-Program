@@ -1,0 +1,66 @@
+{
+  "submission_id": "CLM-2026-1001542",
+  "submitted_at": "2026-04-27T13:27:00",
+  "submitter": {
+    "name": "Henry DuBois, DPT",
+    "npi": "8383815523",
+    "tax_id": "70-5913848",
+    "specialty": "Physical Therapy",
+    "phone": "(559) 726-8739",
+    "address": {
+      "street": "1790 River Rd",
+      "city": "Indianapolis",
+      "state": "IN",
+      "zip": "46292"
+    }
+  },
+  "patient": {
+    "first_name": "Samuel",
+    "last_name": "Thompson",
+    "date_of_birth": "2014-07-16",
+    "gender": "M",
+    "address": {
+      "street": "226 Cherry Ln",
+      "city": "Philadelphia",
+      "state": "PA",
+      "zip": "19114"
+    },
+    "phone": "(596) 398-4945"
+  },
+  "insurance": {
+    "payer_id": "CIG-001",
+    "payer_name": "Cigna Open Access Plus",
+    "plan": "PPO",
+    "member_id": "U15241325",
+    "group_id": "GRP-74714"
+  },
+  "diagnoses": [
+    {
+      "code": "J06.9",
+      "description": "Acute upper respiratory infection, unspecified"
+    },
+    {
+      "code": "E11.9",
+      "description": "Type 2 diabetes mellitus without complications"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99422",
+      "description": "Online digital E/M, 11-20 min",
+      "modifiers": [
+        "95"
+      ],
+      "units": 1,
+      "charge_amount": 43.87,
+      "diagnosis_pointer": "1",
+      "place_of_service": "02",
+      "place_of_service_desc": "Telehealth",
+      "date_of_service": "2026-04-15"
+    }
+  ],
+  "total_charge_amount": 43.87,
+  "currency": "USD",
+  "prior_auth_number": null
+}

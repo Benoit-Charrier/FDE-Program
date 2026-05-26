@@ -1,0 +1,92 @@
+{
+  "submission_id": "CLM-2026-1001374",
+  "submitted_at": "2026-04-27T12:45:00",
+  "submitter": {
+    "name": "Wendy Nakamura, DO",
+    "npi": "6543575577",
+    "tax_id": "18-1015267",
+    "specialty": "Internal Medicine",
+    "phone": "(370) 512-5671",
+    "address": {
+      "street": "680 Spring St",
+      "city": "Phoenix",
+      "state": "AZ",
+      "zip": "85031"
+    }
+  },
+  "patient": {
+    "first_name": "WaLTER",
+    "last_name": "O'Brien",
+    "date_of_birth": "1961-04-06",
+    "gender": "M",
+    "address": {
+      "street": "6569 Park Blvd",
+      "city": "Phoenix",
+      "state": "AZ",
+      "zip": "85061"
+    },
+    "phone": "(715) 339-8271"
+  },
+  "insurance": {
+    "payer_id": "ANT-001",
+    "payer_name": "Anthem Blue Access",
+    "plan": "PPO",
+    "member_id": "YYL59616983",
+    "group_id": "GRP-61779"
+  },
+  "diagnoses": [
+    {
+      "code": "M25.561",
+      "description": "Pain in right knee"
+    },
+    {
+      "code": "F32.9",
+      "description": "Major depressive disorder, single episode"
+    },
+    {
+      "code": "J02.9",
+      "description": "Acute pharyngitis, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "83036",
+      "description": "Hemoglobin A1c",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 18.55,
+      "diagnosis_pointer": "1",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-03-31"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99214",
+      "description": "Office visit, established, mod-high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 191.63,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-08"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "80053",
+      "description": "Comprehensive metabolic panel",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 32.43,
+      "diagnosis_pointer": "3",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-03-31"
+    }
+  ],
+  "total_charge_amount": 242.61,
+  "currency": "USD",
+  "prior_auth_number": null
+}

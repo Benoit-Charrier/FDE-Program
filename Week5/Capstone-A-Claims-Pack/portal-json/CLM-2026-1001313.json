@@ -1,0 +1,64 @@
+{
+  "submission_id": "CLM-2026-1001313",
+  "submitted_at": "2026-04-27T12:32:00",
+  "submitter": {
+    "name": "Edwin Reyes, MD",
+    "npi": "4400849728",
+    "tax_id": "22-7303626",
+    "specialty": "Family Medicine",
+    "phone": "(559) 660-7390",
+    "address": {
+      "street": "2203 Lincoln St",
+      "city": "Buffalo",
+      "state": "NY",
+      "zip": "14218"
+    }
+  },
+  "patient": {
+    "first_name": "Rosa",
+    "last_name": "Johnson",
+    "date_of_birth": "1993-09-16",
+    "gender": "F",
+    "address": {
+      "street": "536 Cedar Ct",
+      "city": "Minneapolis",
+      "state": "MN",
+      "zip": "5544"
+    },
+    "phone": "(434) 671-6976"
+  },
+  "insurance": {
+    "payer_id": "HUM-001",
+    "payer_name": "Humana Gold Plus",
+    "plan": "HMO",
+    "member_id": "H15523689",
+    "group_id": "GRP-42059"
+  },
+  "diagnoses": [
+    {
+      "code": "J02.9",
+      "description": "Acute pharyngitis, unspecified"
+    },
+    {
+      "code": "L30.9",
+      "description": "Dermatitis, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99396",
+      "description": "Preventive established, 40-64",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 237.31,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-24"
+    }
+  ],
+  "total_charge_amount": 237.31,
+  "currency": "USD",
+  "prior_auth_number": null
+}

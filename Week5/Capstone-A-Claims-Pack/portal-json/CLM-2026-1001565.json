@@ -1,0 +1,102 @@
+{
+  "submission_id": "CLM-2026-1001565",
+  "submitted_at": "2026-04-27T13:36:00",
+  "submitter": {
+    "name": "Oak Tree Pediatric Associates",
+    "npi": "5970945559",
+    "tax_id": "60-5120245",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(693) 700-9531",
+    "address": {
+      "street": "1325 Franklin Rd",
+      "city": "Cincinnati",
+      "state": "OH",
+      "zip": "45296"
+    }
+  },
+  "patient": {
+    "first_name": "Julia",
+    "last_name": "Novak",
+    "date_of_birth": "1971-03-26",
+    "gender": "F",
+    "address": {
+      "street": "2688 Ridge Rd",
+      "city": "Denver",
+      "state": "CO",
+      "zip": "80280"
+    },
+    "phone": "(534) 251-3524"
+  },
+  "insurance": {
+    "payer_id": "HUM-001",
+    "payer_name": "Humana Gold Plus",
+    "plan": "HMO",
+    "member_id": "H39660006",
+    "group_id": "GRP-24304"
+  },
+  "diagnoses": [
+    {
+      "code": "F32.9",
+      "description": "Major depressive disorder, single episode"
+    },
+    {
+      "code": "M17.11",
+      "description": "Unilateral primary osteoarthritis, right knee"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99281",
+      "description": "ED visit, low",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 101.54,
+      "diagnosis_pointer": "1",
+      "place_of_service": "23",
+      "place_of_service_desc": "Emergency Room \u2014 Hospital",
+      "date_of_service": "2026-04-22"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "70551",
+      "description": "MRI brain without contrast",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 470.61,
+      "diagnosis_pointer": "2",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-04-16"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99203",
+      "description": "Office visit, new pt, mod",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 174.63,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-12"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "99422",
+      "description": "Online digital E/M, 11-20 min",
+      "modifiers": [
+        "95"
+      ],
+      "units": 1,
+      "charge_amount": 39.5,
+      "diagnosis_pointer": "2",
+      "place_of_service": "02",
+      "place_of_service_desc": "Telehealth",
+      "date_of_service": "2026-04-25"
+    }
+  ],
+  "total_charge_amount": 786.28,
+  "currency": "USD",
+  "prior_auth_number": null
+}

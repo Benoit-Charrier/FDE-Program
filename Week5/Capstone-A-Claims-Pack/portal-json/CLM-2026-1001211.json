@@ -1,0 +1,76 @@
+{
+  "submission_id": "CLM-2026-1001211",
+  "submitted_at": "2026-04-27T12:03:00",
+  "submitter": {
+    "name": "Bright Family Practice",
+    "npi": "4333148477",
+    "tax_id": "33-6476889",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(438) 803-6430",
+    "address": {
+      "street": "9523 River Rd",
+      "city": "Columbus",
+      "state": "OH",
+      "zip": "43230"
+    }
+  },
+  "patient": {
+    "first_name": "Logan",
+    "last_name": "Kumar",
+    "date_of_birth": "2009-02-03",
+    "gender": "M",
+    "address": {
+      "street": "7518 Cherry Ln",
+      "city": "St. Louis",
+      "state": "MO",
+      "zip": "63176"
+    },
+    "phone": "(855) 772-7364"
+  },
+  "insurance": {
+    "payer_id": "UHC-001",
+    "payer_name": "UnitedHealthcare Choice Plus",
+    "plan": "PPO",
+    "member_id": "422301371-08",
+    "group_id": "GRP-29576"
+  },
+  "diagnoses": [
+    {
+      "code": "R10.9",
+      "description": "Unspecified abdominal pain"
+    },
+    {
+      "code": "J06.9",
+      "description": "Acute upper respiratory infection, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99281",
+      "description": "ED visit, low",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 106.28,
+      "diagnosis_pointer": "1",
+      "place_of_service": "12",
+      "place_of_service_desc": "Home",
+      "date_of_service": "2026-04-26"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99285",
+      "description": "ED visit, high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 384.28,
+      "diagnosis_pointer": "2",
+      "place_of_service": "23",
+      "place_of_service_desc": "Emergency Room \u2014 Hospital",
+      "date_of_service": "2026-04-23"
+    }
+  ],
+  "total_charge_amount": 490.56,
+  "currency": "USD",
+  "prior_auth_number": null
+}

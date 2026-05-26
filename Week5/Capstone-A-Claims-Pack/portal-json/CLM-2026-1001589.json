@@ -1,0 +1,72 @@
+{
+  "submission_id": "CLM-2026-1001589",
+  "submitted_at": "2026-04-27T13:40:00",
+  "submitter": {
+    "name": "Bright Family Practice",
+    "npi": "4566959307",
+    "tax_id": "44-7392596",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(334) 773-6874",
+    "address": {
+      "street": "3561 Maple Dr",
+      "city": "Cleveland",
+      "state": "OH",
+      "zip": "44153"
+    }
+  },
+  "patient": {
+    "first_name": "Maya",
+    "last_name": "Diaz",
+    "date_of_birth": "1959-06-04",
+    "gender": "F",
+    "address": {
+      "street": "8791 Cherry Ln",
+      "city": "Portland",
+      "state": "OR",
+      "zip": "97229"
+    },
+    "phone": "(561) 827-3685"
+  },
+  "insurance": {
+    "payer_id": "MCR-001",
+    "payer_name": "Medicare Part B",
+    "plan": "Original Medicare",
+    "member_id": "8YA1DDE1EN9",
+    "group_id": "GRP-77957"
+  },
+  "diagnoses": [
+    {
+      "code": "J44.9",
+      "description": "Chronic obstructive pulmonary disease, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99205",
+      "description": "Office visit, new pt, comprehensive",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 245.31,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-06"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99215",
+      "description": "Office visit, established, high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 287.77,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-15"
+    }
+  ],
+  "total_charge_amount": 533.08,
+  "currency": "USD",
+  "prior_auth_number": null
+}

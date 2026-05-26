@@ -1,0 +1,103 @@
+{
+  "submission_id": "CLM-2026-1001503",
+  "submitted_at": "2026-04-27T13:19:00",
+  "submitter": {
+    "name": "Travis Patel, MD",
+    "npi": "7290348238",
+    "tax_id": "23-1130624",
+    "specialty": "Orthopedic Surgery",
+    "phone": "(337) 869-7008",
+    "address": {
+      "street": "8510 Maple Dr",
+      "city": "Charlotte",
+      "state": "NC",
+      "zip": "28299"
+    }
+  },
+  "patient": {
+    "first_name": "Yvonne",
+    "last_name": "Gonzalez",
+    "date_of_birth": "1963-12-01",
+    "gender": "F",
+    "address": {
+      "street": "665 Cedar Ct",
+      "city": "Nashville",
+      "state": "TN",
+      "zip": "37224"
+    },
+    "phone": "(735) 746-9161"
+  },
+  "insurance": {
+    "payer_id": "BCBS-IL",
+    "payer_name": "Blue Cross Blue Shield of Illinois",
+    "plan": "PPO Choice",
+    "member_id": "XOJ403301202",
+    "group_id": "GRP-16946"
+  },
+  "diagnoses": [
+    {
+      "code": "I10",
+      "description": "Essential (primary) hypertension"
+    },
+    {
+      "code": "J44.9",
+      "description": "Chronic obstructive pulmonary disease, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99421",
+      "description": "Online digital E/M, 5-10 min",
+      "modifiers": [
+        "95"
+      ],
+      "units": 1,
+      "charge_amount": 25.47,
+      "diagnosis_pointer": "1",
+      "place_of_service": "02",
+      "place_of_service_desc": "Telehealth",
+      "date_of_service": "2026-04-01"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99281",
+      "description": "ED visit, low",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 102.86,
+      "diagnosis_pointer": "2",
+      "place_of_service": "23",
+      "place_of_service_desc": "Emergency Room \u2014 Hospital",
+      "date_of_service": "2026-04-08"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99214",
+      "description": "Office visit, established, mod-high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 148.79,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-16"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "97140",
+      "description": "Manual therapy (15 min)",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 60.63,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-17"
+    }
+  ],
+  "total_charge_amount": 337.75,
+  "currency": "USD",
+  "prior_auth_number": null,
+  "resubmission_of": "CLM-2026-2394702"
+}

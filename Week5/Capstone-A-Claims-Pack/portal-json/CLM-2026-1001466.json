@@ -1,0 +1,84 @@
+{
+  "submission_id": "CLM-2026-1001466",
+  "submitted_at": "2026-04-27T13:07:00",
+  "submitter": {
+    "name": "Liam Johansson, MD",
+    "npi": "8757475384",
+    "tax_id": "",
+    "specialty": "Emergency Medicine",
+    "phone": "(724) 983-4401",
+    "address": {
+      "street": "892 Washington Ave",
+      "city": "Portland",
+      "state": "OR",
+      "zip": "97267"
+    }
+  },
+  "patient": {
+    "first_name": "Fatima",
+    "last_name": "Yamamoto",
+    "date_of_birth": "1951-08-18",
+    "gender": "F",
+    "address": {
+      "street": "1998 Pine Ln",
+      "city": "Portland",
+      "state": "OR",
+      "zip": "97255"
+    },
+    "phone": "(261) 226-5411"
+  },
+  "insurance": {
+    "payer_id": "CIG-001",
+    "payer_name": "Cigna Open Access Plus",
+    "plan": "PPO",
+    "member_id": "U16520513",
+    "group_id": "GRP-76102"
+  },
+  "diagnoses": [
+    {
+      "code": "M54.5",
+      "description": "Low back pain"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "70551",
+      "description": "MRI brain without contrast",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 880.91,
+      "diagnosis_pointer": "1",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-04-19"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "12001",
+      "description": "Simple repair, superficial wound",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 335.6,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-25"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "12001",
+      "description": "Simple repair, superficial wound",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 327.23,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-10"
+    }
+  ],
+  "total_charge_amount": 1543.74,
+  "currency": "USD",
+  "prior_auth_number": null
+}

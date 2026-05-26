@@ -1,0 +1,56 @@
+{
+  "submission_id": "CLM-2026-1001578",
+  "submitted_at": "2026-04-27T13:38:00",
+  "submitter": {
+    "name": "Connor Singh, MD",
+    "npi": "5211239070",
+    "tax_id": "17-9077104",
+    "specialty": "Emergency Medicine",
+    "phone": "(586) 897-6377",
+    "address": {
+      "street": "9866 Hill St",
+      "city": "Phoenix",
+      "state": "AZ",
+      "zip": "85018"
+    }
+  },
+  "patient": {
+    "first_name": "Quincy",
+    "last_name": "Johnson",
+    "date_of_birth": "2001-04-23",
+    "gender": "M",
+    "address": {
+      "street": "1782 Lincoln St",
+      "city": "Houston",
+      "state": "TX",
+      "zip": "77091"
+    },
+    "phone": "(632) 820-1005"
+  },
+  "insurance": {
+    "payer_id": "UHC-001",
+    "payer_name": "UnitedHealthcare Choice Plus",
+    "plan": "PPO",
+    "member_id": "538810528-02",
+    "group_id": "GRP-21556"
+  },
+  "diagnoses": [],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "97140",
+      "description": "Manual therapy (15 min)",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 35.27,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-06"
+    }
+  ],
+  "total_charge_amount": 35.27,
+  "currency": "USD",
+  "prior_auth_number": null,
+  "resubmission_of": "CLM-2026-7085301"
+}

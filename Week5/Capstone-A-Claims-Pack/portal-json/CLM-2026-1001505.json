@@ -1,0 +1,72 @@
+{
+  "submission_id": "CLM-2026-1001505",
+  "submitted_at": "2026-04-27T13:17:00",
+  "submitter": {
+    "name": "Yusuf Patel, MD",
+    "npi": "1610361288",
+    "tax_id": "13-3827856",
+    "specialty": "Radiology",
+    "phone": "(304) 827-3667",
+    "address": {
+      "street": "6419 Franklin Rd",
+      "city": "Cleveland",
+      "state": "OH",
+      "zip": "44165"
+    }
+  },
+  "patient": {
+    "first_name": "Roberto",
+    "last_name": "Baker",
+    "date_of_birth": "1956-06-16",
+    "gender": "M",
+    "address": {
+      "street": "2201 Sunset Blvd",
+      "city": "Indianapolis",
+      "state": "IN",
+      "zip": "46284"
+    },
+    "phone": "(643) 484-4524"
+  },
+  "insurance": {
+    "payer_id": "UHC-002",
+    "payer_name": "UnitedHealthcare Navigate",
+    "plan": "HMO",
+    "member_id": "213260187-05",
+    "group_id": "GRP-16256"
+  },
+  "diagnoses": [
+    {
+      "code": "L98.9",
+      "description": "Disorder of the skin and subcutaneous tissue, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "83036",
+      "description": "Hemoglobin A1c",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 20.25,
+      "diagnosis_pointer": "1",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-20"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "71046",
+      "description": "Chest X-ray, 2 views",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 136.39,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-16"
+    }
+  ],
+  "total_charge_amount": 156.64,
+  "currency": "USD",
+  "prior_auth_number": null
+}

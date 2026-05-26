@@ -1,0 +1,34 @@
+From: billing@baysideorthope.example
+To: claims-intake@payer.example
+Date: Mon, 27 Apr 2026 16:18:00 -0500
+Subject: Re: billing question / claim CLM-2026-1001901
+
+Hi team,
+
+Please process the following claim. Patient was seen at our office on 2026-04-23.
+
+Patient: Anderson, Lina (DOB 2008-07-29, F)
+Member ID: XOJ145496096    Plan: Blue Cross Blue Shield of Illinois - PPO Choice
+Group: GRP-62295
+Address: 5541 Pine Ln, Denver, CO 80246
+
+Provider: Bayside Orthopedics, NPI 0920133110, Tax ID 16-5876470
+Specialty: Multi-specialty Clinic
+
+Diagnoses:
+  - M25.562 Pain in left knee
+  - M17.11 Unilateral primary osteoarthritis, right knee
+  - Z00.00 Encounter for general adult medical examination
+
+Services rendered:
+  - 2026-04-23: CPT 47562 (Laparoscopic cholecystectomy), 2 unit(s), $2611.52
+  - 2026-04-20: CPT 99281 (ED visit, low), 1 unit(s), $124.84
+  - 2026-04-26: CPT 73030 (Shoulder X-ray, complete), 2 unit(s), $116.85
+
+Total: $2853.21
+Claim reference: CLM-2026-1001901
+
+Let me know if anything is missing.
+
+Thanks,
+Alex (billing)

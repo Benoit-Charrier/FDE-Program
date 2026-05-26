@@ -1,0 +1,72 @@
+{
+  "submission_id": "CLM-2026-1001419",
+  "submitted_at": "2026-04-27T12:59:00",
+  "submitter": {
+    "name": "Oscar Chowdhury, DO",
+    "npi": "2337764079",
+    "tax_id": "",
+    "specialty": "Internal Medicine",
+    "phone": "(855) 242-8316",
+    "address": {
+      "street": "9064 Birch Ct",
+      "city": "Houston",
+      "state": "TX",
+      "zip": "77056"
+    }
+  },
+  "patient": {
+    "first_name": "YuSUF",
+    "last_name": "Zimmerman",
+    "date_of_birth": "1965-11-17",
+    "gender": "M",
+    "address": {
+      "street": "4988 Franklin Rd",
+      "city": "Seattle",
+      "state": "WA",
+      "zip": "98144"
+    },
+    "phone": "(561) 304-4344"
+  },
+  "insurance": {
+    "payer_id": "AET-001",
+    "payer_name": "Aetna Open Access",
+    "plan": "PPO",
+    "member_id": "W693178389",
+    "group_id": "GRP-38313"
+  },
+  "diagnoses": [
+    {
+      "code": "M79.7",
+      "description": "Fibromyalgia"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "90471",
+      "description": "Immunization administration",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 35.94,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-08"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "90686",
+      "description": "Flu vaccine quadrivalent",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 39.17,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-05"
+    }
+  ],
+  "total_charge_amount": 75.11,
+  "currency": "USD",
+  "prior_auth_number": null
+}

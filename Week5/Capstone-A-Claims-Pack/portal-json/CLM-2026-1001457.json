@@ -1,0 +1,82 @@
+{
+  "submission_id": "CLM-2026-1001457",
+  "submitted_at": "2026-04-27T13:08:00",
+  "submitter": {
+    "name": "Ravi Wong, DO",
+    "npi": "8196118846",
+    "tax_id": "23-5462507",
+    "specialty": "Internal Medicine",
+    "phone": "(333) 524-6532",
+    "address": {
+      "street": "1282 Cedar Ct",
+      "city": "Raleigh",
+      "state": "NC",
+      "zip": "27656"
+    }
+  },
+  "patient": {
+    "first_name": "Jose",
+    "last_name": "Bauer",
+    "date_of_birth": "1985-07-28",
+    "gender": "M",
+    "address": {
+      "street": "9472 Walnut St",
+      "city": "Tampa",
+      "state": "FL",
+      "zip": "33676"
+    },
+    "phone": "(450) 725-8047"
+  },
+  "insurance": {
+    "payer_id": "HUM-001",
+    "payer_name": "Humana Gold Plus",
+    "plan": "HMO",
+    "member_id": "H27374852",
+    "group_id": "GRP-38473"
+  },
+  "diagnoses": [
+    {
+      "code": "M17.11",
+      "description": "Unilateral primary osteoarthritis, right knee"
+    },
+    {
+      "code": "F41.1",
+      "description": "Generalized anxiety disorder"
+    },
+    {
+      "code": "H66.90",
+      "description": "Otitis media, unspecified, unspecified ear"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99421",
+      "description": "Online digital E/M, 5-10 min",
+      "modifiers": [
+        "95"
+      ],
+      "units": 1,
+      "charge_amount": 25.09,
+      "diagnosis_pointer": "1",
+      "place_of_service": "02",
+      "place_of_service_desc": "Telehealth",
+      "date_of_service": "2026-04-23"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "72148",
+      "description": "MRI lumbar spine without contrast",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 412.0,
+      "diagnosis_pointer": "1",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-04-23"
+    }
+  ],
+  "total_charge_amount": 437.09,
+  "currency": "USD",
+  "prior_auth_number": ""
+}

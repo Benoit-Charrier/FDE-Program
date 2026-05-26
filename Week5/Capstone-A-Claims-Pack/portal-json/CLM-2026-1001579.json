@@ -1,0 +1,84 @@
+{
+  "submission_id": "CLM-2026-1001579",
+  "submitted_at": "2026-04-27T13:37:00",
+  "submitter": {
+    "name": "David Tanaka, DO",
+    "npi": "",
+    "tax_id": "16-2749174",
+    "specialty": "Internal Medicine",
+    "phone": "(926) 737-5647",
+    "address": {
+      "street": "7249 Pine Ln",
+      "city": "Portland",
+      "state": "OR",
+      "zip": "97261"
+    }
+  },
+  "patient": {
+    "first_name": "ElENA",
+    "last_name": "Bauer",
+    "date_of_birth": "1955-06-24",
+    "gender": "F",
+    "address": {
+      "street": "5200 Sunset Blvd",
+      "city": "Tucson",
+      "state": "AZ",
+      "zip": "85767"
+    },
+    "phone": "(882) 783-9072"
+  },
+  "insurance": {
+    "payer_id": "BCBS-IL",
+    "payer_name": "Blue Cross Blue Shield of Illinois",
+    "plan": "PPO Choice",
+    "member_id": "XOJ306968277",
+    "group_id": "GRP-14152"
+  },
+  "diagnoses": [
+    {
+      "code": "J02.9",
+      "description": "Acute pharyngitis, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99284",
+      "description": "ED visit, mod-high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 285.21,
+      "diagnosis_pointer": "1",
+      "place_of_service": "23",
+      "place_of_service_desc": "Emergency Room \u2014 Hospital",
+      "date_of_service": "2026-04-06"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "90686",
+      "description": "Flu vaccine quadrivalent",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 26.46,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-03-31"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99205",
+      "description": "Office visit, new pt, comprehensive",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 336.93,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-01"
+    }
+  ],
+  "total_charge_amount": 648.6,
+  "currency": "USD",
+  "prior_auth_number": null
+}

@@ -1,0 +1,152 @@
+{
+  "resourceType": "Claim",
+  "id": "CLM-2026-1001808",
+  "status": "active",
+  "type": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+        "code": "professional"
+      }
+    ]
+  },
+  "use": "claim",
+  "patient": {
+    "reference": "Patient/2VY5JHW0VM9",
+    "display": "Kara Adams"
+  },
+  "billablePeriod": {
+    "start": "2026-03-29",
+    "end": "2026-04-22"
+  },
+  "created": "2026-04-27T14:35:00",
+  "insurer": {
+    "reference": "Organization/MCR-001",
+    "display": "Medicare Part B"
+  },
+  "provider": {
+    "reference": "Practitioner/2160806913",
+    "display": "Lina Chowdhury, MD"
+  },
+  "priority": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/processpriority",
+        "code": "normal"
+      }
+    ]
+  },
+  "diagnosis": [
+    {
+      "sequence": 1,
+      "diagnosisCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/sid/icd-10-cm",
+            "code": "H66.90",
+            "display": "Otitis media, unspecified, unspecified ear"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 2,
+      "diagnosisCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/sid/icd-10-cm",
+            "code": "L30.9",
+            "display": "Dermatitis, unspecified"
+          }
+        ]
+      }
+    }
+  ],
+  "insurance": [
+    {
+      "sequence": 1,
+      "focal": true,
+      "coverage": {
+        "display": "Original Medicare via Medicare Part B"
+      }
+    }
+  ],
+  "item": [
+    {
+      "sequence": 1,
+      "diagnosisSequence": [
+        1
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "27447",
+            "display": "Total knee arthroplasty"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-03-29",
+      "quantity": {
+        "value": 2
+      },
+      "unitPrice": {
+        "value": 2824.145,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 5648.29,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "21"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 2,
+      "diagnosisSequence": [
+        2
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "64483",
+            "display": "Injection, transforaminal epidural"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-04-22",
+      "quantity": {
+        "value": 1
+      },
+      "unitPrice": {
+        "value": 333.53,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 333.53,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "22"
+          }
+        ]
+      }
+    }
+  ],
+  "total": {
+    "value": 5981.82,
+    "currency": "USD"
+  }
+}

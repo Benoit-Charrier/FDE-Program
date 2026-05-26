@@ -1,0 +1,64 @@
+{
+  "submission_id": "CLM-2026-1001541",
+  "submitted_at": "2026-04-27T13:28:00",
+  "submitter": {
+    "name": "Priya Mehta, MD",
+    "npi": "9312560309",
+    "tax_id": "32-5826449",
+    "specialty": "Internal Medicine",
+    "phone": "(943) 859-6844",
+    "address": {
+      "street": "9077 Elm St",
+      "city": "Omaha",
+      "state": "NE",
+      "zip": "68130"
+    }
+  },
+  "patient": {
+    "first_name": "Sara",
+    "last_name": "Nguyen",
+    "date_of_birth": "1986-04-16",
+    "gender": "F",
+    "address": {
+      "street": "3308 Lake Rd",
+      "city": "St. Louis",
+      "state": "MO",
+      "zip": "6311"
+    },
+    "phone": "(329) 531-9240"
+  },
+  "insurance": {
+    "payer_id": "UHC-002",
+    "payer_name": "UnitedHealthcare Navigate",
+    "plan": "HMO",
+    "member_id": "510463047-06",
+    "group_id": "GRP-33141"
+  },
+  "diagnoses": [
+    {
+      "code": "F41.1",
+      "description": "Generalized anxiety disorder"
+    },
+    {
+      "code": "M79.7",
+      "description": "Fibromyalgia"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99214",
+      "description": "Office visit, established, mod-high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 208.53,
+      "diagnosis_pointer": "1",
+      "place_of_service": "31",
+      "place_of_service_desc": "Skilled Nursing Facility",
+      "date_of_service": "2026-04-14"
+    }
+  ],
+  "total_charge_amount": 208.53,
+  "currency": "USD",
+  "prior_auth_number": null
+}

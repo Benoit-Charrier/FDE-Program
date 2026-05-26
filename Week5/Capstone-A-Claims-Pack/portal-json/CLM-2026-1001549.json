@@ -1,0 +1,76 @@
+{
+  "submission_id": "CLM-2026-1001549",
+  "submitted_at": "2026-04-27T13:32:00",
+  "submitter": {
+    "name": "Kiana Tanaka, DO",
+    "npi": "1777536017",
+    "tax_id": "56-7822842",
+    "specialty": "Family Medicine",
+    "phone": "(465) 948-7261",
+    "address": {
+      "street": "8419 Spring St",
+      "city": "Denver",
+      "state": "CO",
+      "zip": "80273"
+    }
+  },
+  "patient": {
+    "first_name": "Walter",
+    "last_name": "Schultz",
+    "date_of_birth": "1934-04-29",
+    "gender": "M",
+    "address": {
+      "street": "4536 Washington Ave",
+      "city": "Raleigh",
+      "state": "NC",
+      "zip": "27642"
+    },
+    "phone": "(518) 926-1981"
+  },
+  "insurance": {
+    "payer_id": "MCR-001",
+    "payer_name": "Medicare Part B",
+    "plan": "Original Medicare",
+    "member_id": "3DE5TXR3CQ6",
+    "group_id": "GRP-18078"
+  },
+  "diagnoses": [
+    {
+      "code": "N18.3",
+      "description": "Chronic kidney disease, stage 3"
+    },
+    {
+      "code": "M25.561",
+      "description": "Pain in right knee"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99285",
+      "description": "ED visit, high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 343.07,
+      "diagnosis_pointer": "1",
+      "place_of_service": "31",
+      "place_of_service_desc": "Skilled Nursing Facility",
+      "date_of_service": "2026-04-13"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "80053",
+      "description": "Comprehensive metabolic panel",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 39.44,
+      "diagnosis_pointer": "2",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-11"
+    }
+  ],
+  "total_charge_amount": 382.51,
+  "currency": "USD",
+  "prior_auth_number": null
+}

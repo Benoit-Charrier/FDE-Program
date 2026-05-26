@@ -1,0 +1,64 @@
+{
+  "submission_id": "CLM-2026-1001600",
+  "submitted_at": "2026-04-27T13:40:00",
+  "submitter": {
+    "name": "Summit Cardiology Group",
+    "npi": "7228994539",
+    "tax_id": "",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(656) 446-5055",
+    "address": {
+      "street": "6522 Cherry Ln",
+      "city": "Seattle",
+      "state": "WA",
+      "zip": "98161"
+    }
+  },
+  "patient": {
+    "first_name": "Jasmine",
+    "last_name": "Nguyen",
+    "date_of_birth": "2024-09-24",
+    "gender": "F",
+    "address": {
+      "street": "8493 Main St",
+      "city": "Indianapolis",
+      "state": "IN",
+      "zip": "46253"
+    },
+    "phone": "(649) 516-3478"
+  },
+  "insurance": {
+    "payer_id": "UHC-002",
+    "payer_name": "UnitedHealthcare Navigate",
+    "plan": "HMO",
+    "member_id": "750815342-01",
+    "group_id": "GRP-49962"
+  },
+  "diagnoses": [
+    {
+      "code": "M79.7",
+      "description": "Fibromyalgia"
+    },
+    {
+      "code": "R07.9",
+      "description": "Chest pain, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99213",
+      "description": "Office visit, established, low-mod",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 98.55,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-22"
+    }
+  ],
+  "total_charge_amount": 98.55,
+  "currency": "USD",
+  "prior_auth_number": null
+}

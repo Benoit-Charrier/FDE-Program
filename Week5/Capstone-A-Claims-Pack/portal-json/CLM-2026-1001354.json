@@ -1,0 +1,78 @@
+{
+  "submission_id": "CLM-2026-1001354",
+  "submitted_at": "2026-04-27T12:39:00",
+  "submitter": {
+    "name": "Roberto Patel, MD",
+    "npi": "1882183483",
+    "tax_id": "56-7822842",
+    "specialty": "Cardiology",
+    "phone": "(724) 655-6308",
+    "address": {
+      "street": "7316 Sunset Blvd",
+      "city": "Philadelphia",
+      "state": "PA",
+      "zip": "19131"
+    }
+  },
+  "patient": {
+    "first_name": "Nadia",
+    "last_name": "Davis",
+    "date_of_birth": "1977-01-26",
+    "gender": "F",
+    "address": {
+      "street": "4713 Hill St",
+      "city": "Nashville",
+      "state": "TN",
+      "zip": "37274"
+    },
+    "phone": "(312) 490-4227"
+  },
+  "insurance": {
+    "payer_id": "UHC-001",
+    "payer_name": "UnitedHealthcare Choice Plus",
+    "plan": "PPO",
+    "member_id": "484252807-08",
+    "group_id": "GRP-67066"
+  },
+  "diagnoses": [
+    {
+      "code": "R10.9",
+      "description": "Unspecified abdominal pain"
+    },
+    {
+      "code": "S93.401A",
+      "description": "Sprain of unspecified ligament of right ankle, initial"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99422",
+      "description": "Online digital E/M, 11-20 min",
+      "modifiers": [
+        "95"
+      ],
+      "units": 1,
+      "charge_amount": 42.41,
+      "diagnosis_pointer": "1",
+      "place_of_service": "02",
+      "place_of_service_desc": "Telehealth",
+      "date_of_service": "2026-04-24"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "90471",
+      "description": "Immunization administration",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 16.6,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-03-31"
+    }
+  ],
+  "total_charge_amount": 59.01,
+  "currency": "USD",
+  "prior_auth_number": null
+}

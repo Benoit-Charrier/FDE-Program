@@ -1,0 +1,76 @@
+{
+  "submission_id": "CLM-2026-1001341",
+  "submitted_at": "2026-04-27T12:40:00",
+  "submitter": {
+    "name": "Ingrid Chowdhury, MD",
+    "npi": "5907031825",
+    "tax_id": "16-2749174",
+    "specialty": "Emergency Medicine",
+    "phone": "(979) 820-4911",
+    "address": {
+      "street": "9115 Spring St",
+      "city": "Portland",
+      "state": "OR",
+      "zip": "97219"
+    }
+  },
+  "patient": {
+    "first_name": "David",
+    "last_name": "Ivanov",
+    "date_of_birth": "2018-04-30",
+    "gender": "M",
+    "address": {
+      "street": "3297 Sunset Blvd",
+      "city": "Cleveland",
+      "state": "OH",
+      "zip": "44199"
+    },
+    "phone": "(977) 870-1099"
+  },
+  "insurance": {
+    "payer_id": "UHC-001",
+    "payer_name": "UnitedHealthcare Choice Plus",
+    "plan": "PPO",
+    "member_id": "530633894-05",
+    "group_id": "GRP-37488"
+  },
+  "diagnoses": [
+    {
+      "code": "Z23",
+      "description": "Encounter for immunization"
+    },
+    {
+      "code": "R51.9",
+      "description": "Headache, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "73030",
+      "description": "Shoulder X-ray, complete",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 148.88,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-03-29"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "64483",
+      "description": "Injection, transforaminal epidural",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 756.14,
+      "diagnosis_pointer": "2",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-04-25"
+    }
+  ],
+  "total_charge_amount": 905.02,
+  "currency": "USD",
+  "prior_auth_number": null
+}

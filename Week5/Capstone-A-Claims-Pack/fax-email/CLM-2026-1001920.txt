@@ -1,0 +1,30 @@
+============================
+   FAX COVER SHEET
+============================
+TO:    Blue Cross Blue Shield of Illinois Claims Intake
+FROM:  Maple Family Health
+DATE:  04/27/2026
+PAGES: 1 of 2
+
+URGENT [_]   FOR REVIEW [X]   PLEASE COMMENT [_]   PLEASE REPLY [_]
+
+RE: Claim submission - patient Diaz, Elena
+
+Member ID:     XOJ775241023
+DOB:           1943-02-23
+Plan:          PPO Choice
+Group:         GRP-21250
+DOS:           2026-03-31
+
+Diagnoses:     E11.9, R53.83
+Procedures:    99205, 99205
+Total charge:  $579.65
+
+Provider NPI:  0399725881
+Tax ID:        53-3466510
+
+NOTES:
+Patient was seen for emergency visit - records to follow.
+
+If problems with this fax, call (205) 416-7114
+============================

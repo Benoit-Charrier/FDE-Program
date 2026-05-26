@@ -1,0 +1,116 @@
+{
+  "resourceType": "Claim",
+  "id": "CLM-2026-1001877",
+  "status": "active",
+  "type": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+        "code": "professional"
+      }
+    ]
+  },
+  "use": "claim",
+  "patient": {
+    "reference": "Patient/XOJ382824461",
+    "display": "Wyatt Nguyen"
+  },
+  "billablePeriod": {
+    "start": "2026-03-30",
+    "end": "2026-03-30"
+  },
+  "created": "2026-04-27T14:51:00",
+  "insurer": {
+    "reference": "Organization/BCBS-IL",
+    "display": "Blue Cross Blue Shield of Illinois"
+  },
+  "provider": {
+    "reference": "Practitioner/9958887464",
+    "display": "Sophia Mehta, MD"
+  },
+  "priority": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/processpriority",
+        "code": "normal"
+      }
+    ]
+  },
+  "diagnosis": [
+    {
+      "sequence": 1,
+      "diagnosisCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/sid/icd-10-cm",
+            "code": "F32.9",
+            "display": "Major depressive disorder, single episode"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 2,
+      "diagnosisCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/sid/icd-10-cm",
+            "code": "E66.9",
+            "display": "Obesity, unspecified"
+          }
+        ]
+      }
+    }
+  ],
+  "insurance": [
+    {
+      "sequence": 1,
+      "focal": true,
+      "coverage": {
+        "display": "HMO Standard via Blue Cross Blue Shield of Illinois"
+      }
+    }
+  ],
+  "item": [
+    {
+      "sequence": 1,
+      "diagnosisSequence": [
+        1
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "72148",
+            "display": "MRI lumbar spine without contrast"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-03-30",
+      "quantity": {
+        "value": 2
+      },
+      "unitPrice": {
+        "value": 384.245,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 768.49,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "22"
+          }
+        ]
+      }
+    }
+  ],
+  "total": {
+    "value": 768.49,
+    "currency": "USD"
+  }
+}

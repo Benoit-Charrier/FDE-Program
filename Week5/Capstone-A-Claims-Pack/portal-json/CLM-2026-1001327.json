@@ -1,0 +1,60 @@
+{
+  "submission_id": "CLM-2026-1001327",
+  "submitted_at": "2026-04-27T12:32:00",
+  "submitter": {
+    "name": "Summit Cardiology Group",
+    "npi": "4044136484",
+    "tax_id": "68-7373123",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(753) 888-7524",
+    "address": {
+      "street": "8345 River Rd",
+      "city": "Sacramento",
+      "state": "CA",
+      "zip": "95844"
+    }
+  },
+  "patient": {
+    "first_name": "Whitney",
+    "last_name": "Underwood",
+    "date_of_birth": "1959-05-06",
+    "gender": "F",
+    "address": {
+      "street": "268 Park Blvd",
+      "city": "Kansas City",
+      "state": "MO",
+      "zip": "6418"
+    },
+    "phone": "(376) 703-5004"
+  },
+  "insurance": {
+    "payer_id": "MCR-001",
+    "payer_name": "Medicare Part B",
+    "plan": "Original Medicare",
+    "member_id": "0HR3RMC4VT2",
+    "group_id": "GRP-89387"
+  },
+  "diagnoses": [
+    {
+      "code": "J06.9",
+      "description": "Acute upper respiratory infection, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "12001",
+      "description": "Simple repair, superficial wound",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 210.69,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-03-28"
+    }
+  ],
+  "total_charge_amount": 210.69,
+  "currency": "USD",
+  "prior_auth_number": null
+}

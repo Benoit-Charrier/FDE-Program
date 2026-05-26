@@ -1,0 +1,100 @@
+{
+  "submission_id": "CLM-2026-1001325",
+  "submitted_at": "2026-04-27T12:35:00",
+  "submitter": {
+    "name": "Tina Jensen, MD",
+    "npi": "0002905220",
+    "tax_id": "34-3641125",
+    "specialty": "Internal Medicine",
+    "phone": "(912) 756-9728",
+    "address": {
+      "street": "2971 Cherry Ln",
+      "city": "Philadelphia",
+      "state": "PA",
+      "zip": "19117"
+    }
+  },
+  "patient": {
+    "first_name": "Iris",
+    "last_name": "Vasquez",
+    "date_of_birth": "2016-05-24",
+    "gender": "F",
+    "address": {
+      "street": "7376 Maple Dr",
+      "city": "Chicago",
+      "state": "IL",
+      "zip": "60677"
+    },
+    "phone": "(287) 448-4364"
+  },
+  "insurance": {
+    "payer_id": "HUM-001",
+    "payer_name": "Humana Gold Plus",
+    "plan": "HMO",
+    "member_id": "H64932070",
+    "group_id": "GRP-96517"
+  },
+  "diagnoses": [
+    {
+      "code": "R53.83",
+      "description": "Other fatigue"
+    },
+    {
+      "code": "J44.9",
+      "description": "Chronic obstructive pulmonary disease, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "90686",
+      "description": "Flu vaccine quadrivalent",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 45.23,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-25"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "70551",
+      "description": "MRI brain without contrast",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 384.4,
+      "diagnosis_pointer": "2",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-04-20"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "80053",
+      "description": "Comprehensive metabolic panel",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 35.5,
+      "diagnosis_pointer": "1",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-03"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "44970",
+      "description": "Laparoscopic appendectomy",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 3301.94,
+      "diagnosis_pointer": "2",
+      "place_of_service": "21",
+      "place_of_service_desc": "Inpatient Hospital",
+      "date_of_service": "2026-04-01"
+    }
+  ],
+  "total_charge_amount": 3767.07,
+  "currency": "USD",
+  "prior_auth_number": null
+}

@@ -1,0 +1,72 @@
+{
+  "submission_id": "CLM-2026-1001331",
+  "submitted_at": "2026-04-27T12:32:00",
+  "submitter": {
+    "name": "Eastlake Wellness Clinic",
+    "npi": "",
+    "tax_id": "97-2413794",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(619) 655-1189",
+    "address": {
+      "street": "8937 Jefferson Dr",
+      "city": "Tampa",
+      "state": "FL",
+      "zip": "33658"
+    }
+  },
+  "patient": {
+    "first_name": "NaTHAN",
+    "last_name": "Jackson",
+    "date_of_birth": "1961-07-08",
+    "gender": "M",
+    "address": {
+      "street": "4682 Pine Ln",
+      "city": "Columbus",
+      "state": "OH",
+      "zip": "43228"
+    },
+    "phone": "(243) 339-1562"
+  },
+  "insurance": {
+    "payer_id": "BCBS-IL",
+    "payer_name": "Blue Cross Blue Shield of Illinois",
+    "plan": "PPO Choice",
+    "member_id": "XOJ789456671",
+    "group_id": "GRP-45608"
+  },
+  "diagnoses": [
+    {
+      "code": "G47.33",
+      "description": "Obstructive sleep apnea (adult) (pediatric)"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99281",
+      "description": "ED visit, low",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 115.52,
+      "diagnosis_pointer": "1",
+      "place_of_service": "23",
+      "place_of_service_desc": "Emergency Room \u2014 Hospital",
+      "date_of_service": "2026-04-07"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99396",
+      "description": "Preventive established, 40-64",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 181.43,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-07"
+    }
+  ],
+  "total_charge_amount": 296.95,
+  "currency": "USD",
+  "prior_auth_number": null
+}

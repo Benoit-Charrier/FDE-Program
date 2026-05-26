@@ -1,0 +1,72 @@
+{
+  "submission_id": "CLM-2026-1001382",
+  "submitted_at": "2026-04-27T12:45:00",
+  "submitter": {
+    "name": "Summit Cardiology Group",
+    "npi": "0476709980",
+    "tax_id": "68-9136954",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(470) 204-1814",
+    "address": {
+      "street": "4907 Sunset Blvd",
+      "city": "Cleveland",
+      "state": "OH",
+      "zip": "44183"
+    }
+  },
+  "patient": {
+    "first_name": "Felicia",
+    "last_name": "Patel",
+    "date_of_birth": "2011-05-22",
+    "gender": "F",
+    "address": {
+      "street": "9446 Highland Ave",
+      "city": "Kansas City",
+      "state": "MO",
+      "zip": "64146"
+    },
+    "phone": "(343) 422-3431"
+  },
+  "insurance": {
+    "payer_id": "BCBS-IL",
+    "payer_name": "Blue Cross Blue Shield of Illinois",
+    "plan": "PPO Choice",
+    "member_id": "XOJ597077032",
+    "group_id": "GRP-93211"
+  },
+  "diagnoses": [
+    {
+      "code": "M17.11",
+      "description": "Unilateral primary osteoarthritis, right knee"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "90686",
+      "description": "Flu vaccine quadrivalent",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 54.9,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-03-30"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "97140",
+      "description": "Manual therapy (15 min)",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 71.97,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-15"
+    }
+  ],
+  "total_charge_amount": 126.87,
+  "currency": "USD",
+  "prior_auth_number": null
+}

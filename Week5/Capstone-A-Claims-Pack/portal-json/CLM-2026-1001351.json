@@ -1,0 +1,68 @@
+{
+  "submission_id": "CLM-2026-1001351",
+  "submitted_at": "2026-04-27T12:41:00",
+  "submitter": {
+    "name": "Wendy Cohen, MD",
+    "npi": "",
+    "tax_id": "",
+    "specialty": "Orthopedic Surgery",
+    "phone": "(719) 282-9573",
+    "address": {
+      "street": "821 Cherry Ln",
+      "city": "Phoenix",
+      "state": "AZ",
+      "zip": "85066"
+    }
+  },
+  "patient": {
+    "first_name": "Grace",
+    "last_name": "Novak",
+    "date_of_birth": "2013-06-02",
+    "gender": "F",
+    "address": {
+      "street": "9121 Elm St",
+      "city": "Omaha",
+      "state": "NE",
+      "zip": "68196"
+    },
+    "phone": "(662) 343-6678"
+  },
+  "insurance": {
+    "payer_id": "AET-001",
+    "payer_name": "Aetna Open Access",
+    "plan": "PPO",
+    "member_id": "W234862747",
+    "group_id": "GRP-87316"
+  },
+  "diagnoses": [
+    {
+      "code": "R51.9",
+      "description": "Headache, unspecified"
+    },
+    {
+      "code": "K21.9",
+      "description": "Gastro-esophageal reflux disease without esophagitis"
+    },
+    {
+      "code": "J44.9",
+      "description": "Chronic obstructive pulmonary disease, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99214",
+      "description": "Office visit, established, mod-high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 204.42,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-04"
+    }
+  ],
+  "total_charge_amount": 204.42,
+  "currency": "USD",
+  "prior_auth_number": null
+}

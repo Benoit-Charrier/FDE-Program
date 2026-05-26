@@ -1,0 +1,96 @@
+{
+  "submission_id": "CLM-2026-1001224",
+  "submitted_at": "2026-04-27T12:09:00",
+  "submitter": {
+    "name": "Crestview Imaging Center",
+    "npi": "7526615529",
+    "tax_id": "70-5913848",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(538) 905-1840",
+    "address": {
+      "street": "1547 Spring St",
+      "city": "Kansas City",
+      "state": "MO",
+      "zip": "64124"
+    }
+  },
+  "patient": {
+    "first_name": "Sophia",
+    "last_name": "Nguyen",
+    "date_of_birth": "2004-04-11",
+    "gender": "F",
+    "address": {
+      "street": "8552 Hill St",
+      "city": "Tampa",
+      "state": "FL",
+      "zip": "33696"
+    },
+    "phone": "(654) 581-2608"
+  },
+  "insurance": {
+    "payer_id": "MCD-IL",
+    "payer_name": "Illinois Medicaid",
+    "plan": "Medicaid",
+    "member_id": "858656128",
+    "group_id": "GRP-73663"
+  },
+  "diagnoses": [
+    {
+      "code": "E78.5",
+      "description": "Hyperlipidemia, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "70551",
+      "description": "MRI brain without contrast",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 929.44,
+      "diagnosis_pointer": "1",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-04-20"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "20610",
+      "description": "Major joint injection",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 210.28,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-21"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99284",
+      "description": "ED visit, mod-high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 275.02,
+      "diagnosis_pointer": "1",
+      "place_of_service": "23",
+      "place_of_service_desc": "Emergency Room \u2014 Hospital",
+      "date_of_service": "2026-04-11"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "90471",
+      "description": "Immunization administration",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 39.16,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-03-28"
+    }
+  ],
+  "total_charge_amount": 1453.9,
+  "currency": "USD",
+  "prior_auth_number": null
+}

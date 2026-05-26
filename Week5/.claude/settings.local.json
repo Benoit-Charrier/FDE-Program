@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python *)",
+      "Bash(claude remote-control *)",
+      "Bash(New-Item -ItemType Directory -Force \"C:\\\\Users\\\\Benoit_Charrier\\\\FDE Program\\\\FDE-Program\\\\Week4\\\\prototype\\\\fixtures\")",
+      "Bash(Out-Null)",
+      "Bash(New-Item -ItemType Directory -Force \"C:\\\\Users\\\\Benoit_Charrier\\\\FDE Program\\\\FDE-Program\\\\Week4\\\\prototype\\\\escalations\")",
+      "Bash(New-Item -ItemType File -Force \"C:\\\\Users\\\\Benoit_Charrier\\\\FDE Program\\\\FDE-Program\\\\Week4\\\\prototype\\\\escalations\\\\.gitkeep\")",
+      "PowerShell(New-Item *)"
+    ]
+  }
+}

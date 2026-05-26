@@ -1,0 +1,100 @@
+{
+  "submission_id": "CLM-2026-1001426",
+  "submitted_at": "2026-04-27T12:56:00",
+  "submitter": {
+    "name": "Stefan Singh, MD",
+    "npi": "2233796068",
+    "tax_id": "95-9044704",
+    "specialty": "Orthopedic Surgery",
+    "phone": "(777) 258-6235",
+    "address": {
+      "street": "601 Forest Dr",
+      "city": "Phoenix",
+      "state": "AZ",
+      "zip": "85035"
+    }
+  },
+  "patient": {
+    "first_name": "Rachel",
+    "last_name": "Edwards",
+    "date_of_birth": "2023-11-30",
+    "gender": "F",
+    "address": {
+      "street": "7158 Ridge Rd",
+      "city": "Albuquerque",
+      "state": "NM",
+      "zip": "87157"
+    },
+    "phone": "(689) 976-3271"
+  },
+  "insurance": {
+    "payer_id": "MCD-IL",
+    "payer_name": "Illinois Medicaid",
+    "plan": "Medicaid",
+    "member_id": "946681613",
+    "group_id": "GRP-41533"
+  },
+  "diagnoses": [
+    {
+      "code": "S93.401A",
+      "description": "Sprain of unspecified ligament of right ankle, initial"
+    },
+    {
+      "code": "I10",
+      "description": "Essential (primary) hypertension"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99999",
+      "description": "Injection, transforaminal epidural",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 832.64,
+      "diagnosis_pointer": "1",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-04-25"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "70551",
+      "description": "MRI brain without contrast",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 1036.85,
+      "diagnosis_pointer": "2",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-04-08"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99214",
+      "description": "Office visit, established, mod-high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 148.17,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-09"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "99213",
+      "description": "Office visit, established, low-mod",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 107.89,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-01"
+    }
+  ],
+  "total_charge_amount": 2125.55,
+  "currency": "USD",
+  "prior_auth_number": null
+}

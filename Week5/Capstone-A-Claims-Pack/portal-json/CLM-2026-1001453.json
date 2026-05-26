@@ -1,0 +1,88 @@
+{
+  "submission_id": "CLM-2026-1001453",
+  "submitted_at": "2026-04-27T13:06:00",
+  "submitter": {
+    "name": "Victor Johansson, MD",
+    "npi": "3720005085",
+    "tax_id": "36-7226148",
+    "specialty": "Family Medicine",
+    "phone": "(982) 807-6984",
+    "address": {
+      "street": "4097 Spring St",
+      "city": "Columbus",
+      "state": "OH",
+      "zip": "43221"
+    }
+  },
+  "patient": {
+    "first_name": "Donna",
+    "last_name": "Jackson",
+    "date_of_birth": "1992-01-31",
+    "gender": "F",
+    "address": {
+      "street": "2960 1st Ave",
+      "city": "Albuquerque",
+      "state": "NM",
+      "zip": "87154"
+    },
+    "phone": "(489) 268-5196"
+  },
+  "insurance": {
+    "payer_id": "AET-001",
+    "payer_name": "Aetna Open Access",
+    "plan": "PPO",
+    "member_id": "W529604697",
+    "group_id": "GRP-88227"
+  },
+  "diagnoses": [
+    {
+      "code": "I25.10",
+      "description": "Atherosclerotic heart disease without angina"
+    },
+    {
+      "code": "F32.9",
+      "description": "Major depressive disorder, single episode"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "80053",
+      "description": "Comprehensive metabolic panel",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 16.0,
+      "diagnosis_pointer": "1",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-23"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "85025",
+      "description": "CBC w/ differential",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 33.1,
+      "diagnosis_pointer": "2",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-03"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99281",
+      "description": "ED visit, low",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 119.03,
+      "diagnosis_pointer": "1",
+      "place_of_service": "23",
+      "place_of_service_desc": "Emergency Room \u2014 Hospital",
+      "date_of_service": "2026-04-08"
+    }
+  ],
+  "total_charge_amount": 168.13,
+  "currency": "USD",
+  "prior_auth_number": null
+}

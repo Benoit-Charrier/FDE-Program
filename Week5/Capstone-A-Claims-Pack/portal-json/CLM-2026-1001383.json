@@ -1,0 +1,84 @@
+{
+  "submission_id": "CLM-2026-1001383",
+  "submitted_at": "2026-04-27T12:48:00",
+  "submitter": {
+    "name": "Priya Anderson, MD",
+    "npi": "9459553808",
+    "tax_id": "",
+    "specialty": "Orthopedic Surgery",
+    "phone": "(980) 554-8103",
+    "address": {
+      "street": "6019 Elm St",
+      "city": "St. Louis",
+      "state": "MO",
+      "zip": "63176"
+    }
+  },
+  "patient": {
+    "first_name": "Fatima",
+    "last_name": "Fischer",
+    "date_of_birth": "2025-04-08",
+    "gender": "F",
+    "address": {
+      "street": "2993 Oak Ave",
+      "city": "Seattle",
+      "state": "WA",
+      "zip": "98117"
+    },
+    "phone": "(840) 639-3247"
+  },
+  "insurance": {
+    "payer_id": "UHC-002",
+    "payer_name": "UnitedHealthcare Navigate",
+    "plan": "HMO",
+    "member_id": "384878379-00",
+    "group_id": "GRP-81362"
+  },
+  "diagnoses": [
+    {
+      "code": "M17.11",
+      "description": "Unilateral primary osteoarthritis, right knee"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99203",
+      "description": "Office visit, new pt, mod",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 167.37,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-09"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "27447",
+      "description": "Total knee arthroplasty",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 1981.12,
+      "diagnosis_pointer": "1",
+      "place_of_service": "21",
+      "place_of_service_desc": "Inpatient Hospital",
+      "date_of_service": "2026-04-17"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "72148",
+      "description": "MRI lumbar spine without contrast",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 607.29,
+      "diagnosis_pointer": "1",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-04-23"
+    }
+  ],
+  "total_charge_amount": 2755.78,
+  "currency": "USD",
+  "prior_auth_number": null
+}

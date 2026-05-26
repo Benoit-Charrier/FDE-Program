@@ -1,0 +1,148 @@
+{
+  "resourceType": "Claim",
+  "id": "CLM-2026-1001844",
+  "status": "active",
+  "type": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+        "code": "professional"
+      }
+    ]
+  },
+  "use": "claim",
+  "patient": {
+    "reference": "Patient/H75687713",
+    "display": "Victor Xiong"
+  },
+  "billablePeriod": {
+    "start": "2026-03-31",
+    "end": "2026-04-03"
+  },
+  "created": "2026-04-27T14:45:00",
+  "insurer": {
+    "reference": "Organization/HUM-001",
+    "display": "Humana Gold Plus"
+  },
+  "provider": {
+    "reference": "Practitioner/6759516133",
+    "display": "Iris Tanaka, MD"
+  },
+  "priority": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/processpriority",
+        "code": "normal"
+      }
+    ]
+  },
+  "diagnosis": [
+    {
+      "sequence": 1,
+      "diagnosisCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/sid/icd-10-cm",
+            "code": "I10",
+            "display": "Essential (primary) hypertension"
+          }
+        ]
+      }
+    }
+  ],
+  "insurance": [
+    {
+      "sequence": 1,
+      "focal": true,
+      "coverage": {
+        "display": "HMO via Humana Gold Plus"
+      }
+    }
+  ],
+  "item": [
+    {
+      "sequence": 1,
+      "diagnosisSequence": [
+        1
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "99396",
+            "display": "Preventive established, 40-64"
+          }
+        ]
+      },
+      "modifier": [
+        {
+          "coding": [
+            {
+              "code": "22"
+            }
+          ]
+        }
+      ],
+      "servicedDate": "2026-03-31",
+      "quantity": {
+        "value": 1
+      },
+      "unitPrice": {
+        "value": 227.73,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 227.73,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "11"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 2,
+      "diagnosisSequence": [
+        1
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "70551",
+            "display": "MRI brain without contrast"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-04-03",
+      "quantity": {
+        "value": 2
+      },
+      "unitPrice": {
+        "value": 380.27,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 760.54,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "22"
+          }
+        ]
+      }
+    }
+  ],
+  "total": {
+    "value": 988.27,
+    "currency": "USD"
+  }
+}

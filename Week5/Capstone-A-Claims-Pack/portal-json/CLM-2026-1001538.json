@@ -1,0 +1,68 @@
+{
+  "submission_id": "CLM-2026-1001538",
+  "submitted_at": "2026-04-27T13:24:00",
+  "submitter": {
+    "name": "Alice Singh, DPT",
+    "npi": "9141611496",
+    "tax_id": "17-9077104",
+    "specialty": "Physical Therapy",
+    "phone": "(818) 810-9812",
+    "address": {
+      "street": "3602 Lake Rd",
+      "city": "Cleveland",
+      "state": "OH",
+      "zip": "44158"
+    }
+  },
+  "patient": {
+    "first_name": "Logan",
+    "last_name": "Taylor",
+    "date_of_birth": "1999-08-02",
+    "gender": "M",
+    "address": {
+      "street": "7708 Highland Ave",
+      "city": "Albuquerque",
+      "state": "NM",
+      "zip": "87123"
+    },
+    "phone": "(956) 840-2866"
+  },
+  "insurance": {
+    "payer_id": "UHC-001",
+    "payer_name": "UnitedHealthcare Choice Plus",
+    "plan": "PPO",
+    "member_id": "165744058-02",
+    "group_id": "GRP-24746"
+  },
+  "diagnoses": [
+    {
+      "code": "M17.11",
+      "description": "Unilateral primary osteoarthritis, right knee"
+    },
+    {
+      "code": "H66.90",
+      "description": "Otitis media, unspecified, unspecified ear"
+    },
+    {
+      "code": "J44.9",
+      "description": "Chronic obstructive pulmonary disease, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99215",
+      "description": "Office visit, established, high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 236.42,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-07"
+    }
+  ],
+  "total_charge_amount": 236.42,
+  "currency": "USD",
+  "prior_auth_number": null
+}

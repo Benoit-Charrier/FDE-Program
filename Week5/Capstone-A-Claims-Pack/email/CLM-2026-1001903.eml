@@ -1,0 +1,76 @@
+From: Jasmine Lopez <jasmine.lopez@baysideorthope.example>
+To: claims-intake@payer.example
+Cc: office-mgr@baysideorthope.example
+Date: Mon, 27 Apr 2026 09:45:15 +0000
+Message-ID: <177729813742.6.15546952164578194560@baysideorthope.example>
+Subject: FW: claim for Grace Lee =?utf-8?b?4oCU?= need help
+X-Submitter-NPI: 2124596751
+X-Submitter-TaxID:
+X-Originating-System: baysideorthope.example MailRelay 4.2
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="===============8654832467563467991=="
+
+--===============8654832467563467991==
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hi team,
+
+Please process the following claim. Patient was seen at our office on 2026-04=
+-02.
+
+Patient: Lee, Grace  (DOB 1991-02-20, F)
+Member ID: W308170374    Plan: Aetna Open Access =E2=80=94 PPO
+Group: GRP-57328
+Address: 9514 Main St, Salt Lake City, UT 84197
+
+Provider: Bayside Orthopedics, NPI 2124596751, Tax ID (missing =E2=80=94 plea=
+se call)
+Specialty: Multi-specialty Clinic
+
+Diagnoses:
+  - J20.9  Acute bronchitis, unspecified
+
+Services rendered:
+  - 2026-04-02: CPT 71046 (Chest X-ray, 2 views), 1 unit(s), $63.03
+  - 2026-04-10: CPT 12001 (Simple repair, superficial wound), 1 unit(s), $151=
+.27
+  - 2026-04-14: CPT 80061 (Lipid panel), 1 unit(s), $27.87
+
+Total: $242.17
+Claim reference: CLM-2026-1001903
+
+This one got stuck =E2=80=94 appreciate the help!
+
+Thanks,
+Jasmine Lopez
+Bayside Orthopedics
+(378) 483-3053
+
+--===============8654832467563467991==
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+<html><body style=3D"font-family: Arial, sans-serif; font-size: 11pt;">
+<p>Hi team,</p>
+<p>Please process the following claim. Patient was seen at our office on
+<b>2026-04-02</b>.</p>
+<table cellpadding=3D"3" style=3D"border-collapse: collapse; font-size: 10pt;=
+">
+<tr><td><b>Patient:</b></td><td>Lee, Grace (DOB 1991-02-20, F)</td></tr>
+<tr><td><b>Member ID:</b></td><td>W308170374</td></tr>
+<tr><td><b>Plan:</b></td><td>Aetna Open Access =E2=80=94 PPO</td></tr>
+<tr><td><b>Group:</b></td><td>GRP-57328</td></tr>
+<tr><td><b>Provider:</b></td><td>Bayside Orthopedics (NPI 2124596751)</td></t=
+r>
+<tr><td><b>Total charge:</b></td><td>$242.17</td></tr>
+<tr><td><b>Claim ref:</b></td><td>CLM-2026-1001903</td></tr>
+</table>
+<p>Diagnoses: J20.9</p>
+<p>Procedures: 71046, 12001, 80061</p>
+<p>Thanks,<br>Jasmine Lopez<br>Bayside Orthopedics<br>(378) 483-3053</p>
+</body></html>
+
+--===============8654832467563467991==--

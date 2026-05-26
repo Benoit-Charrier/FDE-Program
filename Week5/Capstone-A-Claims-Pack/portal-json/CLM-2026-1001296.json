@@ -1,0 +1,104 @@
+{
+  "submission_id": "CLM-2026-1001296",
+  "submitted_at": "2026-04-27T12:25:00",
+  "submitter": {
+    "name": "Derrick Reyes, MD",
+    "npi": "8980594979",
+    "tax_id": "56-7822842",
+    "specialty": "Cardiology",
+    "phone": "(745) 271-4553",
+    "address": {
+      "street": "7794 Walnut St",
+      "city": "Indianapolis",
+      "state": "IN",
+      "zip": "46288"
+    }
+  },
+  "patient": {
+    "first_name": "Noah",
+    "last_name": "Mitchell",
+    "date_of_birth": "1996-10-25",
+    "gender": "M",
+    "address": {
+      "street": "5455 Lake Rd",
+      "city": "Houston",
+      "state": "TX",
+      "zip": "77016"
+    },
+    "phone": "(847) 329-1247"
+  },
+  "insurance": {
+    "payer_id": "HUM-001",
+    "payer_name": "Humana Gold Plus",
+    "plan": "HMO",
+    "member_id": "H18975631",
+    "group_id": "GRP-25972"
+  },
+  "diagnoses": [
+    {
+      "code": "M54.5",
+      "description": "Low back pain"
+    },
+    {
+      "code": "N18.3",
+      "description": "Chronic kidney disease, stage 3"
+    },
+    {
+      "code": "E11.9",
+      "description": "Type 2 diabetes mellitus without complications"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99214",
+      "description": "Office visit, established, mod-high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 163.17,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-10"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99213",
+      "description": "Office visit, established, low-mod",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 124.55,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-23"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "47562",
+      "description": "Laparoscopic cholecystectomy",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 1347.12,
+      "diagnosis_pointer": "3",
+      "place_of_service": "21",
+      "place_of_service_desc": "Inpatient Hospital",
+      "date_of_service": "2026-04-06"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "83036",
+      "description": "Hemoglobin A1c",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 15.06,
+      "diagnosis_pointer": "1",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-19"
+    }
+  ],
+  "total_charge_amount": 1649.9,
+  "currency": "USD",
+  "prior_auth_number": null
+}

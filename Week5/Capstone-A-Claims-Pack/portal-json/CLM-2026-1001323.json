@@ -1,0 +1,90 @@
+{
+  "submission_id": "CLM-2026-1001323",
+  "submitted_at": "2026-04-27T12:31:00",
+  "submitter": {
+    "name": "Ivan Goldberg, DC",
+    "npi": "3206436509",
+    "tax_id": "13-3827856",
+    "specialty": "Chiropractic",
+    "phone": "(457) 360-6195",
+    "address": {
+      "street": "3432 Franklin Rd",
+      "city": "Denver",
+      "state": "CO",
+      "zip": "80283"
+    }
+  },
+  "patient": {
+    "first_name": "Hannah",
+    "last_name": "Johnson",
+    "date_of_birth": "1988-02-20",
+    "gender": "F",
+    "address": {
+      "street": "2055 Cedar Ct",
+      "city": "Cincinnati",
+      "state": "OH",
+      "zip": "45226"
+    },
+    "phone": "(484) 969-5238"
+  },
+  "insurance": {
+    "payer_id": "UHC-002",
+    "payer_name": "UnitedHealthcare Navigate",
+    "plan": "HMO",
+    "member_id": "477025264-04",
+    "group_id": "GRP-97464"
+  },
+  "diagnoses": [
+    {
+      "code": "R53.83",
+      "description": "Other fatigue"
+    },
+    {
+      "code": "M54.5",
+      "description": "Low back pain"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99285",
+      "description": "ED visit, high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 416.63,
+      "diagnosis_pointer": "1",
+      "place_of_service": "23",
+      "place_of_service_desc": "Emergency Room \u2014 Hospital",
+      "date_of_service": "2026-04-11"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99422",
+      "description": "Online digital E/M, 11-20 min",
+      "modifiers": [
+        "95"
+      ],
+      "units": 1,
+      "charge_amount": 40.27,
+      "diagnosis_pointer": "2",
+      "place_of_service": "02",
+      "place_of_service_desc": "Telehealth",
+      "date_of_service": "2026-04-18"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99285",
+      "description": "ED visit, high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 456.21,
+      "diagnosis_pointer": "1",
+      "place_of_service": "23",
+      "place_of_service_desc": "Emergency Room \u2014 Hospital",
+      "date_of_service": "2026-04-15"
+    }
+  ],
+  "total_charge_amount": 913.11,
+  "currency": "USD",
+  "prior_auth_number": null
+}

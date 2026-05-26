@@ -1,0 +1,127 @@
+{
+  "resourceType": "Claim",
+  "id": "CLM-2026-1001871",
+  "status": "active",
+  "type": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+        "code": "professional"
+      }
+    ]
+  },
+  "use": "claim",
+  "patient": {
+    "reference": "Patient/2VQ1EDF2UN8",
+    "display": "Julia Taylor"
+  },
+  "billablePeriod": {
+    "start": "2026-04-03",
+    "end": "2026-04-02"
+  },
+  "created": "2026-04-27T14:48:00",
+  "insurer": {
+    "reference": "Organization/MCR-001",
+    "display": "Medicare Part B"
+  },
+  "provider": {
+    "reference": "Practitioner/7497990050",
+    "display": "Quincy Reyes, DPT"
+  },
+  "priority": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/processpriority",
+        "code": "normal"
+      }
+    ]
+  },
+  "diagnosis": [],
+  "insurance": [
+    {
+      "sequence": 1,
+      "focal": true,
+      "coverage": {
+        "display": "Original Medicare via Medicare Part B"
+      }
+    }
+  ],
+  "item": [
+    {
+      "sequence": 1,
+      "diagnosisSequence": [
+        1
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "99284",
+            "display": "ED visit, mod-high"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-04-03",
+      "quantity": {
+        "value": 1
+      },
+      "unitPrice": {
+        "value": 221.58,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 221.58,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "23"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 2,
+      "diagnosisSequence": [
+        2
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "99396",
+            "display": "Preventive established, 40-64"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-04-02",
+      "quantity": {
+        "value": 1
+      },
+      "unitPrice": {
+        "value": 220.6,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 220.6,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "11"
+          }
+        ]
+      }
+    }
+  ],
+  "total": {
+    "value": 442.18,
+    "currency": "USD"
+  }
+}

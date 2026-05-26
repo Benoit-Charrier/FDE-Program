@@ -1,0 +1,81 @@
+{
+  "submission_id": "CLM-2026-1001484",
+  "submitted_at": "2026-04-27T13:16:00",
+  "submitter": {
+    "name": "Summit Cardiology Group",
+    "npi": "9565686982",
+    "tax_id": "22-7303626",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(834) 394-9444",
+    "address": {
+      "street": "9401 Spring St",
+      "city": "Sacramento",
+      "state": "CA",
+      "zip": "95823"
+    }
+  },
+  "patient": {
+    "first_name": "Jose",
+    "last_name": "Wong",
+    "date_of_birth": "1961-04-29",
+    "gender": "M",
+    "address": {
+      "street": "3261 Hill St",
+      "city": "Salt Lake City",
+      "state": "UT",
+      "zip": "84193"
+    },
+    "phone": "(377) 448-5159"
+  },
+  "insurance": {
+    "payer_id": "UHC-001",
+    "payer_name": "UnitedHealthcare Choice Plus",
+    "plan": "PPO",
+    "member_id": "913179691-04",
+    "group_id": "GRP-64369",
+    "coverage_effective_date": "2026-06-15"
+  },
+  "diagnoses": [
+    {
+      "code": "J06.9",
+      "description": "Acute upper respiratory infection, unspecified"
+    },
+    {
+      "code": "I10",
+      "description": "Essential (primary) hypertension"
+    },
+    {
+      "code": "R07.9",
+      "description": "Chest pain, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "83036",
+      "description": "Hemoglobin A1c",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 15.29,
+      "diagnosis_pointer": "1",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-03-31"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99213",
+      "description": "Office visit, established, low-mod",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 108.26,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-18"
+    }
+  ],
+  "total_charge_amount": 123.55,
+  "currency": "USD",
+  "prior_auth_number": null
+}

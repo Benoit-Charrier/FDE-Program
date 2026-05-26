@@ -1,0 +1,30 @@
+============================
+   FAX COVER SHEET
+============================
+TO:    Blue Cross Blue Shield of Illinois Claims Intake
+FROM:  Lily Vargas, MD
+DATE:  04/27/2026
+PAGES: 1 of 5
+
+URGENT [_]   FOR REVIEW [X]   PLEASE COMMENT [_]   PLEASE REPLY [_]
+
+RE: Claim submission - patient Underwood, Camila
+
+Member ID:     XOJ910911539
+DOB:           1984-05-12
+Plan:          PPO Choice
+Group:         GRP-39639
+DOS:           2026-04-13
+
+Diagnoses:     L98.9
+Procedures:    71046, 99395
+Total charge:  $358.94
+
+Provider NPI:  8312321954
+Tax ID:        19-3436634
+
+NOTES:
+Patient was seen for emergency visit - records to follow.
+
+If problems with this fax, call (245) 341-7728
+============================

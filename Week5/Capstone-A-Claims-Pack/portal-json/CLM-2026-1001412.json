@@ -1,0 +1,88 @@
+{
+  "submission_id": "CLM-2026-1001412",
+  "submitted_at": "2026-04-27T12:57:00",
+  "submitter": {
+    "name": "Highland Pediatrics",
+    "npi": "0745381794",
+    "tax_id": "60-5120245",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(228) 431-1733",
+    "address": {
+      "street": "5569 River Rd",
+      "city": "Tucson",
+      "state": "AZ",
+      "zip": "85761"
+    }
+  },
+  "patient": {
+    "first_name": "Yara",
+    "last_name": "Hayes",
+    "date_of_birth": "1990-06-07",
+    "gender": "F",
+    "address": {
+      "street": "3666 Birch Ct",
+      "city": "Portland",
+      "state": "OR",
+      "zip": "97268"
+    },
+    "phone": "(986) 834-4967"
+  },
+  "insurance": {
+    "payer_id": "MCD-IL",
+    "payer_name": "Illinois Medicaid",
+    "plan": "Medicaid",
+    "member_id": "654719474",
+    "group_id": "GRP-58910"
+  },
+  "diagnoses": [
+    {
+      "code": "J20.9",
+      "description": "Acute bronchitis, unspecified"
+    },
+    {
+      "code": "M25.561",
+      "description": "Pain in right knee"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99213",
+      "description": "Office visit, established, low-mod",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 100.57,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-07"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "85025",
+      "description": "CBC w/ differential",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 33.11,
+      "diagnosis_pointer": "2",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-19"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "64483",
+      "description": "Injection, transforaminal epidural",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 277.08,
+      "diagnosis_pointer": "1",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-03-29"
+    }
+  ],
+  "total_charge_amount": 410.76,
+  "currency": "USD",
+  "prior_auth_number": null
+}

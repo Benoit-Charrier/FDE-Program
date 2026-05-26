@@ -1,0 +1,60 @@
+{
+  "submission_id": "CLM-2026-1001378",
+  "submitted_at": "2026-04-27T12:49:00",
+  "submitter": {
+    "name": "Ravi Jensen, PA",
+    "npi": "9272971872",
+    "tax_id": "68-9136954",
+    "specialty": "Physician Assistant",
+    "phone": "(431) 847-1688",
+    "address": {
+      "street": "3981 Franklin Rd",
+      "city": "Houston",
+      "state": "TX",
+      "zip": "77026"
+    }
+  },
+  "patient": {
+    "first_name": "Logan",
+    "last_name": "Foster",
+    "date_of_birth": "1940-04-09",
+    "gender": "M",
+    "address": {
+      "street": "6364 Oak Ave",
+      "city": "Denver",
+      "state": "CO",
+      "zip": "8021"
+    },
+    "phone": "(624) 984-3791"
+  },
+  "insurance": {
+    "payer_id": "HUM-001",
+    "payer_name": "Humana Gold Plus",
+    "plan": "HMO",
+    "member_id": "H27033914",
+    "group_id": "GRP-90310"
+  },
+  "diagnoses": [
+    {
+      "code": "S93.401A",
+      "description": "Sprain of unspecified ligament of right ankle, initial"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "90686",
+      "description": "Flu vaccine quadrivalent",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 26.22,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-03-30"
+    }
+  ],
+  "total_charge_amount": 26.22,
+  "currency": "USD",
+  "prior_auth_number": null
+}

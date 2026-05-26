@@ -1,0 +1,64 @@
+{
+  "submission_id": "CLM-2026-1001326",
+  "submitted_at": "2026-04-27T12:31:00",
+  "submitter": {
+    "name": "Stefan Jensen, MD",
+    "npi": "",
+    "tax_id": "23-5462507",
+    "specialty": "Radiology",
+    "phone": "(899) 523-6890",
+    "address": {
+      "street": "7514 Washington Ave",
+      "city": "Denver",
+      "state": "CO",
+      "zip": "80299"
+    }
+  },
+  "patient": {
+    "first_name": "Peter",
+    "last_name": "Baker",
+    "date_of_birth": "1999-09-11",
+    "gender": "M",
+    "address": {
+      "street": "8242 Main St",
+      "city": "Cleveland",
+      "state": "OH",
+      "zip": "44131"
+    },
+    "phone": "(354) 880-7168"
+  },
+  "insurance": {
+    "payer_id": "MCR-001",
+    "payer_name": "Medicare Part B",
+    "plan": "Original Medicare",
+    "member_id": "0JW1TMU4X",
+    "group_id": "GRP-98079"
+  },
+  "diagnoses": [
+    {
+      "code": "N39.0",
+      "description": "Urinary tract infection, site not specified"
+    },
+    {
+      "code": "F41.1",
+      "description": "Generalized anxiety disorder"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "12001",
+      "description": "Simple repair, superficial wound",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 156.46,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-06"
+    }
+  ],
+  "total_charge_amount": 156.46,
+  "currency": "USD",
+  "prior_auth_number": null
+}

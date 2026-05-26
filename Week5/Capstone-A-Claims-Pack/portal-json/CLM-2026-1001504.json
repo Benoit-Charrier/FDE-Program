@@ -1,0 +1,95 @@
+{
+  "submission_id": "CLM-2026-1001504",
+  "submitted_at": "2026-04-27T13:16:00",
+  "submitter": {
+    "name": "Rachel O'Connor, PA",
+    "npi": "6091471536",
+    "tax_id": "71-1103322",
+    "specialty": "Physician Assistant",
+    "phone": "(437) 359-2327",
+    "address": {
+      "street": "7977 Spring St",
+      "city": "Salt Lake City",
+      "state": "UT",
+      "zip": "84139"
+    }
+  },
+  "patient": {
+    "first_name": "Marcus",
+    "last_name": "Lopez",
+    "date_of_birth": "1982-02-19",
+    "gender": "M",
+    "address": {
+      "street": "8332 Washington Ave",
+      "city": "Nashville",
+      "state": "TN",
+      "zip": "37265"
+    },
+    "phone": "(468) 705-5878"
+  },
+  "insurance": {
+    "payer_id": "AET-001",
+    "payer_name": "Aetna Open Access",
+    "plan": "PPO",
+    "member_id": "W683183756",
+    "group_id": "GRP-77090"
+  },
+  "diagnoses": [
+    {
+      "code": "R51.9",
+      "description": "Headache, unspecified"
+    },
+    {
+      "code": "N39.0",
+      "description": "Urinary tract infection, site not specified"
+    },
+    {
+      "code": "R07.9",
+      "description": "Chest pain, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99422",
+      "description": "Online digital E/M, 11-20 min",
+      "modifiers": [
+        "95",
+        "22"
+      ],
+      "units": 1,
+      "charge_amount": 40.68,
+      "diagnosis_pointer": "1",
+      "place_of_service": "02",
+      "place_of_service_desc": "Telehealth",
+      "date_of_service": "2026-03-28"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99284",
+      "description": "ED visit, mod-high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 208.45,
+      "diagnosis_pointer": "2",
+      "place_of_service": "23",
+      "place_of_service_desc": "Emergency Room \u2014 Hospital",
+      "date_of_service": "2026-04-26"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99285",
+      "description": "ED visit, high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 310.26,
+      "diagnosis_pointer": "3",
+      "place_of_service": "23",
+      "place_of_service_desc": "Emergency Room \u2014 Hospital",
+      "date_of_service": "2026-04-16"
+    }
+  ],
+  "total_charge_amount": 559.39,
+  "currency": "USD",
+  "prior_auth_number": null
+}

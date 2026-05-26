@@ -1,0 +1,33 @@
+From: billing@liamtanakadpt.example
+To: claims-intake@payer.example
+Date: Mon, 27 Apr 2026 08:59:00 -0500
+Subject: Claim for Wendy Johnson - need help
+
+Hi team,
+
+Please process the following claim. Patient was seen at our office on 2026-04-19.
+
+Patient: Johnson, Wendy (DOB 2022-05-25, F)
+Member ID: H58217808    Plan: Humana Gold Plus - HMO
+Group: GRP-51027
+Address: 5375 Forest Dr, Cincinnati, OH 45294
+
+Provider: Liam Tanaka, DPT, NPI , Tax ID 19-3436634
+Specialty: Physical Therapy
+
+Diagnoses:
+  - M17.11 Unilateral primary osteoarthritis, right knee
+  - J02.9 Acute pharyngitis, unspecified
+  - M79.7 Fibromyalgia
+
+Services rendered:
+  - 2026-04-19: CPT 83036 (Hemoglobin A1c), 1 unit(s), $20.77
+  - 2026-04-14: CPT 99205 (Office visit, new pt, comprehensive), 1 unit(s), $313.22
+  - 2026-04-02: CPT 99285 (ED visit, high), 1 unit(s), $373.29
+
+Total: $707.28
+Claim reference: CLM-2026-1001949
+
+Please process at your earliest. Thanks!
+
+--Donna, Billing Office

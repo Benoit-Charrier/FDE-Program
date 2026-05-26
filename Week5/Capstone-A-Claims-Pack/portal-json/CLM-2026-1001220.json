@@ -1,0 +1,76 @@
+{
+  "submission_id": "CLM-2026-1001220",
+  "submitted_at": "2026-04-27T12:05:00",
+  "submitter": {
+    "name": "Zoe Anderson, MD",
+    "npi": "9120661320",
+    "tax_id": "10-3567542",
+    "specialty": "Cardiology",
+    "phone": "(290) 419-8701",
+    "address": {
+      "street": "6256 Hill St",
+      "city": "Columbus",
+      "state": "OH",
+      "zip": "43252"
+    }
+  },
+  "patient": {
+    "first_name": "Iris",
+    "last_name": "Chen",
+    "date_of_birth": "1954-06-22",
+    "gender": "F",
+    "address": {
+      "street": "7417 Franklin Rd",
+      "city": "Philadelphia",
+      "state": "PA",
+      "zip": "19180"
+    },
+    "phone": "(766) 600-9685"
+  },
+  "insurance": {
+    "payer_id": "BCBS-IL",
+    "payer_name": "Blue Cross Blue Shield of Illinois",
+    "plan": "HMO Standard",
+    "member_id": "XOJ983776557",
+    "group_id": "GRP-23784"
+  },
+  "diagnoses": [
+    {
+      "code": "M25.562",
+      "description": "Pain in left knee"
+    },
+    {
+      "code": "M54.5",
+      "description": "Low back pain"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "72148",
+      "description": "MRI lumbar spine without contrast",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 734.75,
+      "diagnosis_pointer": "1",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-04-13"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99395",
+      "description": "Preventive established, 18-39",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 204.97,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-03-28"
+    }
+  ],
+  "total_charge_amount": 939.72,
+  "currency": "USD",
+  "prior_auth_number": null
+}

@@ -1,0 +1,64 @@
+{
+  "submission_id": "CLM-2026-1001500",
+  "submitted_at": "2026-04-27T13:19:00",
+  "submitter": {
+    "name": "Yvonne Reyes, DPT",
+    "npi": "3559067083",
+    "tax_id": "10-3567542",
+    "specialty": "Physical Therapy",
+    "phone": "(854) 860-2176",
+    "address": {
+      "street": "6460 Hill St",
+      "city": "Kansas City",
+      "state": "MO",
+      "zip": "64195"
+    }
+  },
+  "patient": {
+    "first_name": "Carlos",
+    "last_name": "Garcia",
+    "date_of_birth": "1970-01-16",
+    "gender": "M",
+    "address": {
+      "street": "3004 Cedar Ct",
+      "city": "Philadelphia",
+      "state": "PA",
+      "zip": "19177"
+    },
+    "phone": "(735) 511-5017"
+  },
+  "insurance": {
+    "payer_id": "UHC-001",
+    "payer_name": "UnitedHealthcare Choice Plus",
+    "plan": "PPO",
+    "member_id": "976937395-03",
+    "group_id": "GRP-68085"
+  },
+  "diagnoses": [
+    {
+      "code": "M17.11",
+      "description": "Unilateral primary osteoarthritis, right knee"
+    },
+    {
+      "code": "R10.9",
+      "description": "Unspecified abdominal pain"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99999",
+      "description": "Major joint injection",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 241.21,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-08"
+    }
+  ],
+  "total_charge_amount": 241.21,
+  "currency": "USD",
+  "prior_auth_number": null
+}

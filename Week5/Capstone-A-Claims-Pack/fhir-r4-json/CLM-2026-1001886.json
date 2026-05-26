@@ -1,0 +1,244 @@
+{
+  "resourceType": "Claim",
+  "id": "CLM-2026-1001886",
+  "status": "active",
+  "type": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+        "code": "professional"
+      }
+    ]
+  },
+  "use": "claim",
+  "patient": {
+    "reference": "Patient/U70315181",
+    "display": "Carla Wong"
+  },
+  "billablePeriod": {
+    "start": "2026-03-28",
+    "end": "2026-04-09"
+  },
+  "created": "2026-04-27T14:53:00",
+  "insurer": {
+    "reference": "Organization/CIG-001",
+    "display": "Cigna Open Access Plus"
+  },
+  "provider": {
+    "reference": "Practitioner/0677423100",
+    "display": "Kenji Goldberg, DPT"
+  },
+  "priority": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/processpriority",
+        "code": "normal"
+      }
+    ]
+  },
+  "diagnosis": [
+    {
+      "sequence": 1,
+      "diagnosisCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/sid/icd-10-cm",
+            "code": "R53.83",
+            "display": "Other fatigue"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 2,
+      "diagnosisCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/sid/icd-10-cm",
+            "code": "K21.9",
+            "display": "Gastro-esophageal reflux disease without esophagitis"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 3,
+      "diagnosisCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/sid/icd-10-cm",
+            "code": "M25.561",
+            "display": "Pain in right knee"
+          }
+        ]
+      }
+    }
+  ],
+  "insurance": [
+    {
+      "sequence": 1,
+      "focal": true,
+      "coverage": {
+        "display": "PPO via Cigna Open Access Plus"
+      }
+    }
+  ],
+  "item": [
+    {
+      "sequence": 1,
+      "diagnosisSequence": [
+        1
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "12001",
+            "display": "Simple repair, superficial wound"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-03-28",
+      "quantity": {
+        "value": 2
+      },
+      "unitPrice": {
+        "value": 145.425,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 290.85,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "11"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 2,
+      "diagnosisSequence": [
+        2
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "99395",
+            "display": "Preventive established, 18-39"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-04-07",
+      "quantity": {
+        "value": 1
+      },
+      "unitPrice": {
+        "value": 168.8,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 168.8,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "11"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 3,
+      "diagnosisSequence": [
+        3
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "99422",
+            "display": "Online digital E/M, 11-20 min"
+          }
+        ]
+      },
+      "modifier": [
+        {
+          "coding": [
+            {
+              "code": "95"
+            }
+          ]
+        }
+      ],
+      "servicedDate": "2026-04-03",
+      "quantity": {
+        "value": 1
+      },
+      "unitPrice": {
+        "value": 50.54,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 50.54,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "02"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 4,
+      "diagnosisSequence": [
+        1
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "99203",
+            "display": "Office visit, new pt, mod"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-04-09",
+      "quantity": {
+        "value": 1
+      },
+      "unitPrice": {
+        "value": 164.53,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 164.53,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "11"
+          }
+        ]
+      }
+    }
+  ],
+  "total": {
+    "value": 674.72,
+    "currency": "USD"
+  }
+}

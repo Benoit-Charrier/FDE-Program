@@ -1,0 +1,65 @@
+{
+  "submission_id": "CLM-2026-1001257",
+  "submitted_at": "2026-04-27T12:14:00",
+  "submitter": {
+    "name": "Summit Cardiology Group",
+    "npi": "9686044119",
+    "tax_id": "35-7465144",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(441) 400-1623",
+    "address": {
+      "street": "5509 Madison Ave",
+      "city": "Cleveland",
+      "state": "OH",
+      "zip": "44187"
+    }
+  },
+  "patient": {
+    "first_name": "Hector",
+    "last_name": "Quintana",
+    "date_of_birth": "1990-08-29",
+    "gender": "M",
+    "address": {
+      "street": "2067 Main St",
+      "city": "Salt Lake City",
+      "state": "UT",
+      "zip": "8417"
+    },
+    "phone": "(615) 577-2744"
+  },
+  "insurance": {
+    "payer_id": "UHC-002",
+    "payer_name": "UnitedHealthcare Navigate",
+    "plan": "HMO",
+    "member_id": "323365396-02",
+    "group_id": "GRP-23962"
+  },
+  "diagnoses": [
+    {
+      "code": "R10.9",
+      "description": "Unspecified abdominal pain"
+    },
+    {
+      "code": "I10",
+      "description": "Essential (primary) hypertension"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "85025",
+      "description": "CBC w/ differential",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 11.23,
+      "diagnosis_pointer": "1",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-11"
+    }
+  ],
+  "total_charge_amount": 11.23,
+  "currency": "USD",
+  "prior_auth_number": null,
+  "resubmission_of": "CLM-2026-5604278"
+}

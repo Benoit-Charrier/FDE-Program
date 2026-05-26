@@ -1,0 +1,91 @@
+{
+  "submission_id": "CLM-2026-1001243",
+  "submitted_at": "2026-04-27T12:13:00",
+  "submitter": {
+    "name": "Beatrice Patel, MD",
+    "npi": "4638821653",
+    "tax_id": "44-7392596",
+    "specialty": "Cardiology",
+    "phone": "(345) 755-1989",
+    "address": {
+      "street": "4454 Main St",
+      "city": "Cincinnati",
+      "state": "OH",
+      "zip": "45295"
+    }
+  },
+  "patient": {
+    "first_name": "Felix",
+    "last_name": "Kim",
+    "date_of_birth": "1959-03-21",
+    "gender": "M",
+    "address": {
+      "street": "8092 Madison Ave",
+      "city": "Cleveland",
+      "state": "OH",
+      "zip": "44143"
+    },
+    "phone": "(688) 930-8702"
+  },
+  "insurance": {
+    "payer_id": "UHC-002",
+    "payer_name": "UnitedHealthcare Navigate",
+    "plan": "HMO",
+    "member_id": "803794790-03",
+    "group_id": "GRP-83880"
+  },
+  "diagnoses": [],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99395",
+      "description": "Preventive established, 18-39",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 184.07,
+      "diagnosis_pointer": "1",
+      "place_of_service": "31",
+      "place_of_service_desc": "Skilled Nursing Facility",
+      "date_of_service": "2026-04-14"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "85025",
+      "description": "CBC w/ differential",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 33.85,
+      "diagnosis_pointer": "2",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-07"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "72148",
+      "description": "MRI lumbar spine without contrast",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 682.11,
+      "diagnosis_pointer": "3",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-04-22"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "73030",
+      "description": "Shoulder X-ray, complete",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 69.78,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-03-29"
+    }
+  ],
+  "total_charge_amount": 969.81,
+  "currency": "USD",
+  "prior_auth_number": null
+}

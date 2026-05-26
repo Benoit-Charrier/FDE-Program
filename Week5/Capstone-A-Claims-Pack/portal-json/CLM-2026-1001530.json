@@ -1,0 +1,66 @@
+{
+  "submission_id": "CLM-2026-1001530",
+  "submitted_at": "2026-04-27T13:23:00",
+  "submitter": {
+    "name": "Jasmine Chowdhury, MD",
+    "npi": "4883826931",
+    "tax_id": "17-9077104",
+    "specialty": "Cardiology",
+    "phone": "(385) 568-8872",
+    "address": {
+      "street": "4356 Franklin Rd",
+      "city": "Philadelphia",
+      "state": "PA",
+      "zip": "19139"
+    }
+  },
+  "patient": {
+    "first_name": "Nathan",
+    "last_name": "Khan",
+    "date_of_birth": "2021-12-19",
+    "gender": "M",
+    "address": {
+      "street": "6076 Walnut St",
+      "city": "Nashville",
+      "state": "TN",
+      "zip": "37247"
+    },
+    "phone": "(432) 284-1921"
+  },
+  "insurance": {
+    "payer_id": "ANT-001",
+    "payer_name": "Anthem Blue Access",
+    "plan": "PPO",
+    "member_id": "YYL38847454",
+    "group_id": "GRP-80832"
+  },
+  "diagnoses": [
+    {
+      "code": "G47.33",
+      "description": "Obstructive sleep apnea (adult) (pediatric)"
+    },
+    {
+      "code": "M17.11",
+      "description": "Unilateral primary osteoarthritis, right knee"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "80061",
+      "description": "Lipid panel",
+      "modifiers": [
+        "22"
+      ],
+      "units": 1,
+      "charge_amount": 23.55,
+      "diagnosis_pointer": "1",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-03-28"
+    }
+  ],
+  "total_charge_amount": 23.55,
+  "currency": "USD",
+  "prior_auth_number": null
+}

@@ -1,0 +1,97 @@
+{
+  "submission_id": "CLM-2026-1001215",
+  "submitted_at": "2026-04-27T12:03:00",
+  "submitter": {
+    "name": "Walter Wong, MD",
+    "npi": "2872009659",
+    "tax_id": "25-3439747",
+    "specialty": "Pediatrics",
+    "phone": "(982) 885-2118",
+    "address": {
+      "street": "2279 Oak Ave",
+      "city": "Philadelphia",
+      "state": "PA",
+      "zip": "19140"
+    }
+  },
+  "patient": {
+    "first_name": "Ingrid",
+    "last_name": "Taylor",
+    "date_of_birth": "1951-12-11",
+    "gender": "F",
+    "address": {
+      "street": "5650 Highland Ave",
+      "city": "Nashville",
+      "state": "TN",
+      "zip": "3725"
+    },
+    "phone": "(962) 480-1276"
+  },
+  "insurance": {
+    "payer_id": "BCBS-IL",
+    "payer_name": "Blue Cross Blue Shield of Illinois",
+    "plan": "PPO Choice",
+    "member_id": "XOJ789178291",
+    "group_id": "GRP-31833"
+  },
+  "diagnoses": [
+    {
+      "code": "R53.83",
+      "description": "Other fatigue"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "73030",
+      "description": "Shoulder X-ray, complete",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 135.37,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-12"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99205",
+      "description": "Office visit, new pt, comprehensive",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 361.33,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-14"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "80061",
+      "description": "Lipid panel",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 38.7,
+      "diagnosis_pointer": "1",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-03-29"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "80061",
+      "description": "Lipid panel",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 20.0,
+      "diagnosis_pointer": "1",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-10"
+    }
+  ],
+  "total_charge_amount": 555.4,
+  "currency": "USD",
+  "prior_auth_number": null,
+  "resubmission_of": "CLM-2026-9234142"
+}

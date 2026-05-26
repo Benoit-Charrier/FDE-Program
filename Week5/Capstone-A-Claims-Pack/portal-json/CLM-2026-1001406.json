@@ -1,0 +1,96 @@
+{
+  "submission_id": "CLM-2026-1001406",
+  "submitted_at": "2026-04-27T12:51:00",
+  "submitter": {
+    "name": "Kevin Mehta, DO",
+    "npi": "9728511766",
+    "tax_id": "56-7822842",
+    "specialty": "Family Medicine",
+    "phone": "(540) 825-2014",
+    "address": {
+      "street": "3482 Hill St",
+      "city": "Charlotte",
+      "state": "NC",
+      "zip": "28257"
+    }
+  },
+  "patient": {
+    "first_name": "Oscar",
+    "last_name": "Edwards",
+    "date_of_birth": "1946-06-25",
+    "gender": "M",
+    "address": {
+      "street": "631 Jefferson Dr",
+      "city": "Raleigh",
+      "state": "NC",
+      "zip": "27618"
+    },
+    "phone": "(700) 401-2488"
+  },
+  "insurance": {
+    "payer_id": "MCD-IL",
+    "payer_name": "Illinois Medicaid",
+    "plan": "Medicaid",
+    "member_id": "547750289",
+    "group_id": "GRP-48543"
+  },
+  "diagnoses": [
+    {
+      "code": "J20.9",
+      "description": "Acute bronchitis, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "20610",
+      "description": "Major joint injection",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 137.33,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-14"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "90471",
+      "description": "Immunization administration",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 15.16,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-08"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "97140",
+      "description": "Manual therapy (15 min)",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 35.58,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-05"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "44970",
+      "description": "Laparoscopic appendectomy",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 1863.0,
+      "diagnosis_pointer": "1",
+      "place_of_service": "21",
+      "place_of_service_desc": "Inpatient Hospital",
+      "date_of_service": "2026-04-09"
+    }
+  ],
+  "total_charge_amount": 2051.07,
+  "currency": "USD",
+  "prior_auth_number": null
+}

@@ -1,0 +1,68 @@
+{
+  "submission_id": "CLM-2026-1001465",
+  "submitted_at": "2026-04-27T13:09:00",
+  "submitter": {
+    "name": "Beatrice O'Connor, MD",
+    "npi": "9853502529",
+    "tax_id": "33-6476889",
+    "specialty": "Emergency Medicine",
+    "phone": "(505) 839-6014",
+    "address": {
+      "street": "6809 Forest Dr",
+      "city": "Phoenix",
+      "state": "AZ",
+      "zip": "85036"
+    }
+  },
+  "patient": {
+    "first_name": "Monica",
+    "last_name": "Schultz",
+    "date_of_birth": "2016-06-17",
+    "gender": "F",
+    "address": {
+      "street": "8803 Madison Ave",
+      "city": "Omaha",
+      "state": "NE",
+      "zip": "68143"
+    },
+    "phone": "(988) 742-1966"
+  },
+  "insurance": {
+    "payer_id": "ANT-001",
+    "payer_name": "Anthem Blue Access",
+    "plan": "PPO",
+    "member_id": "YYL90156619",
+    "group_id": "GRP-42073"
+  },
+  "diagnoses": [
+    {
+      "code": "R07.9",
+      "description": "Chest pain, unspecified"
+    },
+    {
+      "code": "N39.0",
+      "description": "Urinary tract infection, site not specified"
+    },
+    {
+      "code": "Z23",
+      "description": "Encounter for immunization"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "64483",
+      "description": "Injection, transforaminal epidural",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 289.02,
+      "diagnosis_pointer": "1",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-03-28"
+    }
+  ],
+  "total_charge_amount": 289.02,
+  "currency": "USD",
+  "prior_auth_number": null
+}

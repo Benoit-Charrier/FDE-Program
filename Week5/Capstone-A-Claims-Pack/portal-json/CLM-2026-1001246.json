@@ -1,0 +1,90 @@
+{
+  "submission_id": "CLM-2026-1001246",
+  "submitted_at": "2026-04-27T12:16:00",
+  "submitter": {
+    "name": "Bayside Orthopedics",
+    "npi": "7352081174",
+    "tax_id": "",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(200) 764-3014",
+    "address": {
+      "street": "9616 Elm St",
+      "city": "Pittsburgh",
+      "state": "PA",
+      "zip": "15298"
+    }
+  },
+  "patient": {
+    "first_name": "Peter",
+    "last_name": "Zimmerman",
+    "date_of_birth": "1937-10-22",
+    "gender": "M",
+    "address": {
+      "street": "4722 Cherry Ln",
+      "city": "Nashville",
+      "state": "TN",
+      "zip": "37251"
+    },
+    "phone": "(686) 962-3132"
+  },
+  "insurance": {
+    "payer_id": "UHC-001",
+    "payer_name": "UnitedHealthcare Choice Plus",
+    "plan": "PPO",
+    "member_id": "10-609392",
+    "group_id": "GRP-66120"
+  },
+  "diagnoses": [
+    {
+      "code": "E66.9",
+      "description": "Obesity, unspecified"
+    },
+    {
+      "code": "S93.401A",
+      "description": "Sprain of unspecified ligament of right ankle, initial"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99421",
+      "description": "Online digital E/M, 5-10 min",
+      "modifiers": [
+        "95"
+      ],
+      "units": 1,
+      "charge_amount": 21.05,
+      "diagnosis_pointer": "1",
+      "place_of_service": "02",
+      "place_of_service_desc": "Telehealth",
+      "date_of_service": "2026-04-02"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99396",
+      "description": "Preventive established, 40-64",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 188.49,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-15"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99213",
+      "description": "Office visit, established, low-mod",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 131.67,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-24"
+    }
+  ],
+  "total_charge_amount": 341.21,
+  "currency": "USD",
+  "prior_auth_number": null
+}

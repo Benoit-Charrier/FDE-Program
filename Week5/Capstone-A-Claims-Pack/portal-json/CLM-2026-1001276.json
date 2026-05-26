@@ -1,0 +1,64 @@
+{
+  "submission_id": "CLM-2026-1001276",
+  "submitted_at": "2026-04-27T12:20:00",
+  "submitter": {
+    "name": "George Goldberg, MD",
+    "npi": "",
+    "tax_id": "10-3567542",
+    "specialty": "Radiology",
+    "phone": "(866) 525-1668",
+    "address": {
+      "street": "7295 Washington Ave",
+      "city": "Albuquerque",
+      "state": "NM",
+      "zip": "87164"
+    }
+  },
+  "patient": {
+    "first_name": "Yusuf",
+    "last_name": "Davis",
+    "date_of_birth": "2001-08-05",
+    "gender": "M",
+    "address": {
+      "street": "522 Madison Ave",
+      "city": "Columbus",
+      "state": "OH",
+      "zip": "43254"
+    },
+    "phone": "(454) 326-3246"
+  },
+  "insurance": {
+    "payer_id": "MCR-001",
+    "payer_name": "Medicare Part B",
+    "plan": "Original Medicare",
+    "member_id": "3TA0UCY1DQ5",
+    "group_id": "GRP-58954"
+  },
+  "diagnoses": [
+    {
+      "code": "R53.83",
+      "description": "Other fatigue"
+    },
+    {
+      "code": "H66.90",
+      "description": "Otitis media, unspecified, unspecified ear"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99285",
+      "description": "ED visit, high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 365.36,
+      "diagnosis_pointer": "1",
+      "place_of_service": "23",
+      "place_of_service_desc": "Emergency Room \u2014 Hospital",
+      "date_of_service": "2026-04-10"
+    }
+  ],
+  "total_charge_amount": 365.36,
+  "currency": "USD",
+  "prior_auth_number": null
+}

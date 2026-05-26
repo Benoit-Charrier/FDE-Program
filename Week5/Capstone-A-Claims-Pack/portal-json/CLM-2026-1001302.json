@@ -1,0 +1,64 @@
+{
+  "submission_id": "CLM-2026-1001302",
+  "submitted_at": "2026-04-27T12:25:00",
+  "submitter": {
+    "name": "Maple Family Health",
+    "npi": "0976708524",
+    "tax_id": "92-3972137",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(919) 288-6876",
+    "address": {
+      "street": "8854 Ridge Rd",
+      "city": "Indianapolis",
+      "state": "IN",
+      "zip": "46254"
+    }
+  },
+  "patient": {
+    "first_name": "Kiana",
+    "last_name": "Park",
+    "date_of_birth": "2002-12-24",
+    "gender": "F",
+    "address": {
+      "street": "6983 River Rd",
+      "city": "Denver",
+      "state": "CO",
+      "zip": "80276"
+    },
+    "phone": "(621) 581-7489"
+  },
+  "insurance": {
+    "payer_id": "MCD-IL",
+    "payer_name": "Illinois Medicaid",
+    "plan": "Medicaid",
+    "member_id": "545505166",
+    "group_id": "GRP-68243"
+  },
+  "diagnoses": [
+    {
+      "code": "J44.9",
+      "description": "Chronic obstructive pulmonary disease, unspecified"
+    },
+    {
+      "code": "E78.5",
+      "description": "Hyperlipidemia, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99285",
+      "description": "ED visit, high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 322.84,
+      "diagnosis_pointer": "1",
+      "place_of_service": "23",
+      "place_of_service_desc": "Emergency Room \u2014 Hospital",
+      "date_of_service": "2026-03-30"
+    }
+  ],
+  "total_charge_amount": 322.84,
+  "currency": "USD",
+  "prior_auth_number": null
+}

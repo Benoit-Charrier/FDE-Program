@@ -1,0 +1,43 @@
+From: Donna Schultz <donna.schultz@westwoodintern.example>
+To: claims-intake@payer.example
+Cc: office-mgr@westwoodintern.example
+Date: Mon, 27 Apr 2026 08:28:23 +0000
+Message-ID: <177729813740.6.2899835225734202638@westwoodintern.example>
+Subject: Outstanding claim =?utf-8?b?4oCU?= DOS 2026-04-06
+X-Submitter-NPI: 6271173287
+X-Submitter-TaxID: 33-6476889
+X-Originating-System: westwoodintern.example MailRelay 4.2
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+Hi team,
+
+Please process the following claim. Patient was seen at our office on 2026-04=
+-06.
+
+Patient: Espinoza, DoNNA  (DOB 1970-01-22, F)
+Member ID: YYL49739973    Plan: Anthem Blue Access =E2=80=94 PPO
+Group: GRP-40690
+Address: 9796 Franklin Rd, Sacramento, CA 95896
+
+Provider: Westwood Internal Medicine, NPI 6271173287, Tax ID 33-6476889
+Specialty: Multi-specialty Clinic
+
+Diagnoses:
+  - F41.1  Generalized anxiety disorder
+  - M79.7  Fibromyalgia
+
+Services rendered:
+  - 2026-04-06: CPT 99214 (Office visit, established, mod-high), 1 unit(s), $=
+155.95
+
+Total: $155.95
+Claim reference: CLM-2026-1001901
+
+This one got stuck =E2=80=94 appreciate the help!
+
+Thanks,
+Donna Schultz
+Westwood Internal Medicine
+(501) 689-8895

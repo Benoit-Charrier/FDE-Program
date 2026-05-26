@@ -1,0 +1,88 @@
+{
+  "submission_id": "CLM-2026-1001306",
+  "submitted_at": "2026-04-27T12:31:00",
+  "submitter": {
+    "name": "Wendy Patel, MD",
+    "npi": "7352343838",
+    "tax_id": "25-3439747",
+    "specialty": "Internal Medicine",
+    "phone": "(299) 412-8027",
+    "address": {
+      "street": "3010 Washington Ave",
+      "city": "Tucson",
+      "state": "AZ",
+      "zip": "85768"
+    }
+  },
+  "patient": {
+    "first_name": "Jose",
+    "last_name": "Young",
+    "date_of_birth": "2015-11-14",
+    "gender": "M",
+    "address": {
+      "street": "1598 Lincoln St",
+      "city": "Philadelphia",
+      "state": "PA",
+      "zip": "19136"
+    },
+    "phone": "(795) 578-5474"
+  },
+  "insurance": {
+    "payer_id": "BCBS-IL",
+    "payer_name": "Blue Cross Blue Shield of Illinois",
+    "plan": "HMO Standard",
+    "member_id": "XOJ308148958",
+    "group_id": "GRP-39556"
+  },
+  "diagnoses": [
+    {
+      "code": "M25.561",
+      "description": "Pain in right knee"
+    },
+    {
+      "code": "F41.1",
+      "description": "Generalized anxiety disorder"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "73030",
+      "description": "Shoulder X-ray, complete",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 67.94,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-10"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "97110",
+      "description": "Therapeutic exercises (15 min)",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 37.59,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-03"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99203",
+      "description": "Office visit, new pt, mod",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 152.13,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-08"
+    }
+  ],
+  "total_charge_amount": 257.66,
+  "currency": "USD",
+  "prior_auth_number": null
+}

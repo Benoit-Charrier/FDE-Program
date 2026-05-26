@@ -1,0 +1,68 @@
+{
+  "submission_id": "CLM-2026-1001340",
+  "submitted_at": "2026-04-27T12:40:00",
+  "submitter": {
+    "name": "Isaac Vargas, NP",
+    "npi": "8710706740",
+    "tax_id": "47-1052444",
+    "specialty": "Nurse Practitioner",
+    "phone": "(769) 664-1088",
+    "address": {
+      "street": "6098 Madison Ave",
+      "city": "Chicago",
+      "state": "IL",
+      "zip": "60614"
+    }
+  },
+  "patient": {
+    "first_name": "Roberto",
+    "last_name": "Anderson",
+    "date_of_birth": "1939-08-18",
+    "gender": "M",
+    "address": {
+      "street": "9987 Ridge Rd",
+      "city": "Phoenix",
+      "state": "AZ",
+      "zip": "85084"
+    },
+    "phone": "(896) 949-6433"
+  },
+  "insurance": {
+    "payer_id": "UHC-001",
+    "payer_name": "UnitedHealthcare Choice Plus",
+    "plan": "PPO",
+    "member_id": "590604634-03",
+    "group_id": "GRP-87832"
+  },
+  "diagnoses": [
+    {
+      "code": "L30.9",
+      "description": "Dermatitis, unspecified"
+    },
+    {
+      "code": "K21.9",
+      "description": "Gastro-esophageal reflux disease without esophagitis"
+    },
+    {
+      "code": "E66.9",
+      "description": "Obesity, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99281",
+      "description": "ED visit, low",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 123.46,
+      "diagnosis_pointer": "1",
+      "place_of_service": "23",
+      "place_of_service_desc": "Emergency Room \u2014 Hospital",
+      "date_of_service": "2026-03-30"
+    }
+  ],
+  "total_charge_amount": 123.46,
+  "currency": "USD",
+  "prior_auth_number": null
+}

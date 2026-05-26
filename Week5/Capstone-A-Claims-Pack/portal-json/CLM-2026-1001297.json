@@ -1,0 +1,104 @@
+{
+  "submission_id": "CLM-2026-1001297",
+  "submitted_at": "2026-04-27T12:27:00",
+  "submitter": {
+    "name": "Vincent Anderson, DO",
+    "npi": "2783801706",
+    "tax_id": "33-6476889",
+    "specialty": "Internal Medicine",
+    "phone": "(692) 928-6186",
+    "address": {
+      "street": "9014 Sunset Blvd",
+      "city": "Sacramento",
+      "state": "CA",
+      "zip": "95860"
+    }
+  },
+  "patient": {
+    "first_name": "Ingrid",
+    "last_name": "Espinoza",
+    "date_of_birth": "1966-10-13",
+    "gender": "F",
+    "address": {
+      "street": "6086 Cherry Ln",
+      "city": "Philadelphia",
+      "state": "PA",
+      "zip": "19184"
+    },
+    "phone": "(509) 815-4317"
+  },
+  "insurance": {
+    "payer_id": "UHC-001",
+    "payer_name": "UnitedHealthcare Choice Plus",
+    "plan": "PPO",
+    "member_id": "115061352-06",
+    "group_id": "GRP-54416"
+  },
+  "diagnoses": [
+    {
+      "code": "J45.909",
+      "description": "Unspecified asthma, uncomplicated"
+    },
+    {
+      "code": "J44.9",
+      "description": "Chronic obstructive pulmonary disease, unspecified"
+    },
+    {
+      "code": "E11.9",
+      "description": "Type 2 diabetes mellitus without complications"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99281",
+      "description": "ED visit, low",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 98.87,
+      "diagnosis_pointer": "1",
+      "place_of_service": "23",
+      "place_of_service_desc": "Emergency Room \u2014 Hospital",
+      "date_of_service": "2026-04-06"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "80061",
+      "description": "Lipid panel",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 52.57,
+      "diagnosis_pointer": "2",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-03-28"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99215",
+      "description": "Office visit, established, high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 203.47,
+      "diagnosis_pointer": "3",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-09"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "72148",
+      "description": "MRI lumbar spine without contrast",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 412.0,
+      "diagnosis_pointer": "1",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-04-06"
+    }
+  ],
+  "total_charge_amount": 766.91,
+  "currency": "USD",
+  "prior_auth_number": ""
+}

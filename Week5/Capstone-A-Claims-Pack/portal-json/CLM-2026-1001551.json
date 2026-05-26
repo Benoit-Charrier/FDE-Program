@@ -1,0 +1,106 @@
+{
+  "submission_id": "CLM-2026-1001551",
+  "submitted_at": "2026-04-27T13:27:00",
+  "submitter": {
+    "name": "Ezra Anderson, MD",
+    "npi": "4041849796",
+    "tax_id": "18-1015267",
+    "specialty": "Orthopedic Surgery",
+    "phone": "(697) 937-8559",
+    "address": {
+      "street": "6521 Washington Ave",
+      "city": "Chicago",
+      "state": "IL",
+      "zip": "60618"
+    }
+  },
+  "patient": {
+    "first_name": "Samuel",
+    "last_name": "Xiong",
+    "date_of_birth": "1946-02-14",
+    "gender": "M",
+    "address": {
+      "street": "3956 Maple Dr",
+      "city": "Cleveland",
+      "state": "OH",
+      "zip": "44171"
+    },
+    "phone": "(852) 382-7572"
+  },
+  "insurance": {
+    "payer_id": "UHC-002",
+    "payer_name": "UnitedHealthcare Navigate",
+    "plan": "HMO",
+    "member_id": "150097915-00",
+    "group_id": "GRP-32807"
+  },
+  "diagnoses": [
+    {
+      "code": "R07.9",
+      "description": "Chest pain, unspecified"
+    },
+    {
+      "code": "Z23",
+      "description": "Encounter for immunization"
+    },
+    {
+      "code": "R51.9",
+      "description": "Headache, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99203",
+      "description": "Office visit, new pt, mod",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 161.01,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-06"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99214",
+      "description": "Office visit, established, mod-high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 161.35,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-03-28"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99422",
+      "description": "Online digital E/M, 11-20 min",
+      "modifiers": [
+        "95"
+      ],
+      "units": 1,
+      "charge_amount": 49.85,
+      "diagnosis_pointer": "3",
+      "place_of_service": "02",
+      "place_of_service_desc": "Telehealth",
+      "date_of_service": "2026-04-03"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "99203",
+      "description": "Office visit, new pt, mod",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 145.24,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-08"
+    }
+  ],
+  "total_charge_amount": 517.45,
+  "currency": "USD",
+  "prior_auth_number": null
+}

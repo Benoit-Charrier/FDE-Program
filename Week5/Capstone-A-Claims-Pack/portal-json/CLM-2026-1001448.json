@@ -1,0 +1,96 @@
+{
+  "submission_id": "CLM-2026-1001448",
+  "submitted_at": "2026-04-27T13:02:00",
+  "submitter": {
+    "name": "Henry Tanaka, MD",
+    "npi": "3043192934",
+    "tax_id": "11-5860495",
+    "specialty": "Pediatrics",
+    "phone": "(348) 702-4437",
+    "address": {
+      "street": "6666 Walnut St",
+      "city": "Charlotte",
+      "state": "NC",
+      "zip": "28259"
+    }
+  },
+  "patient": {
+    "first_name": "Logan",
+    "last_name": "Davis",
+    "date_of_birth": "1956-07-04",
+    "gender": "M",
+    "address": {
+      "street": "7143 Pine Ln",
+      "city": "Omaha",
+      "state": "NE",
+      "zip": "68155"
+    },
+    "phone": "(395) 426-1322"
+  },
+  "insurance": {
+    "payer_id": "ANT-001",
+    "payer_name": "Anthem Blue Access",
+    "plan": "PPO",
+    "member_id": "YYL76908915",
+    "group_id": "GRP-40303"
+  },
+  "diagnoses": [
+    {
+      "code": "F32.9",
+      "description": "Major depressive disorder, single episode"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99395",
+      "description": "Preventive established, 18-39",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 227.99,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-04"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "70551",
+      "description": "MRI brain without contrast",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 539.87,
+      "diagnosis_pointer": "1",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-04-03"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "72148",
+      "description": "MRI lumbar spine without contrast",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 598.3,
+      "diagnosis_pointer": "1",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-04-17"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "99395",
+      "description": "Preventive established, 18-39",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 236.06,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-17"
+    }
+  ],
+  "total_charge_amount": 1602.22,
+  "currency": "USD",
+  "prior_auth_number": null
+}

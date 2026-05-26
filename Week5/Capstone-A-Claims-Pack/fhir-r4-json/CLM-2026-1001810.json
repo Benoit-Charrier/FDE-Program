@@ -1,0 +1,164 @@
+{
+  "resourceType": "Claim",
+  "id": "CLM-2026-1001810",
+  "status": "active",
+  "type": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+        "code": "professional"
+      }
+    ]
+  },
+  "use": "claim",
+  "patient": {
+    "reference": "Patient/0UN8RRV4CW3",
+    "display": "Mateo Petrov"
+  },
+  "billablePeriod": {
+    "start": "2026-04-22",
+    "end": "2026-03-30"
+  },
+  "created": "2026-04-27T14:32:00",
+  "insurer": {
+    "reference": "Organization/MCR-001",
+    "display": "Medicare Part B"
+  },
+  "provider": {
+    "reference": "Practitioner/9157630999",
+    "display": "Forest Hills Urgent Care"
+  },
+  "priority": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/processpriority",
+        "code": "normal"
+      }
+    ]
+  },
+  "diagnosis": [
+    {
+      "sequence": 1,
+      "diagnosisCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/sid/icd-10-cm",
+            "code": "R10.9",
+            "display": "Unspecified abdominal pain"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 2,
+      "diagnosisCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/sid/icd-10-cm",
+            "code": "M79.7",
+            "display": "Fibromyalgia"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 3,
+      "diagnosisCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/sid/icd-10-cm",
+            "code": "J20.9",
+            "display": "Acute bronchitis, unspecified"
+          }
+        ]
+      }
+    }
+  ],
+  "insurance": [
+    {
+      "sequence": 1,
+      "focal": true,
+      "coverage": {
+        "display": "Original Medicare via Medicare Part B"
+      }
+    }
+  ],
+  "item": [
+    {
+      "sequence": 1,
+      "diagnosisSequence": [
+        1
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "99204",
+            "display": "Office visit, new pt, high"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-04-22",
+      "quantity": {
+        "value": 1
+      },
+      "unitPrice": {
+        "value": 228.73,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 228.73,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "11"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 2,
+      "diagnosisSequence": [
+        2
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "99203",
+            "display": "Office visit, new pt, mod"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-03-30",
+      "quantity": {
+        "value": 1
+      },
+      "unitPrice": {
+        "value": 173.81,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 173.81,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "11"
+          }
+        ]
+      }
+    }
+  ],
+  "total": {
+    "value": 402.54,
+    "currency": "USD"
+  }
+}

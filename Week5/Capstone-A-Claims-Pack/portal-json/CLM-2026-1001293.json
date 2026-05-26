@@ -1,0 +1,88 @@
+{
+  "submission_id": "CLM-2026-1001293",
+  "submitted_at": "2026-04-27T12:23:00",
+  "submitter": {
+    "name": "Maple Family Health",
+    "npi": "8072617247",
+    "tax_id": "71-1103322",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(806) 570-1914",
+    "address": {
+      "street": "4225 Park Blvd",
+      "city": "Chicago",
+      "state": "IL",
+      "zip": "60613"
+    }
+  },
+  "patient": {
+    "first_name": "Whitney",
+    "last_name": "Smith",
+    "date_of_birth": "2022-03-11",
+    "gender": "F",
+    "address": {
+      "street": "9101 River Rd",
+      "city": "Salt Lake City",
+      "state": "UT",
+      "zip": "84197"
+    },
+    "phone": "(766) 529-6535"
+  },
+  "insurance": {
+    "payer_id": "AET-001",
+    "payer_name": "Aetna Open Access",
+    "plan": "PPO",
+    "member_id": "W993298529",
+    "group_id": "GRP-54888"
+  },
+  "diagnoses": [
+    {
+      "code": "Z00.00",
+      "description": "Encounter for general adult medical examination"
+    },
+    {
+      "code": "N18.3",
+      "description": "Chronic kidney disease, stage 3"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "80053",
+      "description": "Comprehensive metabolic panel",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 19.9,
+      "diagnosis_pointer": "1",
+      "place_of_service": "12",
+      "place_of_service_desc": "Home",
+      "date_of_service": "2026-04-07"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99203",
+      "description": "Office visit, new pt, mod",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 141.58,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-02"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "85025",
+      "description": "CBC w/ differential",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 28.4,
+      "diagnosis_pointer": "1",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-03-30"
+    }
+  ],
+  "total_charge_amount": 189.88,
+  "currency": "USD",
+  "prior_auth_number": null
+}

@@ -1,0 +1,64 @@
+{
+  "submission_id": "CLM-2026-1001476",
+  "submitted_at": "2026-04-27T13:13:00",
+  "submitter": {
+    "name": "Patrick DuBois, MD",
+    "npi": "1249417514",
+    "tax_id": "",
+    "specialty": "Pediatrics",
+    "phone": "(848) 243-3334",
+    "address": {
+      "street": "4809 Jefferson Dr",
+      "city": "Buffalo",
+      "state": "NY",
+      "zip": "14252"
+    }
+  },
+  "patient": {
+    "first_name": "Lina",
+    "last_name": "Park",
+    "date_of_birth": "1982-07-06",
+    "gender": "F",
+    "address": {
+      "street": "5004 River Rd",
+      "city": "Columbus",
+      "state": "OH",
+      "zip": "43252"
+    },
+    "phone": "(377) 771-7912"
+  },
+  "insurance": {
+    "payer_id": "AET-001",
+    "payer_name": "Aetna Open Access",
+    "plan": "PPO",
+    "member_id": "W932492258",
+    "group_id": "GRP-95800"
+  },
+  "diagnoses": [
+    {
+      "code": "I10",
+      "description": "Essential (primary) hypertension"
+    },
+    {
+      "code": "R10.9",
+      "description": "Unspecified abdominal pain"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "12001",
+      "description": "Simple repair, superficial wound",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 214.03,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-21"
+    }
+  ],
+  "total_charge_amount": 214.03,
+  "currency": "USD",
+  "prior_auth_number": null
+}

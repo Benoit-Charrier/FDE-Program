@@ -1,0 +1,88 @@
+{
+  "submission_id": "CLM-2026-1001515",
+  "submitted_at": "2026-04-27T13:18:00",
+  "submitter": {
+    "name": "Hector Nakamura, MD",
+    "npi": "",
+    "tax_id": "32-5826449",
+    "specialty": "Internal Medicine",
+    "phone": "(930) 812-7191",
+    "address": {
+      "street": "3549 Jefferson Dr",
+      "city": "Tucson",
+      "state": "AZ",
+      "zip": "85771"
+    }
+  },
+  "patient": {
+    "first_name": "Donna",
+    "last_name": "Zhang",
+    "date_of_birth": "2007-05-31",
+    "gender": "F",
+    "address": {
+      "street": "4694 Highland Ave",
+      "city": "Albuquerque",
+      "state": "NM",
+      "zip": "87135"
+    },
+    "phone": "(875) 985-2784"
+  },
+  "insurance": {
+    "payer_id": "BCBS-IL",
+    "payer_name": "Blue Cross Blue Shield of Illinois",
+    "plan": "HMO Standard",
+    "member_id": "XOJ210934781",
+    "group_id": "GRP-79445"
+  },
+  "diagnoses": [
+    {
+      "code": "E11.9",
+      "description": "Type 2 diabetes mellitus without complications"
+    },
+    {
+      "code": "I10",
+      "description": "Essential (primary) hypertension"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "90471",
+      "description": "Immunization administration",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 14.98,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-06"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99203",
+      "description": "Office visit, new pt, mod",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 157.48,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-01"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99205",
+      "description": "Office visit, new pt, comprehensive",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 313.66,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-01"
+    }
+  ],
+  "total_charge_amount": 486.12,
+  "currency": "USD",
+  "prior_auth_number": null
+}

@@ -1,0 +1,30 @@
+============================
+   FAX COVER SHEET
+============================
+TO:    UnitedHealthcare Choice Plus Claims Intake
+FROM:  Crestview Imaging Center
+DATE:  04/27/2026
+PAGES: 1 of 4
+
+URGENT [_]   FOR REVIEW [X]   PLEASE COMMENT [_]   PLEASE REPLY [_]
+
+RE: Claim submission - patient Baker, Lina
+
+Member ID:     909582475-04
+DOB:           1965-05-20
+Plan:          PPO
+Group:         GRP-15620
+DOS:           2026-04-06
+
+Diagnoses:     F32.9, G47.33
+Procedures:    44970
+Total charge:  $2502.96
+
+Provider NPI:  3913708494
+Tax ID:        13-6253622
+
+NOTES:
+Resubmission - prior denial coded incorrect dx, now corrected.
+
+If problems with this fax, call (970) 896-5883
+============================

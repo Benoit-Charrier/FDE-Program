@@ -1,0 +1,88 @@
+{
+  "submission_id": "CLM-2026-1001529",
+  "submitted_at": "2026-04-27T13:26:00",
+  "submitter": {
+    "name": "Jerome Martinez, NP",
+    "npi": "2019630180",
+    "tax_id": "56-7822842",
+    "specialty": "Nurse Practitioner",
+    "phone": "(258) 675-1668",
+    "address": {
+      "street": "5527 Lincoln St",
+      "city": "Sacramento",
+      "state": "CA",
+      "zip": "95829"
+    }
+  },
+  "patient": {
+    "first_name": "Elena",
+    "last_name": "Clark",
+    "date_of_birth": "1972-06-11",
+    "gender": "F",
+    "address": {
+      "street": "4489 Cedar Ct",
+      "city": "Denver",
+      "state": "CO",
+      "zip": "80210"
+    },
+    "phone": "(517) 360-7179"
+  },
+  "insurance": {
+    "payer_id": "AET-001",
+    "payer_name": "Aetna Open Access",
+    "plan": "PPO",
+    "member_id": "W581658013",
+    "group_id": "GRP-14744"
+  },
+  "diagnoses": [
+    {
+      "code": "J20.9",
+      "description": "Acute bronchitis, unspecified"
+    },
+    {
+      "code": "R53.83",
+      "description": "Other fatigue"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "27447",
+      "description": "Total knee arthroplasty",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 2862.04,
+      "diagnosis_pointer": "1",
+      "place_of_service": "21",
+      "place_of_service_desc": "Inpatient Hospital",
+      "date_of_service": "2026-03-29"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "97140",
+      "description": "Manual therapy (15 min)",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 78.53,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-03"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "44970",
+      "description": "Laparoscopic appendectomy",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 2651.43,
+      "diagnosis_pointer": "1",
+      "place_of_service": "21",
+      "place_of_service_desc": "Inpatient Hospital",
+      "date_of_service": "2026-04-09"
+    }
+  ],
+  "total_charge_amount": 5592.0,
+  "currency": "USD",
+  "prior_auth_number": null
+}

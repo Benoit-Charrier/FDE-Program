@@ -1,0 +1,84 @@
+{
+  "submission_id": "CLM-2026-1001494",
+  "submitted_at": "2026-04-27T13:18:00",
+  "submitter": {
+    "name": "Noah Goldberg, MD",
+    "npi": "2737742215",
+    "tax_id": "71-1103322",
+    "specialty": "Internal Medicine",
+    "phone": "(297) 290-2138",
+    "address": {
+      "street": "9100 Franklin Rd",
+      "city": "Portland",
+      "state": "OR",
+      "zip": "97212"
+    }
+  },
+  "patient": {
+    "first_name": "Isaac",
+    "last_name": "Reyes",
+    "date_of_birth": "2013-10-21",
+    "gender": "M",
+    "address": {
+      "street": "9269 Spring St",
+      "city": "Houston",
+      "state": "TX",
+      "zip": "77026"
+    },
+    "phone": "(576) 804-8548"
+  },
+  "insurance": {
+    "payer_id": "AET-001",
+    "payer_name": "Aetna Open Access",
+    "plan": "PPO",
+    "member_id": "W661176674",
+    "group_id": "GRP-56392"
+  },
+  "diagnoses": [
+    {
+      "code": "L98.9",
+      "description": "Disorder of the skin and subcutaneous tissue, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99285",
+      "description": "ED visit, high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 326.17,
+      "diagnosis_pointer": "1",
+      "place_of_service": "23",
+      "place_of_service_desc": "Emergency Room \u2014 Hospital",
+      "date_of_service": "2026-04-05"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "85025",
+      "description": "CBC w/ differential",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 26.51,
+      "diagnosis_pointer": "2",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-17"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "12001",
+      "description": "Simple repair, superficial wound",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 205.84,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-26"
+    }
+  ],
+  "total_charge_amount": 558.52,
+  "currency": "USD",
+  "prior_auth_number": null
+}

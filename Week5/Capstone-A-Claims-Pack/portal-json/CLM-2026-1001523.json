@@ -1,0 +1,80 @@
+{
+  "submission_id": "CLM-2026-1001523",
+  "submitted_at": "2026-04-27T13:23:00",
+  "submitter": {
+    "name": "Ulysses Tanaka, MD",
+    "npi": "7815152694",
+    "tax_id": "36-7226148",
+    "specialty": "Internal Medicine",
+    "phone": "(520) 792-4404",
+    "address": {
+      "street": "4012 Lake Rd",
+      "city": "Omaha",
+      "state": "NE",
+      "zip": "68131"
+    }
+  },
+  "patient": {
+    "first_name": "Ulysses",
+    "last_name": "Johnson",
+    "date_of_birth": "1942-05-15",
+    "gender": "M",
+    "address": {
+      "street": "8371 Madison Ave",
+      "city": "Houston",
+      "state": "TX",
+      "zip": "77089"
+    },
+    "phone": "(743) 550-3116"
+  },
+  "insurance": {
+    "payer_id": "HUM-001",
+    "payer_name": "Humana Gold Plus",
+    "plan": "HMO",
+    "member_id": "H13937730",
+    "group_id": "GRP-99863"
+  },
+  "diagnoses": [
+    {
+      "code": "M79.7",
+      "description": "Fibromyalgia"
+    },
+    {
+      "code": "R07.9",
+      "description": "Chest pain, unspecified"
+    },
+    {
+      "code": "J20.9",
+      "description": "Acute bronchitis, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "97140",
+      "description": "Manual therapy (15 min)",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 37.58,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-18"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99203",
+      "description": "Office visit, new pt, mod",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 181.82,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-18"
+    }
+  ],
+  "total_charge_amount": 219.4,
+  "currency": "USD",
+  "prior_auth_number": null
+}

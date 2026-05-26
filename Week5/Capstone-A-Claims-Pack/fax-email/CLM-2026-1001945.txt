@@ -1,0 +1,30 @@
+============================
+   FAX COVER SHEET
+============================
+TO:    Blue Cross Blue Shield of Illinois Claims Intake
+FROM:  Bayside Orthopedics
+DATE:  04/27/2026
+PAGES: 1 of 5
+
+URGENT [_]   FOR REVIEW [X]   PLEASE COMMENT [_]   PLEASE REPLY [_]
+
+RE: Claim submission - patient Anderson, Valerie
+
+Member ID:     XOJ727095087
+DOB:           1941-09-10
+Plan:          HMO Standard
+Group:         GRP-31390
+DOS:           2026-04-18
+
+Diagnoses:     M54.5
+Procedures:    99203, 47562, 99205, 80061
+Total charge:  $3881.45
+
+Provider NPI:  3539410465
+Tax ID:        81-6072630
+
+NOTES:
+Resubmission - prior denial coded incorrect dx, now corrected.
+
+If problems with this fax, call (699) 271-5076
+============================

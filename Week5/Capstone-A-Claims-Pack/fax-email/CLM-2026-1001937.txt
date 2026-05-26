@@ -1,0 +1,30 @@
+============================
+   FAX COVER SHEET
+============================
+TO:    Humana Gold Plus Claims Intake
+FROM:  Beatrice O'Connor, MD
+DATE:  04/27/2026
+PAGES: 1 of 4
+
+URGENT [_]   FOR REVIEW [X]   PLEASE COMMENT [_]   PLEASE REPLY [_]
+
+RE: Claim submission - patient Lee, David
+
+Member ID:     H56378924
+DOB:           1995-08-23
+Plan:          HMO
+Group:         GRP-26079
+DOS:           2026-04-16
+
+Diagnoses:     J06.9
+Procedures:    99396
+Total charge:  $243.44
+
+Provider NPI:  7631763485
+Tax ID:        53-5572352
+
+NOTES:
+Patient was seen for emergency visit - records to follow.
+
+If problems with this fax, call (897) 323-8240
+============================

@@ -1,0 +1,79 @@
+{
+  "submission_id": "CLM-2026-1001539",
+  "submitted_at": "2026-04-27T13:27:00",
+  "submitter": {
+    "name": "Bayside Orthopedics",
+    "npi": "1927917860",
+    "tax_id": "11-7535324",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(631) 672-7077",
+    "address": {
+      "street": "9005 Oak Ave",
+      "city": "Minneapolis",
+      "state": "MN",
+      "zip": "55464"
+    }
+  },
+  "patient": {
+    "first_name": "LiLY",
+    "last_name": "Walker",
+    "date_of_birth": "1996-07-27",
+    "gender": "F",
+    "address": {
+      "street": "1183 Walnut St",
+      "city": "Tampa",
+      "state": "FL",
+      "zip": "33653"
+    },
+    "phone": "(432) 944-6386"
+  },
+  "insurance": {
+    "payer_id": "AET-001",
+    "payer_name": "Aetna Open Access",
+    "plan": "PPO",
+    "member_id": "W414188018",
+    "group_id": "GRP-76319"
+  },
+  "diagnoses": [],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99215",
+      "description": "Office visit, established, high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 194.83,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-13"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "83036",
+      "description": "Hemoglobin A1c",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 16.47,
+      "diagnosis_pointer": "2",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-04"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "85025",
+      "description": "CBC w/ differential",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 25.52,
+      "diagnosis_pointer": "3",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-10"
+    }
+  ],
+  "total_charge_amount": 236.82,
+  "currency": "USD",
+  "prior_auth_number": null
+}

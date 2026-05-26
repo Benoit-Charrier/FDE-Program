@@ -1,0 +1,60 @@
+{
+  "submission_id": "CLM-2026-1001332",
+  "submitted_at": "2026-04-27T12:36:00",
+  "submitter": {
+    "name": "Vera Singh, MD",
+    "npi": "2129162935",
+    "tax_id": "",
+    "specialty": "Emergency Medicine",
+    "phone": "(841) 954-3621",
+    "address": {
+      "street": "9915 Main St",
+      "city": "Kansas City",
+      "state": "MO",
+      "zip": "64198"
+    }
+  },
+  "patient": {
+    "first_name": "Samuel",
+    "last_name": "Fischer",
+    "date_of_birth": "1985-03-01",
+    "gender": "M",
+    "address": {
+      "street": "5675 Oak Ave",
+      "city": "Chicago",
+      "state": "IL",
+      "zip": "60681"
+    },
+    "phone": "(264) 215-3913"
+  },
+  "insurance": {
+    "payer_id": "HUM-001",
+    "payer_name": "Humana Gold Plus",
+    "plan": "HMO",
+    "member_id": "84642694H",
+    "group_id": "GRP-81405"
+  },
+  "diagnoses": [
+    {
+      "code": "Z00.00",
+      "description": "Encounter for general adult medical examination"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "73030",
+      "description": "Shoulder X-ray, complete",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 127.05,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-02"
+    }
+  ],
+  "total_charge_amount": 127.05,
+  "currency": "USD",
+  "prior_auth_number": null
+}

@@ -1,0 +1,12 @@
+[Internal note - intake processor]
+
+Pt: Zimmerman, Hector DOB 02/05/08
+Member: 587712287-00
+Provider: Xio Cohen (NPI 0813547042)
+DOS: 2026-04-17
+Total: $279.46
+
+Issue: No prior auth on file for high-cost imaging.
+
+Routed to: Member services
+- LMart 15:20

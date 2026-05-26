@@ -1,0 +1,79 @@
+From: Mike Iqbal <mike.iqbal@maplefamilyhea.example>
+To: claims-intake@payer.example
+Cc: office-mgr@maplefamilyhea.example
+Date: Mon, 27 Apr 2026 14:30:47 +0000
+Message-ID: <177729813756.6.11961651007148412688@maplefamilyhea.example>
+Subject: Claim submission =?utf-8?b?4oCU?= patient Rodriguez
+ (CLM-2026-1001920)
+X-Submitter-NPI:
+X-Submitter-TaxID: 34-4053329
+X-Originating-System: maplefamilyhea.example MailRelay 4.2
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="===============5509013772154080862=="
+
+--===============5509013772154080862==
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hi team,
+
+Please process the following claim. Patient was seen at our office on 2026-04=
+-10.
+
+Patient: Rodriguez, Xavier  (DOB 1980-01-03, M)
+Member ID: XOJ777175345    Plan: Blue Cross Blue Shield of Illinois =E2=80=94=
+ PPO Choice
+Group: GRP-99437
+Address: 8941 Lincoln St, Salt Lake City, UT 84190
+
+Provider: Maple Family Health, NPI (missing =E2=80=94 please call), Tax ID 34=
+-4053329
+Specialty: Multi-specialty Clinic
+
+Diagnoses:
+  - J45.909  Unspecified asthma, uncomplicated
+  - M79.7  Fibromyalgia
+
+Services rendered:
+  - 2026-04-10: CPT 12001 (Simple repair, superficial wound), 1 unit(s), $165=
+.49
+
+Total: $165.49
+Claim reference: CLM-2026-1001920
+
+Resubmitting from last week =E2=80=94 first one bounced. Pls confirm receipt.
+
+Thanks,
+Mike Iqbal
+Maple Family Health
+(601) 948-7353
+
+--===============5509013772154080862==
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+<html><body style=3D"font-family: Arial, sans-serif; font-size: 11pt;">
+<p>Hi team,</p>
+<p>Please process the following claim. Patient was seen at our office on
+<b>2026-04-10</b>.</p>
+<table cellpadding=3D"3" style=3D"border-collapse: collapse; font-size: 10pt;=
+">
+<tr><td><b>Patient:</b></td><td>Rodriguez, Xavier (DOB 1980-01-03, M)</td></t=
+r>
+<tr><td><b>Member ID:</b></td><td>XOJ777175345</td></tr>
+<tr><td><b>Plan:</b></td><td>Blue Cross Blue Shield of Illinois =E2=80=94 PPO=
+ Choice</td></tr>
+<tr><td><b>Group:</b></td><td>GRP-99437</td></tr>
+<tr><td><b>Provider:</b></td><td>Maple Family Health (NPI <i>missing</i>)</td=
+></tr>
+<tr><td><b>Total charge:</b></td><td>$165.49</td></tr>
+<tr><td><b>Claim ref:</b></td><td>CLM-2026-1001920</td></tr>
+</table>
+<p>Diagnoses: J45.909, M79.7</p>
+<p>Procedures: 12001</p>
+<p>Thanks,<br>Mike Iqbal<br>Maple Family Health<br>(601) 948-7353</p>
+</body></html>
+
+--===============5509013772154080862==--

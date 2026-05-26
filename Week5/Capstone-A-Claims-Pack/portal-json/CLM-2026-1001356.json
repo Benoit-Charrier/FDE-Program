@@ -1,0 +1,95 @@
+{
+  "submission_id": "CLM-2026-1001356",
+  "submitted_at": "2026-04-27T12:44:00",
+  "submitter": {
+    "name": "Westwood Internal Medicine",
+    "npi": "1299246902",
+    "tax_id": "99-8279635",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(987) 834-9813",
+    "address": {
+      "street": "4484 Cedar Ct",
+      "city": "Albuquerque",
+      "state": "NM",
+      "zip": "87166"
+    }
+  },
+  "patient": {
+    "first_name": "Sophia",
+    "last_name": "Quintana",
+    "date_of_birth": "1971-12-18",
+    "gender": "F",
+    "address": {
+      "street": "7275 Ridge Rd",
+      "city": "Chicago",
+      "state": "IL",
+      "zip": "60675"
+    },
+    "phone": "(315) 420-1154"
+  },
+  "insurance": {
+    "payer_id": "MCR-001",
+    "payer_name": "Medicare Part B",
+    "plan": "Original Medicare",
+    "member_id": "1FK4GXW4DG4",
+    "group_id": "GRP-35738"
+  },
+  "diagnoses": [],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "90686",
+      "description": "Flu vaccine quadrivalent",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 55.21,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-16"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99422",
+      "description": "Online digital E/M, 11-20 min",
+      "modifiers": [
+        "95"
+      ],
+      "units": 1,
+      "charge_amount": 35.61,
+      "diagnosis_pointer": "2",
+      "place_of_service": "02",
+      "place_of_service_desc": "Telehealth",
+      "date_of_service": "2026-04-22"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99214",
+      "description": "Office visit, established, mod-high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 161.34,
+      "diagnosis_pointer": "3",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-12"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "99421",
+      "description": "Online digital E/M, 5-10 min",
+      "modifiers": [
+        "95"
+      ],
+      "units": 1,
+      "charge_amount": 18.03,
+      "diagnosis_pointer": "1",
+      "place_of_service": "02",
+      "place_of_service_desc": "Telehealth",
+      "date_of_service": "2026-04-22"
+    }
+  ],
+  "total_charge_amount": 270.19,
+  "currency": "USD",
+  "prior_auth_number": null
+}

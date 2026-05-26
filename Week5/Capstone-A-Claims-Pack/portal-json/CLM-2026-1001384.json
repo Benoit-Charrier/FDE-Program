@@ -1,0 +1,70 @@
+{
+  "submission_id": "CLM-2026-1001384",
+  "submitted_at": "2026-04-27T12:46:00",
+  "submitter": {
+    "name": "Oak Tree Pediatric Associates",
+    "npi": "6099948544",
+    "tax_id": "17-9077104",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(506) 758-9685",
+    "address": {
+      "street": "8983 Hill St",
+      "city": "Boston",
+      "state": "MA",
+      "zip": "02192"
+    }
+  },
+  "patient": {
+    "first_name": "Oscar",
+    "last_name": "Martinez",
+    "date_of_birth": "2003-06-11",
+    "gender": "M",
+    "address": {
+      "street": "6260 1st Ave",
+      "city": "Seattle",
+      "state": "WA",
+      "zip": "98140"
+    },
+    "phone": "(565) 906-6503"
+  },
+  "insurance": {
+    "payer_id": "BCBS-IL",
+    "payer_name": "Blue Cross Blue Shield of Illinois",
+    "plan": "HMO Standard",
+    "member_id": "XOJ963574925",
+    "group_id": "GRP-76543"
+  },
+  "diagnoses": [
+    {
+      "code": "E11.9",
+      "description": "Type 2 diabetes mellitus without complications"
+    },
+    {
+      "code": "E66.9",
+      "description": "Obesity, unspecified"
+    },
+    {
+      "code": "J06.9",
+      "description": "Acute upper respiratory infection, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99422",
+      "description": "Online digital E/M, 11-20 min",
+      "modifiers": [
+        "95"
+      ],
+      "units": 1,
+      "charge_amount": 45.31,
+      "diagnosis_pointer": "1",
+      "place_of_service": "02",
+      "place_of_service_desc": "Telehealth",
+      "date_of_service": "2026-03-31"
+    }
+  ],
+  "total_charge_amount": 45.31,
+  "currency": "USD",
+  "prior_auth_number": null
+}

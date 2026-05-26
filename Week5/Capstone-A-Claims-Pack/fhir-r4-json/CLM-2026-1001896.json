@@ -1,0 +1,188 @@
+{
+  "resourceType": "Claim",
+  "id": "CLM-2026-1001896",
+  "status": "active",
+  "type": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+        "code": "professional"
+      }
+    ]
+  },
+  "use": "claim",
+  "patient": {
+    "reference": "Patient/XOJ667893400",
+    "display": "Quinn Clark"
+  },
+  "billablePeriod": {
+    "start": "2026-04-02",
+    "end": "2026-04-24"
+  },
+  "created": "2026-04-27T14:56:00",
+  "insurer": {
+    "reference": "Organization/BCBS-IL",
+    "display": "Blue Cross Blue Shield of Illinois"
+  },
+  "provider": {
+    "reference": "Practitioner/4790858539",
+    "display": "Bayside Orthopedics"
+  },
+  "priority": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/processpriority",
+        "code": "normal"
+      }
+    ]
+  },
+  "diagnosis": [
+    {
+      "sequence": 1,
+      "diagnosisCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/sid/icd-10-cm",
+            "code": "N18.3",
+            "display": "Chronic kidney disease, stage 3"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 2,
+      "diagnosisCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/sid/icd-10-cm",
+            "code": "M54.5",
+            "display": "Low back pain"
+          }
+        ]
+      }
+    }
+  ],
+  "insurance": [
+    {
+      "sequence": 1,
+      "focal": true,
+      "coverage": {
+        "display": "PPO Choice via Blue Cross Blue Shield of Illinois"
+      }
+    }
+  ],
+  "item": [
+    {
+      "sequence": 1,
+      "diagnosisSequence": [
+        1
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "99215",
+            "display": "Office visit, established, high"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-04-02",
+      "quantity": {
+        "value": 1
+      },
+      "unitPrice": {
+        "value": 222.99,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 222.99,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "11"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 2,
+      "diagnosisSequence": [
+        2
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "99204",
+            "display": "Office visit, new pt, high"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-04-19",
+      "quantity": {
+        "value": 1
+      },
+      "unitPrice": {
+        "value": 229.51,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 229.51,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "11"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 3,
+      "diagnosisSequence": [
+        1
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "70551",
+            "display": "MRI brain without contrast"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-04-24",
+      "quantity": {
+        "value": 1
+      },
+      "unitPrice": {
+        "value": 424.07,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 424.07,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "22"
+          }
+        ]
+      }
+    }
+  ],
+  "total": {
+    "value": 876.57,
+    "currency": "USD"
+  }
+}

@@ -1,0 +1,12 @@
+[Internal note - intake processor]
+
+Pt: Gonzalez, Samuel DOB 08/24/87
+Member: W569828260
+Provider: Maple Family Health (NPI 5151059411)
+DOS: 2026-04-25
+Total: $5282.86
+
+Issue: Pt name on claim does not match enrollment. Need to verify ID.
+
+Routed to: Member services
+- JSmith 15:23

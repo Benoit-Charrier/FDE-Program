@@ -1,0 +1,11 @@
+PHONE LOG - PROVIDER OUTREACH
+
+Date/Time: 04/27/2026 15:11
+Caller: Practice admin from Olivia Anderson, MD
+Re: Patient Roberto Singh (member 449757175-08)
+
+Caller states: we got a 16 (claim/svc lacks information) but cant tell what info is missing
+
+Resolution: Pulled claim CLM-2026-1001967. EOP being mailed - explained breakdown to caller.
+
+Closed: 15:11  Agent: S.Iqbal

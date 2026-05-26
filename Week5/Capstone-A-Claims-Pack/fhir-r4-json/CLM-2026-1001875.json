@@ -1,0 +1,212 @@
+{
+  "resourceType": "Claim",
+  "id": "CLM-2026-1001875",
+  "status": "active",
+  "type": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+        "code": "professional"
+      }
+    ]
+  },
+  "use": "claim",
+  "patient": {
+    "reference": "Patient/287449283-01",
+    "display": "Rachel Fischer"
+  },
+  "billablePeriod": {
+    "start": "2026-04-22",
+    "end": "2026-03-31"
+  },
+  "created": "2026-04-27T14:48:00",
+  "insurer": {
+    "reference": "Organization/UHC-002",
+    "display": "UnitedHealthcare Navigate"
+  },
+  "provider": {
+    "reference": "Practitioner/2624452386",
+    "display": "Ezra DuBois, PA"
+  },
+  "priority": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/processpriority",
+        "code": "normal"
+      }
+    ]
+  },
+  "diagnosis": [
+    {
+      "sequence": 1,
+      "diagnosisCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/sid/icd-10-cm",
+            "code": "L30.9",
+            "display": "Dermatitis, unspecified"
+          }
+        ]
+      }
+    }
+  ],
+  "insurance": [
+    {
+      "sequence": 1,
+      "focal": true,
+      "coverage": {
+        "display": "HMO via UnitedHealthcare Navigate"
+      }
+    }
+  ],
+  "item": [
+    {
+      "sequence": 1,
+      "diagnosisSequence": [
+        1
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "99999",
+            "display": "Manual therapy (15 min)"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-04-22",
+      "quantity": {
+        "value": 2
+      },
+      "unitPrice": {
+        "value": 38.19,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 76.38,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "11"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 2,
+      "diagnosisSequence": [
+        1
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "97140",
+            "display": "Manual therapy (15 min)"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-04-06",
+      "quantity": {
+        "value": 1
+      },
+      "unitPrice": {
+        "value": 31.36,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 31.36,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "11"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 3,
+      "diagnosisSequence": [
+        1
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "90471",
+            "display": "Immunization administration"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-04-15",
+      "quantity": {
+        "value": 2
+      },
+      "unitPrice": {
+        "value": 17.61,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 35.22,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "11"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 4,
+      "diagnosisSequence": [
+        1
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "99215",
+            "display": "Office visit, established, high"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-03-31",
+      "quantity": {
+        "value": 1
+      },
+      "unitPrice": {
+        "value": 235.08,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 235.08,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "11"
+          }
+        ]
+      }
+    }
+  ],
+  "total": {
+    "value": 378.04,
+    "currency": "USD"
+  }
+}

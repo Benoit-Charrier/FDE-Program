@@ -1,0 +1,100 @@
+{
+  "submission_id": "CLM-2026-1001433",
+  "submitted_at": "2026-04-27T13:01:00",
+  "submitter": {
+    "name": "Eastlake Wellness Clinic",
+    "npi": "6116650904",
+    "tax_id": "60-5120245",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(556) 494-3984",
+    "address": {
+      "street": "1376 Pine Ln",
+      "city": "Tucson",
+      "state": "AZ",
+      "zip": "85793"
+    }
+  },
+  "patient": {
+    "first_name": "Adrian",
+    "last_name": "Smith",
+    "date_of_birth": "1937-03-06",
+    "gender": "M",
+    "address": {
+      "street": "5649 Spring St",
+      "city": "Indianapolis",
+      "state": "IN",
+      "zip": "46233"
+    },
+    "phone": "(394) 567-7163"
+  },
+  "insurance": {
+    "payer_id": "ANT-001",
+    "payer_name": "Anthem Blue Access",
+    "plan": "PPO",
+    "member_id": "YYL52421474",
+    "group_id": "GRP-75884"
+  },
+  "diagnoses": [
+    {
+      "code": "K21.9",
+      "description": "Gastro-esophageal reflux disease without esophagitis"
+    },
+    {
+      "code": "E11.9",
+      "description": "Type 2 diabetes mellitus without complications"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "73030",
+      "description": "Shoulder X-ray, complete",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 126.13,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-07"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "80053",
+      "description": "Comprehensive metabolic panel",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 16.57,
+      "diagnosis_pointer": "2",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-02"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99213",
+      "description": "Office visit, established, low-mod",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 125.37,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-13"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "80061",
+      "description": "Lipid panel",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 22.71,
+      "diagnosis_pointer": "2",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-03-31"
+    }
+  ],
+  "total_charge_amount": 290.78,
+  "currency": "USD",
+  "prior_auth_number": null
+}

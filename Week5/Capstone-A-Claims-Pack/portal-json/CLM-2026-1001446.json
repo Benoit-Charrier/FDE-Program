@@ -1,0 +1,76 @@
+{
+  "submission_id": "CLM-2026-1001446",
+  "submitted_at": "2026-04-27T13:01:00",
+  "submitter": {
+    "name": "Crestview Imaging Center",
+    "npi": "1739257385",
+    "tax_id": "56-7822842",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(642) 789-7178",
+    "address": {
+      "street": "2737 Forest Dr",
+      "city": "Charlotte",
+      "state": "NC",
+      "zip": "28249"
+    }
+  },
+  "patient": {
+    "first_name": "Elise",
+    "last_name": "Clark",
+    "date_of_birth": "2015-03-03",
+    "gender": "F",
+    "address": {
+      "street": "6774 Maple Dr",
+      "city": "Sacramento",
+      "state": "CA",
+      "zip": "95880"
+    },
+    "phone": "(672) 287-6879"
+  },
+  "insurance": {
+    "payer_id": "ANT-001",
+    "payer_name": "Anthem Blue Access",
+    "plan": "PPO",
+    "member_id": "YYL57468831",
+    "group_id": "GRP-37602"
+  },
+  "diagnoses": [
+    {
+      "code": "M25.561",
+      "description": "Pain in right knee"
+    },
+    {
+      "code": "M79.7",
+      "description": "Fibromyalgia"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99215",
+      "description": "Office visit, established, high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 264.44,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-20"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99203",
+      "description": "Office visit, new pt, mod",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 143.73,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-07"
+    }
+  ],
+  "total_charge_amount": 408.17,
+  "currency": "USD",
+  "prior_auth_number": null
+}

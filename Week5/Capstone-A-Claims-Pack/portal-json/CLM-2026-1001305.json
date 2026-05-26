@@ -1,0 +1,64 @@
+{
+  "submission_id": "CLM-2026-1001305",
+  "submitted_at": "2026-04-27T12:27:00",
+  "submitter": {
+    "name": "Bright Family Practice",
+    "npi": "3053072796",
+    "tax_id": "13-3827856",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(314) 954-9378",
+    "address": {
+      "street": "6380 1st Ave",
+      "city": "Philadelphia",
+      "state": "PA",
+      "zip": "19150"
+    }
+  },
+  "patient": {
+    "first_name": "Sara",
+    "last_name": "Garcia",
+    "date_of_birth": "1970-06-24",
+    "gender": "F",
+    "address": {
+      "street": "2891 Main St",
+      "city": "Denver",
+      "state": "CO",
+      "zip": "80264"
+    },
+    "phone": "(373) 908-6955"
+  },
+  "insurance": {
+    "payer_id": "HUM-001",
+    "payer_name": "Humana Gold Plus",
+    "plan": "HMO",
+    "member_id": "H28413015",
+    "group_id": "GRP-65559"
+  },
+  "diagnoses": [
+    {
+      "code": "E11.9",
+      "description": "Type 2 diabetes mellitus without complications"
+    },
+    {
+      "code": "F32.9",
+      "description": "Major depressive disorder, single episode"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99999",
+      "description": "Manual therapy (15 min)",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 34.79,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-16"
+    }
+  ],
+  "total_charge_amount": 34.79,
+  "currency": "USD",
+  "prior_auth_number": null
+}

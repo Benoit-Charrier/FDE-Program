@@ -1,0 +1,212 @@
+{
+  "resourceType": "Claim",
+  "id": "CLM-2026-1001865",
+  "status": "active",
+  "type": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+        "code": "professional"
+      }
+    ]
+  },
+  "use": "claim",
+  "patient": {
+    "reference": "Patient/H28717249",
+    "display": "Wyatt Johnson"
+  },
+  "billablePeriod": {
+    "start": "2026-04-08",
+    "end": "2026-03-30"
+  },
+  "created": "2026-04-27T14:47:00",
+  "insurer": {
+    "reference": "Organization/HUM-001",
+    "display": "Humana Gold Plus"
+  },
+  "provider": {
+    "reference": "Practitioner/4303648503",
+    "display": "Gloria Singh, MD"
+  },
+  "priority": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/processpriority",
+        "code": "normal"
+      }
+    ]
+  },
+  "diagnosis": [
+    {
+      "sequence": 1,
+      "diagnosisCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/sid/icd-10-cm",
+            "code": "J20.9",
+            "display": "Acute bronchitis, unspecified"
+          }
+        ]
+      }
+    }
+  ],
+  "insurance": [
+    {
+      "sequence": 1,
+      "focal": true,
+      "coverage": {
+        "display": "HMO via Humana Gold Plus"
+      }
+    }
+  ],
+  "item": [
+    {
+      "sequence": 1,
+      "diagnosisSequence": [
+        1
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "97140",
+            "display": "Manual therapy (15 min)"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-04-08",
+      "quantity": {
+        "value": 2
+      },
+      "unitPrice": {
+        "value": 40.485,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 80.97,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "11"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 2,
+      "diagnosisSequence": [
+        1
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "99215",
+            "display": "Office visit, established, high"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-04-12",
+      "quantity": {
+        "value": 1
+      },
+      "unitPrice": {
+        "value": 208.65,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 208.65,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "11"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 3,
+      "diagnosisSequence": [
+        1
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "97110",
+            "display": "Therapeutic exercises (15 min)"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-04-15",
+      "quantity": {
+        "value": 2
+      },
+      "unitPrice": {
+        "value": 45.205,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 90.41,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "11"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 4,
+      "diagnosisSequence": [
+        1
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "64483",
+            "display": "Injection, transforaminal epidural"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-03-30",
+      "quantity": {
+        "value": 1
+      },
+      "unitPrice": {
+        "value": 357.99,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 357.99,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "22"
+          }
+        ]
+      }
+    }
+  ],
+  "total": {
+    "value": 738.02,
+    "currency": "USD"
+  }
+}

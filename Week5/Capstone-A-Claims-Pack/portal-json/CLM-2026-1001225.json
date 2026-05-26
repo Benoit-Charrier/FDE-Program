@@ -1,0 +1,104 @@
+{
+  "submission_id": "CLM-2026-1001225",
+  "submitted_at": "2026-04-27T12:06:00",
+  "submitter": {
+    "name": "Jasmine Goldberg, MD",
+    "npi": "5690758381",
+    "tax_id": "18-1015267",
+    "specialty": "Internal Medicine",
+    "phone": "(412) 741-6329",
+    "address": {
+      "street": "1590 Lake Rd",
+      "city": "Phoenix",
+      "state": "AZ",
+      "zip": "85091"
+    }
+  },
+  "patient": {
+    "first_name": "Brett",
+    "last_name": "Khan",
+    "date_of_birth": "2006-08-10",
+    "gender": "M",
+    "address": {
+      "street": "8327 Washington Ave",
+      "city": "Cleveland",
+      "state": "OH",
+      "zip": "44183"
+    },
+    "phone": "(280) 418-7399"
+  },
+  "insurance": {
+    "payer_id": "ANT-001",
+    "payer_name": "Anthem Blue Access",
+    "plan": "PPO",
+    "member_id": "YYL59120244",
+    "group_id": "GRP-64590"
+  },
+  "diagnoses": [
+    {
+      "code": "J20.9",
+      "description": "Acute bronchitis, unspecified"
+    },
+    {
+      "code": "N18.3",
+      "description": "Chronic kidney disease, stage 3"
+    },
+    {
+      "code": "M25.562",
+      "description": "Pain in left knee"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "80061",
+      "description": "Lipid panel",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 54.64,
+      "diagnosis_pointer": "1",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-07"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "97110",
+      "description": "Therapeutic exercises (15 min)",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 80.13,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-22"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99395",
+      "description": "Preventive established, 18-39",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 217.57,
+      "diagnosis_pointer": "3",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-24"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "80053",
+      "description": "Comprehensive metabolic panel",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 18.09,
+      "diagnosis_pointer": "1",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-03-31"
+    }
+  ],
+  "total_charge_amount": 370.43,
+  "currency": "USD",
+  "prior_auth_number": null
+}

@@ -1,0 +1,43 @@
+From: Brenda Cruz <brenda.cruz@loganparkmd.example>
+To: claims-intake@payer.example
+Cc: billing-dept@loganparkmd.example
+Date: Mon, 27 Apr 2026 13:36:36 +0000
+Message-ID: <177729813744.6.11892482951916673237@loganparkmd.example>
+Subject: Claim submission =?utf-8?b?4oCU?= patient Gonzalez (CLM-2026-1001905)
+X-Submitter-NPI: 7172678457
+X-Submitter-TaxID: 55-5300800
+X-Originating-System: loganparkmd.example MailRelay 4.2
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+Hi team,
+
+Please process the following claim. Patient was seen at our office on 2026-04=
+-19.
+
+Patient: Gonzalez, Donna  (DOB 2003-03-14, F)
+Member ID: 2VJ7DGJ8AK1    Plan: Medicare Part B =E2=80=94 Original Medicare
+Group: GRP-58083
+Address: 1395 Main St, Albuquerque, NM 87162
+
+Provider: Logan Park, MD, NPI 7172678457, Tax ID 55-5300800
+Specialty: Emergency Medicine
+
+Diagnoses:
+  - H66.90  Otitis media, unspecified, unspecified ear
+  - R10.9  Unspecified abdominal pain
+  - R53.83  Other fatigue
+
+Services rendered:
+  - 2026-04-19: CPT 80061 (Lipid panel), 2 unit(s), $49.46
+
+Total: $49.46
+Claim reference: CLM-2026-1001905
+
+Resubmitting from last week =E2=80=94 first one bounced. Pls confirm receipt.
+
+Thanks,
+Brenda Cruz
+Logan Park, MD
+(268) 944-2959

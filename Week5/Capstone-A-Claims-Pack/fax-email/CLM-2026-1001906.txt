@@ -1,0 +1,30 @@
+============================
+   FAX COVER SHEET
+============================
+TO:    Illinois Medicaid Claims Intake
+FROM:  Summit Cardiology Group
+DATE:  04/27/2026
+PAGES: 1 of 4
+
+URGENT [_]   FOR REVIEW [X]   PLEASE COMMENT [_]   PLEASE REPLY [_]
+
+RE: Claim submission - patient Chen, Logan
+
+Member ID:     617236996
+DOB:           1961-10-30
+Plan:          Medicaid
+Group:         GRP-26554
+DOS:           2026-04-18
+
+Diagnoses:     R07.9, J02.9
+Procedures:    99281
+Total charge:  $114.91
+
+Provider NPI:  4796360735
+Tax ID:        83-1213915
+
+NOTES:
+Please prior-auth was on file - see attached.
+
+If problems with this fax, call (330) 474-2639
+============================

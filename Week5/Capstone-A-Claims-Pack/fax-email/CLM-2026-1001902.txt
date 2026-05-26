@@ -1,0 +1,30 @@
+============================
+   FAX COVER SHEET
+============================
+TO:    Illinois Medicaid Claims Intake
+FROM:  Eastlake Wellness Clinic
+DATE:  04/27/2026
+PAGES: 1 of 4
+
+URGENT [_]   FOR REVIEW [X]   PLEASE COMMENT [_]   PLEASE REPLY [_]
+
+RE: Claim submission - patient Lopez, Yara
+
+Member ID:     723706938
+DOB:           1954-04-17
+Plan:          Medicaid
+Group:         GRP-70316
+DOS:           2026-04-11
+
+Diagnoses:     R51.9, F32.9
+Procedures:    99205, 99214, 99281, 99395
+Total charge:  $807.21
+
+Provider NPI:  9516389045
+Tax ID:        53-2599922
+
+NOTES:
+Patient was seen for emergency visit - records to follow.
+
+If problems with this fax, call (572) 743-6922
+============================

@@ -1,0 +1,88 @@
+{
+  "submission_id": "CLM-2026-1001475",
+  "submitted_at": "2026-04-27T13:13:00",
+  "submitter": {
+    "name": "Carlos Martinez, MD",
+    "npi": "8307192044",
+    "tax_id": "92-3972137",
+    "specialty": "Emergency Medicine",
+    "phone": "(510) 463-5262",
+    "address": {
+      "street": "8698 Spring St",
+      "city": "Tucson",
+      "state": "AZ",
+      "zip": "85780"
+    }
+  },
+  "patient": {
+    "first_name": "Oscar",
+    "last_name": "Brown",
+    "date_of_birth": "2013-10-10",
+    "gender": "M",
+    "address": {
+      "street": "1900 Hill St",
+      "city": "Houston",
+      "state": "TX",
+      "zip": "77043"
+    },
+    "phone": "(940) 831-2072"
+  },
+  "insurance": {
+    "payer_id": "MCD-IL",
+    "payer_name": "Illinois Medicaid",
+    "plan": "Medicaid",
+    "member_id": "297090931",
+    "group_id": "GRP-94154"
+  },
+  "diagnoses": [
+    {
+      "code": "R51.9",
+      "description": "Headache, unspecified"
+    },
+    {
+      "code": "K21.9",
+      "description": "Gastro-esophageal reflux disease without esophagitis"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "44970",
+      "description": "Laparoscopic appendectomy",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 1287.81,
+      "diagnosis_pointer": "1",
+      "place_of_service": "21",
+      "place_of_service_desc": "Inpatient Hospital",
+      "date_of_service": "2026-03-29"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99204",
+      "description": "Office visit, new pt, high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 234.66,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-11"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "80061",
+      "description": "Lipid panel",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 22.0,
+      "diagnosis_pointer": "1",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-23"
+    }
+  ],
+  "total_charge_amount": 1544.47,
+  "currency": "USD",
+  "prior_auth_number": null
+}

@@ -1,0 +1,68 @@
+{
+  "submission_id": "CLM-2026-1001547",
+  "submitted_at": "2026-04-27T13:29:00",
+  "submitter": {
+    "name": "Bright Family Practice",
+    "npi": "3450290520",
+    "tax_id": "33-6476889",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(924) 822-8185",
+    "address": {
+      "street": "3553 Lincoln St",
+      "city": "Minneapolis",
+      "state": "MN",
+      "zip": "55487"
+    }
+  },
+  "patient": {
+    "first_name": "Adrian",
+    "last_name": "Espinoza",
+    "date_of_birth": "1988-06-12",
+    "gender": "M",
+    "address": {
+      "street": "1457 Forest Dr",
+      "city": "Boston",
+      "state": "MA",
+      "zip": "02117"
+    },
+    "phone": "(298) 492-7859"
+  },
+  "insurance": {
+    "payer_id": "AET-001",
+    "payer_name": "Aetna Open Access",
+    "plan": "PPO",
+    "member_id": "W613615700",
+    "group_id": "GRP-68470"
+  },
+  "diagnoses": [
+    {
+      "code": "K21.9",
+      "description": "Gastro-esophageal reflux disease without esophagitis"
+    },
+    {
+      "code": "Z00.00",
+      "description": "Encounter for general adult medical examination"
+    },
+    {
+      "code": "R10.9",
+      "description": "Unspecified abdominal pain"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99285",
+      "description": "ED visit, high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 379.4,
+      "diagnosis_pointer": "1",
+      "place_of_service": "23",
+      "place_of_service_desc": "Emergency Room \u2014 Hospital",
+      "date_of_service": "2026-04-15"
+    }
+  ],
+  "total_charge_amount": 379.4,
+  "currency": "USD",
+  "prior_auth_number": null
+}

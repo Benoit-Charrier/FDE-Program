@@ -1,0 +1,91 @@
+{
+  "submission_id": "CLM-2026-1001244",
+  "submitted_at": "2026-04-27T12:13:00",
+  "submitter": {
+    "name": "Maya DuBois, DO",
+    "npi": "9813055214",
+    "tax_id": "32-5826449",
+    "specialty": "Family Medicine",
+    "phone": "(624) 832-1237",
+    "address": {
+      "street": "3069 Ridge Rd",
+      "city": "Sacramento",
+      "state": "CA",
+      "zip": "95890"
+    }
+  },
+  "patient": {
+    "first_name": "Gloria",
+    "last_name": "Rodriguez",
+    "date_of_birth": "1966-09-12",
+    "gender": "F",
+    "address": {
+      "street": "525 Main St",
+      "city": "Indianapolis",
+      "state": "IN",
+      "zip": "46289"
+    },
+    "phone": "(987) 866-7632"
+  },
+  "insurance": {
+    "payer_id": "BCBS-IL",
+    "payer_name": "Blue Cross Blue Shield of Illinois",
+    "plan": "HMO Standard",
+    "member_id": "XOJ959317721",
+    "group_id": "GRP-59707",
+    "coverage_termination_date": "2026-02-19"
+  },
+  "diagnoses": [
+    {
+      "code": "S93.401A",
+      "description": "Sprain of unspecified ligament of right ankle, initial"
+    },
+    {
+      "code": "M79.7",
+      "description": "Fibromyalgia"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99215",
+      "description": "Office visit, established, high",
+      "modifiers": [
+        "22"
+      ],
+      "units": 1,
+      "charge_amount": 276.99,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-02"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "64483",
+      "description": "Injection, transforaminal epidural",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 312.26,
+      "diagnosis_pointer": "2",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-03-31"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "83036",
+      "description": "Hemoglobin A1c",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 15.27,
+      "diagnosis_pointer": "1",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-06"
+    }
+  ],
+  "total_charge_amount": 604.52,
+  "currency": "USD",
+  "prior_auth_number": null
+}

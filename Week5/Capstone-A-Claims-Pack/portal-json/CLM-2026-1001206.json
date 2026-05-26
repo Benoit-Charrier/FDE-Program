@@ -1,0 +1,100 @@
+{
+  "submission_id": "CLM-2026-1001206",
+  "submitted_at": "2026-04-27T12:04:00",
+  "submitter": {
+    "name": "Summit Cardiology Group",
+    "npi": "7231827055",
+    "tax_id": "33-6476889",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(804) 906-6668",
+    "address": {
+      "street": "5227 Forest Dr",
+      "city": "Boston",
+      "state": "MA",
+      "zip": "02166"
+    }
+  },
+  "patient": {
+    "first_name": "Julia",
+    "last_name": "Xiong",
+    "date_of_birth": "1955-07-18",
+    "gender": "F",
+    "address": {
+      "street": "8852 Pine Ln",
+      "city": "Tucson",
+      "state": "AZ",
+      "zip": "85751"
+    },
+    "phone": "(744) 483-2623"
+  },
+  "insurance": {
+    "payer_id": "BCBS-IL",
+    "payer_name": "Blue Cross Blue Shield of Illinois",
+    "plan": "PPO Choice",
+    "member_id": "XOJ154384848",
+    "group_id": "GRP-29164"
+  },
+  "diagnoses": [
+    {
+      "code": "R10.9",
+      "description": "Unspecified abdominal pain"
+    },
+    {
+      "code": "N39.0",
+      "description": "Urinary tract infection, site not specified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99396",
+      "description": "Preventive established, 40-64",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 190.06,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-16"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99395",
+      "description": "Preventive established, 18-39",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 218.1,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-03-28"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "97110",
+      "description": "Therapeutic exercises (15 min)",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 66.71,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-16"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "20610",
+      "description": "Major joint injection",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 130.17,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-18"
+    }
+  ],
+  "total_charge_amount": 605.04,
+  "currency": "USD",
+  "prior_auth_number": null
+}

@@ -1,0 +1,72 @@
+{
+  "submission_id": "CLM-2026-1001310",
+  "submitted_at": "2026-04-27T12:30:00",
+  "submitter": {
+    "name": "Uma Goldberg, MD",
+    "npi": "4017653376",
+    "tax_id": "34-4053329",
+    "specialty": "Cardiology",
+    "phone": "(491) 235-3169",
+    "address": {
+      "street": "8239 Spring St",
+      "city": "Buffalo",
+      "state": "NY",
+      "zip": "14215"
+    }
+  },
+  "patient": {
+    "first_name": "Derrick",
+    "last_name": "Espinoza",
+    "date_of_birth": "1938-12-18",
+    "gender": "M",
+    "address": {
+      "street": "1465 Spring St",
+      "city": "Sacramento",
+      "state": "CA",
+      "zip": "95863"
+    },
+    "phone": "(544) 488-7698"
+  },
+  "insurance": {
+    "payer_id": "ANT-001",
+    "payer_name": "Anthem Blue Access",
+    "plan": "PPO",
+    "member_id": "YYL90064153",
+    "group_id": "GRP-69434"
+  },
+  "diagnoses": [
+    {
+      "code": "F41.1",
+      "description": "Generalized anxiety disorder"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "44970",
+      "description": "Laparoscopic appendectomy",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 3718.97,
+      "diagnosis_pointer": "1",
+      "place_of_service": "21",
+      "place_of_service_desc": "Inpatient Hospital",
+      "date_of_service": "2026-03-29"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "47562",
+      "description": "Laparoscopic cholecystectomy",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 1771.91,
+      "diagnosis_pointer": "1",
+      "place_of_service": "21",
+      "place_of_service_desc": "Inpatient Hospital",
+      "date_of_service": "2026-04-17"
+    }
+  ],
+  "total_charge_amount": 5490.88,
+  "currency": "USD",
+  "prior_auth_number": null
+}

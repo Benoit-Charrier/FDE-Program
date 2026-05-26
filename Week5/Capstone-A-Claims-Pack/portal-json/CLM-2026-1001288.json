@@ -1,0 +1,97 @@
+{
+  "submission_id": "CLM-2026-1001288",
+  "submitted_at": "2026-04-27T12:25:00",
+  "submitter": {
+    "name": "Eastlake Wellness Clinic",
+    "npi": "4056973341",
+    "tax_id": "93-8611074",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(780) 901-4966",
+    "address": {
+      "street": "7154 Walnut St",
+      "city": "Pittsburgh",
+      "state": "PA",
+      "zip": "15246"
+    }
+  },
+  "patient": {
+    "first_name": "Xio",
+    "last_name": "Anderson",
+    "date_of_birth": "1972-09-07",
+    "gender": "F",
+    "address": {
+      "street": "4821 Birch Ct",
+      "city": "Denver",
+      "state": "CO",
+      "zip": "80278"
+    },
+    "phone": "(325) 222-6885"
+  },
+  "insurance": {
+    "payer_id": "ANT-001",
+    "payer_name": "Anthem Blue Access",
+    "plan": "PPO",
+    "member_id": "YYL74733668",
+    "group_id": "GRP-65233"
+  },
+  "diagnoses": [
+    {
+      "code": "L30.9",
+      "description": "Dermatitis, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "80061",
+      "description": "Lipid panel",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 25.28,
+      "diagnosis_pointer": "1",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-02"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "97110",
+      "description": "Therapeutic exercises (15 min)",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 79.78,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-15"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99204",
+      "description": "Office visit, new pt, high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 192.56,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-03-29"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "99395",
+      "description": "Preventive established, 18-39",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 248.29,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-17"
+    }
+  ],
+  "total_charge_amount": 545.91,
+  "currency": "USD",
+  "prior_auth_number": null,
+  "resubmission_of": "CLM-2026-1815384"
+}

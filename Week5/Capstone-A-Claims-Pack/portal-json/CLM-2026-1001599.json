@@ -1,0 +1,68 @@
+{
+  "submission_id": "CLM-2026-1001599",
+  "submitted_at": "2026-04-27T13:39:00",
+  "submitter": {
+    "name": "Elena Jensen, MD",
+    "npi": "7051473388",
+    "tax_id": "17-9077104",
+    "specialty": "Emergency Medicine",
+    "phone": "(976) 867-7369",
+    "address": {
+      "street": "9258 Spring St",
+      "city": "Boston",
+      "state": "MA",
+      "zip": "02127"
+    }
+  },
+  "patient": {
+    "first_name": "Iris",
+    "last_name": "Lopez",
+    "date_of_birth": "1991-03-24",
+    "gender": "F",
+    "address": {
+      "street": "9029 Pine Ln",
+      "city": "Albuquerque",
+      "state": "NM",
+      "zip": "87152"
+    },
+    "phone": "(208) 554-2549"
+  },
+  "insurance": {
+    "payer_id": "ANT-001",
+    "payer_name": "Anthem Blue Access",
+    "plan": "PPO",
+    "member_id": "YYL65648409",
+    "group_id": "GRP-82142"
+  },
+  "diagnoses": [
+    {
+      "code": "I10",
+      "description": "Essential (primary) hypertension"
+    },
+    {
+      "code": "J20.9",
+      "description": "Acute bronchitis, unspecified"
+    },
+    {
+      "code": "G47.33",
+      "description": "Obstructive sleep apnea (adult) (pediatric)"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "47562",
+      "description": "Laparoscopic cholecystectomy",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 3574.65,
+      "diagnosis_pointer": "1",
+      "place_of_service": "21",
+      "place_of_service_desc": "Inpatient Hospital",
+      "date_of_service": "2026-04-25"
+    }
+  ],
+  "total_charge_amount": 3574.65,
+  "currency": "USD",
+  "prior_auth_number": null
+}

@@ -1,0 +1,67 @@
+{
+  "submission_id": "CLM-2026-1001271",
+  "submitted_at": "2026-04-27T12:22:00",
+  "submitter": {
+    "name": "Maple Family Health",
+    "npi": "6761783682",
+    "tax_id": "95-9044704",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(267) 413-5251",
+    "address": {
+      "street": "9990 Oak Ave",
+      "city": "Cincinnati",
+      "state": "OH",
+      "zip": "45251"
+    }
+  },
+  "patient": {
+    "first_name": "Camila",
+    "last_name": "Vargas",
+    "date_of_birth": "1994-02-05",
+    "gender": "F",
+    "address": {
+      "street": "1574 Jefferson Dr",
+      "city": "Charlotte",
+      "state": "NC",
+      "zip": "28219"
+    },
+    "phone": "(418) 773-8373"
+  },
+  "insurance": {
+    "payer_id": "ANT-001",
+    "payer_name": "Anthem Blue Access",
+    "plan": "PPO",
+    "member_id": "YYL24067226",
+    "group_id": "GRP-51518"
+  },
+  "diagnoses": [],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "70551",
+      "description": "MRI brain without contrast",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 489.27,
+      "diagnosis_pointer": "1",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-04-03"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "72148",
+      "description": "MRI lumbar spine without contrast",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 345.35,
+      "diagnosis_pointer": "2",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-04-16"
+    }
+  ],
+  "total_charge_amount": 834.62,
+  "currency": "USD",
+  "prior_auth_number": null
+}

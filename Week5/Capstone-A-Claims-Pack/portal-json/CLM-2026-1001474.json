@@ -1,0 +1,73 @@
+{
+  "submission_id": "CLM-2026-1001474",
+  "submitted_at": "2026-04-27T13:11:00",
+  "submitter": {
+    "name": "Jose Wong, MD",
+    "npi": "4140332715",
+    "tax_id": "13-3827856",
+    "specialty": "Pediatrics",
+    "phone": "(882) 451-9383",
+    "address": {
+      "street": "2646 Maple Dr",
+      "city": "Cincinnati",
+      "state": "OH",
+      "zip": "45288"
+    }
+  },
+  "patient": {
+    "first_name": "Uma",
+    "last_name": "Lee",
+    "date_of_birth": "1997-07-09",
+    "gender": "F",
+    "address": {
+      "street": "1984 Cedar Ct",
+      "city": "Denver",
+      "state": "CO",
+      "zip": "80238"
+    },
+    "phone": "(928) 440-5146"
+  },
+  "insurance": {
+    "payer_id": "BCBS-IL",
+    "payer_name": "Blue Cross Blue Shield of Illinois",
+    "plan": "PPO Choice",
+    "member_id": "XOJ823898320",
+    "group_id": "GRP-75683"
+  },
+  "diagnoses": [
+    {
+      "code": "E78.5",
+      "description": "Hyperlipidemia, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99396",
+      "description": "Preventive established, 40-64",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 255.07,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-14"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99281",
+      "description": "ED visit, low",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 109.69,
+      "diagnosis_pointer": "1",
+      "place_of_service": "23",
+      "place_of_service_desc": "Emergency Room \u2014 Hospital",
+      "date_of_service": "2026-04-16"
+    }
+  ],
+  "total_charge_amount": 364.76,
+  "currency": "USD",
+  "prior_auth_number": null,
+  "resubmission_of": "CLM-2026-6936752"
+}

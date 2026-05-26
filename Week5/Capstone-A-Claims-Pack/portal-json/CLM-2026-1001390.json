@@ -1,0 +1,76 @@
+{
+  "submission_id": "CLM-2026-1001390",
+  "submitted_at": "2026-04-27T12:48:00",
+  "submitter": {
+    "name": "Stefan Mehta, MD",
+    "npi": "6069319701",
+    "tax_id": "16-2749174",
+    "specialty": "Cardiology",
+    "phone": "(755) 576-4627",
+    "address": {
+      "street": "1311 Lincoln St",
+      "city": "Chicago",
+      "state": "IL",
+      "zip": "60664"
+    }
+  },
+  "patient": {
+    "first_name": "Priya",
+    "last_name": "Foster",
+    "date_of_birth": "2007-06-19",
+    "gender": "F",
+    "address": {
+      "street": "5096 Hill St",
+      "city": "Indianapolis",
+      "state": "IN",
+      "zip": "46235"
+    },
+    "phone": "(728) 704-5315"
+  },
+  "insurance": {
+    "payer_id": "ANT-001",
+    "payer_name": "Anthem Blue Access",
+    "plan": "PPO",
+    "member_id": "YYL61481783",
+    "group_id": "GRP-65673"
+  },
+  "diagnoses": [
+    {
+      "code": "I10",
+      "description": "Essential (primary) hypertension"
+    },
+    {
+      "code": "R53.83",
+      "description": "Other fatigue"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "97110",
+      "description": "Therapeutic exercises (15 min)",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 44.14,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-03-30"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99285",
+      "description": "ED visit, high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 361.99,
+      "diagnosis_pointer": "2",
+      "place_of_service": "23",
+      "place_of_service_desc": "Emergency Room \u2014 Hospital",
+      "date_of_service": "2026-03-28"
+    }
+  ],
+  "total_charge_amount": 406.13,
+  "currency": "USD",
+  "prior_auth_number": null
+}

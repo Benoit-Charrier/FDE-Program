@@ -1,0 +1,77 @@
+{
+  "submission_id": "CLM-2026-1001269",
+  "submitted_at": "2026-04-27T12:22:00",
+  "submitter": {
+    "name": "Bright Family Practice",
+    "npi": "2320069057",
+    "tax_id": "45-2175388",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(720) 437-3548",
+    "address": {
+      "street": "3978 1st Ave",
+      "city": "Salt Lake City",
+      "state": "UT",
+      "zip": "84179"
+    }
+  },
+  "patient": {
+    "first_name": "Felix",
+    "last_name": "Quintana",
+    "date_of_birth": "1958-12-03",
+    "gender": "M",
+    "address": {
+      "street": "3478 Walnut St",
+      "city": "St. Louis",
+      "state": "MO",
+      "zip": "63163"
+    },
+    "phone": "(613) 475-1795"
+  },
+  "insurance": {
+    "payer_id": "UHC-001",
+    "payer_name": "UnitedHealthcare Choice Plus",
+    "plan": "PPO",
+    "member_id": "525924098-06",
+    "group_id": "GRP-61311",
+    "coverage_effective_date": "2026-05-21"
+  },
+  "diagnoses": [
+    {
+      "code": "H66.90",
+      "description": "Otitis media, unspecified, unspecified ear"
+    },
+    {
+      "code": "I25.10",
+      "description": "Atherosclerotic heart disease without angina"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "97140",
+      "description": "Manual therapy (15 min)",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 42.81,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-13"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "20610",
+      "description": "Major joint injection",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 241.24,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-03-31"
+    }
+  ],
+  "total_charge_amount": 284.05,
+  "currency": "USD",
+  "prior_auth_number": null
+}

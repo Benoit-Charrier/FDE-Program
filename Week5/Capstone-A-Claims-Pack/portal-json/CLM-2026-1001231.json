@@ -1,0 +1,95 @@
+{
+  "submission_id": "CLM-2026-1001231",
+  "submitted_at": "2026-04-27T12:09:00",
+  "submitter": {
+    "name": "Maple Family Health",
+    "npi": "3159446529",
+    "tax_id": "33-6476889",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(509) 841-7496",
+    "address": {
+      "street": "5245 Sunset Blvd",
+      "city": "Tampa",
+      "state": "FL",
+      "zip": "33678"
+    }
+  },
+  "patient": {
+    "first_name": "Valerie",
+    "last_name": "Khan",
+    "date_of_birth": "2001-05-02",
+    "gender": "F",
+    "address": {
+      "street": "2212 Cedar Ct",
+      "city": "Denver",
+      "state": "CO",
+      "zip": "8029"
+    },
+    "phone": "(596) 752-9160"
+  },
+  "insurance": {
+    "payer_id": "CIG-001",
+    "payer_name": "Cigna Open Access Plus",
+    "plan": "PPO",
+    "member_id": "U77049439",
+    "group_id": "GRP-10378"
+  },
+  "diagnoses": [
+    {
+      "code": "E11.9",
+      "description": "Type 2 diabetes mellitus without complications"
+    },
+    {
+      "code": "M25.562",
+      "description": "Pain in left knee"
+    },
+    {
+      "code": "F41.1",
+      "description": "Generalized anxiety disorder"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "97110",
+      "description": "Therapeutic exercises (15 min)",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 39.09,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-04"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "20610",
+      "description": "Major joint injection",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 139.36,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-14"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99422",
+      "description": "Online digital E/M, 11-20 min",
+      "modifiers": [
+        "95"
+      ],
+      "units": 1,
+      "charge_amount": 44.78,
+      "diagnosis_pointer": "3",
+      "place_of_service": "02",
+      "place_of_service_desc": "Telehealth",
+      "date_of_service": "2026-04-17"
+    }
+  ],
+  "total_charge_amount": 223.23,
+  "currency": "USD",
+  "prior_auth_number": null,
+  "resubmission_of": "CLM-2026-2614041"
+}

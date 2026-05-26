@@ -1,0 +1,84 @@
+{
+  "submission_id": "CLM-2026-1001265",
+  "submitted_at": "2026-04-27T12:19:00",
+  "submitter": {
+    "name": "Zane Johansson, MD",
+    "npi": "8225004797",
+    "tax_id": "",
+    "specialty": "Pediatrics",
+    "phone": "(396) 344-4596",
+    "address": {
+      "street": "7198 Spring St",
+      "city": "Seattle",
+      "state": "WA",
+      "zip": "98186"
+    }
+  },
+  "patient": {
+    "first_name": "Travis",
+    "last_name": "Edwards",
+    "date_of_birth": "1992-08-05",
+    "gender": "M",
+    "address": {
+      "street": "7941 Madison Ave",
+      "city": "St. Louis",
+      "state": "MO",
+      "zip": "63129"
+    },
+    "phone": "(310) 910-1218"
+  },
+  "insurance": {
+    "payer_id": "BCBS-IL",
+    "payer_name": "Blue Cross Blue Shield of Illinois",
+    "plan": "HMO Standard",
+    "member_id": "XOJ691951272",
+    "group_id": "GRP-98637"
+  },
+  "diagnoses": [
+    {
+      "code": "J02.9",
+      "description": "Acute pharyngitis, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99205",
+      "description": "Office visit, new pt, comprehensive",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 325.28,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-19"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "72148",
+      "description": "MRI lumbar spine without contrast",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 785.21,
+      "diagnosis_pointer": "1",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-04-18"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "97110",
+      "description": "Therapeutic exercises (15 min)",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 86.85,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-05"
+    }
+  ],
+  "total_charge_amount": 1197.34,
+  "currency": "USD",
+  "prior_auth_number": null
+}

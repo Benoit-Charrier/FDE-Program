@@ -1,0 +1,94 @@
+{
+  "submission_id": "CLM-2026-1001524",
+  "submitted_at": "2026-04-27T13:22:00",
+  "submitter": {
+    "name": "Forest Hills Urgent Care",
+    "npi": "5934438983",
+    "tax_id": "21-7122446",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(261) 568-4382",
+    "address": {
+      "street": "7309 Forest Dr",
+      "city": "Pittsburgh",
+      "state": "PA",
+      "zip": "15213"
+    }
+  },
+  "patient": {
+    "first_name": "Priya",
+    "last_name": "Brown",
+    "date_of_birth": "2014-05-01",
+    "gender": "F",
+    "address": {
+      "street": "7379 Washington Ave",
+      "city": "Phoenix",
+      "state": "AZ",
+      "zip": "85025"
+    },
+    "phone": "(940) 560-5978"
+  },
+  "insurance": {
+    "payer_id": "HUM-001",
+    "payer_name": "Humana Gold Plus",
+    "plan": "HMO",
+    "member_id": "H33143351",
+    "group_id": "GRP-30828"
+  },
+  "diagnoses": [
+    {
+      "code": "R51.9",
+      "description": "Headache, unspecified"
+    },
+    {
+      "code": "M25.562",
+      "description": "Pain in left knee"
+    },
+    {
+      "code": "N18.3",
+      "description": "Chronic kidney disease, stage 3"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99421",
+      "description": "Online digital E/M, 5-10 min",
+      "modifiers": [
+        "95"
+      ],
+      "units": 1,
+      "charge_amount": 17.75,
+      "diagnosis_pointer": "1",
+      "place_of_service": "02",
+      "place_of_service_desc": "Telehealth",
+      "date_of_service": "2026-04-13"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "64483",
+      "description": "Injection, transforaminal epidural",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 676.68,
+      "diagnosis_pointer": "2",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-04-05"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "80061",
+      "description": "Lipid panel",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 28.16,
+      "diagnosis_pointer": "3",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-22"
+    }
+  ],
+  "total_charge_amount": 722.59,
+  "currency": "USD",
+  "prior_auth_number": null
+}

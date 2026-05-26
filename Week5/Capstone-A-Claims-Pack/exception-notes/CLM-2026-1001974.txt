@@ -1,0 +1,12 @@
+[Internal note - intake processor]
+
+Pt: Jackson, Brett DOB 05/21/71
+Member: H50179191
+Provider: Tomas Reyes (NPI 2283072868)
+DOS: 2026-04-21
+Total: $916.25
+
+Issue: Provider not in network per latest network file. Possible OON.
+
+Routed to: Provider relations
+- JSmith 15:18

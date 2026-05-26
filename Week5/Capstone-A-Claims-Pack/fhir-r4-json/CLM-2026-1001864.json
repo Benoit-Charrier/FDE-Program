@@ -1,0 +1,104 @@
+{
+  "resourceType": "Claim",
+  "id": "CLM-2026-1001864",
+  "status": "active",
+  "type": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+        "code": "professional"
+      }
+    ]
+  },
+  "use": "claim",
+  "patient": {
+    "reference": "Patient/U33976002",
+    "display": "Kenji Patel"
+  },
+  "billablePeriod": {
+    "start": "2026-03-29",
+    "end": "2026-03-29"
+  },
+  "created": "2026-04-27T14:47:00",
+  "insurer": {
+    "reference": "Organization/CIG-001",
+    "display": "Cigna Open Access Plus"
+  },
+  "provider": {
+    "reference": "Practitioner/0112684035",
+    "display": "Yvonne O'Connor, MD"
+  },
+  "priority": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/processpriority",
+        "code": "normal"
+      }
+    ]
+  },
+  "diagnosis": [
+    {
+      "sequence": 1,
+      "diagnosisCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/sid/icd-10-cm",
+            "code": "Z23",
+            "display": "Encounter for immunization"
+          }
+        ]
+      }
+    }
+  ],
+  "insurance": [
+    {
+      "sequence": 1,
+      "focal": true,
+      "coverage": {
+        "display": "PPO via Cigna Open Access Plus"
+      }
+    }
+  ],
+  "item": [
+    {
+      "sequence": 1,
+      "diagnosisSequence": [
+        1
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "97140",
+            "display": "Manual therapy (15 min)"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-03-29",
+      "quantity": {
+        "value": 1
+      },
+      "unitPrice": {
+        "value": 37.06,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 37.06,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "31"
+          }
+        ]
+      }
+    }
+  ],
+  "total": {
+    "value": 37.06,
+    "currency": "USD"
+  }
+}

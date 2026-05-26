@@ -1,0 +1,64 @@
+{
+  "submission_id": "CLM-2026-1001490",
+  "submitted_at": "2026-04-27T13:12:00",
+  "submitter": {
+    "name": "Connor Hassan, MD",
+    "npi": "4366479582",
+    "tax_id": "16-2749174",
+    "specialty": "Pediatrics",
+    "phone": "(814) 953-2946",
+    "address": {
+      "street": "1085 Jefferson Dr",
+      "city": "Boston",
+      "state": "MA",
+      "zip": "02179"
+    }
+  },
+  "patient": {
+    "first_name": "Adrian",
+    "last_name": "Foster",
+    "date_of_birth": "1955-05-31",
+    "gender": "M",
+    "address": {
+      "street": "4644 Spring St",
+      "city": "Houston",
+      "state": "TX",
+      "zip": "77030"
+    },
+    "phone": "(892) 935-4613"
+  },
+  "insurance": {
+    "payer_id": "HUM-001",
+    "payer_name": "Humana Gold Plus",
+    "plan": "HMO",
+    "member_id": "H24594831",
+    "group_id": "GRP-60440"
+  },
+  "diagnoses": [
+    {
+      "code": "M17.11",
+      "description": "Unilateral primary osteoarthritis, right knee"
+    },
+    {
+      "code": "L30.9",
+      "description": "Dermatitis, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "80053",
+      "description": "Comprehensive metabolic panel",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 42.13,
+      "diagnosis_pointer": "1",
+      "place_of_service": "31",
+      "place_of_service_desc": "Skilled Nursing Facility",
+      "date_of_service": "2026-03-30"
+    }
+  ],
+  "total_charge_amount": 42.13,
+  "currency": "USD",
+  "prior_auth_number": null
+}

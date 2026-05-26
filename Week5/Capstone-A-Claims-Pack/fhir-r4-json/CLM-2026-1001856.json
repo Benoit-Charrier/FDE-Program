@@ -1,0 +1,140 @@
+{
+  "resourceType": "Claim",
+  "id": "CLM-2026-1001856",
+  "status": "active",
+  "type": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+        "code": "professional"
+      }
+    ]
+  },
+  "use": "claim",
+  "patient": {
+    "reference": "Patient/XOJ178214223",
+    "display": "Jasmine Kumar"
+  },
+  "billablePeriod": {
+    "start": "2026-03-31",
+    "end": "2026-04-08"
+  },
+  "created": "2026-04-27T14:47:00",
+  "insurer": {
+    "reference": "Organization/BCBS-IL",
+    "display": "Blue Cross Blue Shield of Illinois"
+  },
+  "provider": {
+    "reference": "Practitioner/1531489607",
+    "display": "Eastlake Wellness Clinic"
+  },
+  "priority": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/processpriority",
+        "code": "normal"
+      }
+    ]
+  },
+  "diagnosis": [
+    {
+      "sequence": 1,
+      "diagnosisCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/sid/icd-10-cm",
+            "code": "I10",
+            "display": "Essential (primary) hypertension"
+          }
+        ]
+      }
+    }
+  ],
+  "insurance": [
+    {
+      "sequence": 1,
+      "focal": true,
+      "coverage": {
+        "display": "HMO Standard via Blue Cross Blue Shield of Illinois"
+      }
+    }
+  ],
+  "item": [
+    {
+      "sequence": 1,
+      "diagnosisSequence": [
+        1
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "47562",
+            "display": "Laparoscopic cholecystectomy"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-03-31",
+      "quantity": {
+        "value": 2
+      },
+      "unitPrice": {
+        "value": 1850.61,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 3701.22,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "21"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 2,
+      "diagnosisSequence": [
+        1
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "99204",
+            "display": "Office visit, new pt, high"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-04-08",
+      "quantity": {
+        "value": 1
+      },
+      "unitPrice": {
+        "value": 237.25,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 237.25,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "11"
+          }
+        ]
+      }
+    }
+  ],
+  "total": {
+    "value": 3938.47,
+    "currency": "USD"
+  }
+}

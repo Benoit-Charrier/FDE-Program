@@ -1,0 +1,45 @@
+From: Brenda Cruz <brenda.cruz@foresthillsurg.example>
+To: claims-intake@payer.example
+Cc: billing-dept@foresthillsurg.example
+Date: Mon, 27 Apr 2026 17:59:07 +0000
+Message-ID: <177729813761.6.240987082900890943@foresthillsurg.example>
+Subject: Claim submission =?utf-8?b?4oCU?= patient Walker (CLM-2026-1001927)
+X-Submitter-NPI: 2554713119
+X-Submitter-TaxID: 85-2693146
+X-Originating-System: foresthillsurg.example MailRelay 4.2
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+Hi team,
+
+Please process the following claim. Patient was seen at our office on 2026-04=
+-16.
+
+Patient: Walker, Lina  (DOB 1994-01-17, F)
+Member ID: 891281056-01    Plan: UnitedHealthcare Choice Plus =E2=80=94 PPO
+Group: GRP-70940
+Address: 194 Spring St, Denver, CO 80272
+
+Provider: Forest Hills Urgent Care, NPI 2554713119, Tax ID 85-2693146
+Specialty: Multi-specialty Clinic
+
+Diagnoses:
+  - F41.1  Generalized anxiety disorder
+  - I10  Essential (primary) hypertension
+  - J44.9  Chronic obstructive pulmonary disease, unspecified
+
+Services rendered:
+  - 2026-04-16: CPT 70551 (MRI brain without contrast), 2 unit(s), $989.09
+  - 2026-04-12: CPT 20610 (Major joint injection), 2 unit(s), $203.31
+  - 2026-04-01: CPT 99281 (ED visit, low), 1 unit(s), $115.77
+
+Total: $1308.17
+Claim reference: CLM-2026-1001927
+
+Please process at your earliest. Thanks!
+
+Thanks,
+Brenda Cruz
+Forest Hills Urgent Care
+(596) 497-5886

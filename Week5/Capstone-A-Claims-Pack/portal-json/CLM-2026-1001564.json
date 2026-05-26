@@ -1,0 +1,92 @@
+{
+  "submission_id": "CLM-2026-1001564",
+  "submitted_at": "2026-04-27T13:34:00",
+  "submitter": {
+    "name": "Forest Hills Urgent Care",
+    "npi": "5411971839",
+    "tax_id": "16-2749174",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(530) 786-4895",
+    "address": {
+      "street": "4981 Spring St",
+      "city": "Chicago",
+      "state": "IL",
+      "zip": "60665"
+    }
+  },
+  "patient": {
+    "first_name": "Felicia",
+    "last_name": "Quintana",
+    "date_of_birth": "1946-11-09",
+    "gender": "F",
+    "address": {
+      "street": "1425 River Rd",
+      "city": "Phoenix",
+      "state": "AZ",
+      "zip": "85041"
+    },
+    "phone": "(963) 831-2847"
+  },
+  "insurance": {
+    "payer_id": "MCR-001",
+    "payer_name": "Medicare Part B",
+    "plan": "Original Medicare",
+    "member_id": "9MN0YTV1FH0",
+    "group_id": "GRP-13708"
+  },
+  "diagnoses": [
+    {
+      "code": "J02.9",
+      "description": "Acute pharyngitis, unspecified"
+    },
+    {
+      "code": "S93.401A",
+      "description": "Sprain of unspecified ligament of right ankle, initial"
+    },
+    {
+      "code": "J44.9",
+      "description": "Chronic obstructive pulmonary disease, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "80053",
+      "description": "Comprehensive metabolic panel",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 35.59,
+      "diagnosis_pointer": "1",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-03-28"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99396",
+      "description": "Preventive established, 40-64",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 247.32,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-03-28"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "90686",
+      "description": "Flu vaccine quadrivalent",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 23.66,
+      "diagnosis_pointer": "3",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-26"
+    }
+  ],
+  "total_charge_amount": 306.57,
+  "currency": "USD",
+  "prior_auth_number": null
+}

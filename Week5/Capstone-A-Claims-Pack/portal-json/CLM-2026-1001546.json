@@ -1,0 +1,96 @@
+{
+  "submission_id": "CLM-2026-1001546",
+  "submitted_at": "2026-04-27T13:26:00",
+  "submitter": {
+    "name": "Teresa O'Connor, MD",
+    "npi": "4026948902",
+    "tax_id": "48-5266776",
+    "specialty": "Pediatrics",
+    "phone": "(332) 485-9667",
+    "address": {
+      "street": "7907 Walnut St",
+      "city": "Charlotte",
+      "state": "NC",
+      "zip": "28245"
+    }
+  },
+  "patient": {
+    "first_name": "Jose",
+    "last_name": "Ivanov",
+    "date_of_birth": "2015-01-18",
+    "gender": "M",
+    "address": {
+      "street": "2785 Jefferson Dr",
+      "city": "St. Louis",
+      "state": "MO",
+      "zip": "6312"
+    },
+    "phone": "(616) 272-4116"
+  },
+  "insurance": {
+    "payer_id": "ANT-001",
+    "payer_name": "Anthem Blue Access",
+    "plan": "PPO",
+    "member_id": "YYL71240153",
+    "group_id": "GRP-10412"
+  },
+  "diagnoses": [
+    {
+      "code": "I25.10",
+      "description": "Atherosclerotic heart disease without angina"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99215",
+      "description": "Office visit, established, high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 204.37,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-14"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "80053",
+      "description": "Comprehensive metabolic panel",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 15.63,
+      "diagnosis_pointer": "1",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-03-31"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "72148",
+      "description": "MRI lumbar spine without contrast",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 364.05,
+      "diagnosis_pointer": "1",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-04-21"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "99395",
+      "description": "Preventive established, 18-39",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 247.16,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-05"
+    }
+  ],
+  "total_charge_amount": 831.21,
+  "currency": "USD",
+  "prior_auth_number": null
+}

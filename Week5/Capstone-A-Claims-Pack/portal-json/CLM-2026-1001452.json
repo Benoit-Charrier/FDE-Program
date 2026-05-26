@@ -1,0 +1,76 @@
+{
+  "submission_id": "CLM-2026-1001452",
+  "submitted_at": "2026-04-27T13:07:00",
+  "submitter": {
+    "name": "Kenji Hassan, MD",
+    "npi": "",
+    "tax_id": "21-7122446",
+    "specialty": "Internal Medicine",
+    "phone": "(223) 517-4877",
+    "address": {
+      "street": "5227 Spring St",
+      "city": "Sacramento",
+      "state": "CA",
+      "zip": "95884"
+    }
+  },
+  "patient": {
+    "first_name": "Derrick",
+    "last_name": "Underwood",
+    "date_of_birth": "1950-05-05",
+    "gender": "M",
+    "address": {
+      "street": "4636 Madison Ave",
+      "city": "Charlotte",
+      "state": "NC",
+      "zip": "28242"
+    },
+    "phone": "(925) 884-4660"
+  },
+  "insurance": {
+    "payer_id": "BCBS-IL",
+    "payer_name": "Blue Cross Blue Shield of Illinois",
+    "plan": "PPO Choice",
+    "member_id": "XOJ551673734",
+    "group_id": "GRP-70733"
+  },
+  "diagnoses": [
+    {
+      "code": "R07.9",
+      "description": "Chest pain, unspecified"
+    },
+    {
+      "code": "I10",
+      "description": "Essential (primary) hypertension"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99284",
+      "description": "ED visit, mod-high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 250.19,
+      "diagnosis_pointer": "1",
+      "place_of_service": "23",
+      "place_of_service_desc": "Emergency Room \u2014 Hospital",
+      "date_of_service": "2026-04-04"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "44970",
+      "description": "Laparoscopic appendectomy",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 3218.85,
+      "diagnosis_pointer": "2",
+      "place_of_service": "21",
+      "place_of_service_desc": "Inpatient Hospital",
+      "date_of_service": "2026-04-10"
+    }
+  ],
+  "total_charge_amount": 3469.04,
+  "currency": "USD",
+  "prior_auth_number": null
+}

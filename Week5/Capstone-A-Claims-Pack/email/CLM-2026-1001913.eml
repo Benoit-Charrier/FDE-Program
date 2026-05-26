@@ -1,0 +1,44 @@
+From: Jasmine Lopez <jasmine.lopez@eastlakewellne.example>
+To: claims-intake@payer.example
+Cc: None
+Date: Mon, 27 Apr 2026 14:00:09 +0000
+Message-ID: <177729813750.6.4004828706799356034@eastlakewellne.example>
+Subject: Claim submission =?utf-8?b?4oCU?= patient Schultz (CLM-2026-1001913)
+X-Submitter-NPI: 7361584914
+X-Submitter-TaxID: 60-5120245
+X-Originating-System: eastlakewellne.example MailRelay 4.2
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+Hi team,
+
+Please process the following claim. Patient was seen at our office on 2026-03=
+-30.
+
+Patient: Schultz, DeRRICK  (DOB 1933-09-07, M)
+Member ID: YYL39781547    Plan: Anthem Blue Access =E2=80=94 PPO
+Group: GRP-42101
+Address: 3161 Cherry Ln, Buffalo, NY 14230
+
+Provider: Eastlake Wellness Clinic, NPI 7361584914, Tax ID 60-5120245
+Specialty: Multi-specialty Clinic
+
+Diagnoses:
+  - M25.562  Pain in left knee
+  - E66.9  Obesity, unspecified
+  - K21.9  Gastro-esophageal reflux disease without esophagitis
+
+Services rendered:
+  - 2026-03-30: CPT 44970 (Laparoscopic appendectomy), 1 unit(s), $1864.89
+  - 2026-04-01: CPT 85025 (CBC w/ differential), 1 unit(s), $16.67
+
+Total: $1881.56
+Claim reference: CLM-2026-1001913
+
+Please process at your earliest. Thanks!
+
+Thanks,
+Jasmine Lopez
+Eastlake Wellness Clinic
+(407) 376-6950

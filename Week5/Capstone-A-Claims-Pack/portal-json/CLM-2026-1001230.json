@@ -1,0 +1,60 @@
+{
+  "submission_id": "CLM-2026-1001230",
+  "submitted_at": "2026-04-27T12:10:00",
+  "submitter": {
+    "name": "Zoe Martinez, PA",
+    "npi": "9335306852",
+    "tax_id": "48-5266776",
+    "specialty": "Physician Assistant",
+    "phone": "(952) 549-5891",
+    "address": {
+      "street": "5158 Forest Dr",
+      "city": "Cleveland",
+      "state": "OH",
+      "zip": "44156"
+    }
+  },
+  "patient": {
+    "first_name": "Oscar",
+    "last_name": "Singh",
+    "date_of_birth": "1981-05-29",
+    "gender": "M",
+    "address": {
+      "street": "7267 Cedar Ct",
+      "city": "Sacramento",
+      "state": "CA",
+      "zip": "95890"
+    },
+    "phone": "(481) 680-3383"
+  },
+  "insurance": {
+    "payer_id": "UHC-001",
+    "payer_name": "UnitedHealthcare Choice Plus",
+    "plan": "PPO",
+    "member_id": "205529253-04",
+    "group_id": "GRP-42183"
+  },
+  "diagnoses": [
+    {
+      "code": "Z00.00",
+      "description": "Encounter for general adult medical examination"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "72148",
+      "description": "MRI lumbar spine without contrast",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 350.79,
+      "diagnosis_pointer": "1",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-03-29"
+    }
+  ],
+  "total_charge_amount": 350.79,
+  "currency": "USD",
+  "prior_auth_number": null
+}

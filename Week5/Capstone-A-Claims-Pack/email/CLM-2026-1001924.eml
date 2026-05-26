@@ -1,0 +1,46 @@
+From: Donna Schultz <donna.schultz@westwoodintern.example>
+To: claims-intake@payer.example
+Cc: billing-dept@westwoodintern.example
+Date: Mon, 27 Apr 2026 16:08:35 +0000
+Message-ID: <177729813759.6.11782188342965816853@westwoodintern.example>
+Subject: Re: billing question / claim CLM-2026-1001924
+X-Submitter-NPI:
+X-Submitter-TaxID: 22-7303626
+X-Originating-System: westwoodintern.example MailRelay 4.2
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+Hi team,
+
+Please process the following claim. Patient was seen at our office on 2026-03=
+-28.
+
+Patient: Singh, Felix  (DOB 1972-05-02, M)
+Member ID: YYL62926001    Plan: Anthem Blue Access =E2=80=94 PPO
+Group: GRP-88478
+Address: 2878 Oak Ave, Indianapolis, IN 46285
+
+Provider: Westwood Internal Medicine, NPI (missing =E2=80=94 please call), Ta=
+x ID 22-7303626
+Specialty: Multi-specialty Clinic
+
+Diagnoses:
+  - E11.9  Type 2 diabetes mellitus without complications
+  - H66.90  Otitis media, unspecified, unspecified ear
+  - Z00.00  Encounter for general adult medical examination
+
+Services rendered:
+  - 2026-03-28: CPT 80053 (Comprehensive metabolic panel), 2 unit(s), $38.23
+  - 2026-04-14: CPT 83036 (Hemoglobin A1c), 2 unit(s), $35.18
+  - 2026-03-28: CPT 97110 (Therapeutic exercises (15 min)), 1 unit(s), $38.79
+
+Total: $112.20
+Claim reference: CLM-2026-1001924
+
+Let me know if anything is missing.
+
+Thanks,
+Donna Schultz
+Westwood Internal Medicine
+(365) 919-6077

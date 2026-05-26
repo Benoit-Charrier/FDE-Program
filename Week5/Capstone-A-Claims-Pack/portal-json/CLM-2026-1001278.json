@@ -1,0 +1,94 @@
+{
+  "submission_id": "CLM-2026-1001278",
+  "submitted_at": "2026-04-27T12:20:00",
+  "submitter": {
+    "name": "Sunrise Medical Group",
+    "npi": "",
+    "tax_id": "56-7822842",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(358) 442-3323",
+    "address": {
+      "street": "5736 Spring St",
+      "city": "Pittsburgh",
+      "state": "PA",
+      "zip": "15299"
+    }
+  },
+  "patient": {
+    "first_name": "Quincy",
+    "last_name": "Singh",
+    "date_of_birth": "1937-02-14",
+    "gender": "M",
+    "address": {
+      "street": "6851 Jefferson Dr",
+      "city": "Nashville",
+      "state": "TN",
+      "zip": "37289"
+    },
+    "phone": "(944) 401-8839"
+  },
+  "insurance": {
+    "payer_id": "UHC-001",
+    "payer_name": "UnitedHealthcare Choice Plus",
+    "plan": "PPO",
+    "member_id": "299452387-09",
+    "group_id": "GRP-70980"
+  },
+  "diagnoses": [
+    {
+      "code": "F32.9",
+      "description": "Major depressive disorder, single episode"
+    },
+    {
+      "code": "J45.909",
+      "description": "Unspecified asthma, uncomplicated"
+    },
+    {
+      "code": "F41.1",
+      "description": "Generalized anxiety disorder"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99421",
+      "description": "Online digital E/M, 5-10 min",
+      "modifiers": [
+        "95"
+      ],
+      "units": 1,
+      "charge_amount": 18.27,
+      "diagnosis_pointer": "1",
+      "place_of_service": "02",
+      "place_of_service_desc": "Telehealth",
+      "date_of_service": "2026-04-04"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "80053",
+      "description": "Comprehensive metabolic panel",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 17.88,
+      "diagnosis_pointer": "2",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-05"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "73030",
+      "description": "Shoulder X-ray, complete",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 59.28,
+      "diagnosis_pointer": "3",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-05"
+    }
+  ],
+  "total_charge_amount": 95.43,
+  "currency": "USD",
+  "prior_auth_number": null
+}

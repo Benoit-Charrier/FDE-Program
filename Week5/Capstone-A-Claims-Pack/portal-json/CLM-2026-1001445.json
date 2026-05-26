@@ -1,0 +1,64 @@
+{
+  "submission_id": "CLM-2026-1001445",
+  "submitted_at": "2026-04-27T13:01:00",
+  "submitter": {
+    "name": "Mateo Martinez, NP",
+    "npi": "8405966581",
+    "tax_id": "60-5120245",
+    "specialty": "Nurse Practitioner",
+    "phone": "(687) 503-4183",
+    "address": {
+      "street": "4080 Highland Ave",
+      "city": "Chicago",
+      "state": "IL",
+      "zip": "60625"
+    }
+  },
+  "patient": {
+    "first_name": "Patrick",
+    "last_name": "Ivanov",
+    "date_of_birth": "2004-10-27",
+    "gender": "M",
+    "address": {
+      "street": "7592 Madison Ave",
+      "city": "Raleigh",
+      "state": "NC",
+      "zip": "27697"
+    },
+    "phone": "(618) 589-2409"
+  },
+  "insurance": {
+    "payer_id": "MCD-IL",
+    "payer_name": "Illinois Medicaid",
+    "plan": "Medicaid",
+    "member_id": "933264647",
+    "group_id": "GRP-17636"
+  },
+  "diagnoses": [
+    {
+      "code": "Z00.00",
+      "description": "Encounter for general adult medical examination"
+    },
+    {
+      "code": "J20.9",
+      "description": "Acute bronchitis, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99395",
+      "description": "Preventive established, 18-39",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 206.28,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-03-31"
+    }
+  ],
+  "total_charge_amount": 206.28,
+  "currency": "USD",
+  "prior_auth_number": null
+}

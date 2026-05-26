@@ -1,0 +1,102 @@
+{
+  "submission_id": "CLM-2026-1001360",
+  "submitted_at": "2026-04-27T12:45:00",
+  "submitter": {
+    "name": "Owen Park, MD",
+    "npi": "4304858091",
+    "tax_id": "22-7303626",
+    "specialty": "Radiology",
+    "phone": "(900) 749-6275",
+    "address": {
+      "street": "7797 Birch Ct",
+      "city": "Pittsburgh",
+      "state": "PA",
+      "zip": "15278"
+    }
+  },
+  "patient": {
+    "first_name": "Nathan",
+    "last_name": "Lopez",
+    "date_of_birth": "1976-10-24",
+    "gender": "M",
+    "address": {
+      "street": "2521 Oak Ave",
+      "city": "Seattle",
+      "state": "WA",
+      "zip": "98179"
+    },
+    "phone": "(470) 938-8087"
+  },
+  "insurance": {
+    "payer_id": "BCBS-IL",
+    "payer_name": "Blue Cross Blue Shield of Illinois",
+    "plan": "HMO Standard",
+    "member_id": "XOJ115679393",
+    "group_id": "GRP-92135"
+  },
+  "diagnoses": [
+    {
+      "code": "S93.401A",
+      "description": "Sprain of unspecified ligament of right ankle, initial"
+    },
+    {
+      "code": "M54.5",
+      "description": "Low back pain"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "80061",
+      "description": "Lipid panel",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 19.56,
+      "diagnosis_pointer": "1",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-24"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "80053",
+      "description": "Comprehensive metabolic panel",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 20.55,
+      "diagnosis_pointer": "2",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-06"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "72148",
+      "description": "MRI lumbar spine without contrast",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 357.91,
+      "diagnosis_pointer": "1",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-04-07"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "99421",
+      "description": "Online digital E/M, 5-10 min",
+      "modifiers": [
+        "95"
+      ],
+      "units": 1,
+      "charge_amount": 23.26,
+      "diagnosis_pointer": "2",
+      "place_of_service": "02",
+      "place_of_service_desc": "Telehealth",
+      "date_of_service": "2026-04-05"
+    }
+  ],
+  "total_charge_amount": 421.28,
+  "currency": "USD",
+  "prior_auth_number": null
+}

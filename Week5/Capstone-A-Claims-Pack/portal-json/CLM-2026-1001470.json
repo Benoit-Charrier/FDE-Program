@@ -1,0 +1,116 @@
+{
+  "submission_id": "CLM-2026-1001470",
+  "submitted_at": "2026-04-27T13:12:00",
+  "submitter": {
+    "name": "Bright Family Practice",
+    "npi": "2391503441",
+    "tax_id": "48-5266776",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(536) 650-2552",
+    "address": {
+      "street": "4399 Pine Ln",
+      "city": "Denver",
+      "state": "CO",
+      "zip": "80290"
+    }
+  },
+  "patient": {
+    "first_name": "Noah",
+    "last_name": "Vargas",
+    "date_of_birth": "1980-11-26",
+    "gender": "M",
+    "address": {
+      "street": "8972 Lincoln St",
+      "city": "Denver",
+      "state": "CO",
+      "zip": "80260"
+    },
+    "phone": "(217) 843-1003"
+  },
+  "insurance": {
+    "payer_id": "HUM-001",
+    "payer_name": "Humana Gold Plus",
+    "plan": "HMO",
+    "member_id": "H25947049",
+    "group_id": "GRP-49354"
+  },
+  "diagnoses": [
+    {
+      "code": "Z00.00",
+      "description": "Encounter for general adult medical examination"
+    },
+    {
+      "code": "J06.9",
+      "description": "Acute upper respiratory infection, unspecified"
+    },
+    {
+      "code": "R07.9",
+      "description": "Chest pain, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "80061",
+      "description": "Lipid panel",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 24.88,
+      "diagnosis_pointer": "1",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-03-31"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99285",
+      "description": "ED visit, high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 326.16,
+      "diagnosis_pointer": "2",
+      "place_of_service": "23",
+      "place_of_service_desc": "Emergency Room \u2014 Hospital",
+      "date_of_service": "2026-03-28"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "44970",
+      "description": "Laparoscopic appendectomy",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 2708.24,
+      "diagnosis_pointer": "3",
+      "place_of_service": "21",
+      "place_of_service_desc": "Inpatient Hospital",
+      "date_of_service": "2026-04-12"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "64483",
+      "description": "Injection, transforaminal epidural",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 568.69,
+      "diagnosis_pointer": "1",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-04-10"
+    },
+    {
+      "line_number": 5,
+      "cpt_code": "72148",
+      "description": "MRI lumbar spine without contrast",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 412.0,
+      "diagnosis_pointer": "1",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-03-31"
+    }
+  ],
+  "total_charge_amount": 4039.97,
+  "currency": "USD",
+  "prior_auth_number": ""
+}

@@ -1,0 +1,60 @@
+{
+  "submission_id": "CLM-2026-1001420",
+  "submitted_at": "2026-04-27T12:56:00",
+  "submitter": {
+    "name": "Ivan Reyes, DC",
+    "npi": "",
+    "tax_id": "22-7303626",
+    "specialty": "Chiropractic",
+    "phone": "(722) 312-9199",
+    "address": {
+      "street": "1055 Jefferson Dr",
+      "city": "Denver",
+      "state": "CO",
+      "zip": "80219"
+    }
+  },
+  "patient": {
+    "first_name": "Felicia",
+    "last_name": "Harris",
+    "date_of_birth": "1938-02-28",
+    "gender": "F",
+    "address": {
+      "street": "6833 Sunset Blvd",
+      "city": "Charlotte",
+      "state": "NC",
+      "zip": "28266"
+    },
+    "phone": "(820) 524-6420"
+  },
+  "insurance": {
+    "payer_id": "UHC-001",
+    "payer_name": "UnitedHealthcare Choice Plus",
+    "plan": "PPO",
+    "member_id": "393966495-08",
+    "group_id": "GRP-71817"
+  },
+  "diagnoses": [
+    {
+      "code": "H66.90",
+      "description": "Otitis media, unspecified, unspecified ear"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "90686",
+      "description": "Flu vaccine quadrivalent",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 27.9,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-11"
+    }
+  ],
+  "total_charge_amount": 27.9,
+  "currency": "USD",
+  "prior_auth_number": null
+}

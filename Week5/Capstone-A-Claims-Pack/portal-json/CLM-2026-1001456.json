@@ -1,0 +1,96 @@
+{
+  "submission_id": "CLM-2026-1001456",
+  "submitted_at": "2026-04-27T13:06:00",
+  "submitter": {
+    "name": "Peter Jensen, DC",
+    "npi": "4568003893",
+    "tax_id": "47-1052444",
+    "specialty": "Chiropractic",
+    "phone": "(244) 273-3174",
+    "address": {
+      "street": "6178 Ridge Rd",
+      "city": "Phoenix",
+      "state": "AZ",
+      "zip": "85064"
+    }
+  },
+  "patient": {
+    "first_name": "Tina",
+    "last_name": "Quintana",
+    "date_of_birth": "1973-12-09",
+    "gender": "F",
+    "address": {
+      "street": "3306 Lake Rd",
+      "city": "Denver",
+      "state": "CO",
+      "zip": "80227"
+    },
+    "phone": "(523) 948-7511"
+  },
+  "insurance": {
+    "payer_id": "BCBS-IL",
+    "payer_name": "Blue Cross Blue Shield of Illinois",
+    "plan": "PPO Choice",
+    "member_id": "XOJ202319335",
+    "group_id": "GRP-41074"
+  },
+  "diagnoses": [
+    {
+      "code": "M17.11",
+      "description": "Unilateral primary osteoarthritis, right knee"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "70551",
+      "description": "MRI brain without contrast",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 906.83,
+      "diagnosis_pointer": "1",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-04-18"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "85025",
+      "description": "CBC w/ differential",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 15.4,
+      "diagnosis_pointer": "1",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-12"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "90686",
+      "description": "Flu vaccine quadrivalent",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 46.23,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-04"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "27447",
+      "description": "Total knee arthroplasty",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 4230.89,
+      "diagnosis_pointer": "1",
+      "place_of_service": "21",
+      "place_of_service_desc": "Inpatient Hospital",
+      "date_of_service": "2026-03-31"
+    }
+  ],
+  "total_charge_amount": 5199.35,
+  "currency": "USD",
+  "prior_auth_number": null
+}

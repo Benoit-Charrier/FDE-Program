@@ -1,0 +1,104 @@
+{
+  "submission_id": "CLM-2026-1001517",
+  "submitted_at": "2026-04-27T13:20:00",
+  "submitter": {
+    "name": "Bayside Orthopedics",
+    "npi": "8287154702",
+    "tax_id": "17-9077104",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(227) 270-4187",
+    "address": {
+      "street": "8905 Walnut St",
+      "city": "Houston",
+      "state": "TX",
+      "zip": "77036"
+    }
+  },
+  "patient": {
+    "first_name": "Jerome",
+    "last_name": "Hayes",
+    "date_of_birth": "2008-09-17",
+    "gender": "M",
+    "address": {
+      "street": "9211 Main St",
+      "city": "Columbus",
+      "state": "OH",
+      "zip": "43295"
+    },
+    "phone": "(546) 212-7863"
+  },
+  "insurance": {
+    "payer_id": "HUM-001",
+    "payer_name": "Humana Gold Plus",
+    "plan": "HMO",
+    "member_id": "H46759702",
+    "group_id": "GRP-40733"
+  },
+  "diagnoses": [
+    {
+      "code": "J06.9",
+      "description": "Acute upper respiratory infection, unspecified"
+    },
+    {
+      "code": "M17.11",
+      "description": "Unilateral primary osteoarthritis, right knee"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "47562",
+      "description": "Laparoscopic cholecystectomy",
+      "modifiers": [
+        "22"
+      ],
+      "units": 2,
+      "charge_amount": 3227.11,
+      "diagnosis_pointer": "1",
+      "place_of_service": "21",
+      "place_of_service_desc": "Inpatient Hospital",
+      "date_of_service": "2026-04-13"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99422",
+      "description": "Online digital E/M, 11-20 min",
+      "modifiers": [
+        "95"
+      ],
+      "units": 1,
+      "charge_amount": 36.81,
+      "diagnosis_pointer": "2",
+      "place_of_service": "02",
+      "place_of_service_desc": "Telehealth",
+      "date_of_service": "2026-04-15"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99204",
+      "description": "Office visit, new pt, high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 249.84,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-05"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "85025",
+      "description": "CBC w/ differential",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 25.36,
+      "diagnosis_pointer": "2",
+      "place_of_service": "81",
+      "place_of_service_desc": "Independent Lab",
+      "date_of_service": "2026-04-15"
+    }
+  ],
+  "total_charge_amount": 3539.12,
+  "currency": "USD",
+  "prior_auth_number": null
+}

@@ -1,0 +1,32 @@
+From: billing@oaktreepediatr.example
+To: claims-intake@payer.example
+Date: Mon, 27 Apr 2026 17:49:00 -0500
+Subject: Re: billing question / claim CLM-2026-1001944
+
+Hi team,
+
+Please process the following claim. Patient was seen at our office on 2026-04-03.
+
+Patient: Walker, Elena (DOB 2011-03-24, F)
+Member ID: 8KC5XXU2GF5    Plan: Medicare Part B - Original Medicare
+Group: GRP-35348
+Address: 5011 Walnut St, Chicago, IL 60668
+
+Provider: Oak Tree Pediatric Associates, NPI 6459105426, Tax ID 85-7603195
+Specialty: Multi-specialty Clinic
+
+Diagnoses:
+  - M25.562 Pain in left knee
+  - R51.9 Headache, unspecified
+
+Services rendered:
+  - 2026-04-03: CPT 83036 (Hemoglobin A1c), 2 unit(s), $37.44
+  - 2026-04-07: CPT 64483 (Injection, transforaminal epidural), 1 unit(s), $304.73
+  - 2026-04-03: CPT 72148 (MRI lumbar spine without contrast), 1 unit(s), $412.00
+
+Total: $754.17
+Claim reference: CLM-2026-1001944
+
+Resubmitting from last week — first one bounced. Pls confirm receipt.
+
+-Mike

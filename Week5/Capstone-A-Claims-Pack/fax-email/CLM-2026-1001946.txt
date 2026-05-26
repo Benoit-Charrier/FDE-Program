@@ -1,0 +1,30 @@
+============================
+   FAX COVER SHEET
+============================
+TO:    Cigna Open Access Plus Claims Intake
+FROM:  Maya Hassan, DC
+DATE:  04/27/2026
+PAGES: 1 of 2
+
+URGENT [_]   FOR REVIEW [X]   PLEASE COMMENT [_]   PLEASE REPLY [_]
+
+RE: Claim submission - patient Davis, Hector
+
+Member ID:     U51538927
+DOB:           1987-11-04
+Plan:          PPO
+Group:         GRP-90890
+DOS:           2026-03-30
+
+Diagnoses:     F41.1, H66.90
+Procedures:    99284, 70551
+Total charge:  $701.50
+
+Provider NPI:  9982349408
+Tax ID:        13-6253622
+
+NOTES:
+Please prior-auth was on file - see attached.
+
+If problems with this fax, call (243) 592-7528
+============================

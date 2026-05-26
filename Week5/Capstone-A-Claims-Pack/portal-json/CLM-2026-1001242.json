@@ -1,0 +1,80 @@
+{
+  "submission_id": "CLM-2026-1001242",
+  "submitted_at": "2026-04-27T12:11:00",
+  "submitter": {
+    "name": "Crestview Imaging Center",
+    "npi": "7841771881",
+    "tax_id": "10-3567542",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(427) 871-1723",
+    "address": {
+      "street": "601 Spring St",
+      "city": "Albuquerque",
+      "state": "NM",
+      "zip": "87163"
+    }
+  },
+  "patient": {
+    "first_name": "Teresa",
+    "last_name": "Young",
+    "date_of_birth": "1933-09-28",
+    "gender": "F",
+    "address": {
+      "street": "9582 Ridge Rd",
+      "city": "Albuquerque",
+      "state": "NM",
+      "zip": "87186"
+    },
+    "phone": "(902) 514-1344"
+  },
+  "insurance": {
+    "payer_id": "MCR-001",
+    "payer_name": "Medicare Part B",
+    "plan": "Original Medicare",
+    "member_id": "8DY2REY7HJ8",
+    "group_id": "GRP-56504"
+  },
+  "diagnoses": [
+    {
+      "code": "Z00.00",
+      "description": "Encounter for general adult medical examination"
+    },
+    {
+      "code": "H66.90",
+      "description": "Otitis media, unspecified, unspecified ear"
+    },
+    {
+      "code": "F41.1",
+      "description": "Generalized anxiety disorder"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "73030",
+      "description": "Shoulder X-ray, complete",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 56.31,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-03-31"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "64483",
+      "description": "Injection, transforaminal epidural",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 755.07,
+      "diagnosis_pointer": "2",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-04-05"
+    }
+  ],
+  "total_charge_amount": 811.38,
+  "currency": "USD",
+  "prior_auth_number": null
+}

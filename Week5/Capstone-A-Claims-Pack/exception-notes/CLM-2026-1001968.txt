@@ -1,0 +1,11 @@
+PHONE LOG - PROVIDER OUTREACH
+
+Date/Time: 04/27/2026 15:17
+Caller: Practice admin from Sunrise Medical Group
+Re: Patient Rachel Singh (member H94303533)
+
+Caller states: patient was seen on 2026-04-18 but claim has not appeared in our remit
+
+Resolution: Pulled claim CLM-2026-1001968. Found - claim missing modifier 25 - faxed correction request.
+
+Closed: 15:17  Agent: D.Kahn

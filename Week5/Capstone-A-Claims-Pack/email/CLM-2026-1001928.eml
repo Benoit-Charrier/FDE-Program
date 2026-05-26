@@ -1,0 +1,73 @@
+From: Karen Anderson <karen.anderson@carlahassando.example>
+To: claims-intake@payer.example
+Cc: billing-dept@carlahassando.example
+Date: Mon, 27 Apr 2026 15:46:46 +0000
+Message-ID: <177729813762.6.16828291628633919458@carlahassando.example>
+Subject: Outstanding claim =?utf-8?b?4oCU?= DOS 2026-03-28
+X-Submitter-NPI: 2056937372
+X-Submitter-TaxID: 55-5300800
+X-Originating-System: carlahassando.example MailRelay 4.2
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="===============7253341574690706502=="
+
+--===============7253341574690706502==
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hi team,
+
+Please process the following claim. Patient was seen at our office on 2026-03=
+-28.
+
+Patient: Yamamoto, Lily  (DOB 2020-04-27, F)
+Member ID: W517697651    Plan: Aetna Open Access =E2=80=94 PPO
+Group: GRP-90692
+Address: 3052 Elm St, Chicago, IL 60626
+
+Provider: Carla Hassan, DO, NPI 2056937372, Tax ID 55-5300800
+Specialty: Family Medicine
+
+Diagnoses:
+  - N39.0  Urinary tract infection, site not specified
+  - J45.909  Unspecified asthma, uncomplicated
+  - K21.9  Gastro-esophageal reflux disease without esophagitis
+
+Services rendered:
+  - 2026-03-28: CPT 64483 (Injection, transforaminal epidural), 1 unit(s), $2=
+79.67
+
+Total: $279.67
+Claim reference: CLM-2026-1001928
+
+Resubmitting from last week =E2=80=94 first one bounced. Pls confirm receipt.
+
+Thanks,
+Karen Anderson
+Carla Hassan, DO
+(917) 821-5062
+
+--===============7253341574690706502==
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: 8bit
+MIME-Version: 1.0
+
+<html><body style="font-family: Arial, sans-serif; font-size: 11pt;">
+<p>Hi team,</p>
+<p>Please process the following claim. Patient was seen at our office on
+<b>2026-03-28</b>.</p>
+<table cellpadding="3" style="border-collapse: collapse; font-size: 10pt;">
+<tr><td><b>Patient:</b></td><td>Yamamoto, Lily (DOB 2020-04-27, F)</td></tr>
+<tr><td><b>Member ID:</b></td><td>W517697651</td></tr>
+<tr><td><b>Plan:</b></td><td>Aetna Open Access — PPO</td></tr>
+<tr><td><b>Group:</b></td><td>GRP-90692</td></tr>
+<tr><td><b>Provider:</b></td><td>Carla Hassan, DO (NPI 2056937372)</td></tr>
+<tr><td><b>Total charge:</b></td><td>$279.67</td></tr>
+<tr><td><b>Claim ref:</b></td><td>CLM-2026-1001928</td></tr>
+</table>
+<p>Diagnoses: N39.0, J45.909, K21.9</p>
+<p>Procedures: 64483</p>
+<p>Thanks,<br>Karen Anderson<br>Carla Hassan, DO<br>(917) 821-5062</p>
+</body></html>
+
+--===============7253341574690706502==--

@@ -1,0 +1,80 @@
+{
+  "submission_id": "CLM-2026-1001205",
+  "submitted_at": "2026-04-27T12:03:00",
+  "submitter": {
+    "name": "Helena Singh, MD",
+    "npi": "1150519305",
+    "tax_id": "10-3567542",
+    "specialty": "Pediatrics",
+    "phone": "(230) 345-6212",
+    "address": {
+      "street": "827 Franklin Rd",
+      "city": "Chicago",
+      "state": "IL",
+      "zip": "60679"
+    }
+  },
+  "patient": {
+    "first_name": "Connor",
+    "last_name": "Zhang",
+    "date_of_birth": "2025-03-26",
+    "gender": "M",
+    "address": {
+      "street": "2278 Washington Ave",
+      "city": "Minneapolis",
+      "state": "MN",
+      "zip": "55493"
+    },
+    "phone": "(582) 597-1510"
+  },
+  "insurance": {
+    "payer_id": "CIG-001",
+    "payer_name": "Cigna Open Access Plus",
+    "plan": "PPO",
+    "member_id": "U32036671",
+    "group_id": "GRP-25061"
+  },
+  "diagnoses": [
+    {
+      "code": "M79.7",
+      "description": "Fibromyalgia"
+    },
+    {
+      "code": "H66.90",
+      "description": "Otitis media, unspecified, unspecified ear"
+    },
+    {
+      "code": "J20.9",
+      "description": "Acute bronchitis, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "27447",
+      "description": "Total knee arthroplasty",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 5077.83,
+      "diagnosis_pointer": "1",
+      "place_of_service": "21",
+      "place_of_service_desc": "Inpatient Hospital",
+      "date_of_service": "2026-04-20"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "90686",
+      "description": "Flu vaccine quadrivalent",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 56.88,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-03-31"
+    }
+  ],
+  "total_charge_amount": 5134.71,
+  "currency": "USD",
+  "prior_auth_number": null
+}

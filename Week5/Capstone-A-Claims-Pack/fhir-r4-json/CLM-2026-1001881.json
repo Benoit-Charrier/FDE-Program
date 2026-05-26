@@ -1,0 +1,224 @@
+{
+  "resourceType": "Claim",
+  "id": "CLM-2026-1001881",
+  "status": "active",
+  "type": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+        "code": "professional"
+      }
+    ]
+  },
+  "use": "claim",
+  "patient": {
+    "reference": "Patient/578684459",
+    "display": "Tina Singh"
+  },
+  "billablePeriod": {
+    "start": "2026-04-17",
+    "end": "2026-04-12"
+  },
+  "created": "2026-04-27T14:51:00",
+  "insurer": {
+    "reference": "Organization/MCD-IL",
+    "display": "Illinois Medicaid"
+  },
+  "provider": {
+    "reference": "Practitioner/6107345668",
+    "display": "Edwin Patel, PA"
+  },
+  "priority": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/processpriority",
+        "code": "normal"
+      }
+    ]
+  },
+  "diagnosis": [
+    {
+      "sequence": 1,
+      "diagnosisCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/sid/icd-10-cm",
+            "code": "N39.0",
+            "display": "Urinary tract infection, site not specified"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 2,
+      "diagnosisCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/sid/icd-10-cm",
+            "code": "I10",
+            "display": "Essential (primary) hypertension"
+          }
+        ]
+      }
+    }
+  ],
+  "insurance": [
+    {
+      "sequence": 1,
+      "focal": true,
+      "coverage": {
+        "display": "Medicaid via Illinois Medicaid"
+      }
+    }
+  ],
+  "item": [
+    {
+      "sequence": 1,
+      "diagnosisSequence": [
+        1
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "99285",
+            "display": "ED visit, high"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-04-17",
+      "quantity": {
+        "value": 1
+      },
+      "unitPrice": {
+        "value": 445.33,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 445.33,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "31"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 2,
+      "diagnosisSequence": [
+        2
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "64483",
+            "display": "Injection, transforaminal epidural"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-04-12",
+      "quantity": {
+        "value": 2
+      },
+      "unitPrice": {
+        "value": 364.075,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 728.15,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "22"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 3,
+      "diagnosisSequence": [
+        1
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "70551",
+            "display": "MRI brain without contrast"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-04-24",
+      "quantity": {
+        "value": 1
+      },
+      "unitPrice": {
+        "value": 519.03,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 519.03,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "22"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 4,
+      "diagnosisSequence": [
+        2
+      ],
+      "productOrService": {
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "47562",
+            "display": "Laparoscopic cholecystectomy"
+          }
+        ]
+      },
+      "modifier": null,
+      "servicedDate": "2026-04-12",
+      "quantity": {
+        "value": 1
+      },
+      "unitPrice": {
+        "value": 1744.4,
+        "currency": "USD"
+      },
+      "net": {
+        "value": 1744.4,
+        "currency": "USD"
+      },
+      "locationCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes",
+            "code": "21"
+          }
+        ]
+      }
+    }
+  ],
+  "total": {
+    "value": 3436.91,
+    "currency": "USD"
+  }
+}

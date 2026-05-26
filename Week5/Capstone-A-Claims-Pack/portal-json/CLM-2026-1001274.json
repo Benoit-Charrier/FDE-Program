@@ -1,0 +1,60 @@
+{
+  "submission_id": "CLM-2026-1001274",
+  "submitted_at": "2026-04-27T12:18:00",
+  "submitter": {
+    "name": "Tomas Tanaka, DPT",
+    "npi": "1291310052",
+    "tax_id": "97-2413794",
+    "specialty": "Physical Therapy",
+    "phone": "(400) 956-7168",
+    "address": {
+      "street": "3483 Franklin Rd",
+      "city": "Tampa",
+      "state": "FL",
+      "zip": "33634"
+    }
+  },
+  "patient": {
+    "first_name": "Jasmine",
+    "last_name": "Singh",
+    "date_of_birth": "1967-01-31",
+    "gender": "F",
+    "address": {
+      "street": "1540 Maple Dr",
+      "city": "Philadelphia",
+      "state": "PA",
+      "zip": "19114"
+    },
+    "phone": "(898) 844-8652"
+  },
+  "insurance": {
+    "payer_id": "UHC-002",
+    "payer_name": "UnitedHealthcare Navigate",
+    "plan": "HMO",
+    "member_id": "393345451-03",
+    "group_id": "GRP-83423"
+  },
+  "diagnoses": [
+    {
+      "code": "E78.5",
+      "description": "Hyperlipidemia, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "97110",
+      "description": "Therapeutic exercises (15 min)",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 71.54,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-14"
+    }
+  ],
+  "total_charge_amount": 71.54,
+  "currency": "USD",
+  "prior_auth_number": null
+}

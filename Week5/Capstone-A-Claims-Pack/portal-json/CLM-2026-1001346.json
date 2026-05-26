@@ -1,0 +1,82 @@
+{
+  "submission_id": "CLM-2026-1001346",
+  "submitted_at": "2026-04-27T12:38:00",
+  "submitter": {
+    "name": "Summit Cardiology Group",
+    "npi": "9197430216",
+    "tax_id": "13-3827856",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(764) 970-3250",
+    "address": {
+      "street": "620 Pine Ln",
+      "city": "Tucson",
+      "state": "AZ",
+      "zip": "85730"
+    }
+  },
+  "patient": {
+    "first_name": "Whitney",
+    "last_name": "Baker",
+    "date_of_birth": "2009-09-25",
+    "gender": "F",
+    "address": {
+      "street": "9609 Sunset Blvd",
+      "city": "Columbus",
+      "state": "OH",
+      "zip": "43238"
+    },
+    "phone": "(981) 938-4701"
+  },
+  "insurance": {
+    "payer_id": "MCD-IL",
+    "payer_name": "Illinois Medicaid",
+    "plan": "Medicaid",
+    "member_id": "907928273",
+    "group_id": "GRP-27630"
+  },
+  "diagnoses": [
+    {
+      "code": "Z00.00",
+      "description": "Encounter for general adult medical examination"
+    },
+    {
+      "code": "J06.9",
+      "description": "Acute upper respiratory infection, unspecified"
+    },
+    {
+      "code": "E66.9",
+      "description": "Obesity, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "72148",
+      "description": "MRI lumbar spine without contrast",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 717.4,
+      "diagnosis_pointer": "1",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-04-23"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99422",
+      "description": "Online digital E/M, 11-20 min",
+      "modifiers": [
+        "95"
+      ],
+      "units": 1,
+      "charge_amount": 47.78,
+      "diagnosis_pointer": "2",
+      "place_of_service": "02",
+      "place_of_service_desc": "Telehealth",
+      "date_of_service": "2026-04-04"
+    }
+  ],
+  "total_charge_amount": 765.18,
+  "currency": "USD",
+  "prior_auth_number": null
+}

@@ -1,0 +1,91 @@
+{
+  "submission_id": "CLM-2026-1001270",
+  "submitted_at": "2026-04-27T12:18:00",
+  "submitter": {
+    "name": "Bayside Orthopedics",
+    "npi": "",
+    "tax_id": "48-5266776",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(210) 566-6172",
+    "address": {
+      "street": "7621 Walnut St",
+      "city": "Kansas City",
+      "state": "MO",
+      "zip": "64189"
+    }
+  },
+  "patient": {
+    "first_name": "Aaliyah",
+    "last_name": "Thompson",
+    "date_of_birth": "1945-07-13",
+    "gender": "F",
+    "address": {
+      "street": "6224 Lake Rd",
+      "city": "Seattle",
+      "state": "WA",
+      "zip": "98137"
+    },
+    "phone": "(337) 988-1495"
+  },
+  "insurance": {
+    "payer_id": "CIG-001",
+    "payer_name": "Cigna Open Access Plus",
+    "plan": "PPO",
+    "member_id": "U23316082",
+    "group_id": "GRP-66030"
+  },
+  "diagnoses": [],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "83036",
+      "description": "Hemoglobin A1c",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 20.07,
+      "diagnosis_pointer": "1",
+      "place_of_service": "12",
+      "place_of_service_desc": "Home",
+      "date_of_service": "2026-04-23"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "12001",
+      "description": "Simple repair, superficial wound",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 178.93,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-09"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99396",
+      "description": "Preventive established, 40-64",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 176.69,
+      "diagnosis_pointer": "3",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-20"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "99205",
+      "description": "Office visit, new pt, comprehensive",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 364.47,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-11"
+    }
+  ],
+  "total_charge_amount": 740.16,
+  "currency": "USD",
+  "prior_auth_number": null
+}

@@ -1,0 +1,60 @@
+{
+  "submission_id": "CLM-2026-1001512",
+  "submitted_at": "2026-04-27T13:19:00",
+  "submitter": {
+    "name": "Forest Hills Urgent Care",
+    "npi": "4969048695",
+    "tax_id": "11-7535324",
+    "specialty": "Multi-specialty Clinic",
+    "phone": "(934) 838-5620",
+    "address": {
+      "street": "4773 Park Blvd",
+      "city": "Cleveland",
+      "state": "OH",
+      "zip": "44135"
+    }
+  },
+  "patient": {
+    "first_name": "Gloria",
+    "last_name": "Brown",
+    "date_of_birth": "1954-05-23",
+    "gender": "F",
+    "address": {
+      "street": "9026 Cedar Ct",
+      "city": "Houston",
+      "state": "TX",
+      "zip": "77058"
+    },
+    "phone": "(797) 640-3273"
+  },
+  "insurance": {
+    "payer_id": "ANT-001",
+    "payer_name": "Anthem Blue Access",
+    "plan": "PPO",
+    "member_id": "YYL88131287",
+    "group_id": "GRP-11819"
+  },
+  "diagnoses": [
+    {
+      "code": "R51.9",
+      "description": "Headache, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99205",
+      "description": "Office visit, new pt, comprehensive",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 308.46,
+      "diagnosis_pointer": "1",
+      "place_of_service": "31",
+      "place_of_service_desc": "Skilled Nursing Facility",
+      "date_of_service": "2026-04-22"
+    }
+  ],
+  "total_charge_amount": 308.46,
+  "currency": "USD",
+  "prior_auth_number": null
+}

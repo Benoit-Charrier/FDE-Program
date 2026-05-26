@@ -1,0 +1,92 @@
+{
+  "submission_id": "CLM-2026-1001372",
+  "submitted_at": "2026-04-27T12:48:00",
+  "submitter": {
+    "name": "Isaac Park, DPT",
+    "npi": "0329940861",
+    "tax_id": "33-6476889",
+    "specialty": "Physical Therapy",
+    "phone": "(285) 265-6334",
+    "address": {
+      "street": "3458 Ridge Rd",
+      "city": "Salt Lake City",
+      "state": "UT",
+      "zip": "84142"
+    }
+  },
+  "patient": {
+    "first_name": "Wendy",
+    "last_name": "Davis",
+    "date_of_birth": "2007-09-24",
+    "gender": "F",
+    "address": {
+      "street": "4597 Franklin Rd",
+      "city": "Tampa",
+      "state": "FL",
+      "zip": "33659"
+    },
+    "phone": "(981) 777-1340"
+  },
+  "insurance": {
+    "payer_id": "ANT-001",
+    "payer_name": "Anthem Blue Access",
+    "plan": "PPO",
+    "member_id": "YYL42114759",
+    "group_id": "GRP-97431"
+  },
+  "diagnoses": [
+    {
+      "code": "M54.5",
+      "description": "Low back pain"
+    },
+    {
+      "code": "F32.9",
+      "description": "Major depressive disorder, single episode"
+    },
+    {
+      "code": "E66.9",
+      "description": "Obesity, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "97140",
+      "description": "Manual therapy (15 min)",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 66.28,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-11"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "73030",
+      "description": "Shoulder X-ray, complete",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 72.91,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-23"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "71046",
+      "description": "Chest X-ray, 2 views",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 51.67,
+      "diagnosis_pointer": "3",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-16"
+    }
+  ],
+  "total_charge_amount": 190.86,
+  "currency": "USD",
+  "prior_auth_number": null
+}

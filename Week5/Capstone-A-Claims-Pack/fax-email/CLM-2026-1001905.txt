@@ -1,0 +1,33 @@
+From: billing@crestviewimagi.example
+To: claims-intake@payer.example
+Date: Mon, 27 Apr 2026 15:01:00 -0500
+Subject: Outstanding claim - DOS 2026-04-14
+
+Hi team,
+
+Please process the following claim. Patient was seen at our office on 2026-04-14.
+
+Patient: Vargas, Quincy (DOB 1975-10-17, M)
+Member ID: 668656509    Plan: Illinois Medicaid - Medicaid
+Group: GRP-65822
+Address: 9535 Park Blvd, Tampa, FL 33653
+
+Provider: Crestview Imaging Center, NPI 8194974440, Tax ID 53-3466510
+Specialty: Multi-specialty Clinic
+
+Diagnoses:
+  - M54.5 Low back pain
+  - I25.10 Atherosclerotic heart disease without angina
+  - J45.909 Unspecified asthma, uncomplicated
+
+Services rendered:
+  - 2026-04-14: CPT 99214 (Office visit, established, mod-high), 1 unit(s), $207.02
+  - 2026-04-22: CPT 99205 (Office visit, new pt, comprehensive), 1 unit(s), $352.64
+  - 2026-04-16: CPT 99203 (Office visit, new pt, mod), 1 unit(s), $143.08
+
+Total: $702.74
+Claim reference: CLM-2026-1001905
+
+Resubmitting from last week — first one bounced. Pls confirm receipt.
+
+-Mike

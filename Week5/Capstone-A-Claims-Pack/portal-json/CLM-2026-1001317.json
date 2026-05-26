@@ -1,0 +1,100 @@
+{
+  "submission_id": "CLM-2026-1001317",
+  "submitted_at": "2026-04-27T12:30:00",
+  "submitter": {
+    "name": "Roberto Nakamura, MD",
+    "npi": "7905764356",
+    "tax_id": "71-1103322",
+    "specialty": "Cardiology",
+    "phone": "(922) 734-1154",
+    "address": {
+      "street": "4220 Ridge Rd",
+      "city": "Phoenix",
+      "state": "AZ",
+      "zip": "85020"
+    }
+  },
+  "patient": {
+    "first_name": "Zane",
+    "last_name": "Novak",
+    "date_of_birth": "2002-06-06",
+    "gender": "M",
+    "address": {
+      "street": "3888 Main St",
+      "city": "Kansas City",
+      "state": "MO",
+      "zip": "64136"
+    },
+    "phone": "(918) 802-4735"
+  },
+  "insurance": {
+    "payer_id": "BCBS-IL",
+    "payer_name": "Blue Cross Blue Shield of Illinois",
+    "plan": "HMO Standard",
+    "member_id": "XOJ833341848",
+    "group_id": "GRP-93320"
+  },
+  "diagnoses": [
+    {
+      "code": "R51.9",
+      "description": "Headache, unspecified"
+    },
+    {
+      "code": "N18.3",
+      "description": "Chronic kidney disease, stage 3"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "20610",
+      "description": "Major joint injection",
+      "modifiers": [],
+      "units": 2,
+      "charge_amount": 234.98,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-21"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99204",
+      "description": "Office visit, new pt, high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 208.27,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-12"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "70551",
+      "description": "MRI brain without contrast",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 377.02,
+      "diagnosis_pointer": "1",
+      "place_of_service": "22",
+      "place_of_service_desc": "Outpatient Hospital",
+      "date_of_service": "2026-04-18"
+    },
+    {
+      "line_number": 4,
+      "cpt_code": "90471",
+      "description": "Immunization administration",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 18.99,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-03-30"
+    }
+  ],
+  "total_charge_amount": 839.26,
+  "currency": "USD",
+  "prior_auth_number": null
+}

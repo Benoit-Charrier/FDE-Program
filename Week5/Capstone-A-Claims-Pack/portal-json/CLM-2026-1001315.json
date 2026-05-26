@@ -1,0 +1,92 @@
+{
+  "submission_id": "CLM-2026-1001315",
+  "submitted_at": "2026-04-27T12:30:00",
+  "submitter": {
+    "name": "Sophia Martinez, MD",
+    "npi": "3087579357",
+    "tax_id": "85-2693146",
+    "specialty": "Internal Medicine",
+    "phone": "(386) 719-4991",
+    "address": {
+      "street": "5465 Lincoln St",
+      "city": "Charlotte",
+      "state": "NC",
+      "zip": "28232"
+    }
+  },
+  "patient": {
+    "first_name": "Alice",
+    "last_name": "Jackson",
+    "date_of_birth": "2002-10-02",
+    "gender": "F",
+    "address": {
+      "street": "1552 Cherry Ln",
+      "city": "Pittsburgh",
+      "state": "PA",
+      "zip": "15281"
+    },
+    "phone": "(941) 243-2995"
+  },
+  "insurance": {
+    "payer_id": "MCR-001",
+    "payer_name": "Medicare Part B",
+    "plan": "Original Medicare",
+    "member_id": "7MJ9NKT6YK2",
+    "group_id": "GRP-89297"
+  },
+  "diagnoses": [
+    {
+      "code": "M54.5",
+      "description": "Low back pain"
+    },
+    {
+      "code": "S93.401A",
+      "description": "Sprain of unspecified ligament of right ankle, initial"
+    },
+    {
+      "code": "J45.909",
+      "description": "Unspecified asthma, uncomplicated"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "99395",
+      "description": "Preventive established, 18-39",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 181.65,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-04"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99215",
+      "description": "Office visit, established, high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 269.11,
+      "diagnosis_pointer": "2",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-04"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99396",
+      "description": "Preventive established, 40-64",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 190.84,
+      "diagnosis_pointer": "3",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-18"
+    }
+  ],
+  "total_charge_amount": 641.6,
+  "currency": "USD",
+  "prior_auth_number": null
+}

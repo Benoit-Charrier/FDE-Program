@@ -1,0 +1,92 @@
+{
+  "submission_id": "CLM-2026-1001338",
+  "submitted_at": "2026-04-27T12:38:00",
+  "submitter": {
+    "name": "Tina Martinez, PA",
+    "npi": "3458221735",
+    "tax_id": "53-3302645",
+    "specialty": "Physician Assistant",
+    "phone": "(261) 259-3398",
+    "address": {
+      "street": "3735 Elm St",
+      "city": "Minneapolis",
+      "state": "MN",
+      "zip": "55443"
+    }
+  },
+  "patient": {
+    "first_name": "Noah",
+    "last_name": "Harris",
+    "date_of_birth": "1948-12-16",
+    "gender": "M",
+    "address": {
+      "street": "7723 Forest Dr",
+      "city": "Seattle",
+      "state": "WA",
+      "zip": "98183"
+    },
+    "phone": "(372) 244-2903"
+  },
+  "insurance": {
+    "payer_id": "MCR-001",
+    "payer_name": "Medicare Part B",
+    "plan": "Original Medicare",
+    "member_id": "8VQ3JTK9PQ2",
+    "group_id": "GRP-68246"
+  },
+  "diagnoses": [
+    {
+      "code": "N39.0",
+      "description": "Urinary tract infection, site not specified"
+    },
+    {
+      "code": "M79.7",
+      "description": "Fibromyalgia"
+    },
+    {
+      "code": "E66.9",
+      "description": "Obesity, unspecified"
+    }
+  ],
+  "service_lines": [
+    {
+      "line_number": 1,
+      "cpt_code": "20610",
+      "description": "Major joint injection",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 117.83,
+      "diagnosis_pointer": "1",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-06"
+    },
+    {
+      "line_number": 2,
+      "cpt_code": "99281",
+      "description": "ED visit, low",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 119.06,
+      "diagnosis_pointer": "2",
+      "place_of_service": "23",
+      "place_of_service_desc": "Emergency Room \u2014 Hospital",
+      "date_of_service": "2026-04-15"
+    },
+    {
+      "line_number": 3,
+      "cpt_code": "99204",
+      "description": "Office visit, new pt, high",
+      "modifiers": [],
+      "units": 1,
+      "charge_amount": 265.87,
+      "diagnosis_pointer": "3",
+      "place_of_service": "11",
+      "place_of_service_desc": "Office",
+      "date_of_service": "2026-04-01"
+    }
+  ],
+  "total_charge_amount": 502.76,
+  "currency": "USD",
+  "prior_auth_number": null
+}
