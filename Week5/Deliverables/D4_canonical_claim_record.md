@@ -179,7 +179,7 @@ On intake, the Intake Agent creates a `ClaimRecord` database row. The canonical 
 |---------------------------|-------------------|-------|
 | `claim_id` | `external_claim_id` | ClaimRecord generates its own `id` (UUID) as PK |
 | `member_id` | `member_id` | Direct map |
-| `provider_npi` | `provider_id` | ClaimRecord uses `provider_id` as the column name; value is the NPI |
+| `provider_npi` | `provider_npi` | Direct map |
 | `provider_specialty` | `provider_specialty` | Direct map |
 | `date_of_service` | `date_of_service` | Direct map |
 | `diagnosis_codes` | `diagnosis_codes` | Direct map |
@@ -190,22 +190,20 @@ On intake, the Intake Agent creates a `ClaimRecord` database row. The canonical 
 | `payer_id` | — | Not persisted in ClaimRecord; used only by WS1 eligibility and audit |
 | `group_id` | — | Not persisted in ClaimRecord; used only for eligibility lookup |
 | `place_of_service` | — | Not in current ClaimRecord; add if prior auth lookup requires it |
-| `source_format` | `submission_format` | ClaimRecord enum needs updating — see §7 |
+| `source_format` | `submission_format` | ClaimRecord stores as `submission_format`; 8-value enum applied — see §7 |
 | `source_file`, `intake_warnings` | — | Not persisted in ClaimRecord; Intake Agent logs these to AuditLogEntry |
 
 ---
 
-## §7. Required Updates to ClaimRecord (D4_preamble_capability_spec.md §2)
+## §7. ClaimRecord Updates Applied (D4_preamble_capability_spec.md §2)
 
-The `submission_format` enum in `ClaimRecord` currently reads:
+The `submission_format` enum in `ClaimRecord` was updated from the original 3-value coarse enum (`[EDI_837, PDF, PORTAL]`) to the full 8-value enum aligned with `NormalizedClaimInput.source_format`. The applied values (per `D4_preamble_capability_spec.md §2`) are:
 ```
-[EDI_837, PDF, PORTAL]
-```
-This is too coarse — it conflates EDI 837P and 837I, and collapses all PDF types into one. Replace with the 8-value enum from `NormalizedClaimInput.source_format`:
-```
-[EDI_837P, EDI_837I, PORTAL_FORM, FHIR_R4, CMS1500_OCR, EMAIL, FAX, EXCEPTION_NOTES]
+[EDI_837P, EDI_837I, PORTAL_FORM, FHIR_R4, CMS1500_PDF, EMAIL_EML, FAX_PDF, EXCEPTION_NOTES_PDF]
 ```
 This change is backward-compatible for WS1 (WS1 does not branch on `submission_format` — it uses the already-normalized fields). WS2 and the Queue & SLA Management Agent are also unaffected. The Queue agent does not route by format; SLA deadlines are format-agnostic.
+
+`ClaimRecord.provider_id` was also renamed to `provider_npi` in the preamble, aligning with the `NormalizedClaimInput` canonical field name.
 
 ---
 

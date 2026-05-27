@@ -93,7 +93,7 @@
 | ClinicalClassificationResult (call_site = VERIFICATION) | S-07 (linked to ClaimRecord.clinical_classification_id_ws2 — see §3) | `ClinicalClassificationResult` JSON object with `call_site = VERIFICATION`, `state = CLASSIFIED`, full classification output; calibration_record_id referencing WS2's CalibrationRecord | T-B-02 routing verification classification completes |
 | HITL routing verification escalation packet | S-09 HITL exception management system | `EscalationPacket` with `trigger_type = ROUTING_VERIFICATION_BELOW_THRESHOLD` or `ROUTING_VERIFICATION_CONFLICT`, `escalation_trigger_id = ET-B-01`, `trigger_signal_values = {ws1_classification, ws1_confidence, ws2_classification, ws2_confidence, threshold_applied}`, `routing_queue = ROUTING_REVIEW` | BP-WS2-1 fires: WS2 verification confidence < `CLINICAL_CONTENT_VERIFICATION_THRESHOLD`, OR WS2 returns `ADMIN` (conflicting with WS1's clinical routing) |
 | ClaimRecord state update | S-07 Claims management system | Write to `ClaimRecord` fields: `state`, `clinical_classification_id_ws2` (after T-B-02), `hitl_queue_type` (when entering HITL state), `updated_by`, `updated_at` | Every pipeline step producing a state transition: PENDING_PHYSICIAN_REVIEW → CLINICAL_PACKET_ASSEMBLY; CLINICAL_PACKET_ASSEMBLY → PHYSICIAN_REVIEWING; CLINICAL_PACKET_ASSEMBLY → PENDING_ADDITIONAL_INFO |
-| Additional information request draft | S-08 (delivered to physician for approval) then forwarded to provider portal S-12 | Structured draft with: `claim_id`, `missing_documentation_items` (array, from `completeness_flags`), `provider_id`, `provider_contact_details` (from S-07), draft request text (structured, not free-form) | T-B-09 executes on physician-triggered `PENDING_ADDITIONAL_INFO` transition; physician approves before dispatch to provider |
+| Additional information request draft | S-08 (delivered to physician for approval) then forwarded to provider portal S-12 | Structured draft with: `claim_id`, `missing_documentation_items` (array, from `completeness_flags`), `provider_npi`, `provider_contact_details` (from S-07), draft request text (structured, not free-form) | T-B-09 executes on physician-triggered `PENDING_ADDITIONAL_INFO` transition; physician approves before dispatch to provider |
 | AuditLogEntry | S-10 Audit log system | `AuditLogEntry` record (append-only); all required fields per shared entity definition and §13 schema (Pass 6) | Every T-B-10 execution: one record per routing verification result, per packet delivery, per state transition, per escalation trigger |
 
 ---
@@ -273,11 +273,11 @@ Naming conventions:
 | T-B-02 | Routing verification classification | Decision | Agent-led + HITL on condition | ClaimRecord: diagnosis_codes, procedure_codes, provider_specialty; CLINICAL_CONTENT_VERIFICATION_THRESHOLD; medical necessity criteria top-3 chunks (if S-15 available); signed CalibrationRecord (VERIFICATION call site); WS1 ClinicalClassificationResult (ROUTING) for reference | Sonnet 4.6; medical necessity criteria vector store (S-15) [SCOPE-OUT]; configuration management (S-16) | **High** |
 | T-B-03 | Prior authorisation history retrieval | Retrieval | Fully agentic | member_id, procedure_codes (CPT array), lookback period (default 12 months) | Prior auth system API read-only (S-04) | Medium |
 | T-B-04 | Member claims history retrieval | Retrieval | Fully agentic | member_id, diagnosis_code_range (ICD chapter from ClaimRecord.diagnosis_codes[0]), claims_history_lookback_days (default 365) | Claims history database read-only (S-14) | Low |
-| T-B-05 | Clinical notes retrieval (Wave 2) | Retrieval | Agent-led + HITL on condition | member_id, provider_id, date_of_service, episode diagnosis range | Clinical notes source system API (S-13) [SCOPE-OUT — Wave 2 only] | **High** |
+| T-B-05 | Clinical notes retrieval (Wave 2) | Retrieval | Agent-led + HITL on condition | member_id, provider_npi, date_of_service, episode diagnosis range | Clinical notes source system API (S-13) [SCOPE-OUT — Wave 2 only] | **High** |
 | T-B-06 | Medical necessity criteria retrieval | Retrieval | Fully agentic | procedure_codes[0] (procedure_code_range mapping), icd_chapter(diagnosis_codes[0]), minimum cosine similarity 0.75 | Medical necessity criteria vector store RAG (S-15) [SCOPE-OUT] | Medium |
 | T-B-07 | Packet completeness assessment and flagging | Decision | Fully agentic | Results of T-B-03 through T-B-06; list of expected context elements per claim type; SCOPE-OUT status of S-13 and S-15 | Internal completeness rule set; SCOPE-OUT status flags | Low |
 | T-B-08 | Pre-filled review packet assembly and delivery | Generation + Action | Agent-led + HITL on condition | All T-B-01 through T-B-07 outputs; PhysicianReviewPacket schema; ClaimRecord.sla_deadline | S-08 physician review queue interface (write); S-07 (state write) | **High** |
-| T-B-09 | Additional information request drafting | Generation | Agent-led + HITL on condition | completeness_flags array; provider_id (from ClaimRecord); provider contact details (from S-07); ClaimRecord.diagnosis_codes and procedure_codes | Haiku 4.5 (draft generation); S-08 (physician approval delivery); S-12 (provider portal dispatch after physician approval) | Medium |
+| T-B-09 | Additional information request drafting | Generation | Agent-led + HITL on condition | completeness_flags array; provider_npi (from ClaimRecord); provider contact details (from S-07); ClaimRecord.diagnosis_codes and procedure_codes | Haiku 4.5 (draft generation); S-08 (physician approval delivery); S-12 (provider portal dispatch after physician approval) | Medium |
 | T-B-10 | Audit record generation | Generation | Fully agentic | All pipeline step outputs; ClinicalClassificationResult (VERIFICATION); PhysicianReviewPacket delivery confirmation; timestamps; escalation reason if applicable; delegation_tier for each action | Audit log system append-only API (S-10) | Medium |
 | T-B-11 | Escalation packet assembly | Generation | Fully agentic | Pipeline step outputs to point of escalation; trigger type and trigger ID (ET-B-01 through ET-B-05); specific signal values that caused the trigger; required_resolution question | Escalation formatter; S-09 HITL exception management | Medium |
 
@@ -714,18 +714,18 @@ Input:
   - Physician action token from S-08: action ∈ {APPROVED, REJECTED,
     ADDITIONAL_INFO_REQUIRED}
   - completeness_flags array from PhysicianReviewPacket (identifies what was missing)
-  - ClaimRecord: provider_id (string), ClaimRecord.id
+  - ClaimRecord: provider_npi (string), ClaimRecord.id
   - Provider contact details: from S-07 provider record
   - Current timestamp; ClaimRecord.sla_deadline
 
 Logic:
   IF physician action = ADDITIONAL_INFO_REQUIRED:
     call Haiku 4.5 to draft additional information request:
-      inputs: {completeness_flags, claim_id, provider_id, diagnosis_codes,
+      inputs: {completeness_flags, claim_id, provider_npi, diagnosis_codes,
         procedure_codes, date_of_service, missing_item_descriptions
         (derived from completeness_flags mapping)}
       output: structured draft with: {missing_documentation_items (array),
-        provider_id, draft_request_text — factual and non-leading only,
+        provider_npi, draft_request_text — factual and non-leading only,
         must not pre-answer the clinical question}
     Deliver draft to S-08 for physician review and approval
     ClaimRecord.state → PENDING_ADDITIONAL_INFO
@@ -1465,7 +1465,7 @@ Every WS2 agent action produces an AuditLogEntry using the shared entity definit
     For PHYSICIAN_DETERMINATION_RECEIVED: {determination_type,
       physician_id (human_id), packet_id, elapsed_hours_since_delivery}
     For ADDITIONAL_INFO_REQUEST_DISPATCHED: {missing_documentation_items,
-      provider_id, draft_approved_by: physician_id}
+      provider_npi, draft_approved_by: physician_id}
     For INTEGRATION_DEGRADED: {system_id, error_type,
       completeness_flag_added}",
   "output_summary": "object — what changed:

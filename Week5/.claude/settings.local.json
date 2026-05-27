@@ -9,7 +9,9 @@
       "Bash(New-Item -ItemType File -Force \"C:\\\\Users\\\\Benoit_Charrier\\\\FDE Program\\\\FDE-Program\\\\Week4\\\\prototype\\\\escalations\\\\.gitkeep\")",
       "PowerShell(New-Item *)",
       "Bash(dir C:\\\\Users\\\\Benoit_Charrier\\\\FDE Program\\\\FDE-Program\\\\Week5\\\\Capstone-A-Claims-Pack *)",
-      "Bash(dir C:\\\\Users\\\\Benoit_Charrier\\\\FDE Program\\\\FDE-Program\\\\Week5 *)"
+      "Bash(dir C:\\\\Users\\\\Benoit_Charrier\\\\FDE Program\\\\FDE-Program\\\\Week5 *)",
+      "PowerShell(Copy-Item *)",
+      "PowerShell(Get-ChildItem \"C:\\\\Users\\\\Benoit_Charrier\\\\FDE Program\\\\FDE-Program\\\\Week5b\" -Recurse -File | Select-Object @{N=\"Path\";E={$_.FullName.Replace\\(\"C:\\\\Users\\\\Benoit_Charrier\\\\FDE Program\\\\FDE-Program\\\\Week5b\\\\\",\"\"\\)}} | Format-Table -AutoSize)"
     ]
   }
 }

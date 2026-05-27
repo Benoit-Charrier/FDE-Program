@@ -53,7 +53,7 @@ Attributes:
   mutable until state = ADMIN_VALIDATING, immutable thereafter
 - submission_format: enum [EDI_837P, EDI_837I, PORTAL_FORM, FHIR_R4, CMS1500_PDF, EMAIL_EML, FAX_PDF, EXCEPTION_NOTES_PDF], required, immutable after creation
 - member_id: string, max 32 characters, required, set on creation, immutable
-- provider_id: string, max 32 characters, required, set on creation, immutable
+- provider_npi: string, max 32 characters, required, set on creation, immutable
 - provider_specialty: string, max 128 characters, required, set on creation, immutable
 - date_of_service: ISO 8601 date (not timestamp), required, immutable
 - diagnosis_codes: array of strings (ICD-10 format: letter + 2–7 alphanumeric characters),
@@ -469,7 +469,8 @@ Naming conventions:
 
 | Data | Consumer agent | Source system | Granularity | Latency requirement |
 |------|---------------|---------------|-------------|---------------------|
-| Inbound claim submission (EDI 837, PDF, portal) | WS1 (T-01) | Clearinghouse or provider portal [Assumption A-P1-1: intake mechanism not named in scenario; Medium confidence — standard payer architecture] | Individual claim record | On-demand at submission receipt |
+| Inbound claim submission (EDI 837P, EDI 837I, Portal JSON, FHIR R4, CMS-1500 PDF, Email .eml, Fax PDF, Exception Notes PDF — all 8 intake formats) | INT Intake Agent | Clearinghouse or provider portal [Assumption A-P1-1: intake mechanism not named in scenario; Medium confidence — standard payer architecture] | Individual claim record | On-demand at submission receipt |
+| `NormalizedClaimInput` record (canonical normalized claim; all required fields validated by INT) | WS1 (T-01) | INT Intake Agent output queue | Individual normalized claim record | On-demand queue pickup after INT processing completes |
 | Member eligibility record | WS1 (T-02, T-03) | Member eligibility system [Assumption A-P1-2: system not named in scenario; High confidence — payer operations require one] | Member ID + plan ID + date-of-service tuple | Real-time lookup — response required before T-03 can branch (P95 ≤ 5 seconds) |
 | ICD-10 / CPT code validity reference | WS1 (T-04) | Code validation table or licensed API [Assumption A-P1-3: assumed structured; High confidence] | Individual code lookup | Batch-loaded — updated on code set publication cycle (annually at minimum) |
 | Coding plausibility reference | WS1 (T-05) | Code pairing rules table [Assumption A-P1-3] | Procedure-diagnosis-specialty combination | Batch-loaded |
@@ -532,7 +533,7 @@ Naming conventions:
 | Clinical content routing classification begins | WS1 T-08 | Medical necessity criteria: sections relevant to the primary procedure code range and ICD chapter (top-3 chunks; filtered by procedure_code_range and icd_chapter metadata tags; similarity threshold ≥ 0.75) | Classifier accuracy on borderline claims improves with criteria text in-context; without it, the classifier reasons from codes alone — replicating the inconsistency that produces the 41% overturn rate (D3 §1 AI-native moment) |
 | WS2 routing verification begins | WS2 JtD-1 | ClinicalClassificationResult for this claim (ROUTING call site) — structured lookup by claim_id; plus medical necessity criteria section for this procedure type (same retrieval as T-08, from VERIFICATION call site) | Verification compares the WS2 call result against the WS1 routing result; inconsistency between the two calls is the primary BP-WS2-1 signal |
 | WS2 context assembly: criteria section for review packet | WS2 JtD-2 | Medical necessity criteria: exact section applicable to this procedure-diagnosis combination; retrieved by exact section ID if available from prior classification call on this claim; otherwise top-3 by similarity | The pre-filled review packet must include the specific criteria the physician will apply; an incorrect criteria section is a packet quality failure and a compliance risk |
-| Contract exception check triggers during payment calculation | WS1 T-10 | Contract exception rule: exact record match by (provider_id, payer_id, procedure_code_range) — structured lookup, not vector retrieval | Contract exceptions are point-specific; a top-K similarity retrieval risks surfacing an adjacent clause that does not apply to this claim |
+| Contract exception check triggers during payment calculation | WS1 T-10 | Contract exception rule: exact record match by (provider_npi, payer_id, procedure_code_range) — structured lookup, not vector retrieval | Contract exceptions are point-specific; a top-K similarity retrieval risks surfacing an adjacent clause that does not apply to this claim |
 
 **Retrieval target:**
 - Code validity and fee schedule: structured API lookup — no vector retrieval

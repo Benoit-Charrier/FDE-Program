@@ -17,6 +17,16 @@ pytest tests/ -v                  # confirm all 5 tests passing before the demo
 
 Expected output: `5 passed` with no failures or warnings.
 
+**API key (required for Path 1 and Path 2 — live classifier calls):**
+
+```powershell
+$env:ANTHROPIC_API_KEY = "sk-ant-..."
+```
+
+Set this once in your terminal session before running any `run_claim.py` command. The key is read from the environment by the clinical classifier (`tools/clinical_classifier.py`). If it is missing you will get: `Could not resolve authentication method. Expected either api_key or auth_token to be set.`
+
+Path 3 and the corpus validation pass (`run_batch.py` without `--live`) do not call the API — they use the mock classifier and will run without the key.
+
 ---
 
 ## Path 1 — Happy path (S-1): clean administrative claim → approved
@@ -63,18 +73,19 @@ python run_claim.py --fixture CLAIM-UNCERTAIN-01
 **What this shows:** FM-A-5 is a hard stop: T-09 (payment calculation) checks `state == ADMIN_CLEARED` as its first operation. If state was corrupted — by a concurrent request, a race condition, or a future spec addition that adds a transition — the agent aborts and fires ET-07 with `trigger_type: GOVERNANCE_VIOLATION`. `payment_amount` is never written.
 
 ```bash
-pytest tests/test_ws1_pipeline.py::test_governance_hard_stop -v
+python run_governance_demo.py
 ```
 
 **What to say:**  
-"The governance hard stop can't be shown via `run_claim.py` because it requires simulating state corruption — the test patches `ClaimContext.transition` to corrupt state to `ROUTING` immediately after `ADMIN_CLEARED` is set, which is the scenario where T-09 is somehow reached out of sequence. The test confirms three invariants: ET-07 fires with `trigger_type: GOVERNANCE_VIOLATION`, `payment_amount` is absent from the output, and the incoming state is preserved — not overwritten to `PENDING_HITL_EXCEPTION` — so the exception processor gets the diagnostic signal it needs."
+"This is the same claim as Path 1 — CLAIM-ADMIN-01, which would normally be approved. The demo script patches the state machine to corrupt state to `ROUTING` immediately after `ADMIN_CLEARED` is set, simulating a race condition or a future spec addition that adds an unexpected transition. T-09's first operation is the FM-A-5 pre-condition check: `state == ADMIN_CLEARED`. It fails. ET-07 fires immediately — `trigger_type: GOVERNANCE_VIOLATION`, routed to `EXCEPTION_PROCESSOR`. `payment_amount` is absent. The incoming state `ROUTING` is preserved in `claim_state_at_escalation` — not overwritten — so the exception processor gets the diagnostic signal it needs to investigate."
 
-**Key assertions the test checks:**
-- `escalation_trigger_id == "ET-07"`
-- `trigger_type == "GOVERNANCE_VIOLATION"`
-- `status == "escalated"`
-- `payment_amount` absent
-- `claim_state_at_escalation != "PENDING_HITL_EXCEPTION"` (incoming state preserved)
+**Key fields to point out in the output:**
+- `"status": "escalated"`
+- `"escalation_trigger_id": "ET-07"`
+- `"trigger_type": "GOVERNANCE_VIOLATION"`
+- `"payment_amount"` — absent (the hard stop worked)
+- `"claim_state_at_escalation": "ROUTING"` — incoming state preserved, not overwritten
+- `"trigger_signal_values"` — names `actual_state` vs `expected_state` for the exception processor
 
 ---
 
