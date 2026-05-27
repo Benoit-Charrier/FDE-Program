@@ -1,0 +1,25 @@
+{
+  "claim_id": "CLM-2026-1000023",
+  "member_id": "0QV9HXV2TX9",
+  "provider_npi": "UNKNOWN_NPI",
+  "provider_specialty": "Physician (DO)",
+  "date_of_service": "2026-04-20",
+  "diagnosis_codes": [
+    "E119"
+  ],
+  "procedure_codes": [
+    "83036",
+    "83036"
+  ],
+  "procedure_quantities": [
+    2,
+    1
+  ],
+  "billed_amount": 58.8,
+  "payer_id": "MCR-001",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000023.edi",
+  "intake_warnings": [
+    "provider_npi_empty_segment"
+  ]
+}

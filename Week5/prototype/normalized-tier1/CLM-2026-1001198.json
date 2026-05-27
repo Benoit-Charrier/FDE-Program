@@ -1,0 +1,32 @@
+{
+  "claim_id": "CLM-2026-1001198",
+  "member_id": "283648849-01",
+  "provider_npi": "8946738791",
+  "provider_specialty": "Hospital/Institutional",
+  "date_of_service": "2026-03-31",
+  "diagnosis_codes": [
+    "M797",
+    "M545",
+    "R5383",
+    "R109"
+  ],
+  "procedure_codes": [
+    "83036",
+    "90686",
+    "83036",
+    "99203",
+    "90471"
+  ],
+  "procedure_quantities": [
+    3,
+    1,
+    2,
+    3,
+    1
+  ],
+  "billed_amount": 1076.25,
+  "payer_id": "UHC-002",
+  "source_format": "EDI_837I",
+  "source_file": "CLM-2026-1001198.edi",
+  "intake_warnings": []
+}

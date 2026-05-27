@@ -1,0 +1,26 @@
+{
+  "claim_id": "CLM-2026-1001265",
+  "member_id": "XOJ691951272",
+  "provider_npi": "8225004797",
+  "provider_specialty": "Pediatrics",
+  "date_of_service": "2026-04-05",
+  "diagnosis_codes": [
+    "J02.9"
+  ],
+  "procedure_codes": [
+    "99205",
+    "72148",
+    "97110"
+  ],
+  "procedure_quantities": [
+    1,
+    2,
+    2
+  ],
+  "billed_amount": 1197.34,
+  "payer_id": "BCBS-IL",
+  "group_id": "GRP-98637",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001265.json",
+  "intake_warnings": []
+}

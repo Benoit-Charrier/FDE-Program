@@ -1,0 +1,24 @@
+{
+  "claim_id": "CLM-2026-1000724",
+  "member_id": "642087309-06",
+  "provider_npi": "1650434047",
+  "provider_specialty": "Advanced Practice Provider (PA)",
+  "date_of_service": "2026-03-30",
+  "diagnosis_codes": [
+    "R109",
+    "E119"
+  ],
+  "procedure_codes": [
+    "20610",
+    "71046"
+  ],
+  "procedure_quantities": [
+    1,
+    1
+  ],
+  "billed_amount": 194.05,
+  "payer_id": "UHC-001",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000724.edi",
+  "intake_warnings": []
+}

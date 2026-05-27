@@ -1,0 +1,24 @@
+{
+  "claim_id": "CLM-2026-1000403",
+  "member_id": "H45155485",
+  "provider_npi": "2510068451",
+  "provider_specialty": "Physician",
+  "date_of_service": "2026-04-13",
+  "diagnosis_codes": [
+    "L309",
+    "G4733"
+  ],
+  "procedure_codes": [
+    "99204",
+    "99422"
+  ],
+  "procedure_quantities": [
+    1,
+    1
+  ],
+  "billed_amount": 319.34,
+  "payer_id": "HUM-001",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000403.edi",
+  "intake_warnings": []
+}

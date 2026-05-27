@@ -1,0 +1,27 @@
+{
+  "claim_id": "CLM-2026-1001318",
+  "member_id": "592117854",
+  "provider_npi": "6671021946",
+  "provider_specialty": "Multi-specialty Clinic",
+  "date_of_service": "2026-04-02",
+  "diagnosis_codes": [
+    "E11.9",
+    "R51.9"
+  ],
+  "procedure_codes": [
+    "90686",
+    "99281",
+    "99205"
+  ],
+  "procedure_quantities": [
+    2,
+    1,
+    1
+  ],
+  "billed_amount": 473.62,
+  "payer_id": "BCBS-IL",
+  "group_id": "GRP-40828",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001318.json",
+  "intake_warnings": []
+}

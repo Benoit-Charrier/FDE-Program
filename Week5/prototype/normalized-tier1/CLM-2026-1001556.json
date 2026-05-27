@@ -1,0 +1,24 @@
+{
+  "claim_id": "CLM-2026-1001556",
+  "member_id": "402900705",
+  "provider_npi": "5342739025",
+  "provider_specialty": "Physical Therapy",
+  "date_of_service": "2026-04-24",
+  "diagnosis_codes": [
+    "Z00.00",
+    "M79.7",
+    "I10"
+  ],
+  "procedure_codes": [
+    "99285"
+  ],
+  "procedure_quantities": [
+    1
+  ],
+  "billed_amount": 415.61,
+  "payer_id": "MCD-IL",
+  "group_id": "GRP-30781",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001556.json",
+  "intake_warnings": []
+}

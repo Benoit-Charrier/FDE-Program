@@ -1,0 +1,30 @@
+{
+  "claim_id": "CLM-2026-1001218",
+  "member_id": "20-987237",
+  "provider_npi": "4822848219",
+  "provider_specialty": "Family Medicine",
+  "date_of_service": "2026-03-28",
+  "diagnosis_codes": [
+    "H66.90",
+    "E11.9",
+    "I10"
+  ],
+  "procedure_codes": [
+    "99422",
+    "90686",
+    "99205",
+    "99203"
+  ],
+  "procedure_quantities": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "billed_amount": 554.28,
+  "payer_id": "UHC-001",
+  "group_id": "GRP-66762",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001218.json",
+  "intake_warnings": []
+}

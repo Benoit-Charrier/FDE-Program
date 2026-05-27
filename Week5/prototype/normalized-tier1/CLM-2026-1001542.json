@@ -1,0 +1,23 @@
+{
+  "claim_id": "CLM-2026-1001542",
+  "member_id": "U15241325",
+  "provider_npi": "8383815523",
+  "provider_specialty": "Physical Therapy",
+  "date_of_service": "2026-04-15",
+  "diagnosis_codes": [
+    "J06.9",
+    "E11.9"
+  ],
+  "procedure_codes": [
+    "99422"
+  ],
+  "procedure_quantities": [
+    1
+  ],
+  "billed_amount": 43.87,
+  "payer_id": "CIG-001",
+  "group_id": "GRP-74714",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001542.json",
+  "intake_warnings": []
+}

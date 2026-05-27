@@ -1,0 +1,26 @@
+{
+  "claim_id": "CLM-2026-1001353",
+  "member_id": "H60304782",
+  "provider_npi": "4394954918",
+  "provider_specialty": "Cardiology",
+  "date_of_service": "2026-04-24",
+  "diagnosis_codes": [
+    "K21.9",
+    "E66.9",
+    "R10.9"
+  ],
+  "procedure_codes": [
+    "70551",
+    "99422"
+  ],
+  "procedure_quantities": [
+    1,
+    1
+  ],
+  "billed_amount": 415.13,
+  "payer_id": "HUM-001",
+  "group_id": "GRP-38981",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001353.json",
+  "intake_warnings": []
+}

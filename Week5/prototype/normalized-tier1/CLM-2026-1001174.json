@@ -1,0 +1,33 @@
+{
+  "claim_id": "CLM-2026-1001174",
+  "member_id": "441571048",
+  "provider_npi": "4693669384",
+  "provider_specialty": "Hospital/Institutional",
+  "date_of_service": "2026-04-10",
+  "diagnosis_codes": [
+    "M25562",
+    "Z23",
+    "F411"
+  ],
+  "procedure_codes": [
+    "80061",
+    "71046",
+    "44970",
+    "99395",
+    "20610",
+    "80061"
+  ],
+  "procedure_quantities": [
+    1,
+    2,
+    3,
+    2,
+    1,
+    3
+  ],
+  "billed_amount": 7216.99,
+  "payer_id": "MCD-IL",
+  "source_format": "EDI_837I",
+  "source_file": "CLM-2026-1001174.edi",
+  "intake_warnings": []
+}

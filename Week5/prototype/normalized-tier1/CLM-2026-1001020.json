@@ -1,0 +1,30 @@
+{
+  "claim_id": "CLM-2026-1001020",
+  "member_id": "907990941-01",
+  "provider_npi": "4360083183",
+  "provider_specialty": "Hospital/Institutional",
+  "date_of_service": "2026-04-12",
+  "diagnosis_codes": [
+    "F411",
+    "L309"
+  ],
+  "procedure_codes": [
+    "70551",
+    "99204",
+    "99422",
+    "64483",
+    "64483"
+  ],
+  "procedure_quantities": [
+    1,
+    2,
+    3,
+    1,
+    2
+  ],
+  "billed_amount": 2806.17,
+  "payer_id": "UHC-002",
+  "source_format": "EDI_837I",
+  "source_file": "CLM-2026-1001020.edi",
+  "intake_warnings": []
+}

@@ -1,0 +1,24 @@
+{
+  "claim_id": "CLM-2026-1001516",
+  "member_id": "550913508-03",
+  "provider_npi": "6188737820",
+  "provider_specialty": "Chiropractic",
+  "date_of_service": "2026-04-03",
+  "diagnosis_codes": [
+    "Z00.00",
+    "R10.9",
+    "M25.562"
+  ],
+  "procedure_codes": [
+    "99281"
+  ],
+  "procedure_quantities": [
+    1
+  ],
+  "billed_amount": 117.72,
+  "payer_id": "UHC-002",
+  "group_id": "GRP-27182",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001516.json",
+  "intake_warnings": []
+}

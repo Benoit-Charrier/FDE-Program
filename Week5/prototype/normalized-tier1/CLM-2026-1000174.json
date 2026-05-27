@@ -1,0 +1,21 @@
+{
+  "claim_id": "CLM-2026-1000174",
+  "member_id": "W288570179",
+  "provider_npi": "5599279196",
+  "provider_specialty": "Cardiologist",
+  "date_of_service": "2026-04-18",
+  "diagnosis_codes": [
+    "L989"
+  ],
+  "procedure_codes": [
+    "20610"
+  ],
+  "procedure_quantities": [
+    2
+  ],
+  "billed_amount": 279.68,
+  "payer_id": "AET-001",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000174.edi",
+  "intake_warnings": []
+}

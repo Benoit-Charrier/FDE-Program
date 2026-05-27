@@ -1,0 +1,22 @@
+{
+  "claim_id": "CLM-2026-1000079",
+  "member_id": "4YR3ANX9AH6",
+  "provider_npi": "8754483920",
+  "provider_specialty": "Advanced Practice Provider (NP)",
+  "date_of_service": "2026-04-15",
+  "diagnosis_codes": [
+    "Z0000",
+    "E669"
+  ],
+  "procedure_codes": [
+    "83036"
+  ],
+  "procedure_quantities": [
+    2
+  ],
+  "billed_amount": 33.42,
+  "payer_id": "MCR-001",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000079.edi",
+  "intake_warnings": []
+}

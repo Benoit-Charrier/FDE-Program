@@ -571,7 +571,7 @@ Graceful degrade is not acceptable at startup. Operating without a valid, CMO-si
 
 ### §1. Integration Purpose
 
-S-01 is the submission gateway through which treating providers and submitting entities deliver claim packets to Greenfield. The intake normalisation pipeline (Intake & Anomaly Agent, D3 §2 Agent 1) receives from S-01, normalises to canonical ClaimRecord format, and writes NORMALISED-state records to S-07. WS1 T-01 picks up from S-07 — it does not call S-01 directly.
+S-01 is the submission gateway through which treating providers and submitting entities deliver claim packets to Greenfield. The intake normalisation pipeline (Intake & Anomaly Agent, D3 §2 Agent 1) receives from S-01, normalises to canonical `NormalizedClaimInput` format (authoritative field schema in `D4_canonical_claim_record.md`), and writes NORMALISED-state records to S-07. WS1 T-01 picks up from S-07 — it does not call S-01 directly.
 
 This contract specifies: the intake mechanism S-01 must expose, the event/poll interface the intake pipeline consumes, and the ClaimRecord fields that must be populated when a NORMALISED record lands in S-07.
 
@@ -581,7 +581,7 @@ This contract specifies: the intake mechanism S-01 must expose, the event/poll i
 
 - **Assumed system name:** Greenfield Clearinghouse Partner (DISCOVERY_REQUIRED — likely an existing EDI clearinghouse partner such as a standard payer clearinghouse; the function is commodity infrastructure)
 - **Base URL:** DISCOVERY_REQUIRED (`https://clearinghouse.greenfield-partner.example/api/v1` as placeholder)
-- **Supported submission formats:** EDI 837P (professional), EDI 837I (institutional), PDF (supporting documentation), structured portal form (provider portal web submission)
+- **Supported submission formats:** Eight formats confirmed in Claims Pack mock data — EDI 837P (professional, 50%), EDI 837I (institutional, 10%), provider portal JSON (20%), FHIR R4 Claim resource (5%), CMS-1500 paper PDF (10%), email .eml (1.5%), fax cover sheet PDF (1.5%), exception notes PDF (2%). **Note:** 85% of volume is machine-readable electronic format; 15% requires OCR or LLM extraction and carries higher per-claim intake cost.
 - **Operations consumed by intake pipeline:** Claim submission event notification (push) OR claim staging table query (poll) — G-1 determines which path; both must be specified here
 
 ### §3. Authentication and Authorisation
@@ -602,7 +602,7 @@ POST /intake/claim-received
 Content-Type: application/json
 {
   "submission_id":      "string — clearinghouse internal ID for this submission batch",
-  "submission_format":  "enum [EDI_837P, EDI_837I, PDF, PORTAL_FORM]",
+  "submission_format":  "enum [EDI_837P, EDI_837I, PORTAL_FORM, FHIR_R4, CMS1500_PDF, EMAIL_EML, FAX_PDF, EXCEPTION_NOTES_PDF]",
   "provider_npi":       "string — 10-digit NPI of submitting provider",
   "submitted_at":       "ISO 8601 UTC timestamp",
   "claim_count":        "integer — number of claims in this submission batch",
@@ -648,13 +648,13 @@ Response (200 OK):
 | `state` | Set to `NORMALISED` by intake pipeline | Yes |
 | `external_claim_id` | `submission_id` from clearinghouse | Yes |
 | `member_id` | Extracted from EDI 837 / portal form | Yes |
-| `provider_id` | `provider_npi` (10-digit NPI format) | Yes |
+| `provider_npi` | 10-digit NPI format | Yes |
 | `date_of_service` | Extracted from claim | Yes (ISO 8601 date) |
 | `procedure_codes` | CPT codes from claim | Yes (≥ 1, 5-digit CPT format) |
 | `diagnosis_codes` | ICD-10 codes from claim | Yes (≥ 1, ICD-10 format) |
-| `submission_format` | `EDI_837P` / `EDI_837I` / `PDF` / `PORTAL_FORM` | Yes |
+| `submission_format` | `EDI_837P` / `EDI_837I` / `PORTAL_FORM` / `FHIR_R4` / `CMS1500_PDF` / `EMAIL_EML` / `FAX_PDF` / `EXCEPTION_NOTES_PDF` | Yes |
 | `created_at` | Set by intake pipeline at normalisation | Yes |
-| `plan_id` | Derived from member eligibility lookup during normalisation | Yes |
+| `payer_id` | Derived from member eligibility lookup during normalisation | Yes |
 
 **Status codes (polling path):**
 
@@ -696,7 +696,7 @@ HTTP 200
 }
 ```
 
-After normalisation, S-07 ClaimRecord written with `state = NORMALISED`, `external_claim_id = "CLH-2025-0315-00421"`, `provider_id = "1234567890"`. WS1 T-01 picks up on next S-07 poll.
+After normalisation, S-07 ClaimRecord written with `state = NORMALISED`, `external_claim_id = "CLH-2025-0315-00421"`, `provider_npi = "1234567890"`. WS1 T-01 picks up on next S-07 poll.
 
 ### §5. Error Handling and Retry Logic
 
@@ -718,9 +718,11 @@ After normalisation, S-07 ClaimRecord written with `state = NORMALISED`, `extern
 | Clearinghouse field | Internal ClaimRecord field | Direction | Notes |
 |--------------------|--------------------------|-----------|-------|
 | `submission_id` | `external_claim_id` | S-01 → Agent | Clearinghouse's reference ID for this submission |
-| `provider_npi` | `provider_id` | S-01 → Agent | 10-digit NPI format |
+| `provider_npi` | `provider_npi` | S-01 → Agent | 10-digit NPI format |
 | `submitted_at` | `created_at` | S-01 → Agent | Submission timestamp; used for SLA clock start |
-| `submission_format` | `submission_format` | S-01 → Agent | Enum: `EDI_837P` / `EDI_837I` / `PDF` / `PORTAL_FORM` |
+| `submission_format` | `submission_format` | S-01 → Agent | Enum: `EDI_837P` / `EDI_837I` / `PORTAL_FORM` / `FHIR_R4` / `CMS1500_PDF` / `EMAIL_EML` / `FAX_PDF` / `EXCEPTION_NOTES_PDF` |
+| `X-Submitter-NPI` (email only) | `provider_npi` | S-01 → Agent | Custom RFC 5322 header on `.eml` submissions — 10-digit NPI; extracted by Intake Agent before normalisation |
+| `X-Submitter-TaxID` (email only) | *(provider tax ID — supplementary)* | S-01 → Agent | Custom RFC 5322 header on `.eml` submissions; DISCOVERY_REQUIRED whether this maps to a ClaimRecord field |
 | `member_id` (from 837 loop) | `member_id` | S-01 → Agent | Extracted by Intake Agent from EDI 837 Loop 2010BA |
 | `date_of_service` (from 837) | `date_of_service` | S-01 → Agent | EDI 837 DTP*472 segment; ISO 8601 date after normalisation |
 | `procedure_codes` (SV1/SV2) | `procedure_codes` | S-01 → Agent | CPT 5-digit format; array |
@@ -732,7 +734,7 @@ No writes from agent or intake pipeline back to S-01 after intake acknowledgemen
 
 - **Pattern:** Event push (Path A) or polling at configurable interval (Path B)
 - **WS1 perspective:** WS1 polls S-07 for `state = NORMALISED` records; it has no direct state sync with S-01
-- **Deduplication:** Intake pipeline checks S-07 for existing records with matching `(external_claim_id, member_id, date_of_service, provider_id)` before writing; duplicates trigger `PENDING_HITL_EXCEPTION` per T-01 duplicate detection logic
+- **Deduplication:** Intake pipeline checks S-07 for existing records with matching `(external_claim_id, member_id, date_of_service, provider_npi)` before writing; duplicates trigger `PENDING_HITL_EXCEPTION` per T-01 duplicate detection logic
 
 ### §9. Failure Modes and Fallbacks
 
@@ -740,7 +742,9 @@ No writes from agent or intake pipeline back to S-01 after intake acknowledgemen
 |---------|---------|
 | Clearinghouse down | Graceful degrade — WS1 continues processing existing NORMALISED records in S-07; no new claims enter the pipeline until clearinghouse recovers; no data loss (clearinghouse holds undelivered submissions) |
 | Push notification missed (Path A) | Fallback to polling (Path B) as secondary intake mechanism; both paths must be implemented regardless of which is primary |
-| Malformed EDI payload | Intake Agent routes to PARSE_FAILED; exception processor handles; WS1 not involved |
+| Malformed EDI payload | Intake Agent routes to `PARSE_FAILED`; exception processor handles; WS1 not involved |
+| Email/fax/exception-notes extraction failure | LLM extraction returns incomplete required fields — Intake Agent routes to `PARSE_FAILED` with `extraction_confidence` score attached; exception processor reviews; WS1 never sees `PARSE_FAILED` records. Higher expected rate than EDI failures: email (~5%), fax (~10%), exception notes (~15%) extraction failure rate assumed. |
+| CMS-1500 OCR failure | If live OCR is run (rather than using pre-extracted `cms1500-ocr/` text from clearinghouse): incomplete field extraction routes claim to `PARSE_FAILED`. Pre-extracted text path: only `PARSE_FAILED` if extracted text is too truncated for required field recovery. |
 | Rate limit exceeded | Reduce poll frequency; queue notifications locally; ops alert |
 
 ### §10. Pre-deployment Checklist
@@ -912,7 +916,7 @@ HTTP 202
 |------------------------------|-------------------|-----------|-------|
 | `id` | `claim_id` | Agent → System | WS1 internal ID |
 | `external_claim_id` | `external_claim_id` | Agent → System | Provider's reference for reconciliation |
-| `provider_id` | `provider_npi` | Agent → System | 10-digit NPI |
+| `provider_npi` | `provider_npi` | Agent → System | 10-digit NPI |
 | `member_id` | `member_id` | Agent → System | |
 | `date_of_service` | `date_of_service` | Agent → System | |
 | `rejection_codes` (from T-10/T-12) | `rejection_codes` | Agent → System | X12 CARC codes; array; min 1 |
@@ -1094,7 +1098,7 @@ Result: T-03 checks `last_verified_at` — 3 days ago (> 24h lag threshold). Dat
 | Internal ClaimRecord field | External API parameter/response field | Direction | Notes |
 |---------------------------|--------------------------------------|-----------|-------|
 | `member_id` | `{member_id}` (path) | Agent → System | |
-| `plan_id` | `plan_id` (query param) | Agent → System | |
+| `payer_id` | `plan_id` (query param) | Agent → System | |
 | `date_of_service` | `date_of_service` (query param) | Agent → System | ISO 8601 date |
 | *(T-02 result)* | `eligibility_status` | System → Agent | Stored in AuditLogEntry.input_summary; not persisted to ClaimRecord |
 | *(T-02 result)* | `coverage_start_date`, `coverage_end_date` | System → Agent | Used in T-03 lag analysis; not persisted to ClaimRecord |
@@ -1414,7 +1418,7 @@ HTTP 404
 }
 ```
 
-T-09 escalates ET-06: `escalation_reason = CONTRACT_EXCEPTION`, `trigger_signal_values = {error_code: "RATE_NOT_FOUND", provider_id: "9988776655", procedure_code: "93306", plan_id: "GHS-PLAN-SILVER-2025"}`.
+T-09 escalates ET-06: `escalation_reason = CONTRACT_EXCEPTION`, `trigger_signal_values = {error_code: "RATE_NOT_FOUND", provider_npi: "9988776655", procedure_code: "93306", payer_id: "GHS-PLAN-SILVER-2025"}`.
 
 ### §5. Error Handling and Retry Logic
 
@@ -1437,9 +1441,9 @@ T-09 escalates ET-06: `escalation_reason = CONTRACT_EXCEPTION`, `trigger_signal_
 
 | Internal field | External API field | Direction | Notes |
 |----------------|-------------------|-----------|-------|
-| `ClaimRecord.provider_id` | `provider_id` (query param) | Agent → System | 10-digit NPI |
+| `ClaimRecord.provider_npi` | `provider_id` (query param) | Agent → System | 10-digit NPI |
 | `ClaimRecord.procedure_codes[0]` | `procedure_code` (query param) | Agent → System | Primary procedure code; multi-procedure support DISCOVERY_REQUIRED |
-| `ClaimRecord.plan_id` | `plan_id` (query param) | Agent → System | |
+| `ClaimRecord.payer_id` | `plan_id` (query param) | Agent → System | |
 | `ClaimRecord.date_of_service` | `date_of_service` (query param) | Agent → System | |
 | `ClaimRecord.modifier_codes` | `modifier_codes` (query param) | Agent → System | Comma-separated; empty string if none |
 | `payment_amount` | `payer_responsibility` | System → Agent | Written to ClaimRecord and S-11 payment instruction |
@@ -1879,7 +1883,7 @@ Optional:
 - `borderline_confidence_flag`: boolean (ET-02 only)
 
 **`escalation_reason` enum (exhaustive):**
-`ELIGIBILITY_DISCREPANCY`, `PRIOR_AUTH_MISMATCH`, `PRIOR_AUTH_NOT_FOUND`, `CODING_IMPLAUSIBILITY`, `CONTRACT_EXCEPTION`, `CONTRACT_EXCEPTION_LOOKUP_UNAVAILABLE`, `AUDIT_LOG_FAILURE`, `ROUTING_VERIFICATION_CONFLICT`, `PACKET_DELIVERY_FAILURE`, `SLA_BREACH_REESCALATION`
+`ELIGIBILITY_DISCREPANCY`, `PRIOR_AUTH_MISMATCH`, `PRIOR_AUTH_NOT_FOUND`, `CODING_IMPLAUSIBILITY`, `CONTRACT_EXCEPTION`, `CONTRACT_EXCEPTION_LOOKUP_UNAVAILABLE`, `AUDIT_LOG_FAILURE`, `GOVERNANCE_VIOLATION`, `ROUTING_VERIFICATION_CONFLICT`, `PACKET_DELIVERY_FAILURE`, `SLA_BREACH_REESCALATION`
 
 **`required_resolution` enum (per escalation trigger — constrained, not free-text):**
 
@@ -1889,7 +1893,8 @@ Optional:
 | ET-04 (prior auth) | `PRIOR_AUTH_CONFIRMED` \| `PRIOR_AUTH_DENIED` \| `RETURN_TO_SUBMITTER` |
 | ET-05 (coding) | `CODING_CONFIRMED_PLAUSIBLE` \| `CODING_CONFIRMED_IMPLAUSIBLE` \| `RETURN_TO_SUBMITTER` |
 | ET-06 (contract) | `EXCEPTION_RESOLVED` \| `CLAIM_REJECTED` \| `RETURN_TO_SUBMITTER` |
-| ET-07 (audit) | `AUDIT_RECORD_CORRECTED` \| `CLAIM_VOIDED` |
+| ET-07 (audit write failure — `trigger_type = AUDIT_FAILURE`) | `RECONSTRUCT_AND_CONTINUE` \| `REJECT_CLAIM` \| `ESCALATE_TO_COMPLIANCE` |
+| ET-07 (governance hard-stop — `trigger_type = GOVERNANCE_VIOLATION`) | `INVESTIGATE_STATE_MACHINE` \| `REJECT_CLAIM` \| `ESCALATE_TO_COMPLIANCE` |
 | ET-B-01 (routing conflict) | `ROUTING_CONFIRMED_ADMIN` \| `ROUTING_CONFIRMED_CLINICAL` |
 
 Free-text resolutions are not accepted. If the system returns a resolution_decision not in the permitted enum for the escalation trigger, the agent logs a defect and escalates to ops.
@@ -2083,11 +2088,11 @@ Required fields:
 | `instruction_id` | UUID | Generated by agent; idempotency key |
 | `claim_id` | UUID | ClaimRecord.id |
 | `external_claim_id` | string | Clearinghouse reference for reconciliation |
-| `provider_id` | string | 10-digit NPI of payee |
+| `provider_npi` | string | 10-digit NPI of payee |
 | `payment_amount` | decimal | USD; 2 decimal places; > 0.00; sourced from S-05 `payer_responsibility` |
 | `procedure_codes` | array of strings | CPT codes from claim; for remittance advice |
 | `date_of_service` | ISO 8601 date | |
-| `plan_id` | string | For S-11 routing to correct payment account |
+| `payer_id` | string | For S-11 routing to correct payment account |
 | `remittance_codes` | array of strings | X12 Claim Adjustment Reason Codes for remittance advice |
 | `approval_token_id` | UUID | The AuditLogEntry.id for the `PAYMENT_APPROVED` action in S-10 — S-11 can verify the audit trail independently |
 | `audit_log_entry_id` | UUID | Same as `approval_token_id`; redundant for explicitness; the S-10 entry must exist before this write |
@@ -2123,11 +2128,11 @@ POST /payment-instructions
   "instruction_id": "pi-c3d4e5f6-7a8b-9c0d-1e2f-3a4b5c6d7e8f",
   "claim_id": "b9e2a1f4-3c7d-4e8b-a021-6f5c4d3e2f1a",
   "external_claim_id": "CLH-2025-0315-00421",
-  "provider_id": "1234567890",
+  "provider_npi": "1234567890",
   "payment_amount": 148.00,
   "procedure_codes": ["99213"],
   "date_of_service": "2025-03-10",
-  "plan_id": "GHS-PLAN-GOLD-2025",
+  "payer_id": "GHS-PLAN-GOLD-2025",
   "remittance_codes": ["PR-2"],
   "approval_token_id": "a3f7c2d1-8b4e-4f9a-bc12-5e6d7f8a9b0c",
   "audit_log_entry_id": "a3f7c2d1-8b4e-4f9a-bc12-5e6d7f8a9b0c"
@@ -2173,11 +2178,11 @@ Action: **Payment write aborted.** AuditLogEntry written: `action = GOVERNANCE_H
 |----------------|-------------------|-----------|-------|
 | `ClaimRecord.id` | `claim_id` | Agent → System | |
 | `ClaimRecord.external_claim_id` | `external_claim_id` | Agent → System | Clearinghouse reference |
-| `ClaimRecord.provider_id` | `provider_id` | Agent → System | 10-digit NPI |
+| `ClaimRecord.provider_npi` | `provider_npi` | Agent → System | 10-digit NPI |
 | `payment_amount` (from S-05 `payer_responsibility`) | `payment_amount` | Agent → System | USD, 2 decimal places |
 | `ClaimRecord.procedure_codes` | `procedure_codes` | Agent → System | For remittance advice |
 | `ClaimRecord.date_of_service` | `date_of_service` | Agent → System | |
-| `ClaimRecord.plan_id` | `plan_id` | Agent → System | |
+| `ClaimRecord.payer_id` | `payer_id` | Agent → System | |
 | *(derived from rejection code reference)* | `remittance_codes` | Agent → System | X12 CARC for remittance |
 | `AuditLogEntry.id` (PAYMENT_APPROVED) | `approval_token_id`, `audit_log_entry_id` | Agent → System | S-11 can verify against S-10 |
 | *(response)* | `instruction_id` | System → Agent | Stored in AuditLogEntry.output_summary |
@@ -2246,8 +2251,8 @@ S-07 is the authoritative state store for every ClaimRecord in the adjudication 
 - **WS1 credential storage:** Secrets manager; key name `CLAIMS_MGMT_API_KEY_WS1`
 - **WS2 credential storage:** Secrets manager; key name `CLAIMS_MGMT_API_KEY_WS2`
 - **Agent-writable fields — WS1:** `state`, `clinical_classification_id`, `rejection_codes`, `payment_amount`, `hitl_disposition`, `hitl_queue_type`, `hitl_assigned_to`, `updated_by`, `updated_at`
-- **Agent-writable fields — WS2:** `state` (WS2-owned transitions only — see §4), `physician_packet_id`, `hitl_disposition`, `updated_by`, `updated_at`
-- **Fields neither agent may write:** `member_id`, `provider_id`, `procedure_codes`, `diagnosis_codes`, `date_of_service`, `plan_id`, `external_claim_id`, `created_at` (immutable claim identity fields)
+- **Agent-writable fields — WS2:** `state` (WS2-owned transitions only — see §4), `clinical_classification_id_ws2`, `physician_packet_id`, `hitl_disposition`, `updated_by`, `updated_at`
+- **Fields neither agent may write:** `member_id`, `provider_npi`, `procedure_codes`, `diagnosis_codes`, `date_of_service`, `payer_id`, `external_claim_id`, `created_at` (immutable claim identity fields)
 - **PHI:** ClaimRecord contains PHI; minimum necessary field access; write scope limited to adjudication-relevant fields only; no bulk delete, no schema modification access
 
 ### §4. Endpoint Contracts
@@ -2313,8 +2318,11 @@ Authorization: Bearer {CLAIMS_MGMT_API_KEY_WS1|WS2}
 | `ROUTING` | `ADMIN_CLEARED` | T-08 ADMIN classification above threshold |
 | `ROUTING` | `PENDING_PHYSICIAN_REVIEW` | T-08 CLINICAL/UNCERTAIN or below-threshold ADMIN |
 | `ADMIN_CLEARED` | `PAYMENT_CALCULATING` | T-09 starts fee schedule lookup |
+| `ADMIN_CLEARED` | `PENDING_HITL_EXCEPTION` | ET-07 audit write failure before ADMIN_CLEARED → PAYMENT_CALCULATING transition |
 | `PAYMENT_CALCULATING` | `APPROVED` | T-09 fee schedule confirmed, payment instruction queued |
 | `PAYMENT_CALCULATING` | `PENDING_HITL_EXCEPTION` | T-09 fee schedule failure (ET-06) |
+| `PENDING_HITL_EXCEPTION` | `ROUTING` | Exception processor resolves; claim returns to routing stage |
+| `PENDING_HITL_EXCEPTION` | `PAYMENT_CALCULATING` | Exception processor resolves ET-06 contract exception; claim resumes payment calculation |
 | `ADMIN_VALIDATING` | `REJECTED` | T-02/T-04/T-05 deterministic rejection |
 | `PENDING_HITL_EXCEPTION` | `ADMIN_VALIDATING` | Exception processor resolves ELIGIBILITY_CONFIRMED (re-enters pipeline) |
 | `PENDING_HITL_EXCEPTION` | `REJECTED` | Exception processor resolves ELIGIBILITY_REJECTED / CLAIM_REJECTED |
@@ -2359,22 +2367,23 @@ PATCH /claims/{claim_id}/fields
 Content-Type: application/json
 Authorization: Bearer {CLAIMS_MGMT_API_KEY_WS1|WS2}
 {
-  "clinical_classification_id": "UUID — WS1 T-08 only",
-  "rejection_codes":            ["array of strings — WS1 T-11 only"],
-  "payment_amount":             "decimal USD — WS1 T-09 only",
-  "hitl_disposition":           "string — WS1 or WS2 after HITL resolution",
-  "physician_packet_id":        "UUID — WS2 T-B-07 only",
-  "hitl_queue_type":            "string — WS1 T-12 only",
-  "hitl_assigned_to":           "string — WS1 T-12 only",
-  "updated_by":                 "string — agent_id",
-  "updated_at":                 "ISO 8601 UTC"
+  "clinical_classification_id":     "UUID — WS1 T-08 only",
+  "clinical_classification_id_ws2": "UUID — WS2 T-B-05 only",
+  "rejection_codes":                ["array of strings — WS1 T-11 only"],
+  "payment_amount":                 "decimal USD — WS1 T-09 only",
+  "hitl_disposition":               "string — WS1 or WS2 after HITL resolution",
+  "physician_packet_id":            "UUID — WS2 T-B-07 only",
+  "hitl_queue_type":                "string — WS1 T-12 only",
+  "hitl_assigned_to":               "string — WS1 T-12 only",
+  "updated_by":                     "string — agent_id",
+  "updated_at":                     "ISO 8601 UTC"
 }
 ```
 
-Only the fields listed above are writable via this endpoint. The system must reject writes to claim identity fields (`member_id`, `provider_id`, etc.) with 400. Each agent's credential is scoped to its writable fields (see §3).
+Only the fields listed above are writable via this endpoint. The system must reject writes to claim identity fields (`member_id`, `provider_npi`, etc.) with 400. Each agent's credential is scoped to its writable fields (see §3).
 
 **WS1 writes to:** `clinical_classification_id`, `rejection_codes`, `payment_amount`, `hitl_disposition`, `hitl_queue_type`, `hitl_assigned_to`, `updated_by`, `updated_at`
-**WS2 writes to:** `physician_packet_id`, `hitl_disposition`, `updated_by`, `updated_at`
+**WS2 writes to:** `clinical_classification_id_ws2`, `physician_packet_id`, `hitl_disposition`, `updated_by`, `updated_at`
 
 ---
 
@@ -2395,7 +2404,7 @@ Used by WS1 when S-01 intake uses polling fallback (G-1 option 2). Returns pagin
       "claim_id": "b9e2a1f4-3c7d-4e8b-a021-6f5c4d3e2f1a",
       "state": "NORMALISED",
       "created_at": "2025-03-15T08:12:33.000Z",
-      "provider_id": "1234567890",
+      "provider_npi": "1234567890",
       "member_id": "GHS-MBR-4491023"
     }
   ],
@@ -2520,11 +2529,11 @@ Agent pre-condition check at T-09 detects `ClaimRecord.state = PENDING_PHYSICIAN
 | `claim_id` | `ClaimRecord.id` | UUID |
 | `state` | `ClaimRecord.state` | 16-value enum |
 | `member_id` | `ClaimRecord.member_id` | Immutable |
-| `provider_id` | `ClaimRecord.provider_id` | 10-digit NPI |
+| `provider_npi` | `ClaimRecord.provider_npi` | 10-digit NPI |
 | `procedure_codes` | `ClaimRecord.procedure_codes` | CPT array |
 | `diagnosis_codes` | `ClaimRecord.diagnosis_codes` | ICD-10 array |
 | `date_of_service` | `ClaimRecord.date_of_service` | ISO 8601 date |
-| `plan_id` | `ClaimRecord.plan_id` | |
+| `payer_id` | `ClaimRecord.payer_id` | |
 | `external_claim_id` | `ClaimRecord.external_claim_id` | Clearinghouse reference |
 | `clinical_classification_id` | `ClaimRecord.clinical_classification_id` | FK to ClinicalClassificationResult |
 | `payment_amount` | `ClaimRecord.payment_amount` | Decimal USD |
@@ -2552,6 +2561,7 @@ Agent pre-condition check at T-09 detects `ClaimRecord.state = PENDING_PHYSICIAN
 | `rejection_codes` | `rejection_codes` | WS1 |
 | `hitl_queue_type` | `hitl_queue_type` | WS1 |
 | `hitl_assigned_to` | `hitl_assigned_to` | WS1 |
+| `ClinicalClassificationResult_WS2.id` | `clinical_classification_id_ws2` | WS2 |
 | `PhysicianReviewPacket.id` | `physician_packet_id` | WS2 |
 | `hitl_disposition` | `hitl_disposition` | WS1 and WS2 |
 

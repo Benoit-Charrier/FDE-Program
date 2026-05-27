@@ -1,0 +1,27 @@
+{
+  "claim_id": "CLM-2026-1000278",
+  "member_id": "2NR4YVD6YA1",
+  "provider_npi": "9140504182",
+  "provider_specialty": "Cardiologist",
+  "date_of_service": "2026-03-28",
+  "diagnosis_codes": [
+    "N390"
+  ],
+  "procedure_codes": [
+    "99284",
+    "99421",
+    "99215",
+    "99395"
+  ],
+  "procedure_quantities": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "billed_amount": 737.6,
+  "payer_id": "MCR-001",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000278.edi",
+  "intake_warnings": []
+}

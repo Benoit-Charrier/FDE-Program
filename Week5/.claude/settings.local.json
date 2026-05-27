@@ -7,7 +7,9 @@
       "Bash(Out-Null)",
       "Bash(New-Item -ItemType Directory -Force \"C:\\\\Users\\\\Benoit_Charrier\\\\FDE Program\\\\FDE-Program\\\\Week4\\\\prototype\\\\escalations\")",
       "Bash(New-Item -ItemType File -Force \"C:\\\\Users\\\\Benoit_Charrier\\\\FDE Program\\\\FDE-Program\\\\Week4\\\\prototype\\\\escalations\\\\.gitkeep\")",
-      "PowerShell(New-Item *)"
+      "PowerShell(New-Item *)",
+      "Bash(dir C:\\\\Users\\\\Benoit_Charrier\\\\FDE Program\\\\FDE-Program\\\\Week5\\\\Capstone-A-Claims-Pack *)",
+      "Bash(dir C:\\\\Users\\\\Benoit_Charrier\\\\FDE Program\\\\FDE-Program\\\\Week5 *)"
     ]
   }
 }

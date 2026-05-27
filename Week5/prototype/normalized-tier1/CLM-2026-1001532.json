@@ -1,0 +1,25 @@
+{
+  "claim_id": "CLM-2026-1001532",
+  "member_id": "940823002",
+  "provider_npi": "UNKNOWN_NPI",
+  "provider_specialty": "Radiology",
+  "date_of_service": "2026-04-15",
+  "diagnosis_codes": [
+    "F32.9",
+    "E78.5"
+  ],
+  "procedure_codes": [
+    "83036"
+  ],
+  "procedure_quantities": [
+    1
+  ],
+  "billed_amount": 15.96,
+  "payer_id": "MCD-IL",
+  "group_id": "GRP-81263",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001532.json",
+  "intake_warnings": [
+    "provider_npi_missing"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "claim_id": "CLM-2026-1001237",
+  "member_id": "U81265691",
+  "provider_npi": "1984165622",
+  "provider_specialty": "Radiology",
+  "date_of_service": "2026-03-29",
+  "diagnosis_codes": [
+    "J06.9",
+    "M25.561"
+  ],
+  "procedure_codes": [
+    "99999",
+    "70551",
+    "99205",
+    "99421"
+  ],
+  "procedure_quantities": [
+    2,
+    2,
+    1,
+    1
+  ],
+  "billed_amount": 1273.38,
+  "payer_id": "CIG-001",
+  "group_id": "GRP-73369",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001237.json",
+  "intake_warnings": []
+}

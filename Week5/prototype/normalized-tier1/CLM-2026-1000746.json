@@ -1,0 +1,23 @@
+{
+  "claim_id": "CLM-2026-1000746",
+  "member_id": "YYL17076075",
+  "provider_npi": "4457607025",
+  "provider_specialty": "Orthopaedic Surgeon",
+  "date_of_service": "2026-04-22",
+  "diagnosis_codes": [
+    "S93401A",
+    "N183",
+    "J029"
+  ],
+  "procedure_codes": [
+    "72148"
+  ],
+  "procedure_quantities": [
+    1
+  ],
+  "billed_amount": 308.8,
+  "payer_id": "ANT-001",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000746.edi",
+  "intake_warnings": []
+}

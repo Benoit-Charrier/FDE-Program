@@ -1,0 +1,23 @@
+{
+  "claim_id": "CLM-2026-1000429",
+  "member_id": "U45465722",
+  "provider_npi": "9232587051",
+  "provider_specialty": "Physician",
+  "date_of_service": "2026-04-01",
+  "diagnosis_codes": [
+    "L309"
+  ],
+  "procedure_codes": [
+    "90471",
+    "97110"
+  ],
+  "procedure_quantities": [
+    1,
+    2
+  ],
+  "billed_amount": 109.73,
+  "payer_id": "CIG-001",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000429.edi",
+  "intake_warnings": []
+}

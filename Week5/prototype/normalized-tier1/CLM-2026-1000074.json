@@ -1,0 +1,29 @@
+{
+  "claim_id": "CLM-2026-1000074",
+  "member_id": "278555511-03",
+  "provider_npi": "3785310096",
+  "provider_specialty": "Advanced Practice Provider (NP)",
+  "date_of_service": "2026-04-14",
+  "diagnosis_codes": [
+    "R5383",
+    "K219",
+    "G4733"
+  ],
+  "procedure_codes": [
+    "99395",
+    "90686",
+    "97140",
+    "99422"
+  ],
+  "procedure_quantities": [
+    1,
+    1,
+    2,
+    1
+  ],
+  "billed_amount": 371.85,
+  "payer_id": "UHC-002",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000074.edi",
+  "intake_warnings": []
+}

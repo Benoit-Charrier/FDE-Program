@@ -1,0 +1,25 @@
+{
+  "claim_id": "CLM-2026-1000878",
+  "member_id": "U66755247",
+  "provider_npi": "0962208681",
+  "provider_specialty": "Physician (MD)",
+  "date_of_service": "2026-04-01",
+  "diagnosis_codes": [
+    "L989"
+  ],
+  "procedure_codes": [
+    "99214",
+    "97140",
+    "97110"
+  ],
+  "procedure_quantities": [
+    1,
+    1,
+    2
+  ],
+  "billed_amount": 276.2,
+  "payer_id": "CIG-001",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000878.edi",
+  "intake_warnings": []
+}

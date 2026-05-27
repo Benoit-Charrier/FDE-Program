@@ -1,0 +1,28 @@
+{
+  "claim_id": "CLM-2026-1001406",
+  "member_id": "547750289",
+  "provider_npi": "9728511766",
+  "provider_specialty": "Family Medicine",
+  "date_of_service": "2026-04-05",
+  "diagnosis_codes": [
+    "J20.9"
+  ],
+  "procedure_codes": [
+    "20610",
+    "90471",
+    "97140",
+    "44970"
+  ],
+  "procedure_quantities": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "billed_amount": 2051.07,
+  "payer_id": "MCD-IL",
+  "group_id": "GRP-48543",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001406.json",
+  "intake_warnings": []
+}

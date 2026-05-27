@@ -1,0 +1,28 @@
+{
+  "claim_id": "CLM-2026-1001550",
+  "member_id": "2WR9UXM9EP7",
+  "provider_npi": "3425627335",
+  "provider_specialty": "Emergency Medicine",
+  "date_of_service": "2026-04-08",
+  "diagnosis_codes": [
+    "Z00.00",
+    "J44.9",
+    "L30.9"
+  ],
+  "procedure_codes": [
+    "99204",
+    "64483",
+    "97140"
+  ],
+  "procedure_quantities": [
+    1,
+    1,
+    1
+  ],
+  "billed_amount": 651.9,
+  "payer_id": "MCR-001",
+  "group_id": "GRP-26199",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001550.json",
+  "intake_warnings": []
+}

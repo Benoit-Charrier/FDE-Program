@@ -1,0 +1,24 @@
+{
+  "claim_id": "CLM-2026-1000708",
+  "member_id": "572720772",
+  "provider_npi": "1066848766",
+  "provider_specialty": "Advanced Practice Provider (NP)",
+  "date_of_service": "2026-04-25",
+  "diagnosis_codes": [
+    "M797",
+    "E785"
+  ],
+  "procedure_codes": [
+    "70551",
+    "27447"
+  ],
+  "procedure_quantities": [
+    2,
+    2
+  ],
+  "billed_amount": 6550.58,
+  "payer_id": "AET-001",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000708.edi",
+  "intake_warnings": []
+}

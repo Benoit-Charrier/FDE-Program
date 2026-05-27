@@ -1,0 +1,27 @@
+{
+  "claim_id": "CLM-2026-1000050",
+  "member_id": "XOJ444006651",
+  "provider_npi": "8310159119",
+  "provider_specialty": "Physician (DO)",
+  "date_of_service": "2026-04-08",
+  "diagnosis_codes": [
+    "Z23"
+  ],
+  "procedure_codes": [
+    "80061",
+    "99213",
+    "99396",
+    "90471"
+  ],
+  "procedure_quantities": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "billed_amount": 333.68,
+  "payer_id": "BCBS-IL",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000050.edi",
+  "intake_warnings": []
+}

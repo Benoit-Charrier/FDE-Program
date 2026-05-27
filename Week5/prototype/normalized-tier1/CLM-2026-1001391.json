@@ -1,0 +1,26 @@
+{
+  "claim_id": "CLM-2026-1001391",
+  "member_id": "9RV2ATX8JQ1",
+  "provider_npi": "6469221000",
+  "provider_specialty": "Physical Therapy",
+  "date_of_service": "2026-04-13",
+  "diagnosis_codes": [
+    "M79.7"
+  ],
+  "procedure_codes": [
+    "99215",
+    "80053",
+    "99284"
+  ],
+  "procedure_quantities": [
+    1,
+    1,
+    1
+  ],
+  "billed_amount": 468.11,
+  "payer_id": "MCR-001",
+  "group_id": "GRP-34646",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001391.json",
+  "intake_warnings": []
+}

@@ -1,0 +1,23 @@
+{
+  "claim_id": "CLM-2026-1001500",
+  "member_id": "976937395-03",
+  "provider_npi": "3559067083",
+  "provider_specialty": "Physical Therapy",
+  "date_of_service": "2026-04-08",
+  "diagnosis_codes": [
+    "M17.11",
+    "R10.9"
+  ],
+  "procedure_codes": [
+    "99999"
+  ],
+  "procedure_quantities": [
+    2
+  ],
+  "billed_amount": 241.21,
+  "payer_id": "UHC-001",
+  "group_id": "GRP-68085",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001500.json",
+  "intake_warnings": []
+}

@@ -1,0 +1,27 @@
+{
+  "claim_id": "CLM-2026-1001453",
+  "member_id": "W529604697",
+  "provider_npi": "3720005085",
+  "provider_specialty": "Family Medicine",
+  "date_of_service": "2026-04-03",
+  "diagnosis_codes": [
+    "I25.10",
+    "F32.9"
+  ],
+  "procedure_codes": [
+    "80053",
+    "85025",
+    "99281"
+  ],
+  "procedure_quantities": [
+    1,
+    2,
+    1
+  ],
+  "billed_amount": 168.13,
+  "payer_id": "AET-001",
+  "group_id": "GRP-88227",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001453.json",
+  "intake_warnings": []
+}

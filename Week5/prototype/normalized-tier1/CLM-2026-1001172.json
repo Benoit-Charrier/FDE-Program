@@ -1,0 +1,26 @@
+{
+  "claim_id": "CLM-2026-1001172",
+  "member_id": "YYL18843878",
+  "provider_npi": "9814877914",
+  "provider_specialty": "Hospital/Institutional",
+  "date_of_service": "2026-04-03",
+  "diagnosis_codes": [
+    "J069",
+    "J029"
+  ],
+  "procedure_codes": [
+    "64483",
+    "99422",
+    "83036"
+  ],
+  "procedure_quantities": [
+    2,
+    2,
+    3
+  ],
+  "billed_amount": 1430.98,
+  "payer_id": "ANT-001",
+  "source_format": "EDI_837I",
+  "source_file": "CLM-2026-1001172.edi",
+  "intake_warnings": []
+}

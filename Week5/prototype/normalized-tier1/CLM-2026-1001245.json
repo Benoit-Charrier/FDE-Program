@@ -1,0 +1,26 @@
+{
+  "claim_id": "CLM-2026-1001245",
+  "member_id": "7WX9HRT2FR0",
+  "provider_npi": "7394700987",
+  "provider_specialty": "Radiology",
+  "date_of_service": "2026-04-01",
+  "diagnosis_codes": [
+    "R10.9"
+  ],
+  "procedure_codes": [
+    "99285",
+    "99215",
+    "99214"
+  ],
+  "procedure_quantities": [
+    1,
+    1,
+    1
+  ],
+  "billed_amount": 787.9,
+  "payer_id": "MCR-001",
+  "group_id": "GRP-49622",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001245.json",
+  "intake_warnings": []
+}

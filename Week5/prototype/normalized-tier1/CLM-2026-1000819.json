@@ -1,0 +1,29 @@
+{
+  "claim_id": "CLM-2026-1000819",
+  "member_id": "5TR7YDJ0PC4",
+  "provider_npi": "7045911748",
+  "provider_specialty": "Physician (MD)",
+  "date_of_service": "2026-04-19",
+  "diagnosis_codes": [
+    "E785",
+    "J449",
+    "M545"
+  ],
+  "procedure_codes": [
+    "85025",
+    "99421",
+    "70551",
+    "97110"
+  ],
+  "procedure_quantities": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "billed_amount": 572.16,
+  "payer_id": "MCR-001",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000819.edi",
+  "intake_warnings": []
+}

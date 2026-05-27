@@ -1,0 +1,23 @@
+{
+  "claim_id": "CLM-2026-1000534",
+  "member_id": "8UD1WPG9NQ8",
+  "provider_npi": "4646435552",
+  "provider_specialty": "Physician (MD)",
+  "date_of_service": "2026-04-03",
+  "diagnosis_codes": [
+    "R109",
+    "N390",
+    "M797"
+  ],
+  "procedure_codes": [
+    "71046"
+  ],
+  "procedure_quantities": [
+    2
+  ],
+  "billed_amount": 155.8,
+  "payer_id": "MCR-001",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000534.edi",
+  "intake_warnings": []
+}

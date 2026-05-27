@@ -1,0 +1,23 @@
+{
+  "claim_id": "CLM-2026-1001548",
+  "member_id": "W380172579",
+  "provider_npi": "1956713530",
+  "provider_specialty": "Multi-specialty Clinic",
+  "date_of_service": "2026-04-01",
+  "diagnosis_codes": [
+    "J44.9",
+    "R10.9"
+  ],
+  "procedure_codes": [
+    "99214"
+  ],
+  "procedure_quantities": [
+    1
+  ],
+  "billed_amount": 187.01,
+  "payer_id": "AET-001",
+  "group_id": "GRP-84542",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001548.json",
+  "intake_warnings": []
+}

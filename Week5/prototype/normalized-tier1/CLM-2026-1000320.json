@@ -1,0 +1,27 @@
+{
+  "claim_id": "CLM-2026-1000320",
+  "member_id": "9HU9HCP9EK6",
+  "provider_npi": "6641533671",
+  "provider_specialty": "Physician (DO)",
+  "date_of_service": "2026-04-23",
+  "diagnosis_codes": [
+    "Z0000"
+  ],
+  "procedure_codes": [
+    "99213",
+    "99422",
+    "90686",
+    "99213"
+  ],
+  "procedure_quantities": [
+    1,
+    1,
+    2,
+    1
+  ],
+  "billed_amount": 331.92,
+  "payer_id": "MCR-001",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000320.edi",
+  "intake_warnings": []
+}

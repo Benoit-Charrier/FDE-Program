@@ -1,0 +1,28 @@
+{
+  "claim_id": "CLM-2026-1001277",
+  "member_id": "H30672163",
+  "provider_npi": "8270302226",
+  "provider_specialty": "Radiology",
+  "date_of_service": "2026-04-11",
+  "diagnosis_codes": [
+    "H66.90",
+    "M25.562",
+    "M79.7"
+  ],
+  "procedure_codes": [
+    "70551",
+    "99421",
+    "99214"
+  ],
+  "procedure_quantities": [
+    1,
+    1,
+    1
+  ],
+  "billed_amount": 614.22,
+  "payer_id": "HUM-001",
+  "group_id": "GRP-74081",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001277.json",
+  "intake_warnings": []
+}

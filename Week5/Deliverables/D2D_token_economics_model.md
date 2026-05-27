@@ -85,6 +85,18 @@ Baseline cost per case (time-based):
 - **Rework cost from first-pass errors:** The 41% denial appeal overturn rate (scenario.md) implies a significant proportion of WS1 decisions are wrong at first pass. Each overturned denial requires a full re-adjudication cycle. At 43 appeals/day (Assumption A-D2C-2, D2C), ~18 overturned determinations/day generate rework at full processing cost. Not modelled; directionally adds to the baseline.
 - **Opportunity cost of skilled workers on pattern-matching:** Clinical plausibility assessment (MT-WS1-5, D2A) and clinical content routing (MT-WS1-8, D2A) are judgment-requiring tasks performed by all 13 WS1 processors, consuming capacity that cannot be recovered by adding headcount alone.
 
+**Intake Agent format-tier economics note (Wave 1 prerequisite — not WS1 cost):**
+
+The WS1 per-claim economics above apply once a normalized `ClaimRecord` reaches WS1. The upstream Intake & Anomaly Agent (D3 Agent 1) incurs a format-dependent cost that is a Wave 1 build prerequisite, not a WS1 operational cost. The Claims Pack mock data confirms the intake format distribution:
+
+| Format tier | Share | Per-claim intake cost profile |
+|-------------|------:|-------------------------------|
+| Electronic structured (EDI 837P/I, portal JSON, FHIR R4) | 85% | Near-zero LLM cost — parser / library / structured mapping; no Sonnet calls |
+| Paper PDF (CMS-1500) | 10% | OCR required; likely handled by clearinghouse upstream (Claims Pack provides `cms1500-ocr/` pre-extracted text — production OCR cost depends on clearinghouse contract) |
+| Unstructured (email .eml, fax PDF, exception notes PDF) | 5% | LLM extraction required — estimated 1 Haiku call per claim for field extraction; ~$0.0004/claim; highest per-claim intake cost and highest `PARSE_FAILED` rate (~5–15% by format) |
+
+**Impact on this economics model:** None — WS1 receives only normalized records and its per-claim cost is unchanged. The Intake Agent's 5% unstructured-path LLM cost is a separate line item in the Wave 1 build budget (estimated < $500/year at current volume — immaterial to the WS1 business case). The build cost for the Intake Agent's EDI parser and email/fax extraction capability is the material Intake Agent cost, not the steady-state token spend.
+
 ---
 
 ## 3. Agent Architecture — Per-Step Model Selection
@@ -533,7 +545,7 @@ Portfolio ROI: $1,458,000 ÷ $528,000 × 100 = 276%
 
 > **[A-G4D1-1] WS1 annual volume:** 338,000 claims/year derived from 1,300/day × 260 working days (5-day week, 52 weeks). Both the 5-day working week and the 1,300/day WS1 volume are derived assumptions — neither is stated directly in the scenario.
 > **Why it matters:** Drives all annual cost calculations. A 7-day operating week would increase volume to 474,500/year, improving per-claim infrastructure economics and increasing total annual saving proportionally.
-> **If wrong:** At 1,667 claims/day total (Sarah Chen, Exchange 3), WS1 volume is 1,083/day × 260 = 281,580/year — 17% lower, reducing annual saving from $386K to ~$321K and extending payback to ~15 months.
+> **If wrong:** At 1,667 claims/day total (Sarah Chen, Exchange 3), WS1 volume is 1,083/day × 260 = 281,580/year — 17% lower; agent running cost falls proportionally (~$95K/year vs. $113K/year base); annual saving is approximately $750K — marginally above the base case, because the current workforce baseline ($1.3M) and retained staff cost ($455K) are fixed while agent running cost scales down with volume. Volume uncertainty between the two scenario sources does not materially affect the investment decision.
 > **Confidence:** Low — working week not stated; volume figure disputed between two scenario sources.
 
 ---
@@ -575,7 +587,7 @@ Portfolio ROI: $1,458,000 ÷ $528,000 × 100 = 276%
 
 > **[A-G4D1-7] WS1 HITL rate — base case 25%:** Derived from D2A breakpoints with overlap adjustment. Individual breakpoint rates: BP-WS1-1 (5%), BP-WS1-2 (15%), BP-WS1-3 (8%), BP-WS1-4 (10%), BP-WS1-5 (2%) = 40% additive; 38% overlap adjustment yields 25% net. BP-WS1-2 coding plausibility (15%) is the largest driver and is unknown in the scenario (D0C Unknown U-4).
 > **Why it matters:** HITL rate is the dominant cost variable — it determines 95.9% of per-claim agent cost. This is the single most consequential assumption in the model.
-> **If wrong:** At 35% HITL: annual saving halved to $208K, payback 2.0 years (fails gate). At 15% HITL: annual saving rises to $559K, payback 9 months. HITL rate must be measured in mock calibration before production release.
+> **If wrong:** At 35% HITL: annual saving ~$697K (from $732K base), payback ~7.2 months — business case holds; the hard constraint at this rate is classifier quality for URAC/NCQA compliance, not economics (see §11 calibration targets). At 15% HITL: annual saving ~$767K, payback ~6.6 months. HITL rate must be measured in mock calibration before production release.
 > **Confidence:** Low — all individual breakpoint rates are estimates; overlap factor is modelled, not measured. This assumption has the highest materiality in the model.
 
 ---

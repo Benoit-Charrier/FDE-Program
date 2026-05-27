@@ -1,0 +1,27 @@
+{
+  "claim_id": "CLM-2026-1001244",
+  "member_id": "XOJ959317721",
+  "provider_npi": "9813055214",
+  "provider_specialty": "Family Medicine",
+  "date_of_service": "2026-03-31",
+  "diagnosis_codes": [
+    "S93.401A",
+    "M79.7"
+  ],
+  "procedure_codes": [
+    "99215",
+    "64483",
+    "83036"
+  ],
+  "procedure_quantities": [
+    1,
+    1,
+    1
+  ],
+  "billed_amount": 604.52,
+  "payer_id": "BCBS-IL",
+  "group_id": "GRP-59707",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001244.json",
+  "intake_warnings": []
+}

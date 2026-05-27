@@ -1,0 +1,28 @@
+{
+  "claim_id": "CLM-2026-1001337",
+  "member_id": "XOJ346736791",
+  "provider_npi": "1899872521",
+  "provider_specialty": "Family Medicine",
+  "date_of_service": "2026-04-01",
+  "diagnosis_codes": [
+    "R53.83",
+    "L30.9",
+    "R51.9"
+  ],
+  "procedure_codes": [
+    "99203",
+    "71046",
+    "80061"
+  ],
+  "procedure_quantities": [
+    1,
+    2,
+    1
+  ],
+  "billed_amount": 298.98,
+  "payer_id": "BCBS-IL",
+  "group_id": "GRP-82225",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001337.json",
+  "intake_warnings": []
+}

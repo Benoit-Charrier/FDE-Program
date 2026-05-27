@@ -1,0 +1,27 @@
+{
+  "claim_id": "CLM-2026-1001252",
+  "member_id": "598587996-09",
+  "provider_npi": "1114034756",
+  "provider_specialty": "Nurse Practitioner",
+  "date_of_service": "2026-04-19",
+  "diagnosis_codes": [
+    "L30.9",
+    "Z00.00"
+  ],
+  "procedure_codes": [
+    "71046",
+    "99214",
+    "64483"
+  ],
+  "procedure_quantities": [
+    2,
+    1,
+    1
+  ],
+  "billed_amount": 641.6,
+  "payer_id": "UHC-002",
+  "group_id": "GRP-90114",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001252.json",
+  "intake_warnings": []
+}

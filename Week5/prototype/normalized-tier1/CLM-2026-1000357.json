@@ -1,0 +1,25 @@
+{
+  "claim_id": "CLM-2026-1000357",
+  "member_id": "U93752584",
+  "provider_npi": "3301049415",
+  "provider_specialty": "Pediatrician",
+  "date_of_service": "2026-04-16",
+  "diagnosis_codes": [
+    "F329"
+  ],
+  "procedure_codes": [
+    "80053",
+    "70551",
+    "47562"
+  ],
+  "procedure_quantities": [
+    1,
+    1,
+    2
+  ],
+  "billed_amount": 3621.76,
+  "payer_id": "CIG-001",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000357.edi",
+  "intake_warnings": []
+}

@@ -1,0 +1,24 @@
+{
+  "claim_id": "CLM-2026-1000334",
+  "member_id": "312548386-05",
+  "provider_npi": "1565032440",
+  "provider_specialty": "Physician (MD)",
+  "date_of_service": "2026-03-31",
+  "diagnosis_codes": [
+    "F329",
+    "S93401A"
+  ],
+  "procedure_codes": [
+    "97110",
+    "97110"
+  ],
+  "procedure_quantities": [
+    1,
+    1
+  ],
+  "billed_amount": 77.56,
+  "payer_id": "UHC-002",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000334.edi",
+  "intake_warnings": []
+}

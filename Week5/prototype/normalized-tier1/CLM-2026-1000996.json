@@ -1,0 +1,25 @@
+{
+  "claim_id": "CLM-2026-1000996",
+  "member_id": "82697464U",
+  "provider_npi": "4084407489",
+  "provider_specialty": "Orthopaedic Surgeon",
+  "date_of_service": "2026-04-13",
+  "diagnosis_codes": [
+    "R109",
+    "F411",
+    "N390"
+  ],
+  "procedure_codes": [
+    "99285",
+    "99284"
+  ],
+  "procedure_quantities": [
+    1,
+    1
+  ],
+  "billed_amount": 682.33,
+  "payer_id": "CIG-001",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000996.edi",
+  "intake_warnings": []
+}

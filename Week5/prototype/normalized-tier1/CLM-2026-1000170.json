@@ -1,0 +1,22 @@
+{
+  "claim_id": "CLM-2026-1000170",
+  "member_id": "W555756157",
+  "provider_npi": "2265214406",
+  "provider_specialty": "Physician (MD)",
+  "date_of_service": "2026-04-19",
+  "diagnosis_codes": [
+    "M25561",
+    "M545"
+  ],
+  "procedure_codes": [
+    "99213"
+  ],
+  "procedure_quantities": [
+    1
+  ],
+  "billed_amount": 109.02,
+  "payer_id": "AET-001",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000170.edi",
+  "intake_warnings": []
+}

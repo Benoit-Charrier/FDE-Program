@@ -1,0 +1,23 @@
+{
+  "claim_id": "CLM-2026-1000856",
+  "member_id": "XOJ849974938",
+  "provider_npi": "7515009344",
+  "provider_specialty": "Physician",
+  "date_of_service": "2026-04-17",
+  "diagnosis_codes": [
+    "J449"
+  ],
+  "procedure_codes": [
+    "64483",
+    "80053"
+  ],
+  "procedure_quantities": [
+    2,
+    2
+  ],
+  "billed_amount": 773.78,
+  "payer_id": "BCBS-IL",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000856.edi",
+  "intake_warnings": []
+}

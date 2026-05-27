@@ -1,0 +1,29 @@
+{
+  "claim_id": "CLM-2026-1001360",
+  "member_id": "XOJ115679393",
+  "provider_npi": "4304858091",
+  "provider_specialty": "Radiology",
+  "date_of_service": "2026-04-05",
+  "diagnosis_codes": [
+    "S93.401A",
+    "M54.5"
+  ],
+  "procedure_codes": [
+    "80061",
+    "80053",
+    "72148",
+    "99421"
+  ],
+  "procedure_quantities": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "billed_amount": 421.28,
+  "payer_id": "BCBS-IL",
+  "group_id": "GRP-92135",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001360.json",
+  "intake_warnings": []
+}

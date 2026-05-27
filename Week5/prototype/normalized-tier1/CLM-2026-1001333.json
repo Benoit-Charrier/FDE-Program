@@ -1,0 +1,30 @@
+{
+  "claim_id": "CLM-2026-1001333",
+  "member_id": "XOJ658433169",
+  "provider_npi": "4701435510",
+  "provider_specialty": "Emergency Medicine",
+  "date_of_service": "2026-04-12",
+  "diagnosis_codes": [
+    "F32.9",
+    "J45.909",
+    "R51.9"
+  ],
+  "procedure_codes": [
+    "90686",
+    "99213",
+    "85025",
+    "73030"
+  ],
+  "procedure_quantities": [
+    1,
+    1,
+    1,
+    2
+  ],
+  "billed_amount": 327.96,
+  "payer_id": "BCBS-IL",
+  "group_id": "GRP-41354",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001333.json",
+  "intake_warnings": []
+}

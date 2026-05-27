@@ -1,0 +1,26 @@
+{
+  "claim_id": "CLM-2026-1001383",
+  "member_id": "384878379-00",
+  "provider_npi": "9459553808",
+  "provider_specialty": "Orthopedic Surgery",
+  "date_of_service": "2026-04-09",
+  "diagnosis_codes": [
+    "M17.11"
+  ],
+  "procedure_codes": [
+    "99203",
+    "27447",
+    "72148"
+  ],
+  "procedure_quantities": [
+    1,
+    1,
+    2
+  ],
+  "billed_amount": 2755.78,
+  "payer_id": "UHC-002",
+  "group_id": "GRP-81362",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001383.json",
+  "intake_warnings": []
+}

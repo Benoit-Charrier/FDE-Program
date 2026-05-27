@@ -1,0 +1,22 @@
+{
+  "claim_id": "CLM-2026-1000542",
+  "member_id": "YYL16400433",
+  "provider_npi": "3733863935",
+  "provider_specialty": "Physician (MD)",
+  "date_of_service": "2026-04-21",
+  "diagnosis_codes": [
+    "R5383",
+    "L309"
+  ],
+  "procedure_codes": [
+    "99999"
+  ],
+  "procedure_quantities": [
+    1
+  ],
+  "billed_amount": 18.06,
+  "payer_id": "ANT-001",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000542.edi",
+  "intake_warnings": []
+}

@@ -1,0 +1,34 @@
+{
+  "claim_id": "CLM-2026-1001160",
+  "member_id": "YYL91265066",
+  "provider_npi": "9152294293",
+  "provider_specialty": "Hospital/Institutional",
+  "date_of_service": "2026-03-07",
+  "diagnosis_codes": [
+    "M545",
+    "N390"
+  ],
+  "procedure_codes": [
+    "99205",
+    "99203",
+    "20610",
+    "99285",
+    "71046",
+    "99281",
+    "85025"
+  ],
+  "procedure_quantities": [
+    2,
+    1,
+    2,
+    1,
+    3,
+    3,
+    3
+  ],
+  "billed_amount": 2815.0,
+  "payer_id": "ANT-001",
+  "source_format": "EDI_837I",
+  "source_file": "CLM-2026-1001160.edi",
+  "intake_warnings": []
+}

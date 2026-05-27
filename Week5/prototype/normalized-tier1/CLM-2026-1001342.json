@@ -1,0 +1,25 @@
+{
+  "claim_id": "CLM-2026-1001342",
+  "member_id": "5UV7UPR3JH3",
+  "provider_npi": "4143473679",
+  "provider_specialty": "Family Medicine",
+  "date_of_service": "2026-04-16",
+  "diagnosis_codes": [
+    "J06.9",
+    "N39.0"
+  ],
+  "procedure_codes": [
+    "99395",
+    "72148"
+  ],
+  "procedure_quantities": [
+    1,
+    1
+  ],
+  "billed_amount": 612.73,
+  "payer_id": "MCR-001",
+  "group_id": "GRP-15162",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001342.json",
+  "intake_warnings": []
+}

@@ -1,0 +1,25 @@
+{
+  "claim_id": "CLM-2026-1000714",
+  "member_id": "203443537",
+  "provider_npi": "5076192123",
+  "provider_specialty": "Cardiologist",
+  "date_of_service": "2026-04-11",
+  "diagnosis_codes": [
+    "E119"
+  ],
+  "procedure_codes": [
+    "99215",
+    "80061",
+    "72148"
+  ],
+  "procedure_quantities": [
+    1,
+    1,
+    1
+  ],
+  "billed_amount": 685.52,
+  "payer_id": "MCD-IL",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000714.edi",
+  "intake_warnings": []
+}

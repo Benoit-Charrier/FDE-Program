@@ -1,0 +1,36 @@
+{
+  "claim_id": "CLM-2026-1001023",
+  "member_id": "6QE1MEE9A",
+  "provider_npi": "3563604322",
+  "provider_specialty": "Hospital/Institutional",
+  "date_of_service": "2026-03-24",
+  "diagnosis_codes": [
+    "Z0000",
+    "E669",
+    "M25562",
+    "R079"
+  ],
+  "procedure_codes": [
+    "73030",
+    "83036",
+    "99281",
+    "97110",
+    "83036",
+    "73030",
+    "99395"
+  ],
+  "procedure_quantities": [
+    3,
+    2,
+    2,
+    2,
+    1,
+    2,
+    3
+  ],
+  "billed_amount": 2008.45,
+  "payer_id": "MCR-001",
+  "source_format": "EDI_837I",
+  "source_file": "CLM-2026-1001023.edi",
+  "intake_warnings": []
+}

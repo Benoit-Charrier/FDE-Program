@@ -1,0 +1,21 @@
+{
+  "claim_id": "CLM-2026-1000393",
+  "member_id": "H29792545",
+  "provider_npi": "5601421504",
+  "provider_specialty": "Physician",
+  "date_of_service": "2026-04-10",
+  "diagnosis_codes": [
+    "S93401A"
+  ],
+  "procedure_codes": [
+    "90471"
+  ],
+  "procedure_quantities": [
+    1
+  ],
+  "billed_amount": 18.73,
+  "payer_id": "HUM-001",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000393.edi",
+  "intake_warnings": []
+}

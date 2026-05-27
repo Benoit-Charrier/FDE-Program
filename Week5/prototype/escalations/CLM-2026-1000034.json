@@ -1,0 +1,23 @@
+{
+  "claim_id": "CLM-2026-1000034",
+  "status": "escalated",
+  "escalation_trigger_id": "ET-01",
+  "trigger_type": "CLINICAL_ROUTING",
+  "routing_queue": "PHYSICIAN_HITL",
+  "required_resolution": "Route as: [CLINICAL_CONFIRMED / ADMIN_CONFIRMED / NEEDS_ADDITIONAL_INFO]",
+  "classification": "uncertain",
+  "confidence": 0.51,
+  "escalation_reason": "Clinical content classifier returned uncertain \u2014 contradictory signals: heuristic Cannot confirm administrative path.",
+  "claim_context": {
+    "procedure_code": "90686",
+    "diagnosis_code": "E785",
+    "provider_specialty": "Pediatrician"
+  },
+  "audit_trail": [
+    "claim_intake_validated [COMMITTED]",
+    "eligibility_confirmed [COMMITTED]",
+    "code_validity_checked [COMMITTED]",
+    "prior_auth_confirmed [COMMITTED]",
+    "clinical_classification_completed [COMMITTED]"
+  ]
+}

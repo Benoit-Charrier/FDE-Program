@@ -1,0 +1,23 @@
+{
+  "claim_id": "CLM-2026-1000153",
+  "member_id": "1XR4EXG7EP7",
+  "provider_npi": "9299025130",
+  "provider_specialty": "Physician (MD)",
+  "date_of_service": "2026-04-01",
+  "diagnosis_codes": [
+    "K219",
+    "I2510",
+    "J449"
+  ],
+  "procedure_codes": [
+    "27447"
+  ],
+  "procedure_quantities": [
+    2
+  ],
+  "billed_amount": 5657.78,
+  "payer_id": "MCR-001",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000153.edi",
+  "intake_warnings": []
+}

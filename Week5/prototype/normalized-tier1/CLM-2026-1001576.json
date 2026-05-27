@@ -1,0 +1,29 @@
+{
+  "claim_id": "CLM-2026-1001576",
+  "member_id": "U64037985",
+  "provider_npi": "2594027908",
+  "provider_specialty": "Multi-specialty Clinic",
+  "date_of_service": "2026-03-30",
+  "diagnosis_codes": [
+    "E11.9",
+    "K21.9"
+  ],
+  "procedure_codes": [
+    "99285",
+    "99214",
+    "99281",
+    "99422"
+  ],
+  "procedure_quantities": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "billed_amount": 810.86,
+  "payer_id": "CIG-001",
+  "group_id": "GRP-22699",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001576.json",
+  "intake_warnings": []
+}

@@ -1,0 +1,25 @@
+{
+  "claim_id": "CLM-2026-1001408",
+  "member_id": "XOJ323331289",
+  "provider_npi": "9041520348",
+  "provider_specialty": "Internal Medicine",
+  "date_of_service": "2026-04-13",
+  "diagnosis_codes": [
+    "J20.9",
+    "N18.3"
+  ],
+  "procedure_codes": [
+    "99215",
+    "99422"
+  ],
+  "procedure_quantities": [
+    1,
+    1
+  ],
+  "billed_amount": 268.47,
+  "payer_id": "BCBS-IL",
+  "group_id": "GRP-68125",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001408.json",
+  "intake_warnings": []
+}

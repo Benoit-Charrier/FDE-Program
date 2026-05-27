@@ -1,0 +1,27 @@
+{
+  "claim_id": "CLM-2026-1001544",
+  "member_id": "W306599824",
+  "provider_npi": "1659858091",
+  "provider_specialty": "Physical Therapy",
+  "date_of_service": "2026-03-30",
+  "diagnosis_codes": [
+    "R10.9",
+    "M25.562"
+  ],
+  "procedure_codes": [
+    "99213",
+    "71046",
+    "27447"
+  ],
+  "procedure_quantities": [
+    1,
+    2,
+    1
+  ],
+  "billed_amount": 3133.35,
+  "payer_id": "AET-001",
+  "group_id": "GRP-70782",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001544.json",
+  "intake_warnings": []
+}

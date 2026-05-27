@@ -1,0 +1,27 @@
+{
+  "claim_id": "CLM-2026-1001475",
+  "member_id": "297090931",
+  "provider_npi": "8307192044",
+  "provider_specialty": "Emergency Medicine",
+  "date_of_service": "2026-03-29",
+  "diagnosis_codes": [
+    "R51.9",
+    "K21.9"
+  ],
+  "procedure_codes": [
+    "44970",
+    "99204",
+    "80061"
+  ],
+  "procedure_quantities": [
+    1,
+    1,
+    1
+  ],
+  "billed_amount": 1544.47,
+  "payer_id": "MCD-IL",
+  "group_id": "GRP-94154",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001475.json",
+  "intake_warnings": []
+}

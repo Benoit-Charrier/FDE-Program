@@ -1,0 +1,29 @@
+{
+  "claim_id": "CLM-2026-1000833",
+  "member_id": "U24765946",
+  "provider_npi": "1408390195",
+  "provider_specialty": "Advanced Practice Provider (NP)",
+  "date_of_service": "2026-04-18",
+  "diagnosis_codes": [
+    "F411",
+    "M25561",
+    "M1711"
+  ],
+  "procedure_codes": [
+    "70551",
+    "80061",
+    "99421",
+    "44970"
+  ],
+  "procedure_quantities": [
+    1,
+    1,
+    1,
+    2
+  ],
+  "billed_amount": 4082.86,
+  "payer_id": "CIG-001",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000833.edi",
+  "intake_warnings": []
+}

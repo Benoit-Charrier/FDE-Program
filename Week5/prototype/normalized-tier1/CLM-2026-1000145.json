@@ -1,0 +1,28 @@
+{
+  "claim_id": "CLM-2026-1000145",
+  "member_id": "U58000382",
+  "provider_npi": "4767241450",
+  "provider_specialty": "Cardiologist",
+  "date_of_service": "2026-04-09",
+  "diagnosis_codes": [
+    "J209",
+    "J449"
+  ],
+  "procedure_codes": [
+    "73030",
+    "99214",
+    "47562",
+    "99285"
+  ],
+  "procedure_quantities": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "billed_amount": 2446.76,
+  "payer_id": "CIG-001",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000145.edi",
+  "intake_warnings": []
+}

@@ -1,0 +1,24 @@
+{
+  "claim_id": "CLM-2026-1000657",
+  "member_id": "XOJ920854099",
+  "provider_npi": "0324256282",
+  "provider_specialty": "Orthopaedic Surgeon",
+  "date_of_service": "2026-04-01",
+  "diagnosis_codes": [
+    "M25562",
+    "R079"
+  ],
+  "procedure_codes": [
+    "44970",
+    "85025"
+  ],
+  "procedure_quantities": [
+    2,
+    2
+  ],
+  "billed_amount": 2802.16,
+  "payer_id": "BCBS-IL",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000657.edi",
+  "intake_warnings": []
+}

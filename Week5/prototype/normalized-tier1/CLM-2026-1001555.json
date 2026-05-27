@@ -1,0 +1,29 @@
+{
+  "claim_id": "CLM-2026-1001555",
+  "member_id": "YYL13138290",
+  "provider_npi": "1825861449",
+  "provider_specialty": "Multi-specialty Clinic",
+  "date_of_service": "2026-04-06",
+  "diagnosis_codes": [
+    "M25.562",
+    "J44.9"
+  ],
+  "procedure_codes": [
+    "70551",
+    "73030",
+    "99215",
+    "99213"
+  ],
+  "procedure_quantities": [
+    1,
+    2,
+    1,
+    1
+  ],
+  "billed_amount": 1108.46,
+  "payer_id": "ANT-001",
+  "group_id": "GRP-33265",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001555.json",
+  "intake_warnings": []
+}

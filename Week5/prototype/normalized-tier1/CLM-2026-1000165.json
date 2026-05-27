@@ -1,0 +1,21 @@
+{
+  "claim_id": "CLM-2026-1000165",
+  "member_id": "7PY2QKY8VD1",
+  "provider_npi": "3599835990",
+  "provider_specialty": "Physician (DO)",
+  "date_of_service": "2026-04-11",
+  "diagnosis_codes": [
+    "G4733"
+  ],
+  "procedure_codes": [
+    "70551"
+  ],
+  "procedure_quantities": [
+    1
+  ],
+  "billed_amount": 476.53,
+  "payer_id": "MCR-001",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000165.edi",
+  "intake_warnings": []
+}

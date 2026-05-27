@@ -1,0 +1,34 @@
+{
+  "claim_id": "CLM-2026-1001050",
+  "member_id": "W691354243",
+  "provider_npi": "6699712291",
+  "provider_specialty": "Hospital/Institutional",
+  "date_of_service": "2026-03-28",
+  "diagnosis_codes": [
+    "R079",
+    "F329",
+    "E119",
+    "K219"
+  ],
+  "procedure_codes": [
+    "83036",
+    "20610",
+    "97110",
+    "90471",
+    "99284",
+    "99396"
+  ],
+  "procedure_quantities": [
+    2,
+    2,
+    3,
+    1,
+    3,
+    3
+  ],
+  "billed_amount": 2535.47,
+  "payer_id": "AET-001",
+  "source_format": "EDI_837I",
+  "source_file": "CLM-2026-1001050.edi",
+  "intake_warnings": []
+}

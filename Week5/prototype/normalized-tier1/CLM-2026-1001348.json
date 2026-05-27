@@ -1,0 +1,28 @@
+{
+  "claim_id": "CLM-2026-1001348",
+  "member_id": "W669600715",
+  "provider_npi": "9669975236",
+  "provider_specialty": "Physician Assistant",
+  "date_of_service": "2026-04-07",
+  "diagnosis_codes": [
+    "M17.11",
+    "K21.9",
+    "G47.33"
+  ],
+  "procedure_codes": [
+    "85025",
+    "71046",
+    "80053"
+  ],
+  "procedure_quantities": [
+    1,
+    2,
+    1
+  ],
+  "billed_amount": 151.62,
+  "payer_id": "AET-001",
+  "group_id": "GRP-93417",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001348.json",
+  "intake_warnings": []
+}

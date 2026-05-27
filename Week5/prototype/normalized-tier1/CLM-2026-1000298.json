@@ -1,0 +1,25 @@
+{
+  "claim_id": "CLM-2026-1000298",
+  "member_id": "U28781994",
+  "provider_npi": "7130385535",
+  "provider_specialty": "Advanced Practice Provider (PA)",
+  "date_of_service": "2026-04-23",
+  "diagnosis_codes": [
+    "J209",
+    "J069",
+    "N390"
+  ],
+  "procedure_codes": [
+    "99285",
+    "80061"
+  ],
+  "procedure_quantities": [
+    1,
+    2
+  ],
+  "billed_amount": 443.7,
+  "payer_id": "CIG-001",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000298.edi",
+  "intake_warnings": []
+}

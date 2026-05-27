@@ -1,0 +1,29 @@
+{
+  "claim_id": "CLM-2026-1001317",
+  "member_id": "XOJ833341848",
+  "provider_npi": "7905764356",
+  "provider_specialty": "Cardiology",
+  "date_of_service": "2026-03-30",
+  "diagnosis_codes": [
+    "R51.9",
+    "N18.3"
+  ],
+  "procedure_codes": [
+    "20610",
+    "99204",
+    "70551",
+    "90471"
+  ],
+  "procedure_quantities": [
+    2,
+    1,
+    1,
+    1
+  ],
+  "billed_amount": 839.26,
+  "payer_id": "BCBS-IL",
+  "group_id": "GRP-93320",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001317.json",
+  "intake_warnings": []
+}

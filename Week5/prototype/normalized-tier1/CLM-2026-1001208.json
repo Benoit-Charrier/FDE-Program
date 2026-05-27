@@ -1,0 +1,27 @@
+{
+  "claim_id": "CLM-2026-1001208",
+  "member_id": "722831032-01",
+  "provider_npi": "0461173282",
+  "provider_specialty": "Multi-specialty Clinic",
+  "date_of_service": "2026-04-04",
+  "diagnosis_codes": [
+    "R07.9",
+    "F32.9"
+  ],
+  "procedure_codes": [
+    "73030",
+    "99281",
+    "47562"
+  ],
+  "procedure_quantities": [
+    2,
+    1,
+    1
+  ],
+  "billed_amount": 2124.91,
+  "payer_id": "UHC-002",
+  "group_id": "GRP-45392",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001208.json",
+  "intake_warnings": []
+}

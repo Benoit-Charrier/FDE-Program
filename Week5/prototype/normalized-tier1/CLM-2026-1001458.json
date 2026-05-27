@@ -1,0 +1,30 @@
+{
+  "claim_id": "CLM-2026-1001458",
+  "member_id": "48783855U",
+  "provider_npi": "2733600113",
+  "provider_specialty": "Chiropractic",
+  "date_of_service": "2026-04-20",
+  "diagnosis_codes": [
+    "H66.90",
+    "F41.1",
+    "M25.562"
+  ],
+  "procedure_codes": [
+    "99214",
+    "99395",
+    "80061",
+    "99204"
+  ],
+  "procedure_quantities": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "billed_amount": 576.41,
+  "payer_id": "CIG-001",
+  "group_id": "GRP-24147",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001458.json",
+  "intake_warnings": []
+}

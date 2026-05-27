@@ -1,0 +1,25 @@
+{
+  "claim_id": "CLM-2026-1000691",
+  "member_id": "XOJ649144875",
+  "provider_npi": "2561037824",
+  "provider_specialty": "Advanced Practice Provider (PA)",
+  "date_of_service": "2026-04-04",
+  "diagnosis_codes": [
+    "K219",
+    "G4733",
+    "J449"
+  ],
+  "procedure_codes": [
+    "27447",
+    "64483"
+  ],
+  "procedure_quantities": [
+    2,
+    1
+  ],
+  "billed_amount": 5604.15,
+  "payer_id": "BCBS-IL",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000691.edi",
+  "intake_warnings": []
+}

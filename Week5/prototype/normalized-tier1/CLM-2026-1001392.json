@@ -1,0 +1,25 @@
+{
+  "claim_id": "CLM-2026-1001392",
+  "member_id": "0XG4WKA6KY9",
+  "provider_npi": "6362873915",
+  "provider_specialty": "Internal Medicine",
+  "date_of_service": "2026-04-09",
+  "diagnosis_codes": [
+    "I25.10",
+    "M25.561"
+  ],
+  "procedure_codes": [
+    "12001",
+    "99284"
+  ],
+  "procedure_quantities": [
+    1,
+    1
+  ],
+  "billed_amount": 413.63,
+  "payer_id": "MCR-001",
+  "group_id": "GRP-62271",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001392.json",
+  "intake_warnings": []
+}

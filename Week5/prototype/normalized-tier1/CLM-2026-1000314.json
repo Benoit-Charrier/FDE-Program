@@ -1,0 +1,30 @@
+{
+  "claim_id": "CLM-2026-1000314",
+  "member_id": "812201552",
+  "provider_npi": "UNKNOWN_NPI",
+  "provider_specialty": "Physician (MD)",
+  "date_of_service": "2026-04-07",
+  "diagnosis_codes": [
+    "J069",
+    "H6690"
+  ],
+  "procedure_codes": [
+    "80061",
+    "99396",
+    "80061",
+    "90471"
+  ],
+  "procedure_quantities": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "billed_amount": 270.56,
+  "payer_id": "BCBS-IL",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000314.edi",
+  "intake_warnings": [
+    "provider_npi_empty_segment"
+  ]
+}

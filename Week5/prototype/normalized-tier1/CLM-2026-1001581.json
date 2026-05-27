@@ -1,0 +1,28 @@
+{
+  "claim_id": "CLM-2026-1001581",
+  "member_id": "H84612486",
+  "provider_npi": "6679547789",
+  "provider_specialty": "Pediatrics",
+  "date_of_service": "2026-03-28",
+  "diagnosis_codes": [
+    "Z00.00",
+    "J45.909",
+    "R07.9"
+  ],
+  "procedure_codes": [
+    "99205",
+    "85025",
+    "99281"
+  ],
+  "procedure_quantities": [
+    1,
+    1,
+    1
+  ],
+  "billed_amount": 436.77,
+  "payer_id": "HUM-001",
+  "group_id": "GRP-81536",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001581.json",
+  "intake_warnings": []
+}

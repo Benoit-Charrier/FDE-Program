@@ -1,0 +1,25 @@
+{
+  "claim_id": "CLM-2026-1000424",
+  "member_id": "YYL18722421",
+  "provider_npi": "6281399200",
+  "provider_specialty": "Cardiologist",
+  "date_of_service": "2026-04-07",
+  "diagnosis_codes": [
+    "M797"
+  ],
+  "procedure_codes": [
+    "64483",
+    "99205",
+    "85025"
+  ],
+  "procedure_quantities": [
+    2,
+    1,
+    1
+  ],
+  "billed_amount": 977.83,
+  "payer_id": "ANT-001",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000424.edi",
+  "intake_warnings": []
+}

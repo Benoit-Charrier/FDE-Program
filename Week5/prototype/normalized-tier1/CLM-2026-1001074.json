@@ -1,0 +1,38 @@
+{
+  "claim_id": "CLM-2026-1001074",
+  "member_id": "H32397764",
+  "provider_npi": "6961618872",
+  "provider_specialty": "Hospital/Institutional",
+  "date_of_service": "2026-03-05",
+  "diagnosis_codes": [
+    "H6690",
+    "S93401A",
+    "F329",
+    "F411"
+  ],
+  "procedure_codes": [
+    "27447",
+    "73030",
+    "44970",
+    "99204",
+    "99213",
+    "12001",
+    "99215",
+    "99281"
+  ],
+  "procedure_quantities": [
+    1,
+    1,
+    3,
+    3,
+    2,
+    3,
+    1,
+    3
+  ],
+  "billed_amount": 17210.18,
+  "payer_id": "HUM-001",
+  "source_format": "EDI_837I",
+  "source_file": "CLM-2026-1001074.edi",
+  "intake_warnings": []
+}

@@ -1,0 +1,27 @@
+{
+  "claim_id": "CLM-2026-1001007",
+  "member_id": "XOJ863922828",
+  "provider_npi": "9671473445",
+  "provider_specialty": "Hospital/Institutional",
+  "date_of_service": "2026-03-30",
+  "diagnosis_codes": [
+    "M545",
+    "J069",
+    "J45909"
+  ],
+  "procedure_codes": [
+    "70551",
+    "47562",
+    "99205"
+  ],
+  "procedure_quantities": [
+    3,
+    3,
+    1
+  ],
+  "billed_amount": 8377.12,
+  "payer_id": "BCBS-IL",
+  "source_format": "EDI_837I",
+  "source_file": "CLM-2026-1001007.edi",
+  "intake_warnings": []
+}

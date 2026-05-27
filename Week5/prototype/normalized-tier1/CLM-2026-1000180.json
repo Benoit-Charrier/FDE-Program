@@ -1,0 +1,27 @@
+{
+  "claim_id": "CLM-2026-1000180",
+  "member_id": "YYL11482858",
+  "provider_npi": "UNKNOWN_NPI",
+  "provider_specialty": "Physician",
+  "date_of_service": "2026-04-24",
+  "diagnosis_codes": [
+    "E119"
+  ],
+  "procedure_codes": [
+    "72148",
+    "85025",
+    "80053"
+  ],
+  "procedure_quantities": [
+    1,
+    2,
+    2
+  ],
+  "billed_amount": 467.45,
+  "payer_id": "ANT-001",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000180.edi",
+  "intake_warnings": [
+    "provider_npi_empty_segment"
+  ]
+}

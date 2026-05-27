@@ -1,0 +1,26 @@
+{
+  "claim_id": "CLM-2026-1001592",
+  "member_id": "XOJ207541870",
+  "provider_npi": "UNKNOWN_NPI",
+  "provider_specialty": "Radiology",
+  "date_of_service": "2026-03-28",
+  "diagnosis_codes": [
+    "I10",
+    "G47.33",
+    "H66.90"
+  ],
+  "procedure_codes": [
+    "70551"
+  ],
+  "procedure_quantities": [
+    2
+  ],
+  "billed_amount": 787.49,
+  "payer_id": "BCBS-IL",
+  "group_id": "GRP-35633",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001592.json",
+  "intake_warnings": [
+    "provider_npi_missing"
+  ]
+}

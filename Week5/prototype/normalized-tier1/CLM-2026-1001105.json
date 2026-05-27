@@ -1,0 +1,26 @@
+{
+  "claim_id": "CLM-2026-1001105",
+  "member_id": "29561935U",
+  "provider_npi": "2112018296",
+  "provider_specialty": "Hospital/Institutional",
+  "date_of_service": "2026-04-13",
+  "diagnosis_codes": [
+    "Z23",
+    "M545"
+  ],
+  "procedure_codes": [
+    "97140",
+    "97110",
+    "47562"
+  ],
+  "procedure_quantities": [
+    1,
+    2,
+    2
+  ],
+  "billed_amount": 4474.28,
+  "payer_id": "CIG-001",
+  "source_format": "EDI_837I",
+  "source_file": "CLM-2026-1001105.edi",
+  "intake_warnings": []
+}

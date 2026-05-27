@@ -1,0 +1,26 @@
+{
+  "claim_id": "CLM-2026-1001255",
+  "member_id": "9WE6DQM5XF8",
+  "provider_npi": "UNKNOWN_NPI",
+  "provider_specialty": "Nurse Practitioner",
+  "date_of_service": "2026-03-30",
+  "diagnosis_codes": [
+    "R10.9",
+    "I10",
+    "N18.3"
+  ],
+  "procedure_codes": [
+    "64483"
+  ],
+  "procedure_quantities": [
+    2
+  ],
+  "billed_amount": 603.9,
+  "payer_id": "MCR-001",
+  "group_id": "GRP-17933",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001255.json",
+  "intake_warnings": [
+    "provider_npi_missing"
+  ]
+}

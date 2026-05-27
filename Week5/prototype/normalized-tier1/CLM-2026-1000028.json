@@ -1,0 +1,21 @@
+{
+  "claim_id": "CLM-2026-1000028",
+  "member_id": "7HC7NPJ8TX4",
+  "provider_npi": "4361548674",
+  "provider_specialty": "Physician",
+  "date_of_service": "2026-04-04",
+  "diagnosis_codes": [
+    "J029"
+  ],
+  "procedure_codes": [
+    "99284"
+  ],
+  "procedure_quantities": [
+    1
+  ],
+  "billed_amount": 279.88,
+  "payer_id": "MCR-001",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000028.edi",
+  "intake_warnings": []
+}

@@ -1,0 +1,23 @@
+{
+  "claim_id": "CLM-2026-1001380",
+  "member_id": "W910973033",
+  "provider_npi": "8501744841",
+  "provider_specialty": "Orthopedic Surgery",
+  "date_of_service": "2026-04-23",
+  "diagnosis_codes": [
+    "Z00.00",
+    "R53.83"
+  ],
+  "procedure_codes": [
+    "71046"
+  ],
+  "procedure_quantities": [
+    1
+  ],
+  "billed_amount": 59.34,
+  "payer_id": "AET-001",
+  "group_id": "GRP-45968",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001380.json",
+  "intake_warnings": []
+}

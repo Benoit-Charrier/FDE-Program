@@ -1,0 +1,30 @@
+{
+  "claim_id": "CLM-2026-1001467",
+  "member_id": "3KC9MEC3VR9",
+  "provider_npi": "0405601848",
+  "provider_specialty": "Pediatrics",
+  "date_of_service": "2026-04-04",
+  "diagnosis_codes": [
+    "M17.11",
+    "R53.83",
+    "R10.9"
+  ],
+  "procedure_codes": [
+    "47562",
+    "85025",
+    "99213",
+    "72148"
+  ],
+  "procedure_quantities": [
+    2,
+    2,
+    1,
+    1
+  ],
+  "billed_amount": 3793.75,
+  "payer_id": "MCR-001",
+  "group_id": "GRP-96210",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001467.json",
+  "intake_warnings": []
+}

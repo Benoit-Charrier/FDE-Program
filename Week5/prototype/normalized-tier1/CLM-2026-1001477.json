@@ -1,0 +1,23 @@
+{
+  "claim_id": "CLM-2026-1001477",
+  "member_id": "U31282706",
+  "provider_npi": "0201983632",
+  "provider_specialty": "Internal Medicine",
+  "date_of_service": "2026-04-19",
+  "diagnosis_codes": [
+    "R51.9",
+    "F32.9"
+  ],
+  "procedure_codes": [
+    "99285"
+  ],
+  "procedure_quantities": [
+    1
+  ],
+  "billed_amount": 312.28,
+  "payer_id": "CIG-001",
+  "group_id": "GRP-76149",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001477.json",
+  "intake_warnings": []
+}

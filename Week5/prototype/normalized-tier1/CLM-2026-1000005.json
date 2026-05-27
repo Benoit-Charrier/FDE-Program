@@ -1,0 +1,27 @@
+{
+  "claim_id": "CLM-2026-1000005",
+  "member_id": "810619711",
+  "provider_npi": "6857950044",
+  "provider_specialty": "Physician (MD)",
+  "date_of_service": "2026-04-06",
+  "diagnosis_codes": [
+    "J209"
+  ],
+  "procedure_codes": [
+    "99205",
+    "44970",
+    "73030",
+    "72148"
+  ],
+  "procedure_quantities": [
+    1,
+    1,
+    2,
+    2
+  ],
+  "billed_amount": 3075.39,
+  "payer_id": "MCD-IL",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000005.edi",
+  "intake_warnings": []
+}

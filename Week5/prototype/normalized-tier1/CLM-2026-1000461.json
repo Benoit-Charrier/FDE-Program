@@ -1,0 +1,21 @@
+{
+  "claim_id": "CLM-2026-1000461",
+  "member_id": "YYL41626272",
+  "provider_npi": "4461133361",
+  "provider_specialty": "Cardiologist",
+  "date_of_service": "2026-04-12",
+  "diagnosis_codes": [
+    "R5383"
+  ],
+  "procedure_codes": [
+    "99205"
+  ],
+  "procedure_quantities": [
+    1
+  ],
+  "billed_amount": 285.47,
+  "payer_id": "ANT-001",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000461.edi",
+  "intake_warnings": []
+}

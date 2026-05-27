@@ -1,0 +1,28 @@
+{
+  "claim_id": "CLM-2026-1001239",
+  "member_id": "452852023-09",
+  "provider_npi": "4214046922",
+  "provider_specialty": "Internal Medicine",
+  "date_of_service": "2026-04-02",
+  "diagnosis_codes": [
+    "H66.90"
+  ],
+  "procedure_codes": [
+    "99213",
+    "99214",
+    "80053",
+    "99204"
+  ],
+  "procedure_quantities": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "billed_amount": 574.96,
+  "payer_id": "UHC-001",
+  "group_id": "GRP-75915",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001239.json",
+  "intake_warnings": []
+}

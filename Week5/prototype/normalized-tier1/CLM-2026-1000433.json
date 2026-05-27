@@ -1,0 +1,25 @@
+{
+  "claim_id": "CLM-2026-1000433",
+  "member_id": "3FF6CDK7CY8",
+  "provider_npi": "1439312979",
+  "provider_specialty": "Advanced Practice Provider (PA)",
+  "date_of_service": "2026-03-30",
+  "diagnosis_codes": [
+    "E785"
+  ],
+  "procedure_codes": [
+    "83036",
+    "70551",
+    "85025"
+  ],
+  "procedure_quantities": [
+    1,
+    1,
+    2
+  ],
+  "billed_amount": 515.89,
+  "payer_id": "MCR-001",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000433.edi",
+  "intake_warnings": []
+}

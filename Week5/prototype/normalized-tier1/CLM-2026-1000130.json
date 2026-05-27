@@ -1,0 +1,26 @@
+{
+  "claim_id": "CLM-2026-1000130",
+  "member_id": "U23055121",
+  "provider_npi": "4755114333",
+  "provider_specialty": "Physician (MD)",
+  "date_of_service": "2026-04-06",
+  "diagnosis_codes": [
+    "R519",
+    "E669"
+  ],
+  "procedure_codes": [
+    "12001",
+    "44970",
+    "44970"
+  ],
+  "procedure_quantities": [
+    2,
+    2,
+    2
+  ],
+  "billed_amount": 6364.82,
+  "payer_id": "CIG-001",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000130.edi",
+  "intake_warnings": []
+}

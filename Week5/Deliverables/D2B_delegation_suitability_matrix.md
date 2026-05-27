@@ -66,6 +66,7 @@ The following JtDs are taken directly from D2A §2b (WS1), §3b (WS2), and §5 (
 - Input Structure, Decision Determinism, Tool Coverage: H = high suitability (1 pt each)
 - Context Complexity, Exception Rate, Latency Constraint, Risk/Compliance: L = high suitability (1 pt each)
 - Maximum score: 7/7
+- *Risk/Compliance H independently gates against Fully Agentic regardless of total score; archetype assignment reflects both the suitability score and this constraint.*
 
 | JtD | Work Stream | Input Structure | Decision Determinism | Tool Coverage | Context Complexity | Exception Rate | Latency Constraint | Risk/Compliance | Suitability Score | Delegation Archetype |
 |---|---|---|---|---|---|---|---|---|---|---|

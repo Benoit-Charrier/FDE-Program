@@ -272,26 +272,30 @@ Gathering these materials may require accessing one or more separate systems, re
 
 ### 3d. Micro-Task Inventory with Dimension Scores
 
+*Latency Constraint scores real-time SLA only (sub-second / synchronous call requirement). Steps that drive multi-day cycle time score L here but are the primary cycle time bottlenecks — see §4 Observation 2.*
+
 | Micro-task | Cognitive Load | Input Structure | Decision Determinism | Exception Frequency | Turn-Taking | Latency Constraint | Compliance/Risk Sensitivity | Tool/API Availability |
 |---|---|---|---|---|---|---|---|---|
 | MT-WS2-1: Clinical content flag verification | M | H | L | H | L | M | H | M |
-| MT-WS2-2: Clinical documentation retrieval | M | L | M | H | M | L | H | L |
+| MT-WS2-2: Clinical documentation retrieval | M | L | M | H | M | L† | H | L |
 | MT-WS2-3: Prior auth history synthesis and organisation | M | H | H | L | L | L | M | M |
 | MT-WS2-4: Medical necessity criteria application | H | M | L | H | M | M | H | M |
-| MT-WS2-5: Additional information request and management | M | M | M | H | H | L | H | M |
+| MT-WS2-5: Additional information request and management | M | M | M | H | H | L† | H | M |
 | MT-WS2-6: Determination documentation and notification | L | H | H | L | L | M | H | M |
+
+*† L = no real-time SLA; these steps are the primary contributors to 8–9 day WS2 cycle time (§4 Observation 2).*
 
 **Score justifications:**
 
 *MT-WS2-1:* Cognitive Load M — requires familiarity with clinical content patterns; less demanding than the original routing decision; Input Structure H — claim codes are structured; Decision Determinism L — the routing criterion is undefined, making verification judgment-dependent; Exception Frequency H — any ambiguous clinical content case is an exception given the absence of a formal criterion; Compliance/Risk H — routing errors in either direction carry compliance or efficiency costs; Tool/API M — claim record is accessible; criterion tool does not yet exist.
 
-*MT-WS2-2:* Cognitive Load M — knowing where to look and handling missing documentation; Input Structure L — clinical notes are semi-structured to unstructured; physician notes, operative reports, and clinical narratives vary in format; Decision Determinism M — retrieve what's available; handle gaps; Exception Frequency H — documentation is frequently incomplete, in the wrong format, or requires provider follow-up; Compliance/Risk H — determination without complete documentation is a quality and liability risk; Tool/API L — source system for clinical notes is unknown and unnamed (assumption A-D2A-4).
+*MT-WS2-2:* Cognitive Load M — knowing where to look and handling missing documentation; Input Structure L — clinical notes are semi-structured to unstructured; physician notes, operative reports, and clinical narratives vary in format; Decision Determinism M — retrieve what's available; handle gaps; Exception Frequency H — documentation is frequently incomplete, in the wrong format, or requires provider follow-up; Latency Constraint L — no real-time SLA on the retrieval call itself; however, documentation unavailability triggers the provider request loop that is the primary driver of WS2 multi-day cycle time (see §4 Observation 2); Compliance/Risk H — determination without complete documentation is a quality and liability risk; Tool/API L — source system for clinical notes is unknown and unnamed (assumption A-D2A-4).
 
 *MT-WS2-3:* Cognitive Load M — organising structured records requires comprehension but not judgment; Input Structure H — prior auth records are structured; Decision Determinism H — retrieve and organise; no judgment required in the standard path; Exception Frequency L — prior auth either exists in the record or it doesn't; Turn-Taking L — internal retrieval only; Compliance/Risk M — prior auth history is relevant context but the determination judgment comes later; Tool/API M — prior auth system unnamed but assumed accessible.
 
 *MT-WS2-4:* Cognitive Load H — requires clinical expertise, case-specific reasoning, and criteria application across potentially ambiguous evidence; Input Structure M — medical necessity criteria are structured; clinical evidence is mixed (structured codes + unstructured notes); Decision Determinism L — highly judgment-dependent; clinical evidence may support multiple conclusions; Exception Frequency H — many clinical cases involve unusual presentations, comorbidities, or unclear necessity; Compliance/Risk H — URAC/NCQA; physician sign-off required; patient care and legal consequences; Tool/API M — medical necessity criteria tool assumed accessible (assumption A-D2A-9) but unnamed.
 
-*MT-WS2-5:* Cognitive Load M — determining what information is needed and from whom requires clinical knowledge; Input Structure M — request format is structured; provider response may not be; Decision Determinism M — standard information request forms exist; content specificity requires clinical judgment; Exception Frequency H — a significant proportion of clinical claims require additional information; Turn-Taking H — the defining back-and-forth pattern in WS2; this task creates the async wait cycles that contribute most to WS2 cycle time; Compliance/Risk H — the request and response are part of the regulatory compliance record; Tool/API M — communication channel unnamed.
+*MT-WS2-5:* Cognitive Load M — determining what information is needed and from whom requires clinical knowledge; Input Structure M — request format is structured; provider response may not be; Decision Determinism M — standard information request forms exist; content specificity requires clinical judgment; Exception Frequency H — a significant proportion of clinical claims require additional information; Turn-Taking H — the defining back-and-forth pattern in WS2; this task creates the async wait cycles that contribute most to WS2 cycle time; Latency Constraint L — no real-time SLA on the request-dispatch itself; the async wait for provider response is the dominant cycle time factor in WS2 (see §4 Observation 2 and Observation 5); Compliance/Risk H — the request and response are part of the regulatory compliance record; Tool/API M — communication channel unnamed.
 
 *MT-WS2-6:* Cognitive Load L — documenting a decided outcome is execution; Input Structure H — reason codes and determination fields are structured; Decision Determinism H — document the physician's decision; no additional judgment; Exception Frequency L — standard documentation for a decided claim; Compliance/Risk H — denial notices have regulatory content requirements (state and federal insurance law); the documentation is the audit record; Tool/API M — documentation system unnamed.
 
@@ -508,10 +512,10 @@ WS1 pends while waiting for a provider to supply missing prior auth. WS2 pends w
 
 ---
 
-> **Assumption [A-D2A-6]:** Malformed PDFs, missing fields, and near-duplicate submissions occur with moderate frequency (scored M exception frequency for intake), representing a material proportion of non-EDI claims.
+> **Assumption [A-D2A-6]:** Missing required fields (specifically `diagnosis_codes`) and other intake anomalies occur with moderate frequency (scored M exception frequency for intake) for structured formats — EDI 837P/I and Portal JSON.
 > **Why it matters:** If intake exception rate is high, the intake processing step requires more robust exception handling than a simple format-conversion pipeline, and the intake agent must be designed with provider communication capabilities (returning malformed submissions with guidance).
-> **If wrong:** If PDF and portal submissions are consistently well-formed, the intake exception rate is lower and the intake processing agent is simpler.
-> **Confidence:** Low — not stated in scenario; consistent with standard payer intake patterns.
+> **If wrong:** If submissions are consistently well-formed, the intake exception rate is lower and the intake processing agent is simpler.
+> **Confidence:** Medium — **partially validated by Claims Pack mock data**: Tier 1 formats (EDI 837P/I + Portal JSON, 1,600 files) show a 6.7% PARSE_FAILED rate (107/1,600), consistent with M. Root cause in all 107 failures is missing `diagnosis_codes` — not format malformation. CMS-1500 OCR shows a 41% PARSE_FAILED rate, which would score H; that format is deferred scope (see `D4_canonical_claim_record.md` §9).
 
 ---
 

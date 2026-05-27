@@ -1,0 +1,29 @@
+{
+  "claim_id": "CLM-2026-1000826",
+  "member_id": "612492073",
+  "provider_npi": "UNKNOWN_NPI",
+  "provider_specialty": "Physician (MD)",
+  "date_of_service": "2026-04-23",
+  "diagnosis_codes": [
+    "J029",
+    "F411",
+    "H6690"
+  ],
+  "procedure_codes": [
+    "99396",
+    "80053",
+    "73030"
+  ],
+  "procedure_quantities": [
+    1,
+    2,
+    2
+  ],
+  "billed_amount": 452.11,
+  "payer_id": "MCD-IL",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000826.edi",
+  "intake_warnings": [
+    "provider_npi_empty_segment"
+  ]
+}

@@ -241,7 +241,7 @@ def process_claim(claim: dict) -> dict:
             "trigger_signal_values": {
                 "eligibility_status": eligibility.get("eligibility_status", "UNKNOWN"),
                 "member_id": claim["member_id"],
-                "plan_id": claim["plan_id"],
+                "payer_id": claim.get("payer_id", "UNKNOWN"),
             },
             "claim_context": {
                 "procedure_code": claim["procedure_codes"][0],
@@ -256,7 +256,7 @@ def process_claim(claim: dict) -> dict:
     ctx.write_audit(
         action="ELIGIBILITY_CONFIRMED",
         delegation_tier="AGENT_ALONE",
-        input_summary={"member_id": claim["member_id"], "plan_id": claim["plan_id"]},
+        input_summary={"member_id": claim["member_id"], "payer_id": claim.get("payer_id", "UNKNOWN")},
         output_summary={"eligibility_result": "CONFIRMED"},
     )
 
@@ -372,7 +372,7 @@ def process_claim(claim: dict) -> dict:
             "claim_id": claim["claim_id"],
             "pre_action_state": "PAYMENT_CALCULATING",
             "procedure_codes": claim["procedure_codes"],
-            "plan_id": claim["plan_id"],
+            "payer_id": claim.get("payer_id", "UNKNOWN"),
         },
         output_summary={
             "payment_amount": payment,

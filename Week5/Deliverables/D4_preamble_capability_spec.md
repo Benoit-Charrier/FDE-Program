@@ -51,7 +51,7 @@ Attributes:
 - id: UUID, primary key, immutable, generated on creation
 - external_claim_id: string, max 64 characters, optional, provider-assigned identifier,
   mutable until state = ADMIN_VALIDATING, immutable thereafter
-- submission_format: enum [EDI_837, PDF, PORTAL], required, immutable after creation
+- submission_format: enum [EDI_837P, EDI_837I, PORTAL_FORM, FHIR_R4, CMS1500_PDF, EMAIL_EML, FAX_PDF, EXCEPTION_NOTES_PDF], required, immutable after creation
 - member_id: string, max 32 characters, required, set on creation, immutable
 - provider_id: string, max 32 characters, required, set on creation, immutable
 - provider_specialty: string, max 128 characters, required, set on creation, immutable
@@ -77,6 +77,8 @@ Attributes:
   each value must be from the validated rejection code reference set
 - clinical_classification_id: UUID, optional, null until T-08 (WS1) executes;
   foreign key to ClinicalClassificationResult
+- clinical_classification_id_ws2: UUID, optional, null until T-B-02 (WS2) executes;
+  foreign key to ClinicalClassificationResult (call_site = VERIFICATION)
 - hitl_queue_type: enum [PHYSICIAN_REVIEW, EXCEPTION_PROCESSOR, ROUTING_REVIEW],
   optional, null unless state ∈ {PENDING_PHYSICIAN_REVIEW, PENDING_HITL_EXCEPTION}
 - hitl_assigned_to: UUID, optional, null unless claim is in HITL state;
@@ -95,6 +97,8 @@ Attributes:
 Relationships:
 - clinical_classification_id: UUID, foreign key to ClinicalClassificationResult,
   optional/1:1, on delete: set null
+- clinical_classification_id_ws2: UUID, foreign key to ClinicalClassificationResult,
+  optional/1:1, null until WS2 T-B-02 executes; on delete: set null
 - audit_entries: 1:many via AuditLogEntry.entity_id, on delete: restrict
   (audit entries must be archived before any claim record deletion;
   claim record deletion is not permitted in normal production operations)
@@ -282,11 +286,14 @@ Attributes:
 - timestamp: ISO 8601 timestamp, UTC, millisecond precision, immutable, set on creation
 - agent_id: string, max 64 characters, required, immutable —
   identifier of the agent instance producing this entry (format: {agent_name}:{version}:{instance_id})
-- action: enum [CLAIM_STATE_TRANSITION, CLASSIFICATION_COMPLETED, ESCALATION_TRIGGERED,
-  PAYMENT_CALCULATED, PAYMENT_APPROVED, CLAIM_REJECTED, HITL_EXCEPTION_RAISED,
-  HITL_RESOLVED, AUDIT_RECORD_COMMITTED, ADDITIONAL_INFO_REQUESTED,
-  PACKET_DELIVERED, REFERENCE_DATA_MISS], required, immutable — exhaustive;
-  no unlisted action type is valid
+- action: string, max 64 characters, required, immutable —
+  representative base values: CLAIM_STATE_TRANSITION, CLASSIFICATION_COMPLETED,
+  ESCALATION_TRIGGERED, PAYMENT_CALCULATED, PAYMENT_APPROVED, CLAIM_REJECTED,
+  HITL_EXCEPTION_RAISED, HITL_RESOLVED, AUDIT_RECORD_COMMITTED,
+  ADDITIONAL_INFO_REQUESTED, PACKET_DELIVERED, REFERENCE_DATA_MISS;
+  complete per-agent value sets are defined in D4a §13 (WS1) and D4b §13 (WS2) —
+  those per-spec enums are authoritative; no value outside the applicable per-spec
+  §13 enum is valid for that agent's audit records
 - entity_type: string, max 64 characters, required, immutable —
   identifies the entity this entry records an action on
   (e.g., "ClaimRecord", "ClinicalClassificationResult")
@@ -379,7 +386,8 @@ Attributes:
   required, immutable
 - trigger_type: enum [ELIGIBILITY_DISCREPANCY, PRIOR_AUTH_MISMATCH,
   CODING_PLAUSIBILITY, CLINICAL_ROUTING, CONTRACT_EXCEPTION, AUDIT_FAILURE,
-  GOVERNANCE_VIOLATION, DOCUMENTATION_MISSING, ROUTING_VERIFICATION_BELOW_THRESHOLD],
+  GOVERNANCE_VIOLATION, DOCUMENTATION_MISSING, ROUTING_VERIFICATION_BELOW_THRESHOLD,
+  ROUTING_VERIFICATION_CONFLICT, HITL_SLA_BREACH],
   required, immutable
 - trigger_signal_values: JSON object, required, immutable —
   the specific numeric or enumerated values that caused the trigger condition;

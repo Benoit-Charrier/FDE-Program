@@ -1,0 +1,30 @@
+{
+  "claim_id": "CLM-2026-1001102",
+  "member_id": "XOJ918208217",
+  "provider_npi": "2598167536",
+  "provider_specialty": "Hospital/Institutional",
+  "date_of_service": "2026-03-09",
+  "diagnosis_codes": [
+    "E119",
+    "J449"
+  ],
+  "procedure_codes": [
+    "99213",
+    "83036",
+    "80061",
+    "99203",
+    "99421"
+  ],
+  "procedure_quantities": [
+    2,
+    2,
+    1,
+    2,
+    1
+  ],
+  "billed_amount": 1077.82,
+  "payer_id": "BCBS-IL",
+  "source_format": "EDI_837I",
+  "source_file": "CLM-2026-1001102.edi",
+  "intake_warnings": []
+}

@@ -1,0 +1,22 @@
+{
+  "claim_id": "CLM-2026-1000960",
+  "member_id": "380256624-00",
+  "provider_npi": "7593617671",
+  "provider_specialty": "Cardiologist",
+  "date_of_service": "2026-04-07",
+  "diagnosis_codes": [
+    "J209",
+    "M797"
+  ],
+  "procedure_codes": [
+    "97110"
+  ],
+  "procedure_quantities": [
+    1
+  ],
+  "billed_amount": 33.5,
+  "payer_id": "UHC-002",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000960.edi",
+  "intake_warnings": []
+}

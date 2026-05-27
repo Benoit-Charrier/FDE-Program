@@ -1,0 +1,23 @@
+{
+  "claim_id": "CLM-2026-1001388",
+  "member_id": "545118422-09",
+  "provider_npi": "9521521252",
+  "provider_specialty": "Pediatrics",
+  "date_of_service": "2026-03-29",
+  "diagnosis_codes": [
+    "M25.561",
+    "I10"
+  ],
+  "procedure_codes": [
+    "80061"
+  ],
+  "procedure_quantities": [
+    1
+  ],
+  "billed_amount": 26.43,
+  "payer_id": "UHC-001",
+  "group_id": "GRP-26466",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001388.json",
+  "intake_warnings": []
+}

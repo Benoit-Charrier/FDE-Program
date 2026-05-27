@@ -1,0 +1,25 @@
+{
+  "claim_id": "CLM-2026-1000702",
+  "member_id": "XOJ827186915",
+  "provider_npi": "8801379444",
+  "provider_specialty": "Physician (MD)",
+  "date_of_service": "2026-04-14",
+  "diagnosis_codes": [
+    "S93401A",
+    "J209",
+    "R5383"
+  ],
+  "procedure_codes": [
+    "97140",
+    "99281"
+  ],
+  "procedure_quantities": [
+    1,
+    1
+  ],
+  "billed_amount": 167.2,
+  "payer_id": "BCBS-IL",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000702.edi",
+  "intake_warnings": []
+}

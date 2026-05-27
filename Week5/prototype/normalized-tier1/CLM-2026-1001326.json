@@ -1,0 +1,25 @@
+{
+  "claim_id": "CLM-2026-1001326",
+  "member_id": "0JW1TMU4X",
+  "provider_npi": "UNKNOWN_NPI",
+  "provider_specialty": "Radiology",
+  "date_of_service": "2026-04-06",
+  "diagnosis_codes": [
+    "N39.0",
+    "F41.1"
+  ],
+  "procedure_codes": [
+    "12001"
+  ],
+  "procedure_quantities": [
+    1
+  ],
+  "billed_amount": 156.46,
+  "payer_id": "MCR-001",
+  "group_id": "GRP-98079",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001326.json",
+  "intake_warnings": [
+    "provider_npi_missing"
+  ]
+}

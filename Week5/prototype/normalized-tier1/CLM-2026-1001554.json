@@ -1,0 +1,25 @@
+{
+  "claim_id": "CLM-2026-1001554",
+  "member_id": "YYL12376861",
+  "provider_npi": "5893210121",
+  "provider_specialty": "Pediatrics",
+  "date_of_service": "2026-04-20",
+  "diagnosis_codes": [
+    "E78.5",
+    "I25.10"
+  ],
+  "procedure_codes": [
+    "44970",
+    "80053"
+  ],
+  "procedure_quantities": [
+    1,
+    1
+  ],
+  "billed_amount": 1410.85,
+  "payer_id": "ANT-001",
+  "group_id": "GRP-19467",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001554.json",
+  "intake_warnings": []
+}

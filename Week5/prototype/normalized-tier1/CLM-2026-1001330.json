@@ -1,0 +1,24 @@
+{
+  "claim_id": "CLM-2026-1001330",
+  "member_id": "XOJ935456831",
+  "provider_npi": "UNKNOWN_NPI",
+  "provider_specialty": "Physician Assistant",
+  "date_of_service": "2026-04-20",
+  "diagnosis_codes": [
+    "R07.9"
+  ],
+  "procedure_codes": [
+    "90471"
+  ],
+  "procedure_quantities": [
+    1
+  ],
+  "billed_amount": 17.99,
+  "payer_id": "BCBS-IL",
+  "group_id": "GRP-32143",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001330.json",
+  "intake_warnings": [
+    "provider_npi_missing"
+  ]
+}

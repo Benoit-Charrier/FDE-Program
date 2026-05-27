@@ -1,0 +1,25 @@
+{
+  "claim_id": "CLM-2026-1000849",
+  "member_id": "679673489",
+  "provider_npi": "2902446052",
+  "provider_specialty": "Advanced Practice Provider (NP)",
+  "date_of_service": "2026-04-01",
+  "diagnosis_codes": [
+    "I2510",
+    "R079",
+    "J209"
+  ],
+  "procedure_codes": [
+    "99205",
+    "90471"
+  ],
+  "procedure_quantities": [
+    1,
+    2
+  ],
+  "billed_amount": 339.19,
+  "payer_id": "MCD-IL",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000849.edi",
+  "intake_warnings": []
+}

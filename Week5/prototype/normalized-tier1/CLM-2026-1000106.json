@@ -1,0 +1,23 @@
+{
+  "claim_id": "CLM-2026-1000106",
+  "member_id": "YYL20621119",
+  "provider_npi": "1709226142",
+  "provider_specialty": "Pediatrician",
+  "date_of_service": "2026-03-30",
+  "diagnosis_codes": [
+    "N390"
+  ],
+  "procedure_codes": [
+    "99215",
+    "99213"
+  ],
+  "procedure_quantities": [
+    1,
+    1
+  ],
+  "billed_amount": 357.46,
+  "payer_id": "ANT-001",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000106.edi",
+  "intake_warnings": []
+}

@@ -1,0 +1,25 @@
+{
+  "claim_id": "CLM-2026-1000883",
+  "member_id": "W303455436",
+  "provider_npi": "8961443601",
+  "provider_specialty": "Cardiologist",
+  "date_of_service": "2026-04-13",
+  "diagnosis_codes": [
+    "I10"
+  ],
+  "procedure_codes": [
+    "72148",
+    "99285",
+    "97110"
+  ],
+  "procedure_quantities": [
+    2,
+    1,
+    1
+  ],
+  "billed_amount": 1140.61,
+  "payer_id": "AET-001",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000883.edi",
+  "intake_warnings": []
+}

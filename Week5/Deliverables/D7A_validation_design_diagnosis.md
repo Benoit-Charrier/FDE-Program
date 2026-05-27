@@ -2,7 +2,7 @@
 
 **Source scenarios:** `Deliverables/D7_validation_plan.md`
 **Prototype:** `prototype/agents/ws1_agent.py`
-**Date:** 2026-05-25
+**Date:** 2026-05-26 (updated)
 
 ---
 
@@ -13,18 +13,34 @@
 - [3. S-2 — Confidence at exactly the threshold](#3-s-2--confidence-at-exactly-the-threshold)
 - [4. S-3 — FM-A-5 governance hard stop](#4-s-3--fm-a-5-governance-hard-stop)
 - [5. Residual observation surfaced during testing](#5-residual-observation-surfaced-during-testing)
+- [6. Pass 2 — Corpus validation diagnosis](#6-pass-2--corpus-validation-diagnosis)
 
 ---
 
 ## 1. Test run summary
 
-All three D7 scenarios passed every pass criterion. No failures detected.
+All Pass 1 scenarios and the Pass 2 corpus validation passed. No failures detected. The §5 residual observation (ET-07 `required_resolution` mismatch) has been resolved — the prototype selects the correct string based on `trigger_type`.
+
+**Pass 1 — Scenario fixtures (5 tests, 2026-05-26):**
 
 | Scenario | Result | Key assertions |
 |----------|--------|----------------|
 | S-1 Happy path | PASS | `status=approved`, `payment_amount=85.0`, `calibration_record_id=cal-rec-2026-05-001`, 6 COMMITTED audit entries, no escalation fields |
 | S-2 Confidence at 0.70 | PASS | `status=approved` — `>=` comparison confirmed inclusive; no ET-02 fired |
 | S-3 FM-A-5 hard stop | PASS | `escalation_trigger_id=ET-07`, `trigger_type=GOVERNANCE_VIOLATION`, `payment_amount` absent, `claim_state_at_escalation=ROUTING` (state preserved, not overwritten) |
+| `test_hitl_escalation` | PASS | CLAIM-CLINICAL-01, clinical (0.94) → `status=escalated`, ET-01, physician HITL queue |
+| `test_uncertain_classification` | PASS | CLAIM-UNCERTAIN-01, uncertain (0.48) → `status=escalated`, ET-02, physician HITL queue; `payment_approved` absent from audit trail |
+
+**Pass 2 — Corpus validation (1,493 files, 2026-05-26):**
+
+| Assertion | Result | Violations |
+|-----------|--------|------------|
+| `status ∈ {approved, escalated}` for all 1,493 files | PASS | 0 |
+| `payment_amount > 0` for all 975 approved | PASS | 0 |
+| `payment_approved [COMMITTED]` in audit trail for all approved | PASS | 0 |
+| `payment_amount` absent from all 518 escalated | PASS | 0 |
+| `calibration_record_id` present on all approved | PASS | 0 |
+| All 3 Tier-1 formats represented | PASS | EDI_837P, EDI_837I, PORTAL_FORM all present |
 
 ---
 
@@ -110,15 +126,30 @@ FM-A-5 pre-condition check fired correctly before `get_payment_amount()` was cal
 
 **What was observed:** S-3 output contains `required_resolution = "Audit failure: [RECONSTRUCT_AND_CONTINUE / REJECT_CLAIM / ESCALATE_TO_COMPLIANCE]"` while `trigger_type = GOVERNANCE_VIOLATION`. An exception processor reviewer looking at this ticket would see a governance violation classified under an "Audit failure" resolution prompt — the two fields tell different stories about what happened.
 
-**Why it matters:** The `required_resolution` field is defined per `escalation_trigger_id` in §7 (one text per ET-01 through ET-07). GAP-14 split ET-07 into two causes — `AUDIT_FAILURE` and `GOVERNANCE_VIOLATION` — but the §7 required_resolution table was not updated to reflect the split. The required_resolution text for both ET-07 causes is still "Audit failure: [...]".
+**Category:** Spec ambiguity. The spec was internally consistent (§7 maps ET-07 → one required_resolution text), but the GAP-14 resolution created a new cause that the required_resolution text did not cover. The builder implemented correctly per the old spec; the spec needed a small update.
 
-**Category:** Spec ambiguity. The spec is internally consistent (§7 maps ET-07 → one required_resolution text), but the GAP-14 resolution created a new cause that the required_resolution text does not cover. The builder implemented correctly per the spec; the spec needs a small update.
-
-**Fix:** Add a second row to the §7 required_resolution table for the governance-violation sub-cause of ET-07:
+**Resolution — CLOSED:** `D4a_capability_spec.md` §7 was updated to carry two ET-07 rows distinguished by `trigger_type`. The prototype `_fire_et07()` function was updated to select the correct `required_resolution` string based on `trigger_type`:
 
 | Trigger ID | Cause | `required_resolution` |
 |------------|-------|----------------------|
 | ET-07 | Audit write failure | `"Audit failure: [RECONSTRUCT_AND_CONTINUE / REJECT_CLAIM / ESCALATE_TO_COMPLIANCE]"` |
 | ET-07 | Governance hard-stop (state mismatch) | `"Governance violation: [INVESTIGATE_STATE_MACHINE / REJECT_CLAIM / ESCALATE_TO_COMPLIANCE]"` |
 
-The prototype should select the appropriate text based on `trigger_type`. This does not require a re-prompt of the builder — it is a spec update that the builder should receive before the next build pass.
+S-3 now produces `required_resolution = "Governance violation: [INVESTIGATE_STATE_MACHINE / REJECT_CLAIM / ESCALATE_TO_COMPLIANCE]"` — consistent with `trigger_type = GOVERNANCE_VIOLATION`. Confirmed passing in current test run.
+
+---
+
+## 6. Pass 2 — Corpus validation diagnosis
+
+**Result:** PASS — 6/6 assertions, 0 violations, 0 unhandled exceptions across 1,493 files.
+
+**What this confirms beyond Pass 1:**
+
+The four Pass 1 fixtures are hand-crafted to hit specific delegation boundaries. They cannot detect field contract gaps that only appear in one intake format. Pass 2 exercises all three parsers' output shapes against the full WS1 pipeline and confirms:
+
+- **Field contract holds across all three parsers.** EDI 837P, EDI 837I, and Portal JSON each produce slightly different NormalizedClaimInput shapes (different optional fields present, different `intake_warnings` content). No shape caused a missing `payment_amount`, a dropped `calibration_record_id`, or a broken audit entry.
+- **Audit-first ordering is not input-sensitive.** 975 claims processed to APPROVED with zero audit trail violations — the ordering invariant holds regardless of procedure code, diagnosis code, or source format.
+- **Payment suppression is not input-sensitive.** 518 escalated claims produced zero `payment_amount` entries — the FM-A-5 guard and all other escalation paths correctly suppress payment for every input shape in the corpus.
+- **No silent crashes.** Zero unhandled exceptions across 1,493 files. Every claim produced a structurally valid result.
+
+**What Pass 2 does not confirm:** Routing accuracy. The heuristic mock classifier routes by CPT range, not by clinical content. The 65.3% approval rate is a function of the Claims Pack's procedure code distribution, not of WS1's real-world routing behaviour. Production routing accuracy requires a labelled golden set and a live classifier run — this is a production validation concern, not a prototype concern.

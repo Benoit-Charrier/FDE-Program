@@ -1,0 +1,26 @@
+{
+  "claim_id": "CLM-2026-1001459",
+  "member_id": "W904970466",
+  "provider_npi": "3389403741",
+  "provider_specialty": "Emergency Medicine",
+  "date_of_service": "2026-04-16",
+  "diagnosis_codes": [
+    "M17.11"
+  ],
+  "procedure_codes": [
+    "99203",
+    "44970",
+    "80061"
+  ],
+  "procedure_quantities": [
+    1,
+    1,
+    2
+  ],
+  "billed_amount": 1867.8,
+  "payer_id": "AET-001",
+  "group_id": "GRP-36432",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001459.json",
+  "intake_warnings": []
+}

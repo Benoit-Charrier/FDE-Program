@@ -1,0 +1,28 @@
+{
+  "claim_id": "CLM-2026-1001338",
+  "member_id": "8VQ3JTK9PQ2",
+  "provider_npi": "3458221735",
+  "provider_specialty": "Physician Assistant",
+  "date_of_service": "2026-04-01",
+  "diagnosis_codes": [
+    "N39.0",
+    "M79.7",
+    "E66.9"
+  ],
+  "procedure_codes": [
+    "20610",
+    "99281",
+    "99204"
+  ],
+  "procedure_quantities": [
+    1,
+    1,
+    1
+  ],
+  "billed_amount": 502.76,
+  "payer_id": "MCR-001",
+  "group_id": "GRP-68246",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001338.json",
+  "intake_warnings": []
+}

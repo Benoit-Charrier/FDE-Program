@@ -1,0 +1,23 @@
+{
+  "claim_id": "CLM-2026-1001357",
+  "member_id": "W490616240",
+  "provider_npi": "7603849007",
+  "provider_specialty": "Pediatrics",
+  "date_of_service": "2026-04-08",
+  "diagnosis_codes": [
+    "S93.401A",
+    "E66.9"
+  ],
+  "procedure_codes": [
+    "72148"
+  ],
+  "procedure_quantities": [
+    2
+  ],
+  "billed_amount": 841.97,
+  "payer_id": "AET-001",
+  "group_id": "GRP-21759",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001357.json",
+  "intake_warnings": []
+}

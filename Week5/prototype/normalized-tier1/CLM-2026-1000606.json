@@ -1,0 +1,28 @@
+{
+  "claim_id": "CLM-2026-1000606",
+  "member_id": "8RA0KQU4XK9",
+  "provider_npi": "8262862363",
+  "provider_specialty": "Pediatrician",
+  "date_of_service": "2026-04-17",
+  "diagnosis_codes": [
+    "Z0000",
+    "S93401A"
+  ],
+  "procedure_codes": [
+    "99422",
+    "85025",
+    "44970",
+    "70551"
+  ],
+  "procedure_quantities": [
+    1,
+    1,
+    2,
+    2
+  ],
+  "billed_amount": 3674.68,
+  "payer_id": "MCR-001",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000606.edi",
+  "intake_warnings": []
+}

@@ -75,17 +75,19 @@
 
 ## §2. Inputs and Outputs
 
+*Input contract alignment note: WS1 receives claims as a `NormalizedClaimInput` dict (the Intake Agent's output contract, defined in `D4_canonical_claim_record.md`). The canonical field names are: `provider_npi` (NPI string), `payer_id` (payer/plan identifier), `source_format` (intake format enum). `ClaimRecord` stores the NPI under column `provider_npi`; `payer_id` is passed through from NormalizedClaimInput and is not a ClaimRecord column. Any reference to `plan_id` in this spec is superseded by `payer_id` from the canonical record.*
+
 **Inputs:**
 
 | Input | Source system | Format | Required / Optional | Validation rule |
 |-------|---------------|--------|---------------------|-----------------|
-| Normalised claim record in NORMALISED state | S-07 Claims management system (internal queue) | `ClaimRecord` JSON object, all required fields populated per §2 shared entity definition | Required | `ClaimRecord.state = NORMALISED`; all required fields present and schema-valid; `date_of_service ≤ created_at` date; `diagnosis_codes` ≥ 1 element matching ICD-10 format; `procedure_codes` ≥ 1 element matching CPT 5-digit format |
+| Normalised claim record in NORMALISED state | S-07 Claims management system (internal queue) | `NormalizedClaimInput` canonical record (see `D4_canonical_claim_record.md §2`); HARD required fields: `claim_id`, `diagnosis_codes`, `procedure_codes`; SOFT required with defaults: `member_id`, `provider_npi`, `date_of_service`, `billed_amount`; source tracking: `source_format`, `source_file`, `intake_warnings` | Required | `ClaimRecord.state = NORMALISED`; all HARD required fields present and non-empty; `date_of_service ≤ created_at` date; `diagnosis_codes` ≥ 1 element matching ICD-10 format; `procedure_codes` ≥ 1 element matching CPT 5-digit format |
 | Member eligibility data | S-02 Member eligibility system | HIPAA 270/271 eligibility response; fields: `eligibility_status` (ACTIVE / INACTIVE / NOT_FOUND / PLAN_ID_MISMATCH / COVERAGE_GAP), `coverage_start_date`, `coverage_end_date`, `error_code` | Required | Response received within 5 seconds (P95); non-null `eligibility_status`; coverage dates are ISO 8601 dates when status = ACTIVE |
 | ICD-10 / CPT code validity reference | S-03 Code validation reference | Structured lookup table — flat file or API; fields: code value, code type (ICD10 / CPT), valid_from date, valid_through date, description | Required | Reference version identifier non-null; `valid_through` date ≥ today at pipeline startup; confirmed licensed for agent use |
 | Coding plausibility reference | S-03 Code validation reference (plausibility table) + vector store (S-15 medical necessity criteria, novel combinations) | Structured procedure-diagnosis-specialty pairing table; vector store chunks tagged by `procedure_code_range` and `icd_chapter` | Required (structured table); Optional (vector augmentation) | Structured table version non-null; vector store index version matches criteria document version identifier; stale chunks (past expiry) excluded at query time |
 | Prior authorisation record | S-04 Prior authorisation system | PA query response; fields: `prior_auth_status` (PRESENT_EXACT_MATCH / PRESENT_PARTIAL_MATCH / NOT_REQUIRED / NOT_FOUND / EXPIRED), `authorized_units`, `expiry_date`, `procedure_code`, `member_id` | Required for procedures requiring PA; NOT_REQUIRED is a valid response | Response received within 5 seconds (P95); `authorized_units` non-null when `prior_auth_status ∈ {PRESENT_EXACT_MATCH, PRESENT_PARTIAL_MATCH}`; write access to S-04 explicitly excluded |
-| Fee schedule and cost-sharing rules | S-05 Fee schedule system | Rate record keyed by `provider_id + procedure_code + plan_id + modifier_codes`; fields: `contracted_rate` (decimal USD), `cost_sharing_proportion` (float 0.00–1.00), `rate_version`, `rate_valid_through` | Required | `rate_valid_through` ≥ today; `contracted_rate > 0.00`; `cost_sharing_proportion` in range [0.00, 1.00] |
-| Contract exception rules | S-06 Contract document store | Exception clause record keyed by `provider_id + payer_id + procedure_code_range`; fields: `exception_rate` (decimal USD), `amendment_flag` (boolean), `clause_id` | Required for WS1-JtD-3 full automation — **[SCOPE-OUT — see §14 A-D4a-1]** | S-06 is SCOPE-OUT in D4 integration preamble §1; until confirmed accessible, all T-10 lookups route to ET-06 |
+| Fee schedule and cost-sharing rules | S-05 Fee schedule system | Rate record keyed by `provider_npi + procedure_code + payer_id + modifier_codes`; fields: `contracted_rate` (decimal USD), `cost_sharing_proportion` (float 0.00–1.00), `rate_version`, `rate_valid_through` | Required | `rate_valid_through` ≥ today; `contracted_rate > 0.00`; `cost_sharing_proportion` in range [0.00, 1.00] |
+| Contract exception rules | S-06 Contract document store | Exception clause record keyed by `provider_npi + payer_id + procedure_code_range`; fields: `exception_rate` (decimal USD), `amendment_flag` (boolean), `clause_id` | Required for WS1-JtD-3 full automation — **[SCOPE-OUT — see §14 A-D4a-1]** | S-06 is SCOPE-OUT in D4 integration preamble §1; until confirmed accessible, all T-10 lookups route to ET-06 |
 | Medical necessity criteria chunks | S-15 Medical necessity criteria system | Vector store chunks tagged by `procedure_code_range`, `icd_chapter`, source document `version_id`, chunk `expiry_date` | Optional (retrieval augmentation for T-08 and T-05 novel combinations) — **[SCOPE-OUT — see §14 A-D4a-2]** | Cosine similarity ≥ 0.75 for T-08 retrieval; ≥ 0.70 for T-05; chunks past `expiry_date` excluded; if no chunk reaches threshold, T-08 logs `RETRIEVAL_THRESHOLD_NOT_MET` in `compliance_flags` |
 | Signed calibration artefact | S-16 Configuration management system | `CalibrationRecord` JSON object (see §3) | Required — loaded at agent startup | `CalibrationRecord.state = SIGNED`; `cmo_signoff_date` non-null; `recall_achieved ≥ 0.995`; `holdout_set_size ≥ 500`; `classifier_version` matches current deployed classifier; agent refuses to start if any condition fails |
 
@@ -238,15 +240,15 @@ Naming conventions:
 | Task ID | Task name | Task type | Delegation level | Data required | Tool required | Risk level |
 |---------|-----------|-----------|-----------------|---------------|---------------|------------|
 | T-01 | Claim record intake and schema validation | Retrieval + Decision | Fully agentic | `ClaimRecord` in `NORMALISED` state; required-fields schema | Internal queue read (S-07); schema validator | Low |
-| T-02 | Member eligibility verification | Retrieval | Fully agentic | `member_id`, `plan_id`, `date_of_service` from `ClaimRecord` | Eligibility API read-only (S-02) | Medium |
-| T-03 | Eligibility discrepancy resolution | Reasoning + Decision | Agent-led + HITL on condition | Eligibility API response; member record; claim `date_of_service`; eligibility correction rule set | Haiku 4.5; eligibility correction rule set (internal) | Medium |
+| T-02 | Member eligibility verification | Retrieval | Fully agentic | `member_id`, `payer_id`, `date_of_service` from `NormalizedClaimInput` | Eligibility API read-only (S-02) | Medium |
+| T-03 | Eligibility discrepancy resolution | Reasoning + Decision | Agent-led + HITL on condition | Eligibility API response; member record; claim `date_of_service`; eligibility correction rule set | eligibility correction rule set (internal) | Medium |
 | T-04 | Procedure and diagnosis code validity check | Retrieval + Decision | Fully agentic | `diagnosis_codes` (ICD-10 array), `procedure_codes` (CPT array) from `ClaimRecord`; code validity reference | Code validation reference (S-03) | Low |
 | T-05 | Coding plausibility assessment | Reasoning + Decision | Agent-led + HITL on condition | `diagnosis_codes`, `procedure_codes`, `provider_specialty`; structured pairing table; top-3 vector chunks if novel combination | Haiku 4.5; code plausibility reference table (S-03); medical necessity criteria vector store (S-15) [SCOPE-OUT] | Medium |
 | T-06 | Prior authorisation lookup | Retrieval | Fully agentic | `member_id`, `procedure_codes`, `date_of_service` | Prior auth system API read-only (S-04) | Medium |
-| T-07 | Prior auth partial-match tolerance resolution | Reasoning + Decision | Agent-led + HITL on condition | Prior auth record (`authorized_units`); `ClaimRecord.procedure_codes` (claimed units); `PRIOR_AUTH_UNIT_TOLERANCE_PCT` | Haiku 4.5; arithmetic; prior auth system API (S-04) | Medium |
+| T-07 | Prior auth partial-match tolerance resolution | Reasoning + Decision | Agent-led + HITL on condition | Prior auth record (`authorized_units`); `ClaimRecord.procedure_codes` (claimed units); `PRIOR_AUTH_UNIT_TOLERANCE_PCT` | arithmetic; prior auth system API (S-04) | Medium |
 | T-08 | Clinical content routing classification | Decision | Agent-led + HITL on condition | `diagnosis_codes`, `procedure_codes`, `provider_specialty`; `CLINICAL_CONTENT_CONFIDENCE_THRESHOLD`; medical necessity criteria top-3 chunks (if available); signed `CalibrationRecord` | Sonnet 4.6; medical necessity criteria vector store (S-15) [SCOPE-OUT]; configuration management (S-16) | **High** |
 | T-09 | Payment calculation | Retrieval + Decision | Fully agentic (standard path) | `ClaimRecord` in `ADMIN_CLEARED` state; fee schedule record (`contracted_rate`, `cost_sharing_proportion`, `modifier_codes`); contract exception flag from T-10 | Fee schedule system API (S-05) | Medium |
-| T-10 | Contract exception handling | Reasoning + Decision | Agent-led + HITL on condition | `provider_id`, `payer_id`, `procedure_codes`; contract exception rule record (if S-06 accessible); `amendment_flag` | Haiku 4.5; contract document store (S-06) [SCOPE-OUT] | **High** |
+| T-10 | Contract exception handling | Reasoning + Decision | Agent-led + HITL on condition | `provider_id`, `payer_id`, `procedure_codes`; contract exception rule record (if S-06 accessible); `amendment_flag` | contract document store (S-06) [SCOPE-OUT] | **High** |
 | T-11 | Audit record generation | Generation | Fully agentic | All pipeline step outputs; confidence scores; matched references; timestamps; escalation reason if applicable; `delegation_tier` for each action | Audit log system append-only API (S-10) | Medium |
 | T-12 | Escalation packet assembly | Generation | Fully agentic | Pipeline step outputs to point of escalation; trigger type and trigger ID; specific signal values that caused the trigger; `required_resolution` question | Escalation formatter; HITL exception management (S-09) or physician review queue (S-08) | Medium |
 
@@ -430,7 +432,7 @@ Error handling: Expired reference routes affected claims to ET-06. The reference
 ```
 Decision D-A-1: Member eligibility determination
 Input:
-  - ClaimRecord: member_id (string), plan_id (string), date_of_service (ISO 8601 date)
+  - NormalizedClaimInput: member_id (string), payer_id (string), date_of_service (ISO 8601 date)
   - S-02 eligibility API response: eligibility_status enum
     [ACTIVE, INACTIVE, NOT_FOUND, PLAN_ID_MISMATCH, COVERAGE_GAP],
     coverage_start_date (ISO 8601 date or null), coverage_end_date (ISO 8601 date or null),
@@ -443,7 +445,7 @@ Logic:
     retry once after 5 seconds
     IF retry also fails:
       THEN escalate ET-03 with trigger_signal_values = {error_type: "API_UNAVAILABLE",
-        member_id, plan_id, date_of_service}
+        member_id, payer_id, date_of_service}
       GOTO end
   IF eligibility_status = ACTIVE
     AND coverage_start_date ≤ date_of_service
@@ -451,14 +453,14 @@ Logic:
     THEN eligibility_result = CONFIRMED; pipeline advances to T-04
   ELSE IF eligibility_status ∈ {INACTIVE, NOT_FOUND, PLAN_ID_MISMATCH, COVERAGE_GAP}:
     check eligibility correction rule set for a rule where match_condition(member_id,
-      plan_id, date_of_service, eligibility_status) = true
+      payer_id, date_of_service, eligibility_status) = true
     IF matching rule found:
       THEN apply corrective_action; eligibility_result = CORRECTED;
         log AuditLogEntry with action = CLAIM_STATE_TRANSITION, delegation_tier = AGENT_LOGS,
         output_summary.correction_rule_applied = rule.id; pipeline advances to T-04
     ELSE (no matching correction rule):
       THEN escalate ET-03 with trigger_signal_values = {eligibility_status,
-        member_id, plan_id, date_of_service, error_code}
+        member_id, payer_id, date_of_service, error_code}
   ELSE (API returned null eligibility_status or unrecognised value):
     THEN escalate ET-03 with trigger_signal_values = {error: "NULL_OR_UNKNOWN_STATUS",
       raw_response_code: error_code}
@@ -468,13 +470,13 @@ Delegation tier: AGENT_ALONE for CONFIRMED; AGENT_LOGS for CORRECTED; HUMAN_DECI
 Confidence gate: not applicable — this decision is binary rule-based, not confidence-scored
 
 Worked example:
-  Input values: member_id = "GHS-MBR-0042891", plan_id = "GHS-PPO-2026",
+  Input values: member_id = "GHS-MBR-0042891", payer_id = "GHS-PPO-2026",
     date_of_service = "2026-04-15"
   API response: eligibility_status = ACTIVE, coverage_start_date = "2026-01-01",
     coverage_end_date = "2026-12-31"
   Branch taken: First IF fires — ACTIVE AND 2026-01-01 ≤ 2026-04-15 ≤ 2026-12-31
   Output: eligibility_result = CONFIRMED; AuditLogEntry written with action =
-    CLAIM_STATE_TRANSITION, input_summary = {member_id, plan_id, date_of_service,
+    CLAIM_STATE_TRANSITION, input_summary = {member_id, payer_id, date_of_service,
     eligibility_status: "ACTIVE"}, output_summary = {eligibility_result: "CONFIRMED"};
     pipeline advances to T-04
 ```
@@ -593,6 +595,13 @@ Logic:
   ELSE IF prior_auth_status = PRESENT_EXACT_MATCH
     AND authorized_units = claimed_units:
     THEN auth_result = CONFIRMED; pipeline advances to T-08
+  ELSE IF prior_auth_status = PRESENT_EXACT_MATCH
+    AND authorized_units ≠ claimed_units:
+    THEN escalate ET-04 with trigger_signal_values = {prior_auth_status: "PRESENT_EXACT_MATCH",
+      authorized_units, claimed_units, error: "UNIT_COUNT_CONTRADICTION",
+      note: "S-04 returned PRESENT_EXACT_MATCH but authorized_units ≠ claimed_units —
+        contradictory API response; cannot auto-resolve; HITL exception processor must
+        confirm correct authorised unit count before adjudication proceeds"}
   ELSE IF prior_auth_status = PRESENT_PARTIAL_MATCH
     AND claimed_units > authorized_units:
     compute pct_excess = (claimed_units - authorized_units) / authorized_units
@@ -773,7 +782,7 @@ Pre-condition (runs as first operation of T-09, before any external call):
       GOTO end — this is REQ-A-6 enforcement
 
 Input (only read after pre-condition passes):
-  - ClaimRecord: provider_id, procedure_codes, modifier_codes, plan_id, member_id
+  - NormalizedClaimInput: provider_npi, procedure_codes, modifier_codes, payer_id, member_id
   - S-05 fee schedule response: contracted_rate (decimal USD), cost_sharing_proportion
     (float 0.00–1.00), rate_version, rate_valid_through
   - contract_exception_flag (boolean): set true if T-10 found an applicable exception
@@ -783,16 +792,16 @@ Logic:
   IF S-05.rate_valid_through < today:
     THEN log expired_reference; escalate ET-06 with trigger_signal_values =
       {expired_reference: "S-05", rate_valid_through, today}; GOTO end
-  IF fee_schedule_response returns no rate for (provider_id, procedure_codes[0], plan_id):
+  IF fee_schedule_response returns no rate for (provider_npi, procedure_codes[0], payer_id):
     THEN escalate ET-06 with trigger_signal_values =
-      {error: "NO_RATE_FOUND", provider_id, procedure_codes, plan_id}; GOTO end
+      {error: "NO_RATE_FOUND", provider_npi, procedure_codes, payer_id}; GOTO end
   IF contract_exception_flag = false:
     THEN payment_amount = contracted_rate × (1 - cost_sharing_proportion)
       (rounded to 2 decimal places, half-up)
     ClaimRecord.payment_amount = payment_amount
     ClaimRecord.state → APPROVED
     write payment instruction to S-11 with {ClaimRecord.id, payment_amount,
-      provider_id, plan_id, audit_log_entry_id}
+      provider_npi, payer_id, audit_log_entry_id}
     AuditLogEntry written with action = PAYMENT_APPROVED, delegation_tier = AGENT_LOGS,
       output_summary = {payment_amount, contracted_rate, cost_sharing_proportion,
       rate_version, audit_confirmation: true}
@@ -811,14 +820,14 @@ Confidence gate: not applicable — arithmetic computation
 
 Worked example (standard admin approval):
   Input values: ClaimRecord.state = ADMIN_CLEARED (pre-condition passes),
-    provider_id = "GHS-PRV-NPI-7124893", procedure_codes = ["93306"],
-    plan_id = "GHS-PPO-2026", modifier_codes = [], contract_exception_flag = false
+    provider_npi = "GHS-PRV-NPI-7124893", procedure_codes = ["93306"],
+    payer_id = "GHS-PPO-2026", modifier_codes = [], contract_exception_flag = false
   S-05 response: contracted_rate = 312.50, cost_sharing_proportion = 0.20,
     rate_version = "2026-Q2", rate_valid_through = "2026-06-30"
   Branch taken: pre-condition passes; no exception; rate found; standard path
   payment_amount = 312.50 × (1 - 0.20) = 312.50 × 0.80 = 250.00
   Output: ClaimRecord.state → APPROVED, payment_amount = 250.00; payment instruction written
-    to S-11 with {claim_id, payment_amount: 250.00, provider_id, audit_log_entry_id};
+    to S-11 with {claim_id, payment_amount: 250.00, provider_npi, audit_log_entry_id};
     AuditLogEntry: action = PAYMENT_APPROVED, output_summary = {payment_amount: 250.00,
     contracted_rate: 312.50, cost_sharing_proportion: 0.20, rate_version: "2026-Q2"}
 ```
@@ -833,21 +842,20 @@ Note: S-06 is SCOPE-OUT per D4_integration_preamble.md §1 and §2 (G-2 gap — 
   S-06 becomes available; it is also the correct stub behaviour in SCOPE-OUT state.
 
 Input:
-  - ClaimRecord: provider_id, procedure_codes (CPT array)
-  - payer_id: string (derived from plan configuration)
+  - NormalizedClaimInput: provider_npi, procedure_codes (CPT array), payer_id
   - S-06 contract document store (SCOPE-OUT until confirmed): exception record keyed by
-    (provider_id, payer_id, procedure_code_range); fields: exception_rate (decimal USD),
+    (provider_npi, payer_id, procedure_code_range); fields: exception_rate (decimal USD),
     amendment_flag (boolean), clause_id (string)
 
 Logic:
   IF S-06 is not accessible (SCOPE-OUT or API unavailable):
     THEN contract_exception_flag = true; contract_exception_rate = null;
       escalate ET-06 with trigger_signal_values =
-        {error: "S06_SCOPE_OUT", provider_id, procedure_codes[0], payer_id,
+        {error: "S06_SCOPE_OUT", provider_npi, procedure_codes[0], payer_id,
         scope_out_reason: "S-06 API not confirmed accessible (G-2)"};
       ClaimRecord.state → PENDING_HITL_EXCEPTION; GOTO end
   ELSE (S-06 accessible — post-G-2 resolution):
-    query S-06 for (provider_id, payer_id, procedure_codes[0])
+    query S-06 for (provider_npi, payer_id, procedure_codes[0])
     IF exception record found AND amendment_flag = false:
       THEN contract_exception_flag = true; contract_exception_rate = exception_record.exception_rate;
         log AuditLogEntry with action = CLAIM_STATE_TRANSITION, delegation_tier = AGENT_LOGS,
@@ -855,7 +863,7 @@ Logic:
         return to T-09 with contract_exception_flag = true and rate
     ELSE IF exception record found AND amendment_flag = true:
       THEN escalate ET-06 with trigger_signal_values =
-        {clause_id, amendment_flag: true, provider_id, procedure_codes[0]};
+        {clause_id, amendment_flag: true, provider_npi, procedure_codes[0]};
       ClaimRecord.state → PENDING_HITL_EXCEPTION
     ELSE (no exception record for this provider/procedure combination):
       THEN contract_exception_flag = false; contract_exception_rate = null;
@@ -867,11 +875,11 @@ Delegation tier: AGENT_LOGS when exception applied; HUMAN_DECIDES when ET-06 esc
 Confidence gate: not applicable — rule-based lookup
 
 Worked example (SCOPE-OUT state — current behaviour):
-  Input values: provider_id = "GHS-PRV-NPI-7124893", procedure_codes = ["93306"],
+  Input values: provider_npi = "GHS-PRV-NPI-7124893", procedure_codes = ["93306"],
     payer_id = "GHS-MAIN-PAYER", S-06 status = SCOPE-OUT
   Branch taken: first IF fires — S-06 not accessible
   Output: escalate ET-06; EscalationPacket with trigger_signal_values =
-    {error: "S06_SCOPE_OUT", provider_id: "GHS-PRV-NPI-7124893",
+    {error: "S06_SCOPE_OUT", provider_npi: "GHS-PRV-NPI-7124893",
     procedure_codes: ["93306"], payer_id: "GHS-MAIN-PAYER",
     scope_out_reason: "S-06 API not confirmed accessible (G-2)"};
   ClaimRecord.state → PENDING_HITL_EXCEPTION
@@ -885,7 +893,7 @@ Worked example (SCOPE-OUT state — current behaviour):
 |------------|-------------------|-----------|--------|----------------|-----|-----------------|
 | ET-01 | Clinical content classifier (T-08) returns `CLINICAL` or `UNCERTAIN` at any confidence level | Any confidence — classification value alone determines escalation | ClaimRecord.state → PENDING_PHYSICIAN_REVIEW; EscalationPacket assembled with trigger_type = CLINICAL_ROUTING, routing_queue = PHYSICIAN_HITL; all three signal values, full reasoning chain, complete ClaimRecord delivered to S-08 | Physician HITL queue (CMO-authorised clinical reviewer) | 4 hours from EscalationPacket.created_at | SLA_BREACHED flag set on EscalationPacket; escalation re-delivered with URGENT flag to senior physician reviewer; ops dashboard alert; VP Operations and CMO notified within 15 minutes of breach |
 | ET-02 | Clinical content classifier (T-08) returns `ADMIN` but confidence_score < CLINICAL_CONTENT_CONFIDENCE_THRESHOLD | confidence_score < CLINICAL_CONTENT_CONFIDENCE_THRESHOLD (default 0.70) | ClaimRecord.state → PENDING_PHYSICIAN_REVIEW; EscalationPacket assembled with trigger_type = CLINICAL_ROUTING, escalation_trigger_id = ET-02, borderline_confidence_flag = true, confidence_score and threshold_applied values included; deliver to S-08 | Physician HITL queue (CMO-authorised clinical reviewer) | 4 hours | Same as ET-01 breach action |
-| ET-03 | Member eligibility check (T-02/T-03) returns a discrepancy that cannot be resolved by a deterministic correction rule, OR S-02 unavailable after one retry | No matching rule in eligibility correction rule set; OR API returns 5xx/timeout on both attempts | ClaimRecord.state → PENDING_HITL_EXCEPTION; hitl_queue_type = EXCEPTION_PROCESSOR; EscalationPacket with trigger_type = ELIGIBILITY_DISCREPANCY, trigger_signal_values = {eligibility_status, member_id, plan_id, date_of_service, error_code} | HITL exception processor | 2 hours | Exception processor supervisor notified; claim re-tagged URGENT in exception queue; SLA breach event written to AuditLogEntry |
+| ET-03 | Member eligibility check (T-02/T-03) returns a discrepancy that cannot be resolved by a deterministic correction rule, OR S-02 unavailable after one retry | No matching rule in eligibility correction rule set; OR API returns 5xx/timeout on both attempts | ClaimRecord.state → PENDING_HITL_EXCEPTION; hitl_queue_type = EXCEPTION_PROCESSOR; EscalationPacket with trigger_type = ELIGIBILITY_DISCREPANCY, trigger_signal_values = {eligibility_status, member_id, payer_id, date_of_service, error_code} | HITL exception processor | 2 hours | Exception processor supervisor notified; claim re-tagged URGENT in exception queue; SLA breach event written to AuditLogEntry |
 | ET-04 | Prior auth lookup (T-06/T-07) returns: claimed units exceed authorized units by > PRIOR_AUTH_UNIT_TOLERANCE_PCT; OR prior auth absent for a procedure requiring it; OR prior auth EXPIRED; OR S-04 unavailable after one retry | Unit excess > PRIOR_AUTH_UNIT_TOLERANCE_PCT (default 15%); OR status ∈ {NOT_FOUND, EXPIRED}; OR API 5xx/timeout | ClaimRecord.state → PENDING_HITL_EXCEPTION; EscalationPacket with trigger_type = PRIOR_AUTH_MISMATCH, trigger_signal_values = {prior_auth_status, authorized_units, claimed_units, pct_excess, PRIOR_AUTH_UNIT_TOLERANCE_PCT, auth_record_id} | HITL exception processor | 2 hours | Exception processor supervisor notified; URGENT flag added; SLA breach event logged |
 | ET-05 | Coding plausibility assessment (T-05) — Haiku 4.5 returns IMPLAUSIBLE with confidence_score ≥ CODING_PLAUSIBILITY_CONFIDENCE_THRESHOLD, on either a table-confirmed implausible combination or a retrieval-augmented novel combination | confidence_score ≥ CODING_PLAUSIBILITY_CONFIDENCE_THRESHOLD (default 0.75) with IMPLAUSIBLE result | ClaimRecord.state → PENDING_HITL_EXCEPTION; EscalationPacket with trigger_type = CODING_PLAUSIBILITY, routing_queue = CODING_SPECIALIST, trigger_signal_values = {procedure_codes, diagnosis_codes, provider_specialty, haiku_result: "IMPLAUSIBLE", haiku_confidence, retrieval_source: "table" or "vector"} | HITL coding specialist | 2 hours | Coding specialist supervisor notified; URGENT flag; SLA breach event logged |
 | ET-06 | Contract exception handler (T-10) references a clause not in the validated reference set, has amendment_flag = true, OR S-06 is SCOPE-OUT; OR fee schedule (S-05) returns no rate for the procedure/provider combination; OR reference data (S-03, S-05) is expired | S-06 SCOPE-OUT / clause absent / amendment_flag = true; OR no fee schedule rate; OR reference valid_through < today | ClaimRecord.state → PENDING_HITL_EXCEPTION; EscalationPacket with trigger_type = CONTRACT_EXCEPTION, routing_queue = EXCEPTION_PROCESSOR (+ CONTRACT_OWNER for amendment_flag cases), trigger_signal_values = {error_type, provider_id, procedure_codes, clause_id (if applicable)} | HITL exception processor; CONTRACT_OWNER for amendment cases | 4 hours | Contract owner notified via secondary alert channel; claim remains in PENDING_HITL_EXCEPTION; VP Operations notified; daily breach summary generated |
@@ -900,7 +908,7 @@ Worked example (SCOPE-OUT state — current behaviour):
 | Trigger ID | `required_resolution` value (exact string) | Valid `resolution_decision` values |
 |------------|--------------------------------------------|------------------------------------|
 | ET-01 | `"Route as: [CLINICAL_CONFIRMED / ADMIN_CONFIRMED / NEEDS_ADDITIONAL_INFO]"` | `CLINICAL_CONFIRMED`, `ADMIN_CONFIRMED`, `NEEDS_ADDITIONAL_INFO` |
-| ET-02 | `"Route as: [CLINICAL_CONFIRMED / ADMIN_CONFIRMED / NEEDS_ADDITIONAL_INFO]"` | `CLINICAL_CONFIRMED`, `ADMIN_CONFIRMED`, `NEEDS_ADDITIONAL_INFO` |
+| ET-02 | `"Route as: [CLINICAL_CONFIRMED / ADMIN_CONFIRMED]"` | `CLINICAL_CONFIRMED`, `ADMIN_CONFIRMED` — `NEEDS_ADDITIONAL_INFO` is not valid for ET-02; see CP-A-2: this is a routing decision, not a clinical determination |
 | ET-03 | `"Eligibility: [CONFIRM_ELIGIBLE / CONFIRM_INELIGIBLE / RETURN_TO_SUBMITTER]"` | `CONFIRM_ELIGIBLE`, `CONFIRM_INELIGIBLE`, `RETURN_TO_SUBMITTER` |
 | ET-04 | `"Prior auth: [APPROVE_WITH_EXCEPTION / REJECT / RETURN_TO_SUBMITTER]"` | `APPROVE_WITH_EXCEPTION`, `REJECT`, `RETURN_TO_SUBMITTER` |
 | ET-05 | `"Coding: [CONFIRM_VALID / CONFIRM_IMPLAUSIBLE / RETURN_TO_SUBMITTER]"` | `CONFIRM_VALID`, `CONFIRM_IMPLAUSIBLE`, `RETURN_TO_SUBMITTER` |
@@ -1062,8 +1070,8 @@ Transitions — WS1-owned (with guard conditions):
     Trigger: T-09 pre-condition check passes and fee schedule rate found
     Guard conditions:
       1. ClaimRecord.state = ADMIN_CLEARED (T-09 pre-condition, REQ-A-6)
-      2. S-05 fee schedule rate found for (provider_id, procedure_codes[0],
-         plan_id) with rate_valid_through ≥ today
+      2. S-05 fee schedule rate found for (provider_npi, procedure_codes[0],
+         payer_id) with rate_valid_through ≥ today
       3. contract_exception_flag = false OR contract_exception_rate non-null
       4. payment_amount = null (not yet calculated — no double-payment)
 
@@ -1144,8 +1152,8 @@ All six required failure categories are present. Every row names a detection met
 
 | Failure | Detection method | Agent action | Human notification | Recovery path |
 |---------|-----------------|--------------|-------------------|---------------|
-| **Integration unavailable — S-02 (member eligibility)** | S-02 API returns HTTP 5xx or timeout after 5-second wait; retry fires after 5 seconds; second timeout or 5xx received | ClaimRecord.state → PENDING_HITL_EXCEPTION; EscalationPacket assembled with trigger_type = ELIGIBILITY_DISCREPANCY, trigger_signal_values = {error_type: "API_UNAVAILABLE", member_id, plan_id}; written to S-09 (ET-03); pipeline suspended for this claim | Ops alert via S-09 notification; exception processor notified within 2 minutes | Exception processor verifies S-02 availability; when confirmed, claim re-queued to ADMIN_VALIDATING; S-02 incident tracked in ops runbook |
-| **Integration unavailable — S-05 (fee schedule)** | S-05 API returns HTTP 5xx or no rate found for (provider_id, procedure_codes[0], plan_id); or rate_valid_through < today | ET-06 fires; ClaimRecord.state → PENDING_HITL_EXCEPTION; EscalationPacket with trigger_type = CONTRACT_EXCEPTION, trigger_signal_values = {error: "NO_RATE_FOUND" or "RATE_EXPIRED", provider_id, procedure_codes, rate_valid_through} | Contract owner and VP Operations notified; daily breach summary if SLA triggered | Contract owner refreshes fee schedule; claims re-queued; T-09 retries against new version |
+| **Integration unavailable — S-02 (member eligibility)** | S-02 API returns HTTP 5xx or timeout after 5-second wait; retry fires after 5 seconds; second timeout or 5xx received | ClaimRecord.state → PENDING_HITL_EXCEPTION; EscalationPacket assembled with trigger_type = ELIGIBILITY_DISCREPANCY, trigger_signal_values = {error_type: "API_UNAVAILABLE", member_id, payer_id}; written to S-09 (ET-03); pipeline suspended for this claim | Ops alert via S-09 notification; exception processor notified within 2 minutes | Exception processor verifies S-02 availability; when confirmed, claim re-queued to ADMIN_VALIDATING; S-02 incident tracked in ops runbook |
+| **Integration unavailable — S-05 (fee schedule)** | S-05 API returns HTTP 5xx or no rate found for (provider_npi, procedure_codes[0], payer_id); or rate_valid_through < today | ET-06 fires; ClaimRecord.state → PENDING_HITL_EXCEPTION; EscalationPacket with trigger_type = CONTRACT_EXCEPTION, trigger_signal_values = {error: "NO_RATE_FOUND" or "RATE_EXPIRED", provider_npi, procedure_codes, rate_valid_through} | Contract owner and VP Operations notified; daily breach summary if SLA triggered | Contract owner refreshes fee schedule; claims re-queued; T-09 retries against new version |
 | **Integration unavailable — S-10 (audit log)** | S-10 API returns HTTP 5xx or timeout when T-11 attempts write; retry fires at 10-second interval | Agent queues AuditLogEntry locally (in-memory, max 50 records); retries every 10 seconds for up to 5 minutes; if still unavailable at 5 minutes, agent suspends claim processing and alerts ops; no claim reaches terminal state while S-10 unavailable | Ops alert immediately at first failure; escalation to ops lead at 5-minute threshold | Ops restores S-10; agent flushes queued entries in order; processing resumes |
 | **Integration unavailable — S-08 (physician HITL queue)** | S-08 write returns HTTP 5xx or timeout; retry after 5 seconds; second failure | Agent retries once; on second failure, writes EscalationPacket to S-07 (claims management) with QUEUE_DELIVERY_FAILED flag; AuditLogEntry written with action = ESCALATION_DELIVERY_FAILED; ClaimRecord remains in PENDING_PHYSICIAN_REVIEW | Ops alert; VP Operations notified within 15 minutes | Ops confirms S-08 recovery; EscalationPacket re-delivered; QUEUE_DELIVERY_FAILED flag cleared |
 | **Required data missing or malformed — ClaimRecord schema validation failure** | T-01 schema validator: required field absent, date format invalid, ICD-10 or CPT format mismatch, diagnosis_codes array empty | T-01 rejects the record; ClaimRecord.state → PENDING_HITL_EXCEPTION with hitl_queue_type = EXCEPTION_PROCESSOR; AuditLogEntry written with action = SCHEMA_VALIDATION_FAILED and the specific failed fields listed | Exception processor receives EscalationPacket with trigger_signal_values = {failed_fields: [...], record_excerpt}; VP Operations daily summary | Exception processor corrects or contacts submitter; corrected record re-submitted as new ClaimRecord |
@@ -1480,7 +1488,7 @@ Every WS1 agent action produces an AuditLogEntry using the shared entity definit
     'EscalationPacket' | 'CalibrationRecord'",
   "entity_id": "UUID — foreign key to the entity being logged; non-null",
   "input_summary": "object — key fields used to make the decision:
-    For ELIGIBILITY_CONFIRMED: {member_id, plan_id, date_of_service, eligibility_status}
+    For ELIGIBILITY_CONFIRMED: {member_id, payer_id, date_of_service, eligibility_status}
     For CODE_VALIDITY_CHECKED: {codes_checked: count, invalid_codes: array}
     For PRIOR_AUTH_TOLERANCE_APPLIED: {authorized_units, claimed_units, pct_excess,
       PRIOR_AUTH_UNIT_TOLERANCE_PCT}
@@ -1493,7 +1501,7 @@ Every WS1 agent action produces an AuditLogEntry using the shared entity definit
     For ESCALATION_TRIGGERED: {escalation_trigger_id, trigger_signal_values}",
   "output_summary": "object — what changed:
     For CLAIM_STATE_TRANSITION: {from_state, to_state, hitl_queue_type (if applicable)}
-    For PAYMENT_APPROVED: {payment_amount, provider_id, s11_confirmation_id}
+    For PAYMENT_APPROVED: {payment_amount, provider_npi, s11_confirmation_id}
     For CLAIM_REJECTED: {rejection_codes, resubmission_guidance}
     For ESCALATION_DELIVERED: {escalation_packet_id, target_queue, delivery_confirmed: boolean}",
   "delegation_tier": "enum [AGENT_ALONE, AGENT_LOGS, AGENT_PROPOSES, HUMAN_DECIDES] —

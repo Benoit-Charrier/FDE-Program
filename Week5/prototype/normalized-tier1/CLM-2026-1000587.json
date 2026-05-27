@@ -1,0 +1,25 @@
+{
+  "claim_id": "CLM-2026-1000587",
+  "member_id": "YYL62009149",
+  "provider_npi": "0481811407",
+  "provider_specialty": "Advanced Practice Provider (PA)",
+  "date_of_service": "2026-03-30",
+  "diagnosis_codes": [
+    "J45909"
+  ],
+  "procedure_codes": [
+    "90471",
+    "99205",
+    "99281"
+  ],
+  "procedure_quantities": [
+    2,
+    1,
+    1
+  ],
+  "billed_amount": 431.4,
+  "payer_id": "ANT-001",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000587.edi",
+  "intake_warnings": []
+}

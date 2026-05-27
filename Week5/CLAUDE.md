@@ -5,7 +5,6 @@
 
 ## Section 1: What This Project Is
 
-**Gate 4 is complete.** All seven graded Gate 4 deliverables have been submitted. The Week 5 capstone engagement (design Mon–Tue, build Wed–Thu, defense Thursday afternoon) is in the build/validation phase.
 
 **Chosen scenario:** Option A — Healthcare Claims Processing Transformation
 **Client:** Greenfield Health Systems (health insurance payer)
@@ -14,6 +13,28 @@
 **Single-source scenario:** `Scenario/scenario_context.md` — read this before producing any deliverable. Never invent numbers, systems, or constraints not present there. The raw scenario files are in `Scenario/scenario.md` and `Scenario/scenario_enriched.md`; `scenario_context.md` is the extracted, structured summary used by all prompt templates.
 
 **Key constraint:** Every factual claim must trace back to `Scenario/scenario_context.md` or be explicitly labelled as an assumption with confidence level and test method.
+
+**Claims Pack mock data:** `Capstone-A-Claims-Pack/` — 2,000 synthetic claims across 8 intake formats. This is the fixture dataset for design, testing, and demo. No real PHI; no answer key (build your own validation set).
+
+| Format | Files | Share | Technical encoding | Intake complexity |
+|--------|------:|------:|--------------------|-------------------|
+| EDI 837P (professional) | 1,000 | 50% | X12: `*` separator, `~` terminator, `:` component | Parser; no LLM |
+| EDI 837I (institutional) | 200 | 10% | Same X12 encoding | Parser; no LLM |
+| Portal JSON | 400 | 20% | Pretty-printed JSON — cleanest shape | Near-zero |
+| FHIR R4 Claim resource | 100 | 5% | FHIR R4 `Claim` resource shape | Structured; no LLM |
+| CMS-1500 paper PDF | 200 | 10% | Single-page PDF — OCR required; `cms1500-ocr/` pre-extracted text provided | OCR already done in pack |
+| Email (.eml) | 30 | 1.5% | RFC 5322; custom `X-Submitter-NPI` / `X-Submitter-TaxID` headers | LLM extraction |
+| Fax cover sheet PDF | 30 | 1.5% | Single-page PDF with watermark | LLM extraction |
+| Exception notes PDF | 40 | 2% | Typed notes, call logs, handwritten stickies — three style variants | LLM extraction — hardest |
+
+**Prototype scope:** The C12 prototype covers **Tier 1 formats — EDI 837P + 837I + Portal JSON (80% of volume)**. Parsers for all three are built and validated against the full 1,600-file population; 1,493 parsed canonical files are cached in `prototype/normalized-tier1/`. CMS-1500 OCR (10%) is deferred — parser exists but 41% PARSE_FAILED rate makes it not production-ready. FHIR R4, email, fax, and exception notes (remaining 10%) are Tier 2/3 and handled by the Intake & Anomaly Agent (D3 Agent 1), scoped out of the prototype. State the deferred formats explicitly in the demo and defense — "silently excluding formats to report a flattering metric is the weakest possible move" (Claims Pack §Grading).
+
+**False positive protection — the pack's primary warning:** *"The dangerous failure mode is silently approving claims that should have been denied."* Three layers guard this in the current design:
+1. FM-A-5 hard stop — T-09 cannot execute unless `state == ADMIN_CLEARED`
+2. Audit-first ordering — `payment_amount` never written without a `COMMITTED` audit entry
+3. CalibrationRecord governance — CMO-certified threshold; borderline cases escalate to HITL
+
+`test_governance_hard_stop` covers layer 1. Lead with this in the defense when asked about the most dangerous failure mode.
 
 ---
 
@@ -39,17 +60,6 @@ Claude operates as both **FDE assistant** and **prototype builder** in this cont
 
 ## Section 3: Deliverable Pipeline
 
-### Gate 4 graded deliverables — ALL COMPLETE
-
-| # | Deliverable | Output file | Status |
-|---|-------------|-------------|--------|
-| D1 | Token Economics Model | `Deliverables/Gate4_D1_token_economics_model.md` | ✓ Complete |
-| D2 | Compounding Roadmap | `Deliverables/Gate4_D2_compounding_roadmap.md` | ✓ Complete |
-| D3 | Peer Review Portfolio (2 specs) | `Deliverables/Gate4_D3_peer_review_portfolio.md` | ✓ Complete |
-| D4 | Build Governance Response ("The Build Is Running") | `Deliverables/Gate4_D4_build_is_running.md` | ✓ Complete |
-| D5 | Handoff Review + Escalation Email | `Deliverables/Gate4_D5_handoff_review.md` | ✓ Complete |
-| D6 | Capstone Proposal | `Deliverables/Gate4_D6_capstone_proposal.md` | ✓ Complete |
-| D7 | Build-Loop Reflection | `Deliverables/Gate4_D7_build_loop_reflection.md` | ✓ Complete |
 
 ---
 
@@ -59,37 +69,45 @@ Claude operates as both **FDE assistant** and **prototype builder** in this cont
 |---|-------------|--------|-------------|--------|
 | D0A | Domain Research — Claims Processing | `Prompt/prompt_D0A_domain_research.md` | `Deliverables/D0A_domain_research_claims_processing.md` | ✓ Complete |
 | D0B | Scenario Context (source of truth) | `Prompt/prompt_D0B_scenario_context.md` | `Scenario/scenario_context.md` | ✓ Complete |
-| D0C | Discovery Synthesis | `Prompt/prompt_D0C_discovery.md` | `Deliverables/D0C_discovery.md` | ⬜ Pending |
+| D0C | Discovery Synthesis | `Prompt/prompt_D0C_discovery.md` | `Deliverables/D0C_discovery.md` | ✓ Complete |
 | D0D | Discovery Questions | `Prompt/prompt_D0D_discovery_questions.md` | `Deliverables/D0D_discovery_questions.md` | ⬜ Pending |
 
 ---
 
 ### Week 5 capstone deliverables
 
+Official numbering and filename suggestions are from `Gate5a-Capstone-Participant-Pack.md` §3. "Our file" is the working file produced during the engagement; the Gate5a filename is the submission target.
+
+| Gate5a # | Deliverable | Gate5a filename | Our file | Status |
+|----------|-------------|-----------------|----------|--------|
+| 1 | Problem Framing & Success Metrics | `01-problem-framing.md` | `Deliverables/D1_problem_framing.md` | ✓ Complete |
+| 2 | Cognitive Load Map | `02-cognitive-load-map.md` | `Deliverables/D2A_cognitive_load_map.md` | ✓ Complete |
+| 3 | Delegation Suitability Matrix | `03-delegation-matrix.md` | `Deliverables/D2B_delegation_suitability_matrix.md` + `Deliverables/D3_agentic_solution_architecture.md` | ✓ Complete |
+| 4 | Agent Purpose Document(s) | `04-agent-purpose.md` | `Deliverables/D4_agent_purpose_document.md` | ✓ Complete |
+| 5 | Architecture Decision Records (3+) | `05-adrs.md` | `Deliverables/05-adrs.md` (ADR-1, ADR-2, ADR-3 extracted from D3 §4) | ✓ Complete — standalone submission file; full architecture context remains in `D3_agentic_solution_architecture.md` |
+| 6 | Two production-grade capability specifications | `06-capability-specs.md` | Preamble: `Deliverables/D4_preamble_capability_spec.md`; Spec A (WS1): `Deliverables/D4a_capability_spec.md`; Spec B (WS2): `Deliverables/D4b_capability_spec.md` | ✓ Complete — all spec gaps resolved |
+| 7 | Integration specifications | `07-integration-specs.md` | Preamble: `Deliverables/D4_integration_preamble.md`; Contracts: `Deliverables/D4_integration_specs.md` | ✓ Complete |
+| 8 | Token economics model with sensitivity analysis | `08-economics.md` | `Deliverables/D2D_token_economics_model.md` | ✓ Complete |
+| 9 | Validation plan | `09-validation-plan.md` | `Deliverables/D7_validation_plan.md` | ✓ Complete |
+| 10 | Stakeholder alignment memo | `10-stakeholder-memo.md` | `Deliverables/C10_stakeholder_alignment_memo.md` | ✓ Complete |
+| 11 | CLAUDE.md and project configuration | `CLAUDE.md` | `CLAUDE.md` (this file) | ✓ In progress |
+| 12 | Working prototype | `prototype/` | `prototype/` | ✓ Complete — 5/5 tests passing |
+
+**Supporting deliverables (not Gate5a official, produced during engagement):**
+
 | # | Deliverable | Output file | Status |
 |---|-------------|-------------|--------|
-| C1 | Problem Framing & Success Metrics | `Deliverables/D1_problem_framing.md` | ✓ Complete |
-| C2 | Cognitive Load Map | — | ⬜ Not started |
-| C3 | Delegation Suitability Matrix | `Deliverables/D3_agentic_solution_architecture.md` | ✓ Complete |
-| C4 | Agent Purpose Documents | `Deliverables/D4_agent_purpose_document.md` | ✓ Complete |
-| C4a | Preamble Capability Spec (§1–§7, shared) | `Deliverables/D4_preamble_capability_spec.md` | ✓ Complete — all spec gaps resolved |
-| C6a | WS1 Capability Spec (§0–§14, administrative screener) | `Deliverables/D4a_capability_spec.md` | ✓ Complete — all spec gaps resolved |
-| C6b | WS2 Capability Spec (clinical classifier + HITL routing) | — | ⬜ Not started |
-| C7 | Integration Specifications | `Prompt/prompt_D4_integration_specs.md` | ⬜ Prompt ready, output not started |
-| C8 | Token Economics Model | `Deliverables/D2D_token_economics_model.md` | ✓ Complete |
-| C9 | Validation Plan | `Deliverables/D7_validation_plan.md` | ✓ Complete |
 | C9a | Validation Design Diagnosis | `Deliverables/D7A_validation_design_diagnosis.md` | ✓ Complete — all 3 scenarios PASS |
-| C10 | Stakeholder Alignment Memo | — | ⬜ Not started |
-| C11 | CLAUDE.md + Project Configuration | `CLAUDE.md` (this file) | ✓ In progress |
-| C12 | Working Prototype — WS1 agent | `prototype/` | ✓ Complete — 5/5 tests passing |
+| C13 | Canonical Normalized Claim Record | `Deliverables/D4_canonical_claim_record.md` | ✓ Complete — §9 shows parse-only results (not WS1 routing): 1,493/1,600 Tier 1 files parse successfully (6.7% PARSE_FAILED, all missing diagnosis_codes); 1,493 canonical files cached in `prototype/normalized-tier1/`; CMS-1500 OCR deferred (41% PARSE_FAILED, see §9 deferral note) |
+| C14 | Intake Agent Capability Spec | `Deliverables/D4c_capability_spec_intake_agent.md` | ✓ Complete — covers INT-JtD-1 (format detection + extraction), INT-JtD-2 (anomaly detection), 3-tier LLM routing, PARSE_FAILED escalation triggers, 5 open assumptions (A5–A9) |
 
-**Capability spec execution passes completed:**
+**Capability spec execution passes (Gate5a deliverable #6):**
 
 | Pass | Scope | Output file | Status |
 |------|-------|-------------|--------|
-| 1 | Preamble §1–§7 (shared foundation) | `Deliverables/D4_preamble_capability_spec.md` | ✓ Complete |
-| 2 | Spec A §0–§14 (WS1: administrative screener) | `Deliverables/D4a_capability_spec.md` | ✓ Complete |
-| 3 | Spec B §0–§14 (WS2: clinical classifier + HITL routing) | — | ⬜ Not started |
+| 1 | Preamble §1–§7 (shared foundation) | `Deliverables/D4_preamble_capability_spec.md` | ✓ Complete — all spec gaps resolved |
+| 2 | Spec A §0–§14 (WS1: administrative screener) | `Deliverables/D4a_capability_spec.md` | ✓ Complete — all spec gaps resolved |
+| 3 | Spec B §0–§14 (WS2: clinical classifier + HITL routing) | `Deliverables/D4b_capability_spec.md` | ✓ Complete — all spec gaps resolved |
 
 ---
 
@@ -148,8 +166,15 @@ Every non-trivial claim that is not directly stated in `Scenario/scenario_contex
 - No systems are named in the scenario — all tooling references are assumptions
 
 **Open prototype assumptions requiring CMO input (from D7_validation_plan.md):**
-- A2: Golden-set clinical-boundary case threshold set at 95% recall — no measured baseline. If wrong, QF-1 false-negative rate is miscalibrated. **Low confidence.**
+- A2: Golden-set clinical-boundary case threshold set at 95% recall — no measured baseline. If wrong, QF-1 false-negative rate is miscalibrated. **Low confidence.** *Mini validation study (D7 §7) now informs golden-set composition: the 30-claim live classifier run showed zero dangerous misses (no LLM admin where manual=clinical) but 73% uncertain-labelling rate driven by CPT/ICD mismatch conflation. The golden set must include deliberate mismatch cases to surface this at calibration time — not just well-formed claims.*
 - A4: CalibrationRecord revocation polling interval assumed 5 min. If wrong, agent may run against an invalidated record for longer than acceptable. **Low confidence.**
+
+**Open Intake Agent assumptions (from D4c_capability_spec_intake_agent.md):**
+- A5: CMS-1500 OCR text pre-extracted by clearinghouse before reaching Intake Agent; no OCR step needed in-agent. If wrong: must add Tesseract/cloud-OCR step, increasing Tier 2 complexity. **Medium confidence.**
+- A6: OCR failure rate ~5% for CMS-1500 (claim → PARSE_FAILED). No measured baseline. Drives PARSE_FAILED queue staffing estimate. **Low confidence.**
+- A7: Haiku extraction accuracy ≥ 95% for email and fax formats. If wrong: Tier 3 PARSE_FAILED rate rises; may need Sonnet fallback (10× cost) or human review queue. **Low confidence.**
+- A8: Intake Agent processes claims synchronously at ~4 claims/min. 2,000 claims/day ÷ 8 hours = adequate. If throughput requirement rises, queue-worker pattern needed. **High confidence.**
+- A9: `X-Submitter-NPI` header present in all email submissions. If absent: provider_npi defaults to "UNKNOWN_NPI" for all email claims, degrading code validity. **Medium confidence.**
 
 ---
 
@@ -174,6 +199,50 @@ Every non-trivial claim that is not directly stated in `Scenario/scenario_contex
 | `Scenario/scenario_enriched.md` | Stakeholder exchanges (CFO/CMO/VP Ops emails and Slack) |
 | `capstone-scenario-options.md` | Full capstone schedule, deliverable package, defense format, automatic-fail criteria |
 | `capstone-stakeholder-tensions.md` | Full stakeholder exchange transcripts for Option A |
+| `Gate5a-Capstone-Participant-Pack.md` | **Canonical gate instructions** — deliverables, defense format, rubric, choreography |
+| `Capstone-A-Claims-Pack/README.md` | Mock data pack — 2,000 synthetic claims across 8 intake formats; prototype fixture source |
+
+---
+
+## Section 6b: Gate5a Rubric (visible up front — use to guide all decisions)
+
+**Source:** `Gate5a-Capstone-Participant-Pack.md` §6. This is the one gate where the full rubric is released at the start.
+
+**Pass threshold: 78+ overall, with no individual criterion scoring below 60%.**
+
+| Criterion | Weight | What it demands |
+|-----------|-------:|-----------------|
+| Solution is AI-native with justified delegation architecture | 15% | Agents making real decisions with justified delegation boundaries — not a rules engine |
+| Specifications are production-grade (buildable by an AI coding agent) | 15% | Precise enough for Claude Code to build from with few/no clarifying questions |
+| Economics model is credible and the business case closes | 15% | Realistic token costs, ROI positive under conservative assumptions, multi-model routing justified |
+| Cognitive work assessment reflects lived process | 5% | Maps the actual work, not the org chart |
+| Architecture decisions show sound judgment | 5% | ADRs with trade-off analysis and rejected alternatives |
+| Stakeholder alignment shows professional judgment | 5% | Names real tensions (from `capstone-stakeholder-tensions.md`), defensible trade-off recommendation |
+| Scope discipline | 5% | No silent scope creep or scope reduction; known gaps beat hidden gaps |
+| Validation plan is comprehensive | 5% | Covers accuracy, edge cases, failure modes, compliance — not happy-path only |
+| **Working prototype: correctness and faithfulness to spec** | **15%** | Runs on mock data; faithful to the spec; happy path + escalation + edge case all working |
+| **Live demo quality** | **5%** | Running code, not narrated slides; under 5 minutes; three paths shown |
+| Verbal defense quality (Q&A + curveball) | 10% | Composure and specificity on the curveball; honest about demo-vs-production gap |
+
+**Automatic fail indicators (any one fails the gate regardless of total score):**
+- Built a traditional rules engine instead of an agentic solution
+- Failed to distinguish what should be agentic from what should stay human
+- **Prototype does not run at all during the live demo**
+- Narrated slides instead of demoing running code
+- Validation is happy-path only with no failure-mode coverage
+
+**Where we stand against the rubric:**
+- AI-native + delegation: ✓ D3 autonomy matrix, ADRs, hard HITL stops documented
+- Specifications production-grade: ✓ WS1 + WS2 specs complete; WS1 proven buildable by the C12 prototype; Intake Agent spec (D4c) added; canonical normalized claim record (D4_canonical_claim_record.md) derived from real Claims Pack data and adopted as the WS1 input contract
+- Economics model: ✓ D2D complete with sensitivity analysis and multi-model routing
+- Cognitive work assessment: ✓ D2A complete
+- Architecture decisions: ✓ ADR-1, ADR-2, ADR-3 in D3 §4
+- Stakeholder alignment: ✓ C10 complete
+- Scope discipline: ✓ Tier 1 intake (EDI 837P/I + Portal JSON) built and empirically validated; CMS-1500 OCR deferred with documented rationale; WS2 and Wave 2+ explicitly deferred
+- Validation plan: ✓ D7 complete — Pass 1 (5 scenario fixtures, all PASS) + Pass 2 (corpus validation: 6/6 assertions, 0 violations across 1,493 Tier 1 files) + §7 live classifier mini study (30-claim sample, 50% exact agreement, zero dangerous misses, key finding: classifier over-labels as uncertain on CPT/ICD mismatches — golden-set composition implication documented); D7A updated — §5 residual closed, §6 corpus diagnosis added
+- Working prototype: ✓ 5/5 tests passing; happy path, escalation, governance hard stop all working; Pass 2 corpus run confirmed structural invariants hold at population scale
+- Live demo quality: ⚠ Demo script needed — `run_claim.py` + `review_claim.py` are the tools
+- Verbal defense: ⚠ Prep needed — key probe is "what would break this in production?"; live classifier mini study gives a concrete honest answer: classifier over-labels uncertain on CPT/ICD mismatches (73% uncertain rate on 30-claim sample), golden-set calibration is the production risk, confidence threshold correctly gates auto-approval even when label is imprecise
 
 ---
 
@@ -211,7 +280,7 @@ Every non-trivial claim that is not directly stated in `Scenario/scenario_contex
 |------|---------|
 | `config.py` | `CLINICAL_CONTENT_CONFIDENCE_THRESHOLD = 0.70`, `CLASSIFIER_VERSION = "sonnet-4-6:ws1-routing:v1"` |
 | `requirements.txt` | Python dependencies |
-| `agents/ws1_agent.py` | Main pipeline: T-01 through T-09 state machine, FM-A-5 hard stop, audit-first ordering, all EscalationPacket fields spec-compliant |
+| `agents/ws1_agent.py` | Main pipeline: T-01 through T-09 state machine, FM-A-5 hard stop, audit-first ordering, all EscalationPacket fields spec-compliant. Uses `claim.get("payer_id", "UNKNOWN")` (canonical field name) |
 | `agents/__init__.py` | Package init |
 | `tools/calibration.py` | CalibrationRecord 6-field startup validation; `startup_validate()`, `CalibrationError` |
 | `tools/clinical_classifier.py` | `classify_clinical_content()` — returns `{classification, confidence, reasoning}` |
@@ -220,25 +289,32 @@ Every non-trivial claim that is not directly stated in `Scenario/scenario_contex
 | `tools/prior_auth.py` | `check_prior_auth()` |
 | `tools/fee_schedule.py` | `get_payment_amount()` |
 | `tools/__init__.py` | Package init |
+| `tools/intake/edi_parser.py` | EDI X12 837P + 837I parser; `parse_edi_837(raw, source_file="") -> NormalizedClaimInput dict`; hard-required: claim_id, procedure_codes, diagnosis_codes |
+| `tools/intake/portal_json_adapter.py` | Portal-JSON → NormalizedClaimInput; `adapt_portal_json(raw, source_file="") -> dict`; hard-required: submission_id, service_lines, diagnoses |
+| `tools/intake/cms1500_ocr_parser.py` | CMS-1500 OCR text parser (pre-extracted); `parse_cms1500_ocr(raw, source_file="") -> dict`; **not production-ready** — 41% PARSE_FAILED on full population; deferred (see C13) |
+| `tools/intake/__init__.py` | Package init |
 | `tests/test_ws1_pipeline.py` | 5 tests — all passing |
-| `fixtures/CLAIM-ADMIN-01.json` | Happy path / threshold boundary fixture |
-| `fixtures/CLAIM-CLINICAL-01.json` | Clinical routing fixture |
-| `fixtures/CLAIM-UNCERTAIN-01.json` | Uncertain classification fixture |
-| `fixtures/CLAIM-ELIG-01.json` | Eligibility discrepancy fixture |
-| `run_claim.py` | CLI: run a single claim through the pipeline |
+| `fixtures/CLAIM-ADMIN-01.json` | Happy path / threshold boundary fixture (canonical schema: `provider_npi`, `payer_id`, `source_format`, `source_file`, `intake_warnings`) |
+| `fixtures/CLAIM-CLINICAL-01.json` | Clinical routing fixture (canonical schema) |
+| `fixtures/CLAIM-UNCERTAIN-01.json` | Uncertain classification fixture (canonical schema) |
+| `fixtures/CLAIM-ELIG-01.json` | Eligibility discrepancy fixture (canonical schema) |
+| `run_claim.py` | CLI: run a single claim through WS1; `--fixture CLAIM-ADMIN-01` (from fixtures/) or `--file path/to/any.json` (any NormalizedClaimInput file, e.g. from normalized-tier1/) |
 | `review_claim.py` | CLI: review a saved escalation file |
+| `run_batch.py` | Batch runner: feed Claims Pack directory or pre-normalized cache through WS1; `--live` for real classifier; `--save-normalized DIR` caches parsed NormalizedClaimInput JSON; detects `normalized-*` directories and skips parsing entirely |
+| `normalized-tier1/` | **Pre-parsed canonical cache** — 1,493 NormalizedClaimInput JSON files (all Tier 1 parseable claims). Use `--dir normalized-tier1` with run_batch.py or `--file` with run_claim.py to test WS1 without re-running any parser. |
+| `DEMO.md` | 5-minute demo script: 3 paths + format coverage Q&A answer |
 | `escalations/` | Directory for saved escalation JSON files |
 
-### Test status — 2026-05-25
+### Test status — 2026-05-26
 
 All 5 tests passing:
 
 | Test | What it covers |
 |------|---------------|
 | `test_happy_path` | S-1: CLAIM-ADMIN-01, confidence 0.91, all stubs nominal → `status=approved`, `payment_amount=85.0`, 6 COMMITTED audit entries |
-| `test_uncertain_classification` | ET-01/ET-02 routing → `status=escalated`, physician HITL queue |
-| `test_eligibility_discrepancy` | ET-03 escalation → `status=escalated`, exception processor queue |
-| `test_confidence_at_threshold` | S-2: confidence exactly 0.70 → `>=` operator confirmed inclusive, `status=approved` |
+| `test_hitl_escalation` | CLAIM-CLINICAL-01, clinical classification confidence 0.94 → `status=escalated`, physician HITL queue (ET-01) |
+| `test_uncertain_classification` | CLAIM-UNCERTAIN-01, uncertain classification confidence 0.48 → `status=escalated`, physician HITL queue (ET-02); confirms audit trail includes all steps up to routing |
+| `test_eligibility_stub_returns_discrepancy_for_sentinel` | Eligibility stub unit test — sentinel `member_id=GHS-MBR-INVALID` → `status=discrepancy` (stub wiring check, not a full pipeline path) |
 | `test_governance_hard_stop` | S-3: FM-A-5 hard stop — state corrupted to ROUTING after ADMIN_CLEARED → ET-07 fires with `GOVERNANCE_VIOLATION`, `payment_amount` absent, `claim_state_at_escalation` preserved (not overwritten to PENDING_HITL_EXCEPTION) |
 
 ### Resolved spec gaps
@@ -248,6 +324,7 @@ All 5 tests passing:
 | GAP-10 | REQ-A-6(c) contradicted §7 ET-07: spec said state → PENDING_HITL_EXCEPTION for governance violation, but diagnostic value is the incoming state | Leave state unchanged; `preserve_state=True` on governance-violation ET-07 call | `D4a_capability_spec.md` REQ-A-6, `ws1_agent.py` `_fire_et07` |
 | GAP-14 | ET-07 `trigger_type` enum only had `AUDIT_FAILURE`; governance hard-stop needs a distinct type | Add `GOVERNANCE_VIOLATION` to `EscalationPacket.trigger_type` enum | `D4_preamble_capability_spec.md` enum, `D4a_capability_spec.md` outputs table + ET-07 action column |
 | D7A residual | ET-07 `required_resolution` text said "Audit failure" even when `trigger_type = GOVERNANCE_VIOLATION`, giving exception processor contradictory signals | Split into two strings; `_fire_et07` selects by `trigger_type` | `D4a_capability_spec.md` §7 required_resolution table (two rows for ET-07), `ws1_agent.py` `_fire_et07` conditional |
+| C13 field alignment | Prototype fixtures and adapters used `plan_id`, `provider_id`, `submission_format` — not aligned with canonical record derived from Claims Pack sampling | Rename: `plan_id` → `payer_id`, `provider_id` → `provider_npi`, `submission_format` → `source_format`; add `source_file` and `intake_warnings` fields; update `ws1_agent.py` to use `claim.get("payer_id", "UNKNOWN")`; update `D4a_capability_spec.md` §2 input contract and all decision logic references | All 4 fixtures, `edi_parser.py`, `portal_json_adapter.py`, `ws1_agent.py`, `D4a_capability_spec.md` |
 
 ### Key invariants (do not break without FDE sign-off)
 

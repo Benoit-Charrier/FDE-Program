@@ -1,0 +1,22 @@
+{
+  "claim_id": "CLM-2026-1001366",
+  "member_id": "YYL74877771",
+  "provider_npi": "9511573472",
+  "provider_specialty": "Orthopedic Surgery",
+  "date_of_service": "2026-03-28",
+  "diagnosis_codes": [
+    "E78.5"
+  ],
+  "procedure_codes": [
+    "99422"
+  ],
+  "procedure_quantities": [
+    1
+  ],
+  "billed_amount": 46.9,
+  "payer_id": "ANT-001",
+  "group_id": "GRP-97482",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001366.json",
+  "intake_warnings": []
+}

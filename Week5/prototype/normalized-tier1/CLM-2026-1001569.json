@@ -1,0 +1,25 @@
+{
+  "claim_id": "CLM-2026-1001569",
+  "member_id": "7NY1TKQ6CY7",
+  "provider_npi": "9811505931",
+  "provider_specialty": "Multi-specialty Clinic",
+  "date_of_service": "2026-04-12",
+  "diagnosis_codes": [
+    "I25.10",
+    "F41.1"
+  ],
+  "procedure_codes": [
+    "83036",
+    "72148"
+  ],
+  "procedure_quantities": [
+    1,
+    2
+  ],
+  "billed_amount": 769.54,
+  "payer_id": "MCR-001",
+  "group_id": "GRP-17408",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001569.json",
+  "intake_warnings": []
+}

@@ -1,0 +1,26 @@
+{
+  "claim_id": "CLM-2026-1001534",
+  "member_id": "YYL90660324",
+  "provider_npi": "4918023658",
+  "provider_specialty": "Cardiology",
+  "date_of_service": "2026-03-30",
+  "diagnosis_codes": [
+    "H66.90",
+    "S93.401A",
+    "J45.909"
+  ],
+  "procedure_codes": [
+    "99421",
+    "47562"
+  ],
+  "procedure_quantities": [
+    1,
+    2
+  ],
+  "billed_amount": 2920.52,
+  "payer_id": "ANT-001",
+  "group_id": "GRP-97797",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001534.json",
+  "intake_warnings": []
+}

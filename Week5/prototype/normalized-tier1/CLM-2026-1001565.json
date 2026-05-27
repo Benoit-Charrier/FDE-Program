@@ -1,0 +1,29 @@
+{
+  "claim_id": "CLM-2026-1001565",
+  "member_id": "H39660006",
+  "provider_npi": "5970945559",
+  "provider_specialty": "Multi-specialty Clinic",
+  "date_of_service": "2026-04-12",
+  "diagnosis_codes": [
+    "F32.9",
+    "M17.11"
+  ],
+  "procedure_codes": [
+    "99281",
+    "70551",
+    "99203",
+    "99422"
+  ],
+  "procedure_quantities": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "billed_amount": 786.28,
+  "payer_id": "HUM-001",
+  "group_id": "GRP-24304",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001565.json",
+  "intake_warnings": []
+}

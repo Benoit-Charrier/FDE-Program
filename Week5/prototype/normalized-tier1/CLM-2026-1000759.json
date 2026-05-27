@@ -1,0 +1,26 @@
+{
+  "claim_id": "CLM-2026-1000759",
+  "member_id": "1GW5TDF7JY0",
+  "provider_npi": "9252328483",
+  "provider_specialty": "Physician (DO)",
+  "date_of_service": "2026-04-17",
+  "diagnosis_codes": [
+    "Z0000",
+    "M545"
+  ],
+  "procedure_codes": [
+    "90471",
+    "90686",
+    "72148"
+  ],
+  "procedure_quantities": [
+    2,
+    2,
+    1
+  ],
+  "billed_amount": 503.05,
+  "payer_id": "MCR-001",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000759.edi",
+  "intake_warnings": []
+}

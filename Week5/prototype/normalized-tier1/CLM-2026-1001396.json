@@ -1,0 +1,28 @@
+{
+  "claim_id": "CLM-2026-1001396",
+  "member_id": "YYL47683986",
+  "provider_npi": "6027769063",
+  "provider_specialty": "Chiropractic",
+  "date_of_service": "2026-04-10",
+  "diagnosis_codes": [
+    "S93.401A",
+    "M79.7",
+    "N18.3"
+  ],
+  "procedure_codes": [
+    "99999",
+    "44970",
+    "90471"
+  ],
+  "procedure_quantities": [
+    1,
+    1,
+    2
+  ],
+  "billed_amount": 1989.15,
+  "payer_id": "ANT-001",
+  "group_id": "GRP-66789",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001396.json",
+  "intake_warnings": []
+}

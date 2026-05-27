@@ -1,0 +1,25 @@
+{
+  "claim_id": "CLM-2026-1000336",
+  "member_id": "H30746086",
+  "provider_npi": "UNKNOWN_NPI",
+  "provider_specialty": "Cardiologist",
+  "date_of_service": "2026-04-08",
+  "diagnosis_codes": [
+    "J029",
+    "R109",
+    "I2510"
+  ],
+  "procedure_codes": [
+    "85025"
+  ],
+  "procedure_quantities": [
+    1
+  ],
+  "billed_amount": 12.1,
+  "payer_id": "HUM-001",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000336.edi",
+  "intake_warnings": [
+    "provider_npi_empty_segment"
+  ]
+}

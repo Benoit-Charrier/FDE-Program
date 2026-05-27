@@ -1,0 +1,26 @@
+{
+  "claim_id": "CLM-2026-1001436",
+  "member_id": "H15469471",
+  "provider_npi": "4709421412",
+  "provider_specialty": "Physical Therapy",
+  "date_of_service": "2026-03-28",
+  "diagnosis_codes": [
+    "K21.9",
+    "J06.9",
+    "N18.3"
+  ],
+  "procedure_codes": [
+    "99422",
+    "83036"
+  ],
+  "procedure_quantities": [
+    1,
+    2
+  ],
+  "billed_amount": 74.24,
+  "payer_id": "HUM-001",
+  "group_id": "GRP-69691",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001436.json",
+  "intake_warnings": []
+}

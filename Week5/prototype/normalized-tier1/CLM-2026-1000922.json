@@ -1,0 +1,27 @@
+{
+  "claim_id": "CLM-2026-1000922",
+  "member_id": "U75931005",
+  "provider_npi": "1454899628",
+  "provider_specialty": "Advanced Practice Provider (NP)",
+  "date_of_service": "2026-04-03",
+  "diagnosis_codes": [
+    "G4733",
+    "Z23",
+    "R079"
+  ],
+  "procedure_codes": [
+    "99204",
+    "99214",
+    "20610"
+  ],
+  "procedure_quantities": [
+    1,
+    1,
+    1
+  ],
+  "billed_amount": 476.07,
+  "payer_id": "CIG-001",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000922.edi",
+  "intake_warnings": []
+}

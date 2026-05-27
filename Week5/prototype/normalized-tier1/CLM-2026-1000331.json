@@ -1,0 +1,25 @@
+{
+  "claim_id": "CLM-2026-1000331",
+  "member_id": "337462003-00",
+  "provider_npi": "8695041430",
+  "provider_specialty": "Orthopaedic Surgeon",
+  "date_of_service": "2026-04-10",
+  "diagnosis_codes": [
+    "J449"
+  ],
+  "procedure_codes": [
+    "99215",
+    "99395",
+    "99214"
+  ],
+  "procedure_quantities": [
+    1,
+    1,
+    1
+  ],
+  "billed_amount": 559.9,
+  "payer_id": "UHC-001",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000331.edi",
+  "intake_warnings": []
+}

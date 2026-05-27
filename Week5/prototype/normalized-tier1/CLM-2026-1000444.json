@@ -1,0 +1,24 @@
+{
+  "claim_id": "CLM-2026-1000444",
+  "member_id": "H14650577",
+  "provider_npi": "5221840901",
+  "provider_specialty": "Cardiologist",
+  "date_of_service": "2026-04-25",
+  "diagnosis_codes": [
+    "Z0000",
+    "H6690"
+  ],
+  "procedure_codes": [
+    "99281",
+    "80061"
+  ],
+  "procedure_quantities": [
+    1,
+    1
+  ],
+  "billed_amount": 144.04,
+  "payer_id": "HUM-001",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000444.edi",
+  "intake_warnings": []
+}

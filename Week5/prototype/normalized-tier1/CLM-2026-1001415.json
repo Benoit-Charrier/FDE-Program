@@ -1,0 +1,22 @@
+{
+  "claim_id": "CLM-2026-1001415",
+  "member_id": "YYL90613147",
+  "provider_npi": "1273591143",
+  "provider_specialty": "Radiology",
+  "date_of_service": "2026-04-03",
+  "diagnosis_codes": [
+    "L98.9"
+  ],
+  "procedure_codes": [
+    "27447"
+  ],
+  "procedure_quantities": [
+    1
+  ],
+  "billed_amount": 2633.21,
+  "payer_id": "ANT-001",
+  "group_id": "GRP-27222",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001415.json",
+  "intake_warnings": []
+}

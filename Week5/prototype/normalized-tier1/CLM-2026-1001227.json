@@ -1,0 +1,24 @@
+{
+  "claim_id": "CLM-2026-1001227",
+  "member_id": "H43033725",
+  "provider_npi": "5647186096",
+  "provider_specialty": "Internal Medicine",
+  "date_of_service": "2026-04-09",
+  "diagnosis_codes": [
+    "L30.9"
+  ],
+  "procedure_codes": [
+    "99396",
+    "12001"
+  ],
+  "procedure_quantities": [
+    1,
+    2
+  ],
+  "billed_amount": 626.49,
+  "payer_id": "HUM-001",
+  "group_id": "GRP-47867",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001227.json",
+  "intake_warnings": []
+}

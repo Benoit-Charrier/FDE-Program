@@ -1,0 +1,24 @@
+{
+  "claim_id": "CLM-2026-1001454",
+  "member_id": "428817667-08",
+  "provider_npi": "4903164120",
+  "provider_specialty": "Radiology",
+  "date_of_service": "2026-04-05",
+  "diagnosis_codes": [
+    "F32.9"
+  ],
+  "procedure_codes": [
+    "80061",
+    "80053"
+  ],
+  "procedure_quantities": [
+    1,
+    2
+  ],
+  "billed_amount": 60.49,
+  "payer_id": "UHC-001",
+  "group_id": "GRP-81106",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001454.json",
+  "intake_warnings": []
+}

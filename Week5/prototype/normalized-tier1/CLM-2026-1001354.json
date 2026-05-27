@@ -1,0 +1,25 @@
+{
+  "claim_id": "CLM-2026-1001354",
+  "member_id": "484252807-08",
+  "provider_npi": "1882183483",
+  "provider_specialty": "Cardiology",
+  "date_of_service": "2026-03-31",
+  "diagnosis_codes": [
+    "R10.9",
+    "S93.401A"
+  ],
+  "procedure_codes": [
+    "99422",
+    "90471"
+  ],
+  "procedure_quantities": [
+    1,
+    1
+  ],
+  "billed_amount": 59.01,
+  "payer_id": "UHC-001",
+  "group_id": "GRP-67066",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001354.json",
+  "intake_warnings": []
+}

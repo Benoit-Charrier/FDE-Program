@@ -1,0 +1,25 @@
+{
+  "claim_id": "CLM-2026-1000202",
+  "member_id": "640428681",
+  "provider_npi": "1542400365",
+  "provider_specialty": "Pediatrician",
+  "date_of_service": "2026-04-01",
+  "diagnosis_codes": [
+    "G4733"
+  ],
+  "procedure_codes": [
+    "97110",
+    "99215",
+    "20610"
+  ],
+  "procedure_quantities": [
+    1,
+    1,
+    2
+  ],
+  "billed_amount": 542.75,
+  "payer_id": "MCD-IL",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000202.edi",
+  "intake_warnings": []
+}

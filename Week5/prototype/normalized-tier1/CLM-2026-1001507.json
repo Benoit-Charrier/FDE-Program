@@ -1,0 +1,27 @@
+{
+  "claim_id": "CLM-2026-1001507",
+  "member_id": "8AE3MFF2JU6",
+  "provider_npi": "1737962667",
+  "provider_specialty": "Family Medicine",
+  "date_of_service": "2026-04-16",
+  "diagnosis_codes": [
+    "R53.83",
+    "J45.909"
+  ],
+  "procedure_codes": [
+    "90471",
+    "47562",
+    "80053"
+  ],
+  "procedure_quantities": [
+    1,
+    1,
+    2
+  ],
+  "billed_amount": 1932.8,
+  "payer_id": "MCR-001",
+  "group_id": "GRP-37856",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001507.json",
+  "intake_warnings": []
+}

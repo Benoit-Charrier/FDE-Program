@@ -1,0 +1,26 @@
+{
+  "claim_id": "CLM-2026-1000978",
+  "member_id": "W351233456",
+  "provider_npi": "4237482505",
+  "provider_specialty": "Orthopaedic Surgeon",
+  "date_of_service": "2026-04-01",
+  "diagnosis_codes": [
+    "N183",
+    "F411"
+  ],
+  "procedure_codes": [
+    "99281",
+    "12001",
+    "99421"
+  ],
+  "procedure_quantities": [
+    1,
+    1,
+    1
+  ],
+  "billed_amount": 300.91,
+  "payer_id": "AET-001",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000978.edi",
+  "intake_warnings": []
+}

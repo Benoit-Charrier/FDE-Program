@@ -1,0 +1,27 @@
+{
+  "claim_id": "CLM-2026-1000266",
+  "member_id": "H42965104",
+  "provider_npi": "7650573261",
+  "provider_specialty": "Advanced Practice Provider (NP)",
+  "date_of_service": "2026-04-23",
+  "diagnosis_codes": [
+    "F329"
+  ],
+  "procedure_codes": [
+    "99281",
+    "99284",
+    "97140",
+    "27447"
+  ],
+  "procedure_quantities": [
+    1,
+    1,
+    2,
+    2
+  ],
+  "billed_amount": 6280.84,
+  "payer_id": "HUM-001",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000266.edi",
+  "intake_warnings": []
+}

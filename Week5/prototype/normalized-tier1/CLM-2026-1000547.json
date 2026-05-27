@@ -1,0 +1,23 @@
+{
+  "claim_id": "CLM-2026-1000547",
+  "member_id": "731711280",
+  "provider_npi": "7805279132",
+  "provider_specialty": "Pediatrician",
+  "date_of_service": "2026-04-21",
+  "diagnosis_codes": [
+    "E785",
+    "I10",
+    "J449"
+  ],
+  "procedure_codes": [
+    "99203"
+  ],
+  "procedure_quantities": [
+    1
+  ],
+  "billed_amount": 179.04,
+  "payer_id": "MCD-IL",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000547.edi",
+  "intake_warnings": []
+}

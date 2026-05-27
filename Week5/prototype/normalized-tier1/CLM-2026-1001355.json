@@ -1,0 +1,25 @@
+{
+  "claim_id": "CLM-2026-1001355",
+  "member_id": "YYL16177491",
+  "provider_npi": "6796172660",
+  "provider_specialty": "Internal Medicine",
+  "date_of_service": "2026-03-29",
+  "diagnosis_codes": [
+    "F41.1",
+    "R10.9"
+  ],
+  "procedure_codes": [
+    "97110",
+    "47562"
+  ],
+  "procedure_quantities": [
+    2,
+    1
+  ],
+  "billed_amount": 1465.0,
+  "payer_id": "ANT-001",
+  "group_id": "GRP-36325",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001355.json",
+  "intake_warnings": []
+}

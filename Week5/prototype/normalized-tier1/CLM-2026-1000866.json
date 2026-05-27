@@ -1,0 +1,30 @@
+{
+  "claim_id": "CLM-2026-1000866",
+  "member_id": "349014002-09",
+  "provider_npi": "UNKNOWN_NPI",
+  "provider_specialty": "Pediatrician",
+  "date_of_service": "2026-03-28",
+  "diagnosis_codes": [
+    "H6690",
+    "S93401A"
+  ],
+  "procedure_codes": [
+    "99421",
+    "72148",
+    "99284",
+    "99214"
+  ],
+  "procedure_quantities": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "billed_amount": 784.38,
+  "payer_id": "UHC-002",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000866.edi",
+  "intake_warnings": [
+    "provider_npi_empty_segment"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "claim_id": "CLM-2026-1000901",
+  "member_id": "H49208645",
+  "provider_npi": "7872504283",
+  "provider_specialty": "Pediatrician",
+  "date_of_service": "2026-04-26",
+  "diagnosis_codes": [
+    "R519",
+    "E119",
+    "F329"
+  ],
+  "procedure_codes": [
+    "99204",
+    "85025",
+    "99215",
+    "64483"
+  ],
+  "procedure_quantities": [
+    1,
+    2,
+    1,
+    2
+  ],
+  "billed_amount": 1058.92,
+  "payer_id": "HUM-001",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000901.edi",
+  "intake_warnings": []
+}

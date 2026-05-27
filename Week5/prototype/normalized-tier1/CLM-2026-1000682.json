@@ -1,0 +1,23 @@
+{
+  "claim_id": "CLM-2026-1000682",
+  "member_id": "763392071-09",
+  "provider_npi": "1401830670",
+  "provider_specialty": "Physician",
+  "date_of_service": "2026-04-14",
+  "diagnosis_codes": [
+    "G4733",
+    "J029",
+    "I10"
+  ],
+  "procedure_codes": [
+    "90686"
+  ],
+  "procedure_quantities": [
+    1
+  ],
+  "billed_amount": 25.11,
+  "payer_id": "UHC-002",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000682.edi",
+  "intake_warnings": []
+}

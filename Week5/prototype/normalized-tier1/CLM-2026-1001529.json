@@ -1,0 +1,27 @@
+{
+  "claim_id": "CLM-2026-1001529",
+  "member_id": "W581658013",
+  "provider_npi": "2019630180",
+  "provider_specialty": "Nurse Practitioner",
+  "date_of_service": "2026-03-29",
+  "diagnosis_codes": [
+    "J20.9",
+    "R53.83"
+  ],
+  "procedure_codes": [
+    "27447",
+    "97140",
+    "44970"
+  ],
+  "procedure_quantities": [
+    1,
+    2,
+    2
+  ],
+  "billed_amount": 5592.0,
+  "payer_id": "AET-001",
+  "group_id": "GRP-14744",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001529.json",
+  "intake_warnings": []
+}

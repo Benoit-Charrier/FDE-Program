@@ -1,0 +1,26 @@
+{
+  "claim_id": "CLM-2026-1001258",
+  "member_id": "U32621513",
+  "provider_npi": "7554282564",
+  "provider_specialty": "Cardiology",
+  "date_of_service": "2026-04-04",
+  "diagnosis_codes": [
+    "Z00.00"
+  ],
+  "procedure_codes": [
+    "99214",
+    "47562",
+    "99215"
+  ],
+  "procedure_quantities": [
+    1,
+    1,
+    1
+  ],
+  "billed_amount": 2144.66,
+  "payer_id": "CIG-001",
+  "group_id": "GRP-40219",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001258.json",
+  "intake_warnings": []
+}

@@ -1,0 +1,26 @@
+{
+  "claim_id": "CLM-2026-1000661",
+  "member_id": "670398286-07",
+  "provider_npi": "5300277701",
+  "provider_specialty": "Physician",
+  "date_of_service": "2026-04-06",
+  "diagnosis_codes": [
+    "R5383",
+    "Z0000"
+  ],
+  "procedure_codes": [
+    "80053",
+    "71046",
+    "97110"
+  ],
+  "procedure_quantities": [
+    1,
+    2,
+    2
+  ],
+  "billed_amount": 237.6,
+  "payer_id": "UHC-001",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000661.edi",
+  "intake_warnings": []
+}

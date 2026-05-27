@@ -1,0 +1,25 @@
+{
+  "claim_id": "CLM-2026-1000136",
+  "member_id": "77218858H",
+  "provider_npi": "1634682190",
+  "provider_specialty": "Advanced Practice Provider (PA)",
+  "date_of_service": "2026-04-11",
+  "diagnosis_codes": [
+    "I10"
+  ],
+  "procedure_codes": [
+    "99396",
+    "73030",
+    "99422"
+  ],
+  "procedure_quantities": [
+    1,
+    1,
+    1
+  ],
+  "billed_amount": 306.16,
+  "payer_id": "HUM-001",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000136.edi",
+  "intake_warnings": []
+}

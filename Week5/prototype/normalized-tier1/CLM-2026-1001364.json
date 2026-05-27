@@ -1,0 +1,28 @@
+{
+  "claim_id": "CLM-2026-1001364",
+  "member_id": "XOJ630611642",
+  "provider_npi": "0630486478",
+  "provider_specialty": "Orthopedic Surgery",
+  "date_of_service": "2026-04-14",
+  "diagnosis_codes": [
+    "J44.9"
+  ],
+  "procedure_codes": [
+    "99205",
+    "47562",
+    "99204",
+    "97140"
+  ],
+  "procedure_quantities": [
+    1,
+    2,
+    1,
+    2
+  ],
+  "billed_amount": 3252.29,
+  "payer_id": "BCBS-IL",
+  "group_id": "GRP-72599",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001364.json",
+  "intake_warnings": []
+}

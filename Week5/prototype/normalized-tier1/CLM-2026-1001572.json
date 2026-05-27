@@ -1,0 +1,24 @@
+{
+  "claim_id": "CLM-2026-1001572",
+  "member_id": "47856725L",
+  "provider_npi": "9595694221",
+  "provider_specialty": "Family Medicine",
+  "date_of_service": "2026-04-25",
+  "diagnosis_codes": [
+    "R53.83"
+  ],
+  "procedure_codes": [
+    "64483",
+    "71046"
+  ],
+  "procedure_quantities": [
+    1,
+    1
+  ],
+  "billed_amount": 455.55,
+  "payer_id": "ANT-001",
+  "group_id": "GRP-59832",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001572.json",
+  "intake_warnings": []
+}

@@ -1,0 +1,25 @@
+{
+  "claim_id": "CLM-2026-1000119",
+  "member_id": "W903940300",
+  "provider_npi": "8956674588",
+  "provider_specialty": "Physician (MD)",
+  "date_of_service": "2026-04-02",
+  "diagnosis_codes": [
+    "S93401A",
+    "R109",
+    "M545"
+  ],
+  "procedure_codes": [
+    "99421",
+    "99214"
+  ],
+  "procedure_quantities": [
+    1,
+    1
+  ],
+  "billed_amount": 211.79,
+  "payer_id": "AET-001",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000119.edi",
+  "intake_warnings": []
+}

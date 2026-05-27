@@ -1,0 +1,28 @@
+{
+  "claim_id": "CLM-2026-1001456",
+  "member_id": "XOJ202319335",
+  "provider_npi": "4568003893",
+  "provider_specialty": "Chiropractic",
+  "date_of_service": "2026-03-31",
+  "diagnosis_codes": [
+    "M17.11"
+  ],
+  "procedure_codes": [
+    "70551",
+    "85025",
+    "90686",
+    "27447"
+  ],
+  "procedure_quantities": [
+    2,
+    1,
+    2,
+    2
+  ],
+  "billed_amount": 5199.35,
+  "payer_id": "BCBS-IL",
+  "group_id": "GRP-41074",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001456.json",
+  "intake_warnings": []
+}

@@ -1,0 +1,27 @@
+{
+  "claim_id": "CLM-2026-1001412",
+  "member_id": "654719474",
+  "provider_npi": "0745381794",
+  "provider_specialty": "Multi-specialty Clinic",
+  "date_of_service": "2026-03-29",
+  "diagnosis_codes": [
+    "J20.9",
+    "M25.561"
+  ],
+  "procedure_codes": [
+    "99213",
+    "85025",
+    "64483"
+  ],
+  "procedure_quantities": [
+    1,
+    2,
+    1
+  ],
+  "billed_amount": 410.76,
+  "payer_id": "MCD-IL",
+  "group_id": "GRP-58910",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001412.json",
+  "intake_warnings": []
+}

@@ -1,0 +1,25 @@
+{
+  "claim_id": "CLM-2026-1001461",
+  "member_id": "6TV4YAV5HW2",
+  "provider_npi": "0345834805",
+  "provider_specialty": "Cardiology",
+  "date_of_service": "2026-03-31",
+  "diagnosis_codes": [
+    "L30.9",
+    "M54.5"
+  ],
+  "procedure_codes": [
+    "99204",
+    "99204"
+  ],
+  "procedure_quantities": [
+    1,
+    1
+  ],
+  "billed_amount": 526.61,
+  "payer_id": "MCR-001",
+  "group_id": "GRP-76918",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001461.json",
+  "intake_warnings": []
+}

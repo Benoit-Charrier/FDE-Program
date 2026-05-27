@@ -1,0 +1,25 @@
+{
+  "claim_id": "CLM-2026-1000044",
+  "member_id": "W197081135",
+  "provider_npi": "2162299168",
+  "provider_specialty": "Pediatrician",
+  "date_of_service": "2026-04-17",
+  "diagnosis_codes": [
+    "R109",
+    "J209",
+    "F329"
+  ],
+  "procedure_codes": [
+    "85025",
+    "12001"
+  ],
+  "procedure_quantities": [
+    2,
+    2
+  ],
+  "billed_amount": 341.65,
+  "payer_id": "AET-001",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000044.edi",
+  "intake_warnings": []
+}

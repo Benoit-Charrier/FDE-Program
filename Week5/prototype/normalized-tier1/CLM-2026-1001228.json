@@ -1,0 +1,28 @@
+{
+  "claim_id": "CLM-2026-1001228",
+  "member_id": "U64454578",
+  "provider_npi": "1024905045",
+  "provider_specialty": "Nurse Practitioner",
+  "date_of_service": "2026-04-13",
+  "diagnosis_codes": [
+    "J06.9",
+    "F32.9",
+    "G47.33"
+  ],
+  "procedure_codes": [
+    "99203",
+    "80053",
+    "71046"
+  ],
+  "procedure_quantities": [
+    1,
+    2,
+    2
+  ],
+  "billed_amount": 289.27,
+  "payer_id": "CIG-001",
+  "group_id": "GRP-84765",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001228.json",
+  "intake_warnings": []
+}

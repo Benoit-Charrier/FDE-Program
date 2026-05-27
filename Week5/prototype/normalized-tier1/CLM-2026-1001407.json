@@ -1,0 +1,29 @@
+{
+  "claim_id": "CLM-2026-1001407",
+  "member_id": "XOJ667064530",
+  "provider_npi": "0149705455",
+  "provider_specialty": "Nurse Practitioner",
+  "date_of_service": "2026-03-28",
+  "diagnosis_codes": [
+    "J06.9",
+    "F32.9"
+  ],
+  "procedure_codes": [
+    "99396",
+    "80061",
+    "90471",
+    "99214"
+  ],
+  "procedure_quantities": [
+    1,
+    2,
+    1,
+    1
+  ],
+  "billed_amount": 440.15,
+  "payer_id": "BCBS-IL",
+  "group_id": "GRP-23678",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001407.json",
+  "intake_warnings": []
+}

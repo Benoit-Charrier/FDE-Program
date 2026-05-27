@@ -1,0 +1,28 @@
+{
+  "claim_id": "CLM-2026-1000541",
+  "member_id": "U78561463",
+  "provider_npi": "9639190007",
+  "provider_specialty": "Advanced Practice Provider (PA)",
+  "date_of_service": "2026-04-23",
+  "diagnosis_codes": [
+    "M25562",
+    "F329"
+  ],
+  "procedure_codes": [
+    "80053",
+    "97140",
+    "90686",
+    "99422"
+  ],
+  "procedure_quantities": [
+    1,
+    1,
+    2,
+    1
+  ],
+  "billed_amount": 130.91,
+  "payer_id": "CIG-001",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000541.edi",
+  "intake_warnings": []
+}

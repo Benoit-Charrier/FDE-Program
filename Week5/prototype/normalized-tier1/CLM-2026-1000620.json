@@ -1,0 +1,25 @@
+{
+  "claim_id": "CLM-2026-1000620",
+  "member_id": "U33637008",
+  "provider_npi": "UNKNOWN_NPI",
+  "provider_specialty": "Physician",
+  "date_of_service": "2026-04-25",
+  "diagnosis_codes": [
+    "I2510"
+  ],
+  "procedure_codes": [
+    "90471",
+    "27447"
+  ],
+  "procedure_quantities": [
+    2,
+    1
+  ],
+  "billed_amount": 2332.22,
+  "payer_id": "CIG-001",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000620.edi",
+  "intake_warnings": [
+    "provider_npi_empty_segment"
+  ]
+}

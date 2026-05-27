@@ -1,0 +1,22 @@
+{
+  "claim_id": "CLM-2026-1000319",
+  "member_id": "U43829998",
+  "provider_npi": "9259645000",
+  "provider_specialty": "Physician (DO)",
+  "date_of_service": "2026-03-30",
+  "diagnosis_codes": [
+    "Z23",
+    "I2510"
+  ],
+  "procedure_codes": [
+    "99999"
+  ],
+  "procedure_quantities": [
+    1
+  ],
+  "billed_amount": 269.3,
+  "payer_id": "CIG-001",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000319.edi",
+  "intake_warnings": []
+}

@@ -1,0 +1,25 @@
+{
+  "claim_id": "CLM-2026-1000498",
+  "member_id": "40206135L",
+  "provider_npi": "1906847814",
+  "provider_specialty": "Physician (DO)",
+  "date_of_service": "2026-04-16",
+  "diagnosis_codes": [
+    "M545",
+    "E119",
+    "R5383"
+  ],
+  "procedure_codes": [
+    "90471",
+    "90471"
+  ],
+  "procedure_quantities": [
+    2,
+    1
+  ],
+  "billed_amount": 47.01,
+  "payer_id": "ANT-001",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000498.edi",
+  "intake_warnings": []
+}

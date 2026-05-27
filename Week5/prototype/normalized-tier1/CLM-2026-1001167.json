@@ -1,0 +1,27 @@
+{
+  "claim_id": "CLM-2026-1001167",
+  "member_id": "H11803269",
+  "provider_npi": "5846725434",
+  "provider_specialty": "Hospital/Institutional",
+  "date_of_service": "2026-04-11",
+  "diagnosis_codes": [
+    "E785",
+    "I2510",
+    "R079"
+  ],
+  "procedure_codes": [
+    "99205",
+    "99284",
+    "90471"
+  ],
+  "procedure_quantities": [
+    1,
+    1,
+    2
+  ],
+  "billed_amount": 842.17,
+  "payer_id": "HUM-001",
+  "source_format": "EDI_837I",
+  "source_file": "CLM-2026-1001167.edi",
+  "intake_warnings": []
+}

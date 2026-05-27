@@ -1,0 +1,30 @@
+{
+  "claim_id": "CLM-2026-1000338",
+  "member_id": "7EJ7ANX2QM8",
+  "provider_npi": "UNKNOWN_NPI",
+  "provider_specialty": "Physician (MD)",
+  "date_of_service": "2026-04-02",
+  "diagnosis_codes": [
+    "E119",
+    "J449"
+  ],
+  "procedure_codes": [
+    "99285",
+    "27447",
+    "80061",
+    "27447"
+  ],
+  "procedure_quantities": [
+    1,
+    2,
+    2,
+    1
+  ],
+  "billed_amount": 7505.49,
+  "payer_id": "MCR-001",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000338.edi",
+  "intake_warnings": [
+    "provider_npi_empty_segment"
+  ]
+}

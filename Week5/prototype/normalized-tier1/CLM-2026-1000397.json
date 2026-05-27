@@ -1,0 +1,25 @@
+{
+  "claim_id": "CLM-2026-1000397",
+  "member_id": "151046941",
+  "provider_npi": "6700368156",
+  "provider_specialty": "Physician (DO)",
+  "date_of_service": "2026-04-05",
+  "diagnosis_codes": [
+    "F411"
+  ],
+  "procedure_codes": [
+    "70551",
+    "99213",
+    "99396"
+  ],
+  "procedure_quantities": [
+    1,
+    1,
+    1
+  ],
+  "billed_amount": 884.27,
+  "payer_id": "MCD-IL",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000397.edi",
+  "intake_warnings": []
+}

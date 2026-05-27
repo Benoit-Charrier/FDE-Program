@@ -1,0 +1,28 @@
+{
+  "claim_id": "CLM-2026-1000410",
+  "member_id": "U16328760",
+  "provider_npi": "4158622334",
+  "provider_specialty": "Physician (MD)",
+  "date_of_service": "2026-03-28",
+  "diagnosis_codes": [
+    "R109",
+    "I10"
+  ],
+  "procedure_codes": [
+    "20610",
+    "99215",
+    "99205",
+    "83036"
+  ],
+  "procedure_quantities": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "billed_amount": 693.34,
+  "payer_id": "CIG-001",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000410.edi",
+  "intake_warnings": []
+}

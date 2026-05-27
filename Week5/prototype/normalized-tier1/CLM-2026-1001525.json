@@ -1,0 +1,24 @@
+{
+  "claim_id": "CLM-2026-1001525",
+  "member_id": "YYL21540354",
+  "provider_npi": "0054024612",
+  "provider_specialty": "Nurse Practitioner",
+  "date_of_service": "2026-04-19",
+  "diagnosis_codes": [
+    "Z00.00"
+  ],
+  "procedure_codes": [
+    "99215",
+    "73030"
+  ],
+  "procedure_quantities": [
+    1,
+    1
+  ],
+  "billed_amount": 366.9,
+  "payer_id": "ANT-001",
+  "group_id": "GRP-64870",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001525.json",
+  "intake_warnings": []
+}

@@ -1,0 +1,28 @@
+{
+  "claim_id": "CLM-2026-1000665",
+  "member_id": "W666400223",
+  "provider_npi": "5377909820",
+  "provider_specialty": "Advanced Practice Provider (PA)",
+  "date_of_service": "2026-04-17",
+  "diagnosis_codes": [
+    "I10",
+    "I2510"
+  ],
+  "procedure_codes": [
+    "83036",
+    "90686",
+    "47562",
+    "99205"
+  ],
+  "procedure_quantities": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "billed_amount": 1879.6,
+  "payer_id": "AET-001",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000665.edi",
+  "intake_warnings": []
+}

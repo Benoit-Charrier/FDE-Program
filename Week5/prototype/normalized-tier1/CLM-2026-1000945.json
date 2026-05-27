@@ -1,0 +1,27 @@
+{
+  "claim_id": "CLM-2026-1000945",
+  "member_id": "XOJ335644731",
+  "provider_npi": "3746858157",
+  "provider_specialty": "Pediatrician",
+  "date_of_service": "2026-03-30",
+  "diagnosis_codes": [
+    "N390",
+    "J069",
+    "R5383"
+  ],
+  "procedure_codes": [
+    "12001",
+    "99281",
+    "99422"
+  ],
+  "procedure_quantities": [
+    2,
+    1,
+    1
+  ],
+  "billed_amount": 594.03,
+  "payer_id": "BCBS-IL",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000945.edi",
+  "intake_warnings": []
+}

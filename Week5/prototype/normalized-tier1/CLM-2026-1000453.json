@@ -1,0 +1,27 @@
+{
+  "claim_id": "CLM-2026-1000453",
+  "member_id": "YYL60058829",
+  "provider_npi": "4577400872",
+  "provider_specialty": "Cardiologist",
+  "date_of_service": "2026-04-06",
+  "diagnosis_codes": [
+    "F329"
+  ],
+  "procedure_codes": [
+    "70551",
+    "90686",
+    "85025",
+    "20610"
+  ],
+  "procedure_quantities": [
+    1,
+    2,
+    2,
+    2
+  ],
+  "billed_amount": 838.24,
+  "payer_id": "ANT-001",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000453.edi",
+  "intake_warnings": []
+}

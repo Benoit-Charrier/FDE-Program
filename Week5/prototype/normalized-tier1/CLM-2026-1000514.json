@@ -1,0 +1,24 @@
+{
+  "claim_id": "CLM-2026-1000514",
+  "member_id": "524823814-08",
+  "provider_npi": "6979728772",
+  "provider_specialty": "Pediatrician",
+  "date_of_service": "2026-04-03",
+  "diagnosis_codes": [
+    "N183",
+    "J449"
+  ],
+  "procedure_codes": [
+    "20610",
+    "83036"
+  ],
+  "procedure_quantities": [
+    1,
+    2
+  ],
+  "billed_amount": 157.69,
+  "payer_id": "UHC-001",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000514.edi",
+  "intake_warnings": []
+}

@@ -1,0 +1,24 @@
+{
+  "claim_id": "CLM-2026-1000010",
+  "member_id": "YYL63425268",
+  "provider_npi": "5559248985",
+  "provider_specialty": "Advanced Practice Provider (NP)",
+  "date_of_service": "2026-04-25",
+  "diagnosis_codes": [
+    "G4733",
+    "J069"
+  ],
+  "procedure_codes": [
+    "99285",
+    "72148"
+  ],
+  "procedure_quantities": [
+    1,
+    1
+  ],
+  "billed_amount": 855.28,
+  "payer_id": "ANT-001",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000010.edi",
+  "intake_warnings": []
+}

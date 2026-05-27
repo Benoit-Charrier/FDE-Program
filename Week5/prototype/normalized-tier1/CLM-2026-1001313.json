@@ -1,0 +1,23 @@
+{
+  "claim_id": "CLM-2026-1001313",
+  "member_id": "H15523689",
+  "provider_npi": "4400849728",
+  "provider_specialty": "Family Medicine",
+  "date_of_service": "2026-04-24",
+  "diagnosis_codes": [
+    "J02.9",
+    "L30.9"
+  ],
+  "procedure_codes": [
+    "99396"
+  ],
+  "procedure_quantities": [
+    1
+  ],
+  "billed_amount": 237.31,
+  "payer_id": "HUM-001",
+  "group_id": "GRP-42059",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001313.json",
+  "intake_warnings": []
+}

@@ -1,0 +1,21 @@
+{
+  "claim_id": "CLM-2026-1000193",
+  "member_id": "108251155-01",
+  "provider_npi": "6205946507",
+  "provider_specialty": "Physician (MD)",
+  "date_of_service": "2026-04-17",
+  "diagnosis_codes": [
+    "Z0000"
+  ],
+  "procedure_codes": [
+    "44970"
+  ],
+  "procedure_quantities": [
+    1
+  ],
+  "billed_amount": 1318.8,
+  "payer_id": "UHC-001",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000193.edi",
+  "intake_warnings": []
+}

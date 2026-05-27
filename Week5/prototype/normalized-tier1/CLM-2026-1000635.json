@@ -1,0 +1,28 @@
+{
+  "claim_id": "CLM-2026-1000635",
+  "member_id": "678679284-02",
+  "provider_npi": "6260840084",
+  "provider_specialty": "Cardiologist",
+  "date_of_service": "2026-04-11",
+  "diagnosis_codes": [
+    "M25561",
+    "N183"
+  ],
+  "procedure_codes": [
+    "85025",
+    "97110",
+    "99204",
+    "72148"
+  ],
+  "procedure_quantities": [
+    2,
+    2,
+    1,
+    2
+  ],
+  "billed_amount": 1006.31,
+  "payer_id": "UHC-002",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000635.edi",
+  "intake_warnings": []
+}

@@ -1,0 +1,22 @@
+{
+  "claim_id": "CLM-2026-1000034",
+  "member_id": "U63462896",
+  "provider_npi": "7338501816",
+  "provider_specialty": "Pediatrician",
+  "date_of_service": "2026-03-29",
+  "diagnosis_codes": [
+    "E785",
+    "I10"
+  ],
+  "procedure_codes": [
+    "90686"
+  ],
+  "procedure_quantities": [
+    1
+  ],
+  "billed_amount": 29.06,
+  "payer_id": "CIG-001",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000034.edi",
+  "intake_warnings": []
+}

@@ -1,0 +1,21 @@
+{
+  "claim_id": "CLM-2026-1000731",
+  "member_id": "852340005",
+  "provider_npi": "9279139033",
+  "provider_specialty": "Orthopaedic Surgeon",
+  "date_of_service": "2026-04-02",
+  "diagnosis_codes": [
+    "M1711"
+  ],
+  "procedure_codes": [
+    "99215"
+  ],
+  "procedure_quantities": [
+    1
+  ],
+  "billed_amount": 249.16,
+  "payer_id": "MCD-IL",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000731.edi",
+  "intake_warnings": []
+}

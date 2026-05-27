@@ -1,0 +1,27 @@
+{
+  "claim_id": "CLM-2026-1000669",
+  "member_id": "W928072645",
+  "provider_npi": "7803447520",
+  "provider_specialty": "Physician",
+  "date_of_service": "2026-04-03",
+  "diagnosis_codes": [
+    "Z0000",
+    "L309",
+    "J209"
+  ],
+  "procedure_codes": [
+    "99999",
+    "97140",
+    "90471"
+  ],
+  "procedure_quantities": [
+    1,
+    2,
+    1
+  ],
+  "billed_amount": 387.88,
+  "payer_id": "AET-001",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000669.edi",
+  "intake_warnings": []
+}

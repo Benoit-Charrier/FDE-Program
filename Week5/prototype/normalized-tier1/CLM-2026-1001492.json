@@ -1,0 +1,28 @@
+{
+  "claim_id": "CLM-2026-1001492",
+  "member_id": "U94448484",
+  "provider_npi": "5179530066",
+  "provider_specialty": "Family Medicine",
+  "date_of_service": "2026-03-29",
+  "diagnosis_codes": [
+    "K21.9"
+  ],
+  "procedure_codes": [
+    "99284",
+    "64483",
+    "44970",
+    "44970"
+  ],
+  "procedure_quantities": [
+    1,
+    2,
+    2,
+    1
+  ],
+  "billed_amount": 5386.24,
+  "payer_id": "CIG-001",
+  "group_id": "GRP-89069",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001492.json",
+  "intake_warnings": []
+}

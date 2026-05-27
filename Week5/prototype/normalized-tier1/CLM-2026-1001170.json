@@ -1,0 +1,38 @@
+{
+  "claim_id": "CLM-2026-1001170",
+  "member_id": "U62768762",
+  "provider_npi": "5960802549",
+  "provider_specialty": "Hospital/Institutional",
+  "date_of_service": "2026-02-26",
+  "diagnosis_codes": [
+    "F411",
+    "Z0000",
+    "R519",
+    "E785"
+  ],
+  "procedure_codes": [
+    "72148",
+    "90686",
+    "83036",
+    "73030",
+    "97110",
+    "73030",
+    "97110",
+    "99204"
+  ],
+  "procedure_quantities": [
+    2,
+    2,
+    2,
+    1,
+    1,
+    1,
+    2,
+    2
+  ],
+  "billed_amount": 2375.83,
+  "payer_id": "CIG-001",
+  "source_format": "EDI_837I",
+  "source_file": "CLM-2026-1001170.edi",
+  "intake_warnings": []
+}

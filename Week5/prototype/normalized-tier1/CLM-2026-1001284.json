@@ -1,0 +1,26 @@
+{
+  "claim_id": "CLM-2026-1001284",
+  "member_id": "YYL47960166",
+  "provider_npi": "1655568758",
+  "provider_specialty": "Physician Assistant",
+  "date_of_service": "2026-04-09",
+  "diagnosis_codes": [
+    "N18.3"
+  ],
+  "procedure_codes": [
+    "90686",
+    "99215",
+    "99214"
+  ],
+  "procedure_quantities": [
+    2,
+    1,
+    1
+  ],
+  "billed_amount": 492.22,
+  "payer_id": "ANT-001",
+  "group_id": "GRP-95419",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001284.json",
+  "intake_warnings": []
+}

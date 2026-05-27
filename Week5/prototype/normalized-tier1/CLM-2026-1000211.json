@@ -1,0 +1,28 @@
+{
+  "claim_id": "CLM-2026-1000211",
+  "member_id": "104042472-05",
+  "provider_npi": "2463898651",
+  "provider_specialty": "Physician (DO)",
+  "date_of_service": "2026-04-04",
+  "diagnosis_codes": [
+    "J45909",
+    "J209"
+  ],
+  "procedure_codes": [
+    "44970",
+    "99396",
+    "99284",
+    "47562"
+  ],
+  "procedure_quantities": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "billed_amount": 3555.76,
+  "payer_id": "UHC-001",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000211.edi",
+  "intake_warnings": []
+}

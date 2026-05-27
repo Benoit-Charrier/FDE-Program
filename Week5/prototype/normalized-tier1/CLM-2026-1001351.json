@@ -1,0 +1,26 @@
+{
+  "claim_id": "CLM-2026-1001351",
+  "member_id": "W234862747",
+  "provider_npi": "UNKNOWN_NPI",
+  "provider_specialty": "Orthopedic Surgery",
+  "date_of_service": "2026-04-04",
+  "diagnosis_codes": [
+    "R51.9",
+    "K21.9",
+    "J44.9"
+  ],
+  "procedure_codes": [
+    "99214"
+  ],
+  "procedure_quantities": [
+    1
+  ],
+  "billed_amount": 204.42,
+  "payer_id": "AET-001",
+  "group_id": "GRP-87316",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001351.json",
+  "intake_warnings": [
+    "provider_npi_missing"
+  ]
+}

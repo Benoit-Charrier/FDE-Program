@@ -1,0 +1,23 @@
+{
+  "claim_id": "CLM-2026-1000349",
+  "status": "escalated",
+  "escalation_trigger_id": "ET-01",
+  "trigger_type": "CLINICAL_ROUTING",
+  "routing_queue": "PHYSICIAN_HITL",
+  "required_resolution": "Route as: [CLINICAL_CONFIRMED / ADMIN_CONFIRMED / NEEDS_ADDITIONAL_INFO]",
+  "classification": "clinical",
+  "confidence": 0.88,
+  "escalation_reason": "Clinical content classifier returned clinical \u2014 heuristic Physician review required.",
+  "claim_context": {
+    "procedure_code": "27447",
+    "diagnosis_code": "R109",
+    "provider_specialty": "Physician (MD)"
+  },
+  "audit_trail": [
+    "claim_intake_validated [COMMITTED]",
+    "eligibility_confirmed [COMMITTED]",
+    "code_validity_checked [COMMITTED]",
+    "prior_auth_confirmed [COMMITTED]",
+    "clinical_classification_completed [COMMITTED]"
+  ]
+}

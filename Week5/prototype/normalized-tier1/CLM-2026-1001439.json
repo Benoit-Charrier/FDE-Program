@@ -1,0 +1,27 @@
+{
+  "claim_id": "CLM-2026-1001439",
+  "member_id": "434151514",
+  "provider_npi": "6624687773",
+  "provider_specialty": "Internal Medicine",
+  "date_of_service": "2026-03-30",
+  "diagnosis_codes": [
+    "J45.909",
+    "N18.3"
+  ],
+  "procedure_codes": [
+    "99215",
+    "97140",
+    "99284"
+  ],
+  "procedure_quantities": [
+    1,
+    2,
+    1
+  ],
+  "billed_amount": 546.37,
+  "payer_id": "MCD-IL",
+  "group_id": "GRP-97592",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001439.json",
+  "intake_warnings": []
+}

@@ -1,0 +1,29 @@
+{
+  "claim_id": "CLM-2026-1000728",
+  "member_id": "H74404445",
+  "provider_npi": "UNKNOWN_NPI",
+  "provider_specialty": "Physician",
+  "date_of_service": "2026-04-17",
+  "diagnosis_codes": [
+    "R109"
+  ],
+  "procedure_codes": [
+    "90471",
+    "90686",
+    "99422",
+    "73030"
+  ],
+  "procedure_quantities": [
+    2,
+    2,
+    1,
+    2
+  ],
+  "billed_amount": 271.94,
+  "payer_id": "HUM-001",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000728.edi",
+  "intake_warnings": [
+    "provider_npi_empty_segment"
+  ]
+}

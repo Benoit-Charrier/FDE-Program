@@ -1,0 +1,25 @@
+{
+  "claim_id": "CLM-2026-1000143",
+  "member_id": "958057793-09",
+  "provider_npi": "9933992273",
+  "provider_specialty": "Physician (DO)",
+  "date_of_service": "2026-04-02",
+  "diagnosis_codes": [
+    "M797",
+    "N183",
+    "G4733"
+  ],
+  "procedure_codes": [
+    "99422",
+    "99285"
+  ],
+  "procedure_quantities": [
+    1,
+    1
+  ],
+  "billed_amount": 417.13,
+  "payer_id": "UHC-002",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000143.edi",
+  "intake_warnings": []
+}

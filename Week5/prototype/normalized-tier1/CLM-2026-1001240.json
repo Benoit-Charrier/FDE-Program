@@ -1,0 +1,26 @@
+{
+  "claim_id": "CLM-2026-1001240",
+  "member_id": "XOJ402804747",
+  "provider_npi": "4906006881",
+  "provider_specialty": "Physical Therapy",
+  "date_of_service": "2026-03-28",
+  "diagnosis_codes": [
+    "E11.9",
+    "Z00.00",
+    "M25.561"
+  ],
+  "procedure_codes": [
+    "73030",
+    "99395"
+  ],
+  "procedure_quantities": [
+    2,
+    1
+  ],
+  "billed_amount": 354.29,
+  "payer_id": "BCBS-IL",
+  "group_id": "GRP-92628",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001240.json",
+  "intake_warnings": []
+}

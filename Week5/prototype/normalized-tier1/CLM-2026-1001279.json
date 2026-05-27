@@ -1,0 +1,26 @@
+{
+  "claim_id": "CLM-2026-1001279",
+  "member_id": "376278451-05",
+  "provider_npi": "2346853135",
+  "provider_specialty": "Physician Assistant",
+  "date_of_service": "2026-04-09",
+  "diagnosis_codes": [
+    "J44.9"
+  ],
+  "procedure_codes": [
+    "80053",
+    "99203",
+    "97140"
+  ],
+  "procedure_quantities": [
+    1,
+    1,
+    2
+  ],
+  "billed_amount": 290.16,
+  "payer_id": "UHC-002",
+  "group_id": "GRP-60526",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001279.json",
+  "intake_warnings": []
+}

@@ -1,0 +1,27 @@
+{
+  "claim_id": "CLM-2026-1001479",
+  "member_id": "U76920421",
+  "provider_npi": "3311497389",
+  "provider_specialty": "Orthopedic Surgery",
+  "date_of_service": "2026-03-30",
+  "diagnosis_codes": [
+    "M17.11",
+    "R07.9"
+  ],
+  "procedure_codes": [
+    "80061",
+    "73030",
+    "47562"
+  ],
+  "procedure_quantities": [
+    1,
+    1,
+    2
+  ],
+  "billed_amount": 3846.85,
+  "payer_id": "CIG-001",
+  "group_id": "GRP-90700",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001479.json",
+  "intake_warnings": []
+}

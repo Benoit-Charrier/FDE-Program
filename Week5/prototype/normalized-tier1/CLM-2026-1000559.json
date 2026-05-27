@@ -1,0 +1,27 @@
+{
+  "claim_id": "CLM-2026-1000559",
+  "member_id": "XOJ626747774",
+  "provider_npi": "UNKNOWN_NPI",
+  "provider_specialty": "Advanced Practice Provider (NP)",
+  "date_of_service": "2026-04-20",
+  "diagnosis_codes": [
+    "M25562"
+  ],
+  "procedure_codes": [
+    "20610",
+    "80053",
+    "70551"
+  ],
+  "procedure_quantities": [
+    1,
+    2,
+    1
+  ],
+  "billed_amount": 576.12,
+  "payer_id": "BCBS-IL",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000559.edi",
+  "intake_warnings": [
+    "provider_npi_empty_segment"
+  ]
+}

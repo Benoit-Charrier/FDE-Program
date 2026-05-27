@@ -1,13 +1,15 @@
 {
   "claim_id": "CLAIM-ELIG-01",
   "member_id": "GHS-MBR-INVALID",
-  "provider_id": "GHS-PRV-NPI-7124893",
+  "provider_npi": "GHS-PRV-NPI-7124893",
   "provider_specialty": "Primary Care Physician",
   "date_of_service": "2026-04-15",
   "diagnosis_codes": ["Z00.00"],
   "procedure_codes": ["99213"],
   "procedure_quantities": [1],
   "billed_amount": 120.00,
-  "plan_id": "GHS-PPO-2026",
-  "submission_format": "EDI_837"
+  "payer_id": "GHS-PPO-2026",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLAIM-ELIG-01.json",
+  "intake_warnings": []
 }

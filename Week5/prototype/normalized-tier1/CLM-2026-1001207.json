@@ -1,0 +1,27 @@
+{
+  "claim_id": "CLM-2026-1001207",
+  "member_id": "YYL12459454",
+  "provider_npi": "6037251172",
+  "provider_specialty": "Emergency Medicine",
+  "date_of_service": "2026-04-04",
+  "diagnosis_codes": [
+    "F41.1",
+    "J06.9"
+  ],
+  "procedure_codes": [
+    "72148",
+    "99285",
+    "99421"
+  ],
+  "procedure_quantities": [
+    2,
+    1,
+    1
+  ],
+  "billed_amount": 1197.82,
+  "payer_id": "ANT-001",
+  "group_id": "GRP-75757",
+  "source_format": "PORTAL_FORM",
+  "source_file": "CLM-2026-1001207.json",
+  "intake_warnings": []
+}

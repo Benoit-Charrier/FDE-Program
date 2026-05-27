@@ -1,0 +1,23 @@
+{
+  "claim_id": "CLM-2026-1000372",
+  "member_id": "XOJ647478753",
+  "provider_npi": "2160595356",
+  "provider_specialty": "Orthopaedic Surgeon",
+  "date_of_service": "2026-04-14",
+  "diagnosis_codes": [
+    "N390",
+    "F411",
+    "K219"
+  ],
+  "procedure_codes": [
+    "99204"
+  ],
+  "procedure_quantities": [
+    1
+  ],
+  "billed_amount": 274.12,
+  "payer_id": "BCBS-IL",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000372.edi",
+  "intake_warnings": []
+}

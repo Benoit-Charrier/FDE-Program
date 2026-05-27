@@ -1,0 +1,23 @@
+{
+  "claim_id": "CLM-2026-1000841",
+  "member_id": "H29993684",
+  "provider_npi": "0387629780",
+  "provider_specialty": "Physician (MD)",
+  "date_of_service": "2026-03-31",
+  "diagnosis_codes": [
+    "M25562"
+  ],
+  "procedure_codes": [
+    "73030",
+    "70551"
+  ],
+  "procedure_quantities": [
+    1,
+    1
+  ],
+  "billed_amount": 476.6,
+  "payer_id": "HUM-001",
+  "source_format": "EDI_837P",
+  "source_file": "CLM-2026-1000841.edi",
+  "intake_warnings": []
+}
