@@ -2,7 +2,7 @@
 
 **Agent:** WS1 Administrative Adjudication Agent  
 **Scope:** Administrative path (65% of volume) — eligibility check, code validity, prior auth routing, clinical classification, payment calculation  
-**Format coverage:** Portal-JSON normalized fixtures (20% of intake volume). WS1 operates on a normalized claim record; format parsing is Intake Agent scope. See "Format coverage" section at the bottom for the coach Q&A answer.
+**Format coverage:** Tier 1 formats — EDI 837P (50%), EDI 837I (10%), Portal JSON (20%) = 80% of intake volume. All three parsers validated against the full 1,493-file Tier 1 corpus. WS1 operates on a normalized claim record; format parsing is Intake Agent scope. See "Format coverage" section at the bottom for the coach Q&A answer.
 
 ---
 
@@ -12,10 +12,10 @@ From the `prototype/` directory:
 
 ```bash
 pip install -r requirements.txt   # one-time
-pytest tests/ -v                  # confirm all 5 tests passing before the demo
+pytest tests/ -v                  # confirm all 6 tests passing before the demo
 ```
 
-Expected output: `5 passed` with no failures or warnings.
+Expected output: `6 passed` with no failures or warnings.
 
 **API key (required for Path 1 and Path 2 — live classifier calls):**
 
@@ -49,22 +49,51 @@ python run_claim.py --fixture CLAIM-ADMIN-01
 
 ---
 
-## Path 2 — Uncertain classification escalation (ET-01/ET-02): ambiguous claim → HITL
+## Path 2 — Uncertain classification escalation + HITL review loop (ET-01/ET-02)
 
-**What this shows:** When the classifier returns `uncertain` (confidence 0.48, below threshold 0.70), the agent routes to physician HITL queue rather than auto-deciding. The agent does NOT exit early — it completes eligibility, codes, and prior auth before routing, so the physician receives a fully pre-filled escalation packet.
+**What this shows:** When the classifier returns `uncertain` (confidence 0.48, below threshold 0.70), the agent routes to physician HITL queue rather than auto-deciding. The physician reviews the escalation packet and records a determination — ADMIN_CONFIRMED re-enters WS1 at T-09 and issues payment. This is the full agentic HITL loop: agent pre-fills, human decides, agent executes.
+
+**Step 2a — generate the escalation:**
 
 ```bash
 python run_claim.py --fixture CLAIM-UNCERTAIN-01
 ```
 
 **What to say:**  
-"CLAIM-UNCERTAIN-01 is therapeutic exercise (97110) for low back pain (M54.5) from a General Practitioner. The procedure code is used for both routine physiotherapy and post-surgical rehabilitation — the provider type doesn't resolve the ambiguity. Classifier returns `uncertain` at confidence 0.48. Below threshold, so the agent escalates to the physician HITL queue. Critically: the agent has already run eligibility, code validity, and prior auth, so the escalation packet the physician receives is fully pre-filled. That's the operational lift — the agent does the administrative pre-work even for claims it can't auto-decide."
+"CLAIM-UNCERTAIN-01 is therapeutic exercise (97110) for low back pain (M54.5) from a General Practitioner. The procedure code is used for both routine physiotherapy and post-surgical rehabilitation — the provider type doesn't resolve the ambiguity. Classifier returns `uncertain` at confidence 0.48. Below threshold, so the agent escalates to the physician HITL queue. Critically: the agent has already run eligibility, code validity, and prior auth, so the escalation packet the physician receives is fully pre-filled — five committed audit entries. That's the operational lift."
 
-**Key fields to point out in the output:**
-- `"status": "escalated"`
-- `"classification": "uncertain"`, `"confidence": 0.48`
+**Step 2b — physician reviews and closes the loop:**
+
+```bash
+python review_claim.py --claim-id CLAIM-UNCERTAIN-01
+```
+
+This opens the interactive reviewer. It displays the pre-filled packet — classification, confidence, escalation reason, and every completed audit step. The physician picks a determination:
+
+```
+  1. ADMIN_CONFIRMED
+     Confirm as administrative -- re-enter WS1 T-09 and issue payment
+  2. CLINICAL_CONFIRMED
+     Confirm as clinical -- route for medical necessity determination (WS2)
+  3. NEEDS_ADDITIONAL_INFO
+     Request additional documentation from provider
+```
+
+**Choosing 1 (ADMIN_CONFIRMED):**  
+The reviewer records `PHYSICIAN_ADMIN_CONFIRMED` with `delegation_tier: HUMAN_DECIDES`, transitions `PENDING_PHYSICIAN_REVIEW → ADMIN_CLEARED` (GAP-15), and re-enters WS1 at T-09. FM-A-5 runs again. Audit-first ordering holds. Output is `status: approved` with `authorized_by: PHYSICIAN_DETERMINATION` and the complete extended audit trail.
+
+**What to say for the HITL loop:**  
+"Path 2a showed the agent escalating and handing off. Path 2b closes the loop — the physician sees the formatted packet the agent prepared, picks ADMIN_CONFIRMED, and the system writes a PHYSICIAN_ADMIN_CONFIRMED audit entry with delegation_tier HUMAN_DECIDES, transitions back to ADMIN_CLEARED, and re-enters T-09. The same FM-A-5 hard stop and audit-first ordering apply — there's no separate payment path for physician-approved claims. The audit trail shows who made the determination and when."
+
+**Key fields to point out after Step 2a:**
+- `"status": "escalated"`, `"classification": "uncertain"`, `"confidence": 0.48`
 - `"escalation_reason"` — names the contradictory signals
-- `"audit_trail"` — eligibility, codes, prior_auth, routing all present; `payment_approved` absent
+- `"audit_trail"` — 5 COMMITTED entries; `payment_approved` absent
+
+**Key fields to point out after Step 2b (ADMIN_CONFIRMED):**
+- `"status": "approved"`, `"payment_amount": 85.0`
+- `"authorized_by": "PHYSICIAN_DETERMINATION"` — distinguishes physician-approved from classifier-cleared
+- `"audit_trail"` — 8 entries: 5 restored + `physician_admin_confirmed [COMMITTED]` + `payment_approved [COMMITTED]`
 
 ---
 
@@ -89,13 +118,60 @@ python run_governance_demo.py
 
 ---
 
-## Optional — run all 5 tests in sequence to close the demo
+## Path 4 — End-to-end: raw claim file → Intake parse → WS1 adjudication
+
+**What this shows:** The full pipeline starting from a raw claim file exactly as received from a provider or clearinghouse — no pre-normalization. The Intake Agent parses the raw format into a NormalizedClaimInput, then WS1 adjudicates it. Three stages printed: raw content preview, normalized record, adjudication result.
+
+**API key required for Stage 3.** Use `--skip-ws1` to show Stages 1 + 2 only (no API key needed).
+
+```bash
+# Portal JSON — likely uncertain escalation (CPT 97110, low back pain)
+python run_e2e_demo.py --file "../Capstone-A-Claims-Pack/portal-json/CLM-2026-1001201.json"
+
+# EDI 837P — multi-line professional claim
+python run_e2e_demo.py --file "../Capstone-A-Claims-Pack/edi-837p/CLM-2026-1000001.edi"
+
+# Stages 1 + 2 only (no API key needed):
+python run_e2e_demo.py --file "../Capstone-A-Claims-Pack/portal-json/CLM-2026-1001201.json" --skip-ws1
+```
+
+**What to say:**
+
+"Everything shown in Paths 1–3 started from a pre-normalized fixture — a claim that had already been through the Intake Agent. Path 4 starts from a raw file exactly as the clearinghouse would deliver it.
+
+Stage 1 shows what actually arrived — raw EDI segments or raw portal JSON. Stage 2 is the Intake Agent: it detects the format from the file extension and runs the appropriate parser to produce the NormalizedClaimInput that WS1 expects. Stage 3 runs the full WS1 pipeline on that normalized record and produces the adjudication result.
+
+The key point: WS1 is completely format-agnostic. The same eligibility, code validity, prior auth, clinical classification, and payment logic runs regardless of whether the claim came in as EDI 837P, EDI 837I, or Portal JSON. The Intake Agent's job is to make every claim look identical before it reaches WS1."
+
+**Key fields to point out:**
+
+Stage 1 (raw):
+- EDI: `ISA`, `GS`, `ST`, `CLM` segments visible — structured but not human-readable
+- JSON: full portal submission — already structured but a different schema from NormalizedClaimInput
+
+Stage 2 (normalized):
+- `source_format` — confirms which parser ran (`EDI_837P`, `EDI_837I`, or `PORTAL_FORM`)
+- `source_file` — traceability back to the raw file
+- `intake_warnings` — any parser warnings (non-fatal issues surfaced without blocking the claim)
+- All canonical fields present: `claim_id`, `member_id`, `provider_npi`, `procedure_codes`, `diagnosis_codes`, `billed_amount`
+
+Stage 3 (adjudication result):
+- Same output schema as Paths 1–3 — `status`, `payment_amount` or `escalation_trigger_id`, `audit_trail`
+- Confirms WS1 received the normalized record and processed it identically to a pre-built fixture
+
+**Format coverage answer (if asked here):**
+
+"The two parsers shown — EDI 837P and Portal JSON — cover 70% of intake volume on their own. EDI 837I adds another 10%. All three Tier 1 parsers are validated against the full 1,493-file corpus. The remaining 20% — CMS-1500 OCR, FHIR R4, email, fax, exception notes — are Wave 1 Intake Agent scope and not yet built. That gap is named and documented."
+
+---
+
+## Optional — run all 6 tests in sequence to close the demo
 
 ```bash
 pytest tests/ -v
 ```
 
-Shows all five paths in ~2 seconds: happy path, HITL escalation, uncertain classification, eligibility discrepancy stub, and governance hard stop.
+Shows all six paths in ~2 seconds: happy path, HITL escalation, uncertain classification, eligibility discrepancy stub, governance hard stop, and physician-approved HITL path (GAP-15).
 
 ---
 
@@ -132,9 +208,14 @@ python run_batch.py --dir normalized-tier1 --limit 0
 
 | Step | Time |
 |---|---|
-| `pytest` pre-check (all 5 pass) | ~15 sec |
+| `pytest` pre-check (all 6 pass) | ~15 sec |
 | Path 1 — happy path | ~30 sec to run, ~60 sec to explain |
-| Path 2 — uncertain escalation | ~30 sec to run, ~60 sec to explain |
+| Path 2a — uncertain escalation | ~30 sec to run, ~30 sec to explain |
+| Path 2b — HITL reviewer loop (ADMIN_CONFIRMED) | ~30 sec interactive, ~60 sec to explain |
 | Path 3 — governance hard stop test | ~15 sec to run, ~60 sec to explain |
+| Path 4 — end-to-end raw file (optional) | ~30 sec to run, ~60 sec to explain |
 | Wrap + format coverage question | ~60 sec |
-| **Total** | **~5 min** |
+| **Total (Paths 1–3 including HITL loop)** | **~5 min** |
+| **Total (with Path 4)** | **~7 min** |
+
+**Note:** Path 4 is the optional add-on for coaches who ask to see the end-to-end flow. Run it after Path 3 if time allows, or lead with it if the coach specifically asks. Paths 1–3 are the primary demo — they cover the three required paths (happy path, escalation, governance hard stop) and run cleanly in under 5 minutes.

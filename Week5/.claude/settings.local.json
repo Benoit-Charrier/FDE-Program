@@ -11,7 +11,12 @@
       "Bash(dir C:\\\\Users\\\\Benoit_Charrier\\\\FDE Program\\\\FDE-Program\\\\Week5\\\\Capstone-A-Claims-Pack *)",
       "Bash(dir C:\\\\Users\\\\Benoit_Charrier\\\\FDE Program\\\\FDE-Program\\\\Week5 *)",
       "PowerShell(Copy-Item *)",
-      "PowerShell(Get-ChildItem \"C:\\\\Users\\\\Benoit_Charrier\\\\FDE Program\\\\FDE-Program\\\\Week5b\" -Recurse -File | Select-Object @{N=\"Path\";E={$_.FullName.Replace\\(\"C:\\\\Users\\\\Benoit_Charrier\\\\FDE Program\\\\FDE-Program\\\\Week5b\\\\\",\"\"\\)}} | Format-Table -AutoSize)"
+      "PowerShell(Get-ChildItem \"C:\\\\Users\\\\Benoit_Charrier\\\\FDE Program\\\\FDE-Program\\\\Week5b\" -Recurse -File | Select-Object @{N=\"Path\";E={$_.FullName.Replace\\(\"C:\\\\Users\\\\Benoit_Charrier\\\\FDE Program\\\\FDE-Program\\\\Week5b\\\\\",\"\"\\)}} | Format-Table -AutoSize)",
+      "PowerShell(if \\($env:ANTHROPIC_API_KEY\\) { \"API key is set\" } else { \"API key NOT set\" })",
+      "Bash(echo \"EXIT:$?\")",
+      "PowerShell(& \"C:\\\\Users\\\\Benoit_Charrier\\\\FDE Program\\\\FDE-Program\\\\.venv\\\\Scripts\\\\Activate.ps1\"; if \\($env:ANTHROPIC_API_KEY\\) { \"API key loaded: sk-ant-...$\\(\\($env:ANTHROPIC_API_KEY\\)[-8..-1] -join ''\\)\" } else { \"API key NOT set\" })",
+      "PowerShell(Split-Path *)",
+      "PowerShell(& \"C:\\\\Users\\\\Benoit_Charrier\\\\FDE Program\\\\FDE-Program\\\\.venv\\\\Scripts\\\\Activate.ps1\"; if \\($env:ANTHROPIC_API_KEY\\) { \"API key loaded: ...$\\(\\($env:ANTHROPIC_API_KEY\\)[-8..-1] -join ''\\)\" } else { \"API key NOT set\" })"
     ]
   }
 }

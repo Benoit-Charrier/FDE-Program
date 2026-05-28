@@ -247,7 +247,7 @@ Every non-trivial claim that is not directly stated in `Scenario/scenario_contex
 - Stakeholder alignment: ✓ C10 complete
 - Scope discipline: ✓ Tier 1 intake (EDI 837P/I + Portal JSON) built and empirically validated; CMS-1500 OCR deferred with documented rationale; WS2 and Wave 2+ explicitly deferred
 - Validation plan: ✓ D7 complete — Pass 1 (5 scenario fixtures, all PASS) + Pass 2 (corpus validation: 6/6 assertions, 0 violations across 1,493 Tier 1 files) + §7 live classifier mini study (30-claim sample, 50% exact agreement, zero dangerous misses, key finding: classifier over-labels as uncertain on CPT/ICD mismatches — golden-set composition implication documented); D7A updated — §5 residual closed, §6 corpus diagnosis added
-- Working prototype: ✓ 5/5 tests passing; happy path, escalation, governance hard stop all working; Pass 2 corpus run confirmed structural invariants hold at population scale
+- Working prototype: ✓ 6/6 tests passing; happy path, escalation, governance hard stop, physician-approved HITL path (GAP-15) all working; Pass 2 corpus run confirmed structural invariants hold at population scale
 - Live demo quality: ⚠ Demo script needed — `run_claim.py` + `review_claim.py` are the tools
 - Verbal defense: ⚠ Prep needed — key probe is "what would break this in production?"; live classifier mini study gives a concrete honest answer: classifier over-labels uncertain on CPT/ICD mismatches (73% uncertain rate on 30-claim sample), golden-set calibration is the production risk, confidence threshold correctly gates auto-approval even when label is imprecise
 
@@ -287,7 +287,7 @@ Every non-trivial claim that is not directly stated in `Scenario/scenario_contex
 |------|---------|
 | `config.py` | `CLINICAL_CONTENT_CONFIDENCE_THRESHOLD = 0.70`, `CLASSIFIER_VERSION = "sonnet-4-6:ws1-routing:v1"` |
 | `requirements.txt` | Python dependencies |
-| `agents/ws1_agent.py` | Main pipeline: T-01 through T-09 state machine, FM-A-5 hard stop, audit-first ordering, all EscalationPacket fields spec-compliant. Uses `claim.get("payer_id", "UNKNOWN")` (canonical field name) |
+| `agents/ws1_agent.py` | Main pipeline: T-01 through T-09 state machine, FM-A-5 hard stop, audit-first ordering, all EscalationPacket fields spec-compliant. Uses `claim.get("payer_id", "UNKNOWN")` (canonical field name). Also exports `process_physician_approved_claim(claim, physician_id, prior_audit_trail)` — GAP-15 entry point for ADMIN_CONFIRMED HITL decisions |
 | `agents/__init__.py` | Package init |
 | `tools/calibration.py` | CalibrationRecord 6-field startup validation; `startup_validate()`, `CalibrationError` |
 | `tools/clinical_classifier.py` | `classify_clinical_content()` — returns `{classification, confidence, reasoning}` |
@@ -306,18 +306,19 @@ Every non-trivial claim that is not directly stated in `Scenario/scenario_contex
 | `fixtures/CLAIM-UNCERTAIN-01.json` | Uncertain classification fixture (canonical schema) |
 | `fixtures/CLAIM-ELIG-01.json` | Eligibility discrepancy fixture (canonical schema) |
 | `run_claim.py` | CLI: run a single claim through WS1; `--fixture CLAIM-ADMIN-01` (from fixtures/) or `--file path/to/any.json` (any NormalizedClaimInput file, e.g. from normalized-tier1/) |
-| `review_claim.py` | CLI: review a saved escalation file |
+| `review_claim.py` | Interactive HITL reviewer CLI — displays formatted escalation packet per trigger type (ET-01/02 physician, ET-03 eligibility, ET-07 governance), presents numbered decisions, ADMIN_CONFIRMED path calls `process_physician_approved_claim` and prints APPROVED result with full audit trail |
 | `run_batch.py` | Batch runner: feed Claims Pack directory or pre-normalized cache through WS1; `--live` for real classifier; `--save-normalized DIR` caches parsed NormalizedClaimInput JSON; detects `normalized-*` directories and skips parsing entirely |
 | `normalized-tier1/` | **Pre-parsed canonical cache** — 1,493 NormalizedClaimInput JSON files (all Tier 1 parseable claims). Use `--dir normalized-tier1` with run_batch.py or `--file` with run_claim.py to test WS1 without re-running any parser. |
 | `ARCHITECTURE.md` | Technical overview of the WS1 pipeline — step-by-step table (T-01 through Done), real vs stub breakdown, state transitions, audit-first ordering, FM-A-5 hard stop location. Use for defense prep and onboarding. |
-| `DEMO.md` | 5-minute demo script: 3 paths + format coverage Q&A answer; Path 3 uses `run_governance_demo.py`; includes API key setup instructions |
+| `DEMO.md` | Demo script: 4 paths (3 required + 1 optional end-to-end) + format coverage Q&A answer; Path 3 uses `run_governance_demo.py`; Path 4 uses `run_e2e_demo.py`; includes API key setup instructions |
 | `run_governance_demo.py` | Demo script for Path 3 — simulates FM-A-5 state corruption and prints ET-07 GOVERNANCE_VIOLATION JSON output; no API key required |
+| `run_e2e_demo.py` | Demo script for Path 4 — takes a raw claim file (.edi or .json), auto-detects format, prints Stage 1 (raw content), Stage 2 (NormalizedClaimInput from Intake parser), Stage 3 (WS1 adjudication result); `--skip-ws1` stops after Stage 2; API key required for Stage 3 |
 | `escalations/` | Saved escalation JSON files — 581 files from corpus batch run (`run_batch.py` against normalized-tier1); also receives output from `run_claim.py` when a claim escalates |
 | `normalized-cache/` | Small working cache — 5 NormalizedClaimInput JSON files; used for spot-testing parsers outside the full normalized-tier1 corpus |
 
-### Test status — 2026-05-26
+### Test status — 2026-05-28
 
-All 5 tests passing:
+All 6 tests passing:
 
 | Test | What it covers |
 |------|---------------|
@@ -326,11 +327,13 @@ All 5 tests passing:
 | `test_uncertain_classification` | CLAIM-UNCERTAIN-01, uncertain classification confidence 0.48 → `status=escalated`, physician HITL queue (ET-02); confirms audit trail includes all steps up to routing |
 | `test_eligibility_stub_returns_discrepancy_for_sentinel` | Eligibility stub unit test — sentinel `member_id=GHS-MBR-INVALID` → `status=discrepancy` (stub wiring check, not a full pipeline path) |
 | `test_governance_hard_stop` | S-3: FM-A-5 hard stop — state corrupted to ROUTING after ADMIN_CLEARED → ET-07 fires with `GOVERNANCE_VIOLATION`, `payment_amount` absent, `claim_state_at_escalation` preserved (not overwritten to PENDING_HITL_EXCEPTION) |
+| `test_physician_approved_path` | GAP-15: CLAIM-UNCERTAIN-01 with prior audit trail → `process_physician_approved_claim` → `status=approved`, `authorized_by=PHYSICIAN_DETERMINATION`, full audit trail including `physician_admin_confirmed` and `payment_approved` |
 
 ### Resolved spec gaps
 
 | Gap | Description | Resolution | Applied to |
 |-----|-------------|------------|------------|
+| GAP-15 | `PHYSICIAN_REVIEWING → ADMIN_CLEARED` transition missing: spec defined `PHYSICIAN_REVIEWING → APPROVED` (Human + WS2) but no path for payment_amount calculation on ADMIN_CONFIRMED cases; T-09 only runs from ADMIN_CLEARED | Add `PHYSICIAN_REVIEWING → ADMIN_CLEARED (authorized_by: PHYSICIAN_DETERMINATION)` as a WS1-owned transition; WS2 writes this state on ADMIN_CONFIRMED, WS1 then runs T-09; clarified WS2 spec "downstream payment system" = WS1's T-09 | `D4a_capability_spec.md` §10 state model, `D4b_capability_spec.md` §1 out-of-scope payment language; prototype `review_claim.py` + `ws1_agent.py` |
 | GAP-10 | REQ-A-6(c) contradicted §7 ET-07: spec said state → PENDING_HITL_EXCEPTION for governance violation, but diagnostic value is the incoming state | Leave state unchanged; `preserve_state=True` on governance-violation ET-07 call | `D4a_capability_spec.md` REQ-A-6, `ws1_agent.py` `_fire_et07` |
 | GAP-14 | ET-07 `trigger_type` enum only had `AUDIT_FAILURE`; governance hard-stop needs a distinct type | Add `GOVERNANCE_VIOLATION` to `EscalationPacket.trigger_type` enum | `D4_preamble_capability_spec.md` enum, `D4a_capability_spec.md` outputs table + ET-07 action column |
 | D7A residual | ET-07 `required_resolution` text said "Audit failure" even when `trigger_type = GOVERNANCE_VIOLATION`, giving exception processor contradictory signals | Split into two strings; `_fire_et07` selects by `trigger_type` | `D4a_capability_spec.md` §7 required_resolution table (two rows for ET-07), `ws1_agent.py` `_fire_et07` conditional |

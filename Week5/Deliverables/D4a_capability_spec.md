@@ -1101,13 +1101,38 @@ Transitions — WS1-owned (with guard conditions):
     Trigger: Exception processor resolves the discrepancy and requeues
     Guard: hitl_disposition non-null; human reviewer ID in updated_by
 
+  PHYSICIAN_REVIEWING → ADMIN_CLEARED (GAP-15 amendment — authorized_by: PHYSICIAN_DETERMINATION)
+    Trigger: Physician records ADMIN_CONFIRMED determination in S-08 for a claim
+      that entered PHYSICIAN_REVIEWING via ET-01 (uncertain/clinical routing) or
+      ET-02 (borderline confidence). The physician is confirming the claim is
+      administrative; this is a routing correction, not a medical necessity
+      determination.
+    Guard conditions:
+      1. ClaimRecord.state = PHYSICIAN_REVIEWING
+      2. Physician determination token written to S-08 with decision = ADMIN_CONFIRMED
+      3. Physician ID (authenticated) recorded as authorized_by in ClaimRecord
+      4. AuditLogEntry written with action = PHYSICIAN_ADMIN_CONFIRMED,
+         delegation_tier = HUMAN_DECIDES, authorized_by = physician ID
+      5. AuditLogEntry.state = COMMITTED before transition executes
+    Post-transition: WS1 picks up ClaimRecord in ADMIN_CLEARED state and
+      executes T-09 (fee schedule lookup, payment calculation, payment instruction
+      to S-11). FM-A-5 pre-condition check passes because state = ADMIN_CLEARED.
+    Note: This is the only defined path from PHYSICIAN_REVIEWING to T-09.
+      WS2's "downstream payment processing system" language refers to WS1's T-09
+      triggered by this transition — not a separate payment agent.
+
 Transitions outside WS1 scope (defined in preamble, listed for
 completeness — WS1 does not write these):
   RECEIVED → PARSING: Intake Agent
   PARSING → PARSE_FAILED / NORMALISED: Intake Agent
   PENDING_PHYSICIAN_REVIEW → CLINICAL_PACKET_ASSEMBLY: WS2
   CLINICAL_PACKET_ASSEMBLY → PHYSICIAN_REVIEWING / PENDING_ADDITIONAL_INFO: WS2
-  PHYSICIAN_REVIEWING → APPROVED / REJECTED / PENDING_ADDITIONAL_INFO: Human + WS2
+  PHYSICIAN_REVIEWING → REJECTED / PENDING_ADDITIONAL_INFO: Human + WS2
+    (PHYSICIAN_REVIEWING → APPROVED removed — use PHYSICIAN_REVIEWING → ADMIN_CLEARED
+     → PAYMENT_CALCULATING → APPROVED for ADMIN_CONFIRMED cases; see GAP-15 above)
+  PHYSICIAN_REVIEWING → CLINICAL_CONFIRMED_APPROVED: Human + WS2
+    (for CLINICAL_CONFIRMED cases where physician approves medical necessity —
+     payment_amount calculated by WS2 or downstream payment system; Wave 2 scope)
   APPROVED → CLOSED: Payment system confirmation
   REJECTED → CLOSED: Provider portal confirmation
 

@@ -14,7 +14,7 @@ import pytest
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
-from agents.ws1_agent import process_claim
+from agents.ws1_agent import process_claim, process_physician_approved_claim
 
 _FIXTURES_DIR = os.path.join(os.path.dirname(__file__), "..", "fixtures")
 
@@ -205,4 +205,64 @@ def test_governance_hard_stop():
     # the incoming state is the diagnostic signal and must be preserved.
     assert result.get("claim_state_at_escalation") != "PENDING_HITL_EXCEPTION", (
         "Governance hard-stop must preserve the incoming state, not overwrite it to PENDING_HITL_EXCEPTION"
+    )
+
+
+# ---------------------------------------------------------------------------
+# test_physician_approved_path — GAP-15
+# ---------------------------------------------------------------------------
+
+_PRIOR_AUDIT_TRAIL = [
+    "claim_intake_validated [COMMITTED]",
+    "eligibility_confirmed [COMMITTED]",
+    "code_validity_checked [COMMITTED]",
+    "prior_auth_confirmed [COMMITTED]",
+    "clinical_classification_completed [COMMITTED]",
+]
+
+
+def test_physician_approved_path():
+    """
+    GAP-15: PHYSICIAN_REVIEWING -> ADMIN_CLEARED -> T-09 -> APPROVED.
+
+    Simulates a physician recording ADMIN_CONFIRMED on an uncertain claim.
+    Asserts: status=approved, payment_amount present, authorized_by=PHYSICIAN_DETERMINATION,
+    full audit trail includes physician_admin_confirmed and payment_approved,
+    prior audit entries restored, no escalation fields.
+    """
+    claim = _load("CLAIM-UNCERTAIN-01")
+
+    result = process_physician_approved_claim(
+        claim,
+        physician_id="DR-TEST-001",
+        prior_audit_trail=_PRIOR_AUDIT_TRAIL,
+    )
+
+    assert result["status"] == "approved", f"Expected approved, got: {result['status']}"
+    assert "payment_amount" in result, "payment_amount missing from physician-approved result"
+    assert result["payment_amount"] > 0, "payment_amount must be > 0"
+    assert result["authorized_by"] == "PHYSICIAN_DETERMINATION", (
+        f"Expected authorized_by=PHYSICIAN_DETERMINATION, got: {result.get('authorized_by')}"
+    )
+    assert result["physician_id"] == "DR-TEST-001", (
+        f"Expected physician_id=DR-TEST-001, got: {result.get('physician_id')}"
+    )
+    assert result["classification"] == "admin", (
+        "Physician-confirmed admin claim must carry classification=admin"
+    )
+    assert "calibration_record_id" in result, "calibration_record_id missing"
+    assert "escalation_reason" not in result, "Approved result must not contain escalation_reason"
+
+    trail = result.get("audit_trail", [])
+    # Prior entries must be restored
+    assert any("claim_intake_validated" in s for s in trail), "Prior audit entry claim_intake_validated missing"
+    assert any("eligibility_confirmed" in s for s in trail), "Prior audit entry eligibility_confirmed missing"
+    assert any("clinical_classification_completed" in s for s in trail), "Prior audit entry classification missing"
+    # Physician determination entry must be present
+    assert any("physician_admin_confirmed" in s.lower() for s in trail), (
+        "physician_admin_confirmed must appear in audit_trail"
+    )
+    # Payment approved must be the last committed action
+    assert any("payment_approved" in s for s in trail), (
+        "payment_approved must appear in audit_trail for physician-approved claim"
     )

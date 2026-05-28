@@ -61,7 +61,7 @@
 
 **Out of scope:**
 - Medical necessity determination (approve / deny / pend) — regulatory hard stop: URAC/NCQA accreditation requires a licensed physician or advanced practice provider to make all clinical determinations; no agent confidence level or completeness metric changes this assignment (D3 §1 WS2-JtD-3, D3 §5)
-- Payment calculation — WS1 handles the administrative path; physician records a determination token in S-08; the payment step downstream of physician approval is handled by the payment processing system, not WS2
+- Payment calculation — for ADMIN_CONFIRMED cases (physician confirms routing as administrative), WS2 writes `PHYSICIAN_REVIEWING → ADMIN_CLEARED` to S-07 with `authorized_by = physician ID`; WS1 then picks up the `ADMIN_CLEARED` claim and executes T-09 (fee schedule lookup and payment calculation). WS2 does not call T-09 directly and does not calculate payment_amount. For CLINICAL_CONFIRMED cases where physician approves medical necessity, payment processing is Wave 2 scope — see §14 open assumption A-D4b-7. (GAP-15 amendment: this replaces the previous imprecise "downstream payment processing system" language.)
 - Claim intake and normalisation — handled upstream by the Intake & Anomaly Agent (D3 §2 Agent 1); WS2 receives only `ClaimRecord` objects in `PENDING_PHYSICIAN_REVIEW` state
 - Rejection notice generation — WS2 does not generate provider rejection notices; that output is created by the physician's denial determination token in S-08 and formatted by the Queue & SLA Management Agent
 - Queue prioritisation and SLA management across all clinical-path claims — handled by the Queue & SLA Management Agent (D3 §2 Agent 4); WS2 monitors its own delivery SLA (time to packet delivery) but does not manage the global queue

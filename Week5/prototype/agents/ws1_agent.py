@@ -330,6 +330,7 @@ def process_claim(claim: dict) -> dict:
                 "provider_specialty": claim["provider_specialty"],
             },
             "audit_trail": ctx.audit_trail,
+            "original_claim": claim,
         }
         if trigger == "ET-02":
             escalation["borderline_confidence_flag"] = True
@@ -399,6 +400,124 @@ def process_claim(claim: dict) -> dict:
         "payment_amount": payment,
         "classification": classification,
         "confidence": round(confidence, 2),
+        "calibration_record_id": _CALIBRATION_RECORD["id"],
+        "audit_trail": ctx.audit_trail,
+    }
+
+
+def process_physician_approved_claim(
+    claim: dict,
+    physician_id: str = "DR-REVIEWER-001",
+    prior_audit_trail: list = None,
+) -> dict:
+    """
+    Entry point for ADMIN_CONFIRMED physician determinations (GAP-15).
+
+    Implements D4a §10: PHYSICIAN_REVIEWING -> ADMIN_CLEARED (authorized_by:
+    PHYSICIAN_DETERMINATION) -> PAYMENT_CALCULATING -> APPROVED.
+
+    Called by the HITL reviewer after physician records ADMIN_CONFIRMED.
+    Eligibility, code validity, prior auth, and classification are already
+    committed — this function restores those audit entries and runs T-09 only.
+    """
+    if _STARTUP_ERROR:
+        raise RuntimeError(
+            f"Agent startup failed — CalibrationRecord invalid. "
+            f"Error: {_STARTUP_ERROR}"
+        )
+
+    ctx = ClaimContext(data=claim)
+
+    # Restore prior committed audit entries from the escalation record.
+    if prior_audit_trail:
+        for entry_str in prior_audit_trail:
+            action_part = entry_str.split(" [")[0].upper().replace(" ", "_")
+            restored = AuditEntry(
+                action=action_part,
+                delegation_tier="AGENT_ALONE",
+                input_summary={},
+                output_summary={"restored_from": "escalation_record"},
+            )
+            restored.status = "COMMITTED"
+            ctx.audit_entries.append(restored)
+
+    ctx.state = "PENDING_PHYSICIAN_REVIEW"
+
+    # Physician determination audit entry — HUMAN_DECIDES delegation tier.
+    audit = ctx.write_audit(
+        action="PHYSICIAN_ADMIN_CONFIRMED",
+        delegation_tier="HUMAN_DECIDES",
+        input_summary={
+            "claim_id": claim["claim_id"],
+            "authorized_by": physician_id,
+            "determination": "ADMIN_CONFIRMED",
+        },
+        output_summary={
+            "new_state": "ADMIN_CLEARED",
+            "authorized_by": "PHYSICIAN_DETERMINATION",
+        },
+    )
+    if not audit.committed:
+        return _fire_et07(ctx, {
+            "error": "AUDIT_WRITE_FAILED",
+            "pipeline_step": "PHYSICIAN_DETERMINATION",
+            "claim_id": claim["claim_id"],
+        })
+
+    # PENDING_PHYSICIAN_REVIEW -> ADMIN_CLEARED (physician-authorized, GAP-15).
+    ctx.transition("ADMIN_CLEARED", from_state="PENDING_PHYSICIAN_REVIEW")
+
+    # --- T-09: Payment calculation — FM-A-5 hard stop ----------------------
+    if ctx.state != "ADMIN_CLEARED":
+        return _fire_et07(
+            ctx,
+            signal_values={
+                "error": "GOVERNANCE_HARD_STOP_T09",
+                "actual_state": ctx.state,
+                "expected_state": "ADMIN_CLEARED",
+                "claim_id": claim["claim_id"],
+            },
+            trigger_type="GOVERNANCE_VIOLATION",
+            preserve_state=True,
+        )
+
+    ctx.transition("PAYMENT_CALCULATING", from_state="ADMIN_CLEARED")
+    payment = get_payment_amount(claim)
+
+    # Audit-first ordering — same invariant as the classifier-cleared path.
+    audit = ctx.write_audit(
+        action="PAYMENT_APPROVED",
+        delegation_tier="AGENT_LOGS",
+        input_summary={
+            "claim_id": claim["claim_id"],
+            "pre_action_state": "PAYMENT_CALCULATING",
+            "procedure_codes": claim["procedure_codes"],
+            "payer_id": claim.get("payer_id", "UNKNOWN"),
+            "authorized_by": physician_id,
+        },
+        output_summary={
+            "payment_amount": payment,
+            "new_state": "APPROVED",
+        },
+    )
+
+    if not audit.committed:
+        return _fire_et07(ctx, {
+            "error": "AUDIT_WRITE_FAILED_BEFORE_PAYMENT_PATCH",
+            "pipeline_step": "T-09",
+            "claim_id": claim["claim_id"],
+        })
+
+    ctx.transition("APPROVED", from_state="PAYMENT_CALCULATING")
+    ctx.payment_amount = payment
+
+    return {
+        "claim_id": claim["claim_id"],
+        "status": "approved",
+        "payment_amount": payment,
+        "classification": "admin",
+        "authorized_by": "PHYSICIAN_DETERMINATION",
+        "physician_id": physician_id,
         "calibration_record_id": _CALIBRATION_RECORD["id"],
         "audit_trail": ctx.audit_trail,
     }

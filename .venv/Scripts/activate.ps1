@@ -41,6 +41,13 @@ function global:deactivate([switch] $NonDestructive) {
         Remove-Item env:VIRTUAL_ENV_PROMPT -ErrorAction SilentlyContinue
     }
 
+    if (Test-Path variable:_OLD_ANTHROPIC_API_KEY) {
+        $env:ANTHROPIC_API_KEY = $variable:_OLD_ANTHROPIC_API_KEY
+        Remove-Variable "_OLD_ANTHROPIC_API_KEY" -Scope global
+    } else {
+        Remove-Item env:ANTHROPIC_API_KEY -ErrorAction SilentlyContinue
+    }
+
     if (!$NonDestructive) {
         # Self destruct!
         Remove-Item function:deactivate
@@ -78,5 +85,21 @@ if (!$env:VIRTUAL_ENV_DISABLE_PROMPT) {
         # Add the custom prefix to the existing prompt
         $previous_prompt_value = & $function:_old_virtual_prompt
         ("(" + $env:VIRTUAL_ENV_PROMPT + ") " + $previous_prompt_value)
+    }
+}
+
+# Load .env from project root (BASE_DIR is .venv; project root is one level up)
+$_dotenv = Join-Path (Split-Path $BASE_DIR -Parent) ".env"
+if (Test-Path $_dotenv) {
+    Get-Content $_dotenv | ForEach-Object {
+        if ($_ -match '^\s*([^#=][^=]*?)\s*=\s*(.*?)\s*$') {
+            $env_key = $matches[1]
+            $env_val = $matches[2]
+            # Save old value so deactivate can restore it
+            if (Test-Path "env:$env_key") {
+                New-Variable -Scope global -Name "_OLD_$env_key" -Value (Get-Item "env:$env_key").Value -Force
+            }
+            Set-Item "env:$env_key" $env_val
+        }
     }
 }

@@ -6,8 +6,8 @@
   "routing_queue": "PHYSICIAN_HITL",
   "required_resolution": "Route as: [CLINICAL_CONFIRMED / ADMIN_CONFIRMED / NEEDS_ADDITIONAL_INFO]",
   "classification": "uncertain",
-  "confidence": 0.45,
-  "escalation_reason": "Clinical content classifier returned uncertain \u2014 contradictory signals: CPT 97110 (therapeutic exercises) is used in both routine outpatient physical therapy (administrative) and post-injury/post-surgical rehabilitation protocols (clinical), and M54.5 (low back pain) is a high-volume diagnosis managed across the full spectrum from routine/chronic stable care to acute clinical necessity determinations. A General Practitioner billing therapeutic exercises adds further ambiguity, as this could reflect in-office supervised exercise or a referral-adjacent billing scenario, and the codes alone cannot resolve whether this is routine conservative care or a medical-necessity case. Cannot confirm administrative path.",
+  "confidence": 0.48,
+  "escalation_reason": "Clinical content classifier returned uncertain \u2014 contradictory signals: Therapeutic exercise (97110) with low back pain (M54.5) billed by a General Practitioner \u2014 procedure code is used for both routine physiotherapy billing and post-surgical rehabilitation; provider type does not resolve ambiguity. Cannot confirm administrative path.",
   "claim_context": {
     "procedure_code": "97110",
     "diagnosis_code": "M54.5",
@@ -19,5 +19,47 @@
     "code_validity_checked [COMMITTED]",
     "prior_auth_confirmed [COMMITTED]",
     "clinical_classification_completed [COMMITTED]"
-  ]
+  ],
+  "original_claim": {
+    "claim_id": "CLAIM-UNCERTAIN-01",
+    "member_id": "GHS-MBR-0067890",
+    "provider_npi": "GHS-PRV-NPI-3312445",
+    "provider_specialty": "General Practitioner",
+    "date_of_service": "2026-04-18",
+    "diagnosis_codes": [
+      "M54.5"
+    ],
+    "procedure_codes": [
+      "97110"
+    ],
+    "procedure_quantities": [
+      3
+    ],
+    "billed_amount": 180.0,
+    "payer_id": "GHS-PPO-2026",
+    "source_format": "PORTAL_FORM",
+    "source_file": "CLAIM-UNCERTAIN-01.json",
+    "intake_warnings": []
+  },
+  "reviewer_decision": "NEEDS_ADDITIONAL_INFO",
+  "reviewed_at": "2026-05-28T15:14:24.706679+00:00",
+  "ws1_result": {
+    "claim_id": "CLAIM-UNCERTAIN-01",
+    "status": "approved",
+    "payment_amount": 45.0,
+    "classification": "admin",
+    "authorized_by": "PHYSICIAN_DETERMINATION",
+    "physician_id": "DR-REVIEWER-001",
+    "calibration_record_id": "cal-rec-2026-05-001",
+    "audit_trail": [
+      "claim_intake_validated [COMMITTED]",
+      "eligibility_confirmed [COMMITTED]",
+      "code_validity_checked [COMMITTED]",
+      "prior_auth_confirmed [COMMITTED]",
+      "clinical_classification_completed [COMMITTED]",
+      "physician_admin_confirmed [COMMITTED]",
+      "payment_approved [COMMITTED]"
+    ]
+  },
+  "claim_status": "pending_additional_info"
 }
