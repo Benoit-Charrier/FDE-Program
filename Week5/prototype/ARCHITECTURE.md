@@ -2,7 +2,9 @@
 
 **Agent:** WS1 Administrative Adjudication Agent  
 **Core file:** `agents/ws1_agent.py`  
-**Entry point:** `process_claim(claim: dict) -> dict`
+**Entry points:**
+- `process_claim(claim: dict) -> dict` — main adjudication pipeline
+- `process_physician_approved_claim(claim, physician_id, prior_audit_trail) -> dict` — GAP-15 HITL re-entry
 
 ---
 
@@ -50,21 +52,42 @@ Runs once at module import via `startup_validate()`. If the record fails its 6-f
 ```
 NORMALISED → ADMIN_VALIDATING → ROUTING → ADMIN_CLEARED → PAYMENT_CALCULATING → APPROVED
                                         ↘ PENDING_PHYSICIAN_REVIEW  (ET-01/ET-02)
+                                                        ↓ ADMIN_CLEARED (GAP-15: physician ADMIN_CONFIRMED)
               ↘ PENDING_HITL_EXCEPTION  (ET-03, ET-07)
 ```
+
+**GAP-15 re-entry path:** When a physician records ADMIN_CONFIRMED on an ET-01/ET-02 escalation, `process_physician_approved_claim()` transitions `PENDING_PHYSICIAN_REVIEW → ADMIN_CLEARED` with `authorized_by: PHYSICIAN_DETERMINATION`, then runs T-09 (FM-A-5 + audit-first ordering) identically to the classifier-cleared path. No separate payment system — WS1's T-09 is the single payment execution point regardless of how `ADMIN_CLEARED` was reached.
 
 Every `ctx.transition(to, from_state=expected)` raises `ConflictError` if the current state isn't what was expected — the in-memory equivalent of the S-07 PATCH with a `from_state` guard.
 
 ---
 
 
-## The three demo paths
+## The demo paths
 
-| Path | Input | What fires | Output |
+| Path | Command | What fires | Output |
 |---|---|---|---|
-| Happy path | CLAIM-ADMIN-01 — clean admin claim | All stubs pass; classifier returns `admin` at 0.91; FM-A-5 passes; audit committed | `status: approved`, `payment_amount: 85.0`, 6 COMMITTED audit entries |
-| HITL escalation | CLAIM-UNCERTAIN-01 — ambiguous claim | Classifier returns `uncertain` at 0.48 → ET-02 | `status: escalated`, physician HITL queue, no payment |
-| Governance hard stop | Test patches state to `ROUTING` after `ADMIN_CLEARED` | T-09 pre-condition check trips → ET-07 GOVERNANCE_VIOLATION | `status: escalated`, `payment_amount` absent, state preserved |
+| 1 — Happy path | `run_claim.py --fixture CLAIM-ADMIN-01` | Classifier returns `admin` at 0.91; FM-A-5 passes; audit committed | `status: approved`, `payment_amount: 85.0`, 6 COMMITTED audit entries |
+| 2a — HITL escalation | `run_claim.py --fixture CLAIM-UNCERTAIN-01` | Classifier returns `uncertain` at 0.48 → ET-02; escalation saved to `escalations/` | `status: escalated`, physician HITL queue, 5 COMMITTED pre-work entries, no payment |
+| 2b — HITL review loop | `review_claim.py --claim-id CLAIM-UNCERTAIN-01` | Interactive reviewer displays packet; physician picks ADMIN_CONFIRMED → `process_physician_approved_claim()` → T-09 | `status: approved`, `authorized_by: PHYSICIAN_DETERMINATION`, 8-entry audit trail |
+| 3 — Governance hard stop | `run_governance_demo.py` | State patched to `ROUTING` after `ADMIN_CLEARED`; FM-A-5 trips → ET-07 GOVERNANCE_VIOLATION | `status: escalated`, `payment_amount` absent, incoming state preserved |
+| 4 — End-to-end (optional) | `run_e2e_demo.py --file <raw_file>` | Raw file → Intake parser → NormalizedClaimInput → WS1 pipeline | Three stages printed: raw, normalized, adjudication result |
+
+---
+
+## HITL reviewer — `review_claim.py`
+
+The interactive reviewer closes the HITL loop for all three escalation types produced by WS1:
+
+| Trigger | Packet shown | Decisions offered |
+|---|---|---|
+| ET-01 / ET-02 (physician) | Classification, confidence, escalation reason, provider, all pre-work audit steps | ADMIN_CONFIRMED / CLINICAL_CONFIRMED / NEEDS_ADDITIONAL_INFO |
+| ET-03 (eligibility) | Member ID, payer, eligibility status, escalation reason | APPROVE_OVERRIDE / REJECT / REQUEST_RESUBMISSION |
+| ET-07 (governance) | State at escalation, actual vs expected state, pre-stop audit steps | INVESTIGATE / REJECT_CLAIM / ESCALATE_TO_COMPLIANCE |
+
+**ADMIN_CONFIRMED path (ET-01/ET-02):** The reviewer loads `original_claim` from the saved escalation JSON, calls `process_physician_approved_claim()`, and prints the APPROVED result with the full extended audit trail. The determination is recorded as `delegation_tier: HUMAN_DECIDES` — the only audit entry in the entire pipeline with that tier.
+
+All other decisions record the reviewer's choice to the escalation JSON and print the updated status. They do not re-enter the WS1 pipeline (clinical and governance paths are Wave 2 / compliance scope).
 
 ---
 

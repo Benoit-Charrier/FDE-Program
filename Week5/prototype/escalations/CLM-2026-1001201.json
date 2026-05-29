@@ -7,7 +7,7 @@
   "required_resolution": "Route as: [CLINICAL_CONFIRMED / ADMIN_CONFIRMED / NEEDS_ADDITIONAL_INFO]",
   "classification": "uncertain",
   "confidence": 0.42,
-  "escalation_reason": "Clinical content classifier returned uncertain \u2014 contradictory signals: Procedure code 97110 (therapeutic exercises) is used in both routine administrative PT workflows and medically-necessary rehabilitation contexts, and the diagnosis codes J20.9 (acute bronchitis) and R51.9 (headache) are inconsistent with a typical therapeutic exercise indication \u2014 this mismatch makes it impossible to determine from the codes alone whether this is a legitimate clinical encounter or a coding error, and the multi-specialty clinic setting does not resolve the ambiguity. Cannot confirm administrative path.",
+  "escalation_reason": "Clinical content classifier returned uncertain \u2014 contradictory signals: Procedure code 97110 (therapeutic exercises) is used in both routine administrative outpatient PT and medically-supervised clinical rehabilitation workflows, and the diagnosis codes J20.9 (acute bronchitis) and R51.9 (headache) are entirely inconsistent with a typical therapeutic exercise indication \u2014 this mismatch creates active contradiction between the procedure and diagnoses that cannot be resolved from the codes alone, as it may indicate a billing error, a secondary condition driving the visit, or an unrelated encounter component. Cannot confirm administrative path.",
   "claim_context": {
     "procedure_code": "97110",
     "diagnosis_code": "J20.9",
@@ -19,5 +19,28 @@
     "code_validity_checked [COMMITTED]",
     "prior_auth_confirmed [COMMITTED]",
     "clinical_classification_completed [COMMITTED]"
-  ]
+  ],
+  "original_claim": {
+    "claim_id": "CLM-2026-1001201",
+    "member_id": "YYL39541245",
+    "provider_npi": "4227019308",
+    "provider_specialty": "Multi-specialty Clinic",
+    "date_of_service": "2026-04-26",
+    "diagnosis_codes": [
+      "J20.9",
+      "R51.9"
+    ],
+    "procedure_codes": [
+      "97110"
+    ],
+    "procedure_quantities": [
+      1
+    ],
+    "billed_amount": 48.57,
+    "payer_id": "ANT-001",
+    "group_id": "GRP-58186",
+    "source_format": "PORTAL_FORM",
+    "source_file": "CLM-2026-1001201.json",
+    "intake_warnings": []
+  }
 }

@@ -6,8 +6,8 @@
   "routing_queue": "PHYSICIAN_HITL",
   "required_resolution": "Route as: [CLINICAL_CONFIRMED / ADMIN_CONFIRMED / NEEDS_ADDITIONAL_INFO]",
   "classification": "uncertain",
-  "confidence": 0.48,
-  "escalation_reason": "Clinical content classifier returned uncertain \u2014 contradictory signals: Therapeutic exercise (97110) with low back pain (M54.5) billed by a General Practitioner \u2014 procedure code is used for both routine physiotherapy billing and post-surgical rehabilitation; provider type does not resolve ambiguity. Cannot confirm administrative path.",
+  "confidence": 0.49,
+  "escalation_reason": "Clinical content classifier returned uncertain \u2014 contradictory signals: Procedure code 97110 (therapeutic exercises) is used in both routine outpatient physical therapy/rehabilitation (admin) and medically-supervised post-injury or post-surgical protocols (clinical), and the diagnosis M54.5 (low back pain) spans a wide spectrum from chronic stable (admin) to acute/severe episodes (clinical). A General Practitioner billing therapeutic exercises for low back pain does not resolve whether this is a routine rehabilitative encounter or a medical-necessity determination case, as GPs occasionally supervise or refer for such procedures in both contexts. Cannot confirm administrative path.",
   "claim_context": {
     "procedure_code": "97110",
     "diagnosis_code": "M54.5",
@@ -41,8 +41,8 @@
     "source_file": "CLAIM-UNCERTAIN-01.json",
     "intake_warnings": []
   },
-  "reviewer_decision": "NEEDS_ADDITIONAL_INFO",
-  "reviewed_at": "2026-05-28T15:14:24.706679+00:00",
+  "reviewer_decision": "ADMIN_CONFIRMED",
+  "reviewed_at": "2026-05-29T13:19:56.795445+00:00",
   "ws1_result": {
     "claim_id": "CLAIM-UNCERTAIN-01",
     "status": "approved",
@@ -60,6 +60,5 @@
       "physician_admin_confirmed [COMMITTED]",
       "payment_approved [COMMITTED]"
     ]
-  },
-  "claim_status": "pending_additional_info"
+  }
 }

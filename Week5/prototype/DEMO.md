@@ -125,39 +125,37 @@ python run_governance_demo.py
 **API key required for Stage 3.** Use `--skip-ws1` to show Stages 1 + 2 only (no API key needed).
 
 ```bash
-# Portal JSON — likely uncertain escalation (CPT 97110, low back pain)
+# EDI 837P — approved outcome (99214 office visit, Z00.00 wellness, Physician MD — all signals agree)
+python run_e2e_demo.py --file "../Capstone-A-Claims-Pack/edi-837p/CLM-2026-1000804.edi"
+
+# Portal JSON — escalation outcome (97110 therapeutic exercises + bronchitis/headache — procedure/diagnosis mismatch)
 python run_e2e_demo.py --file "../Capstone-A-Claims-Pack/portal-json/CLM-2026-1001201.json"
 
-# EDI 837P — multi-line professional claim
-python run_e2e_demo.py --file "../Capstone-A-Claims-Pack/edi-837p/CLM-2026-1000001.edi"
-
 # Stages 1 + 2 only (no API key needed):
-python run_e2e_demo.py --file "../Capstone-A-Claims-Pack/portal-json/CLM-2026-1001201.json" --skip-ws1
+python run_e2e_demo.py --file "../Capstone-A-Claims-Pack/edi-837p/CLM-2026-1000804.edi" --skip-ws1
 ```
 
 **What to say:**
 
-"Everything shown in Paths 1–3 started from a pre-normalized fixture — a claim that had already been through the Intake Agent. Path 4 starts from a raw file exactly as the clearinghouse would deliver it.
+"Everything shown in Paths 1–3 started from a pre-normalized fixture. Path 4 starts from a raw file exactly as the clearinghouse would deliver it.
 
-Stage 1 shows what actually arrived — raw EDI segments or raw portal JSON. Stage 2 is the Intake Agent: it detects the format from the file extension and runs the appropriate parser to produce the NormalizedClaimInput that WS1 expects. Stage 3 runs the full WS1 pipeline on that normalized record and produces the adjudication result.
+Run the EDI first: CLM-2026-1000804 is a 99214 office visit, Z00.00 wellness exam, Physician MD. All three signals agree — the classifier returns admin above threshold and the claim is approved. Stage 1 shows the raw EDI segments. Stage 2 is the Intake Agent parsing them into a NormalizedClaimInput. Stage 3 is the full WS1 pipeline on that normalized record.
 
-The key point: WS1 is completely format-agnostic. The same eligibility, code validity, prior auth, clinical classification, and payment logic runs regardless of whether the claim came in as EDI 837P, EDI 837I, or Portal JSON. The Intake Agent's job is to make every claim look identical before it reaches WS1."
+Then run the Portal JSON: CLM-2026-1001201 has CPT 97110 (therapeutic exercises) with bronchitis and headache diagnoses — a procedure/diagnosis mismatch. The classifier flags it as uncertain or clinical and escalates. Same pipeline, different outcome, different format.
 
-**Key fields to point out:**
+The point: WS1 is completely format-agnostic. The same pipeline runs regardless of whether the input was EDI or portal JSON. The Intake Agent's job is to make every claim look identical before it reaches WS1."
 
-Stage 1 (raw):
-- EDI: `ISA`, `GS`, `ST`, `CLM` segments visible — structured but not human-readable
-- JSON: full portal submission — already structured but a different schema from NormalizedClaimInput
+**Key fields to point out — EDI (CLM-2026-1000804, approved):**
 
-Stage 2 (normalized):
-- `source_format` — confirms which parser ran (`EDI_837P`, `EDI_837I`, or `PORTAL_FORM`)
-- `source_file` — traceability back to the raw file
-- `intake_warnings` — any parser warnings (non-fatal issues surfaced without blocking the claim)
-- All canonical fields present: `claim_id`, `member_id`, `provider_npi`, `procedure_codes`, `diagnosis_codes`, `billed_amount`
+Stage 1 (raw): `ISA`, `GS`, `ST`, `CLM` segments — structured but not human-readable  
+Stage 2 (normalized): `source_format: EDI_837P`, `procedure_codes: [99214]`, `diagnosis_codes: [Z0000]`, `provider_specialty: Physician (MD)`  
+Stage 3: `status: approved`, `payment_amount: 85.0`, full audit trail
 
-Stage 3 (adjudication result):
-- Same output schema as Paths 1–3 — `status`, `payment_amount` or `escalation_trigger_id`, `audit_trail`
-- Confirms WS1 received the normalized record and processed it identically to a pre-built fixture
+**Key fields to point out — Portal JSON (CLM-2026-1001201, escalated):**
+
+Stage 1 (raw): human-readable JSON, but different schema from NormalizedClaimInput  
+Stage 2 (normalized): `source_format: PORTAL_FORM`, `procedure_codes: [97110]`, `diagnosis_codes: [J20.9, R51.9]`  
+Stage 3: `status: escalated`, `escalation_reason` names the mismatch — 97110 with bronchitis/headache has no clinical logic  
 
 **Format coverage answer (if asked here):**
 

@@ -16,7 +16,8 @@
       "Bash(echo \"EXIT:$?\")",
       "PowerShell(& \"C:\\\\Users\\\\Benoit_Charrier\\\\FDE Program\\\\FDE-Program\\\\.venv\\\\Scripts\\\\Activate.ps1\"; if \\($env:ANTHROPIC_API_KEY\\) { \"API key loaded: sk-ant-...$\\(\\($env:ANTHROPIC_API_KEY\\)[-8..-1] -join ''\\)\" } else { \"API key NOT set\" })",
       "PowerShell(Split-Path *)",
-      "PowerShell(& \"C:\\\\Users\\\\Benoit_Charrier\\\\FDE Program\\\\FDE-Program\\\\.venv\\\\Scripts\\\\Activate.ps1\"; if \\($env:ANTHROPIC_API_KEY\\) { \"API key loaded: ...$\\(\\($env:ANTHROPIC_API_KEY\\)[-8..-1] -join ''\\)\" } else { \"API key NOT set\" })"
+      "PowerShell(& \"C:\\\\Users\\\\Benoit_Charrier\\\\FDE Program\\\\FDE-Program\\\\.venv\\\\Scripts\\\\Activate.ps1\"; if \\($env:ANTHROPIC_API_KEY\\) { \"API key loaded: ...$\\(\\($env:ANTHROPIC_API_KEY\\)[-8..-1] -join ''\\)\" } else { \"API key NOT set\" })",
+      "Bash(xargs '-I{}' sh -c 'codes=$\\(python3 -c \"import json,sys; d=json.load\\(open\\(sys.argv[1]\\)\\); print\\(len\\(d[\\\\\"procedure_codes\\\\\"]\\), d[\\\\\"claim_id\\\\\"]\\)\" {}\\); echo \"$codes {}\"')"
     ]
   }
 }

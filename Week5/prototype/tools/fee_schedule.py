@@ -8,6 +8,7 @@ import decimal
 
 _RATE_TABLE = {
     "99213": {"contracted_rate": "106.25", "cost_sharing_proportion": "0.20"},
+    "99214": {"contracted_rate": "106.25", "cost_sharing_proportion": "0.20"},
     "27447": {"contracted_rate": "390.63", "cost_sharing_proportion": "0.20"},
     "97110": {"contracted_rate": "56.25",  "cost_sharing_proportion": "0.20"},
 }

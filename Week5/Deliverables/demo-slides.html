@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WS1 Prototype — Live Demo</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0f172a;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;height:100vh;overflow:hidden;display:flex;flex-direction:column}
+
+/* ── Deck ── */
+#deck{flex:1;position:relative;overflow:hidden}
+.slide{display:none;position:absolute;inset:0;flex-direction:column;background:#fff;overflow:hidden}
+.slide.active{display:flex}
+
+/* ── Slide header ── */
+.sh{background:#1e3a5f;color:#fff;padding:14px 40px;flex-shrink:0;display:flex;align-items:baseline;gap:16px}
+.sh-num{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;opacity:.55;white-space:nowrap}
+.sh h2{font-size:20px;font-weight:600;line-height:1.2}
+.sh .sub{font-size:13px;font-weight:400;opacity:.7;margin-left:6px}
+
+/* ── Slide body ── */
+.sb{flex:1;padding:20px 40px 16px;overflow-y:auto;font-size:13.5px;line-height:1.55;color:#1a1a1a}
+.sb p{margin-bottom:10px}
+.sb ul{margin:6px 0 10px 18px}
+.sb li{margin-bottom:4px}
+.sb h3{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#1e3a5f;margin:14px 0 6px}
+.sb h3:first-child{margin-top:0}
+
+/* ── Title slide ── */
+.slide.title .sh{display:none}
+.slide.title .sb{background:#1e3a5f;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:0}
+.slide.title .eyebrow{font-size:11px;letter-spacing:.15em;text-transform:uppercase;opacity:.6;margin-bottom:14px}
+.slide.title .main-title{font-size:34px;font-weight:700;line-height:1.15;margin-bottom:10px}
+.slide.title .main-title span{display:block;font-size:20px;font-weight:400;opacity:.8;margin-top:6px}
+.slide.title .divider{width:60px;height:3px;background:#4ea8de;margin:20px auto}
+.slide.title .meta{font-size:13px;opacity:.65}
+
+/* ── Tables ── */
+table{width:100%;border-collapse:collapse;font-size:12.5px;margin:8px 0}
+th{background:#1e3a5f;color:#fff;padding:7px 11px;text-align:left;font-weight:600;font-size:11.5px;letter-spacing:.03em}
+td{padding:6px 11px;border-bottom:1px solid #e9ecef;vertical-align:top}
+tr:last-child td{border-bottom:none}
+tr:nth-child(even) td{background:#f8f9fa}
+.tc{text-align:center}
+
+/* ── Metric cards ── */
+.metric-row{display:flex;gap:12px;margin:10px 0}
+.metric-card{flex:1;border:1px solid #e2e8f0;border-radius:6px;padding:12px 14px;background:#f8fafc}
+.metric-card .val{font-size:24px;font-weight:700;color:#1e3a5f;line-height:1}
+.metric-card .lbl{font-size:11px;color:#64748b;margin-top:4px}
+.metric-card .arr{font-size:12px;color:#0d6efd;margin-top:4px;font-weight:600}
+
+/* ── Tags / badges ── */
+.tag{display:inline-block;padding:1px 8px;border-radius:10px;font-size:11px;font-weight:600;white-space:nowrap}
+.tag-green{background:#d4edda;color:#155724}
+.tag-amber{background:#fff3cd;color:#856404}
+.tag-red{background:#f8d7da;color:#721c24}
+.tag-blue{background:#cce5ff;color:#004085}
+.tag-gray{background:#e9ecef;color:#495057}
+.tag-impl{background:#d4edda;color:#155724}
+.tag-stub{background:#fff3cd;color:#856404}
+.tag-out{background:#e9ecef;color:#495057}
+
+/* ── Callout ── */
+.callout{border-left:3px solid #1e3a5f;background:#f0f4f8;padding:10px 14px;border-radius:0 4px 4px 0;font-size:13px;margin:10px 0}
+.callout.red{border-left-color:#dc3545;background:#fef2f2}
+.callout.green{border-left-color:#198754;background:#f0fdf4}
+.callout.amber{border-left-color:#ffc107;background:#fffbeb}
+
+/* ── Two-col ── */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.three-col{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+
+/* ── Agent cards ── */
+.agent-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:8px 0}
+.agent-card{border:1px solid #e2e8f0;border-radius:6px;padding:12px 14px}
+.agent-card .agent-name{font-weight:700;font-size:13px;color:#1e3a5f;margin-bottom:4px}
+.agent-card .agent-wave{font-size:10px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;margin-bottom:6px}
+.agent-card p{font-size:12px;color:#374151}
+
+/* ── Navigation bar ── */
+#nav{background:#0f172a;padding:10px 40px;display:flex;align-items:center;gap:16px;flex-shrink:0}
+#nav button{background:#1e3a5f;color:#fff;border:none;padding:6px 18px;border-radius:4px;font-size:13px;cursor:pointer;transition:background .15s}
+#nav button:hover{background:#2d5282}
+#nav button:disabled{opacity:.35;cursor:not-allowed}
+#counter{color:#94a3b8;font-size:12px;min-width:60px;text-align:center}
+#progress{flex:1;height:3px;background:#1e3a5f;border-radius:2px;overflow:hidden}
+#progress-bar{height:100%;background:#4ea8de;transition:width .2s ease}
+
+/* ── Quadrant chart ── */
+.quad-wrap{background:#fff;border:1px solid #e2e8f0;border-radius:6px;padding:12px 16px;flex:1;display:flex;flex-direction:column}
+.quad-title{text-align:center;font-size:12px;font-weight:700;color:#1e3a5f;margin-bottom:8px}
+.quad-outer{display:flex;align-items:center;gap:8px;flex:1}
+.quad-y-label{font-size:10px;color:#64748b;writing-mode:vertical-lr;transform:rotate(180deg);white-space:nowrap;flex-shrink:0}
+.quad-inner{flex:1;display:flex;flex-direction:column;height:100%}
+.quad-area{position:relative;flex:1;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;border:1px solid #cbd5e1;border-radius:4px;overflow:hidden}
+.quad{display:flex;align-items:flex-end;padding:6px 8px;border:1px solid #e2e8f0}
+.quad span{font-size:10px;font-weight:600;color:#94a3b8;line-height:1.4}
+.q2{background:#f0f9ff}.q1{background:#ecfdf5}.q3{background:#fafafa}.q4{background:#fffbeb}
+.quad-x-label{text-align:center;font-size:10px;color:#64748b;margin-top:4px;flex-shrink:0}
+.qpt{position:absolute;transform:translate(-50%,-50%);padding:3px 9px;border-radius:4px;font-size:11px;font-weight:700;white-space:nowrap;z-index:10;box-shadow:0 2px 5px rgba(0,0,0,.18)}
+.qpt-ws1{background:#0d9488;color:#fff}.qpt-ws2{background:#1e3a5f;color:#fff}
+.qpt-int{background:#0369a1;color:#fff}.qpt-app{background:#6b7280;color:#fff}
+
+/* ── Highlight / critical rows ── */
+tr.highlight td{background:#dbeafe !important;font-weight:600}
+tr.critical td{background:#fef2f2 !important;font-weight:600}
+tr.hitl td{background:#f0fdf4 !important;font-weight:600}
+</style>
+</head>
+<body>
+<div id="deck">
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 1 — TITLE
+════════════════════════════════════════════ -->
+<div class="slide title active" id="s1">
+  <div class="sb">
+    <div class="eyebrow">WS1 Administrative Adjudication Agent</div>
+    <div class="main-title">Live Demo
+      <span>Greenfield Health Systems — Claims Adjudication Prototype</span>
+    </div>
+    <div class="divider"></div>
+    <div class="meta" style="line-height:2">
+      6 tests passing &nbsp;·&nbsp; 4 demo paths &nbsp;·&nbsp; ~5 min<br>
+      <code style="font-size:12px;opacity:.8">pytest tests/ -v &nbsp;&nbsp;python run_claim.py &nbsp;&nbsp;python review_claim.py</code>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 2 — AGENTIC SOLUTION (from s5)
+════════════════════════════════════════════ -->
+<div class="slide" id="s2">
+  <div class="sh"><span class="sh-num">Context</span><h2>Agentic Solution <span class="sub">4 agents · 3 waves · WS1 is Wave 1 primary target</span></h2></div>
+  <div class="sb">
+    <div class="agent-grid">
+      <div class="agent-card">
+        <div class="agent-name">INT — Intake &amp; Anomaly Detection</div>
+        <div class="agent-wave"><span class="tag tag-blue">Wave 1</span></div>
+        <p>Normalises EDI 837, PDF, and portal submissions into a single canonical record. Rejects malformed submissions with specific, actionable error codes — reducing the resubmission cycle that adds to queue volume.</p>
+      </div>
+      <div class="agent-card">
+        <div class="agent-name">WS1 — Administrative Adjudication</div>
+        <div class="agent-wave"><span class="tag tag-blue">Wave 1 — primary target</span></div>
+        <p>10-step pipeline: eligibility, coding, prior auth, clinical content classification, payment. For 65% of claims — agent approves, rejects, or escalates to HITL. No physician required on the admin path.</p>
+      </div>
+      <div class="agent-card">
+        <div class="agent-name">WS2 — Clinical Pre-Screening</div>
+        <div class="agent-wave"><span class="tag tag-amber">Wave 2 — conditional</span></div>
+        <p>For 35% on the clinical path — assembles pre-filled physician review packet, cutting review from 35 min to ~3 min. <strong>Conditional:</strong> clinical notes API must be confirmed before Wave 2 build begins.</p>
+      </div>
+      <div class="agent-card">
+        <div class="agent-name">APP — Denial Appeals Support</div>
+        <div class="agent-wave"><span class="tag tag-gray">Wave 3 — conditional</span></div>
+        <p>Root cause classification and context assembly for denial appeals. <strong>Conditional:</strong> requires 90 days of Wave 1 production data before scoping begins.</p>
+      </div>
+    </div>
+    <div class="callout" style="margin-top:10px"><strong>AI-native moment:</strong> The clinical content classifier (WS1 step 8) evaluates diagnosis code + procedure code + provider specialty as a combined signal, handling novel combinations that no rules engine covers. This is the structural cause of the 41% overturn rate — inconsistent human heuristics on borderline claims. The agent produces a consistent, auditable classification at every claim.</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 3 — VOLUME × VALUE (from s6)
+════════════════════════════════════════════ -->
+<div class="slide" id="s3">
+  <div class="sh"><span class="sh-num">Context</span><h2>Volume × Value Analysis <span class="sub">why WS1 is the Wave 1 target</span></h2></div>
+  <div class="sb" style="display:flex;flex-direction:column">
+    <div class="quad-wrap">
+      <div class="quad-title">Volume × Value — Greenfield Health Systems</div>
+      <div class="quad-outer">
+        <div class="quad-y-label">Low Volume · · · High Volume</div>
+        <div class="quad-inner">
+          <div class="quad-area">
+            <div class="quad q2"><span>Rules &amp;<br>automation</span></div>
+            <div class="quad q1"><span>Primary targets —<br>automate now</span></div>
+            <div class="quad q3"><span>Not worth<br>automating</span></div>
+            <div class="quad q4"><span>Selected<br>use cases</span></div>
+            <div class="qpt qpt-ws1" style="left:71%;top:12%">WS1 Admin Adj.</div>
+            <div class="qpt qpt-ws2" style="left:93%;top:7%">WS2 Clinical</div>
+            <div class="qpt qpt-int" style="left:25%;top:18%">INT Intake</div>
+            <div class="qpt qpt-app" style="left:79%;top:58%">APP Appeals</div>
+          </div>
+          <div class="quad-x-label">&larr; Low Non-Determinism &nbsp;&nbsp;&nbsp; High Non-Determinism &rarr;</div>
+        </div>
+      </div>
+    </div>
+    <div class="callout" style="margin-top:8px">WS1 lands in Q1 — high volume, high judgment — which is why it is the Wave 1 primary target. WS2 scores highest on the judgment axis but URAC/NCQA limits the agent to context assembly only; the physician review step stays human regardless of classifier accuracy.</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 4 — WS1 PIPELINE (from s10)
+════════════════════════════════════════════ -->
+<div class="slide" id="s4">
+  <div class="sh"><span class="sh-num">Architecture</span><h2>WS1 — How the Agent Works <span class="sub">10 steps · 1 real LLM call · 3 governance invariants</span></h2></div>
+  <div class="sb">
+    <p style="margin-bottom:8px;font-size:12.5px">Orchestrator: <strong>Haiku 4.5</strong> (pipeline coordination, state management, tool sequencing). Sonnet 4.6 invoked as a targeted sub-call for clinical routing only.</p>
+    <table>
+      <tr><th>#</th><th>Step</th><th>Mechanism</th><th>Model</th></tr>
+      <tr><td>1</td><td>Format parsing and field extraction</td><td>Rule-based parser</td><td>—</td></tr>
+      <tr><td>2</td><td>Member eligibility lookup</td><td>Structured API read</td><td>—</td></tr>
+      <tr><td>3</td><td>Eligibility discrepancy resolution</td><td>LLM contextual inference</td><td><span class="tag tag-blue">Haiku 4.5</span> (~5%)</td></tr>
+      <tr><td>4</td><td>Code validity and pairing check</td><td>Structured table lookup</td><td>—</td></tr>
+      <tr><td>5</td><td>Coding plausibility assessment</td><td>LLM semantic classification</td><td><span class="tag tag-blue">Haiku 4.5</span> (~15%)</td></tr>
+      <tr><td>6</td><td>Prior authorisation lookup</td><td>Structured API read</td><td>—</td></tr>
+      <tr><td>7</td><td>Prior auth partial-match resolution</td><td>Arithmetic + LLM judgment</td><td><span class="tag tag-blue">Haiku 4.5</span> (~8%)</td></tr>
+      <tr class="critical"><td><strong>8</strong></td><td><strong>Clinical content routing classification</strong></td><td><strong>LLM multi-signal classification</strong></td><td><span class="tag tag-red">Sonnet 4.6</span> (every claim)</td></tr>
+      <tr><td>9</td><td>Payment calculation</td><td>Rate table + arithmetic</td><td>—</td></tr>
+      <tr><td>10</td><td>Contract exception handling</td><td>LLM document reasoning</td><td><span class="tag tag-blue">Haiku 4.5</span> (~2%)</td></tr>
+    </table>
+    <div class="callout red" style="margin-top:10px"><strong>Step 8 is the only Sonnet call.</strong> Produces three states: <code>admin</code> / <code>clinical</code> / <code>uncertain</code>. Any <code>clinical</code> or <code>uncertain</code> result routes to the physician queue — enforced by queue architecture, not policy. <strong>FM-A-5 hard stop:</strong> T-09 checks <code>state == ADMIN_CLEARED</code> as its first operation. Governance violation fires ET-07 before any payment calculation. <strong>Audit-first ordering:</strong> <code>PAYMENT_APPROVED</code> audit entry must be COMMITTED before the APPROVED state transition executes.</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 5 — PROTOTYPE SCOPE (from s11, updated)
+════════════════════════════════════════════ -->
+<div class="slide" id="s5">
+  <div class="sh"><span class="sh-num">Prototype</span><h2>What Is and Is Not Built <span class="sub">1 real LLM call · stubs shown explicitly</span></h2></div>
+  <div class="sb">
+    <p style="margin-bottom:8px;font-size:12.5px">WS1 receives a normalized claim (NormalizedClaimInput). Intake parsers (EDI 837P/I, Portal JSON) are built and validated against 1,493 Tier 1 claims — shown in Path 4 end-to-end. WS1 adjudication logic is format-agnostic.</p>
+    <table>
+      <tr><th>#</th><th>Step</th><th class="tc">Status</th><th>Note</th></tr>
+      <tr><td>1</td><td>Format parsing — EDI 837P / 837I / Portal JSON</td><td class="tc"><span class="tag tag-impl">Implemented</span></td><td>Tier 1 parsers (80% of volume); validated against 1,493-file corpus; CMS-1500 OCR deferred (41% PARSE_FAILED)</td></tr>
+      <tr><td>2</td><td>Member eligibility lookup</td><td class="tc"><span class="tag tag-stub">Stub</span></td><td>Returns <code>confirmed</code>; sentinel <code>GHS-MBR-INVALID</code> &rarr; <code>discrepancy</code> (ET-03)</td></tr>
+      <tr><td>3</td><td>Eligibility discrepancy resolution</td><td class="tc"><span class="tag tag-out">Out of scope</span></td><td>Escalation pattern demonstrated via ET-03 routing</td></tr>
+      <tr><td>4</td><td>Code validity and pairing check</td><td class="tc"><span class="tag tag-stub">Stub</span></td><td>Returns <code>valid</code> for all fixtures</td></tr>
+      <tr><td>5</td><td>Coding plausibility assessment</td><td class="tc"><span class="tag tag-out">Out of scope</span></td><td>One real LLM call demonstrates the agentic pattern</td></tr>
+      <tr><td>6</td><td>Prior authorisation lookup</td><td class="tc"><span class="tag tag-stub">Stub</span></td><td>Returns <code>NOT_REQUIRED</code> for all fixtures</td></tr>
+      <tr><td>7</td><td>Prior auth partial-match resolution</td><td class="tc"><span class="tag tag-out">Out of scope</span></td><td><code>uncertain</code> classifier state is the more valuable edge case</td></tr>
+      <tr class="critical"><td><strong>8</strong></td><td><strong>Clinical content routing classification</strong></td><td class="tc"><span class="tag tag-impl">Implemented</span></td><td>Live Sonnet 4.6 call &mdash; returns <code>{classification, confidence, reasoning}</code>; confidence threshold 0.70</td></tr>
+      <tr><td>9</td><td>Payment calculation</td><td class="tc"><span class="tag tag-stub">Stub</span></td><td>Returns $85.00; audit-first ordering is real &mdash; COMMITTED before state transition</td></tr>
+      <tr><td>10</td><td>Contract exception handling</td><td class="tc"><span class="tag tag-out">Out of scope</span></td><td>No contract exception data to mock meaningfully</td></tr>
+      <tr class="hitl"><td>HITL</td><td>Physician reviewer interface</td><td class="tc"><span class="tag tag-impl">Implemented</span></td><td><code>review_claim.py --claim-id &lt;ID&gt;</code> &mdash; interactive: displays formatted packet, numbered decisions; ADMIN_CONFIRMED re-enters T-09 (GAP-15) and issues payment</td></tr>
+    </table>
+    <div style="margin-top:8px;font-size:12px;color:#64748b">Named configurable parameters: <code>CLINICAL_CONTENT_CONFIDENCE_THRESHOLD = 0.70</code> &nbsp;&middot;&nbsp; CalibrationRecord 6-field startup validation (CMO sign-off, recall &ge;0.995, holdout &ge;500)</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 6 — DEMO PATHS (from s12, updated)
+════════════════════════════════════════════ -->
+<div class="slide" id="s6">
+  <div class="sh"><span class="sh-num">Demo</span><h2>The Four Demo Paths <span class="sub">Paths 1&ndash;3 required · Path 4 optional · ~5 min total</span></h2></div>
+  <div class="sb">
+    <table>
+      <tr><th>Path</th><th>Command</th><th>What it proves</th><th>Expected output</th></tr>
+      <tr><td><strong>1 &mdash; Happy path</strong><br><small>CLAIM-ADMIN-01<br>99213 routine exam, PCP, Z00.00</small></td><td><code>python run_claim.py<br>--fixture CLAIM-ADMIN-01</code></td><td>Full pipeline runs end-to-end; FM-A-5 passes; audit-first ordering holds; payment issued with calibration record ID</td><td><code>status: approved</code><br><code>confidence: 0.91</code><br>6 COMMITTED audit entries<br><code>calibration_record_id</code> present</td></tr>
+      <tr><td><strong>2a &mdash; Uncertain escalation</strong><br><small>CLAIM-UNCERTAIN-01<br>97110 therapeutic exercise, GP, M54.5</small></td><td><code>python run_claim.py<br>--fixture CLAIM-UNCERTAIN-01</code></td><td>Threshold gate fires; agent completes all pre-work before routing; escalation packet pre-filled with 5 committed audit entries</td><td><code>status: escalated</code><br><code>classification: uncertain</code><br><code>confidence: 0.48</code><br>Contradictory signals named in reason</td></tr>
+      <tr class="hitl"><td><strong>2b &mdash; HITL review loop</strong><br><small>Same claim &mdash; physician closes the loop</small></td><td><code>python review_claim.py<br>--claim-id CLAIM-UNCERTAIN-01</code></td><td>Full agentic HITL loop: agent pre-fills, human decides, agent executes T-09. PHYSICIAN_ADMIN_CONFIRMED audit entry (HUMAN_DECIDES) + payment issued</td><td><code>status: approved</code><br><code>authorized_by: PHYSICIAN_DETERMINATION</code><br>8-entry audit trail (5 restored + physician_admin_confirmed + payment_approved)</td></tr>
+      <tr><td><strong>3 &mdash; Governance hard stop</strong><br><small>FM-A-5, ET-07</small></td><td><code>python run_governance_demo.py</code></td><td>FM-A-5 pre-condition check aborts T-09; ET-07 GOVERNANCE_VIOLATION fires; <code>payment_amount</code> never written; incoming state preserved as diagnostic signal</td><td><code>status: escalated</code><br><code>trigger_type: GOVERNANCE_VIOLATION</code><br><code>payment_amount</code> absent<br><code>claim_state_at_escalation: ROUTING</code></td></tr>
+    </table>
+    <div class="callout" style="margin-top:12px">
+      <strong>Path 4 (optional) &mdash; two files, two outcomes:</strong><br>
+      <code>python run_e2e_demo.py --file "../Capstone-A-Claims-Pack/edi-837p/CLM-2026-1000804.edi"</code>
+      &nbsp;&rarr;&nbsp; <span class="tag tag-impl">approved</span> &mdash; EDI 837P &middot; 99214 office visit &middot; Z00.00 wellness &middot; Physician MD &middot; all signals agree<br>
+      <code>python run_e2e_demo.py --file "../Capstone-A-Claims-Pack/portal-json/CLM-2026-1001201.json"</code>
+      &nbsp;&rarr;&nbsp; <span class="tag tag-amber">escalated</span> &mdash; Portal JSON &middot; 97110 exercises &middot; bronchitis + headache &middot; procedure/diagnosis mismatch<br>
+      <span style="font-size:12px;color:#64748b">Raw file &rarr; Intake parser &rarr; NormalizedClaimInput &rarr; WS1 adjudication. Three stages printed. API key required for Stage 3.</span>
+    </div>
+  </div>
+</div>
+
+</div><!-- /deck -->
+
+<!-- ═══════════════════════════════════════════
+     NAVIGATION
+════════════════════════════════════════════ -->
+<div id="nav">
+  <button id="btn-prev" onclick="go(-1)" disabled>&larr; Prev</button>
+  <div id="progress"><div id="progress-bar"></div></div>
+  <span id="counter">1 / 6</span>
+  <button id="btn-next" onclick="go(1)">Next &rarr;</button>
+</div>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  const total = slides.length;
+  let cur = 0;
+
+  function show(n) {
+    slides[cur].classList.remove('active');
+    cur = Math.max(0, Math.min(total - 1, n));
+    slides[cur].classList.add('active');
+    document.getElementById('counter').textContent = (cur + 1) + ' / ' + total;
+    document.getElementById('progress-bar').style.width = ((cur + 1) / total * 100) + '%';
+    document.getElementById('btn-prev').disabled = cur === 0;
+    document.getElementById('btn-next').disabled = cur === total - 1;
+  }
+
+  function go(dir) { show(cur + dir); }
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ') { e.preventDefault(); go(1); }
+    if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')                    { e.preventDefault(); go(-1); }
+  });
+
+  document.getElementById('deck').addEventListener('click', e => {
+    const x = e.clientX / window.innerWidth;
+    if (x > 0.6) go(1); else if (x < 0.4) go(-1);
+  });
+
+  show(0);
+</script>
+</body>
+</html>
