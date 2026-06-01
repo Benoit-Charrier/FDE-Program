@@ -55,7 +55,7 @@ Working prototype + self-assessment by 17:00.
 |---|---|---|
 | `C-CON-2207715_kyc.json` | Consumer | Watchlist false-positive (common name) |
 | `C-CON-3318822_kyc.json` | Consumer | Routine structuring / no-SAR baseline |
-| `C-CON-5530118_kyc.json` | Consumer | Layering pattern across linked accounts |
+| `C-CON-5530118_kyc.json` | Consumer | OOS remittance routing (channel = cross-border-remittance) |
 | `C-CON-7714290_kyc.json` | Consumer | Sudden onset large cross-border transfers |
 | `C-CON-7720338_kyc.json` | Consumer | Network analysis with suspicious counterparty |
 | `C-CON-9923441_kyc.json` | Consumer | Watchlist genuine hit — escalation needed |
@@ -80,7 +80,7 @@ Working prototype + self-assessment by 17:00.
 | File | Notes |
 |---|---|
 | `C-CON-2207715_ofac_screening.txt` | Common-name false-positive — Gonzalez / Alava |
-| `C-CON-9923441_ofac_screening.txt` | Genuine hit — needs escalation |
+| `C-CON-9923441_ofac_screening.txt` | Common-name false-positive (Mohammed Khan / KHAN Muhammad) — DOB delta 21 years → DISCONFIRMED |
 | `C-BIZ-4408821_screening.txt` | Business account screening |
 
 ### Sanctions list reference extracts (`mock-data/sanctions-list-extracts/`)
@@ -110,10 +110,10 @@ Working prototype + self-assessment by 17:00.
 | File | Deliverable |
 |---|---|
 | `design/01-discovery-notes.md` | #1 — Discovery notes: problem framing, stakeholder alignment, scope boundaries, open assumptions |
-| `design/02-cognitive-work-assessment.md` | #2 — Cognitive work assessment: 58-min case decomposed into 8 zones, delegation analysis, suitability gate (25/25 score) |
+| `design/02-cognitive-work-assessment.md` | #2 — Cognitive work assessment: 58-min case decomposed into 5 JtDs (brief terminology) with zones within each JtD, delegation analysis, suitability gate (25/25 score) |
 | `design/03-agent-purpose-document.md` | #3 — Agent Purpose Document: LACRA KPIs, failure modes, autonomy matrix, escalation triggers, activity catalog |
 | `design/04-architecture-decision-record.md` | #4 — ADRs: single-agent vs multi-agent (ADR-001), model selection Sonnet (ADR-002), dual JSON+prose output (ADR-003), PII handling (ADR-004) |
-| `design/05-capability-specification.md` | #5 — Production-grade capability spec: full pipeline (6 steps), input/output schemas, pattern detection rules, watchlist reconciliation logic, disposition decision tree, governance, error handling, tool interfaces, assumptions register |
+| `design/05-capability-specification.md` | #5 — Production-grade capability spec: 5-JtD pipeline, input/output schemas, pattern detection rules (3a–3f), watchlist reconciliation logic, 10-point disposition decision tree, governance, error handling, tool interfaces, assumptions register |
 | `design/06-validation-plan.md` | #6 — Validation plan: 5 test scenarios (happy path, SAR escalation, OOS routing, missing data, reproducibility) with explicit pass/fail criteria |
 | `design/07-economics-sketch.md` | #7 — Economics sketch: $55.77 baseline → $17.37 agent-augmented per case; $420K build, ~8-month payback, $2.7M 3-year net; sensitivity analysis |
 
@@ -134,7 +134,7 @@ Working prototype + self-assessment by 17:00.
 
 **Curveball response — submit by 14:00**
 
-- [ ] 9. Revised delegation design + spec amendments — targeted adaptation with explicit reasoning
+- [x] 9. Revised delegation design + spec amendments — targeted adaptation with explicit reasoning
 
 **Build phase — submit by 17:00**
 
@@ -189,6 +189,27 @@ Working prototype + self-assessment by 17:00.
 3. **Edge case** — common-name watchlist false-positive handled correctly (not escalated)
 4. Tests covering all three paths
 5. Demo script
+
+---
+
+## Build decisions (locked before build phase)
+
+| Decision | Choice | Rationale |
+|---|---|---|
+| Architecture | Pipeline mode — Python pre-loads all data via tool functions → one Claude API call at temperature=0 → parse JSON output | ADR-001: "one LLM call chain per case"; simpler, reproducible, fits 3-hour window |
+| OOS channel detection | `"remittance" in channel.lower()` (substring, not exact match) | Actual CSV value is `cross-border-remittance`; spec intent is remittance product, not a literal string |
+| T2 layering / decision point 9 | Network file counts as a data source; decision point 3 (LAYERING HIGH → ESCALATE_SAR) fires before point 9 | C-CON-6611442 has no KYC/transaction CSVs but network file contains all hop chain data |
+| T4 missing-data test fixture | Synthetic customer ID `C-CON-0000001` (no files exist) | No file deletion; self-contained; both read_kyc and read_transactions return None → FURTHER_INFO_NEEDED |
+| Language | Python | Spec tool interfaces use Python type hints; Anthropic SDK is Python-native |
+
+### Spec amendment notes
+
+- **AM-01:** JtD-1a scope detection: spec says `channel = "remittance"`; actual mock data uses `channel = "cross-border-remittance"`. Rule implemented as substring match. Intent unambiguous.
+- **AM-02:** Decision point 9 ("both KYC and transaction history missing → FURTHER_INFO_NEEDED") applies when no data is available from *any* source. Network file data satisfies the data requirement for the layering case (C-CON-6611442).
+- **AM-03:** Enhanced audit log schema (FinCEN FIN-2026-A-008 Req 1): add `patterns_detected_summary`, `watchlist_resolution`, `supporting_transactions`, `sdn_list_version`, `analyst_action` (null at agent time, updated by case mgmt system).
+- **AM-04:** Add `sdn_list_version` field to case package output. Prototype: hardcoded to mock SDN date "2026-05-01".
+- **AM-05:** Designate full case package JSON as the FIN-2026-A-008 Req 4 explainability record (span-level attribution via `patterns_detected[].evidence[]` and `disposition.supporting_transactions[]`).
+- **AM-06:** Add `sar_clock_start_utc` field to output (= `generated_at_utc` for ESCALATE_SAR, null otherwise). Designates 30-day FinCEN SAR-filing clock T0 per Req 5. Add `alert_status` field (hardcoded to "OPEN" in prototype).
 
 ---
 
