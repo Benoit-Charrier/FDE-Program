@@ -1,0 +1,16 @@
+Date,Time_UTC,Direction,Type,Counterparty,Amount_USD,Channel,Balance_After
+2026-05-15,02:42:18,IN,Gift card redemption batch (8 cards),Various ($500-$1000 face),7000.00,gift-card,21422.18
+2026-05-14,19:18:08,IN,Zelle in,Anonymous routing,4800.00,zelle,14422.18
+2026-05-13,22:55:11,IN,Zelle in,Anonymous routing,5500.00,zelle,9622.18
+2026-05-12,18:30:42,IN,Venmo in,(usernames available),4200.00,venmo,4122.18
+2026-05-11,21:08:55,IN,Cash App in,(usernames available),3800.00,cashapp,-77.82
+2026-05-10,17:42:18,IN,Zelle in,Anonymous routing,5400.00,zelle,-3877.82
+2026-05-09,22:55:08,IN,Venmo in,(usernames available),3900.00,venmo,-9277.82
+2026-05-08,18:18:42,IN,Cash App in,(usernames available),4200.00,cashapp,-13177.82
+2026-05-06,21:30:11,IN,Zelle in,Anonymous routing,3800.00,zelle,-17377.82
+2026-05-04,22:42:18,IN,Venmo in,(usernames available),4100.00,venmo,-21177.82
+2026-05-02,17:55:08,IN,Cash App in,(usernames available),3200.00,cashapp,-25277.82
+2026-05-01,21:30:22,IN,Zelle in,Anonymous routing,3300.00,zelle,-28477.82
+2026-04-29,18:42:18,IN,Cash App in,(usernames available),2800.00,cashapp,-31777.82
+2026-04-26,21:55:08,IN,Venmo in,(usernames available),3000.00,venmo,-34577.82
+2026-04-21,18:08:42,IN,Cash App in,(usernames available),1500.00,cashapp,-37577.82

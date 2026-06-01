@@ -1,0 +1,21 @@
+OFAC SDN List Reference Extract — pertaining to alert CASE-2026-05-13-AML-1219
+
+SDN Last Updated: 2026-05-01
+List: Specially Designated Nationals
+
+ENTITY: GONZALEZ-ALAVA, Maria de los Angeles
+Designation: Individual
+Sanction program: VENEZUELA per E.O. 13692 (Venezuela sanctions program — trafficking-finance violations)
+Designation date: 2020-11-15
+
+Identifying information:
+- Aliases: "Maria Gonzalez", "Maria González Alava", "Maria de los Angeles Gonzalez"
+- DOB: 1978-01-18
+- Place of birth: Caracas, Venezuela
+- Nationality: Venezuela
+- Cedula: V-12-440-882 (Venezuela national ID)
+- Known addresses:
+  • Av. Libertador, Edif. Centro, Apt 14B, Caracas, Venezuela
+- Notes: Designated for involvement in transnational drug-trafficking financial facilitation through Caracas-based shell entities. No reported US presence.
+
+This is a reference extract from the OFAC SDN list for review against alert hits on common names of this designated individual.

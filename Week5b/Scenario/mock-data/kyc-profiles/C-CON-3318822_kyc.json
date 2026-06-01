@@ -1,0 +1,20 @@
+{
+  "customer_id": "C-CON-3318822",
+  "customer_type": "consumer_wallet",
+  "kyc_verification_tier": 3,
+  "name": "Brendan Killeen",
+  "dob": "1985-03-18",
+  "ssn_last4": "4490",
+  "address_on_file": "1820 Tucker St, Asheville NC 28804",
+  "phone": "828-555-0317",
+  "email": "bkilleen.avl@email.example",
+  "id_verified": "NC driver license + selfie (2023-05-08)",
+  "occupation_on_file": "Bar manager, hospitality industry",
+  "expected_monthly_volume_self_reported": "$3,500-$6,000 personal + occasional business expense reimbursement",
+  "account_opened": "2023-05-12",
+  "wallet_funding_sources": ["First Citizens Bank checking", "occasional gift inflow from family"],
+  "prior_amls_filings": [],
+  "prior_internal_review_dispositions": "0 prior alerts",
+  "device_fingerprints_on_file": ["dev-iphone-1108"],
+  "ip_clusters_recent_60d": ["NC.Asheville.Charter (residence)", "NC.Asheville.Spectrum.work (employer wifi)"]
+}

@@ -1,0 +1,11 @@
+Date,Time_UTC,Direction,Type,Counterparty,Amount_USD,Channel,Balance_After
+2026-05-13,16:14:08,IN,P2P transfer,Yusuf Ahmed (Wayne State student),240.00,internal,612.40
+2026-05-12,22:08:11,OUT,Bill pay,DTE Energy (electricity),84.50,outbound,372.40
+2026-05-10,11:55:34,IN,P2P transfer,Father (Hashir Khan via Lattice cross-border in),250.00,cross-border-in,456.90
+2026-05-09,07:42:18,IN,Stipend ACH,Wayne State University,250.00,ach,206.90
+2026-05-05,18:30:22,OUT,Bill pay,Wayne State Bursar (lab fee),120.00,outbound,-43.10
+2026-04-25,12:18:55,IN,Stipend ACH,Wayne State University,1250.00,ach,76.90
+2026-04-24,19:55:18,OUT,P2P transfer,Roommate split rent,475.00,internal,-1173.10
+2026-04-22,20:08:42,OUT,Bill pay,DTE Energy,78.30,outbound,-698.10
+2026-04-15,07:30:08,IN,Stipend ACH,Wayne State University,250.00,ach,-619.80
+2026-04-08,07:30:08,IN,Stipend ACH,Wayne State University,250.00,ach,-869.80

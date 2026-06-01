@@ -1,0 +1,22 @@
+{
+  "customer_id": "C-CON-7720338",
+  "customer_type": "consumer_wallet",
+  "kyc_verification_tier": 1,
+  "name": "Devonte Asher",
+  "dob_self_reported": "1998-02-11",
+  "ssn_not_on_file": true,
+  "address_self_reported": "(none provided)",
+  "phone": "678-555-0044",
+  "email": "dasher.atl@email.example",
+  "id_verified": "Phone + email only; ID upload requested 3× but not completed (most recent request 2026-04-29)",
+  "occupation_on_file": "(not provided)",
+  "expected_monthly_volume_self_reported": "(not provided)",
+  "account_opened": "2026-04-21",
+  "tier1_aggregate_inbound_limit_30d": 25000,
+  "tier1_aggregate_inbound_actual_60d": 71800,
+  "wallet_funding_sources": ["Cash App in", "Venmo in", "Zelle in", "Gift card redemption"],
+  "prior_amls_filings": [],
+  "prior_internal_review_dispositions": "1 prior alert 2026-05-02, dispositioned 'awaiting ID verification — soft-freeze applied, customer notified'. Soft-freeze was reversed 2026-05-05 after customer disputed; ID still not verified.",
+  "device_fingerprints_on_file": ["dev-android-0044", "dev-android-0099 (added 2026-05-03)"],
+  "ip_clusters_recent_60d": ["GA.Atlanta.T-Mobile (primary)", "FL.Miami.Verizon (2 sessions early May)", "GA.Atlanta.AT&T (single session)"]
+}

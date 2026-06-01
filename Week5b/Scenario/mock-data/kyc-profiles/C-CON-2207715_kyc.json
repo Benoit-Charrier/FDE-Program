@@ -1,0 +1,21 @@
+{
+  "customer_id": "C-CON-2207715",
+  "customer_type": "consumer_wallet",
+  "kyc_verification_tier": 3,
+  "name": "Maria González",
+  "dob": "1979-06-14",
+  "ssn_last4": "4421",
+  "address_on_file": "2204 Bayshore Dr, Tampa FL 33611",
+  "phone": "813-555-0498",
+  "email": "maria.gonzalez1979@email.example",
+  "id_verified": "US passport + Florida driver license + selfie (2023-04-12)",
+  "occupation_on_file": "Registered nurse, Tampa General Hospital",
+  "expected_monthly_volume_self_reported": "$5,000-$8,000",
+  "account_opened": "2023-04-18",
+  "wallet_funding_sources": ["Tampa General Hospital payroll ACH", "Truist checking ACH"],
+  "linked_business_accounts": [],
+  "prior_amls_filings": [],
+  "prior_internal_review_dispositions": "0 prior alerts",
+  "device_fingerprints_on_file": ["dev-iphone-1208", "dev-ipad-7711"],
+  "ip_clusters_recent_60d": ["FL.Tampa.Spectrum (residence)", "FL.Tampa.TGH-hospital-network"]
+}
