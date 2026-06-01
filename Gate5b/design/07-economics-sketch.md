@@ -48,8 +48,22 @@ the remainder queues. The queue is the SLA risk.
 ### Target analyst time per case (post-agent)
 
 ```
-18 min / case (target from Dr. Rao)
+18 min / case residual analyst time (target from Dr. Rao)
 ```
+
+Per-JtD breakdown (from cognitive work assessment, deliverable 02):
+
+| JtD | Current analyst time | Agent execution | Residual analyst time |
+|---|---:|---:|---:|
+| JtD-1: Ingest the alert and pull the case context | 15 min | < 1 min | 0 min |
+| JtD-2: Synthesise the alert into a narrative | 10 min | ~20 sec | 2 min (read + verify) |
+| JtD-3: Surface patterns | 12 min | ~20 sec | 3 min (review evidence) |
+| JtD-4: Reconcile against watchlist screening | 8 min | ~10 sec | 3 min (verify factors) |
+| JtD-5: Recommend a disposition | 13 min | ~20 sec (draft) | 10 min (judgment + sign) |
+| **Total** | **58 min** | **< 3 min** | **~18 min** |
+
+The 18-min residual is dominated by JtD-5 (analyst judgment + sign-off) — an irreducible
+10 minutes by design. JtD-1 drops to zero because data assembly is fully agentic.
 
 ### Annual analyst cost per case (agent-augmented)
 
@@ -63,16 +77,16 @@ Agent-augmented cost per case = 18 min / 60 × $57.69/hr = $17.31 / case
 
 Context per case (estimated from mock data sampling):
 - System prompt: ~1,500 tokens (stable, cacheable)
-- KYC profile (JSON): ~500 tokens
-- Transaction history (CSV, 90-day): ~2,000 tokens (average 30 rows × ~65 tokens/row)
-- Watchlist screening report: ~400 tokens
-- Network/counterparty data (JSON): ~800 tokens (simple cases) to ~2,000 (layering)
-- Prior RFI thread (.eml): ~600 tokens
-- OFAC SDN extract (if needed): ~300 tokens
+- KYC profile (JSON): ~500 tokens — primary use: JtD-1 retrieval, JtD-2 narrative, JtD-4 watchlist
+- Transaction history (CSV, 90-day): ~2,000 tokens (average 30 rows × ~65 tokens/row) — primary use: JtD-2, JtD-3
+- Watchlist screening report: ~400 tokens — primary use: JtD-1 scope, JtD-4
+- Network/counterparty data (JSON): ~800 tokens (simple cases) to ~2,000 (layering) — primary use: JtD-3 layering detection
+- Prior RFI thread (.eml): ~600 tokens — primary use: JtD-2 narrative synthesis
+- OFAC SDN extract (if needed): ~300 tokens — primary use: JtD-4 disconfirmation
 - Total input: ~6,100–8,000 tokens average; use **8,000 tokens** as conservative estimate
 
 Output:
-- Case package JSON + narrative: ~2,000 tokens average
+- Case package JSON + narrative (JtD-1 scope + JtD-2 narrative + JtD-3 patterns + JtD-4 watchlist + JtD-5 disposition): ~2,000 tokens average
 
 **Token cost per case:**
 ```

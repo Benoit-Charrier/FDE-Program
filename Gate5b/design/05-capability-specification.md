@@ -7,10 +7,21 @@
 ## 1. Purpose and scope
 
 LACRA accepts a case alert (alert_id + customer_id) and returns a structured case package
-(JSON + embedded prose narrative) to the analyst queue within 60 seconds. LACRA performs:
-data retrieval, narrative synthesis, pattern detection, watchlist reconciliation, and
-disposition recommendation. LACRA does not file SARs, freeze accounts, contact customers,
-confirm OFAC positives, or process out-of-scope alerts.
+(JSON + embedded prose narrative) to the analyst queue within 60 seconds. LACRA executes
+five Jobs to be Done (brief terminology):
+
+1. **Ingest the alert and pull the case context**
+2. **Synthesise the alert into a narrative**
+3. **Surface patterns**
+4. **Reconcile against watchlist screening**
+5. **Recommend a disposition**
+
+Not delegated to LACRA (brief scope guardrails):
+- SAR filing decision — analyst signs
+- Customer freeze decision — analyst recommends; supervisor approves (two-level chain)
+- Sanctions screening positive confirmation — OFAC hit is not LACRA's call to declare
+- Any communication with the customer or any other party
+- Out-of-scope alerts (broker-dealer / remittance product) — routed, not analysed
 
 ---
 
@@ -48,11 +59,17 @@ Validation: `alert_id` and `customer_id` are required. If either is absent, retu
 
 ## 3. Processing pipeline
 
-The agent executes the following steps in order. Each step produces a structured output that
-is passed to the next step. If any step fails, the failure is logged and the pipeline continues
-with the available data (graceful degradation).
+The agent executes the five JtDs in order. Each JtD produces a structured output passed to
+the next. If any JtD fails, the failure is logged and the pipeline continues with available
+data (graceful degradation).
 
-### Step 1: Scope detection
+---
+
+### JtD-1: Ingest the alert and pull the case context
+
+**Delegation archetype:** Fully Agentic
+
+#### 1a — Scope detection
 
 **Input:** `alert_type_code` + transaction history (if available)
 **Logic:**
@@ -82,9 +99,7 @@ Must be routed, not analysed.
 uses the remittance channel. Classify as `IN_SCOPE` but note the remittance-channel transaction
 in `data_gaps` as "remittance channel transaction excluded from analysis; refer to remittance team."
 
----
-
-### Step 2: Data retrieval (parallel tool calls)
+#### 1b — Data retrieval (parallel tool calls)
 
 Fetch all available data sources simultaneously:
 - `read_kyc(customer_id)`
@@ -101,14 +116,16 @@ Populate `data_gaps` list with every source that returned no data.
 
 ---
 
-### Step 3: Narrative synthesis
+### JtD-2: Synthesise the alert into a narrative
 
-**Input:** All retrieved data
+**Delegation archetype:** Agent-led + Human Oversight
+
+**Input:** All retrieved data from JtD-1
 **Output:** `narrative` string, 150–400 words
 
 The narrative must answer:
 1. Who is the customer? (KYC summary: type, tier, tenure, occupation, funding sources)
-2. What triggered the alert? (Triggering rule, key transactions cited by ID or date+amount)
+2. What triggered the alert? (Triggering rule, key transactions cited by date+amount)
 3. What is the 90-day transaction profile? (Volume, counterparties, patterns)
 4. What prior history exists? (Prior alerts, prior RFI threads, prior dispositions)
 
@@ -118,16 +135,17 @@ made several deposits."
 
 ---
 
-### Step 4: Pattern detection
+### JtD-3: Surface patterns
 
-**Input:** Transaction history + network data + KYC
+**Delegation archetype:** Agent-led + Human Oversight
+
+**Input:** Transaction history + network data + KYC from JtD-1
 **Output:** `patterns_detected` array (zero or more items)
 
-Detect the following patterns. For each pattern detected, produce one entry in
-`patterns_detected` with `pattern_type`, `description`, `evidence` (list of transaction
-citations), and `severity`.
+For each pattern detected, produce one entry with `pattern_type`, `description`, `evidence`
+(list of transaction citations), and `severity`.
 
-#### 4a. Structuring detection
+#### 3a. Structuring
 
 **Rule:** ≥3 transactions in a 10-day window where:
 - Each transaction amount is in the range [$4,000, $9,999] (under $10K CTR threshold), AND
@@ -137,7 +155,7 @@ citations), and `severity`.
 **Evidence format:** List each qualifying transaction as `{date} ${amount} ({channel})`
 **Severity:** HIGH if ≥5 qualifying transactions; MEDIUM if 3–4
 
-#### 4b. Layering detection
+#### 3b. Layering
 
 **Rule:** Transaction graph (from network file) shows funds moving through ≥3 hops (accounts)
 before exiting to an external beneficiary, where:
@@ -149,7 +167,7 @@ before exiting to an external beneficiary, where:
 with dollar amounts and timestamps for each hop
 **Severity:** HIGH
 
-#### 4c. Velocity anomaly
+#### 3c. Velocity anomaly
 
 **Rule:** Current 30-day cross-border outbound volume is ≥10× the prior 12-month average
 outbound per 30 days.
@@ -159,7 +177,7 @@ current_30d = cross_border_outbound_in_current_30d;
 ratio = current_30d / prior_avg (if prior_avg = 0, flag as "no prior cross-border history")
 **Severity:** HIGH if ratio ≥ 10×; MEDIUM if 5–10×
 
-#### 4d. Counterparty risk concentration
+#### 3d. Counterparty risk concentration
 
 **Rule:** ≥70% of outbound transaction value in the 90-day window goes to a single counterparty
 that is either: (a) on Lattice's elevated-risk merchant list, OR (b) an offshore financial
@@ -168,7 +186,7 @@ institution (routing number resolves to a Cayman, BVI, or other high-risk jurisd
 **Evidence format:** Counterparty name, % of outbound volume, dollar amount, jurisdiction
 **Severity:** HIGH if offshore + ≥70%; MEDIUM if elevated-risk merchant list only
 
-#### 4e. Thin KYC + volume mismatch
+#### 3e. Thin KYC + volume mismatch
 
 **Rule:** `kyc_verification_tier = 1` AND aggregate inbound in rolling 30 days exceeds
 $25,000 (the Tier-1 limit)
@@ -176,15 +194,17 @@ $25,000 (the Tier-1 limit)
 **Evidence format:** KYC tier, aggregate inbound amount, limit, overage amount
 **Severity:** HIGH
 
-#### 4f. Multiple patterns
+#### 3f. Multi-pattern convergence
 
-If ≥2 patterns are detected simultaneously, add a synthetic pattern entry:
+If ≥2 patterns are detected simultaneously, add a synthetic entry:
 `pattern_type: "MULTI_PATTERN_CONVERGENCE"` with description noting the co-occurring patterns.
 Severity: HIGH.
 
 ---
 
-### Step 5: Watchlist reconciliation
+### JtD-4: Reconcile against watchlist screening
+
+**Delegation archetype:** Agent-led + Human Oversight (disconfirmation only)
 
 **Input:** Watchlist screening report + OFAC SDN extract (if hit present) + KYC profile
 **Output:** `watchlist_status` object
@@ -211,20 +231,22 @@ Severity: HIGH.
 - 1 or 0 disconfirmation factors → `WATCHLIST_UNRESOLVED`; disposition must be
   `FURTHER_INFO_NEEDED` or `ESCALATE_SAR`; never `CLEAR`
 
-**Hard constraint:** The agent must never output `WATCHLIST_CONFIRMED`. That determination
-belongs to the analyst + legal counsel. The output vocabulary is:
-`{ "resolution": "NO_HIT" | "WATCHLIST_DISCONFIRMED" | "WATCHLIST_UNRESOLVED" }` only.
+**Hard constraint:** LACRA must never output `WATCHLIST_CONFIRMED`. Sanctions screening
+positive confirmation is not delegated to the agent (brief scope guardrail). The output
+vocabulary is: `{ "resolution": "NO_HIT" | "WATCHLIST_DISCONFIRMED" | "WATCHLIST_UNRESOLVED" }` only.
 
 ---
 
-### Step 6: Disposition recommendation
+### JtD-5: Recommend a disposition
 
-**Input:** Patterns detected + watchlist status + KYC + data gaps
-**Output:** `disposition` object
+**Delegation archetype:** Human-led + Agent Support (agent produces recommendation; analyst decides and signs)
+
+**Input:** Patterns detected (JtD-3) + watchlist status (JtD-4) + KYC + data gaps (JtD-1)
+**Output:** `disposition` object (recommendation only — not a decision)
 
 **Decision logic (evaluated in priority order):**
 
-1. If `scope_classification` is OUT_OF_SCOPE → `ROUTE_OUT_OF_SCOPE` (handled in Step 1)
+1. If `scope_classification` is OUT_OF_SCOPE → `ROUTE_OUT_OF_SCOPE` (handled in JtD-1)
 
 2. If `watchlist_status.resolution = "WATCHLIST_UNRESOLVED"` → `FURTHER_INFO_NEEDED`
    (never clear a case with an unresolved watchlist hit)
@@ -236,7 +258,8 @@ belongs to the analyst + legal counsel. The output vocabulary is:
    `ESCALATE_SAR`
 
 5. If `pattern_type = "THIN_KYC"` with `kyc_verification_tier = 1` AND over limit →
-   `ACCOUNT_FREEZE` (tier limit breach; account must be restricted pending ID verification)
+   `ACCOUNT_FREEZE` recommendation. Note: freeze itself is not delegated — analyst
+   recommends to supervisor; supervisor approves (two-level chain per brief scope guardrail).
 
 6. If `pattern_type = "COUNTERPARTY_RISK"` with severity HIGH (offshore + ≥70%) →
    `ESCALATE_SAR`
@@ -260,7 +283,7 @@ belongs to the analyst + legal counsel. The output vocabulary is:
 
 **Reasoning field:** Must cite specific evidence. Minimum: name the pattern(s), cite 2+
 specific transaction amounts/dates, reference watchlist resolution with evidence. Must not
-reference outputs that were not produced by Steps 3–5.
+reference outputs not produced by JtD-2 through JtD-4.
 
 ---
 

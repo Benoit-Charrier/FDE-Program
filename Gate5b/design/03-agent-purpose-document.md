@@ -64,15 +64,26 @@ queue managed by the CCO organisation.
 
 ### Delegation archetype
 
-**Agent-led + Human Oversight** — the agent executes the full synthesis pipeline autonomously,
-produces a recommended disposition with reasoning, and delivers the package to the analyst for
-judgment and sign-off. The analyst reviews, challenges, and decides — but does not re-execute
-the data assembly or pattern detection.
+Per-JtD archetypes (from cognitive work assessment):
+
+| JtD | Name | Archetype |
+|---|---|---|
+| JtD-1 | Ingest the alert and pull the case context | Fully Agentic |
+| JtD-2 | Synthesise the alert into a narrative | Agent-led + Human Oversight |
+| JtD-3 | Surface patterns | Agent-led + Human Oversight |
+| JtD-4 | Reconcile against watchlist screening | Agent-led + Human Oversight (disconfirmation only) |
+| JtD-5 | Recommend a disposition | Human-led + Agent Support |
+
+**Overall system characterisation: Agent-led + Human Oversight** — the agent executes
+JtD-1 through JtD-4 autonomously and supports JtD-5 with a recommendation. The analyst
+reviews, challenges, and signs. The agent does not re-execute data assembly or pattern
+detection; the analyst does not retrieve raw data.
 
 Rationale: The cognitive work is high-volume, pattern-rich, and consistent enough for reliable
 agentic execution. The stakes (SAR filing, OFAC determination, account freeze) require human
-accountability and judgment. Neither fully agentic nor human-led is appropriate; agent-led +
-oversight is the correct operating mode for regulated, high-consequence decisions at scale.
+accountability and judgment. The per-JtD breakdown shows that full autonomy is appropriate
+for retrieval (JtD-1) and narrows progressively toward human oversight as reasoning complexity
+and compliance stakes increase (JtD-4, JtD-5).
 
 ---
 
@@ -86,7 +97,7 @@ oversight is the correct operating mode for regulated, high-consequence decision
 | Confidence below threshold | Agent confidence score < 0.5 on disposition recommendation | Append explicit uncertainty flag; recommend analyst seek second opinion; do not suppress the package |
 | Missing critical data | KYC profile unavailable AND transaction history unavailable (both missing for a linked account) | Disposition = `FURTHER_INFO_NEEDED`; list specific data needed; do not guess |
 | SAR-eligible pattern detected | Structuring across ≥5 transactions below threshold, or layering, or counterparty + velocity + cross-border combined signal | Disposition = `ESCALATE_SAR`; confidence level attached |
-| Tier limit breach | Customer at Tier-1 KYC with aggregate inbound exceeding $25K/30-day limit | Disposition = `ACCOUNT_FREEZE` recommendation; note limit breach with dollar amount |
+| Tier limit breach | Customer at Tier-1 KYC with aggregate inbound exceeding $25K/30-day limit | Disposition = `ACCOUNT_FREEZE` recommendation; note limit breach with dollar amount; freeze itself requires analyst recommendation → supervisor approval (two-level chain) |
 
 ---
 
@@ -115,8 +126,8 @@ oversight is the correct operating mode for regulated, high-consequence decision
 
 ### HUMAN TAKES OVER (agent supports only)
 
-- SAR filing decision: analyst signs; supervisor countersigns; agent provides case package as supporting documentation
-- Customer freeze or wallet restriction: analyst recommends; supervisor approves; agent provides case package
+- SAR filing decision: analyst signs; agent provides case package as supporting documentation only
+- Customer freeze or wallet restriction: analyst recommends → supervisor approves (two-level chain); agent provides case package
 - OFAC positive confirmation: NEVER agent's determination; agent surfaces evidence; analyst + legal counsel decide
 - Any communication with the customer or any third party: human only
 
@@ -124,22 +135,55 @@ oversight is the correct operating mode for regulated, high-consequence decision
 
 ## Activity catalog
 
+### JtD-1: Ingest the alert and pull the case context
+
 | Task | Type | Delegation | Data required | Tool | Risk |
 |---|---|---|---|---|---|
 | Parse alert metadata | Retrieval | Fully agentic | Alert ID, customer ID, rule code | read_alert | Low |
-| Scope detection | Decision | Fully agentic | Alert type, product line | classify_scope | Low |
+| Detect scope / product line | Decision | Fully agentic | Alert type, channel | classify_scope | Low |
+| Route out-of-scope case | Action | Agent flags / human routes | Scope classification | write_routing_flag | Low |
 | Fetch KYC profile | Retrieval | Fully agentic | Customer ID | read_kyc | Low |
 | Fetch 90-day transaction history | Retrieval | Fully agentic | Customer ID | read_transactions | Low |
 | Fetch watchlist screening report | Retrieval | Fully agentic | Customer ID | read_watchlist | Low |
 | Fetch counterparty network | Retrieval | Fully agentic | Customer ID | read_network | Low |
-| Fetch prior case history | Retrieval | Fully agentic | Customer ID | read_prior_cases | Low |
-| Fetch linked account data (layering) | Retrieval | Fully agentic | Linked IDs from network | read_kyc (×N) | Low |
-| Synthesise narrative | Reasoning | Agent-led | All above | None (in-context) | Medium |
-| Detect structuring pattern | Reasoning | Agent-led | Transaction history | None (in-context) | Medium |
-| Detect layering pattern | Reasoning | Agent-led | Network + transaction history | None (in-context) | Medium |
-| Detect velocity anomaly | Reasoning | Agent-led | Transaction history + baseline | None (in-context) | Medium |
-| Reconcile watchlist hit | Reasoning + Decision | Agent-led (disconfirm only) | KYC + SDN extract + screening report | None (in-context) | High |
-| Select disposition | Decision | Agent proposes / analyst decides | Full case package | None (in-context) | High |
+| Fetch prior RFI history | Retrieval | Fully agentic | Customer ID | read_rfi_history | Low |
+| Fetch linked account KYC (×N) | Retrieval | Fully agentic | Linked IDs from network file | read_kyc (×N) | Low |
+| Identify and log data gaps | Synthesis | Fully agentic | All retrieval results | None (in-context) | Low |
+
+### JtD-2: Synthesise the alert into a narrative
+
+| Task | Type | Delegation | Data required | Tool | Risk |
+|---|---|---|---|---|---|
+| Summarise KYC profile | Reasoning | Agent-led | KYC JSON | None (in-context) | Medium |
+| Explain alert trigger with citations | Reasoning | Agent-led | Transaction history, alert metadata | None (in-context) | Medium |
+| Characterise 90-day activity | Reasoning | Agent-led | Transaction history | None (in-context) | Medium |
+| Integrate prior RFI history | Reasoning | Agent-led | Prior RFI thread | None (in-context) | Medium |
+
+### JtD-3: Surface patterns
+
+| Task | Type | Delegation | Data required | Tool | Risk |
+|---|---|---|---|---|---|
+| Detect structuring pattern | Reasoning | Agent-led | Transaction history | None (in-context) | High |
+| Detect layering pattern | Reasoning | Agent-led | Network + transaction history | None (in-context) | High |
+| Detect velocity anomaly | Reasoning | Agent-led | Transaction history + baseline | None (in-context) | High |
+| Assess counterparty risk concentration | Reasoning | Agent-led | Transaction history, network | None (in-context) | High |
+| Flag thin KYC + volume mismatch | Decision | Agent-led | KYC tier, inbound aggregate | None (in-context) | High |
+
+### JtD-4: Reconcile against watchlist screening
+
+| Task | Type | Delegation | Data required | Tool | Risk |
+|---|---|---|---|---|---|
+| Extract DOB / address / nationality factors | Retrieval | Agent-led | KYC, SDN extract | None (in-context) | High |
+| Compare factors against SDN entry | Reasoning | Agent-led (disconfirm only) | KYC + SDN extract + screening report | None (in-context) | High |
+| Assess transaction profile coherence | Reasoning | Agent-led | Transaction history, KYC occupation | None (in-context) | High |
+| Output resolution + confidence | Decision | Agent-led (disconfirm only) | All above | None (in-context) | High |
+
+### JtD-5: Recommend a disposition
+
+| Task | Type | Delegation | Data required | Tool | Risk |
+|---|---|---|---|---|---|
+| Select disposition value | Decision | Agent proposes / analyst decides | Full case package | None (in-context) | High |
+| Write rationale + span-citations | Generation | Agent drafts / analyst amends | Case package | None (in-context) | High |
 | Generate case package JSON | Generation | Fully agentic | All above | write_case_package | Low |
-| Generate draft memo | Generation | Agent drafts / analyst amends | Case package | None (in-context) | Medium |
-| Route out-of-scope case | Action | Agent flags / human routes | Scope classification | write_routing_flag | Low |
+| Analyst reviews and signs disposition | Decision | Human only | Case package | Case mgmt system | High |
+| Supervisor approves freeze (if ACCOUNT_FREEZE) | Decision | Human only | Case package + analyst recommendation | Case mgmt system | High |

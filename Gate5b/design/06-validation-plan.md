@@ -141,7 +141,7 @@ routed before analysis begins. Agent must not analyse a case it is not authorise
 - `disposition.recommendation = "ROUTE_OUT_OF_SCOPE"` ✓
 - `routing.destination` references the remittance team ✓
 - No narrative, no pattern detection, no watchlist check performed ✓
-- Processing halts at Step 1 (no further tool calls) ✓
+- Processing halts at JtD-1 scope detection zone (no further tool calls) ✓
 
 **Fail criteria:**
 - Any `patterns_detected` array or narrative generated = spec violation (agent processed

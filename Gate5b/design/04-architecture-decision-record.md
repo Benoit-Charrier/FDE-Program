@@ -10,26 +10,34 @@
 
 ### Context
 
-The AML case review workflow has five distinct cognitive zones: context retrieval, narrative
-synthesis, pattern detection, watchlist reconciliation, and disposition generation. Each zone
-has different data dependencies, reasoning complexity, and failure modes. Two architectural
-options exist: (1) a single monolithic agent that performs all zones in sequence, or (2) a
-pipeline of specialist sub-agents coordinated by an orchestrator.
+The AML case review workflow decomposes into five Jobs to be Done (from the cognitive work
+assessment, using the brief's terminology):
+
+1. Ingest the alert and pull the case context
+2. Synthesise the alert into a narrative
+3. Surface patterns
+4. Reconcile against watchlist screening
+5. Recommend a disposition
+
+Each JtD has different data dependencies, reasoning complexity, and failure modes. Two
+architectural options exist: (1) a single orchestrator that executes all five JtDs in
+sequence, or (2) a pipeline of specialist sub-agents coordinated by an orchestrator.
 
 ### Decision
 
-**Single orchestrator with inline specialist prompting** — the orchestrator agent executes all
-five cognitive zones sequentially using tool calls for data retrieval and structured sub-prompts
-for each reasoning zone. No separate agent processes; one LLM call chain per case.
+**Single orchestrator with inline specialist prompting** — the orchestrator agent executes
+all five JtDs sequentially using tool calls for data retrieval (JtD-1) and structured
+reasoning steps for synthesis, pattern detection, watchlist reconciliation, and disposition
+recommendation (JtD-2 through JtD-5). No separate agent processes; one LLM call chain per case.
 
 ### Rationale
 
 - **Volume and latency:** 11,000 alerts/week requires sub-60-second case package generation.
   Multi-agent coordination (spawning sub-agents, aggregating results) adds latency and
   complexity without corresponding accuracy benefit for this use case.
-- **Context coherence:** Each reasoning zone benefits from having the full prior context
-  (KYC + transactions + watchlist + network) available simultaneously. A monolithic context
-  window with all retrieved data is superior to siloed sub-agents that must pass state between
+- **Context coherence:** JtD-2 through JtD-5 each benefit from having the full assembled
+  context (KYC + transactions + watchlist + network) available simultaneously. A monolithic
+  context window is superior to siloed sub-agents that must serialise and pass state between
   themselves for this type of synthesis task.
 - **Reproducibility:** Single-agent execution with temperature=0 is simpler to reproduce
   deterministically than a multi-agent graph where small coordination variances compound.
@@ -41,15 +49,15 @@ for each reasoning zone. No separate agent processes; one LLM call chain per cas
 - The full context window per case will be large (~15K–20K tokens). This is an accepted cost
   given the token economics (see ADR-003 and Economics sketch).
 - Future evolution toward specialist sub-agents (e.g., a dedicated network analysis agent for
-  complex layering cases) is structurally possible — the tool interface is designed to be
-  extractable.
+  complex layering cases in JtD-3) is structurally possible — the tool interface is designed
+  to be extractable.
 
 ### Rejected alternative
 
-**Multi-agent pipeline** (orchestrator + KYC agent + transaction agent + watchlist agent):
-adds inter-agent communication overhead, context serialisation cost, and coordination failure
-modes without improving accuracy for the synthesis task at hand. Appropriate for Wave 2 when
-alert volume justifies dedicated specialist routing.
+**Multi-agent pipeline** (orchestrator + context-ingestion agent + narrative agent + pattern
+agent + watchlist agent): adds inter-agent communication overhead, context serialisation cost,
+and coordination failure modes without improving accuracy for the synthesis task at hand.
+Appropriate for Wave 2 when alert volume justifies dedicated specialist routing per JtD.
 
 ---
 
@@ -73,7 +81,7 @@ a cheaper model for any case type in the prototype.
 
 - **Accuracy requirement:** SAR recall ≥ 95% demands high-quality multi-step reasoning over
   mixed-format data (JSON + CSV + text in a single context window). Haiku's reasoning quality
-  is insufficient for the pattern detection and watchlist reconciliation zones.
+  is insufficient for Surface patterns (JtD-3) and Reconcile against watchlist screening (JtD-4).
 - **Cost:** At mid-tier pricing (~$3/$15 per 1M input/output tokens), a 20K-token case
   costs ~$0.09 in model cost — well within economics (see Economics sketch).
 - **Reproducibility:** Sonnet at temperature=0 produces highly stable outputs. Confirmed
@@ -93,10 +101,10 @@ a cheaper model for any case type in the prototype.
 
 ### Rejected alternative
 
-**Haiku for retrieval zones + Sonnet for reasoning zones:** model routing reduces cost ~30%
-but adds coordination complexity and a potential consistency failure if the cheap model
-misformats retrieved data for the reasoning model. Not worth the complexity in the prototype;
-revisit in Wave 2.
+**Haiku for JtD-1 (retrieval) + Sonnet for JtD-2 through JtD-5 (reasoning):** model routing
+reduces cost ~30% but adds coordination complexity and a potential consistency failure if the
+cheaper model misformats retrieved data for the reasoning steps. Not worth the complexity in
+the prototype; revisit in Wave 2.
 
 ---
 
@@ -162,6 +170,17 @@ Both are returned in a single response.
 - `data_gaps` field is explicit rather than silent — analyst knows what's missing
 - `uncertainty_flags` field invites scrutiny (Diane Reston's "argue with it" requirement)
 - `agent_version` field enables audit trail reconstruction
+
+Output fields map directly to JtD outputs:
+
+| Output field | Produced by |
+|---|---|
+| `scope_classification` + `routing` | JtD-1: Ingest the alert and pull the case context |
+| `narrative` | JtD-2: Synthesise the alert into a narrative |
+| `patterns_detected` | JtD-3: Surface patterns |
+| `watchlist_status` | JtD-4: Reconcile against watchlist screening |
+| `disposition` | JtD-5: Recommend a disposition |
+| `data_gaps` | JtD-1 (gap identification zone) |
 
 ---
 
