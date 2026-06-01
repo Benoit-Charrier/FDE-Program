@@ -1,0 +1,14 @@
+[BANK STATEMENT — Sequoia Cardinal Bank Personal Checking]
+Account: ***-***-8821
+Statement Period: 2026-03-15 through 2026-04-15
+Account Holder: Yuki Tanaka
+
+Beginning Balance: $14,228.74
+Ending Balance: $16,802.31
+
+Transaction Summary:
+  2026-03-15  Direct Deposit - Payroll Sequoia Cardinal Bank    +$6,842.30
+  2026-03-18  POS Trader Joe's Asheville                          -$84.22
+  ... [further transactions]
+
+[NOTE: This file was uploaded as 'paystub-final.pdf' by the borrower.]

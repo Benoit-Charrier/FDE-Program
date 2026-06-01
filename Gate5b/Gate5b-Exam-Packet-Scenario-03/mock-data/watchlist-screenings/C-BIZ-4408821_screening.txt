@@ -1,0 +1,18 @@
+WATCHLIST SCREENING REPORT — C-BIZ-4408821
+Generated 2026-05-14 04:21 UTC by AML monitoring system
+
+CUSTOMER: Calloway Custom Carpentry LLC (business account)
+PRINCIPAL OWNER: Garret W. Calloway
+SECONDARY OWNER: Veronika Calloway
+EIN: 84-2207115
+
+WATCHLIST HITS:
+[1] OFAC SDN List: No hits on entity or principals.
+[2] Internal PEP database: No hits.
+[3] Adverse media: No automated hits in 60-day window.
+[4] Internal elevated-risk merchant list: No hits.
+[5] FinCEN Geographic Targeting Orders (GTO) registry: No hits.
+
+OVERALL SCREENING STATUS: Clean against denied-parties lists.
+
+NOTE: Screening surface does NOT include corporate-structure / shell-entity-pattern signals. Those patterns (DE-formed LLC with mobile-operations address, registered-agent-only address, BS-Nassau IP cluster, beneficiary-of-wires matching principal name) are surfaced through pattern-detection capability rather than denied-parties screening.

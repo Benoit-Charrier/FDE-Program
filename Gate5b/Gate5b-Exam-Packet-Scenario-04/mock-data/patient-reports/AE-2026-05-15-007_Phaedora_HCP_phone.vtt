@@ -1,0 +1,51 @@
+WEBVTT
+
+NOTE - Phone call transcript, receipt timestamp 2026-05-15 13:45 ET
+NOTE - Helix MedInfo line, Operator: Marcus L. (MedInfo Specialist III)
+NOTE - Caller: Dr. Bartolomé Tomé, MD, treating psychiatrist
+NOTE - Reporting a fatal event involving Phaedora
+
+00:00:00.000 --> 00:00:08.500
+<v MedInfo> Helix Medical Information, this is Marcus. How can I help you?
+
+00:00:08.800 --> 00:00:24.300
+<v Dr.Tomé> Hi Marcus, this is Dr. Bart Tomé in San Diego. I'm a psychiatrist. I'm calling to report a fatal event with one of my patients who was on Phaedora. I want to do this by phone because I'm in clinic and I don't have time to fax today.
+
+00:00:24.600 --> 00:00:32.500
+<v MedInfo> Of course Dr. Tomé. I am so sorry to hear that. Let me take down the details. Can I get your contact info first?
+
+00:00:32.800 --> 00:00:42.300
+<v Dr.Tomé> Yes — Bartolomé Tomé, T-O-M-E with the accent. Tomé Psychiatry Associates, San Diego. Phone 619-555-0822. Email tome at tomepsych.example.
+
+00:00:42.600 --> 00:00:48.500
+<v MedInfo> Got it. Tell me about your patient.
+
+00:00:48.800 --> 00:01:38.300
+<v Dr.Tomé> Sixty-one year old male. He's been my patient for four years for treatment-resistant depression. Multiple prior trials of SSRIs and SNRIs without sustained response. I started him on Phaedora in late January, on the standard titration. Eight milligrams for the first week then up to sixteen milligrams. He'd been doing well — his depression scales were the best in years. He was tolerating it. He was on concomitant medications — I'll need to get the list from his file but I remember sertraline that I'd been tapering, and he was on amlodipine for hypertension, and a beta blocker, atenolol. He was on warfarin for a chronic atrial fibrillation since 2019. 
+
+00:01:38.600 --> 00:02:18.800
+<v Dr.Tomé> Last Sunday, May tenth, his wife found him unresponsive in their bedroom in the early evening. Paramedics came, he could not be resuscitated. Pronounced at the scene. The medical examiner did an autopsy yesterday. Preliminary cause of death is being listed as fatal arrhythmia. There's no obvious cardiac structural finding but the toxicology is pending. The ME asked me about his medications.
+
+00:02:19.100 --> 00:02:34.500
+<v MedInfo> I am very sorry. Do you have any reason to suspect Phaedora as a contributor?
+
+00:02:34.800 --> 00:03:18.500
+<v Dr.Tomé> Honestly — I don't know. Phaedora doesn't have a cardiac signal that I'm aware of, but he was on a complex regimen. He'd been doing well clinically. The sertraline I was tapering and there's an interaction question because Phaedora and SSRIs together aren't usually combined for very long. The warfarin's INR was stable. I'm reporting because — well — a patient on Phaedora died of cardiac arrest at sixty-one and I think Helix should know about it. Whether Phaedora caused it I don't know.
+
+00:03:18.800 --> 00:03:27.200
+<v MedInfo> That's exactly what we need to know. Are you the original prescriber of Phaedora for this patient?
+
+00:03:27.500 --> 00:03:31.200
+<v Dr.Tomé> Yes. I prescribed it and managed it.
+
+00:03:31.500 --> 00:03:42.000
+<v MedInfo> Will you be willing to provide follow-up information when the toxicology comes back and when the medical examiner finalises the cause of death?
+
+00:03:42.300 --> 00:03:50.500
+<v Dr.Tomé> Yes. I'll fax over his medication list and his prior labs this afternoon. I'll have my office send the family release for the autopsy report.
+
+00:03:50.800 --> 00:03:54.500
+<v MedInfo> Thank you. I am very sorry.
+
+00:03:54.800 --> 00:03:57.000
+<v Dr.Tomé> Thanks Marcus.

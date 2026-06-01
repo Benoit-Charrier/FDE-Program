@@ -1,0 +1,33 @@
+Photo metadata extract — FNL-2026-0516-08 Theodore Lacasse Tesla fire
+Submitted via broker email (Roy Kim) on 2026-05-16
+
+Photo 1: tesla_burned_exterior_front_quarter.jpg
+  EXIF: captured 2026-05-12 02:18 CDT, iPhone 14 Pro
+  Geotag: 33.5142°N 86.7421°W (Birmingham AL)
+  Description: front quarter of burned vehicle, daylight conditions visible
+
+Photo 2: tesla_burned_rear_full.jpg
+  EXIF: captured 2026-05-12 02:18 CDT, iPhone 14 Pro
+  Geotag: 33.5142°N 86.7421°W
+  Description: rear of burned vehicle, daylight
+
+Photo 3: tesla_burned_interior.jpg
+  EXIF: captured 2026-05-12 02:19 CDT, iPhone 14 Pro
+  Geotag: 33.5142°N 86.7421°W
+  Description: gutted interior
+
+Photo 4: parking_lot_overview.jpg
+  EXIF: captured 2026-05-12 02:19 CDT, iPhone 14 Pro
+  Geotag: 33.5142°N 86.7421°W
+  Description: parking lot at distance; vehicle in foreground
+
+Photo 5: charged_remains.jpg
+  EXIF: captured 2026-05-12 02:20 CDT, iPhone 14 Pro
+  Geotag: 33.5142°N 86.7421°W
+  Description: close-up of charred floor pan
+
+NOTES (raw metadata observations only — not analysis):
+- All five photos captured between 02:18 and 02:20 CDT
+- Customer email to broker (2026-05-16) describes the incident as "Monday night" — Monday was 2026-05-12
+- Birmingham Fire Department incident report number provided by customer references date 2026-05-11 (Sunday)
+- Customer's apartment complex address is registered as 4480 Riverwalk Trail, Birmingham AL — coordinates 33.5142°N 86.7421°W

@@ -1,0 +1,22 @@
+OFAC SDN List Reference Extract — pertaining to alert CASE-2026-05-13-AML-1208
+
+SDN Last Updated: 2026-05-01
+List: Specially Designated Nationals
+
+ENTITY: KHAN, Muhammad
+Designation: Individual
+Sanction program: SDGT (Specially Designated Global Terrorist) per E.O. 13224
+Designation date: 2018-06-22
+
+Identifying information:
+- Aliases: "Muhammad Khan", "Mohammed Khan", "Mohamed Khan", "M. Khan"
+- DOB: 1972-03-15
+- Place of birth: Peshawar, Pakistan
+- Nationality: Pakistan
+- Passport number: KHN-7720-PK (Pakistan)
+- Known addresses:
+  • House 22, Sector F-7, Karachi, Pakistan
+  • Reported transitional address: Quetta, Pakistan (2020)
+- Notes: Designated for material support to ISIS-K affiliated network. No reported US presence.
+
+This is a reference extract from the OFAC SDN list for review against alert hits on common names of this designated individual.

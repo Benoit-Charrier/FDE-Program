@@ -1,0 +1,25 @@
+[PAY STUB — NorthSpan Health System]
+
+Employer: NorthSpan Health System
+Pay Period End: 2026-04-15
+Check Date: 2026-04-15
+Employee: Maria Delgado-Chen
+Emp ID: ***-**-7766
+
+EARNINGS                       HOURS    RATE          AMOUNT       YTD
+Regular                         80.00   $  65.10     $  5,208.33  $  41,666.64
+
+TAXES                          AMOUNT      YTD
+Federal Income Tax             $   729.17    $  5,833.36
+Social Security                $   322.92    $  2,583.36
+Medicare                       $    75.52    $    604.16
+State Income Tax               $   208.33    $  1,666.64
+
+DEDUCTIONS                     AMOUNT      YTD
+401(k)                         $   260.42    $  2,083.36
+Health Insurance               $   198.55    $  1,588.40
+
+GROSS PAY:    $  5,208.33
+NET PAY:      $  3,413.42
+
+[End of pay stub document]

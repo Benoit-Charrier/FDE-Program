@@ -1,0 +1,32 @@
+{
+  "submission_id": "APP-FNL-2026-0512-02",
+  "submitted_at": "2026-05-12T21:18:44-05:00",
+  "submission_channel": "Cardinal Mutual Mobile App v3.4.1",
+  "submitter": {
+    "name": "Helena Quintero",
+    "policy_number_entered": "HO38821",
+    "phone_on_file": "205-555-0744",
+    "email_on_file": "helena.quintero@email.example"
+  },
+  "loss_details": {
+    "loss_type_selected": "Homeowner — water damage",
+    "loss_date_entered": "2026-05-11",
+    "loss_time_entered": "approximately 7 PM",
+    "loss_location": "primary residence, basement",
+    "loss_description_freetext": "I came down to the basement around 7pm to do laundry and there was about 2 inches of water on the basement floor. I shut off the main water valve. Water was coming from the HVAC closet — looked like one of the copper lines had split. Called my HVAC guy, he came out at 8pm — yes I know that was fast — and confirmed it was a copper line on the unit that split, said it looks like it was leaking gradually for maybe a week then opened up tonight. Wet drywall about 18 inches up the wall. Carpet is soaked. Some boxes of kids' winter clothes were on the floor and got soaked. The HVAC unit itself is fine he said.",
+    "estimated_damage_freetext": "Drywall replacement maybe 50 linear feet. Carpet I think will need to be replaced. Possibly subfloor. Some personal items. Plus the copper line repair which the HVAC guy can do.",
+    "any_injuries": false,
+    "police_called": false,
+    "other_parties_involved": "HVAC contractor (Henson Brothers HVAC, 205-555-2210)"
+  },
+  "ale_question": "Can we get hotel coverage if the basement work means we can't run laundry for a week? Or is that not what ALE is for?",
+  "photos_uploaded": [
+    "basement_water_overview.jpg",
+    "drywall_damage_west_wall.jpg",
+    "hvac_closet_copper_line.jpg",
+    "soaked_boxes.jpg",
+    "carpet_overview.jpg"
+  ],
+  "photos_metadata_available": true,
+  "app_submission_was_complete": true
+}

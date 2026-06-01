@@ -1,0 +1,9 @@
+Date,Time_UTC,Direction,Type,Counterparty,Amount_USD,Channel,Balance_After
+2026-05-14,18:42:18,OUT,Cross-border outbound,Recipient: Oluwaseun Adeyemi (Lagos NG) via remittance product,14400.00,cross-border-remittance,1842.18
+2026-05-14,15:18:42,OUT,Cross-border outbound,Recipient: Maria Tipán (Quito EC) via remittance product,12800.00,cross-border-remittance,16242.18
+2026-05-13,21:30:55,OUT,Cross-border outbound,Recipient: Oluwaseun Adeyemi (Lagos NG) via remittance product,15600.00,cross-border-remittance,29042.18
+2026-05-13,12:42:08,IN,Direct Deposit - Employer payroll,Regional CPA firm,3284.40,ach,44642.18
+2026-05-10,18:55:42,IN,ACH inbound,Frost Bank transfer,28000.00,ach,41357.78
+2026-05-08,14:18:33,OUT,POS,HEB Houston,84.20,outbound,13357.78
+2026-04-30,12:30:08,IN,Direct Deposit - Employer payroll,Regional CPA firm,3284.40,ach,13441.98
+2026-04-22,21:18:42,OUT,POS,Whole Foods Houston,142.80,outbound,10157.58

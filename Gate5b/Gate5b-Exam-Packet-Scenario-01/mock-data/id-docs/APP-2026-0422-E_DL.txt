@@ -1,0 +1,13 @@
+[OCR EXTRACT — STATE DRIVER LICENSE]
+State: North Carolina
+Document Type: Driver License Class C
+
+Name: YUKI TANAKA
+DOB: 1991-10-30
+License Number: NC-DL-18207914
+Issued: 2023-10-30
+Expires: 2031-10-30
+Address: 92 CHEROKEE HEIGHTS ASHEVILLE NC 28803
+
+[Image confidence: 91% — clean scan]
+[End OCR extract]

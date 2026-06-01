@@ -1,0 +1,24 @@
+{
+  "vendor": "AltMed Listening, Inc.",
+  "alert_id": "ALM-2026-05-11-Solivian-1422",
+  "surfaced_to_Helix": "2026-05-11T11:55:08-04:00",
+  "platform": "Twitter / X (public post)",
+  "post_url_redacted": "twitter.example/[handle-redacted]/status/[id-redacted]",
+  "poster_handle": "@kidneywarrior_jr",
+  "poster_profile_bio_excerpt": "CKD warrior. Trying to live with this. Twin Cities, MN. Opinions my own.",
+  "post_text": "for anyone reading this who is on solivian for ckd — i've been on it 14 months and my legs have been so swollen i can't fit in my work shoes anymore. doctor says it's a known side effect but they wont change my dose because my kidney numbers are 'better'. anyone else dealing with this???",
+  "thread_replies_relevant": [
+    "@somebody_else: same here lol. started 2024. ankles are huge. my doc said the same",
+    "@notreallygiven: I had to come off solivian after 6 months because of fluid in lungs. you should ask about that",
+    "@kidneywarrior_jr (replying): i did pulmonary function test last month, normal. just the swelling. its embarassing",
+    "@another_user: have you tried diuretics? compression socks?"
+  ],
+  "vendor_extracted_signals": {
+    "suspect_drug_identified": "Solivian",
+    "ae_identified_freetext": "Peripheral oedema, severe (cannot fit work shoes), persistent (14 months)",
+    "patient_identifiable_features": "Self-disclosed: CKD diagnosis, on Solivian, 14 months of therapy, location 'Twin Cities, MN' (city-level), handle bio mentions twin cities",
+    "patient_identifier_class": "minimally-identifiable-only (handle + city + condition)",
+    "thread_mentions_other_AEs_third_party": "Pulmonary fluid (third-party report — '@notreallygiven' off-label commentary), edema (multiple)"
+  },
+  "vendor_note": "Per Helix-AltMed contract, posts mentioning Helix marketed products with identifiable AEs are forwarded within 4 business hours of vendor surfacing. Original post timestamp 2026-05-11 03:14 UTC (vendor processed ~7 hours later)."
+}

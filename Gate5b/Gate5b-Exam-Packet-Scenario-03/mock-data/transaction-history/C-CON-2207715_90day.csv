@@ -1,0 +1,13 @@
+Date,Time_UTC,Direction,Type,Counterparty,Amount_USD,Channel,Balance_After
+2026-05-13,18:55:11,IN,Direct Deposit,Tampa General Hospital payroll,2484.20,ach,3892.18
+2026-05-12,22:08:18,OUT,Bill pay,Tampa Electric,148.40,outbound,1407.98
+2026-05-11,14:30:42,OUT,POS,Publix Tampa,142.18,outbound,1556.38
+2026-05-10,09:18:55,IN,P2P transfer,Daughter (Sofia González),120.00,internal,1698.56
+2026-05-08,18:55:08,OUT,P2P transfer,Daughter (Sofia González),300.00,internal,1578.56
+2026-05-06,22:30:18,OUT,POS,Publix Tampa,84.90,outbound,1878.56
+2026-05-05,07:30:08,IN,Direct Deposit,Tampa General Hospital payroll,2484.20,ach,1963.46
+2026-04-30,14:18:42,OUT,Bill pay,Spectrum,128.00,outbound,-520.74
+2026-04-28,11:55:18,OUT,POS,Publix Tampa,156.30,outbound,-392.74
+2026-04-26,18:30:22,OUT,POS,Costco Tampa,398.20,outbound,-236.44
+2026-04-24,19:42:55,OUT,POS,Publix Tampa,182.18,outbound,161.76
+2026-04-22,07:30:08,IN,Direct Deposit,Tampa General Hospital payroll,2484.20,ach,343.94

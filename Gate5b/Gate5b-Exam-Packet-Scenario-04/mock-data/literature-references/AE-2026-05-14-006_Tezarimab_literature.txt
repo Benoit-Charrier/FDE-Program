@@ -1,0 +1,14 @@
+[EXTRACTED TEXT FROM LITERATURE ALERT — surfaced by Helix's contracted literature surveillance vendor on 2026-05-14]
+
+ALERT SOURCE: Helix-PharmaWatch Literature Surveillance Service
+ALERT TIMESTAMP: 2026-05-14 10:08 ET
+JOURNAL: Multiple Sclerosis Journal — Experimental, Translational and Clinical
+ARTICLE TITLE: "Delayed-onset cytopenia following anti-CD20 therapy: case series of three patients receiving tezarimab"
+AUTHORS: Khoury, S.K.; Bhattacharya, R.; Lindenmayer, T.; et al.
+PUBLISHED: Online ahead of print, 2026-05-13
+
+[Vendor extracted abstract:]
+We report three patients with relapsing multiple sclerosis who developed delayed-onset cytopenia 3-6 months after initiation of tezarimab, an anti-CD20 monoclonal antibody approved in 2023. Patient 1: a 47-year-old woman developed Grade 3 neutropenia (ANC 720/μL) 4 months after first infusion, requiring G-CSF support. Patient 2: a 52-year-old man developed Grade 4 thrombocytopenia (platelets 18,000/μL) 5 months after first infusion, requiring platelet transfusion and hospitalisation; his immune workup was consistent with immune thrombocytopenia. Patient 3: a 39-year-old woman developed combined neutropenia (ANC 920/μL) and thrombocytopenia (platelets 62,000/μL) 6 months after second infusion. None of the patients had alternative explanations after standard workup. We propose that delayed-onset cytopenia is an emerging signal for tezarimab and recommend ongoing vigilance. Two of the three patients (Patient 2 and Patient 3) were enrolled in independent clinical trials of tezarimab; Patient 1 was treated commercially.
+
+[Vendor commentary:]
+This is a published case series naming Tezarimab. Per Helix's literature surveillance SOP, ICSRs are required for each identifiable patient case where the suspect drug, AE, and minimally-identifiable patient information are available. Patient 1 (commercial use) has not been previously reported to Helix per cross-reference of our internal case database. Patients 2 and 3 (clinical trial patients) may have been reported through trial pharmacovigilance pathways separately — coordinate with clinical safety to confirm.

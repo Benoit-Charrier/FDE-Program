@@ -1,0 +1,25 @@
+[PAY STUB — Vector Atlas Software, Inc.]
+
+Employer: Vector Atlas Software, Inc.
+Pay Period End: 2026-04-15
+Check Date: 2026-04-15
+Employee: Robert M. Sanderson
+Emp ID: ***-**-4291
+
+EARNINGS                       HOURS    RATE          AMOUNT       YTD
+Regular                         86.67   $  88.90     $  7,708.33  $  57,812.50
+
+TAXES                          AMOUNT      YTD
+Federal Income Tax             $  1387.50    $ 10,406.25
+Social Security                $   477.92    $  3,584.40
+Medicare                       $   111.77    $    838.28
+State Income Tax               $   347.40    $  2,605.50
+
+DEDUCTIONS                     AMOUNT      YTD
+401(k)                         $   616.67    $  4,625.00
+Health Insurance               $   245.30    $  1,839.75
+
+GROSS PAY:    $  7,708.33
+NET PAY:      $  4,521.77
+
+[End of pay stub document]

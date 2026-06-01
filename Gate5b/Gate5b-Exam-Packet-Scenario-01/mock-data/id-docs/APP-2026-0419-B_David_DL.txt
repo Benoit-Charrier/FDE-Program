@@ -1,0 +1,13 @@
+[OCR EXTRACT — STATE DRIVER LICENSE]
+State: North Carolina
+Document Type: Driver License Class C
+
+Name: DAVID LEE CHEN
+DOB: 1986-04-08
+License Number: NC-DL-14820336
+Issued: 2022-04-08
+Expires: 2030-04-08
+Address: 4081 CALHOUN RIDGE MATTHEWS NC 28105
+
+[Image confidence: 91% — clean scan]
+[End OCR extract]

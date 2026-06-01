@@ -1,0 +1,13 @@
+[OCR EXTRACT — STATE DRIVER LICENSE]
+State: North Carolina
+Document Type: Driver License Class C
+
+Name: MARIA ANNALEE DELGADO-CHEN
+DOB: 1988-11-22
+License Number: NC-DL-21338906
+Issued: 2023-11-22
+Expires: 2031-11-22
+Address: 2240 GLENWOOD APT 14 CHARLOTTE NC 28204
+
+[Image confidence: 91% — clean scan]
+[End OCR extract]

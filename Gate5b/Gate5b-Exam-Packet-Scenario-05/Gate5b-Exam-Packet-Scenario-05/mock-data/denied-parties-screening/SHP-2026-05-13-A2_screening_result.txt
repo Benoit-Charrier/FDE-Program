@@ -1,0 +1,23 @@
+DENIED-PARTIES SCREENING REPORT
+Shipment: SHP-2026-05-13-A2
+Run timestamp: 2026-05-13 12:08 ET
+Lists searched: OFAC SDN, BIS Entity List, BIS Unverified List, BIS Denied Persons List, State DDTL, EU Consolidated List, Ferrum Internal Blocked List
+
+PARTIES SCREENED:
+[1] Consignee: Çelik Endüstri Ticaret AŞ, Istanbul TR
+    Status: No hits across all lists.
+    Notes: Consignee on file with prior license LIC-2024-W-3318.
+
+[2] Downstream end user: Aydın Power Plant, Aydın Province TR
+    Status: No hits across all lists.
+
+[3] Freight forwarder: Kuehne+Nagel Istanbul
+    Status: No hits.
+
+[4] Consignee's parent/related entities (per registry lookup): Çelik Yatırım AŞ (parent)
+    Status: No hits.
+
+OVERALL SCREENING STATUS: Clean. No actionable hits.
+
+Notes for analyst review:
+- See freight forwarder email re: possible change in Aydın Power Plant operating entity due to JV restructure. Re-screen downstream end user if operating entity confirms different.

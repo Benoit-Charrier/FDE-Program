@@ -1,0 +1,13 @@
+[OCR EXTRACT — STATE DRIVER LICENSE]
+State: North Carolina
+Document Type: Driver License Class C
+
+Name: PRIYA SHANTI KHANNA
+DOB: 1985-09-04
+License Number: NC-DL-11540778
+Issued: 2023-09-04
+Expires: 2031-09-04
+Address: 1601 HEATHER LANE CHARLOTTE NC 28209
+
+[Image confidence: 91% — clean scan]
+[End OCR extract]

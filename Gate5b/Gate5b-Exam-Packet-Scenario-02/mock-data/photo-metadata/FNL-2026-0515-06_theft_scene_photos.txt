@@ -1,0 +1,27 @@
+Photo metadata extract — FNL-2026-0515-06 Joaquin Restrepo residential burglary
+Submitted via mail (printed photos included with handwritten statement, scanned for record)
+
+Photo 1: rear_bedroom_window_pried.jpg (scan)
+  Scan date: 2026-05-15
+  Source: photo taken by Hoover PD on scene 2026-04-28 (per scanning note on margin: "from HPD copy")
+  Description: rear window with frame deformation, glass cracked, pry marks visible
+
+Photo 2: empty_jewelry_box_master_bedroom.jpg (scan)
+  Scan date: 2026-05-15
+  Source: photo taken by Joaquin Restrepo, 2026-04-28 morning per margin note
+  Description: open jewelry box, empty, on bedroom dresser
+
+Photo 3: open_drawer_master_bedroom.jpg (scan)
+  Scan date: 2026-05-15
+  Source: Joaquin Restrepo, 2026-04-28
+  Description: dresser drawer pulled open, contents disturbed
+
+Photo 4: living_area_intact.jpg (scan)
+  Scan date: 2026-05-15
+  Source: Joaquin Restrepo, 2026-04-28
+  Description: living room with TV and electronics undisturbed
+
+Photo 5: bolted_safe_intact.jpg (scan)
+  Scan date: 2026-05-15
+  Source: Joaquin Restrepo, 2026-04-28
+  Description: floor safe in closet, untouched, no pry marks

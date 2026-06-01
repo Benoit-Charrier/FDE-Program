@@ -1,0 +1,21 @@
+{
+  "customer_id": "C-CON-7714290",
+  "customer_type": "consumer_wallet",
+  "kyc_verification_tier": 3,
+  "name": "Reuben Marshall Tate",
+  "dob": "1986-04-09",
+  "ssn_last4": "8821",
+  "address_on_file": "4421 Beck Springs Rd, Kingsport TN 37664",
+  "phone": "423-555-0319",
+  "email": "rmtate86@email.example",
+  "id_verified": "TN driver license + selfie (2023-09-15)",
+  "occupation_on_file": "Owner-operator long-haul trucking (self-employed)",
+  "expected_monthly_volume_self_reported": "$8,000-$12,000 fuel + cash deposits + routine personal",
+  "account_opened": "2023-09-15",
+  "wallet_funding_sources": ["First Horizon Bank checking", "cash deposits at FNBC partner network"],
+  "linked_business_accounts": [],
+  "prior_amls_filings": [],
+  "prior_internal_review_dispositions": "1 prior alert 2024-08, structuring pattern, dispositioned no-SAR (analyst: 'documented owner-operator cash deposit pattern; aligned with self-reported business')",
+  "device_fingerprints_on_file": ["dev-iphone-7720", "dev-windows-laptop-9931"],
+  "ip_clusters_recent_60d": ["TN.Kingsport.Comcast (primary residence)", "TN.Memphis.Verizon.mobile (trucking route)", "GA.Atlanta.AT&T (trucking route)", "TX.Dallas.T-Mobile (trucking route)"]
+}

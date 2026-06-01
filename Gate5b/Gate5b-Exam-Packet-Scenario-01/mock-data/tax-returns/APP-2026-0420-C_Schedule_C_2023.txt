@@ -1,0 +1,25 @@
+[FORM 1040 SCHEDULE C — Profit or Loss From Business — Tax Year 2023]
+
+Name of proprietor: Jasmine R. Beauchamp
+Business name: Beauchamp Design Studio, LLC
+Principal business: Graphic Design / Brand Identity Services
+NAICS code: 541430
+
+Part I — Income
+1. Gross receipts or sales:                $73,500
+2. Returns and allowances:                       0
+3. Net receipts:                            $73,500
+4. Cost of goods sold:                           0
+5. Gross profit:                            $73,500
+6. Other income:                                 0
+7. Gross income:                            $73,500
+
+Part II — Expenses
+28. Total expenses:                          $33,660
+
+29. Tentative profit:                        $39,840
+30. Home office deduction:                     2,400
+
+31. **Net profit:                           $37,440**
+
+[End Schedule C]

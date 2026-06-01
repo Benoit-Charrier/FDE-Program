@@ -1,0 +1,25 @@
+[PAY STUB — Vector Atlas Software, Inc.]
+
+Employer: Vector Atlas Software, Inc.
+Pay Period End: 2026-04-15
+Check Date: 2026-04-15
+Employee: David L. Chen
+Emp ID: ***-**-1083
+
+EARNINGS                       HOURS    RATE          AMOUNT       YTD
+Regular                         86.67   $  69.71     $  6,041.67  $  45,312.53
+
+TAXES                          AMOUNT      YTD
+Federal Income Tax             $  1087.50    $  8,156.25
+Social Security                $   374.58    $  2,808.85
+Medicare                       $    87.60    $    656.93
+State Income Tax               $   272.55    $  2,044.16
+
+DEDUCTIONS                     AMOUNT      YTD
+401(k)                         $   483.33    $  3,625.00
+Health Insurance               $   245.30    $  1,839.75
+
+GROSS PAY:    $  6,041.67
+NET PAY:      $  3,490.81
+
+[End of pay stub document]

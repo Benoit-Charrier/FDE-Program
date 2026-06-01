@@ -1,0 +1,15 @@
+Date,Description,Type,Amount,Balance
+--- Jasmine R. Beauchamp - Account ***-***-7704 - 60-day statement ---,,,,"$11,240.30"
+2026-02-16,Retainer ACH - Cobalt Studio LLC,DEPOSIT,4500.00,15740.30
+2026-02-20,Rent - 718 Magnolia,DEBIT,-1675.00,14065.30
+2026-02-25,Retainer ACH - Pinewright Brand Studio,DEPOSIT,3200.00,17265.30
+2026-02-28,DD - Carolina Coastal CC,DEPOSIT,912.71,18178.01
+2026-03-04,Project Pmt - Halftone Press LLC,DEPOSIT,2850.00,21028.01
+2026-03-08,Square Settlement - Beauchamp Design,DEPOSIT,1124.65,22152.66
+2026-03-15,Self-Emp Tax Q1 Estimated,DEBIT,-3200.00,18952.66
+2026-03-16,Retainer ACH - Cobalt Studio LLC,DEPOSIT,4500.00,23452.66
+2026-03-20,Rent - 718 Magnolia,DEBIT,-1675.00,21777.66
+2026-03-28,DD - Carolina Coastal CC,DEPOSIT,912.71,22690.37
+2026-04-01,Project Pmt - Mile Marker Brewing,DEPOSIT,2200.00,24890.37
+2026-04-10,DD - Carolina Coastal CC,DEPOSIT,912.71,25803.08
+2026-04-16,Retainer ACH - Cobalt Studio LLC,DEPOSIT,4500.00,30303.08

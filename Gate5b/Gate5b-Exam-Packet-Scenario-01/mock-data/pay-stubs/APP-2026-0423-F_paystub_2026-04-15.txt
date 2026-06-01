@@ -1,0 +1,25 @@
+[PAY STUB — Holloway-Pine Marketing LLC]
+
+Employer: Holloway-Pine Marketing LLC
+Pay Period End: 2026-04-15
+Check Date: 2026-04-15
+Employee: Devon Washington-Pierce
+Emp ID: ***-**-5547
+
+EARNINGS                       HOURS    RATE          AMOUNT       YTD
+Regular                         86.67   $  55.27     $  4,791.67  $  38,333.36
+
+TAXES                          AMOUNT      YTD
+Federal Income Tax             $   862.50    $  6,900.00
+Social Security                $   297.08    $  2,376.67
+Medicare                       $    69.48    $    555.83
+State Income Tax               $   215.62    $  1,725.00
+
+DEDUCTIONS                     AMOUNT      YTD
+401(k)                         $   239.58    $  1,916.67
+Health Insurance               $   188.40    $  1,507.20
+
+GROSS PAY:    $  4,791.67
+NET PAY:      $  2,919.01
+
+[End of pay stub document]

@@ -1,0 +1,22 @@
+{
+  "customer_id": "C-CON-9923441",
+  "customer_type": "consumer_wallet",
+  "kyc_verification_tier": 3,
+  "name": "Mohammed Khan",
+  "dob": "1993-11-22",
+  "tax_id_type": "ITIN",
+  "tax_id_last4": "5510",
+  "address_on_file": "1840 Glendale Ave Apt 4F, Detroit MI 48238",
+  "phone": "313-555-0227",
+  "email": "mkhan.detroit@email.example",
+  "id_verified": "Pakistan passport + US student visa F-1 (2022-08-04) + selfie",
+  "occupation_on_file": "Graduate student, Wayne State University, computer science MS program",
+  "expected_monthly_volume_self_reported": "$1,500-$3,000 (tuition adjacent, living expenses)",
+  "account_opened": "2022-08-19",
+  "wallet_funding_sources": ["Wayne State stipend ACH", "occasional family wire-in via partner bank"],
+  "linked_business_accounts": [],
+  "prior_amls_filings": [],
+  "prior_internal_review_dispositions": "0 prior alerts",
+  "device_fingerprints_on_file": ["dev-iphone-3344"],
+  "ip_clusters_recent_60d": ["MI.Detroit.Comcast (residence)", "MI.Detroit.WayneState.campus"]
+}

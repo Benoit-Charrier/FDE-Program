@@ -1,0 +1,53 @@
+{
+  "case_id": "CASE-2026-05-15-AML-1408",
+  "primary_customer_id": "C-CON-6611442",
+  "linkage_method": "shared device fingerprint + IP cluster + funding-source overlap",
+  "linkage_confidence": "high",
+  "linked_accounts": [
+    {
+      "customer_id": "C-CON-6611442",
+      "name_on_account": "Tyrone Ostrander",
+      "account_opened": "2026-03-02",
+      "kyc_tier": 3,
+      "primary_device_fingerprint": "dev-android-7011"
+    },
+    {
+      "customer_id": "C-CON-6611445",
+      "name_on_account": "Bryson Ostrander",
+      "account_opened": "2026-03-08",
+      "kyc_tier": 3,
+      "primary_device_fingerprint": "dev-android-7011 (same as primary)",
+      "address_match_primary": false,
+      "ip_cluster_overlap_primary": "85% in last 30 days"
+    },
+    {
+      "customer_id": "C-CON-6611448",
+      "name_on_account": "Olivia Wiles",
+      "account_opened": "2026-03-12",
+      "kyc_tier": 3,
+      "primary_device_fingerprint": "dev-android-7011 (same as primary)",
+      "address_match_primary": false,
+      "ip_cluster_overlap_primary": "78% in last 30 days"
+    },
+    {
+      "customer_id": "C-CON-6611449",
+      "name_on_account": "Marcus Wiles",
+      "account_opened": "2026-03-12",
+      "kyc_tier": 3,
+      "primary_device_fingerprint": "dev-android-7011 (same as primary)",
+      "address_match_primary": false,
+      "ip_cluster_overlap_primary": "82% in last 30 days"
+    }
+  ],
+  "internal_transfer_summary_7_day": {
+    "C-6611442_to_C-6611445": [{"amt": 4200, "ts": "2026-05-09T14:18Z"}, {"amt": 3800, "ts": "2026-05-11T22:08Z"}],
+    "C-6611445_to_C-6611448": [{"amt": 4100, "ts": "2026-05-09T14:42Z"}, {"amt": 3700, "ts": "2026-05-11T22:30Z"}],
+    "C-6611448_to_C-6611449": [{"amt": 4000, "ts": "2026-05-09T15:08Z"}, {"amt": 3600, "ts": "2026-05-11T22:55Z"}],
+    "C-6611449_to_external_bank_Acct_5511720": [{"amt": 8200, "ts": "2026-05-09T15:42Z"}, {"amt": 7400, "ts": "2026-05-11T23:30Z"}],
+    "totals_7d": "$89,200 aggregate movement among 4 linked accounts + external"
+  },
+  "external_endpoint_details": {
+    "Acct_5511720_routing": "Eastside Federal Credit Union",
+    "Acct_5511720_beneficiary": "Tyrone Ostrander Personal"
+  }
+}

@@ -1,0 +1,14 @@
+PURCHASE ORDER — Sundial Manufacturing LLC
+PO Number: SUN-UAE-2026-3318
+Issued: 2026-05-12
+Buyer: Sundial Manufacturing LLC, Dubai, United Arab Emirates
+Seller: Ferrum Industrial Group, Cleveland OH, USA
+
+ITEMS
+1. Industrial controller, model FRM-IC-3192-S (ECCN per Ferrum classification 3A992.b) — qty 1 unit, unit price $28,400
+
+End-use: Factory upgrade — replacement of failed control unit, same model as prior license LIC-2024-X-2207 (valid 2024-04-15 through 2025-04-14).
+
+Note from Sundial: We have ordered this same model previously under our prior license. We do not anticipate any license requirement change for a like-for-like replacement.
+
+Note from Ferrum sales: Sundial has been a stable customer for ~3 years. Their prior license LIC-2024-X-2207 covered this product to this consignee through April 2025.

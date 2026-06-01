@@ -1,0 +1,22 @@
+WATCHLIST SCREENING REPORT — C-CON-9923441
+Generated 2026-05-13 09:38 UTC by AML monitoring system
+
+CUSTOMER: Mohammed Khan
+DOB: 1993-11-22
+TAX ID: ITIN ****5510
+ADDRESS: Detroit MI
+
+WATCHLIST HITS:
+[1] OFAC SDN List Entry: "KHAN, Muhammad" 
+    Match score: 0.74 (above 0.70 alert threshold)
+    SDN list DOB: 1972-03-15 (does NOT match customer DOB 1993-11-22)
+    SDN list aliases: "Mohammed Khan", "Mohamed Khan"
+    SDN list nationality: Pakistan
+    SDN list sanction program: SDGT (Specially Designated Global Terrorist)
+    SDN list designation date: 2018-06-22
+    SDN list known address: Karachi, Pakistan (does NOT match customer address Detroit MI)
+
+[2] Internal PEP database: No hits.
+[3] Adverse media: No automated hits in 60-day window.
+
+NOTE: The OFAC SDN entry is a common-name match. Customer DOB differs by 21 years. Customer is a US-based student-visa holder per KYC. Analyst review required for confirm/disconfirm.

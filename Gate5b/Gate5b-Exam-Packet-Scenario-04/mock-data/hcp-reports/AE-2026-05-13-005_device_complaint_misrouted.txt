@@ -1,0 +1,25 @@
+[TRANSCRIBED FROM EMAIL — receipt timestamp 2026-05-13 16:18 ET]
+
+From: Adriana Costello, PharmD <acostello@stcatherinepharmacy.example>
+To: drugsafety@helix-therapeutics.example
+Subject: Reporting an issue with a Helix product — Solivian injection pen
+Date: Wed, 13 May 2026 16:18:42 -0400
+
+Helix Drug Safety team,
+
+I am the consulting pharmacist for St. Catherine's Outpatient Pharmacy. I am writing to report a product complaint regarding a Solivian autoinjector pen received in our most recent shipment.
+
+Device serial number: SOL-AI-2026-04-PR-19228
+Lot number: SOL-LOT-2026-Q1-08821
+
+Issue: When patient (counselled at our pharmacy) attempted to use the pen, the dosing dial would not advance past 5 mg even after the manufacturer's instructions for the 10 mg titrated dose were followed. The patient returned the device to us. The mechanical dosing dial is stuck and will not turn.
+
+The patient took the prior 5 mg dose without issue. No adverse event was experienced by the patient — they returned the device the next day to switch to the working device, and continued on their established 10 mg regimen via a second autoinjector that worked normally.
+
+I understand from the Solivian prescribing pamphlet that device defects should be reported. Please advise whom I should contact for this device complaint — I was not sure whether to send to Drug Safety or to a device complaint team.
+
+Adriana Costello, PharmD
+Consulting Pharmacist
+St. Catherine's Outpatient Pharmacy
+Boston MA
+508-555-0192

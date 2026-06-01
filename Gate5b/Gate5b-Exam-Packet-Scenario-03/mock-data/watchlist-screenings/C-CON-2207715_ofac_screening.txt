@@ -1,0 +1,22 @@
+WATCHLIST SCREENING REPORT — C-CON-2207715
+Generated 2026-05-13 15:55 UTC by AML monitoring system
+
+CUSTOMER: Maria González
+DOB: 1979-06-14
+SSN: ****4421
+ADDRESS: Tampa FL
+
+WATCHLIST HITS:
+[1] OFAC SDN List Entry: "GONZALEZ-ALAVA, Maria de los Angeles"
+    Match score: 0.82 (above 0.80 high-attention threshold)
+    SDN list DOB: 1978-01-18 (close — within 18 months of customer DOB but not exact match)
+    SDN list aliases: "Maria Gonzalez", "Maria González Alava"
+    SDN list nationality: Venezuela
+    SDN list sanction program: VENEZUELA (E.O. 13692, designated for trafficking-finance violations)
+    SDN list designation date: 2020-11-15
+    SDN list known address: Caracas, Venezuela (does NOT match customer address Tampa FL)
+
+[2] Internal PEP database: No hits.
+[3] Adverse media: No automated hits in 60-day window.
+
+NOTE: SDN designation is for Venezuelan trafficking-finance program. Customer is a US-passport-on-file US-citizen-since-birth registered nurse at Tampa General Hospital, Florida resident since 2003 per KYC. Customer DOB differs by 17 months from SDN list. Match score 0.82 is above the high-attention threshold but the disposition is analyst judgement.

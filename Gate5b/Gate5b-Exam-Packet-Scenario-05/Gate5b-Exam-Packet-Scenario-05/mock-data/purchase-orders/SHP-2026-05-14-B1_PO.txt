@@ -1,0 +1,14 @@
+PURCHASE ORDER — Apex Star Pte Ltd
+PO Number: ASP-2026-44218
+Issued: 2026-05-11
+Buyer: Apex Star Pte Ltd, Singapore
+Seller: Ferrum Industrial Group, Austin TX, USA
+
+ITEMS
+1. Semiconductor process-control equipment subsystem, model FRM-SP-3318-A (ECCN per Ferrum classification 3B991.b.1.b) — qty 4 units, unit price $48,500
+
+End-use: Per buyer statement — "training laboratory equipment for technical college research at Singapore National Polytechnic Institute."
+
+Ship-to: Apex Star Pte Ltd, 88 Marina Boulevard #14-22, Singapore 018982 (Apex Star is a broker/distributor; consignee not the end user)
+
+Downstream end user: per buyer statement, Singapore National Polytechnic Institute, training laboratory
