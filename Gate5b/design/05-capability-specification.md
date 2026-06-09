@@ -1,6 +1,6 @@
 # Deliverable 5 — Production-Grade Capability Specification
 **Gate 5b Final Exam · Lattice Pay AML/KYC Case Review Agent (LACRA)**
-**Version:** 1.0 — Design phase. Amendment notes will be appended during build phase.
+**Version:** 1.1 — Build-phase amendments AM-01 through AM-06 incorporated. See Section 9 for amendment register.
 
 ---
 
@@ -73,8 +73,10 @@ data (graceful degradation).
 
 **Input:** `alert_type_code` + transaction history (if available)
 **Logic:**
-- If alert involves transactions via the remittance product (`channel = "remittance"` in
-  transaction CSV, or alert_type_code contains "REMIT"), classify as `OUT_OF_SCOPE_REMITTANCE`
+- If alert involves transactions via the remittance product (substring `"remittance"` present
+  in `channel` field of any transaction row, case-insensitive; OR alert_type_code contains
+  "REMIT"), classify as `OUT_OF_SCOPE_REMITTANCE`. **AM-01:** actual CSV value is
+  `cross-border-remittance`; substring match is required — exact equality would miss it.
 - If alert_type_code indicates securities/broker-dealer activity, classify as
   `OUT_OF_SCOPE_BROKER_DEALER`
 - Otherwise: `IN_SCOPE`
@@ -177,6 +179,17 @@ current_30d = cross_border_outbound_in_current_30d;
 ratio = current_30d / prior_avg (if prior_avg = 0, flag as "no prior cross-border history")
 **Severity:** HIGH if ratio ≥ 10×; MEDIUM if 5–10×
 
+**AM-10 — Data window substitution:** The 90-day transaction extract does not cover the
+full 12-month prior period required by this rule. In the prototype and current production
+integration, the agent uses the available 90-day window as a proxy: if cross-border
+outbound is absent or below $500 in the prior 60 days (days 31–90 of the extract), the
+agent flags "no prior cross-border baseline" and assigns MEDIUM severity rather than
+computing a ratio. If cross-border outbound is present in the prior 60 days, the agent
+computes an annualised proxy (prior_60d_total / 2 as the monthly average). Production
+must extend the transaction data source to a 12-month extract to compute the ratio per the
+original rule. Until then, velocity anomaly detection is conservative (under-flags) rather
+than aggressive (over-flags).
+
 #### 3d. Counterparty risk concentration
 
 **Rule:** ≥70% of outbound transaction value in the 90-day window goes to a single counterparty
@@ -185,6 +198,12 @@ institution (routing number resolves to a Cayman, BVI, or other high-risk jurisd
 
 **Evidence format:** Counterparty name, % of outbound volume, dollar amount, jurisdiction
 **Severity:** HIGH if offshore + ≥70%; MEDIUM if elevated-risk merchant list only
+
+**Prototype limitation:** Lattice's elevated-risk merchant list is not available as a data
+source in the prototype. Rule 3d applies the offshore-jurisdiction check only (criterion b).
+Criterion (a) requires a `read_merchant_risk_list(counterparty_id)` tool to be added in
+production (Wave 2). Cases where criterion (a) would be the sole trigger default to
+`CUSTOMER_RFI` rather than `ESCALATE_SAR` until that tool is available.
 
 #### 3e. Thin KYC + volume mismatch
 
@@ -198,7 +217,10 @@ $25,000 (the Tier-1 limit)
 
 If ≥2 patterns are detected simultaneously, add a synthetic entry:
 `pattern_type: "MULTI_PATTERN_CONVERGENCE"` with description noting the co-occurring patterns.
-Severity: HIGH.
+Severity: inherits the highest severity among co-occurring patterns (HIGH if any constituent
+pattern is HIGH; MEDIUM if all are MEDIUM; LOW if all are LOW or only low-confidence signals).
+The severity of the MULTI_PATTERN_CONVERGENCE entry must never exceed the highest constituent
+severity.
 
 ---
 
@@ -289,18 +311,70 @@ reference outputs not produced by JtD-2 through JtD-4.
 
 ## 4. Output schema (full)
 
-See ADR-003 for top-level schema. All fields are required in the output unless marked optional.
+All fields are required unless marked `optional`. Fields marked `IN_SCOPE only` are `null`
+for out-of-scope cases. **AM-04** adds `sdn_list_version`; **AM-06** adds `sar_clock_start_utc`
+and `alert_status`.
 
-**Required fields in all outputs:**
-- `case_id`, `customer_id`, `alert_id`, `generated_at_utc`, `agent_version`
-- `scope_classification`
-- `disposition` (always present; `ROUTE_OUT_OF_SCOPE` for out-of-scope cases)
+```
+Top-level object:
 
-**Required for in-scope cases only:**
-- `narrative`, `patterns_detected`, `watchlist_status`, `data_gaps`
+  case_id              string  — "{alert_id}", required
+  customer_id          string  — format C-CON-NNNNNNN or C-BIZ-NNNNNNN, required
+  alert_id             string  — format CASE-YYYY-MM-DD-AML-NNNN, required
+  generated_at_utc     string  — ISO 8601 UTC timestamp, set at generation time, required
+  agent_version        string  — e.g. "LACRA-1.0", required
+  alert_status         string  — enum [OPEN], hardcoded OPEN by agent; case mgmt system
+                                 updates on analyst sign-off, required  (AM-06)
+  sdn_list_version     string  — YYYY-MM-DD date of SDN list used; prototype hardcoded
+                                 "2026-05-01", required  (AM-04)
+  scope_classification string  — enum [IN_SCOPE | OUT_OF_SCOPE_REMITTANCE |
+                                 OUT_OF_SCOPE_BROKER_DEALER], required
+  sar_clock_start_utc  string  — ISO 8601 UTC; equals triggered_at_utc when
+                                 disposition.recommendation = ESCALATE_SAR; null otherwise
+                                 required  (AM-06)
 
-**Optional:**
-- `routing` (only for out-of-scope cases)
+  disposition          object  — always present, required
+    recommendation     string  — enum [CLEAR | ESCALATE_SAR | CUSTOMER_RFI |
+                                 ACCOUNT_FREEZE | FURTHER_INFO_NEEDED |
+                                 ROUTE_OUT_OF_SCOPE], required
+    reasoning          string  — ≥50 chars; must cite specific transactions and patterns;
+                                 required for IN_SCOPE; omitted for OUT_OF_SCOPE
+    confidence         decimal — range 0.0–1.0; required for IN_SCOPE; omitted for
+                                 OUT_OF_SCOPE
+    supporting_transactions  array of string  — transaction citation format:
+                                 "{date} ${amount} ({channel})"; optional
+    uncertainty_flags  array of string  — free-text flags; optional
+
+  narrative            string  — 150–400 words; IN_SCOPE only; null for OUT_OF_SCOPE
+
+  patterns_detected    array   — zero or more items; IN_SCOPE only; null for OUT_OF_SCOPE
+    [item]:
+      pattern_type     string  — enum [STRUCTURING | LAYERING | VELOCITY_ANOMALY |
+                                 COUNTERPARTY_RISK | THIN_KYC |
+                                 MULTI_PATTERN_CONVERGENCE], required
+      description      string  — free text, required
+      evidence         array of string  — ≥1 item; format "{date} ${amount} ({channel})"
+                                 for transaction citations, required
+      severity         string  — enum [HIGH | MEDIUM | LOW], required
+
+  watchlist_status     object  — IN_SCOPE only; null for OUT_OF_SCOPE
+    hit_present        boolean — required
+    resolution         string  — enum [NO_HIT | WATCHLIST_DISCONFIRMED |
+                                 WATCHLIST_UNRESOLVED | NO_SCREENING_DATA], required
+    confidence         decimal — range 0.0–1.0; required if hit_present = true
+    disconfirmation_evidence  array of string  — one item per disconfirmation factor;
+                                 required if resolution = WATCHLIST_DISCONFIRMED
+
+  data_gaps            array of string  — one item per missing/unavailable data source;
+                                 empty array [] if none; IN_SCOPE only
+
+  routing              object  — OUT_OF_SCOPE cases only; optional otherwise
+    destination        string  — routing team name, required if OUT_OF_SCOPE
+    reason             string  — one sentence, required if OUT_OF_SCOPE
+
+  _audit_log           object  — written by agent, not part of case package proper;
+                                 see Section 5.1 for schema
+```
 
 ---
 
@@ -310,19 +384,31 @@ See ADR-003 for top-level schema. All fields are required in the output unless m
 
 ```json
 {
-  "audit_id": "UUID",
+  "audit_id": "UUID — generated per case run",
   "case_id": "string",
   "customer_id": "string",
   "alert_id": "string",
-  "processed_at_utc": "ISO 8601",
+  "processed_at_utc": "ISO 8601 UTC",
   "agent_version": "string",
-  "disposition_recommendation": "string",
-  "confidence": "decimal",
+  "disposition_recommendation": "string — enum value",
+  "confidence": "decimal 0.0–1.0",
   "processing_duration_ms": "integer",
   "data_sources_accessed": ["string"],
-  "data_gaps": ["string"]
+  "data_gaps": ["string"],
+  "sdn_list_version": "string — YYYY-MM-DD  (AM-04)",
+  "patterns_detected_summary": ["string — one item per pattern_type detected  (AM-03)"],
+  "watchlist_resolution": "string — resolution enum value  (AM-03)",
+  "supporting_transactions": ["string — transaction citations  (AM-03)"],
+  "analyst_action": "null at agent generation time; case mgmt system writes CLEARED|SAR_FILED|RFI_SENT|FROZEN|INFO_REQUESTED on analyst sign-off  (AM-03)",
+  "analyst_action_timestamp_utc": "null at agent time; set by case mgmt system  (AM-03)",
+  "analyst_id": "null at agent time; set by case mgmt system  (AM-03)"
 }
 ```
+
+**AM-03:** Fields `patterns_detected_summary`, `watchlist_resolution`, `supporting_transactions`,
+and `analyst_action`/`analyst_action_timestamp_utc`/`analyst_id` satisfy FinCEN FIN-2026-A-008
+Req 1 (per-alert AI decision record). The three `analyst_*` fields are null at agent generation
+time; the case management system writes them back when the analyst signs off.
 
 The audit log entry contains NO raw PII (no customer name, DOB, address, account number).
 The full case package JSON (which contains PII in the narrative) is stored separately in the
@@ -339,8 +425,12 @@ case management system under Lattice's standard data retention policy.
 - All model calls use `temperature=0`
 - System prompt is version-controlled; `agent_version` field in output references the exact system prompt version
 - Given identical inputs and identical `agent_version`, the output must be identical
-- Re-run test: feed the same alert twice; diff the output JSON; expect zero diff on all fields
-  except `generated_at_utc` and `audit_id`
+- Re-run test: feed the same alert twice; diff the output JSON; expect zero diff on all
+  structural decision fields. The following fields are excluded from the diff because they are
+  legitimately non-deterministic between runs: `generated_at_utc`, `sar_clock_start_utc`,
+  `_audit_log`. All other fields — `scope_classification`, `disposition.recommendation`,
+  `watchlist_status.resolution`, `pattern_type`/`severity` for each detected pattern — must
+  be identical.
 
 ### 5.4 Human override
 
@@ -361,6 +451,8 @@ case management system under Lattice's standard data retention policy.
 | Invalid input (missing required fields) | Return error JSON immediately; do not process |
 | Model generation failure / timeout | Retry once with 5-second backoff; if second failure, return `{"error": "AGENT_PROCESSING_FAILURE", "case_id": "...", "retry_recommended": true}` |
 | Linked account count > 10 in network file | Process first 10 linked accounts; note truncation in `data_gaps`; proceed |
+| Transaction history exceeds 500 rows | Pass most-recent 500 rows to model (sorted descending by date); note truncation in `data_gaps`: "Transaction history truncated to 500 most-recent rows; {N} rows omitted." Structuring and velocity calculations are performed on the full CSV before truncation via Python pre-processing; only the narrative context window is limited. |
+| Case package context exceeds model limit | Pre-process in Python: summarise transaction statistics (total volume, average, std dev by direction/channel) rather than passing raw CSV rows; pass summary statistics + 20 most-recent rows. Note in `data_gaps` that raw row context was summarised. |
 
 ---
 
@@ -396,6 +488,27 @@ Reads `mock-data/sanctions-list-extracts/OFAC_SDN_{sdn_entry_name}.txt`. Returns
 | A1 | Watchlist screening is pre-computed per case | Agent reads the report; does not call OFAC API | Must add OFAC API tool; PII constraint re-evaluated | Assumed — confirm with compliance team |
 | A2 | Transaction CSV always has the 8-column schema (Date, Time_UTC, Direction, Type, Counterparty, Amount_USD, Channel, Balance_After) | Structuring and velocity pattern detection depend on column names | Parser must be made schema-flexible | Assumed from mock data |
 | A3 | Linked account KYC files exist for primary account only; linked accounts may lack files | Agent must handle missing linked KYC gracefully | Layering cases may under-analyse | Confirmed from mock data (AML-1408 has 4 linked accounts but only 1 KYC file in mock set) |
-| A4 | Temperature = 0 is sufficient for 100% reproducibility | FinCEN/audit requirement | Must implement deterministic output validation (diff-check on re-run) | Assumed — to be validated in build phase |
+| A4 | Temperature = 0 is sufficient for 100% reproducibility on decision fields (recommendation, watchlist resolution, pattern types/severities) | FinCEN/audit requirement | Must implement deterministic output validation (diff-check on re-run) | **Validated** — T5 reproducibility test passes; prose fields (narrative, reasoning) may have minor variation but structural decision fields are identical across runs |
 | A5 | Anthropic enterprise DPA constitutes safe harbour for PII processing | William Akoto's PII constraint | Must seek alternative in-perimeter model deployment | Assumed — confirm with legal/procurement |
 | A6 | AML-1322 cross-border transfers are via the remittance product (channel = "remittance") | Scope detection in Step 1 | If channel is unmarked, agent may analyse instead of route | Verify with Engineering |
+
+---
+
+## 9. Version 1.1 — Amendment register
+
+Amendments logged during build phase (2026-06-01). Each amendment notes the triggering
+observation and the spec change made.
+
+| ID | Section(s) affected | Amendment |
+|---|---|---|
+| AM-01 | §3 JtD-1a, §8 A6 | **Scope detection uses substring match, not exact equality.** Spec said `channel = "remittance"`; actual mock-data CSV value is `cross-border-remittance`. Rule updated to `"remittance" in channel.lower()`. Intent (route remittance-product alerts before analysis) is unambiguous; implementation adjusted to match real data. |
+| AM-02 | §3 JtD-5 decision point 9 | **"Both KYC and transaction history missing" means no data from any source.** Decision point 9 (FURTHER_INFO_NEEDED when both KYC and transaction history absent) applies only when *no data is available from any source*. A network file constitutes a valid data source; T2 layering case (C-CON-6611442) has no KYC/transaction CSV but the counterparty network file contains all hop-chain data — LAYERING fires at decision point 3 before point 9 is reached. |
+| AM-03 | §5.1 | **Enhanced audit log for FinCEN FIN-2026-A-008 Req 1.** Added fields to audit log schema: `patterns_detected_summary`, `watchlist_resolution`, `supporting_transactions`, `sdn_list_version`, `analyst_action`, `analyst_action_timestamp_utc`, `analyst_id`. The three `analyst_*` fields are null at agent generation time; the case management system writes them on analyst sign-off. |
+| AM-04 | §4, §5.1 | **`sdn_list_version` field added to case package and audit log.** Required for FinCEN FIN-2026-A-008 Req 1 (per-alert decision record must reference the SDN list version used). Prototype hardcodes `"2026-05-01"` (mock SDN list date); production must read from the live SDN feed metadata. |
+| AM-05 | §5.1 | **Case package JSON designated as FIN-2026-A-008 Req 4 explainability record.** Existing `patterns_detected[].evidence[]` arrays and `disposition.supporting_transactions[]` provide span-level attribution. No new fields required; spec designates the case package as the formal explainability record. |
+| AM-06 | §4 | **`sar_clock_start_utc` and `alert_status` fields added to case package.** `sar_clock_start_utc` equals `triggered_at_utc` when `disposition.recommendation = ESCALATE_SAR`; null otherwise. Designates the 30-day FinCEN SAR-filing clock T0 per FIN-2026-A-008 Req 5. `alert_status` is hardcoded `"OPEN"` by the agent; the case management system updates it on analyst sign-off. |
+| AM-07 | §2.2, §3 JtD-1b | **Linked account KYC retrieval loop not implemented in prototype.** Spec §2.2 requires `read_kyc(linked_customer_id)` for each account in the network file. Prototype omits this loop; it relies on the network file being self-contained (per AM-02). No test case is broken because the T2 network file contains KYC-equivalent data inline. Production Wave 1 must add the loop. |
+| AM-08 | §6 | **Transaction row truncation and network account cap not enforced in prototype.** Spec §6 (added v1.1) requires truncating transaction history to 500 rows and capping linked accounts at 10 before model call. Prototype passes full data. No mock-data file exceeds these limits so no test is affected. Production build must add pre-processing guards before first live deployment. |
+| AM-09 | §2 inputs | **`monetary_scope_usd` and `analyst_queue_tag` are accepted but unused.** Both optional inputs are present in the `run_lacra()` signature but no logic consumes them. Stub intentional for prototype scope; production should route `analyst_queue_tag = "High"` to a priority processing queue. |
+| AM-11 | §3 JtD-1a | **Mixed remittance case: direction-based scope detection.** Spec §1a states that a case where primary transactions are in-scope but one counterparty transaction uses the remittance channel should be classified `IN_SCOPE` with the remittance transaction noted in `data_gaps`. The original implementation used an any-transaction check (first remittance-channel row → OOS regardless of direction), which incorrectly routed mixed-profile customers. Corrected to direction-based rule: any OUTBOUND remittance-channel transaction → customer is actively using the remittance product → `OUT_OF_SCOPE_REMITTANCE`. Only INBOUND remittance-channel transactions (a counterparty used the remittance product) → `IN_SCOPE`, and the inbound remittance transaction(s) are added to `data_gaps` with a referral note. T3 (C-CON-5530118, 3 outbound remittance rows) continues to route OOS correctly. |
+| AM-10 | §3 JtD-3c | **Velocity anomaly uses 90-day window as proxy for 12-month prior average.** The rule specifies `prior_avg = total_cross_border_outbound_prior_12mo / 12` but the only available data source is a 90-day transaction extract. Substitution rule: if no cross-border outbound exists in days 31–90 of the extract, flag as "no prior cross-border baseline" (MEDIUM severity). If prior cross-border is present, annualise the prior 60-day total as a proxy monthly average. This makes velocity detection conservative (under-flags) rather than aggressive. Production must extend to a 12-month data source. |

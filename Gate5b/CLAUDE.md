@@ -56,8 +56,8 @@ Working prototype + self-assessment by 17:00.
 | `C-CON-2207715_kyc.json` | Consumer | Watchlist false-positive (common name) |
 | `C-CON-3318822_kyc.json` | Consumer | Routine structuring / no-SAR baseline |
 | `C-CON-5530118_kyc.json` | Consumer | OOS remittance routing (channel = cross-border-remittance) |
-| `C-CON-7714290_kyc.json` | Consumer | Sudden onset large cross-border transfers |
-| `C-CON-7720338_kyc.json` | Consumer | Network analysis with suspicious counterparty |
+| `C-CON-7714290_kyc.json` | Consumer | Structuring — 7 cash deposits in [$4,810–$4,940] range over 6-day window |
+| `C-CON-7720338_kyc.json` | Consumer | High-aggregate cash-equivalent inbound, thin KYC (tier-1, no address/SSN) |
 | `C-CON-9923441_kyc.json` | Consumer | Watchlist genuine hit — escalation needed |
 | `C-BIZ-4408821_kyc.json` | Business | High-velocity merchant payments |
 
@@ -100,7 +100,7 @@ Working prototype + self-assessment by 17:00.
 
 | File | Notes |
 |---|---|
-| `C-CON-7720338_prior_RFI_thread_2026-05.eml` | Prior RFI thread for network case |
+| `C-CON-7720338_prior_RFI_thread_2026-05.eml` | Prior RFI — thin-KYC case (soft-freeze dispute) |
 | `C-CON-3318822_prior_RFI_tobacco.eml` | Prior RFI — structuring / no-SAR baseline |
 
 ---
@@ -138,9 +138,9 @@ Working prototype + self-assessment by 17:00.
 
 **Build phase — submit by 17:00**
 
-- [ ] 10. Working prototype — primary flow + failure escalation + ≥1 edge case, tests, demo script
-- [ ] 11. *(Optional)* Supplementary spec amendment note — gaps discovered during build
-- [ ] 12. Self-assessment output — full package run through the Standardised Self-Assessment Prompt
+- [x] 10. Working prototype — primary flow + failure escalation + ≥1 edge case, tests, demo script
+- [x] 11. Supplementary spec amendment note — AM-06 correction + AM-07 through AM-11 in design/11-spec-amendments.md
+- [x] 12. Self-assessment output — full package run through the Standardised Self-Assessment Prompt
 
 > **Both design and build must pass independently.** A dead prototype fails regardless of design quality.
 > If the build diverges from the spec, file an amendment note — silent divergence is an automatic fail.
@@ -187,7 +187,7 @@ Working prototype + self-assessment by 17:00.
 1. **Primary agentic flow** — one case end-to-end: ingest → synthesise → pattern → watchlist → disposition
 2. **Failure-mode escalation** — genuine watchlist hit or layering pattern triggering escalate-to-SAR path
 3. **Edge case** — common-name watchlist false-positive handled correctly (not escalated)
-4. Tests covering all three paths
+4. **Tests** — 13 tests (T1–T13) covering all 8 real mock-data cases + 5 synthetic paths
 5. Demo script
 
 ---
@@ -209,7 +209,12 @@ Working prototype + self-assessment by 17:00.
 - **AM-03:** Enhanced audit log schema (FinCEN FIN-2026-A-008 Req 1): add `patterns_detected_summary`, `watchlist_resolution`, `supporting_transactions`, `sdn_list_version`, `analyst_action` (null at agent time, updated by case mgmt system).
 - **AM-04:** Add `sdn_list_version` field to case package output. Prototype: hardcoded to mock SDN date "2026-05-01".
 - **AM-05:** Designate full case package JSON as the FIN-2026-A-008 Req 4 explainability record (span-level attribution via `patterns_detected[].evidence[]` and `disposition.supporting_transactions[]`).
-- **AM-06:** Add `sar_clock_start_utc` field to output (= `generated_at_utc` for ESCALATE_SAR, null otherwise). Designates 30-day FinCEN SAR-filing clock T0 per Req 5. Add `alert_status` field (hardcoded to "OPEN" in prototype).
+- **AM-06:** Add `sar_clock_start_utc` field to output (= `triggered_at_utc` for ESCALATE_SAR, null otherwise). Designates 30-day FinCEN SAR-filing clock T0 per Req 5 — clock starts at alert trigger, not agent processing time. Add `alert_status` field (hardcoded to "OPEN" in prototype).
+- **AM-07:** Linked account KYC retrieval loop not implemented in prototype (relies on network file being self-contained per AM-02). Production Wave 1 must add the loop.
+- **AM-08:** Transaction row truncation (500 rows) and network account cap (10) not enforced in prototype. No mock file exceeds limits. Production must add pre-processing guards.
+- **AM-09:** `monetary_scope_usd` and `analyst_queue_tag` are accepted but unused. Production should route `analyst_queue_tag = "High"` to a priority queue.
+- **AM-10:** Velocity anomaly (JtD-3c) uses 90-day extract as proxy for 12-month prior average. Substitution: `prior_60d / 2` as monthly proxy; if `prior_60d = 0`, flag "no prior baseline" at MEDIUM severity. Production must extend to 12-month data source.
+- **AM-11:** Mixed remittance scope detection uses direction-based rule: any OUTBOUND remittance-channel transaction → OOS; only INBOUND remittance-channel transactions → IN_SCOPE with data_gap note. Fixes the any-transaction check that incorrectly routed mixed-profile customers OOS.
 
 ---
 

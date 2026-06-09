@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pip show *)",
+      "Bash(python -m pytest prototype/tests.py::test_t3_oos_routing -v)",
+      "Bash(python -m pytest prototype/tests.py::test_t1_watchlist_fp_clear -v -s)",
+      "Bash(python -m pytest prototype/tests.py::test_t2_layering_escalate_sar prototype/tests.py::test_t4_missing_data -v -s)",
+      "Bash(python -m pytest prototype/tests.py::test_t5_reproducibility -v -s)",
+      "Bash(python -m pytest prototype/tests.py -v)",
+      "Bash(python -m prototype.demo)",
+      "Bash(Get-Content \"C:\\\\Users\\\\Benoit_Charrier\\\\FDE Program\\\\FDE-Program\\\\Gate5b\\\\design\\\\05-capability-specification.md\")",
+      "Bash(Measure-Object -Line)",
+      "PowerShell(\\(Get-Content \"C:\\\\Users\\\\Benoit_Charrier\\\\FDE Program\\\\FDE-Program\\\\Gate5b\\\\design\\\\05-capability-specification.md\" | Measure-Object -Line\\).Lines)",
+      "Bash(python -m pytest prototype/tests.py -v --tb=short)",
+      "Bash(python -c ' *)"
+    ]
+  }
+}

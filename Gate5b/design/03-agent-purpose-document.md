@@ -55,10 +55,10 @@ queue managed by the CCO organisation.
 | Failure | Consequence | Recovery |
 |---|---|---|
 | False negative on SAR-eligible case (agent clears a genuine SAR) | Regulatory exposure; SAR filed late or not at all | Recall ≥ 95% requirement; analyst reviews all CLEAR dispositions before signing; audit trail enables retrospective review |
-| False positive OFAC confirmation (agent escalates a clear FP) | Analyst time wasted; customer churn risk if freeze follows | Agent never confirms OFAC positively; WATCHLIST_UNRESOLVED always escalates to analyst with evidence |
+| False positive OFAC confirmation (agent escalates a clear FP) | Analyst time wasted; customer churn risk if freeze follows; potential FIN-2026-A-008 Req 4 explainability failure if escalation cannot be traced to specific disconfirmation evidence | Agent never confirms OFAC positively; WATCHLIST_UNRESOLVED always escalates to analyst with evidence |
 | Missing data for key field | Incomplete case package; analyst reverts to manual research | Agent outputs `data_gaps` list with each missing field; logs which systems returned no data; analyst fills manually for that case |
 | Out-of-scope case processed instead of routed | Agent analyses remittance case using wrong rule set | Scope detection runs first, before any analysis; routing is the first decision gate |
-| Reproducibility failure (re-run yields different disposition) | Audit integrity failure; FinCEN explainability broken | Temperature = 0 on all model calls; inputs are deterministic; system prompt is version-controlled |
+| Reproducibility failure (re-run yields different disposition) | Audit integrity failure; violates FinCEN FIN-2026-A-008 Req 1 (per-alert AI decision record must be reproducible for examiner review) | Temperature = 0 on all model calls; inputs are deterministic; system prompt is version-controlled |
 
 ---
 

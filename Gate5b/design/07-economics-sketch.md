@@ -256,6 +256,57 @@ Business case holds in all three scenarios. The conservative case still pays bac
 
 ---
 
+## Curveball cost impact — FinCEN FIN-2026-A-008
+
+*Advisory received 2026-06-01 ~13:30. Full response in design/09-curveball-response.md.*
+
+### Wave 1 — compliance additions within original budget
+
+Items baked into the existing $420K build estimate:
+
+| Item | Estimated cost | Budget impact |
+|---|---|---|
+| Enhanced audit log schema (AM-03: add 6 fields) | $3,000 | Within budget |
+| `sdn_list_version` field plumbing (AM-04) | $1,000 | Within budget |
+| Explainability framing + spec amendment (AM-05) | $1,000 | Within budget |
+| `sar_clock_start_utc` + `alert_status` fields (AM-06) | $2,000 | Within budget |
+| Case management system write-back for analyst_action fields | $8,000 | Within budget |
+| **Wave 1 total** | **$15,000** | **Absorbed** |
+
+The $15K Wave 1 additions fit within the existing $420K budget (reduces contingency reserve).
+No budget re-approval required.
+
+### Wave 2 — new components requiring budget supplement
+
+| Item | Estimated cost |
+|---|---|
+| Sanctions Rescreening Service (SRS): design, build, test | $35,000 |
+| Retroactive Review Batch Job: design, build, test | $20,000 |
+| Infrastructure: scheduling, monitoring, alerting | $10,000 |
+| **Wave 2 total** | **$65,000** |
+
+**Budget supplement required:** $65,000. Requires CCO approval (Dr. Rao) and Engineering
+capacity allocation (William Akoto). Wave 2 is not part of the Gate 5b prototype scope.
+
+### Total revised budget
+
+```
+Original approved budget:  $420,000
+Wave 1 additions:          $0 net (absorbed within contingency)
+Wave 2 supplement:         $65,000
+─────────────────────────────────
+Total revised:             $485,000
+```
+
+### ROI impact
+
+Wave 2 ($65K) adds ~2 weeks to payback period. 3-year net value changes from $2,718,000 to
+$2,653,000 — material but not decision-changing. The regulatory compliance value (avoiding
+FinCEN examiner findings) substantially exceeds the $65K cost; that value is not quantified
+in the base ROI model but is the primary driver for Wave 2 prioritisation.
+
+---
+
 ## Economic governance
 
 - Review cost per case vs. budget monthly
